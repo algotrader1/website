@@ -3,32 +3,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site Web</title>
+    <title>DreamInsight - Explorez et analysez vos rêves</title>
     <style>
+        /* Couleurs inspirées de ton application */
+        :root {
+            --primary: #5B5FED; /* Indigo */
+            --secondary: #9D4EDD; /* Violet */
+            --accent: #FF9F1C; /* Orange */
+            --light: #F8F9FA;
+            --dark: #212529;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
             margin: 0;
-            padding: 20px;
-            background-color: #f0f0f0;
+            padding: 0;
+            background-color: #FAFAFA;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #333;
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
             text-align: center;
+            padding: 4rem 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-top: 2rem;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #E67E00;
+            transform: translateY(-2px);
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 3rem 0;
+        }
+        
+        .feature {
+            flex: 0 0 30%;
+            background-color: white;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .pricing {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 3rem 0;
+        }
+        
+        .plan {
+            flex: 0 0 30%;
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .plan:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .plan-period {
+            font-size: 0.9rem;
+            color: gray;
+        }
+        
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        
+        .plan-features li {
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .popular {
+            border: 2px solid var(--primary);
+            position: relative;
+        }
+        
+        .popular::before {
+            content: "Le plus populaire";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .faq {
+            margin: 3rem 0;
+        }
+        
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: #CCC;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .feature, .plan {
+                flex: 0 0 100%;
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>DreamInsight</h1>
+        <p class="tagline">Explorez, analysez et comprenez vos rêves.</p>
+        <a href="#download" class="cta-button">Télécharger l'application</a>
+    </header>
+    
     <div class="container">
-        <h1>Bienvenue sur mon site web</h1>
-        <p>Ceci est un site web simple créé avec HTML et CSS.</p>
+        <section>
+            <h2>Découvrez les secrets de vos rêves</h2>
+            <p>DreamInsight est une application innovante qui vous aide à documenter, analyser et comprendre vos rêves. Grâce à notre technologie avancée d'intelligence artificielle, nous vous offrons des interprétations personnalisées et des analyses approfondies.</p>
+        </section>
+        
+        <section class="features">
+            <div class="feature">
+                <div class="feature-icon">📝</div>
+                <h3>Journal de rêves</h3>
+                <p>Enregistrez facilement vos rêves dès le réveil et retrouvez-les organisés chronologiquement.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔍</div>
+                <h3>Analyse approfondie</h3>
+                <p>Recevez des interprétations détaillées basées sur différentes traditions et approches psychologiques.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Confidentialité totale</h3>
+                <p>Vos rêves sont chiffrés de bout en bout et restent strictement privés.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Tendances et statistiques</h3>
+                <p>Suivez l'évolution de vos thèmes de rêves et découvrez des schémas récurrents.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📚</div>
+                <h3>Dictionnaire des symboles</h3>
+                <p>Accédez à une base de données complète de symboles oniriques et leurs significations.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Interface intuitive</h3>
+                <p>Profitez d'une expérience utilisateur fluide et agréable, conçue pour le confort quotidien.</p>
+            </div>
+        </section>
+        
+        <section id="pricing">
+            <h2>Nos formules d'abonnement</h2>
+            <p>Choisissez la formule qui correspond le mieux à vos besoins.</p>
+            
+            <div class="pricing">
+                <div class="plan">
+                    <div class="plan-name">Gratuit</div>
+                    <div class="plan-price">0 €</div>
+                    <div class="plan-period">pour toujours</div>
+                    <ul class="plan-features">
+                        <li>Jusqu'à 3 rêves par jour</li>
+                        <li>Analyses simples</li>
+                        <li>Dictionnaire de symboles basique</li>
+                        <li>Interface sans publicité</li>
+                    </ul>
+                    <a href="#download" class="cta-button">Commencer</a>
+                </div>
+                
+                <div class="plan popular">
+                    <div class="plan-name">Standard</div>
+                    <div class="plan-price">4,99 €</div>
+                    <div class="plan-period">par mois</div>
+                    <ul class="plan-features">
+                        <li>Jusqu'à 10 rêves par jour</li>
+                        <li>Analyses avancées</li>
+                        <li>Dictionnaire de symboles complet</li>
+                        <li>Rapports hebdomadaires</li>
+                        <li>Statistiques détaillées</li>
+                    </ul>
+                    <a href="#download" class="cta-button">S'abonner</a>
+                </div>
+                
+                <div class="plan">
+                    <div class="plan-name">Premium</div>
+                    <div class="plan-price">9,99 €</div>
+                    <div class="plan-period">par mois</div>
+                    <ul class="plan-features">
+                        <li>Rêves illimités</li>
+                        <li>Analyses approfondies</li>
+                        <li>Dictionnaire de symboles exclusif</li>
+                        <li>Rapports personnalisés</li>
+                        <li>Exportation des données</li>
+                        <li>Notifications personnalisées</li>
+                    </ul>
+                    <a href="#download" class="cta-button">S'abonner</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="faq">
+            <h2>Questions fréquentes</h2>
+            
+            <h3>Comment mes rêves sont-ils sécurisés ?</h3>
+            <p>DreamInsight utilise un chiffrement de bout en bout pour protéger vos données. Vos rêves sont chiffrés directement sur votre appareil et ne peuvent être déchiffrés que par vous grâce à votre phrase de récupération unique.</p>
+            
+            <h3>Puis-je exporter mes données ?</h3>
+            <p>Oui, les abonnés Premium peuvent exporter toutes leurs données de rêves dans différents formats pour les sauvegarder ou les analyser ailleurs.</p>
+            
+            <h3>Comment fonctionne l'analyse des rêves ?</h3>
+            <p>Notre application utilise une intelligence artificielle avancée pour analyser le contenu de vos rêves et proposer des interprétations basées sur différentes traditions psychologiques, spirituelles et culturelles.</p>
+            
+            <h3>Puis-je annuler mon abonnement à tout moment ?</h3>
+            <p>Oui, vous pouvez annuler votre abonnement à tout moment depuis les paramètres de l'application. Vous continuerez à bénéficier des fonctionnalités premium jusqu'à la fin de votre période de facturation en cours.</p>
+        </section>
+        
+        <section id="download">
+            <h2>Téléchargez DreamInsight dès maintenant</h2>
+            <p>Disponible sur iOS et Android. Commencez votre voyage onirique aujourd'hui.</p>
+            <div style="margin-top: 1.5rem;">
+                <a href="#" style="margin-right: 1rem;"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" height="50"></a>
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" height="50"></a>
+            </div>
+        </section>
     </div>
+    
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <p>&copy; 2025 DreamInsight. Tous droits réservés.</p>
+            </div>
+            <div>
+                <a href="#terms">Conditions d'utilisation</a>
+                <a href="#privacy">Politique de confidentialité</a>
+                <a href="#refund">Politique de remboursement</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Pages légales (cachées mais accessibles pour Stripe) -->
+    <div id="terms" style="display: none;">
+        <h2>Conditions d'utilisation</h2>
+        <p>En utilisant l'application DreamInsight, vous acceptez les présentes conditions d'utilisation. L'application est fournie "telle quelle" et nous ne garantissons pas qu'elle fonctionnera sans interruption ou sans erreur.</p>
+        <p>Vous êtes responsable de la confidentialité de votre compte et de votre phrase de récupération. Les interprétations fournies par l'application sont à titre informatif uniquement et ne constituent pas un avis médical ou psychologique professionnel.</p>
+        <p>Nous nous réservons le droit de modifier ou d'interrompre tout aspect de l'application à tout moment.</p>
+    </div>
+    
+    <div id="privacy" style="display: none;">
+        <h2>Politique de confidentialité</h2>
+        <p>Chez DreamInsight, nous prenons votre vie privée très au sérieux. Vos rêves sont chiffrés sur votre appareil et nous n'y avons pas accès. Nous collectons des données d'utilisation anonymisées pour améliorer l'application.</p>
+        <p>Nous ne vendons jamais vos données à des tiers. Pour le traitement des paiements, nous utilisons Stripe qui possède sa propre politique de confidentialité.</p>
+    </div>
+    
+    <div id="refund" style="display: none;">
+        <h2>Politique de remboursement</h2>
+        <p>Si vous n'êtes pas satisfait de votre abonnement, vous pouvez demander un remboursement dans les 14 jours suivant votre achat initial. Pour les abonnements en cours, aucun remboursement ne sera effectué pour les périodes partiellement utilisées.</p>
+        <p>Pour demander un remboursement, veuillez nous contacter à support@dreaminsight.app en indiquant la raison de votre demande.</p>
+    </div>
+    
+    <div id="contact" style="display: none;">
+        <h2>Contact</h2>
+        <p>Pour toute question ou assistance, vous pouvez nous contacter à:</p>
+        <p>Email: support@dreaminsight.app</p>
+        <p>Adresse: 123 Avenue des Rêves, 75001 Paris, France</p>
+    </div>
+    
 </body>
-</html> 
+</html>
