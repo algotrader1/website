@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGU - Onera</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .header {
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+        
+        .lang-switcher {
+            display: inline-flex;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .lang-btn {
+            padding: 8px 20px;
+            border: none;
+            background: white;
+            color: #666;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        
+        .lang-btn:first-child {
+            border-right: 1px solid #e0e0e0;
+        }
+        
+        .lang-btn.active {
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        .lang-btn:hover:not(.active) {
+            background: #f5f5f5;
+        }
+        
+        .content {
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin: 48px 0 20px 0;
+            color: #1a1a1a;
+        }
+        
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 24px 0 12px 0;
+            color: #333;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        ul {
+            margin: 16px 0 24px 24px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        .warning {
+            background: #fff;
+            border: 1px solid #ff4444;
+            border-left: 3px solid #ff4444;
+            padding: 20px;
+            margin: 32px 0;
+        }
+        
+        .warning strong {
+            color: #ff4444;
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        
+        .notice {
+            background: #f9f9f9;
+            border-left: 3px solid #666;
+            padding: 20px;
+            margin: 24px 0;
+        }
+        
+        strong {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        .contact {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        .contact a {
+            color: #1a1a1a;
+            text-decoration: none;
+            border-bottom: 1px solid #1a1a1a;
+            font-weight: 500;
+        }
+        
+        .contact a:hover {
+            border-bottom: 2px solid #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Onera</h1>
+            <p class="subtitle">Conditions Générales d'Utilisation</p>
+            <p class="subtitle">Dernière mise à jour : 16 août 2025</p>
+            
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="switchLang('fr')">Français</button>
+                <button class="lang-btn" onclick="switchLang('en')">English</button>
+            </div>
+        </div>
+
+        <!-- French Content -->
+        <div id="content-fr" class="content">
+            <p>Bienvenue sur <strong>Onera</strong>, l'application d'analyse de rêves et de suivi émotionnel. En téléchargeant ou utilisant Onera, vous acceptez ces Conditions Générales d'Utilisation.</p>
+
+            <h2>1. Objet et Nature du Service</h2>
+            <p>Onera est un outil de réflexion personnelle utilisant l'intelligence artificielle pour vous accompagner dans l'exploration de vos rêves et émotions.</p>
+            
+            <div class="warning">
+                <strong>AVERTISSEMENT IMPORTANT</strong>
+                <ul>
+                    <li>Onera n'est PAS un service médical, psychologique ou thérapeutique</li>
+                    <li>Les interprétations proposées sont des pistes de réflexion et ne doivent jamais être considérées comme des vérités absolues</li>
+                    <li>Elles ne remplacent en aucun cas l'avis d'un professionnel de santé qualifié</li>
+                    <li>En cas de détresse psychologique, consultez immédiatement un professionnel</li>
+                </ul>
+            </div>
+
+            <h2>2. Utilisation et Limites</h2>
+            <ul>
+                <li>L'utilisateur doit avoir <strong>18 ans ou plus</strong></li>
+                <li>Onera est un simple outil permettant de prendre du recul sur vos expériences oniriques</li>
+                <li>Les interprétations générées par Mistral AI sont <strong>purement indicatives et exploratoires</strong></li>
+                <li><strong>Ne prenez jamais de décision importante basée uniquement sur ces interprétations</strong></li>
+            </ul>
+
+            <h2>3. Données et Confidentialité</h2>
+            <ul>
+                <li>Vos données sont synchronisées avec Supabase pour améliorer votre expérience utilisateur</li>
+                <li>Vos rêves et données personnelles sont <strong>chiffrés de bout en bout</strong></li>
+                <li><strong>Les clés de chiffrement sont uniques à chaque utilisateur et nous restent totalement inconnues</strong></li>
+                <li>Nous n'avons accès qu'aux métadonnées nécessaires à l'amélioration du service (sans contenu personnel)</li>
+                <li>Nous ne vendons ni ne partageons jamais vos données personnelles</li>
+            </ul>
+
+            <h2>4. Intelligence Artificielle et Analyses</h2>
+            <ul>
+                <li>Onera utilise <strong>Mistral AI</strong> pour analyser et interpréter vos rêves</li>
+                <li>Les abonnés bénéficient de rapports de synthèse pour obtenir des analyses plus contextualisées</li>
+                <li>Le modèle IA ne conserve aucune donnée personnelle après traitement</li>
+                <li>Les analyses sont générées automatiquement et peuvent contenir des imprécisions</li>
+            </ul>
+
+            <h2>5. Exclusion de Responsabilité</h2>
+            <div class="notice">
+                <p><strong>Onera et ses créateurs déclinent expressément toute responsabilité pour :</strong></p>
+                <ul>
+                    <li>Les actions entreprises suite aux interprétations fournies</li>
+                    <li>Tout préjudice physique, psychologique ou émotionnel résultant de l'utilisation du service</li>
+                    <li>Les conséquences de toute décision prise sur la base des analyses</li>
+                    <li>Le contenu de vos rêves et leur impact sur votre vie</li>
+                    <li><strong>Tout acte d'automutilation ou de suicide qui pourrait être associé à l'utilisation de l'application</strong></li>
+                </ul>
+                <p><strong>Nous ne sommes en aucun cas responsables de ce que vous faites ou vivez dans vos rêves.</strong></p>
+            </div>
+
+            <h2>6. Conditions d'Utilisation</h2>
+            <ul>
+                <li>L'application est destinée à un usage personnel et non commercial</li>
+                <li>Vous vous engagez à utiliser Onera de manière responsable et réfléchie</li>
+                <li>Toute utilisation abusive entraînera la suspension immédiate du compte</li>
+            </ul>
+
+            <h2>7. Modifications du Service</h2>
+            <p>Nous nous réservons le droit de modifier, améliorer ou interrompre le service à tout moment pour optimiser l'expérience utilisateur.</p>
+
+            <div class="contact">
+                <p>Pour toute question ou préoccupation</p>
+                <a href="mailto:contact@onera.app">contact@onera.app</a>
+            </div>
+        </div>
+
+        <!-- English Content -->
+        <div id="content-en" class="content" style="display: none;">
+            <p>Welcome to <strong>Onera</strong>, the dream analysis and emotional tracking application. By downloading or using Onera, you agree to these Terms of Service.</p>
+
+            <h2>1. Purpose and Nature of Service</h2>
+            <p>Onera is a personal reflection tool using artificial intelligence to support you in exploring your dreams and emotions.</p>
+            
+            <div class="warning">
+                <strong>IMPORTANT WARNING</strong>
+                <ul>
+                    <li>Onera is NOT a medical, psychological, or therapeutic service</li>
+                    <li>Interpretations provided are suggestions for reflection and should never be taken as absolute truths</li>
+                    <li>They do not replace professional healthcare advice</li>
+                    <li>If experiencing psychological distress, immediately consult a qualified professional</li>
+                </ul>
+            </div>
+
+            <h2>2. Usage and Limitations</h2>
+            <ul>
+                <li>Users must be <strong>18 years or older</strong></li>
+                <li>Onera is simply a tool for gaining perspective on your dream experiences</li>
+                <li>Interpretations generated by Mistral AI are <strong>purely indicative and exploratory</strong></li>
+                <li><strong>Never make important decisions based solely on these interpretations</strong></li>
+            </ul>
+
+            <h2>3. Data and Privacy</h2>
+            <ul>
+                <li>Your data syncs with Supabase to enhance user experience</li>
+                <li>Your dreams and personal data are <strong>end-to-end encrypted</strong></li>
+                <li><strong>Encryption keys are unique to each user and remain completely unknown to us</strong></li>
+                <li>We only access metadata necessary for service improvement (no personal content)</li>
+                <li>We never sell or share your personal data</li>
+            </ul>
+
+            <h2>4. Artificial Intelligence and Analysis</h2>
+            <ul>
+                <li>Onera uses <strong>Mistral AI</strong> to analyze and interpret dreams</li>
+                <li>Subscribers receive synthesis reports for more contextualized analyses</li>
+                <li>The AI model retains no personal data after processing</li>
+                <li>Analyses are automatically generated and may contain inaccuracies</li>
+            </ul>
+
+            <h2>5. Disclaimer of Liability</h2>
+            <div class="notice">
+                <p><strong>Onera and its creators expressly disclaim all liability for:</strong></p>
+                <ul>
+                    <li>Actions taken based on provided interpretations</li>
+                    <li>Any physical, psychological, or emotional harm resulting from service use</li>
+                    <li>Consequences of decisions made based on analyses</li>
+                    <li>The content of your dreams and their impact on your life</li>
+                    <li><strong>Any acts of self-harm or suicide that may be associated with app usage</strong></li>
+                </ul>
+                <p><strong>We are in no way responsible for what you do or experience in your dreams.</strong></p>
+            </div>
+
+            <h2>6. Terms of Use</h2>
+            <ul>
+                <li>The application is for personal, non-commercial use only</li>
+                <li>You agree to use Onera responsibly and thoughtfully</li>
+                <li>Any abusive use will result in immediate account suspension</li>
+            </ul>
+
+            <h2>7. Service Modifications</h2>
+            <p>We reserve the right to modify, improve, or discontinue the service at any time to optimize user experience.</p>
+
+            <div class="contact">
+                <p>For questions or concerns</p>
+                <a href="mailto:contact@onera.app">contact@onera.app</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            const frContent = document.getElementById('content-fr');
+            const enContent = document.getElementById('content-en');
+            const buttons = document.querySelectorAll('.lang-btn');
+            
+            if (lang === 'fr') {
+                frContent.style.display = 'block';
+                enContent.style.display = 'none';
+                document.documentElement.lang = 'fr';
+            } else {
+                frContent.style.display = 'none';
+                enContent.style.display = 'block';
+                document.documentElement.lang = 'en';
+            }
+            
+            buttons.forEach(btn => {
+                if (btn.textContent === (lang === 'fr' ? 'Français' : 'English')) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

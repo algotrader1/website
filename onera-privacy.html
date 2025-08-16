@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité - Onera</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .header {
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+        
+        .lang-switcher {
+            display: inline-flex;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .lang-btn {
+            padding: 8px 20px;
+            border: none;
+            background: white;
+            color: #666;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        
+        .lang-btn:first-child {
+            border-right: 1px solid #e0e0e0;
+        }
+        
+        .lang-btn.active {
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        .lang-btn:hover:not(.active) {
+            background: #f5f5f5;
+        }
+        
+        .content {
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin: 48px 0 20px 0;
+            color: #1a1a1a;
+        }
+        
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 24px 0 12px 0;
+            color: #333;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        ul {
+            margin: 16px 0 24px 24px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        .highlight-box {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        
+        .security-box {
+            background: #f9f9f9;
+            border-left: 3px solid #4a4a4a;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        
+        .rights-box {
+            background: #fff;
+            border: 1px solid #1a1a1a;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        
+        strong {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        .contact {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        .contact a {
+            color: #1a1a1a;
+            text-decoration: none;
+            border-bottom: 1px solid #1a1a1a;
+            font-weight: 500;
+        }
+        
+        .contact a:hover {
+            border-bottom: 2px solid #1a1a1a;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .data-table th {
+            background: #f9f9f9;
+            padding: 12px;
+            text-align: left;
+            font-weight: 500;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .data-table td {
+            padding: 12px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            background: #f0f0f0;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-radius: 4px;
+        }
+        
+        .badge-encrypted {
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        .badge-optional {
+            background: #f0f0f0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Politique de Confidentialité</h1>
+            <p class="subtitle">Onera</p>
+            <p class="subtitle">Dernière mise à jour : 16 août 2025</p>
+            
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="switchLang('fr')">Français</button>
+                <button class="lang-btn" onclick="switchLang('en')">English</button>
+            </div>
+        </div>
+
+        <!-- French Content -->
+        <div id="content-fr" class="content">
+            <h2>1. Responsable du Traitement</h2>
+            <p>Onera (et/ou ses sociétés affiliées) est responsable du traitement de vos données personnelles conformément au Règlement Général sur la Protection des Données (RGPD) et autres réglementations applicables.</p>
+
+            <h2>2. Données Collectées</h2>
+            
+            <h3>2.1. Données que vous nous fournissez</h3>
+            <table class="data-table">
+                <tr>
+                    <th>Type de données</th>
+                    <th>Détails</th>
+                    <th>Statut</th>
+                </tr>
+                <tr>
+                    <td><strong>Données de profil</strong></td>
+                    <td>Email, mot de passe, âge</td>
+                    <td><span class="badge badge-encrypted">Chiffré</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Données de bien-être</strong></td>
+                    <td>Habitudes de sommeil, état émotionnel</td>
+                    <td><span class="badge badge-optional">Optionnel</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Contenu des rêves</strong></td>
+                    <td>Vos récits de rêves</td>
+                    <td><span class="badge badge-encrypted">Chiffré E2E</span></td>
+                </tr>
+            </table>
+            
+            <h3>2.2. Données collectées automatiquement</h3>
+            <ul>
+                <li><strong>Données techniques</strong> : type d'appareil, système d'exploitation, version de l'application</li>
+                <li><strong>Données d'utilisation</strong> : fréquence d'utilisation, fonctionnalités consultées, interactions avec l'interface</li>
+                <li><strong>Métadonnées</strong> : horodatage, nombre d'entrées, statistiques d'usage (sans accès au contenu)</li>
+            </ul>
+
+            <h2>3. Sécurité et Chiffrement</h2>
+            <div class="security-box">
+                <p><strong>Protection maximale de vos données</strong></p>
+                <ul>
+                    <li><strong>Chiffrement de bout en bout</strong> : Tous vos rêves et données personnelles sont chiffrés directement sur votre appareil</li>
+                    <li><strong>Clés de chiffrement uniques</strong> : Chaque utilisateur possède ses propres clés de chiffrement qui nous restent totalement inconnues</li>
+                    <li><strong>Stockage sécurisé</strong> : Les clés sont stockées dans le Keychain Apple</li>
+                    <li><strong>Impossibilité d'accès</strong> : Nous ne pouvons techniquement pas déchiffrer vos contenus personnels</li>
+                    <li><strong>Export à tout moment</strong> : Vous pouvez exporter toutes vos données en clair depuis l'application</li>
+                </ul>
+            </div>
+
+            <h2>4. Utilisation des Données</h2>
+            <p>Nous utilisons vos données pour :</p>
+            <ul>
+                <li><strong>Fournir le service</strong> : permettre l'analyse et l'interprétation de vos rêves</li>
+                <li><strong>Stocker vos données</strong> : utiliser Supabase pour sauvegarder et synchroniser vos données chiffrées</li>
+                <li><strong>Améliorer l'expérience</strong> : optimiser l'interface et les fonctionnalités via les métadonnées</li>
+                <li><strong>Générer des analyses</strong> : utiliser Mistral AI pour créer des interprétations personnalisées</li>
+                <li><strong>Créer des rapports</strong> : synthétiser vos rêves pour les abonnés premium</li>
+                <li><strong>Assurer la sécurité</strong> : prévenir les fraudes et maintenir l'intégrité du service</li>
+            </ul>
+
+            <h2>5. Partage avec des Tiers</h2>
+            
+            <h3>5.1. Services essentiels</h3>
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>Supabase</strong> : stockage et synchronisation des données chiffrées et métadonnées</li>
+                    <li><strong>Mistral AI</strong> : analyse et interprétation (données anonymisées et temporaires)</li>
+                </ul>
+            </div>
+            
+            <h3>5.2. Notre engagement</h3>
+            <ul>
+                <li><strong>Aucune publicité</strong> dans l'application</li>
+                <li><strong>Aucune revente de données</strong> sous quelque forme que ce soit</li>
+                <li>Vos données personnelles déchiffrées ne sont jamais partagées</li>
+                <li>Votre email n'est jamais utilisé à des fins marketing</li>
+                <li>Le contenu de vos rêves reste strictement privé</li>
+            </ul>
+
+            <h2>6. Base Légale du Traitement (RGPD)</h2>
+            <p>Nous traitons vos données sur les bases suivantes :</p>
+            <ul>
+                <li><strong>Consentement</strong> : pour l'analyse de vos rêves et l'envoi de communications</li>
+                <li><strong>Exécution du contrat</strong> : pour fournir les services d'Onera</li>
+                <li><strong>Intérêts légitimes</strong> : pour améliorer le service et assurer la sécurité</li>
+            </ul>
+
+            <h2>7. Vos Droits</h2>
+            <div class="rights-box">
+                <p><strong>Conformément au RGPD et CCPA, vous avez le droit de :</strong></p>
+                <ul>
+                    <li><strong>Accéder</strong> à vos données personnelles</li>
+                    <li><strong>Rectifier</strong> les informations incorrectes</li>
+                    <li><strong>Supprimer</strong> votre compte et données associées</li>
+                    <li><strong>Exporter</strong> toutes vos données en clair directement depuis l'application</li>
+                    <li><strong>Vous opposer</strong> à certains traitements</li>
+                    <li><strong>Retirer votre consentement</strong> à tout moment</li>
+                </ul>
+                <p>Pour exercer vos droits : <strong>contact@onera.app</strong></p>
+            </div>
+
+            <h2>8. Conservation des Données</h2>
+            <ul>
+                <li><strong>Données actives</strong> : conservées tant que votre compte est actif</li>
+                <li><strong>Après suppression</strong> : suppression complète sous 30 jours</li>
+                <li><strong>Obligations légales</strong> : certaines métadonnées peuvent être conservées selon la loi</li>
+            </ul>
+
+            <h2>9. Protection des Mineurs</h2>
+            <p>Onera est strictement réservé aux personnes de <strong>18 ans et plus</strong>. Nous ne collectons pas sciemment de données de mineurs.</p>
+
+            <h2>10. Cookies et Suivi</h2>
+            <ul>
+                <li><strong>Aucune publicité</strong> - l'application est totalement sans pub</li>
+                <li>Pas de cookies publicitaires ou de tracking marketing</li>
+                <li>Utilisation minimale de cookies techniques essentiels</li>
+                <li>Analytics anonymisés uniquement pour améliorer le service</li>
+            </ul>
+
+            <h2>11. Transferts Internationaux</h2>
+            <p>Vos données chiffrées sont stockées via Supabase avec les garanties appropriées (clauses contractuelles types, certifications).</p>
+
+            <h2>12. Modifications</h2>
+            <p>Cette politique peut être mise à jour. Vous serez notifié de tout changement substantiel via l'application ou par email.</p>
+
+            <div class="contact">
+                <p>Pour toute question concernant vos données</p>
+                <a href="mailto:contact@onera.app">contact@onera.app</a>
+            </div>
+        </div>
+
+        <!-- English Content -->
+        <div id="content-en" class="content" style="display: none;">
+            <h2>1. Data Controller</h2>
+            <p>Onera (and/or its affiliates) is the controller of your personal data in accordance with the General Data Protection Regulation (GDPR) and other applicable regulations.</p>
+
+            <h2>2. Data We Collect</h2>
+            
+            <h3>2.1. Data you provide</h3>
+            <table class="data-table">
+                <tr>
+                    <th>Data Type</th>
+                    <th>Details</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td><strong>Profile data</strong></td>
+                    <td>Email, password, age</td>
+                    <td><span class="badge badge-encrypted">Encrypted</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Wellness data</strong></td>
+                    <td>Sleep patterns, emotional state</td>
+                    <td><span class="badge badge-optional">Optional</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Dream content</strong></td>
+                    <td>Your dream narratives</td>
+                    <td><span class="badge badge-encrypted">E2E Encrypted</span></td>
+                </tr>
+            </table>
+            
+            <h3>2.2. Data collected automatically</h3>
+            <ul>
+                <li><strong>Technical data</strong>: device type, operating system, app version</li>
+                <li><strong>Usage data</strong>: frequency of use, features accessed, interface interactions</li>
+                <li><strong>Metadata</strong>: timestamps, entry count, usage statistics (no content access)</li>
+            </ul>
+
+            <h2>3. Security and Encryption</h2>
+            <div class="security-box">
+                <p><strong>Maximum protection of your data</strong></p>
+                <ul>
+                    <li><strong>End-to-end encryption</strong>: All dreams and personal data are encrypted directly on your device</li>
+                    <li><strong>Unique encryption keys</strong>: Each user has their own encryption keys that remain completely unknown to us</li>
+                    <li><strong>Secure storage</strong>: Keys are stored in Apple Keychain</li>
+                    <li><strong>No access possible</strong>: We cannot technically decrypt your personal content</li>
+                    <li><strong>Export anytime</strong>: You can export all your data in plain text from the application</li>
+                </ul>
+            </div>
+
+            <h2>4. How We Use Your Data</h2>
+            <p>We use your data to:</p>
+            <ul>
+                <li><strong>Provide the service</strong>: enable dream analysis and interpretation</li>
+                <li><strong>Store your data</strong>: use Supabase to save and synchronize your encrypted data</li>
+                <li><strong>Improve experience</strong>: optimize interface and features via metadata</li>
+                <li><strong>Generate analyses</strong>: use Mistral AI to create personalized interpretations</li>
+                <li><strong>Create reports</strong>: synthesize dreams for premium subscribers</li>
+                <li><strong>Ensure security</strong>: prevent fraud and maintain service integrity</li>
+            </ul>
+
+            <h2>5. Data Sharing</h2>
+            
+            <h3>5.1. Essential services</h3>
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>Supabase</strong>: storage and synchronization of encrypted data and metadata</li>
+                    <li><strong>Mistral AI</strong>: analysis and interpretation (anonymized and temporary data)</li>
+                </ul>
+            </div>
+            
+            <h3>5.2. Our commitment</h3>
+            <ul>
+                <li><strong>No advertising</strong> in the application</li>
+                <li><strong>No data resale</strong> in any form</li>
+                <li>Your decrypted personal data is never shared</li>
+                <li>Your email is never used for marketing purposes</li>
+                <li>Your dream content remains strictly private</li>
+            </ul>
+
+            <h2>6. Legal Basis for Processing (GDPR)</h2>
+            <p>We process your data based on:</p>
+            <ul>
+                <li><strong>Consent</strong>: for dream analysis and communications</li>
+                <li><strong>Contract performance</strong>: to provide Onera services</li>
+                <li><strong>Legitimate interests</strong>: to improve service and ensure security</li>
+            </ul>
+
+            <h2>7. Your Rights</h2>
+            <div class="rights-box">
+                <p><strong>Under GDPR and CCPA, you have the right to:</strong></p>
+                <ul>
+                    <li><strong>Access</strong> your personal data</li>
+                    <li><strong>Rectify</strong> incorrect information</li>
+                    <li><strong>Delete</strong> your account and associated data</li>
+                    <li><strong>Export</strong> all your data in plain text directly from the application</li>
+                    <li><strong>Object</strong> to certain processing</li>
+                    <li><strong>Withdraw consent</strong> at any time</li>
+                </ul>
+                <p>To exercise your rights: <strong>contact@onera.app</strong></p>
+            </div>
+
+            <h2>8. Data Retention</h2>
+            <ul>
+                <li><strong>Active data</strong>: retained while your account is active</li>
+                <li><strong>After deletion</strong>: complete removal within 30 days</li>
+                <li><strong>Legal obligations</strong>: certain metadata may be retained as required by law</li>
+            </ul>
+
+            <h2>9. Children's Privacy</h2>
+            <p>Onera is strictly for persons <strong>18 years and older</strong>. We do not knowingly collect data from minors.</p>
+
+            <h2>10. Cookies and Tracking</h2>
+            <ul>
+                <li><strong>No advertising</strong> - the app is completely ad-free</li>
+                <li>No advertising cookies or marketing tracking</li>
+                <li>Minimal use of essential technical cookies</li>
+                <li>Anonymized analytics only to improve service</li>
+            </ul>
+
+            <h2>11. International Transfers</h2>
+            <p>Your encrypted data is stored via Supabase with appropriate safeguards (standard contractual clauses, certifications).</p>
+
+            <h2>12. Changes</h2>
+            <p>This policy may be updated. You will be notified of substantial changes via the app or email.</p>
+
+            <div class="contact">
+                <p>For any questions about your data</p>
+                <a href="mailto:contact@onera.app">contact@onera.app</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            const frContent = document.getElementById('content-fr');
+            const enContent = document.getElementById('content-en');
+            const buttons = document.querySelectorAll('.lang-btn');
+            
+            if (lang === 'fr') {
+                frContent.style.display = 'block';
+                enContent.style.display = 'none';
+                document.documentElement.lang = 'fr';
+            } else {
+                frContent.style.display = 'none';
+                enContent.style.display = 'block';
+                document.documentElement.lang = 'en';
+            }
+            
+            buttons.forEach(btn => {
+                if (btn.textContent === (lang === 'fr' ? 'Français' : 'English')) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
