@@ -3,353 +3,728 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DreamInsight - Explorez et analysez vos rêves</title>
+    <title>Onera - Your dreams speak. Time to listen.</title>
     <style>
-        /* Couleurs inspirées de ton application */
         :root {
-            --primary: #5B5FED; /* Indigo */
-            --secondary: #9D4EDD; /* Violet */
-            --accent: #FF9F1C; /* Orange */
-            --light: #F8F9FA;
-            --dark: #212529;
+            --primary-bg: #000000;
+            --text-primary: #FFFFFF;
+            --text-secondary: #8A8AA3;
+            --accent-purple: #D4B5FF;
+            --accent-red: #FF6B6B;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 70%, #000000 100%);
+            color: var(--text-primary);
             line-height: 1.6;
-            color: var(--dark);
-            margin: 0;
-            padding: 0;
-            background-color: #FAFAFA;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
         }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            text-align: center;
-            padding: 4rem 1rem;
+
+        /* Animated background gradient */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(212, 181, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 107, 107, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(138, 138, 163, 0.05) 0%, transparent 50%);
+            animation: backgroundShift 20s ease-in-out infinite;
+            z-index: 0;
         }
-        
-        .container {
-            max-width: 1200px;
+
+        @keyframes backgroundShift {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.1) rotate(1deg);
+                opacity: 0.6;
+            }
+        }
+
+        /* Particle Container */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Micro particles (dust) */
+        .particle-micro {
+            animation: float-micro 8s linear infinite;
+            filter: blur(0.2px);
+        }
+
+        @keyframes float-micro {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0.1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-50px) translateX(10px) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
+        /* Glow particles (orbs) */
+        .particle-glow {
+            animation: float-glow 12s ease-in-out infinite;
+            filter: blur(2px);
+            box-shadow: 0 0 20px rgba(212, 181, 255, 0.4);
+        }
+
+        @keyframes float-glow {
+            0% {
+                transform: translateY(100vh) translateX(0) scale(0.5);
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.6;
+            }
+            80% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100px) translateX(30px) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* Slow particles (cosmic bubbles) */
+        .particle-slow {
+            animation: float-up-slow 14s linear infinite;
+            filter: blur(0.5px);
+        }
+
+        @keyframes float-up-slow {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0.2;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100px) translateX(20px);
+                opacity: 0;
+            }
+        }
+
+        /* Fast particles (trails) */
+        .particle-fast {
+            animation: float-up-fast 0.8s linear infinite;
+            filter: blur(1.2px);
+        }
+
+        @keyframes float-up-fast {
+            0% {
+                transform: translateY(100vh);
+                opacity: 0.4;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+        /* Twinkling particles (stars) */
+        .particle-twinkle {
+            animation: twinkle 0.4s ease-in-out infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% {
+                opacity: 0.2;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        /* Spark particles (explosion) */
+        .particle-spark {
+            animation: spark 0.6s ease-out;
+            filter: blur(0.8px);
+        }
+
+        @keyframes spark {
+            0% {
+                opacity: 1;
+                transform: scale(1) translate(0, 0);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.3) translate(var(--spark-x), var(--spark-y));
+            }
+        }
+
+        /* Content styling */
+        .content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 2rem;
         }
-        
-        h1 {
-            font-size: 2.5rem;
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0 6rem;
+        }
+
+        .logo {
+            font-size: 56px;
+            font-weight: 200;
+            letter-spacing: -0.64px;
             margin-bottom: 1rem;
+            color: var(--text-primary);
         }
-        
-        h2 {
-            color: var(--primary);
-            margin-top: 2rem;
-        }
-        
+
         .tagline {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
+            font-size: 32px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-style: italic;
         }
-        
+
         .cta-button {
             display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
+            background: var(--text-primary);
+            color: var(--primary-bg);
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
             text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
+            font-weight: 500;
+            font-size: 18px;
             transition: all 0.3s ease;
+            border: 1px solid var(--text-primary);
+            cursor: pointer;
+            letter-spacing: 0;
         }
-        
+
         .cta-button:hover {
-            background-color: #E67E00;
-            transform: translateY(-2px);
+            background: transparent;
+            color: var(--text-primary);
         }
-        
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 3rem 0;
+
+        .section {
+            margin: 6rem 0;
+            padding: 3rem 0;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
         }
-        
-        .feature {
-            flex: 0 0 30%;
-            background-color: white;
-            padding: 1.5rem;
+
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
+        .section:nth-child(5) { animation-delay: 0.8s; }
+        .section:nth-child(6) { animation-delay: 1.0s; }
+        .section:nth-child(7) { animation-delay: 1.2s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 400;
             margin-bottom: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            letter-spacing: -0.3px;
+            color: var(--text-primary);
+        }
+
+        .section-content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+        }
+
+        .section-content.large {
+            font-size: 22px;
+            font-weight: 300;
             text-align: center;
         }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+
+        /* Clean, story-focused styling */
+        .separator {
+            text-align: center;
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.3);
+            margin: 4rem 0;
+            letter-spacing: 2px;
         }
-        
-        .pricing {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+
+        .story-text {
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.8;
+            margin: 2rem 0;
+            color: var(--text-primary);
+            text-align: left;
+        }
+
+        .quote-text {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.8;
+            margin: 2rem 0;
+            color: var(--text-primary);
+            text-align: center;
+            font-style: italic;
+            padding: 1rem 0;
+        }
+
+        .final-cta {
+            text-align: center;
             margin: 3rem 0;
         }
-        
-        .plan {
-            flex: 0 0 30%;
-            background-color: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+        .final-cta .story-text {
             text-align: center;
-            transition: all 0.3s ease;
+            font-size: 22px;
+            margin-bottom: 2rem;
         }
-        
-        .plan:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .plan-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-        }
-        
-        .plan-price {
-            font-size: 2.5rem;
-            font-weight: bold;
+
+        .quote {
+            font-style: italic;
+            color: var(--accent-purple);
             margin: 1rem 0;
+            padding-left: 2rem;
+            border-left: 2px solid var(--accent-purple);
         }
-        
-        .plan-period {
-            font-size: 0.9rem;
-            color: gray;
-        }
-        
-        .plan-features {
-            list-style: none;
-            padding: 0;
-            margin: 1.5rem 0;
-        }
-        
-        .plan-features li {
-            margin-bottom: 0.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .popular {
-            border: 2px solid var(--primary);
-            position: relative;
-        }
-        
-        .popular::before {
-            content: "Le plus populaire";
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--primary);
-            color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-        
-        .faq {
-            margin: 3rem 0;
-        }
-        
-        .footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 2rem 0;
+
+        .app-store-link {
+            display: inline-block;
+            margin: 2rem auto;
             text-align: center;
         }
-        
-        .footer a {
-            color: #CCC;
+
+        .app-store-badge {
+            height: 60px;
+            transition: transform 0.3s ease;
+        }
+
+        .app-store-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.05));
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 6rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
             text-decoration: none;
-            margin: 0 1rem;
+            margin: 0 1.5rem;
+            font-size: 16px;
+            transition: color 0.3s ease;
         }
-        
-        .footer a:hover {
-            color: white;
+
+        .footer-links a:hover {
+            color: var(--text-primary);
         }
-        
+
+        .footer-copyright {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Mobile responsiveness */
         @media (max-width: 768px) {
-            .feature, .plan {
-                flex: 0 0 100%;
+            .content {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 42px;
+            }
+
+            .tagline {
+                font-size: 24px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .section-content {
+                font-size: 16px;
+            }
+
+            .section-content.large {
+                font-size: 18px;
+            }
+
+            .footer-links a {
+                display: block;
+                margin: 0.5rem 0;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>DreamInsight</h1>
-        <p class="tagline">Explorez, analysez et comprenez vos rêves.</p>
-        <a href="#download" class="cta-button">Télécharger l'application</a>
-    </header>
+    <div class="particles-container" id="particles"></div>
     
-    <div class="container">
-        <section>
-            <h2>Découvrez les secrets de vos rêves</h2>
-            <p>DreamInsight est une application innovante qui vous aide à documenter, analyser et comprendre vos rêves. Grâce à notre technologie avancée d'intelligence artificielle, nous vous offrons des interprétations personnalisées et des analyses approfondies.</p>
+    <div class="content">
+        <section class="hero">
+            <h1 class="logo">Onera</h1>
+            <p class="tagline">Your dreams speak. Time to listen.</p>
         </section>
+
+        <div class="separator">───</div>
         
-        <section class="features">
-            <div class="feature">
-                <div class="feature-icon">📝</div>
-                <h3>Journal de rêves</h3>
-                <p>Enregistrez facilement vos rêves dès le réveil et retrouvez-les organisés chronologiquement.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🔍</div>
-                <h3>Analyse approfondie</h3>
-                <p>Recevez des interprétations détaillées basées sur différentes traditions et approches psychologiques.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🔒</div>
-                <h3>Confidentialité totale</h3>
-                <p>Vos rêves sont chiffrés de bout en bout et restent strictement privés.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">📊</div>
-                <h3>Tendances et statistiques</h3>
-                <p>Suivez l'évolution de vos thèmes de rêves et découvrez des schémas récurrents.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">📚</div>
-                <h3>Dictionnaire des symboles</h3>
-                <p>Accédez à une base de données complète de symboles oniriques et leurs significations.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">📱</div>
-                <h3>Interface intuitive</h3>
-                <p>Profitez d'une expérience utilisateur fluide et agréable, conçue pour le confort quotidien.</p>
-            </div>
-        </section>
-        
-        <section id="pricing">
-            <h2>Nos formules d'abonnement</h2>
-            <p>Choisissez la formule qui correspond le mieux à vos besoins.</p>
-            
-            <div class="pricing">
-                <div class="plan">
-                    <div class="plan-name">Gratuit</div>
-                    <div class="plan-price">0 €</div>
-                    <div class="plan-period">pour toujours</div>
-                    <ul class="plan-features">
-                        <li>Jusqu'à 3 rêves par jour</li>
-                        <li>Analyses simples</li>
-                        <li>Dictionnaire de symboles basique</li>
-                        <li>Interface sans publicité</li>
-                    </ul>
-                    <a href="#download" class="cta-button">Commencer</a>
-                </div>
+        <section class="section">
+            <div class="section-content">
+                <p class="story-text">
+                    <strong>Fast forward 20 years.</strong>
+                </p>
                 
-                <div class="plan popular">
-                    <div class="plan-name">Standard</div>
-                    <div class="plan-price">4,99 €</div>
-                    <div class="plan-period">par mois</div>
-                    <ul class="plan-features">
-                        <li>Jusqu'à 10 rêves par jour</li>
-                        <li>Analyses avancées</li>
-                        <li>Dictionnaire de symboles complet</li>
-                        <li>Rapports hebdomadaires</li>
-                        <li>Statistiques détaillées</li>
-                    </ul>
-                    <a href="#download" class="cta-button">S'abonner</a>
-                </div>
+                <p class="story-text">
+                    You wake up. Same bed. Same emptiness.<br>
+                    Your face in the mirror is older… but the regret is fresh.
+                </p>
                 
-                <div class="plan">
-                    <div class="plan-name">Premium</div>
-                    <div class="plan-price">9,99 €</div>
-                    <div class="plan-period">par mois</div>
-                    <ul class="plan-features">
-                        <li>Rêves illimités</li>
-                        <li>Analyses approfondies</li>
-                        <li>Dictionnaire de symboles exclusif</li>
-                        <li>Rapports personnalisés</li>
-                        <li>Exportation des données</li>
-                        <li>Notifications personnalisées</li>
-                    </ul>
-                    <a href="#download" class="cta-button">S'abonner</a>
+                <p class="story-text">
+                    You remember every chance you ignored.<br>
+                    Every whisper you silenced.<br>
+                    Every dream you let vanish with the morning light.
+                </p>
+                
+                <p class="story-text">
+                    And the cruelest part?<br>
+                    The solution was always there.<br>
+                    Two minutes. Every morning.<br>
+                    But you chose to scroll instead.
+                </p>
+            </div>
+        </section>
+
+        <div class="separator">───</div>
+        
+        <section class="section">
+            <div class="section-content">
+                <p class="story-text">
+                    <strong>Harvard warned you:</strong>
+                </p>
+                
+                <p class="quote-text">
+                    "Dreams solve the problems you can't while awake."
+                </p>
+                
+                <p class="story-text">
+                    But you didn't listen.<br>
+                    Now all that's left is the echo of what could have been.
+                </p>
+            </div>
+        </section>
+
+        <div class="separator">───</div>
+        
+        <section class="section">
+            <div class="section-content">
+                <p class="story-text">
+                    <strong>Here's what you keep throwing away:</strong>
+                </p>
+                
+                <p class="story-text">
+                    Every night, during REM sleep, your brain shuts off the self-doubt.<br>
+                    The negative voice is muted.<br>
+                    And what's left is 10x more creative — solving your life's problems in ways your waking mind never could.
+                </p>
+                
+                <p class="story-text">
+                    It's non-linear.<br>
+                    It's raw.<br>
+                    It's the unfair advantage every genius in history secretly used.
+                </p>
+                
+                <p class="story-text">
+                    And you? You keep deleting it with your morning piss.
+                </p>
+            </div>
+        </section>
+
+        <div class="separator">───</div>
+        
+        <section class="section">
+            <div class="section-content">
+                <p class="story-text">
+                    <strong>The way out:</strong>
+                </p>
+                
+                <p class="story-text">
+                    Wake up.<br>
+                    Write your dream.<br>
+                    Decode it.
+                </p>
+                
+                <p class="story-text">
+                    7 days later → fire in your chest.<br>
+                    The version of you that never settled.<br>
+                    The version of you that people can't ignore.
+                </p>
+            </div>
+        </section>
+
+        <div class="separator">───</div>
+        
+        <section class="section">
+            <div class="section-content">
+                <div class="final-cta">
+                    <p class="story-text">
+                        👉 Download Onera.<br>
+                        Before tonight disappears — again.
+                    </p>
+                    
+                    <div class="app-store-link">
+                        <a href="https://apps.apple.com/app/onera" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" 
+                                 alt="Download on the App Store" class="app-store-badge">
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
-        
-        <section class="faq">
-            <h2>Questions fréquentes</h2>
-            
-            <h3>Comment mes rêves sont-ils sécurisés ?</h3>
-            <p>DreamInsight utilise un chiffrement de bout en bout pour protéger vos données. Vos rêves sont chiffrés directement sur votre appareil et ne peuvent être déchiffrés que par vous grâce à votre phrase de récupération unique.</p>
-            
-            <h3>Puis-je exporter mes données ?</h3>
-            <p>Oui, les abonnés Premium peuvent exporter toutes leurs données de rêves dans différents formats pour les sauvegarder ou les analyser ailleurs.</p>
-            
-            <h3>Comment fonctionne l'analyse des rêves ?</h3>
-            <p>Notre application utilise une intelligence artificielle avancée pour analyser le contenu de vos rêves et proposer des interprétations basées sur différentes traditions psychologiques, spirituelles et culturelles.</p>
-            
-            <h3>Puis-je annuler mon abonnement à tout moment ?</h3>
-            <p>Oui, vous pouvez annuler votre abonnement à tout moment depuis les paramètres de l'application. Vous continuerez à bénéficier des fonctionnalités premium jusqu'à la fin de votre période de facturation en cours.</p>
-        </section>
-        
-        <section id="download">
-            <h2>Téléchargez DreamInsight dès maintenant</h2>
-            <p>Disponible sur iOS et Android. Commencez votre voyage onirique aujourd'hui.</p>
-            <div style="margin-top: 1.5rem;">
-                <a href="#" style="margin-right: 1rem;"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" height="50"></a>
-                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" height="50"></a>
-            </div>
-        </section>
+
     </div>
-    
+
     <footer class="footer">
-        <div class="container">
-            <div>
-                <p>&copy; 2025 DreamInsight. Tous droits réservés.</p>
-            </div>
-            <div>
-                <a href="#terms">Conditions d'utilisation</a>
-                <a href="#privacy">Politique de confidentialité</a>
-                <a href="#refund">Politique de remboursement</a>
-                <a href="#contact">Contact</a>
-            </div>
+        <div class="footer-links">
+            <a href="cgu.html">CGU</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+        <div class="footer-copyright">
+            © 2025 Onera. Tous droits réservés.
         </div>
     </footer>
-    
-    <!-- Pages légales (cachées mais accessibles pour Stripe) -->
-    <div id="terms" style="display: none;">
-        <h2>Conditions d'utilisation</h2>
-        <p>En utilisant l'application DreamInsight, vous acceptez les présentes conditions d'utilisation. L'application est fournie "telle quelle" et nous ne garantissons pas qu'elle fonctionnera sans interruption ou sans erreur.</p>
-        <p>Vous êtes responsable de la confidentialité de votre compte et de votre phrase de récupération. Les interprétations fournies par l'application sont à titre informatif uniquement et ne constituent pas un avis médical ou psychologique professionnel.</p>
-        <p>Nous nous réservons le droit de modifier ou d'interrompre tout aspect de l'application à tout moment.</p>
-    </div>
-    
-    <div id="privacy" style="display: none;">
-        <h2>Politique de confidentialité</h2>
-        <p>Chez DreamInsight, nous prenons votre vie privée très au sérieux. Vos rêves sont chiffrés sur votre appareil et nous n'y avons pas accès. Nous collectons des données d'utilisation anonymisées pour améliorer l'application.</p>
-        <p>Nous ne vendons jamais vos données à des tiers. Pour le traitement des paiements, nous utilisons Stripe qui possède sa propre politique de confidentialité.</p>
-    </div>
-    
-    <div id="refund" style="display: none;">
-        <h2>Politique de remboursement</h2>
-        <p>Si vous n'êtes pas satisfait de votre abonnement, vous pouvez demander un remboursement dans les 14 jours suivant votre achat initial. Pour les abonnements en cours, aucun remboursement ne sera effectué pour les périodes partiellement utilisées.</p>
-        <p>Pour demander un remboursement, veuillez nous contacter à support@dreaminsight.app en indiquant la raison de votre demande.</p>
-    </div>
-    
-    <div id="contact" style="display: none;">
-        <h2>Contact</h2>
-        <p>Pour toute question ou assistance, vous pouvez nous contacter à:</p>
-        <p>Email: support@dreaminsight.app</p>
-        <p>Adresse: 123 Avenue des Rêves, 75001 Paris, France</p>
-    </div>
-    
+
+    <script>
+        // Particle system
+        class ParticleSystem {
+            constructor() {
+                this.container = document.getElementById('particles');
+                this.particles = [];
+                this.maxParticles = {
+                    slow: 500,
+                    fast: 300,
+                    twinkle: 200,
+                    spark: 150,
+                    micro: 400,
+                    glow: 100
+                };
+                this.intervals = {};
+                this.init();
+            }
+
+            createParticle(type) {
+                const particle = document.createElement('div');
+                particle.className = `particle particle-${type}`;
+                
+                const size = this.getRandomSize(type);
+                const opacity = this.getRandomOpacity(type);
+                const blur = this.getRandomBlur(type);
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.opacity = opacity;
+                particle.style.filter = `blur(${blur}px)`;
+                
+                if (type === 'glow') {
+                    const colors = [
+                        'rgba(212, 181, 255, 0.6)',
+                        'rgba(255, 107, 107, 0.5)',
+                        'rgba(138, 138, 163, 0.4)'
+                    ];
+                    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                }
+                
+                if (type === 'spark') {
+                    const sparkX = (Math.random() - 0.5) * 200;
+                    const sparkY = (Math.random() - 0.5) * 200 - 50;
+                    particle.style.setProperty('--spark-x', `${sparkX}px`);
+                    particle.style.setProperty('--spark-y', `${sparkY}px`);
+                    particle.style.left = '50%';
+                    particle.style.top = '50%';
+                }
+                
+                if (type === 'twinkle') {
+                    particle.style.top = `${Math.random() * 100}%`;
+                    setTimeout(() => {
+                        if (particle.parentNode) {
+                            particle.remove();
+                        }
+                    }, 1000);
+                } else {
+                    particle.style.top = '100vh';
+                    setTimeout(() => {
+                        if (particle.parentNode) {
+                            particle.remove();
+                        }
+                    }, type === 'fast' ? 800 : (type === 'spark' ? 600 : (type === 'micro' ? 8000 : (type === 'glow' ? 12000 : 14000))));
+                }
+                
+                this.container.appendChild(particle);
+                this.particles.push(particle);
+                
+                // Clean up old particles
+                if (this.particles.length > Object.values(this.maxParticles).reduce((a, b) => a + b, 0)) {
+                    const oldParticle = this.particles.shift();
+                    if (oldParticle && oldParticle.parentNode) {
+                        oldParticle.remove();
+                    }
+                }
+            }
+
+            getRandomSize(type) {
+                switch (type) {
+                    case 'slow': return Math.random() * 4 + 2; // 2-6px
+                    case 'fast': return Math.random() * 2 + 1; // 1-3px
+                    case 'twinkle': return Math.random() * 2 + 1; // 1-3px
+                    case 'spark': return Math.random() * 1.7 + 0.8; // 0.8-2.5px
+                    case 'micro': return Math.random() * 0.8 + 0.5; // 0.5-1.3px
+                    case 'glow': return Math.random() * 8 + 4; // 4-12px
+                    default: return 2;
+                }
+            }
+
+            getRandomOpacity(type) {
+                switch (type) {
+                    case 'slow': return Math.random() * 0.3 + 0.2; // 0.2-0.5
+                    case 'fast': return Math.random() * 0.4 + 0.4; // 0.4-0.8
+                    case 'twinkle': return Math.random() * 0.6 + 0.4; // 0.4-1.0
+                    case 'spark': return Math.random() * 0.4 + 0.6; // 0.6-1.0
+                    case 'micro': return Math.random() * 0.2 + 0.1; // 0.1-0.3
+                    case 'glow': return Math.random() * 0.4 + 0.3; // 0.3-0.7
+                    default: return 0.5;
+                }
+            }
+
+            getRandomBlur(type) {
+                switch (type) {
+                    case 'slow': return Math.random() * 1.2 + 0.3; // 0.3-1.5px
+                    case 'fast': return Math.random() * 1.2 + 0.8; // 0.8-2.0px
+                    case 'twinkle': return Math.random() * 0.5 + 0.2; // 0.2-0.7px
+                    case 'spark': return Math.random() * 0.8 + 0.4; // 0.4-1.2px
+                    case 'micro': return Math.random() * 0.3 + 0.1; // 0.1-0.4px
+                    case 'glow': return Math.random() * 1.5 + 1.5; // 1.5-3.0px
+                    default: return 0.5;
+                }
+            }
+
+            init() {
+                // Create different types of particles at different intervals
+                this.intervals.slow = setInterval(() => {
+                    if (document.querySelectorAll('.particle-slow').length < this.maxParticles.slow) {
+                        this.createParticle('slow');
+                    }
+                }, 400);
+
+                this.intervals.fast = setInterval(() => {
+                    if (document.querySelectorAll('.particle-fast').length < this.maxParticles.fast) {
+                        this.createParticle('fast');
+                    }
+                }, 80);
+
+                this.intervals.twinkle = setInterval(() => {
+                    if (document.querySelectorAll('.particle-twinkle').length < this.maxParticles.twinkle) {
+                        this.createParticle('twinkle');
+                    }
+                }, 200);
+
+                this.intervals.spark = setInterval(() => {
+                    if (document.querySelectorAll('.particle-spark').length < this.maxParticles.spark) {
+                        this.createParticle('spark');
+                    }
+                }, 50);
+
+                this.intervals.micro = setInterval(() => {
+                    if (document.querySelectorAll('.particle-micro').length < this.maxParticles.micro) {
+                        this.createParticle('micro');
+                    }
+                }, 30);
+
+                this.intervals.glow = setInterval(() => {
+                    if (document.querySelectorAll('.particle-glow').length < this.maxParticles.glow) {
+                        this.createParticle('glow');
+                    }
+                }, 600);
+            }
+
+            destroy() {
+                Object.values(this.intervals).forEach(interval => clearInterval(interval));
+                this.container.innerHTML = '';
+            }
+        }
+
+        // Initialize particle system when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new ParticleSystem();
+        });
+
+        // Clean up when page unloads
+        window.addEventListener('beforeunload', () => {
+            const particleSystem = window.particleSystem;
+            if (particleSystem) {
+                particleSystem.destroy();
+            }
+        });
+    </script>
 </body>
 </html>

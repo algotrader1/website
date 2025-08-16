@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politique de Confidentialité - Onera</title>
+    <title>Privacy Policy - Onera</title>
     <style>
         * {
             margin: 0;
@@ -11,12 +11,31 @@
             box-sizing: border-box;
         }
         
+        :root {
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --text-secondary: #8a8aa3;
+            --border-color: #333333;
+            --highlight-bg: #1a1a1a;
+            --accent-color: #d4b5ff;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #fafafa;
+            --text-color: #1a1a1a;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --highlight-bg: #ffffff;
+            --accent-color: #6b46c1;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif;
             line-height: 1.6;
-            color: #1a1a1a;
-            background: #fafafa;
+            color: var(--text-color);
+            background: var(--bg-color);
             min-height: 100vh;
+            transition: all 0.3s ease;
         }
         
         .container {
@@ -37,39 +56,67 @@
         }
         
         .subtitle {
-            color: #666;
+            color: var(--text-secondary);
             font-size: 0.95rem;
             margin-bottom: 30px;
         }
         
+        .controls {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
         .lang-switcher {
             display: inline-flex;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             overflow: hidden;
+        }
+
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            background: var(--highlight-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        .theme-icon {
+            font-size: 16px;
         }
         
         .lang-btn {
             padding: 8px 20px;
             border: none;
-            background: white;
-            color: #666;
+            background: var(--highlight-bg);
+            color: var(--text-secondary);
             cursor: pointer;
             font-size: 0.9rem;
             transition: all 0.2s ease;
         }
         
         .lang-btn:first-child {
-            border-right: 1px solid #e0e0e0;
+            border-right: 1px solid var(--border-color);
         }
         
         .lang-btn.active {
-            background: #1a1a1a;
-            color: white;
+            background: var(--accent-color);
+            color: var(--bg-color);
         }
         
         .lang-btn:hover:not(.active) {
-            background: #f5f5f5;
+            background: var(--border-color);
         }
         
         .content {
@@ -85,19 +132,19 @@
             font-size: 1.5rem;
             font-weight: 500;
             margin: 48px 0 20px 0;
-            color: #1a1a1a;
+            color: var(--text-color);
         }
         
         h3 {
             font-size: 1.1rem;
             font-weight: 500;
             margin: 24px 0 12px 0;
-            color: #333;
+            color: var(--text-color);
         }
         
         p {
             margin-bottom: 16px;
-            color: #333;
+            color: var(--text-secondary);
             line-height: 1.7;
         }
         
@@ -107,52 +154,52 @@
         
         li {
             margin-bottom: 12px;
-            color: #333;
+            color: var(--text-secondary);
             line-height: 1.7;
         }
         
         .highlight-box {
-            background: #fff;
-            border: 1px solid #e0e0e0;
+            background: var(--highlight-bg);
+            border: 1px solid var(--border-color);
             padding: 24px;
             margin: 24px 0;
         }
         
         .security-box {
-            background: #f9f9f9;
-            border-left: 3px solid #4a4a4a;
+            background: var(--highlight-bg);
+            border-left: 3px solid var(--accent-color);
             padding: 24px;
             margin: 24px 0;
         }
         
         .rights-box {
-            background: #fff;
-            border: 1px solid #1a1a1a;
+            background: var(--highlight-bg);
+            border: 1px solid var(--accent-color);
             padding: 24px;
             margin: 24px 0;
         }
         
         strong {
             font-weight: 600;
-            color: #1a1a1a;
+            color: var(--text-color);
         }
         
         .contact {
             margin-top: 60px;
             padding-top: 30px;
-            border-top: 1px solid #e0e0e0;
+            border-top: 1px solid var(--border-color);
             text-align: center;
         }
         
         .contact a {
-            color: #1a1a1a;
+            color: var(--accent-color);
             text-decoration: none;
-            border-bottom: 1px solid #1a1a1a;
+            border-bottom: 1px solid var(--accent-color);
             font-weight: 500;
         }
         
         .contact a:hover {
-            border-bottom: 2px solid #1a1a1a;
+            border-bottom: 2px solid var(--accent-color);
         }
 
         .data-table {
@@ -162,53 +209,62 @@
         }
         
         .data-table th {
-            background: #f9f9f9;
+            background: var(--highlight-bg);
             padding: 12px;
             text-align: left;
             font-weight: 500;
-            border-bottom: 2px solid #e0e0e0;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--text-color);
         }
         
         .data-table td {
             padding: 12px;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
         }
         
         .badge {
             display: inline-block;
             padding: 2px 8px;
-            background: #f0f0f0;
+            background: var(--border-color);
             font-size: 0.85rem;
             font-weight: 500;
             border-radius: 4px;
+            color: var(--text-color);
         }
         
         .badge-encrypted {
-            background: #1a1a1a;
-            color: white;
+            background: var(--accent-color);
+            color: var(--bg-color);
         }
         
         .badge-optional {
-            background: #f0f0f0;
-            color: #666;
+            background: var(--border-color);
+            color: var(--text-secondary);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Politique de Confidentialité</h1>
+            <h1 id="page-title">Privacy Policy</h1>
             <p class="subtitle">Onera</p>
-            <p class="subtitle">Dernière mise à jour : 16 août 2025</p>
+            <p class="subtitle" id="last-updated">Last updated: August 16, 2025</p>
             
-            <div class="lang-switcher">
-                <button class="lang-btn active" onclick="switchLang('fr')">Français</button>
-                <button class="lang-btn" onclick="switchLang('en')">English</button>
+            <div class="controls">
+                <div class="lang-switcher">
+                    <button class="lang-btn" onclick="switchLang('fr')">Français</button>
+                    <button class="lang-btn active" onclick="switchLang('en')">English</button>
+                </div>
+                <div class="theme-toggle" onclick="toggleTheme()">
+                    <span class="theme-icon" id="theme-icon">☀️</span>
+                    <span id="theme-text">Light Mode</span>
+                </div>
             </div>
         </div>
 
         <!-- French Content -->
-        <div id="content-fr" class="content">
+        <div id="content-fr" class="content" style="display: none;">
             <h2>1. Responsable du Traitement</h2>
             <p>Onera (et/ou ses sociétés affiliées) est responsable du traitement de vos données personnelles conformément au Règlement Général sur la Protection des Données (RGPD) et autres réglementations applicables.</p>
 
@@ -340,7 +396,7 @@
         </div>
 
         <!-- English Content -->
-        <div id="content-en" class="content" style="display: none;">
+        <div id="content-en" class="content">
             <h2>1. Data Controller</h2>
             <p>Onera (and/or its affiliates) is the controller of your personal data in accordance with the General Data Protection Regulation (GDPR) and other applicable regulations.</p>
 
@@ -473,19 +529,47 @@
     </div>
 
     <script>
+        // Theme management
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            const themeText = document.getElementById('theme-text');
+            
+            if (body.getAttribute('data-theme') === 'light') {
+                body.removeAttribute('data-theme');
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Language management
         function switchLang(lang) {
             const frContent = document.getElementById('content-fr');
             const enContent = document.getElementById('content-en');
             const buttons = document.querySelectorAll('.lang-btn');
+            const pageTitle = document.getElementById('page-title');
+            const lastUpdated = document.getElementById('last-updated');
             
             if (lang === 'fr') {
                 frContent.style.display = 'block';
                 enContent.style.display = 'none';
                 document.documentElement.lang = 'fr';
+                pageTitle.textContent = 'Politique de Confidentialité';
+                lastUpdated.textContent = 'Dernière mise à jour : 16 août 2025';
+                document.title = 'Politique de Confidentialité - Onera';
             } else {
                 frContent.style.display = 'none';
                 enContent.style.display = 'block';
                 document.documentElement.lang = 'en';
+                pageTitle.textContent = 'Privacy Policy';
+                lastUpdated.textContent = 'Last updated: August 16, 2025';
+                document.title = 'Privacy Policy - Onera';
             }
             
             buttons.forEach(btn => {
@@ -495,7 +579,24 @@
                     btn.classList.remove('active');
                 }
             });
+            
+            localStorage.setItem('language', lang);
         }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default language to English if not already set
+            const savedLang = localStorage.getItem('language') || 'en';
+            if (savedLang !== 'en') {
+                switchLang(savedLang);
+            }
+            
+            // Set default theme to dark if not already set
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            if (savedTheme === 'light') {
+                toggleTheme();
+            }
+        });
     </script>
 </body>
 </html>
