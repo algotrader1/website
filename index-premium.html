@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Build: Onera Landing – Claude Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Onera - Your dreams speak. Time to listen.">
+    <title>Onera - Decode Your Dreams</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --black: #0B0B0B;
+            --white: #FFFFFF;
+            --mist: #C9CDD2;
+            --accent: #E5524A;
+            --dark-alt: #0E0F11;
+            --serif: 'Cormorant Garamond', serif;
+            --sans: 'Inter', sans-serif;
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--sans);
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Typography */
+        h1, h2 {
+            font-family: var(--serif);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        
+        h1 {
+            font-size: clamp(4rem, 12vw, 8rem);
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        .subtitle {
+            font-family: var(--serif);
+            font-weight: 300;
+            font-style: italic;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--mist);
+            letter-spacing: 0.03em;
+        }
+        
+        .punchline {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-weight: 300;
+            line-height: 1.8;
+            margin: 2rem 0;
+        }
+        
+        .quote {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            line-height: 1.6;
+            color: var(--white);
+            margin: 1.5rem 0;
+        }
+        
+        .small-text {
+            font-size: 0.9rem;
+            color: var(--mist);
+            letter-spacing: 0.02em;
+        }
+        
+        /* Layout */
+        .panel {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.5rem;
+            position: relative;
+            will-change: transform;
+        }
+        
+        .panel-content {
+            max-width: 920px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Panel Backgrounds */
+        .panel:nth-child(even) {
+            background: var(--dark-alt);
+        }
+        
+        .panel:nth-child(3) {
+            border-top: 1px solid rgba(201, 205, 210, 0.1);
+            border-bottom: 1px solid rgba(201, 205, 210, 0.1);
+        }
+        
+        .panel-hero {
+            background: radial-gradient(ellipse at top center, rgba(229, 82, 74, 0.05) 0%, transparent 50%),
+                        radial-gradient(ellipse at bottom, rgba(201, 205, 210, 0.03) 0%, transparent 60%),
+                        var(--black);
+        }
+        
+        .panel-final {
+            background: radial-gradient(ellipse at center, rgba(201, 205, 210, 0.05) 0%, transparent 60%),
+                        var(--black);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 180ms var(--ease);
+            letter-spacing: 0.02em;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: var(--white);
+            color: var(--black);
+        }
+        
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .link-subtle {
+            color: var(--mist);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-bottom: 1px solid transparent;
+            transition: all 180ms var(--ease);
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        
+        .link-subtle:hover {
+            color: var(--white);
+            border-bottom-color: var(--white);
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: linear-gradient(to bottom, var(--black) 0%, transparent 100%);
+            transition: transform 300ms var(--ease), opacity 300ms var(--ease);
+        }
+        
+        .header.hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        
+        .header-logo {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .header-cta {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            transition: all 180ms var(--ease);
+        }
+        
+        .header-cta:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+        }
+        
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 50;
+        }
+        
+        .progress-indicator {
+            width: 100%;
+            background: var(--accent);
+            transition: height 300ms var(--ease);
+            border-radius: 1px;
+        }
+        
+        .progress-dots {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .progress-dot {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            margin-left: -3px;
+            transition: all 200ms var(--ease);
+        }
+        
+        .progress-dot.active {
+            background: var(--white);
+            transform: scale(1.3);
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 300ms var(--ease);
+            z-index: 90;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+        }
+        
+        .back-to-top::before {
+            content: '↑';
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+        
+        /* Lists */
+        .bullet-list {
+            text-align: left;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        
+        .bullet-item {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            line-height: 1.7;
+        }
+        
+        .bullet-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        /* Method Steps */
+        .method-steps {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 300;
+            margin: 2rem 0;
+            letter-spacing: 0.06em;
+        }
+        
+        .method-step {
+            display: inline-block;
+            opacity: 0;
+            transform: scale(0.96);
+        }
+        
+        /* Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+        }
+        
+        .reveal.active {
+            animation: revealIn 0.9s var(--ease-out) forwards;
+        }
+        
+        @keyframes revealIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+        }
+        
+        .fade-in.active {
+            animation: fadeIn 0.6s var(--ease) forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .kinetic-word {
+            display: inline-block;
+            opacity: 0;
+            transform: scale(0.96);
+            letter-spacing: 0.06em;
+        }
+        
+        .kinetic-word.active {
+            animation: kineticReveal 0.6s var(--ease-out) forwards;
+        }
+        
+        @keyframes kineticReveal {
+            to {
+                opacity: 1;
+                transform: scale(1);
+                letter-spacing: 0;
+            }
+        }
+        
+        /* Parallax */
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 110%;
+            z-index: 1;
+            will-change: transform;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--mist);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-links {
+            margin-top: 1rem;
+        }
+        
+        .footer-links a {
+            color: var(--mist);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 180ms var(--ease);
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            
+            .parallax-bg {
+                transform: none !important;
+            }
+        }
+        
+        *:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .panel {
+                padding: 2rem 1rem;
+            }
+            
+            .progress-bar {
+                right: 1rem;
+            }
+            
+            .header {
+                padding: 1rem 1.5rem;
+            }
+            
+            .btn {
+                padding: 0.875rem 2rem;
+                font-size: 0.9rem;
+            }
+            
+            .bullet-list {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <a href="#" class="header-logo">Onera</a>
+        <a href="#" class="header-cta">Download</a>
+    </header>
+    
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-indicator" id="progress-indicator"></div>
+        <div class="progress-dots">
+            <span class="progress-dot active"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
+        </div>
+    </div>
+    
+    <!-- Back to Top -->
+    <div class="back-to-top" id="back-to-top" onclick="scrollToTop()"></div>
+    
+    <!-- Section 1: Hero -->
+    <section class="panel panel-hero" data-section="1">
+        <div class="parallax-bg"></div>
+        <div class="panel-content">
+            <p class="subtitle reveal" data-copy="hero-subtitle">Your dreams speak. Time to listen.</p>
+            <h1 class="reveal" data-delay="100" data-copy="hero-title">Onera</h1>
+            <div class="punchline reveal" data-delay="200" data-copy="hero-punchline">
+                Regrets are loud at 3 A.M.<br>
+                Dreams whisper the answer.<br>
+                You just keep hitting snooze.
+            </div>
+            <div class="reveal" data-delay="300">
+                <a href="#" class="btn btn-primary" data-copy="hero-cta">Download Onera</a>
+                <br>
+                <a href="#" class="link-subtle" data-copy="hero-link">I already have an account</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 2: Harvard -->
+    <section class="panel" data-section="2">
+        <div class="panel-content">
+            <h2 class="reveal" data-copy="harvard-title">Harvard warned you</h2>
+            <p class="quote reveal" data-delay="100" data-copy="harvard-quote">
+                "Dreams solve the problems you can't while awake."
+            </p>
+            <p class="small-text reveal" data-delay="200" data-copy="harvard-dark">
+                You had the cure every night. You threw it away every morning.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Section 3: REM Science -->
+    <section class="panel" data-section="3">
+        <div class="panel-content">
+            <h2 class="reveal" data-copy="rem-title">What you keep deleting</h2>
+            <div class="bullet-list">
+                <div class="bullet-item reveal" data-delay="100" data-copy="rem-bullet1">
+                    During REM, the negative self-talk is muted.
+                </div>
+                <div class="bullet-item reveal" data-delay="200" data-copy="rem-bullet2">
+                    Creativity spikes — non-linear solutions for real problems.
+                </div>
+                <div class="bullet-item reveal" data-delay="300" data-copy="rem-bullet3">
+                    It's the unfair advantage geniuses used. Now it's yours.
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 4: Method -->
+    <section class="panel" data-section="4">
+        <div class="panel-content">
+            <h2 class="reveal" data-copy="method-title">The method</h2>
+            <div class="method-steps" data-copy="method-steps">
+                <span class="method-step kinetic-word" data-delay="0">Wake.</span>
+                <span class="method-step kinetic-word" data-delay="200">Write.</span>
+                <span class="method-step kinetic-word" data-delay="400">Decode.</span>
+            </div>
+            <p class="reveal" data-delay="600" data-copy="method-subtitle">
+                2 minutes. 7 days. Fire back in your chest.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Section 5: Consequence -->
+    <section class="panel panel-final" data-section="5">
+        <div class="parallax-bg"></div>
+        <div class="panel-content">
+            <h2 class="reveal" data-copy="consequence-title">If you ignore this</h2>
+            <div class="punchline reveal" data-delay="100" data-copy="consequence-lines">
+                Same mask. Same loop. Same empty eyes.<br>
+                Fast-forward 20 years: a life you can't defend.<br>
+                And the worst part? You knew.
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 6: CTA Final -->
+    <section class="panel" data-section="6">
+        <div class="panel-content">
+            <h2 class="reveal" data-copy="final-title">Choose your future</h2>
+            <p class="punchline reveal" data-delay="100" data-copy="final-line">
+                Download Onera before tonight disappears—again.
+            </p>
+            <div class="reveal" data-delay="200">
+                <a href="#" class="btn btn-primary" data-copy="final-cta-primary">Start now</a>
+                <span style="margin: 0 1rem;"></span>
+                <a href="#" class="btn btn-secondary" data-copy="final-cta-secondary">Learn more</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Onera. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+        </div>
+    </footer>
+    
+    <!-- GSAP CDN (with fallback) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        // Feature Flags
+        const USE_GSAP = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
+        const ANIMATION_DURATION = 0.9; // Global animation duration multiplier
+        
+        // Copy Data Layer
+        const COPY = {
+            'hero-subtitle': 'Your dreams speak. Time to listen.',
+            'hero-title': 'Onera',
+            'hero-punchline': 'Regrets are loud at 3 A.M.<br>Dreams whisper the answer.<br>You just keep hitting snooze.',
+            'hero-cta': 'Download Onera',
+            'hero-link': 'I already have an account',
+            'harvard-title': 'Harvard warned you',
+            'harvard-quote': '"Dreams solve the problems you can\'t while awake."',
+            'harvard-dark': 'You had the cure every night. You threw it away every morning.',
+            'rem-title': 'What you keep deleting',
+            'rem-bullet1': 'During REM, the negative self-talk is muted.',
+            'rem-bullet2': 'Creativity spikes — non-linear solutions for real problems.',
+            'rem-bullet3': 'It\'s the unfair advantage geniuses used. Now it\'s yours.',
+            'method-title': 'The method',
+            'method-steps': '<span class="method-step kinetic-word" data-delay="0">Wake.</span> <span class="method-step kinetic-word" data-delay="200">Write.</span> <span class="method-step kinetic-word" data-delay="400">Decode.</span>',
+            'method-subtitle': '2 minutes. 7 days. Fire back in your chest.',
+            'consequence-title': 'If you ignore this',
+            'consequence-lines': 'Same mask. Same loop. Same empty eyes.<br>Fast-forward 20 years: a life you can\'t defend.<br>And the worst part? You knew.',
+            'final-title': 'Choose your future',
+            'final-line': 'Download Onera before tonight disappears—again.',
+            'final-cta-primary': 'Start now',
+            'final-cta-secondary': 'Learn more'
+        };
+        
+        // Apply copy from data layer
+        document.querySelectorAll('[data-copy]').forEach(el => {
+            const key = el.getAttribute('data-copy');
+            if (COPY[key]) {
+                el.innerHTML = COPY[key];
+            }
+        });
+        
+        // Check reduced motion preference
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        // Header hide/show on scroll
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+        
+        function updateHeader() {
+            const header = document.getElementById('header');
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+            
+            lastScrollY = currentScrollY;
+            ticking = false;
+        }
+        
+        function requestHeaderUpdate() {
+            if (!ticking) {
+                window.requestAnimationFrame(updateHeader);
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', requestHeaderUpdate);
+        
+        // Progress Bar
+        function updateProgress() {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-indicator').style.height = scrolled + '%';
+            
+            // Update dots
+            const sections = document.querySelectorAll('.panel');
+            const dots = document.querySelectorAll('.progress-dot');
+            
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                const isInView = rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+                
+                if (isInView && dots[index]) {
+                    dots.forEach(d => d.classList.remove('active'));
+                    dots[index].classList.add('active');
+                }
+            });
+            
+            // Back to top visibility
+            const backToTop = document.getElementById('back-to-top');
+            if (winScroll > window.innerHeight * 2) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        }
+        
+        window.addEventListener('scroll', updateProgress);
+        updateProgress();
+        
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Animation Setup
+        if (USE_GSAP && !prefersReducedMotion) {
+            // GSAP Animations
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Reveal animations
+            gsap.utils.toArray('.reveal').forEach(elem => {
+                const delay = elem.getAttribute('data-delay') || 0;
+                
+                gsap.from(elem, {
+                    y: 24,
+                    opacity: 0,
+                    duration: ANIMATION_DURATION,
+                    delay: parseInt(delay) / 1000,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: 'top 80%',
+                        once: true
+                    }
+                });
+            });
+            
+            // Kinetic word animations
+            gsap.utils.toArray('.kinetic-word').forEach(word => {
+                const delay = word.getAttribute('data-delay') || 0;
+                
+                gsap.fromTo(word, 
+                    {
+                        opacity: 0,
+                        scale: 0.96,
+                        letterSpacing: '0.06em'
+                    },
+                    {
+                        opacity: 1,
+                        scale: 1,
+                        letterSpacing: '0em',
+                        duration: 0.6,
+                        delay: parseInt(delay) / 1000,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: word.parentElement,
+                            start: 'top 80%',
+                            once: true
+                        }
+                    }
+                );
+            });
+            
+            // Parallax effect
+            gsap.utils.toArray('.parallax-bg').forEach(bg => {
+                gsap.to(bg, {
+                    yPercent: -10,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: bg.parentElement,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: true
+                    }
+                });
+            });
+            
+        } else {
+            // Fallback: IntersectionObserver animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -10% 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = entry.target.getAttribute('data-delay') || 0;
+                        setTimeout(() => {
+                            entry.target.classList.add('active');
+                        }, parseInt(delay));
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all animated elements
+            document.querySelectorAll('.reveal, .fade-in, .kinetic-word').forEach(el => {
+                observer.observe(el);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -8,9 +8,9 @@
         :root {
             --primary-bg: #000000;
             --text-primary: #FFFFFF;
-            --text-secondary: #8A8AA3;
-            --accent-purple: #D4B5FF;
-            --accent-red: #FF6B6B;
+            --text-secondary: #999999;
+            --accent: #FFFFFF;
+            --border-color: rgba(255, 255, 255, 0.08);
         }
         
         * {
@@ -21,40 +21,16 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 70%, #000000 100%);
+            background: var(--primary-bg);
             color: var(--text-primary);
-            line-height: 1.6;
+            line-height: 1.8;
             overflow-x: hidden;
             position: relative;
             min-height: 100vh;
+            font-weight: 300;
+            letter-spacing: 0.01em;
         }
 
-        /* Animated background gradient */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(212, 181, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 107, 107, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 40% 60%, rgba(138, 138, 163, 0.05) 0%, transparent 50%);
-            animation: backgroundShift 20s ease-in-out infinite;
-            z-index: 0;
-        }
-
-        @keyframes backgroundShift {
-            0%, 100% {
-                transform: scale(1) rotate(0deg);
-                opacity: 0.3;
-            }
-            50% {
-                transform: scale(1.1) rotate(1deg);
-                opacity: 0.6;
-            }
-        }
 
         /* Particle Container */
         .particles-container {
@@ -69,9 +45,10 @@
 
         .particle {
             position: absolute;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 50%;
             pointer-events: none;
+            will-change: transform, opacity;
         }
 
         /* Micro particles (dust) */
@@ -98,7 +75,7 @@
         .particle-glow {
             animation: float-glow 12s ease-in-out infinite;
             filter: blur(2px);
-            box-shadow: 0 0 20px rgba(212, 181, 255, 0.4);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
         }
 
         @keyframes float-glow {
@@ -107,14 +84,60 @@
                 opacity: 0;
             }
             20% {
-                opacity: 0.6;
+                opacity: 0.3;
             }
             80% {
-                opacity: 0.6;
+                opacity: 0.3;
             }
             100% {
                 transform: translateY(-100px) translateX(30px) scale(1.5);
                 opacity: 0;
+            }
+        }
+
+        /* Bubble particles (slow floating orbs) */
+        .particle-bubble {
+            animation: float-bubble 18s ease-in-out infinite;
+            filter: blur(3px);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 70%, transparent 100%);
+        }
+
+        @keyframes float-bubble {
+            0% {
+                transform: translateY(110vh) translateX(0) scale(0.3);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.2;
+            }
+            85% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(var(--bubble-drift, 40px)) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Sparkle particles (quick bright flashes) */
+        .particle-sparkle {
+            animation: sparkle-flash 0.8s ease-out;
+            filter: blur(0.5px);
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        @keyframes sparkle-flash {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(0deg);
+            }
+            20% {
+                opacity: 1;
+                transform: scale(1.2) rotate(45deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.2) rotate(180deg) translateY(-20px);
             }
         }
 
@@ -198,30 +221,35 @@
         .content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 920px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 3rem 2rem;
         }
 
         .hero {
             text-align: center;
-            padding: 4rem 0 6rem;
+            padding: 6rem 0 8rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .logo {
-            font-size: 56px;
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 200;
-            letter-spacing: -0.64px;
+            letter-spacing: -0.02em;
             margin-bottom: 1rem;
             color: var(--text-primary);
         }
 
         .tagline {
-            font-size: 32px;
+            font-size: clamp(1.125rem, 3vw, 1.5rem);
             font-weight: 300;
             color: var(--text-secondary);
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             font-style: italic;
+            letter-spacing: 0.02em;
         }
 
         .cta-button {
@@ -229,26 +257,27 @@
             background: var(--text-primary);
             color: var(--primary-bg);
             padding: 1rem 2.5rem;
-            border-radius: 4px;
+            border-radius: 2px;
             text-decoration: none;
-            font-weight: 500;
-            font-size: 18px;
-            transition: all 0.3s ease;
+            font-weight: 400;
+            font-size: 1rem;
+            transition: all 0.2s ease;
             border: 1px solid var(--text-primary);
             cursor: pointer;
-            letter-spacing: 0;
+            letter-spacing: 0.02em;
         }
 
         .cta-button:hover {
             background: transparent;
             color: var(--text-primary);
+            transform: translateY(-1px);
         }
 
         .section {
             margin: 6rem 0;
-            padding: 3rem 0;
+            padding: 4rem 0;
             opacity: 0;
-            animation: fadeInUp 0.6s ease-out forwards;
+            animation: fadeInUp 0.8s ease-out forwards;
         }
 
         .section:nth-child(2) { animation-delay: 0.2s; }
@@ -294,30 +323,39 @@
         /* Clean, story-focused styling */
         .separator {
             text-align: center;
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.3);
-            margin: 4rem 0;
-            letter-spacing: 2px;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.2);
+            margin: 6rem 0;
+            letter-spacing: 4px;
+            font-weight: 300;
         }
 
         .story-text {
-            font-size: 20px;
+            font-size: clamp(1.125rem, 2.5vw, 1.25rem);
             font-weight: 300;
             line-height: 1.8;
             margin: 2rem 0;
             color: var(--text-primary);
-            text-align: left;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .quote-text {
-            font-size: 20px;
-            font-weight: 400;
+            font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+            font-weight: 300;
             line-height: 1.8;
-            margin: 2rem 0;
+            margin: 3rem 0;
             color: var(--text-primary);
             text-align: center;
             font-style: italic;
-            padding: 1rem 0;
+            padding: 2rem 0;
+            border-left: 1px solid var(--border-color);
+            padding-left: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .final-cta {
@@ -355,13 +393,11 @@
         }
 
         .footer {
-            background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.05));
-            padding: 3rem 0;
+            background: transparent;
+            padding: 4rem 0 2rem;
             text-align: center;
-            margin-top: 6rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+            margin-top: 8rem;
+            border-top: 1px solid var(--border-color);
         }
 
         .footer-links {
@@ -561,12 +597,14 @@
                 this.container = document.getElementById('particles');
                 this.particles = [];
                 this.maxParticles = {
-                    slow: 500,
-                    fast: 300,
-                    twinkle: 200,
-                    spark: 150,
-                    micro: 400,
-                    glow: 100
+                    slow: 15,
+                    fast: 12,
+                    twinkle: 8,
+                    spark: 6,
+                    micro: 20,
+                    glow: 5,
+                    bubble: 12,
+                    sparkle: 8
                 };
                 this.intervals = {};
                 this.init();
@@ -587,12 +625,15 @@
                 particle.style.filter = `blur(${blur}px)`;
                 
                 if (type === 'glow') {
-                    const colors = [
-                        'rgba(212, 181, 255, 0.6)',
-                        'rgba(255, 107, 107, 0.5)',
-                        'rgba(138, 138, 163, 0.4)'
-                    ];
-                    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    particle.style.background = 'rgba(255, 255, 255, 0.08)';
+                } else if (type === 'sparkle') {
+                    // Position sparkles randomly across the screen
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.top = Math.random() * 100 + '%';
+                } else if (type === 'bubble') {
+                    // Give bubbles a slight horizontal drift
+                    const drift = (Math.random() - 0.5) * 60;
+                    particle.style.setProperty('--bubble-drift', drift + 'px');
                 }
                 
                 if (type === 'spark') {
@@ -617,7 +658,7 @@
                         if (particle.parentNode) {
                             particle.remove();
                         }
-                    }, type === 'fast' ? 800 : (type === 'spark' ? 600 : (type === 'micro' ? 8000 : (type === 'glow' ? 12000 : 14000))));
+                    }, type === 'fast' ? 800 : (type === 'spark' ? 600 : (type === 'micro' ? 8000 : (type === 'glow' ? 12000 : (type === 'bubble' ? 18000 : (type === 'sparkle' ? 800 : 14000))))));
                 }
                 
                 this.container.appendChild(particle);
@@ -640,6 +681,8 @@
                     case 'spark': return Math.random() * 1.7 + 0.8; // 0.8-2.5px
                     case 'micro': return Math.random() * 0.8 + 0.5; // 0.5-1.3px
                     case 'glow': return Math.random() * 8 + 4; // 4-12px
+                    case 'bubble': return Math.random() * 15 + 8; // 8-23px
+                    case 'sparkle': return Math.random() * 3 + 1; // 1-4px
                     default: return 2;
                 }
             }
@@ -652,6 +695,8 @@
                     case 'spark': return Math.random() * 0.4 + 0.6; // 0.6-1.0
                     case 'micro': return Math.random() * 0.2 + 0.1; // 0.1-0.3
                     case 'glow': return Math.random() * 0.4 + 0.3; // 0.3-0.7
+                    case 'bubble': return Math.random() * 0.2 + 0.1; // 0.1-0.3
+                    case 'sparkle': return Math.random() * 0.4 + 0.6; // 0.6-1.0
                     default: return 0.5;
                 }
             }
@@ -664,6 +709,8 @@
                     case 'spark': return Math.random() * 0.8 + 0.4; // 0.4-1.2px
                     case 'micro': return Math.random() * 0.3 + 0.1; // 0.1-0.4px
                     case 'glow': return Math.random() * 1.5 + 1.5; // 1.5-3.0px
+                    case 'bubble': return Math.random() * 2 + 2; // 2-4px
+                    case 'sparkle': return Math.random() * 0.3 + 0.2; // 0.2-0.5px
                     default: return 0.5;
                 }
             }
@@ -674,37 +721,49 @@
                     if (document.querySelectorAll('.particle-slow').length < this.maxParticles.slow) {
                         this.createParticle('slow');
                     }
-                }, 400);
+                }, 2000);
 
                 this.intervals.fast = setInterval(() => {
                     if (document.querySelectorAll('.particle-fast').length < this.maxParticles.fast) {
                         this.createParticle('fast');
                     }
-                }, 80);
+                }, 800);
 
                 this.intervals.twinkle = setInterval(() => {
                     if (document.querySelectorAll('.particle-twinkle').length < this.maxParticles.twinkle) {
                         this.createParticle('twinkle');
                     }
-                }, 200);
+                }, 1500);
 
                 this.intervals.spark = setInterval(() => {
                     if (document.querySelectorAll('.particle-spark').length < this.maxParticles.spark) {
                         this.createParticle('spark');
                     }
-                }, 50);
+                }, 300);
 
                 this.intervals.micro = setInterval(() => {
                     if (document.querySelectorAll('.particle-micro').length < this.maxParticles.micro) {
                         this.createParticle('micro');
                     }
-                }, 30);
+                }, 600);
 
                 this.intervals.glow = setInterval(() => {
                     if (document.querySelectorAll('.particle-glow').length < this.maxParticles.glow) {
                         this.createParticle('glow');
                     }
-                }, 600);
+                }, 3000);
+
+                this.intervals.bubble = setInterval(() => {
+                    if (document.querySelectorAll('.particle-bubble').length < this.maxParticles.bubble) {
+                        this.createParticle('bubble');
+                    }
+                }, 2500);
+
+                this.intervals.sparkle = setInterval(() => {
+                    if (document.querySelectorAll('.particle-sparkle').length < this.maxParticles.sparkle) {
+                        this.createParticle('sparkle');
+                    }
+                }, 1200);
             }
 
             destroy() {
