@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Opening DreamInsight...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+        }
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top: 3px solid #fff;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 30px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .button {
+            background: #fff;
+            color: #000;
+            padding: 16px 32px;
+            border-radius: 14px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="spinner"></div>
+        <h1>✅ Email Confirmed!</h1>
+        <p>Redirecting to DreamInsight...</p>
+        <div id="manual-button" style="display: none;">
+            <a href="#" id="open-app" class="button">Open DreamInsight</a>
+        </div>
+    </div>
+    
+    <script>
+        // Récupérer TOUS les paramètres (query string ET hash)
+        const urlParams = new URLSearchParams(window.location.search);
+        const hashParams = new URLSearchParams(window.location.hash.substring(1));
+        
+        // Combiner tous les paramètres
+        const allParams = new URLSearchParams();
+        
+        // Ajouter les paramètres de l'URL
+        for (const [key, value] of urlParams) {
+            allParams.set(key, value);
+        }
+        
+        // Ajouter les paramètres du hash (Supabase les met parfois là)
+        for (const [key, value] of hashParams) {
+            allParams.set(key, value);
+        }
+        
+        // Toujours ajouter new_account=true pour la création de compte
+        if (!allParams.has('new_account')) {
+            allParams.set('new_account', 'true');
+        }
+        
+        // Construire l'URL de deep link avec tous les paramètres
+        const deepLink = 'dreaminsight://auth-callback?' + allParams.toString();
+        
+        console.log('Deep link URL:', deepLink);
+        console.log('All params:', allParams.toString());
+        
+        // Mettre à jour le bouton manuel
+        document.getElementById('open-app').href = deepLink;
+        
+        // Fonction pour tenter la redirection
+        function attemptRedirect() {
+            // Méthode 1: Changement direct de location
+            window.location.href = deepLink;
+            
+            // Méthode 2: Utilisation d'une iframe (pour iOS)
+            setTimeout(() => {
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = deepLink;
+                document.body.appendChild(iframe);
+                
+                // Nettoyer après 1 seconde
+                setTimeout(() => {
+                    if (iframe.parentNode) {
+                        iframe.parentNode.removeChild(iframe);
+                    }
+                }, 1000);
+            }, 100);
+        }
+        
+        // Tenter la redirection immédiatement
+        attemptRedirect();
+        
+        // Afficher le bouton manuel après 3 secondes si toujours sur la page
+        setTimeout(() => {
+            document.getElementById('manual-button').style.display = 'block';
+        }, 3000);
+        
+        // Re-tenter quand la page devient visible (utile quand on revient de l'app mail)
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) {
+                attemptRedirect();
+            }
+        });
+        
+        // Re-tenter au focus de la fenêtre
+        window.addEventListener('focus', () => {
+            attemptRedirect();
+        });
+    </script>
+</body>
+</html>
