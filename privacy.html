@@ -380,7 +380,7 @@
                     <li><strong>Vous opposer</strong> à certains traitements</li>
                     <li><strong>Retirer votre consentement</strong> à tout moment</li>
                 </ul>
-                <p>Pour exercer vos droits : <strong>contact@onera.app</strong></p>
+                <p>Pour exercer vos droits : <strong>contact@dreaminsight.app</strong></p>
             </div>
 
             <h2>8. Conservation des Données</h2>
@@ -409,7 +409,7 @@
 
             <div class="contact">
                 <p>Pour toute question concernant vos données</p>
-                <a href="mailto:contact@onera.app">contact@onera.app</a>
+                <a href="mailto:contact@dreaminsight.app">contact@dreaminsight.app</a>
             </div>
         </div>
 
@@ -512,7 +512,7 @@
                     <li><strong>Object</strong> to certain processing</li>
                     <li><strong>Withdraw consent</strong> at any time</li>
                 </ul>
-                <p>To exercise your rights: <strong>contact@onera.app</strong></p>
+                <p>To exercise your rights: <strong>contact@dreaminsight.app</strong></p>
             </div>
 
             <h2>8. Data Retention</h2>
@@ -541,7 +541,7 @@
 
             <div class="contact">
                 <p>For any questions about your data</p>
-                <a href="mailto:contact@onera.app">contact@onera.app</a>
+                <a href="mailto:contact@dreaminsight.app">contact@dreaminsight.app</a>
             </div>
         </div>
     </div>
@@ -603,10 +603,13 @@
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
-            // Set default language to English if not already set
-            const savedLang = localStorage.getItem('language') || 'en';
-            if (savedLang !== 'en') {
-                switchLang(savedLang);
+            // Always default to English unless French was explicitly saved
+            const savedLang = localStorage.getItem('language');
+            if (savedLang === 'fr') {
+                switchLang('fr');
+            } else {
+                // Ensure English is default
+                localStorage.setItem('language', 'en');
             }
             
             // Set default theme to dark if not already set

@@ -299,7 +299,7 @@
 
             <div class="contact">
                 <p>Pour toute question ou préoccupation</p>
-                <a href="mailto:contact@onera.app">contact@onera.app</a>
+                <a href="mailto:contact@dreaminsight.app">contact@dreaminsight.app</a>
             </div>
         </div>
 
@@ -370,7 +370,7 @@
 
             <div class="contact">
                 <p>For questions or concerns</p>
-                <a href="mailto:contact@onera.app">contact@onera.app</a>
+                <a href="mailto:contact@dreaminsight.app">contact@dreaminsight.app</a>
             </div>
         </div>
     </div>
@@ -432,10 +432,13 @@
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
-            // Set default language to English if not already set
-            const savedLang = localStorage.getItem('language') || 'en';
-            if (savedLang !== 'en') {
-                switchLang(savedLang);
+            // Always default to English unless French was explicitly saved
+            const savedLang = localStorage.getItem('language');
+            if (savedLang === 'fr') {
+                switchLang('fr');
+            } else {
+                // Ensure English is default
+                localStorage.setItem('language', 'en');
             }
             
             // Set default theme to dark if not already set

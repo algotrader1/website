@@ -217,6 +217,40 @@
             }
         }
 
+        /* Top Navigation */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 50%, transparent 100%);
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 2px;
+            background: transparent;
+        }
+        
+        .nav-link:hover {
+            color: rgba(255, 255, 255, 1);
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.03);
+            transform: translateY(-1px);
+        }
+        
         /* Content styling */
         .content {
             position: relative;
@@ -423,6 +457,15 @@
 
         /* Mobile responsiveness */
         @media (max-width: 768px) {
+            .top-nav {
+                padding: 1.5rem 1rem;
+            }
+            
+            .nav-link {
+                font-size: 0.85rem;
+                padding: 0.4rem 1rem;
+            }
+            
             .content {
                 padding: 1rem;
             }
@@ -456,6 +499,11 @@
 </head>
 <body>
     <div class="particles-container" id="particles"></div>
+    
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <a href="/founders-letter.html" class="nav-link">Founder's Letter</a>
+    </nav>
     
     <div class="content">
         <section class="hero">
