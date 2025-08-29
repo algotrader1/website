@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onera - Your dreams speak. Time to listen.</title>
+    <title>ONERA - The best app for self-knowledge</title>
     <style>
         :root {
             --primary-bg: #000000;
             --text-primary: #FFFFFF;
             --text-secondary: #999999;
+            --text-muted: #666666;
             --accent: #FFFFFF;
             --border-color: rgba(255, 255, 255, 0.08);
+            --gradient-gold: linear-gradient(135deg, #FFD700, #FFA500);
         }
         
         * {
@@ -20,19 +22,20 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
             background: var(--primary-bg);
             color: var(--text-primary);
-            line-height: 1.8;
+            line-height: 1.6;
             overflow-x: hidden;
             position: relative;
             min-height: 100vh;
             font-weight: 300;
-            letter-spacing: 0.01em;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-
-        /* Particle Container */
+        /* Elegant Particle Container */
         .particles-container {
             position: fixed;
             top: 0;
@@ -41,179 +44,37 @@
             height: 100%;
             pointer-events: none;
             z-index: 1;
+            opacity: 0.3;
         }
 
         .particle {
             position: absolute;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             pointer-events: none;
             will-change: transform, opacity;
         }
 
-        /* Micro particles (dust) */
-        .particle-micro {
-            animation: float-micro 8s linear infinite;
-            filter: blur(0.2px);
+        /* Subtle floating particles */
+        .particle-float {
+            animation: float-elegant 20s linear infinite;
+            filter: blur(1px);
         }
 
-        @keyframes float-micro {
-            0% {
-                transform: translateY(100vh) translateX(0) rotate(0deg);
-                opacity: 0.1;
-            }
-            50% {
-                opacity: 0.3;
-            }
-            100% {
-                transform: translateY(-50px) translateX(10px) rotate(180deg);
-                opacity: 0;
-            }
-        }
-
-        /* Glow particles (orbs) */
-        .particle-glow {
-            animation: float-glow 12s ease-in-out infinite;
-            filter: blur(2px);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-        }
-
-        @keyframes float-glow {
-            0% {
-                transform: translateY(100vh) translateX(0) scale(0.5);
-                opacity: 0;
-            }
-            20% {
-                opacity: 0.3;
-            }
-            80% {
-                opacity: 0.3;
-            }
-            100% {
-                transform: translateY(-100px) translateX(30px) scale(1.5);
-                opacity: 0;
-            }
-        }
-
-        /* Bubble particles (slow floating orbs) */
-        .particle-bubble {
-            animation: float-bubble 18s ease-in-out infinite;
-            filter: blur(3px);
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 70%, transparent 100%);
-        }
-
-        @keyframes float-bubble {
-            0% {
-                transform: translateY(110vh) translateX(0) scale(0.3);
-                opacity: 0;
-            }
-            15% {
-                opacity: 0.2;
-            }
-            85% {
-                opacity: 0.2;
-            }
-            100% {
-                transform: translateY(-10vh) translateX(var(--bubble-drift, 40px)) scale(1.2);
-                opacity: 0;
-            }
-        }
-
-        /* Sparkle particles (quick bright flashes) */
-        .particle-sparkle {
-            animation: sparkle-flash 0.8s ease-out;
-            filter: blur(0.5px);
-            background: rgba(255, 255, 255, 0.6);
-        }
-
-        @keyframes sparkle-flash {
-            0% {
-                opacity: 0;
-                transform: scale(0.5) rotate(0deg);
-            }
-            20% {
-                opacity: 1;
-                transform: scale(1.2) rotate(45deg);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(0.2) rotate(180deg) translateY(-20px);
-            }
-        }
-
-        /* Slow particles (cosmic bubbles) */
-        .particle-slow {
-            animation: float-up-slow 14s linear infinite;
-            filter: blur(0.5px);
-        }
-
-        @keyframes float-up-slow {
+        @keyframes float-elegant {
             0% {
                 transform: translateY(100vh) translateX(0);
-                opacity: 0.2;
+                opacity: 0;
             }
             10% {
-                opacity: 0.5;
+                opacity: 0.3;
             }
             90% {
-                opacity: 0.5;
+                opacity: 0.3;
             }
             100% {
-                transform: translateY(-100px) translateX(20px);
+                transform: translateY(-100px) translateX(30px);
                 opacity: 0;
-            }
-        }
-
-        /* Fast particles (trails) */
-        .particle-fast {
-            animation: float-up-fast 0.8s linear infinite;
-            filter: blur(1.2px);
-        }
-
-        @keyframes float-up-fast {
-            0% {
-                transform: translateY(100vh);
-                opacity: 0.4;
-            }
-            50% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-100px);
-                opacity: 0;
-            }
-        }
-
-        /* Twinkling particles (stars) */
-        .particle-twinkle {
-            animation: twinkle 0.4s ease-in-out infinite alternate;
-        }
-
-        @keyframes twinkle {
-            0% {
-                opacity: 0.2;
-                transform: scale(0.8);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-        }
-
-        /* Spark particles (explosion) */
-        .particle-spark {
-            animation: spark 0.6s ease-out;
-            filter: blur(0.8px);
-        }
-
-        @keyframes spark {
-            0% {
-                opacity: 1;
-                transform: scale(1) translate(0, 0);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(0.3) translate(var(--spark-x), var(--spark-y));
             }
         }
 
@@ -227,104 +88,158 @@
             padding: 2rem 3rem;
             display: flex;
             justify-content: center;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 50%, transparent 100%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 50%, transparent 100%);
+            backdrop-filter: blur(10px);
         }
         
         .nav-link {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.5);
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 300;
-            letter-spacing: 0.08em;
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 2px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 0.75rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
             background: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .nav-link:hover:before {
+            width: 100%;
+            height: 100%;
         }
         
         .nav-link:hover {
-            color: rgba(255, 255, 255, 1);
-            border-color: rgba(255, 255, 255, 0.4);
-            background: rgba(255, 255, 255, 0.03);
-            transform: translateY(-1px);
+            color: rgba(255, 255, 255, 0.95);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
         }
         
         /* Content styling */
         .content {
             position: relative;
             z-index: 2;
-            max-width: 920px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 3rem 2rem;
         }
 
         .hero {
             text-align: center;
-            padding: 6rem 0 8rem;
+            padding: 8rem 0 6rem;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            position: relative;
         }
 
         .logo {
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 200;
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
+            font-size: clamp(4rem, 10vw, 7rem);
+            font-weight: 100;
+            letter-spacing: 0.2em;
+            margin-bottom: 2rem;
             color: var(--text-primary);
+            animation: fadeInScale 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-transform: uppercase;
+            background: linear-gradient(180deg, #FFFFFF 0%, #CCCCCC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .tagline {
-            font-size: clamp(1.125rem, 3vw, 1.5rem);
-            font-weight: 300;
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-weight: 200;
             color: var(--text-secondary);
-            margin-bottom: 4rem;
-            font-style: italic;
+            margin-bottom: 1rem;
             letter-spacing: 0.02em;
+            animation: fadeInUp 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+            line-height: 1.4;
+        }
+
+        .tagline-sub {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            font-weight: 300;
+            color: var(--text-muted);
+            letter-spacing: 0.01em;
+            animation: fadeInUp 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+            margin-bottom: 4rem;
         }
 
         .cta-button {
             display: inline-block;
-            background: var(--text-primary);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
             color: var(--primary-bg);
-            padding: 1rem 2.5rem;
-            border-radius: 2px;
+            padding: 1.25rem 3rem;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 400;
+            font-weight: 500;
             font-size: 1rem;
-            transition: all 0.2s ease;
-            border: 1px solid var(--text-primary);
-            cursor: pointer;
             letter-spacing: 0.02em;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid transparent;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
         }
 
         .cta-button:hover {
             background: transparent;
             color: var(--text-primary);
-            transform: translateY(-1px);
+            border-color: var(--text-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
         }
 
         .section {
-            margin: 6rem 0;
-            padding: 4rem 0;
+            margin: 8rem 0;
+            padding: 6rem 0;
             opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            position: relative;
         }
 
-        .section:nth-child(2) { animation-delay: 0.2s; }
-        .section:nth-child(3) { animation-delay: 0.4s; }
-        .section:nth-child(4) { animation-delay: 0.6s; }
-        .section:nth-child(5) { animation-delay: 0.8s; }
-        .section:nth-child(6) { animation-delay: 1.0s; }
-        .section:nth-child(7) { animation-delay: 1.2s; }
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+        .section:nth-child(4) { animation-delay: 0.3s; }
+        .section:nth-child(5) { animation-delay: 0.4s; }
+        .section:nth-child(6) { animation-delay: 0.5s; }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -333,105 +248,285 @@
         }
 
         .section-title {
-            font-size: 28px;
-            font-weight: 400;
-            margin-bottom: 2rem;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 200;
+            margin-bottom: 1rem;
             text-align: center;
-            letter-spacing: -0.3px;
+            letter-spacing: 0.1em;
             color: var(--text-primary);
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--text-primary), transparent);
+        }
+
+        .section-subtitle {
+            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+            font-weight: 200;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 3rem;
+            letter-spacing: 0.02em;
         }
 
         .section-content {
-            font-size: 18px;
+            font-size: 1.125rem;
             line-height: 1.8;
             color: var(--text-primary);
             margin-bottom: 2rem;
-        }
-
-        .section-content.large {
-            font-size: 22px;
-            font-weight: 300;
-            text-align: center;
-        }
-
-        /* Clean, story-focused styling */
-        .separator {
-            text-align: center;
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.2);
-            margin: 6rem 0;
-            letter-spacing: 4px;
-            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .story-text {
-            font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
             font-weight: 300;
             line-height: 1.8;
             margin: 2rem 0;
-            color: var(--text-primary);
+            color: rgba(255, 255, 255, 0.9);
             text-align: center;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            letter-spacing: 0.01em;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.05));
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 200;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #FFFFFF, #CCCCCC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* History Quotes */
+        #quotes-container {
+            min-height: 250px;
+            margin: 4rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 3rem;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.03), transparent);
+            border-radius: 20px;
+        }
+
+        .quote-item {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 2rem;
+        }
+
+        .quote-item.active {
+            opacity: 1;
+        }
+
+        .quote-author {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            opacity: 0.9;
         }
 
         .quote-text {
-            font-size: clamp(1.125rem, 2.5vw, 1.25rem);
-            font-weight: 300;
+            font-size: 1.125rem;
             line-height: 1.8;
-            margin: 3rem 0;
-            color: var(--text-primary);
-            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
             font-style: italic;
-            padding: 2rem 0;
-            border-left: 1px solid var(--border-color);
-            padding-left: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 700px;
+            margin: 0 auto;
+            letter-spacing: 0.01em;
         }
 
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .feature-card:hover:before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            letter-spacing: 0.02em;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Separator */
+        .separator {
+            text-align: center;
+            margin: 6rem 0;
+            position: relative;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 20%, rgba(255, 255, 255, 0.1) 50%, transparent 80%);
+        }
+
+        .separator-ornament {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--primary-bg);
+            padding: 0 2rem;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.2);
+            letter-spacing: 0.3em;
+        }
+
+        /* Final CTA */
         .final-cta {
             text-align: center;
-            margin: 3rem 0;
+            padding: 4rem 0;
+            position: relative;
         }
 
-        .final-cta .story-text {
-            text-align: center;
-            font-size: 22px;
+        .final-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 200;
             margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-primary);
         }
 
-        .quote {
-            font-style: italic;
-            color: var(--accent-purple);
-            margin: 1rem 0;
-            padding-left: 2rem;
-            border-left: 2px solid var(--accent-purple);
+        .final-subtitle {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .final-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto 3rem;
         }
 
         .app-store-link {
             display: inline-block;
             margin: 2rem auto;
-            text-align: center;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .app-store-badge {
-            height: 60px;
-            transition: transform 0.3s ease;
+            height: 54px;
+            opacity: 0.9;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        .app-store-badge:hover {
-            transform: scale(1.05);
+        .app-store-link:hover {
+            transform: translateY(-3px);
         }
 
+        .app-store-link:hover .app-store-badge {
+            opacity: 1;
+            filter: drop-shadow(0 10px 20px rgba(255, 255, 255, 0.2));
+        }
+
+        /* Footer */
         .footer {
             background: transparent;
             padding: 4rem 0 2rem;
             text-align: center;
             margin-top: 8rem;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .footer-links {
@@ -439,20 +534,39 @@
         }
 
         .footer-links a {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             text-decoration: none;
-            margin: 0 1.5rem;
-            font-size: 16px;
-            transition: color 0.3s ease;
+            margin: 0 2rem;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+
+        .footer-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--text-primary);
+            transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .footer-links a:hover {
             color: var(--text-primary);
         }
 
+        .footer-links a:hover:after {
+            width: 100%;
+        }
+
         .footer-copyright {
-            color: var(--text-secondary);
-            font-size: 14px;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            letter-spacing: 0.02em;
         }
 
         /* Mobile responsiveness */
@@ -462,8 +576,8 @@
             }
             
             .nav-link {
-                font-size: 0.85rem;
-                padding: 0.4rem 1rem;
+                font-size: 0.75rem;
+                padding: 0.6rem 1.5rem;
             }
             
             .content {
@@ -471,28 +585,32 @@
             }
 
             .logo {
-                font-size: 42px;
+                font-size: 3rem;
+                letter-spacing: 0.1em;
             }
 
-            .tagline {
-                font-size: 24px;
+            .section {
+                margin: 4rem 0;
+                padding: 3rem 0;
             }
 
-            .section-title {
-                font-size: 24px;
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem;
             }
 
-            .section-content {
-                font-size: 16px;
-            }
-
-            .section-content.large {
-                font-size: 18px;
+            .features-grid {
+                grid-template-columns: 1fr;
             }
 
             .footer-links a {
                 display: block;
-                margin: 0.5rem 0;
+                margin: 1rem 0;
+            }
+
+            .footer-links a:after {
+                display: none;
             }
         }
     </style>
@@ -507,121 +625,170 @@
     
     <div class="content">
         <section class="hero">
-            <h1 class="logo">Onera</h1>
-            <p class="tagline">Your dreams speak. Time to listen.</p>
+            <h1 class="logo">ONERA</h1>
+            <p class="tagline">The best app for self-knowledge to uncover your own mysteries</p>
+            <p class="tagline-sub">Find what you have been hiding from yourself</p>
         </section>
 
-        <div class="separator">───</div>
+        <div class="separator">
+            <span class="separator-ornament">◈</span>
+        </div>
         
         <section class="section">
+            <h2 class="section-title">The World's Most Advanced Dream Decoder</h2>
             <div class="section-content">
                 <p class="story-text">
-                    <strong>Fast forward 20 years.</strong>
+                    Every night, you dream 4-5 times.<br>
+                    2 hours of REM sleep filled with messages.<br>
+                    99% of people ignore them.
                 </p>
-                
-                <p class="story-text">
-                    You wake up. Same bed. Same emptiness.<br>
-                    Your face in the mirror is older… but the regret is fresh.
-                </p>
-                
-                <p class="story-text">
-                    You remember every chance you ignored.<br>
-                    Every whisper you silenced.<br>
-                    Every dream you let vanish with the morning light.
-                </p>
-                
-                <p class="story-text">
-                    And the cruelest part?<br>
-                    The solution was always there.<br>
-                    Two minutes. Every morning.<br>
-                    But you chose to scroll instead.
+                <p class="story-text" style="font-weight: 400; font-size: 1.5rem; margin-top: 3rem;">
+                    Onera captures what others miss.
                 </p>
             </div>
         </section>
 
-        <div class="separator">───</div>
+        <div class="separator">
+            <span class="separator-ornament">◈</span>
+        </div>
         
         <section class="section">
+            <h2 class="section-title">The Science of Genius</h2>
+            <h3 class="section-subtitle">Your Brain on REM Sleep</h3>
             <div class="section-content">
                 <p class="story-text">
-                    <strong>Harvard warned you:</strong>
+                    During REM, your logical mind shuts down.<br>
+                    Your creative centers explode with activity.<br>
+                    This is when breakthroughs happen.
                 </p>
                 
-                <p class="quote-text">
-                    "Dreams solve the problems you can't while awake."
-                </p>
-                
-                <p class="story-text">
-                    But you didn't listen.<br>
-                    Now all that's left is the echo of what could have been.
-                </p>
-            </div>
-        </section>
-
-        <div class="separator">───</div>
-        
-        <section class="section">
-            <div class="section-content">
-                <p class="story-text">
-                    <strong>Here's what you keep throwing away:</strong>
-                </p>
-                
-                <p class="story-text">
-                    Every night, during REM sleep, your brain shuts off the self-doubt.<br>
-                    The negative voice is muted.<br>
-                    And what's left is 10x more creative — solving your life's problems in ways your waking mind never could.
-                </p>
-                
-                <p class="story-text">
-                    It's non-linear.<br>
-                    It's raw.<br>
-                    It's the unfair advantage every genius in history secretly used.
-                </p>
-                
-                <p class="story-text">
-                    And you? You keep deleting it with your morning piss.
-                </p>
-            </div>
-        </section>
-
-        <div class="separator">───</div>
-        
-        <section class="section">
-            <div class="section-content">
-                <p class="story-text">
-                    <strong>The way out:</strong>
-                </p>
-                
-                <p class="story-text">
-                    Wake up.<br>
-                    Write your dream.<br>
-                    Decode it.
-                </p>
-                
-                <p class="story-text">
-                    7 days later → fire in your chest.<br>
-                    The version of you that never settled.<br>
-                    The version of you that people can't ignore.
-                </p>
-            </div>
-        </section>
-
-        <div class="separator">───</div>
-        
-        <section class="section">
-            <div class="section-content">
-                <div class="final-cta">
-                    <p class="story-text">
-                        👉 Download Onera.<br>
-                        Before tonight disappears — again.
-                    </p>
-                    
-                    <div class="app-store-link">
-                        <a href="https://apps.apple.com/app/onera" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" 
-                                 alt="Download on the App Store" class="app-store-badge">
-                        </a>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-label">MIT Proven</div>
+                        <div class="stat-value">78%</div>
+                        <div class="stat-description">Creativity boost</div>
                     </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Harvard Validated</div>
+                        <div class="stat-value">70%</div>
+                        <div class="stat-description">Problem-solving rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Berkeley Confirmed</div>
+                        <div class="stat-value">32%</div>
+                        <div class="stat-description">Insight increase</div>
+                    </div>
+                </div>
+                
+                <p class="story-text" style="font-weight: 400; font-size: 1.5rem;">
+                    Onera is the only platform that harnesses this power.
+                </p>
+            </div>
+        </section>
+
+        <div class="separator">
+            <span class="separator-ornament">◈</span>
+        </div>
+        
+        <section class="section">
+            <h2 class="section-title">History's Secret Weapon</h2>
+            <h3 class="section-subtitle">The Same Tool That Changed The World</h3>
+            <div class="section-content">
+                <div id="quotes-container">
+                    <div class="quote-item">
+                        <div class="quote-author">Albert Einstein</div>
+                        <div class="quote-text">Dreamed of riding a light beam, inspiring the theory of relativity that revolutionized physics.</div>
+                    </div>
+                    <div class="quote-item">
+                        <div class="quote-author">Dmitri Mendeleev</div>
+                        <div class="quote-text">Dreamed of organizing elements, creating the periodic table, a cornerstone of modern chemistry.</div>
+                    </div>
+                    <div class="quote-item">
+                        <div class="quote-author">Nikola Tesla</div>
+                        <div class="quote-text">Used dream-like visions to design alternating current, transforming global electricity.</div>
+                    </div>
+                    <div class="quote-item">
+                        <div class="quote-author">Srinivasa Ramanujan</div>
+                        <div class="quote-text">Received formulas in dreams from a goddess, producing groundbreaking theorems in mathematics.</div>
+                    </div>
+                    <div class="quote-item">
+                        <div class="quote-author">Frederick Banting</div>
+                        <div class="quote-text">Dreamed of a method to isolate insulin, saving millions of diabetics and earning a Nobel Prize.</div>
+                    </div>
+                    <div class="quote-item">
+                        <div class="quote-author">Paul McCartney</div>
+                        <div class="quote-text">Dreamed the melody of Yesterday, becoming the most covered pop song in history.</div>
+                    </div>
+                    <div class="quote-item">
+                        <div class="quote-author">Salvador Dalí</div>
+                        <div class="quote-text">Drew surrealist works like The Persistence of Memory from hypnagogic dreams.</div>
+                    </div>
+                    <div class="quote-item">
+                        <div class="quote-author">René Descartes</div>
+                        <div class="quote-text">Three dreams led him to found the scientific method and analytical geometry, shaping modern thought.</div>
+                    </div>
+                    <div class="quote-item">
+                        <div class="quote-author">Abraham Lincoln</div>
+                        <div class="quote-text">Dreamed of his funeral, strengthening his resolve to abolish slavery and preserve the Union.</div>
+                    </div>
+                    <div class="quote-item">
+                        <div class="quote-author">Joan of Arc</div>
+                        <div class="quote-text">Guided by visionary dreams, she led France to victory, altering the Hundred Years' War.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="separator">
+            <span class="separator-ornament">◈</span>
+        </div>
+        
+        <section class="section">
+            <h2 class="section-title">What Onera Does</h2>
+            <h3 class="section-subtitle">Transform Random Stories Into Life Direction</h3>
+            <div class="section-content">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3 class="feature-title">Decode</h3>
+                        <p class="feature-description">Onera reads 2,847 universal symbols your mind uses</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-title">Reveal</h3>
+                        <p class="feature-description">Onera uncovers patterns you've been avoiding for years</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-title">Guide</h3>
+                        <p class="feature-description">Onera converts abstract metaphors into clear action steps</p>
+                    </div>
+                </div>
+                <p class="story-text" style="font-weight: 400; font-size: 1.5rem; margin-top: 3rem;">
+                    Finally break through your own barriers.
+                </p>
+            </div>
+        </section>
+
+        <div class="separator">
+            <span class="separator-ornament">◈</span>
+        </div>
+        
+        <section class="section">
+            <div class="final-cta">
+                <h2 class="final-title">The Bottom Line</h2>
+                <p class="final-subtitle">
+                    You Already Have The Answers<br>
+                    Onera Just Shows You Where To Look
+                </p>
+                <p class="final-text">
+                    No guru needed. No years of therapy. No endless searching.<br>
+                    Your subconscious already knows. Every night, it tries to tell you.<br>
+                    <strong>Onera is the translator.</strong>
+                </p>
+                
+                <div class="app-store-link">
+                    <a href="https://apps.apple.com/app/onera" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" 
+                             alt="Download on the App Store" class="app-store-badge">
+                    </a>
                 </div>
             </div>
         </section>
@@ -630,207 +797,122 @@
 
     <footer class="footer">
         <div class="footer-links">
-            <a href="cgu.html">CGU</a>
-            <a href="privacy.html">Privacy Policy</a>
+            <a href="cgu.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
         </div>
         <div class="footer-copyright">
-            © 2025 Onera. Tous droits réservés.
+            © 2025 Onera. All rights reserved.
         </div>
     </footer>
 
     <script>
-        // Particle system
+        // Elegant Particle System
         class ParticleSystem {
             constructor() {
                 this.container = document.getElementById('particles');
-                this.particles = [];
-                this.maxParticles = {
-                    slow: 15,
-                    fast: 12,
-                    twinkle: 8,
-                    spark: 6,
-                    micro: 20,
-                    glow: 5,
-                    bubble: 12,
-                    sparkle: 8
-                };
-                this.intervals = {};
+                this.particleCount = 30;
                 this.init();
             }
 
-            createParticle(type) {
+            createParticle() {
                 const particle = document.createElement('div');
-                particle.className = `particle particle-${type}`;
+                particle.className = 'particle particle-float';
                 
-                const size = this.getRandomSize(type);
-                const opacity = this.getRandomOpacity(type);
-                const blur = this.getRandomBlur(type);
-                
+                const size = Math.random() * 3 + 1;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
                 particle.style.left = `${Math.random() * 100}%`;
-                particle.style.opacity = opacity;
-                particle.style.filter = `blur(${blur}px)`;
-                
-                if (type === 'glow') {
-                    particle.style.background = 'rgba(255, 255, 255, 0.08)';
-                } else if (type === 'sparkle') {
-                    // Position sparkles randomly across the screen
-                    particle.style.left = Math.random() * 100 + '%';
-                    particle.style.top = Math.random() * 100 + '%';
-                } else if (type === 'bubble') {
-                    // Give bubbles a slight horizontal drift
-                    const drift = (Math.random() - 0.5) * 60;
-                    particle.style.setProperty('--bubble-drift', drift + 'px');
-                }
-                
-                if (type === 'spark') {
-                    const sparkX = (Math.random() - 0.5) * 200;
-                    const sparkY = (Math.random() - 0.5) * 200 - 50;
-                    particle.style.setProperty('--spark-x', `${sparkX}px`);
-                    particle.style.setProperty('--spark-y', `${sparkY}px`);
-                    particle.style.left = '50%';
-                    particle.style.top = '50%';
-                }
-                
-                if (type === 'twinkle') {
-                    particle.style.top = `${Math.random() * 100}%`;
-                    setTimeout(() => {
-                        if (particle.parentNode) {
-                            particle.remove();
-                        }
-                    }, 1000);
-                } else {
-                    particle.style.top = '100vh';
-                    setTimeout(() => {
-                        if (particle.parentNode) {
-                            particle.remove();
-                        }
-                    }, type === 'fast' ? 800 : (type === 'spark' ? 600 : (type === 'micro' ? 8000 : (type === 'glow' ? 12000 : (type === 'bubble' ? 18000 : (type === 'sparkle' ? 800 : 14000))))));
-                }
+                particle.style.animationDelay = `${Math.random() * 20}s`;
+                particle.style.animationDuration = `${20 + Math.random() * 10}s`;
                 
                 this.container.appendChild(particle);
-                this.particles.push(particle);
                 
-                // Clean up old particles
-                if (this.particles.length > Object.values(this.maxParticles).reduce((a, b) => a + b, 0)) {
-                    const oldParticle = this.particles.shift();
-                    if (oldParticle && oldParticle.parentNode) {
-                        oldParticle.remove();
+                // Remove particle after animation
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.remove();
                     }
-                }
-            }
-
-            getRandomSize(type) {
-                switch (type) {
-                    case 'slow': return Math.random() * 4 + 2; // 2-6px
-                    case 'fast': return Math.random() * 2 + 1; // 1-3px
-                    case 'twinkle': return Math.random() * 2 + 1; // 1-3px
-                    case 'spark': return Math.random() * 1.7 + 0.8; // 0.8-2.5px
-                    case 'micro': return Math.random() * 0.8 + 0.5; // 0.5-1.3px
-                    case 'glow': return Math.random() * 8 + 4; // 4-12px
-                    case 'bubble': return Math.random() * 15 + 8; // 8-23px
-                    case 'sparkle': return Math.random() * 3 + 1; // 1-4px
-                    default: return 2;
-                }
-            }
-
-            getRandomOpacity(type) {
-                switch (type) {
-                    case 'slow': return Math.random() * 0.3 + 0.2; // 0.2-0.5
-                    case 'fast': return Math.random() * 0.4 + 0.4; // 0.4-0.8
-                    case 'twinkle': return Math.random() * 0.6 + 0.4; // 0.4-1.0
-                    case 'spark': return Math.random() * 0.4 + 0.6; // 0.6-1.0
-                    case 'micro': return Math.random() * 0.2 + 0.1; // 0.1-0.3
-                    case 'glow': return Math.random() * 0.4 + 0.3; // 0.3-0.7
-                    case 'bubble': return Math.random() * 0.2 + 0.1; // 0.1-0.3
-                    case 'sparkle': return Math.random() * 0.4 + 0.6; // 0.6-1.0
-                    default: return 0.5;
-                }
-            }
-
-            getRandomBlur(type) {
-                switch (type) {
-                    case 'slow': return Math.random() * 1.2 + 0.3; // 0.3-1.5px
-                    case 'fast': return Math.random() * 1.2 + 0.8; // 0.8-2.0px
-                    case 'twinkle': return Math.random() * 0.5 + 0.2; // 0.2-0.7px
-                    case 'spark': return Math.random() * 0.8 + 0.4; // 0.4-1.2px
-                    case 'micro': return Math.random() * 0.3 + 0.1; // 0.1-0.4px
-                    case 'glow': return Math.random() * 1.5 + 1.5; // 1.5-3.0px
-                    case 'bubble': return Math.random() * 2 + 2; // 2-4px
-                    case 'sparkle': return Math.random() * 0.3 + 0.2; // 0.2-0.5px
-                    default: return 0.5;
-                }
+                }, 30000);
             }
 
             init() {
-                // Create different types of particles at different intervals
-                this.intervals.slow = setInterval(() => {
-                    if (document.querySelectorAll('.particle-slow').length < this.maxParticles.slow) {
-                        this.createParticle('slow');
-                    }
-                }, 2000);
-
-                this.intervals.fast = setInterval(() => {
-                    if (document.querySelectorAll('.particle-fast').length < this.maxParticles.fast) {
-                        this.createParticle('fast');
-                    }
-                }, 800);
-
-                this.intervals.twinkle = setInterval(() => {
-                    if (document.querySelectorAll('.particle-twinkle').length < this.maxParticles.twinkle) {
-                        this.createParticle('twinkle');
-                    }
-                }, 1500);
-
-                this.intervals.spark = setInterval(() => {
-                    if (document.querySelectorAll('.particle-spark').length < this.maxParticles.spark) {
-                        this.createParticle('spark');
-                    }
-                }, 300);
-
-                this.intervals.micro = setInterval(() => {
-                    if (document.querySelectorAll('.particle-micro').length < this.maxParticles.micro) {
-                        this.createParticle('micro');
-                    }
-                }, 600);
-
-                this.intervals.glow = setInterval(() => {
-                    if (document.querySelectorAll('.particle-glow').length < this.maxParticles.glow) {
-                        this.createParticle('glow');
-                    }
-                }, 3000);
-
-                this.intervals.bubble = setInterval(() => {
-                    if (document.querySelectorAll('.particle-bubble').length < this.maxParticles.bubble) {
-                        this.createParticle('bubble');
-                    }
-                }, 2500);
-
-                this.intervals.sparkle = setInterval(() => {
-                    if (document.querySelectorAll('.particle-sparkle').length < this.maxParticles.sparkle) {
-                        this.createParticle('sparkle');
-                    }
-                }, 1200);
-            }
-
-            destroy() {
-                Object.values(this.intervals).forEach(interval => clearInterval(interval));
-                this.container.innerHTML = '';
+                // Create initial particles
+                for (let i = 0; i < this.particleCount; i++) {
+                    setTimeout(() => this.createParticle(), i * 200);
+                }
+                
+                // Continuously create new particles
+                setInterval(() => this.createParticle(), 1000);
             }
         }
 
-        // Initialize particle system when page loads
+        // Quote Rotation System
+        class QuoteRotator {
+            constructor() {
+                this.quotes = document.querySelectorAll('.quote-item');
+                this.currentPairIndex = 0;
+                this.pairs = [];
+                this.createPairs();
+                this.init();
+            }
+
+            createPairs() {
+                for (let i = 0; i < this.quotes.length; i += 2) {
+                    if (i + 1 < this.quotes.length) {
+                        this.pairs.push([this.quotes[i], this.quotes[i + 1]]);
+                    } else {
+                        this.pairs.push([this.quotes[i], this.quotes[0]]);
+                    }
+                }
+            }
+
+            showPair(index) {
+                // Hide all quotes
+                this.quotes.forEach(quote => {
+                    quote.classList.remove('active');
+                });
+
+                // Show current pair
+                setTimeout(() => {
+                    const currentPair = this.pairs[index];
+                    currentPair.forEach((quote, i) => {
+                        setTimeout(() => {
+                            quote.classList.add('active');
+                        }, i * 150);
+                    });
+                }, 300);
+            }
+
+            init() {
+                // Show first pair
+                this.showPair(0);
+
+                // Rotate every 3.33 seconds
+                setInterval(() => {
+                    this.currentPairIndex = (this.currentPairIndex + 1) % this.pairs.length;
+                    this.showPair(this.currentPairIndex);
+                }, 3330);
+            }
+        }
+
+        // Initialize on DOM load
         document.addEventListener('DOMContentLoaded', () => {
             new ParticleSystem();
-        });
+            new QuoteRotator();
 
-        // Clean up when page unloads
-        window.addEventListener('beforeunload', () => {
-            const particleSystem = window.particleSystem;
-            if (particleSystem) {
-                particleSystem.destroy();
-            }
+            // Smooth scroll for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>
