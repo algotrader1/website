@@ -196,6 +196,33 @@
             margin-bottom: 4rem;
         }
 
+        /* Rotating taglines system */
+        .rotating-container {
+            position: relative;
+            height: 4rem;
+            margin-bottom: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tagline-rotating {
+            position: absolute;
+            width: 100%;
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            font-weight: 300;
+            color: var(--text-muted);
+            letter-spacing: 0.01em;
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-align: center;
+            margin: 0;
+        }
+
+        .tagline-rotating.active {
+            opacity: 1;
+        }
+
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
@@ -627,8 +654,12 @@
     <div class="content">
         <section class="hero">
             <h1 class="logo">ONERA</h1>
-            <p class="tagline">The best app for self-knowledge to uncover your own mysteries</p>
-            <p class="tagline-sub">Find what you have been hiding from yourself</p>
+            <p class="tagline">Higher-self translator</p>
+            <div id="rotating-taglines" class="rotating-container">
+                <p class="tagline-rotating active">The best app for self-knowledge</p>
+                <p class="tagline-rotating">The cheat code to uncover your own mysteries</p>
+                <p class="tagline-rotating">Find what you have been hiding from yourself</p>
+            </div>
         </section>
 
         <div class="separator">
@@ -639,12 +670,11 @@
             <h2 class="section-title">The World's Most Advanced Dream Decoder</h2>
             <div class="section-content">
                 <p class="story-text">
-                    Every night, you dream 4-5 times.<br>
-                    2 hours of REM sleep filled with messages.<br>
-                    99% of people ignore them.
+                    Your brain spends 2 hours solving problems every night..<br>
+                    And forget 99% of it by morning
                 </p>
                 <p class="story-text" style="font-weight: 400; font-size: 1.5rem; margin-top: 3rem;">
-                    Onera captures what others miss.
+                    Onera remembers everything.
                 </p>
             </div>
         </section>
@@ -654,35 +684,29 @@
         </div>
         
         <section class="section">
-            <h2 class="section-title">The Science of Genius</h2>
+            <h2 class="section-title">THE SCIENCE OF GENIUS</h2>
             <h3 class="section-subtitle">Your Brain on REM Sleep</h3>
             <div class="section-content">
                 <p class="story-text">
-                    During REM, your logical mind shuts down.<br>
-                    Your creative centers explode with activity.<br>
-                    This is when breakthroughs happen.
+                    When you dream, your logical filters shut down.<br>
+                    Your brain connects dots it can't see while awake
                 </p>
                 
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <div class="stat-label">MIT Proven</div>
+                        <div class="stat-label">MIT</div>
                         <div class="stat-value">78%</div>
-                        <div class="stat-description">Creativity boost</div>
+                        <div class="stat-description">creativity boost</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-label">Harvard Validated</div>
+                        <div class="stat-label">Harvard</div>
                         <div class="stat-value">70%</div>
-                        <div class="stat-description">Problem-solving rate</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Berkeley Confirmed</div>
-                        <div class="stat-value">32%</div>
-                        <div class="stat-description">Insight increase</div>
+                        <div class="stat-description">problem-solving rate</div>
                     </div>
                 </div>
                 
                 <p class="story-text" style="font-weight: 400; font-size: 1.5rem;">
-                    Onera is the only platform that harnesses this power.
+                    Your brain already knows the answers. Onera translates them.
                 </p>
             </div>
         </section>
@@ -692,49 +716,31 @@
         </div>
         
         <section class="section">
-            <h2 class="section-title">History's Secret Weapon</h2>
-            <h3 class="section-subtitle">The Same Tool That Changed The World</h3>
             <div class="section-content">
                 <div id="quotes-container">
                     <div class="quote-item">
-                        <div class="quote-author">Albert Einstein</div>
-                        <div class="quote-text">Dreamed of riding a light beam, inspiring the theory of relativity that revolutionized physics.</div>
+                        <div class="quote-author">Einstein</div>
+                        <div class="quote-text">Rode a light beam in his dream → Theory of Relativity</div>
                     </div>
                     <div class="quote-item">
-                        <div class="quote-author">Dmitri Mendeleev</div>
-                        <div class="quote-text">Dreamed of organizing elements, creating the periodic table, a cornerstone of modern chemistry.</div>
+                        <div class="quote-author">Mendeleev</div>
+                        <div class="quote-text">Saw the periodic table complete → Modern Chemistry</div>
                     </div>
                     <div class="quote-item">
-                        <div class="quote-author">Nikola Tesla</div>
-                        <div class="quote-text">Used dream-like visions to design alternating current, transforming global electricity.</div>
+                        <div class="quote-author">Tesla</div>
+                        <div class="quote-text">Dreamed AC current design → Electric Age</div>
                     </div>
                     <div class="quote-item">
-                        <div class="quote-author">Srinivasa Ramanujan</div>
-                        <div class="quote-text">Received formulas in dreams from a goddess, producing groundbreaking theorems in mathematics.</div>
+                        <div class="quote-author">McCartney</div>
+                        <div class="quote-text">Heard "Yesterday" while sleeping → Most covered song ever</div>
                     </div>
                     <div class="quote-item">
-                        <div class="quote-author">Frederick Banting</div>
-                        <div class="quote-text">Dreamed of a method to isolate insulin, saving millions of diabetics and earning a Nobel Prize.</div>
+                        <div class="quote-author">Descartes</div>
+                        <div class="quote-text">Three dreams → The Scientific Method</div>
                     </div>
                     <div class="quote-item">
-                        <div class="quote-author">Paul McCartney</div>
-                        <div class="quote-text">Dreamed the melody of Yesterday, becoming the most covered pop song in history.</div>
-                    </div>
-                    <div class="quote-item">
-                        <div class="quote-author">Salvador Dalí</div>
-                        <div class="quote-text">Drew surrealist works like The Persistence of Memory from hypnagogic dreams.</div>
-                    </div>
-                    <div class="quote-item">
-                        <div class="quote-author">René Descartes</div>
-                        <div class="quote-text">Three dreams led him to found the scientific method and analytical geometry, shaping modern thought.</div>
-                    </div>
-                    <div class="quote-item">
-                        <div class="quote-author">Abraham Lincoln</div>
-                        <div class="quote-text">Dreamed of his funeral, strengthening his resolve to abolish slavery and preserve the Union.</div>
-                    </div>
-                    <div class="quote-item">
-                        <div class="quote-author">Joan of Arc</div>
-                        <div class="quote-text">Guided by visionary dreams, she led France to victory, altering the Hundred Years' War.</div>
+                        <div class="quote-author">Lincoln</div>
+                        <div class="quote-text">Saw his own funeral → Saved the Union</div>
                     </div>
                 </div>
             </div>
@@ -745,25 +751,24 @@
         </div>
         
         <section class="section">
-            <h2 class="section-title">What Onera Does</h2>
-            <h3 class="section-subtitle">Transform Random Stories Into Life Direction</h3>
+            <h2 class="section-title">Your Dreams Aren't Random. They're Code.</h2>
             <div class="section-content">
                 <div class="features-grid">
                     <div class="feature-card">
-                        <h3 class="feature-title">Decode</h3>
-                        <p class="feature-description">Onera reads 2,847 universal symbols your mind uses</p>
+                        <h3 class="feature-title">Step 1</h3>
+                        <p class="feature-description">Record your dream in 30 seconds</p>
                     </div>
                     <div class="feature-card">
-                        <h3 class="feature-title">Reveal</h3>
-                        <p class="feature-description">Onera uncovers patterns you've been avoiding for years</p>
+                        <h3 class="feature-title">Step 2</h3>
+                        <p class="feature-description">Onera identifies the patterns your mind uses</p>
                     </div>
                     <div class="feature-card">
-                        <h3 class="feature-title">Guide</h3>
-                        <p class="feature-description">Onera converts abstract metaphors into clear action steps</p>
+                        <h3 class="feature-title">Step 3</h3>
+                        <p class="feature-description">Get the message your brain is trying to send you</p>
                     </div>
                 </div>
                 <p class="story-text" style="font-weight: 400; font-size: 1.5rem; margin-top: 3rem;">
-                    Finally break through your own barriers.
+                    No interpretation. Just translation.
                 </p>
             </div>
         </section>
@@ -774,15 +779,14 @@
         
         <section class="section">
             <div class="final-cta">
-                <h2 class="final-title">The Bottom Line</h2>
+                <h2 class="final-title">Your Mind Already Has The Answers</h2>
                 <p class="final-subtitle">
-                    You Already Have The Answers<br>
-                    Onera Just Shows You Where To Look
+                    You just don't speak its language.
                 </p>
                 <p class="final-text">
-                    No guru needed. No years of therapy. No endless searching.<br>
-                    Your subconscious already knows. Every night, it tries to tell you.<br>
-                    <strong>Onera is the translator.</strong>
+                    Every problem you face, your brain works on it all night.<br>
+                    Every decision you struggle with, your subconscious already knows.<br>
+                    <strong>Onera is the bridge.</strong>
                 </p>
                 
                 <div class="app-store-link">
@@ -851,47 +855,66 @@
         class QuoteRotator {
             constructor() {
                 this.quotes = document.querySelectorAll('.quote-item');
-                this.currentPairIndex = 0;
-                this.pairs = [];
-                this.createPairs();
+                this.currentQuoteIndex = 0;
                 this.init();
             }
 
-            createPairs() {
-                for (let i = 0; i < this.quotes.length; i += 2) {
-                    if (i + 1 < this.quotes.length) {
-                        this.pairs.push([this.quotes[i], this.quotes[i + 1]]);
-                    } else {
-                        this.pairs.push([this.quotes[i], this.quotes[0]]);
-                    }
-                }
-            }
-
-            showPair(index) {
+            showQuote(index) {
                 // Hide all quotes
                 this.quotes.forEach(quote => {
                     quote.classList.remove('active');
                 });
 
-                // Show current pair
+                // Show current quote
                 setTimeout(() => {
-                    const currentPair = this.pairs[index];
-                    currentPair.forEach((quote, i) => {
-                        setTimeout(() => {
-                            quote.classList.add('active');
-                        }, i * 150);
-                    });
+                    this.quotes[index].classList.add('active');
                 }, 300);
             }
 
             init() {
-                // Show first pair
-                this.showPair(0);
+                if (this.quotes.length === 0) return;
+                
+                // Show first quote
+                this.showQuote(0);
+
+                // Rotate every 4 seconds
+                setInterval(() => {
+                    this.currentQuoteIndex = (this.currentQuoteIndex + 1) % this.quotes.length;
+                    this.showQuote(this.currentQuoteIndex);
+                }, 4000);
+            }
+        }
+
+        // Tagline Rotation System
+        class TaglineRotator {
+            constructor() {
+                this.taglines = document.querySelectorAll('.tagline-rotating');
+                this.currentIndex = 0;
+                this.init();
+            }
+
+            showTagline(index) {
+                // Hide all taglines
+                this.taglines.forEach(tagline => {
+                    tagline.classList.remove('active');
+                });
+
+                // Show current tagline
+                setTimeout(() => {
+                    this.taglines[index].classList.add('active');
+                }, 300);
+            }
+
+            init() {
+                if (this.taglines.length === 0) return;
+                
+                // Show first tagline
+                this.showTagline(0);
 
                 // Rotate every 3.33 seconds
                 setInterval(() => {
-                    this.currentPairIndex = (this.currentPairIndex + 1) % this.pairs.length;
-                    this.showPair(this.currentPairIndex);
+                    this.currentIndex = (this.currentIndex + 1) % this.taglines.length;
+                    this.showTagline(this.currentIndex);
                 }, 3330);
             }
         }
@@ -900,6 +923,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             new ParticleSystem();
             new QuoteRotator();
+            new TaglineRotator();
 
             // Smooth scroll for internal links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -409,10 +409,80 @@
             letter-spacing: 0.05em;
         }
 
-        .filter-tags, .filter-categories {
+        .tags-container {
+            position: relative;
+        }
+
+        .filter-categories {
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
+        }
+
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            max-height: 8rem;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .filter-tags.expanded {
+            max-height: none;
+        }
+
+        .tags-gradient {
+            position: absolute;
+            bottom: 3rem;
+            left: 0;
+            right: 0;
+            height: 3rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9) 70%);
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .tags-gradient.hidden {
+            opacity: 0;
+        }
+
+        .expand-tags-btn {
+            width: 100%;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .expand-tags-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            transition: left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .expand-tags-btn:hover:before {
+            left: 0;
+        }
+
+        .expand-tags-btn:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
         }
 
         .filter-tag, .filter-category {
@@ -617,7 +687,8 @@
                 </div>
                 <div class="filter-group">
                     <div class="filter-group-title">Tags</div>
-                    <div class="filter-tags" id="tagFilters">
+                    <div class="tags-container">
+                        <div class="filter-tags" id="tagFilters">
                         <button class="filter-tag" data-tag="rem-sleep" onclick="toggleTag('rem-sleep')">REM Sleep <span class="tag-count">(3)</span></button>
                         <button class="filter-tag" data-tag="creativity" onclick="toggleTag('creativity')">Creativity <span class="tag-count">(1)</span></button>
                         <button class="filter-tag" data-tag="memory" onclick="toggleTag('memory')">Memory <span class="tag-count">(2)</span></button>
@@ -714,6 +785,9 @@
                         <button class="filter-tag" data-tag="dream-interpretation" onclick="toggleTag('dream-interpretation')">Dream Interpretation <span class="tag-count">(1)</span></button>
                         <button class="filter-tag" data-tag="secret-language-dreams" onclick="toggleTag('secret-language-dreams')">Secret Language Dreams <span class="tag-count">(1)</span></button>
                         <button class="filter-tag" data-tag="self-discovery-dreams" onclick="toggleTag('self-discovery-dreams')">Self-Discovery Dreams <span class="tag-count">(1)</span></button>
+                        </div>
+                        <div class="tags-gradient"></div>
+                        <button class="expand-tags-btn" id="expandTagsBtn" onclick="toggleTagsExpansion()">See All Tags</button>
                     </div>
                 </div>
             </div>
@@ -1186,6 +1260,22 @@
                 noResults.classList.add('visible');
             } else {
                 noResults.classList.remove('visible');
+            }
+        }
+
+        function toggleTagsExpansion() {
+            const tagFilters = document.getElementById('tagFilters');
+            const expandBtn = document.getElementById('expandTagsBtn');
+            const gradient = document.querySelector('.tags-gradient');
+            
+            if (tagFilters.classList.contains('expanded')) {
+                tagFilters.classList.remove('expanded');
+                expandBtn.textContent = 'See All Tags';
+                gradient.classList.remove('hidden');
+            } else {
+                tagFilters.classList.add('expanded');
+                expandBtn.textContent = 'Show Less';
+                gradient.classList.add('hidden');
             }
         }
 
