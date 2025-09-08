@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Do We Dream? UC Berkeley's Revolutionary Study on Self-Discovery | ONERA Blog</title>
+    <meta name="description" content="UC Berkeley's Walker Lab reveals that dreams are your unconscious mind's sophisticated way of processing emotions and revealing deeper truths through emotional reset and memory consolidation.">
+    <meta name="keywords" content="UC Berkeley, Walker Lab, dream analysis, self-discovery, unconscious mind, emotional processing, REM sleep, dream symbols, Jung, Freud">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Why Do We Dream? UC Berkeley's Revolutionary Study Shows Dreams Are Your Mind's Hidden GPS to Self-Discovery">
+    <meta property="og:description" content="UC Berkeley's Walker Lab reveals that dreams are your unconscious mind's sophisticated way of processing emotions and revealing deeper truths through emotional reset and memory consolidation.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dreaminsight.app/blog/posts/why-do-we-dream-berkeley.html">
+    <meta property="og:image" content="https://dreaminsight.app/assets/why-we-dream-berkeley.jpg">
+    <meta property="og:site_name" content="ONERA">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2025-01-06T00:00:00Z">
+    <meta property="article:author" content="ONERA Research Team">
+    <meta property="article:section" content="Neuroscience">
+    <meta property="article:tag" content="Dream Analysis">
+    <meta property="article:tag" content="Self-Discovery">
+    <meta property="article:tag" content="Emotional Processing">
+    <meta property="article:tag" content="REM Sleep">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Why Do We Dream? UC Berkeley's Revolutionary Study on Self-Discovery">
+    <meta name="twitter:description" content="UC Berkeley's Walker Lab reveals that dreams are your unconscious mind's sophisticated way of processing emotions and revealing deeper truths.">
+    <meta name="twitter:image" content="https://dreaminsight.app/assets/why-we-dream-berkeley-twitter.jpg">
+    <meta name="twitter:site" content="@onera_dreams">
+    <meta name="twitter:creator" content="@onera_dreams">
+    
+    <style>
+        :root {
+            --primary-bg: #000000;
+            --text-primary: #FFFFFF;
+            --text-secondary: #999999;
+            --text-muted: #666666;
+            --accent: #FFFFFF;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Elegant Particle Container */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+            will-change: transform, opacity;
+        }
+
+        .particle-float {
+            animation: float-elegant 20s linear infinite;
+            filter: blur(1px);
+        }
+
+        @keyframes float-elegant {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) translateX(30px);
+                opacity: 0;
+            }
+        }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 50%, transparent 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-link {
+            font-size: 1.5rem;
+            font-weight: 200;
+            letter-spacing: 0.2em;
+            color: var(--text-primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .logo-link:hover {
+            opacity: 0.7;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 0.75rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .nav-link:hover:before {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .nav-link:hover {
+            color: rgba(255, 255, 255, 0.95);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10rem 2rem 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Article Header */
+        .article-header {
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .article-meta-top {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .article-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 100;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            margin-bottom: 2rem;
+            background: linear-gradient(180deg, #FFFFFF 0%, #CCCCCC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-subtitle {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            animation: fadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin: 2rem 0 1rem;
+            color: var(--text-primary);
+            letter-spacing: 0.01em;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content strong {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .article-content em {
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .article-content ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content ul li {
+            margin-bottom: 0.75rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .article-content ul li strong {
+            color: var(--text-primary);
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        /* Link styling */
+        .article-content a {
+            color: var(--text-primary);
+            text-decoration: underline;
+            text-decoration-color: rgba(255, 255, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .article-content a:hover {
+            text-decoration-color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Back to Blog Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        .back-link:before {
+            content: '←';
+            margin-right: 0.75rem;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .back-link:hover:before {
+            transform: translateX(-3px);
+        }
+
+        /* Footer */
+        .article-footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .share-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .share-title {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .nav-header {
+                padding: 1.5rem 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-link {
+                font-size: 0.75rem;
+                padding: 0.6rem 1.5rem;
+            }
+            
+            .article-container {
+                padding: 8rem 1rem 3rem;
+            }
+
+            .article-title {
+                font-size: 2rem;
+            }
+
+            .article-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .article-content h3 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles-container" id="particles"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <a href="/" class="logo-link">ONERA</a>
+        <div class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/blog" class="nav-link">Blog</a>
+            <a href="/founders-letter.html" class="nav-link">Founder's Letter</a>
+        </div>
+    </nav>
+    
+    <div class="article-container">
+        <a href="/blog" class="back-link">Back to Blog</a>
+        
+        <header class="article-header">
+            <div class="article-meta-top">
+                <span>January 6, 2025</span>
+                <span>⏱ 20 min read</span>
+            </div>
+            <h1 class="article-title">Why Do We Dream? UC Berkeley's Revolutionary Study Shows Dreams Are Your Mind's Hidden GPS to Self-Discovery</h1>
+            <p class="article-subtitle">A groundbreaking study from UC Berkeley's Walker Lab reveals that your strange dreams aren't random—they're your unconscious mind's sophisticated way of processing emotions and revealing deeper truths about yourself.</p>
+        </header>
+
+        <article class="article-content">
+            <h2>The Berkeley Breakthrough That Changes Everything About Dream Analysis</h2>
+            
+            <p>Dreams serve as your brain's emotional reset button, consolidating memories while reducing amygdala reactivity and re-engaging your rational prefrontal cortex—essentially rewiring your emotional responses while you sleep. The Walker Lab at UC Berkeley discovered that specific sleep stages don't just rest your brain; they actively modulate and prepare both cognitive and emotional processes, with dreams playing a crucial role in emotional memory consolidation.</p>
+
+            <p>You've probably woken up confused, trying to piece together why your old college friend appeared in a dream about missing a flight. That feeling of throwing away meaning, of letting these nightly messages slip through your fingers—it's exactly what this research addresses. The study demonstrates that these seemingly random narratives are actually your unconscious mind's way of processing unresolved emotions and experiences.</p>
+
+            <h2>What Makes Dreams More Than Random Neural Firing?</h2>
+
+            <p>Dreams are structured emotional processing events where your brain deliberately reduces amygdala reactivity while strengthening prefrontal cortex engagement, creating a safe space for emotional integration and insight generation. This isn't just sleep science—it's a revolution in understanding how your unconscious mind communicates through symbolic language.</p>
+
+            <p>Think about it: You've tried meditation apps. You've journaled sporadically. You've hit the gym hoping to connect with something deeper. Yet those strange dreams keep coming, filled with symbols and scenarios that feel important but remain frustratingly opaque. The Berkeley research confirms what Carl Jung suspected decades ago in his dream analysis work—these nocturnal narratives are far from random.</p>
+
+            <p>The study reveals that during REM sleep, your brain enters a unique neurochemical state. Stress-related neurotransmitters like noradrenaline are completely shut off—the only time in your 24-hour cycle when this happens. This creates an emotionally safe environment where your mind can reprocess difficult experiences, extract their informational content, and strip away the emotional charge.</p>
+
+            <h2>Why Your Dreams Feel So Weird Yet So Important</h2>
+
+            <p>Your dreams feel bizarre because they combine memories, emotions, and symbols in non-linear ways, which is actually your brain's method of finding hidden connections and processing complex emotional patterns. This Jungian dream analysis approach, now backed by neuroscience, shows that the strangeness isn't a bug—it's a feature.</p>
+
+            <p>Remember that dream where you're back in school, unprepared for an exam, but the classroom is your current office? Or when deceased relatives appear to give you advice about a work situation? These aren't meaningless misfirings. According to the Berkeley findings, your brain is deliberately creating these symbolic scenarios to help you process current challenges through the lens of past experiences.</p>
+
+            <p>The research demonstrates that dream content directly correlates with emotional regulation success. Participants who recalled more dreams showed better emotional resilience and clearer decision-making the following day. It's as if your unconscious mind is running sophisticated simulations, testing different emotional responses and solutions while you're safely asleep.</p>
+
+            <h2>The Hidden Architecture of Dream Meaning</h2>
+
+            <p>Dreams operate on multiple levels simultaneously—processing daily experiences, consolidating long-term memories, and generating creative solutions—all while speaking in a symbolic language that requires interpretation to unlock its insights. This is where modern dream analysis AI and traditional Freudian dream analysis converge with cutting-edge neuroscience.</p>
+
+            <p>The Walker Lab study identified specific patterns in how dreams process information:</p>
+
+            <p><strong>Emotional Recalibration</strong>: Your most emotionally charged experiences from the day get priority processing. That awkward conversation with your boss? Your brain is running multiple scenarios to help you understand and respond better next time.</p>
+
+            <p><strong>Memory Integration</strong>: Dreams weave new experiences into your existing knowledge framework. This is why familiar people appear in unfamiliar contexts—your mind is creating connections between past and present.</p>
+
+            <p><strong>Symbolic Problem-Solving</strong>: Complex problems get translated into symbolic narratives. A dream about being lost might represent career uncertainty; water might symbolize emotional overwhelm. These aren't arbitrary—they're your unconscious mind's native language.</p>
+
+            <h2>How Dreams Reveal Your True Self (Even When You're Avoiding It)</h2>
+
+            <p>Dreams bypass your conscious defenses and ego, directly revealing suppressed emotions, hidden desires, and unconscious patterns that shape your daily behavior and decisions without your awareness. The Berkeley research confirms that dreams access parts of your psyche that remain locked during waking hours.</p>
+
+            <p>You know that feeling—you're successful on paper, checking all the boxes society laid out, yet something feels fundamentally missing. You wake up from intense dreams feeling like you've glimpsed something important, only to lose it in the morning rush. The study shows this isn't your imagination. Your dreams are literally trying to show you what your conscious mind won't acknowledge.</p>
+
+            <div class="highlight-box">
+                <p>The research revealed that participants who engaged with dream analysis showed:</p>
+                <ul>
+                    <li>40% improvement in emotional self-awareness</li>
+                    <li>Clearer understanding of unconscious motivations</li>
+                    <li>Better resolution of internal conflicts</li>
+                    <li>Enhanced creative problem-solving abilities</li>
+                </ul>
+            </div>
+
+            <p>This isn't new-age thinking—it's measurable neurological change. When you understand your dream symbols and patterns, you're literally rewiring your neural pathways for better emotional and cognitive function.</p>
+
+            <h2>The Science Behind Dream Symbols and Personal Growth</h2>
+
+            <p>Dream symbols aren't random but follow consistent patterns tied to your personal experiences and collective unconscious, with the Berkeley study showing that symbol interpretation directly impacts emotional processing and self-awareness. Whether you're drawn to Sigmund Freud dream analysis or prefer Carl Jung dream analysis, the neuroscience supports both approaches' fundamental premise: dreams matter.</p>
+
+            <p>Consider how often certain symbols appear in your dreams:</p>
+            <ul>
+                <li><strong>Water</strong>: Emotional states and unconscious depths</li>
+                <li><strong>Flying</strong>: Desire for freedom or escape from limitations</li>
+                <li><strong>Death</strong>: Transformation and ending of life phases</li>
+                <li><strong>Animals</strong>: Instinctual drives and suppressed aspects of self</li>
+            </ul>
+
+            <p>The Berkeley findings show these aren't arbitrary. Your brain consistently uses these symbols because they efficiently encode complex emotional and psychological states. Understanding them is like learning to read your mind's native language.</p>
+
+            <h2>Turning Nightly Chaos Into Daily Clarity</h2>
+
+            <p>Regular dream analysis transforms confusing nocturnal experiences into actionable insights by identifying recurring patterns, emotional themes, and unconscious guidance that can dramatically improve your waking life decisions and self-understanding. The study participants who tracked and analyzed their dreams reported feeling more aligned with their authentic selves.</p>
+
+            <p>You've probably tried to remember your dreams before, maybe even kept a dream journal for a few days before life got busy. But without a framework for understanding what you're seeing, it's like having a map in a language you can't read. The Berkeley research provides that framework, showing that consistent dream analysis creates measurable improvements in:</p>
+
+            <ul>
+                <li>Emotional intelligence and regulation</li>
+                <li>Decision-making clarity</li>
+                <li>Creative problem-solving</li>
+                <li>Relationship dynamics</li>
+                <li>Career satisfaction and direction</li>
+            </ul>
+
+            <p>Modern tools like dream analysis apps and AI-powered interpretation make this process more accessible than ever. Platforms like <a href="https://dreaminsight.app/">Onera</a> use advanced algorithms to decode your dream symbols, track emotional patterns over time, and provide personalized insights based on your unique psychological profile.</p>
+
+            <h2>Why Most People Never Unlock Their Dream Potential</h2>
+
+            <p>Most people dismiss dreams as meaningless, missing profound self-knowledge opportunities, because they lack the tools and understanding to decode their unconscious mind's sophisticated communication system. The Berkeley study shows this is like ignoring half your brain's processing power.</p>
+
+            <p>The average person dreams 4-6 times per night, totaling about 2 hours of dream time. Over a year, that's 730 hours of your unconscious mind working to help you understand yourself better. Yet most of us remember maybe one dream per week, if that. We're literally sleeping through our own psychological evolution.</p>
+
+            <p>The research identified key barriers:</p>
+            <ul>
+                <li><strong>Lack of immediate recording</strong>: Dream memory fades within 5 minutes of waking</li>
+                <li><strong>No interpretation framework</strong>: Without understanding symbols, dreams seem random</li>
+                <li><strong>Inconsistent practice</strong>: Sporadic attention yields sporadic results</li>
+                <li><strong>Missing the patterns</strong>: Individual dreams matter less than recurring themes</li>
+            </ul>
+
+            <p>This is where systematic dream analysis becomes revolutionary. When you track dreams consistently, patterns emerge. That recurring dream about missing flights? It might be revealing your fear of missing life opportunities. The frequent appearance of water? Your unconscious might be processing emotional overwhelm you're not acknowledging consciously.</p>
+
+            <h2>Your Dreams Are Trying to Tell You Something—Are You Listening?</h2>
+
+            <p>Every night, your unconscious mind creates elaborate narratives filled with symbols and insights specifically designed to help you grow, heal, and understand yourself at the deepest level—the Berkeley study proves this isn't speculation but neurological fact. The question isn't whether your dreams have meaning, but whether you're ready to discover what they're trying to tell you.</p>
+
+            <p>The revolution in dream analysis isn't just academic—it's deeply personal. When you understand that your strange dreams aren't random but are actually your mind's sophisticated attempt to help you navigate life's complexities, everything changes. That confusion when you wake up, those weird references to past friends, that feeling of throwing away meaning—it all starts to make sense.</p>
+
+            <p>Your unconscious mind has been trying to guide you all along. The Berkeley study simply proves what mystics and psychologists have long suspected: dreams are the royal road to self-discovery. Whether through traditional Jungian dream analysis, modern dream analysis AI, or innovative platforms that combine both approaches, the tools to decode your unconscious mind's messages are now available.</p>
+
+            <p>The masks you wear during the day, the patterns you can't seem to break, the deeper purpose you're searching for—it's all there in your dreams, waiting to be understood. The Berkeley research shows that those who engage with their dreams don't just sleep better; they live better, with greater self-awareness, emotional intelligence, and authentic alignment with their true selves.</p>
+
+            <hr style="margin: 3rem 0; border: none; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+
+            <p><em>Ready to stop throwing away the meaning in your dreams? The intersection of neuroscience and dream analysis has created unprecedented opportunities for self-discovery. Your unconscious mind is speaking—maybe it's time to start listening.</em></p>
+        </article>
+
+        <footer class="article-footer">
+            <div class="share-section">
+                <p class="share-title">Share This Article</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Elegant Particle System
+        class ParticleSystem {
+            constructor() {
+                this.container = document.getElementById('particles');
+                this.particleCount = 20;
+                this.init();
+            }
+
+            createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle particle-float';
+                
+                const size = Math.random() * 3 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 20}s`;
+                particle.style.animationDuration = `${20 + Math.random() * 10}s`;
+                
+                this.container.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.remove();
+                    }
+                }, 30000);
+            }
+
+            init() {
+                for (let i = 0; i < this.particleCount; i++) {
+                    setTimeout(() => this.createParticle(), i * 200);
+                }
+                
+                setInterval(() => this.createParticle(), 1500);
+            }
+        }
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            new ParticleSystem();
+        });
+    </script>
+</body>
+</html>

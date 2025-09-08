@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UC Berkeley's Groundbreaking Research: How Dreams Heal and Inspire | ONERA Blog</title>
+    <meta name="description" content="Matthew Walker's UC Berkeley research reveals how REM sleep provides overnight therapy that strips painful memories of emotional sting while boosting creativity by 35%.">
+    <meta name="keywords" content="UC Berkeley, Matthew Walker, dreams healing, REM sleep therapy, creativity boost, overnight therapy, noradrenaline, emotional regulation">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="UC Berkeley's Groundbreaking Research: How Dreams Heal and Inspire">
+    <meta property="og:description" content="Matthew Walker's UC Berkeley research reveals how REM sleep provides overnight therapy that strips painful memories of emotional sting while boosting creativity by 35%.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dreaminsight.app/blog/posts/uc-berkeley-dream-healing.html">
+    <meta property="og:image" content="https://dreaminsight.app/assets/uc-berkeley-research.jpg">
+    <meta property="og:site_name" content="ONERA">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2025-01-01T00:00:00Z">
+    <meta property="article:author" content="ONERA Research Team">
+    <meta property="article:section" content="Neuroscience">
+    <meta property="article:tag" content="REM Sleep">
+    <meta property="article:tag" content="Creativity">
+    <meta property="article:tag" content="Memory">
+    <meta property="article:tag" content="Emotional Healing">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UC Berkeley's Groundbreaking Research: How Dreams Heal and Inspire">
+    <meta name="twitter:description" content="Matthew Walker's UC Berkeley research reveals how REM sleep provides overnight therapy that strips painful memories of emotional sting while boosting creativity by 35%.">
+    <meta name="twitter:image" content="https://dreaminsight.app/assets/uc-berkeley-research-twitter.jpg">
+    <meta name="twitter:site" content="@onera_dreams">
+    <meta name="twitter:creator" content="@onera_dreams">
+    <style>
+        :root {
+            --primary-bg: #000000;
+            --text-primary: #FFFFFF;
+            --text-secondary: #999999;
+            --text-muted: #666666;
+            --accent: #FFFFFF;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Subtle Background */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.2;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            pointer-events: none;
+            will-change: transform, opacity;
+        }
+
+        .particle-float {
+            animation: float-elegant 25s linear infinite;
+            filter: blur(1px);
+        }
+
+        @keyframes float-elegant {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-100px) translateX(30px);
+                opacity: 0;
+            }
+        }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 50%, transparent 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-link {
+            font-size: 1.25rem;
+            font-weight: 200;
+            letter-spacing: 0.2em;
+            color: var(--text-primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .logo-link:hover {
+            opacity: 0.7;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 0.75rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .nav-link:hover:before {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .nav-link:hover {
+            color: rgba(255, 255, 255, 0.95);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Article Content */
+        .article-container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 6rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.75rem 0;
+            margin-bottom: 3rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-bottom: 1px solid transparent;
+        }
+        
+        .back-link:hover {
+            color: var(--text-primary);
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .back-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .back-link:hover .back-arrow {
+            transform: translateX(-4px);
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .article-date {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 100;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(180deg, #FFFFFF 0%, #CCCCCC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-subtitle {
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+            font-weight: 300;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .article-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            animation: fadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+        }
+
+        .article-content h2 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 300;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+        }
+
+        .article-content h3 {
+            font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+            font-weight: 400;
+            margin: 2.5rem 0 1rem;
+            color: var(--text-primary);
+            letter-spacing: 0.01em;
+        }
+
+        .article-content p {
+            margin-bottom: 1.75rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .article-content p strong {
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .article-content em {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Research highlight boxes */
+        .research-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            position: relative;
+        }
+
+        .research-box:before {
+            content: '•';
+            position: absolute;
+            top: -10px;
+            left: 2rem;
+            background: var(--primary-bg);
+            padding: 0 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        /* Stats highlight */
+        .stats-highlight {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .stats-highlight p {
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+
+        /* Call-to-action section */
+        .article-cta {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .article-cta h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .article-cta p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigation between articles */
+        .article-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 4rem 0 2rem;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link-article {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 0.75rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+        }
+
+        .nav-link-article:hover {
+            color: var(--text-primary);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: transparent;
+            padding: 3rem 0 2rem;
+            text-align: center;
+            margin-top: 6rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-copyright {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .nav-header {
+                padding: 1.5rem 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+            
+            .article-container {
+                padding: 7rem 1rem 4rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .research-box {
+                padding: 1.5rem;
+                margin: 2rem 0;
+            }
+
+            .stats-highlight {
+                padding: 1rem;
+            }
+
+            .article-cta {
+                padding: 2rem;
+            }
+
+            .article-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-links a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles-container" id="particles"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <a href="/" class="logo-link">ONERA</a>
+        <div class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/blog" class="nav-link">Blog</a>
+            <a href="/founders-letter.html" class="nav-link">Founder's Letter</a>
+        </div>
+    </nav>
+    
+    <div class="article-container">
+        <a href="/blog/" class="back-link">
+            <span class="back-arrow">←</span>
+            Back to Blog
+        </a>
+        
+        <header class="article-header">
+            <div class="article-date">January 6, 2025</div>
+            <h1 class="article-title">UC Berkeley's Groundbreaking Research on How Dreams Heal and Inspire</h1>
+            <p class="article-subtitle">Matthew Walker's revolutionary findings reveal how REM sleep provides "overnight therapy" that strips painful memories of their emotional sting while boosting creativity by 35%</p>
+            <div class="article-meta">
+                <span>⏱ 15 min read</span>
+                <div class="meta-separator"></div>
+                <span>Research</span>
+                <div class="meta-separator"></div>
+                <span>Neuroscience</span>
+            </div>
+        </header>
+
+        <article class="article-content">
+
+        <div class="article-content">
+            <p>Matthew Walker's UC Berkeley sleep laboratory has produced landmark research demonstrating that dreams actively regulate emotions and boost creativity through specific neurochemical mechanisms during REM sleep. The <strong>2011 study published in Current Biology</strong> by Els van der Helm and Walker revealed that REM sleep is the only time in 24 hours when the brain is completely devoid of noradrenaline, creating what Walker calls "overnight therapy" that strips painful memories of their emotional sting while preserving the factual content.</p>
+
+            <h2>The Overnight Therapy Mechanism</h2>
+            
+            <div class="research-box">
+                <p>Walker's team at UC Berkeley's Center for Human Sleep Science conducted a pivotal study with 35 participants using fMRI brain scanning and EEG monitoring. The research design split participants into two groups who viewed 150 emotional images twice, 12 hours apart. Those who slept between viewing sessions showed <strong>dramatic reductions in amygdala reactivity</strong> - the brain's emotional center - while the rational prefrontal cortex reengaged to process the memories.</p>
+            </div>
+
+            <p>Participants who stayed awake showed no such emotional regulation. The study, "REM Sleep Depotentiates Amygdala Activity to Previous Emotional Experiences," published November 23, 2011, demonstrated that this emotional reset occurs specifically because noradrenaline - the brain's primary stress chemical - drops to zero during REM sleep.</p>
+
+            <p>This neurochemical environment is unique to REM sleep. While acetylcholine remains high (similar to waking levels), <strong>noradrenaline, serotonin, and histamine all plummet</strong>, creating what Walker describes as a "neurochemically safe environment" for the brain to reprocess emotional experiences. The absence of noradrenaline allows emotional memories to be reactivated and processed without their original stress response, effectively decoupling the emotion from the memory.</p>
+
+            <p>This discovery emerged partly from observations by physician Murray Raskind that the drug prazosin, which blocks noradrenaline, dramatically reduced nightmares in PTSD patients who have elevated noradrenaline during REM sleep that prevents normal emotional processing.</p>
+
+            <h2>Dreams as Creativity Catalysts</h2>
+
+            <div class="stats-highlight">
+                <p>Walker's Berkeley lab has demonstrated remarkable enhancements in creative problem-solving linked to REM sleep and dreaming. When participants were awakened during REM sleep and asked to solve anagram puzzles, they performed <strong>15-35% better than when awake</strong>, with solutions appearing to "pop" into their heads effortlessly.</p>
+            </div>
+
+            <p>A related maze navigation study showed even more dramatic results: participants who dreamed about learning a virtual maze performed <strong>10 times better</strong> than those who napped without dreaming about the task.</p>
+
+            <p>These findings align with broader research on REM sleep and creativity. Sara Mednick's team at UC San Diego found that participants who experienced REM sleep during a nap showed <strong>40% improvement on the Remote Associates Test</strong>, a standard creativity measure, compared to no improvement in those who had non-REM sleep or quiet rest.</p>
+
+            <p>The mechanism appears to involve REM sleep's unique ability to forge novel connections between disparate memories. During REM, the brain doesn't simply replay experiences but instead combines memory fragments in innovative ways, creating what researchers call "bizarreness" in dreams that reflects the formation of new associative networks.</p>
+
+            <div class="research-box">
+                <p>MIT's 2023 research using the Dormio device for targeted dream incubation provides experimental validation of these creativity benefits. Participants who successfully incorporated specific themes into their hypnagogic dreams significantly outperformed controls on Creative Storytelling Tasks, Alternative Uses Tasks, and Verb Generation Tasks, demonstrating that actively guiding dream content can enhance creative performance.</p>
+            </div>
+
+            <h2>Memory Fusion Creates Innovation</h2>
+
+            <p>The third major finding from Berkeley and related research centers on how dreams facilitate memory integration and innovation. Robert Stickgold's Harvard team has shown that dreams don't simply consolidate memories - they actively transform them by extracting patterns and creating novel combinations.</p>
+
+            <p>A meta-analysis by Hudachek and Wamsley (2023) found a strong association between task-related dreaming and memory performance (standardized mean difference = 0.51), confirming that dreaming about learned material predicts better retention and understanding.</p>
+
+            <p>Walker's research demonstrates that this memory fusion occurs through specific brain wave patterns during REM sleep. <strong>Theta activity (4-7 Hz)</strong> between the hippocampus and cortex facilitates the transfer and integration of memories, while the unique neurochemical environment allows for more flexible recombination than would be possible during waking states.</p>
+
+            <p>This process appears responsible for famous scientific breakthroughs in dreams, from Kekulé's benzene ring structure to Mendeleev's periodic table arrangement.</p>
+
+            <div class="research-box">
+                <p>Recent computational modeling by Sujith Vijayan at Virginia Tech (2023) has revealed the precise mechanisms: theta frequency inputs to the infralimbic cortex during normal REM sleep strengthen inhibitory connections to the amygdala while weakening excitatory connections from the amygdala, resulting in fear memory suppression and emotional regulation. This frequency-specific processing explains why REM sleep is uniquely suited for both emotional healing and creative insight.</p>
+            </div>
+
+            <h2>How Dream Work Amplifies Natural Benefits</h2>
+
+            <p>Research on regular dream analysis and dream work practices demonstrates that actively engaging with dreams can enhance their natural benefits. A survey of psychotherapists found that <strong>70% of clients who worked with dreams in therapy showed meaningful benefits</strong>, particularly for emotional processing and trauma resolution.</p>
+
+            <p>Image Rehearsal Therapy, which involves reimagining nightmares with positive endings, shows large effect sizes for reducing nightmare frequency and improving sleep quality in PTSD patients, with 60-80% success rates sustained over 6-12 month follow-ups.</p>
+
+            <div class="stats-highlight">
+                <p>Studies comparing regular dream analyzers to non-analyzers reveal significant differences in creativity, emotional processing, and cognitive flexibility. High dream recallers show greater openness to experience, enhanced visual memory, and increased temporo-parietal junction activity - a brain region associated with self-awareness and perspective-taking.</p>
+            </div>
+
+            <p>Dream journaling specifically has been shown to improve dream recall frequency, which correlates with higher scores on standardized creativity measures and better integration of daily experiences into long-term memory.</p>
+
+            <p>The Berkeley Greater Good Science Center has played a crucial role in disseminating these findings to the public. While primarily serving as a research translation center rather than conducting primary research, the center featured Walker's work prominently, publishing his article "Why Your Brain Needs to Dream" in October 2017, which detailed his laboratory's discoveries about REM sleep's therapeutic functions and practical applications for improving sleep quality and emotional well-being.</p>
+
+            <h2>The Revolutionary Implications</h2>
+
+            <p>The UC Berkeley research, spearheaded by Matthew Walker's Center for Human Sleep Science, has fundamentally transformed our understanding of why we dream. The discovery that REM sleep provides a unique neurochemical environment - specifically the complete absence of noradrenaline - explains how dreams strip painful memories of their emotional charge while preserving their informational content.</p>
+
+            <div class="article-cta">
+                <h3>Your Nightly Laboratory</h3>
+                <p>Combined with evidence showing 15-35% improvements in creative problem-solving and 10-fold enhancements in task performance after dreaming, this research establishes dreams as active biological processes essential for emotional regulation and cognitive innovation. The practical applications, from prazosin treatment for PTSD to dream incubation techniques for creativity enhancement, demonstrate that understanding and working with our dreams can amplify these natural benefits.</p>
+            </div>
+
+            <p>Walker's groundbreaking work reveals that every night, your brain conducts sophisticated emotional therapy while simultaneously rewiring itself for enhanced creativity and problem-solving. This isn't passive recovery—it's active transformation. The neurochemical precision of REM sleep, with its complete absence of stress chemicals and heightened creative neurotransmitters, creates the perfect laboratory conditions for psychological healing and cognitive breakthrough.</p>
+
+            <p><em>The evidence is clear: your dreams aren't random neural noise, but rather your brain's most sophisticated system for emotional regulation, memory integration, and creative innovation. Understanding and engaging with this natural process offers unprecedented opportunities for healing, growth, and breakthrough insights that your waking mind alone cannot achieve.</em></p>
+        </div>
+
+        <nav class="article-nav">
+            <a href="/blog/posts/jmu-dream-study.html" class="nav-link-article">← JMU Study</a>
+            <a href="/blog" class="nav-link-article">Back to Blog</a>
+        </nav>
+    </article>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+            <a href="/cgu.html">Terms</a>
+            <a href="/privacy.html">Privacy</a>
+        </div>
+        <div class="footer-copyright">
+            © 2025 Onera. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Minimal Particle System for Article Pages
+        class ParticleSystem {
+            constructor() {
+                this.container = document.getElementById('particles');
+                this.particleCount = 12;
+                this.init();
+            }
+
+            createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle particle-float';
+                
+                const size = Math.random() * 2 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 25}s`;
+                particle.style.animationDuration = `${25 + Math.random() * 15}s`;
+                
+                this.container.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.remove();
+                    }
+                }, 40000);
+            }
+
+            init() {
+                for (let i = 0; i < this.particleCount; i++) {
+                    setTimeout(() => this.createParticle(), i * 300);
+                }
+                
+                setInterval(() => this.createParticle(), 2000);
+            }
+        }
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            new ParticleSystem();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Analysis: Your Complete Guide to Understanding Your Subconscious Mind | ONERA Blog</title>
+    <meta name="description" content="Discover the science behind dream analysis, from Freud to Jung to modern AI. Learn 5 practical techniques to unlock your subconscious wisdom and transform your life through dream interpretation.">
+    <meta name="keywords" content="dream analysis, dream interpretation, Freud dream analysis, Jung dream analysis, AI dream analysis, dream symbols, subconscious mind, dream therapy">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Dream Analysis: Your Complete Guide to Understanding Your Subconscious Mind">
+    <meta property="og:description" content="Discover the science behind dream analysis, from Freud to Jung to modern AI. Learn 5 practical techniques to unlock your subconscious wisdom and transform your life through dream interpretation.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dreaminsight.app/blog/posts/complete-guide-dream-analysis.html">
+    <meta property="og:image" content="https://dreaminsight.app/assets/dream-analysis-guide.jpg">
+    <meta property="og:site_name" content="ONERA">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:published_time" content="2025-01-11T00:00:00Z">
+    <meta property="og:author" content="ONERA Research Team">
+    <meta property="og:section" content="Psychology">
+    <meta property="og:tag" content="Dream Analysis">
+    <meta property="og:tag" content="Jung">
+    <meta property="og:tag" content="Freud">
+    <meta property="og:tag" content="AI Technology">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dream Analysis: Your Complete Guide to Understanding Your Subconscious Mind">
+    <meta name="twitter:description" content="Discover the science behind dream analysis, from Freud to Jung to modern AI. Learn 5 practical techniques to unlock your subconscious wisdom.">
+    <meta name="twitter:image" content="https://dreaminsight.app/assets/dream-analysis-guide-twitter.jpg">
+    <meta name="twitter:site" content="@onera_dreams">
+    <meta name="twitter:creator" content="@onera_dreams">
+    
+    <style>
+        :root {
+            --primary-bg: #000000;
+            --text-primary: #FFFFFF;
+            --text-secondary: #999999;
+            --text-muted: #666666;
+            --accent: #FFFFFF;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Particles Container */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.2;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            pointer-events: none;
+            will-change: transform, opacity;
+        }
+
+        .particle-float {
+            animation: float-elegant 25s linear infinite;
+            filter: blur(1px);
+        }
+
+        @keyframes float-elegant {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-100px) translateX(30px);
+                opacity: 0;
+            }
+        }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 50%, transparent 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-link {
+            font-size: 1.25rem;
+            font-weight: 200;
+            letter-spacing: 0.2em;
+            color: var(--text-primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .logo-link:hover {
+            opacity: 0.7;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 0.75rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .nav-link:hover:before {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .nav-link:hover {
+            color: rgba(255, 255, 255, 0.95);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Article Container */
+        .article-container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 6rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.75rem 0;
+            margin-bottom: 3rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-bottom: 1px solid transparent;
+        }
+        
+        .back-link:hover {
+            color: var(--text-primary);
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .back-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .back-link:hover .back-arrow {
+            transform: translateX(-4px);
+        }
+
+        /* Article Header */
+        .article-header {
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .article-date {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 100;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(180deg, #FFFFFF 0%, #CCCCCC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-subtitle {
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+            font-weight: 300;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            animation: fadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .article-content h2 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 300;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+        }
+
+        .article-content h3 {
+            font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+            font-weight: 400;
+            margin: 2.5rem 0 1rem;
+            color: var(--text-primary);
+            letter-spacing: 0.01em;
+        }
+
+        .article-content p {
+            margin-bottom: 1.75rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .article-content p strong {
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .article-content em {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .article-content ul {
+            margin: 2rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .article-content ol {
+            margin: 2rem 0;
+            padding-left: 1.5rem;
+            counter-reset: item;
+        }
+
+        .article-content ol li {
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            counter-increment: item;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .article-content ol li::before {
+            content: counter(item) ".";
+            color: var(--text-primary);
+            font-weight: 400;
+            margin-right: 0.75rem;
+            min-width: 1.5rem;
+        }
+
+        /* Highlight boxes */
+        .research-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        /* Call-to-action section */
+        .article-cta {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .article-cta h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .article-cta p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 3rem 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: transparent;
+            padding: 3rem 0 2rem;
+            text-align: center;
+            margin-top: 6rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-copyright {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .nav-header {
+                padding: 1.5rem 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+            
+            .article-container {
+                padding: 7rem 1rem 4rem;
+            }
+
+            .article-meta {
+                flex-direction: row;
+                gap: 1rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .research-box {
+                padding: 1.5rem;
+                margin: 2rem 0;
+            }
+
+            .article-cta {
+                padding: 2rem;
+            }
+
+            .footer-links a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles-container" id="particles"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <a href="/" class="logo-link">ONERA</a>
+        <div class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/blog" class="nav-link">Blog</a>
+            <a href="/founders-letter.html" class="nav-link">Founder's Letter</a>
+        </div>
+    </nav>
+    
+    <div class="article-container">
+        <a href="/blog/" class="back-link">
+            <span class="back-arrow">←</span>
+            Back to Blog
+        </a>
+        
+        <header class="article-header">
+            <div class="article-meta">
+                <span>January 11, 2025</span>
+                <span>⏱ 25 min read</span>
+            </div>
+            <h1 class="article-title">Dream Analysis: Your Complete Guide to Understanding Your Subconscious Mind</h1>
+            <p class="article-subtitle">Unlock the science and practice of dream interpretation from Freud to Jung to modern AI</p>
+        </header>
+
+        <article class="article-content">
+            <h2>What Is Dream Analysis and Why Does It Matter?</h2>
+            
+            <p>Dream analysis is the practice of interpreting the symbols, emotions, and stories that appear in your dreams to gain deeper self-awareness. Unlike what many people think, <strong>dream analysis and interpretation</strong> isn't just mystical nonsense – it's a powerful tool for personal growth that's been used for centuries.</p>
+
+            <p>As renowned psychologist Dr. David G. Benner explains in his work on dreamwork, "Dreams give us direct access to our unconscious which has a crucial role in our wholeness, deep knowing of ourselves, and living with wisdom."</p>
+
+            <h2>The Science Behind Dream Analysis: From Freud to Jung</h2>
+
+            <h3>Freudian Dream Analysis</h3>
+            
+            <p><strong>Sigmund Freud dream analysis</strong> revolutionized how we think about dreams. Freud believed dreams were the "royal road to the unconscious" and developed techniques like <strong>free association and dream analysis</strong> to uncover hidden meanings. His approach focused on finding repressed desires and conflicts in dream symbols.</p>
+
+            <h3>Jungian Dream Analysis</h3>
+            
+            <p><strong>Carl Jung dream analysis</strong> took a different approach. <strong>Jung dream analysis</strong> emphasized that dreams help integrate different parts of our personality. Jung saw dreams as messages from the unconscious mind, offering guidance rather than just revealing problems.</p>
+
+            <h3>Modern AI Dream Analysis</h3>
+            
+            <p>Today, <strong>dream analysis AI</strong> and <strong>dream analysis apps</strong> make these psychological insights accessible to everyone. Modern <strong>AI dream analysis</strong> combines traditional psychological approaches with pattern recognition to provide personalized insights.</p>
+
+            <h2>How Dreams Work: The Hidden Language of Your Mind</h2>
+
+            <p>According to Dr. Benner's research, dreams operate like parables or metaphors. They're not meant to be taken literally but understood symbolically. Here's what makes dreams so powerful:</p>
+
+            <ul>
+                <li><strong>Symbol Recognition</strong>: Your mind creates symbolic stories to process emotions and experiences</li>
+                <li><strong>Emotional Processing</strong>: Dreams help you work through feelings you might ignore during the day</li>
+                <li><strong>Integration</strong>: They weave together fragmented parts of your psyche</li>
+                <li><strong>Wisdom Access</strong>: Dreams reveal unconscious knowledge you need for wholeness</li>
+            </ul>
+
+            <h2>5 Simple Principles for Understanding Your Dreams</h2>
+
+            <p>Dr. Benner outlines five key principles that make <strong>dream analysis</strong> accessible to anyone:</p>
+
+            <h3>1. Listen, Don't Interpret</h3>
+            
+            <p>Think of dreams as messages from your deeper self. As Dr. Benner notes, "Rather than trying to interpret your dreams, learn how to listen to them." The richest dreams usually happen late at night and contain strong emotions or puzzling elements.</p>
+
+            <h3>2. Receive Gently</h3>
+            
+            <p>Don't force meaning from your dreams. Instead of asking "What does this mean?" ask "What questions is this dream asking me?" A dream about a car without brakes might be asking: "How is my life out of control?"</p>
+
+            <h3>3. Think Symbolically</h3>
+            
+            <p>View your dream like a <strong>"dream within a dream analysis"</strong> – it's a story with one main message. Focus on the overall theme, not tiny details.</p>
+
+            <h3>4. Everything Represents You</h3>
+            
+            <p>All dream symbols, including other people, represent parts of yourself. Focus on the main characteristics of dream figures and objects.</p>
+
+            <h3>5. Embrace Both Light and Dark</h3>
+            
+            <p>True self-knowledge requires facing both positive and shadow aspects of yourself. This is essential for personal growth and integration.</p>
+
+            <h2>5 Practical Dream Analysis Techniques You Can Use Tonight</h2>
+
+            <h3>1. Dream Journaling</h3>
+            
+            <p>Write down your dreams immediately after waking. Include:</p>
+            <ul>
+                <li>Complete story details</li>
+                <li>Emotions you felt</li>
+                <li>Vivid symbols or images</li>
+                <li>Overall mood or atmosphere</li>
+            </ul>
+
+            <h3>2. Title and Theme Identification</h3>
+            
+            <p>Give your dream a title like it's a movie. Ask yourself: "What is this dream primarily about?" Connect themes to your current life situation.</p>
+
+            <h3>3. Symbol Association</h3>
+            
+            <p>Note your personal associations with dream symbols. Don't look up generic <strong>"freud dream analysis symbols list"</strong> – focus on what these symbols mean to YOU specifically.</p>
+
+            <h3>4. Dream Ego Analysis</h3>
+            
+            <p>Identify which character in the dream represents you. Notice how this dream-you differs from waking-you. This often reveals new possibilities for growth.</p>
+
+            <h3>5. Gift Recognition</h3>
+            
+            <p>Look for invitations or gifts in your dreams. What changes might your dream be suggesting for your waking life?</p>
+
+            <h2>Modern Dream Analysis: How Technology Enhances Ancient Wisdom</h2>
+
+            <p>Today's <strong>dream analysis apps</strong> combine traditional psychological approaches with modern convenience. The best apps offer:</p>
+
+            <ul>
+                <li><strong>Symbol extraction and analysis</strong> from multiple cultural traditions</li>
+                <li><strong>Emotion tracking</strong> over days, weeks, and months</li>
+                <li><strong>Personalized insights</strong> that learn your unique dream patterns</li>
+                <li><strong>360-degree view</strong> of your subconscious patterns</li>
+                <li><strong>Shadow work</strong> that feels natural and accessible</li>
+            </ul>
+
+            <p>This technological approach to <strong>dream analysis and interpretation</strong> makes profound self-discovery available to anyone with a smartphone.</p>
+
+            <h2>The Benefits of Regular Dream Analysis</h2>
+
+            <p>Consistent <strong>dream analysis</strong> offers remarkable benefits:</p>
+
+            <ul>
+                <li><strong>Increased self-awareness</strong> and emotional intelligence</li>
+                <li><strong>Better understanding</strong> of your unconscious motivations</li>
+                <li><strong>Clearer direction</strong> for personal growth and decisions</li>
+                <li><strong>Integration</strong> of fragmented aspects of your personality</li>
+                <li><strong>Access to inner wisdom</strong> you didn't know you had</li>
+            </ul>
+
+            <h2>Different Approaches to Dream Analysis</h2>
+
+            <h3>Therapeutic Dream Analysis</h3>
+            
+            <p><strong>Dream analysis therapy</strong> uses professional guidance to explore deeper psychological patterns. This approach is particularly helpful for processing trauma or major life transitions.</p>
+
+            <h3>Personal Dream Analysis</h3>
+            
+            <p>Self-directed <strong>dream analysis</strong> using journals, apps, or books allows for ongoing personal exploration at your own pace.</p>
+
+            <h3>Cultural Approaches</h3>
+            
+            <p>Different traditions offer unique perspectives. <strong>Christian dream analysis</strong> might focus on spiritual guidance, while other approaches emphasize psychological growth.</p>
+
+            <h2>Common Dream Themes and What They Reveal</h2>
+
+            <p>While Dr. Benner emphasizes personal associations over universal meanings, some common themes include:</p>
+
+            <ul>
+                <li><strong>Being chased</strong>: Avoiding something in waking life</li>
+                <li><strong>Flying</strong>: Desire for freedom or transcendence</li>
+                <li><strong>Falling</strong>: Loss of control or fear of failure</li>
+                <li><strong>Death</strong>: Transformation or ending of a life phase</li>
+                <li><strong>Animals</strong>: Instinctual or primal aspects of self</li>
+            </ul>
+
+            <h2>Getting Started with Dream Analysis</h2>
+
+            <p>Ready to unlock your subconscious wisdom? Here's how to begin:</p>
+
+            <ol>
+                <li><strong>Start a dream journal</strong> beside your bed</li>
+                <li><strong>Record dreams immediately</strong> upon waking</li>
+                <li><strong>Look for patterns</strong> over time</li>
+                <li><strong>Focus on emotions</strong> more than plot details</li>
+                <li><strong>Ask questions</strong> rather than seeking definitive answers</li>
+                <li><strong>Be patient</strong> – dream wisdom unfolds gradually</li>
+            </ol>
+
+            <h2>The Future of Dream Understanding</h2>
+
+            <p>As Dr. Benner's work demonstrates, dream analysis isn't just ancient wisdom – it's a practical tool for modern self-discovery. Whether you prefer traditional <strong>jungian dream analysis</strong>, modern <strong>AI dream analysis</strong>, or a combination approach, the key is consistent practice and open-minded exploration.</p>
+
+            <p>Your dreams are personal messages from your unconscious mind, offering guidance, integration, and wisdom. By learning to listen to these nightly communications, you can access profound insights about yourself and your life direction.</p>
+
+            <p><em>This article draws from the dreamwork principles and techniques developed by Dr. David G. Benner, whose research has made dream analysis accessible to modern practitioners seeking self-understanding and personal growth.</em></p>
+
+            <hr>
+
+            <div class="article-cta">
+                <h3>Ready to unlock your subconscious wisdom?</h3>
+                <p>Start your dream analysis journey tonight by simply writing down whatever you remember from your dreams. Your unconscious mind has been waiting to share its wisdom with you.</p>
+            </div>
+        </article>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+            <a href="/cgu.html">Terms</a>
+            <a href="/privacy.html">Privacy</a>
+        </div>
+        <div class="footer-copyright">
+            © 2025 Onera. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Minimal Particle System for Article Pages
+        class ParticleSystem {
+            constructor() {
+                this.container = document.getElementById('particles');
+                this.particleCount = 12;
+                this.init();
+            }
+
+            createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle particle-float';
+                
+                const size = Math.random() * 2 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 25}s`;
+                particle.style.animationDuration = `${25 + Math.random() * 15}s`;
+                
+                this.container.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.remove();
+                    }
+                }, 40000);
+            }
+
+            init() {
+                for (let i = 0; i < this.particleCount; i++) {
+                    setTimeout(() => this.createParticle(), i * 300);
+                }
+                
+                setInterval(() => this.createParticle(), 2000);
+            }
+        }
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            new ParticleSystem();
+        });
+    </script>
+</body>
+</html>

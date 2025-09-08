@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Do Dreams Feel So Random? James Madison University's Groundbreaking Study | ONERA Blog</title>
+    <meta name="description" content="A revolutionary brain imaging study from JMU reveals why your dreams feel chaotic—and why that chaos is actually your mind's sophisticated attempt to show you something crucial about your life.">
+    <meta name="keywords" content="dreams, REM sleep, James Madison University, neuroscience, unconscious mind, dream analysis, prefrontal cortex, brain imaging">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Why Do Dreams Feel So Random? James Madison University's Groundbreaking Study">
+    <meta property="og:description" content="A revolutionary brain imaging study from JMU reveals why your dreams feel chaotic—and why that chaos is actually your mind's sophisticated attempt to show you something crucial about your life.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dreaminsight.app/blog/posts/jmu-dream-study.html">
+    <meta property="og:image" content="https://dreaminsight.app/assets/jmu-dream-study.jpg">
+    <meta property="og:site_name" content="ONERA">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2025-01-01T00:00:00Z">
+    <meta property="article:author" content="ONERA Research Team">
+    <meta property="article:section" content="Psychology">
+    <meta property="article:tag" content="REM Sleep">
+    <meta property="article:tag" content="Memory">
+    <meta property="article:tag" content="Brain Imaging">
+    <meta property="article:tag" content="Sleep Science">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Why Do Dreams Feel So Random? James Madison University's Groundbreaking Study">
+    <meta name="twitter:description" content="A revolutionary brain imaging study from JMU reveals why your dreams feel chaotic—and why that chaos is actually your mind's sophisticated attempt to show you something crucial about your life.">
+    <meta name="twitter:image" content="https://dreaminsight.app/assets/jmu-dream-study-twitter.jpg">
+    <meta name="twitter:site" content="@onera_dreams">
+    <meta name="twitter:creator" content="@onera_dreams">
+    <style>
+        :root {
+            --primary-bg: #000000;
+            --text-primary: #FFFFFF;
+            --text-secondary: #999999;
+            --text-muted: #666666;
+            --accent: #FFFFFF;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Subtle Background */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.2;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            pointer-events: none;
+            will-change: transform, opacity;
+        }
+
+        .particle-float {
+            animation: float-elegant 25s linear infinite;
+            filter: blur(1px);
+        }
+
+        @keyframes float-elegant {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-100px) translateX(30px);
+                opacity: 0;
+            }
+        }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 50%, transparent 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-link {
+            font-size: 1.25rem;
+            font-weight: 200;
+            letter-spacing: 0.2em;
+            color: var(--text-primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .logo-link:hover {
+            opacity: 0.7;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 0.75rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .nav-link:hover:before {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .nav-link:hover {
+            color: rgba(255, 255, 255, 0.95);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Back to Blog Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        .back-link:before {
+            content: '←';
+            margin-right: 0.75rem;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .back-link:hover:before {
+            transform: translateX(-3px);
+        }
+
+        /* Article Content */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10rem 2rem 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-header {
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .article-date {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-meta-top {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .article-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 100;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(180deg, #FFFFFF 0%, #CCCCCC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-subtitle {
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+            font-weight: 300;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .article-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+        }
+
+        .article-content h2 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 300;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+        }
+
+        .article-content h3 {
+            font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+            font-weight: 400;
+            margin: 2.5rem 0 1rem;
+            color: var(--text-primary);
+            letter-spacing: 0.01em;
+        }
+
+        .article-content p {
+            margin-bottom: 1.75rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .article-content p strong {
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .article-content em {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Highlight boxes for key insights */
+        .insight-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            position: relative;
+        }
+
+        .insight-box:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 2rem;
+            background: var(--primary-bg);
+            padding: 0 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        /* Call-to-action section */
+        .article-cta {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .article-cta h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .article-cta p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigation between articles */
+        .article-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 4rem 0 2rem;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link-article {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 0.75rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+        }
+
+        .nav-link-article:hover {
+            color: var(--text-primary);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: transparent;
+            padding: 3rem 0 2rem;
+            text-align: center;
+            margin-top: 6rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-copyright {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .nav-header {
+                padding: 1.5rem 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .breadcrumb {
+                font-size: 0.75rem;
+            }
+            
+            .article-container {
+                padding: 7rem 1rem 4rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .insight-box {
+                padding: 1.5rem;
+                margin: 2rem 0;
+            }
+
+            .article-cta {
+                padding: 2rem;
+            }
+
+            .article-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-links a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles-container" id="particles"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <a href="/" class="logo-link">ONERA</a>
+        <div class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/blog" class="nav-link">Blog</a>
+            <a href="/founders-letter.html" class="nav-link">Founder's Letter</a>
+        </div>
+    </nav>
+    
+    <div class="article-container">
+        <a href="/blog" class="back-link">Back to Blog</a>
+        
+        <header class="article-header">
+            <div class="article-meta-top">
+                <span>January 6, 2025</span>
+                <span>⏱ 22 min read</span>
+            </div>
+            <h1 class="article-title">Why Do Dreams Feel So Random and Chaotic? James Madison University's Groundbreaking Study Reveals They're Actually Mapping Your Life's Hidden Meaning</h1>
+            <p class="article-subtitle">A revolutionary brain imaging study reveals why your unconscious mind's nightly theater holds the keys to understanding yourself</p>
+        </header>
+
+        <article class="article-content">
+            <h2>The Question That Haunts Every Thinking Person</h2>
+            <p>You wake up at 3 AM. Your heart is racing. You just had a vivid dream about your college roommate morphing into your boss while you desperately searched for a classroom you couldn't find. Sound familiar? If you're like most analytical professionals, you've dismissed these nightly theater productions as random neural firings—meaningless static from an overworked brain.</p>
+            
+            <p>But what if you're wrong?</p>
+            
+            <p>What if that seemingly chaotic dream landscape is actually your unconscious mind's sophisticated attempt to show you something crucial about your life—something your logical, executive-function-dominated waking mind simply cannot grasp?</p>
+
+            <h2>The Revolutionary Discovery at James Madison University</h2>
+            <div class="insight-box">
+                <p><strong>Dreams appear random and chaotic because a specific part of your brain—the right dorsolateral prefrontal cortex—deliberately shuts down during REM sleep, according to groundbreaking fMRI research from James Madison University.</strong> This region, responsible for logical reasoning and executive function, goes offline to allow your unconscious mind to work its magic unfiltered by rational constraints.</p>
+            </div>
+
+            <p>This isn't just another sleep study. The JMU research team has developed what they're calling a "Unified Theory" of dreams—a comprehensive framework that finally explains why your dreams feel like surrealist films directed by your subconscious. Using functional MRI technology, researchers watched in real-time as the brain's logical command center powered down during REM sleep, while other regions—those handling memory consolidation, emotional processing, and pattern recognition—lit up like a neural symphony.</p>
+
+            <p>The implications are staggering. Your dreams aren't random at all. They're your brain's way of integrating fragments of past experiences, current challenges, and future possibilities into a coherent narrative that your conscious mind isn't equipped to construct.</p>
+
+            <h2>Why Your Logical Brain Must Step Aside</h2>
+            <p><strong>The deactivation of the prefrontal cortex during dreams serves a critical evolutionary purpose: it allows your brain to make connections and insights that rigid logical thinking would immediately dismiss.</strong> Without your inner critic and rational gatekeeper active, your unconscious mind can freely explore relationships between seemingly unrelated experiences, emotions, and memories.</p>
+
+            <p>Think about it. During your waking hours, you're trapped in linear thinking. Meeting follows meeting. Email follows email. Your executive function keeps you on track, productive, efficient—but also confined within the boundaries of what seems "reasonable" or "logical."</p>
+
+            <p>But at night? That's when the real work begins.</p>
+
+            <p>The JMU study reveals that during REM sleep, your brain engages in what researchers call "hyperconnective processing." Those bizarre dream sequences where your third-grade teacher discusses quarterly reports with you while you're both floating in your childhood swimming pool? That's not chaos—it's your unconscious mind identifying patterns and connections between authority figures, performance anxiety, and emotional safety that your waking mind would never allow itself to explore.</p>
+
+            <h2>The Hidden Architecture of Dream Logic</h2>
+            <p><strong>Dreams follow their own sophisticated logic system that becomes visible only when we stop trying to force them into waking-world frameworks.</strong> The JMU research demonstrates that dream content isn't random but follows specific patterns of memory consolidation and adaptive cognitive processing.</p>
+
+            <p>When you dream about that friend from high school you haven't thought about in years, your brain isn't randomly accessing old files. It's recognizing something in your current life that resonates with the emotional or social dynamics of that past relationship. The dream is showing you a pattern, a similarity, a lesson that needs integration.</p>
+
+            <p>This is why dream content often feels both foreign and deeply familiar. Your unconscious is speaking to you in a language of symbols, emotions, and associations that transcends the limitations of verbal, logical thought. It's showing you the deeper currents of your psyche—the ones that actually drive your decisions, reactions, and life patterns.</p>
+
+            <h2>What Your Dreams Are Actually Telling You</h2>
+            <div class="insight-box">
+                <p><strong>Every dream is a direct communication from your unconscious mind, offering insights about unresolved conflicts, hidden desires, and untapped potential that your conscious mind actively suppresses during waking hours.</strong> The JMU study's unified theory suggests that dreams serve multiple critical functions simultaneously:</p>
+            </div>
+
+            <p><strong>Memory Integration</strong>: Your brain doesn't just store memories; it weaves them into the fabric of your identity. Those seemingly random appearances of past friends, old locations, and forgotten experiences? They're being actively integrated into your current self-narrative, helping you understand who you're becoming.</p>
+
+            <p><strong>Emotional Regulation</strong>: Without the prefrontal cortex's rigid control, your emotional brain can finally process experiences that you've been too busy, too logical, or too defended to fully feel during the day. That anxiety dream about being unprepared for a presentation might be your psyche's way of processing deeper fears about competence and worthiness that you'd never allow yourself to consciously examine.</p>
+
+            <p><strong>Problem-Solving Through Metaphor</strong>: Some of history's greatest innovations came through dreams—from Kekulé's benzene ring to McCartney's "Yesterday." The JMU research explains why: with logical constraints removed, your brain can explore solutions through metaphorical and symbolic thinking that often leads to breakthrough insights.</p>
+
+            <p><strong>Future Simulation</strong>: Dreams often place us in scenarios we've never experienced, allowing our brains to rehearse potential futures and prepare adaptive responses. That recurring dream about flying? It might be your unconscious mind exploring themes of freedom, transcendence, or escape that are crucial to your psychological development.</p>
+
+            <h2>The Modern Professional's Dream Dilemma</h2>
+            <p>You're successful by conventional metrics. Good job. Decent salary. Yet something feels off. You wake up from intense dreams feeling like you've glimpsed something important, only to have it slip away as you reach for your phone and dive into the day's first emails.</p>
+
+            <p>You've tried meditation apps. They helped with surface-level stress but didn't touch that deeper yearning for meaning. You've attempted dream journaling, but without a framework for understanding the symbolic language of your unconscious, it felt like collecting random noise. Those productivity tools and life-optimization strategies? They've made you more efficient at avoiding the very questions your dreams are desperately trying to help you answer.</p>
+
+            <p>The JMU study validates what you've intuitively sensed: there's profound intelligence in those nightly visions. But accessing it requires more than just remembering your dreams—it requires understanding their language, recognizing their patterns, and integrating their insights into your waking life.</p>
+
+            <h2>Breaking Through the Veil</h2>
+            <div class="insight-box">
+                <p><strong>The first dream you truly decode will shatter illusions you didn't know you were maintaining.</strong> The JMU research shows that once people understand the actual mechanism of dreaming—how the deactivation of logical processing allows for deep psychological work—they can begin to actively engage with their dream content rather than dismissing it.</p>
+            </div>
+
+            <p>This isn't about new-age dream dictionaries or generic symbol interpretation. The unified theory approach recognizes that your dreams are uniquely yours, created by your specific brain from your particular experiences, addressing your individual psychological needs. The same dream symbol can mean radically different things to different people, which is why generic interpretation fails.</p>
+
+            <p>What matters is developing a systematic approach to understanding your own unconscious language—recognizing your recurring patterns, identifying your personal symbols, and tracking how your dreams evolve as you integrate their insights.</p>
+
+            <h2>The Revolution in Self-Understanding</h2>
+            <p>The JMU study represents a paradigm shift in how we understand consciousness itself. For too long, we've privileged waking, logical thought as the pinnacle of human cognition. But this research reveals that some of our most important psychological work happens precisely when our rational mind steps aside.</p>
+
+            <p>Your dreams aren't the problem. The problem is that you've been taught to ignore them, dismiss them, or at best, treat them as curious entertainment rather than the sophisticated psychological processing they actually represent.</p>
+
+            <p>Every night, your unconscious mind offers you a master class in your own psychology. It shows you your patterns, your blind spots, your potentials, and your pathways forward. The question isn't whether your dreams have meaning—the JMU study definitively proves they do. The question is whether you're ready to learn their language and receive their insights.</p>
+
+            <h2>The Path Forward</h2>
+            <p>Understanding that dreams operate through the deliberate deactivation of logical processing changes everything. It means those bizarre, seemingly random dream sequences are actually your psyche's most honest communications—unfiltered by the defenses, rationalizations, and logical limitations that constrain your waking thoughts.</p>
+
+            <p>The JMU unified theory doesn't just explain why dreams feel chaotic; it reveals why that chaos is actually a sophisticated form of order that your logical mind simply cannot perceive. It's like trying to understand a symphony by analyzing individual notes rather than experiencing the music as a whole.</p>
+
+            <p>Your dreams are already doing the work—consolidating memories, processing emotions, solving problems, and preparing you for future challenges. The only question is whether you'll continue to ignore this nightly intelligence or finally learn to understand and integrate its wisdom.</p>
+
+            <p>The researchers at James Madison University haven't just given us a new theory of dreams. They've provided a scientific framework for understanding one of consciousness's greatest mysteries: how our minds create meaning, integration, and growth through the deliberate suspension of logic and the embrace of the unconscious mind's deeper wisdom.</p>
+
+            <div class="article-cta">
+                <h3>The Journey Begins Tonight</h3>
+                <p>Tonight, when you lay your head on your pillow, remember: you're not just going to sleep. You're entering a laboratory of the self, where your unconscious mind will work tirelessly to show you truths that your waking mind cannot—or will not—see. The question is: are you ready to listen?</p>
+            </div>
+
+            <p><em>For those ready to unlock the profound intelligence of their dreams through systematic analysis and pattern recognition, the journey begins with understanding that every dream is a doorway to deeper self-knowledge. The science is clear. The path is open. The only thing standing between you and the wisdom of your unconscious mind is the decision to take your dreams as seriously as they take you.</em></p>
+        </div>
+
+        <nav class="article-nav">
+            <a href="/blog" class="nav-link-article">← Back to Blog</a>
+            <a href="/blog" class="nav-link-article">More Articles →</a>
+        </nav>
+    </article>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+            <a href="/cgu.html">Terms</a>
+            <a href="/privacy.html">Privacy</a>
+        </div>
+        <div class="footer-copyright">
+            © 2025 Onera. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Minimal Particle System for Article Pages
+        class ParticleSystem {
+            constructor() {
+                this.container = document.getElementById('particles');
+                this.particleCount = 12;
+                this.init();
+            }
+
+            createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle particle-float';
+                
+                const size = Math.random() * 2 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 25}s`;
+                particle.style.animationDuration = `${25 + Math.random() * 15}s`;
+                
+                this.container.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.remove();
+                    }
+                }, 40000);
+            }
+
+            init() {
+                for (let i = 0; i < this.particleCount; i++) {
+                    setTimeout(() => this.createParticle(), i * 300);
+                }
+                
+                setInterval(() => this.createParticle(), 2000);
+            }
+        }
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            new ParticleSystem();
+        });
+    </script>
+</body>
+</html>

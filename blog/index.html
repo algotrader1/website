@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONERA Blog - Dream Science & Self-Discovery</title>
+    <meta name="description" content="Explore the science of dreams, consciousness, and self-discovery. Research-backed insights into unlocking your mind's hidden potential.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ONERA Blog - Dream Science & Self-Discovery">
+    <meta property="og:description" content="Explore the science of dreams, consciousness, and self-discovery. Research-backed insights into unlocking your mind's hidden potential.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dreaminsight.app/blog">
+    <meta property="og:image" content="https://dreaminsight.app/assets/og-image.jpg">
+    <meta property="og:site_name" content="ONERA">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ONERA Blog - Dream Science & Self-Discovery">
+    <meta name="twitter:description" content="Explore the science of dreams, consciousness, and self-discovery. Research-backed insights into unlocking your mind's hidden potential.">
+    <meta name="twitter:image" content="https://dreaminsight.app/assets/twitter-card.jpg">
+    <meta name="twitter:site" content="@onera_dreams">
+    <meta name="twitter:creator" content="@onera_dreams">
+    <style>
+        :root {
+            --primary-bg: #000000;
+            --text-primary: #FFFFFF;
+            --text-secondary: #999999;
+            --text-muted: #666666;
+            --accent: #FFFFFF;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Elegant Particle Container */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+            will-change: transform, opacity;
+        }
+
+        .particle-float {
+            animation: float-elegant 20s linear infinite;
+            filter: blur(1px);
+        }
+
+        @keyframes float-elegant {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) translateX(30px);
+                opacity: 0;
+            }
+        }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 50%, transparent 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-link {
+            font-size: 1.5rem;
+            font-weight: 200;
+            letter-spacing: 0.2em;
+            color: var(--text-primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .logo-link:hover {
+            opacity: 0.7;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 0.75rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .nav-link:hover:before {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .nav-link:hover {
+            color: rgba(255, 255, 255, 0.95);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link.active {
+            color: rgba(255, 255, 255, 0.95);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10rem 2rem 3rem;
+            min-height: 100vh;
+        }
+
+        /* Hero Section */
+        .blog-hero {
+            text-align: center;
+            margin-bottom: 6rem;
+            animation: fadeInScale 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .blog-title {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 100;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            background: linear-gradient(180deg, #FFFFFF 0%, #CCCCCC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .blog-subtitle {
+            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+            font-weight: 300;
+            color: var(--text-secondary);
+            letter-spacing: 0.02em;
+            line-height: 1.6;
+        }
+
+        /* Articles Grid */
+        .articles-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .article-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 3rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .article-card:nth-child(1) { animation-delay: 0.1s; }
+        .article-card:nth-child(2) { animation-delay: 0.2s; }
+        .article-card:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .article-card:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .article-card:hover:before {
+            opacity: 1;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-date {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .article-title {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+        }
+
+        .article-excerpt {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .read-time {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        .read-more:after {
+            content: '→';
+            margin-left: 0.5rem;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: inline-block;
+        }
+
+        .article-card:hover .read-more {
+            color: var(--text-primary);
+        }
+
+        .article-card:hover .read-more:after {
+            transform: translateX(5px);
+        }
+
+        /* Tags and Categories */
+        .filter-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+        }
+
+        .filter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .filter-title {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+        }
+
+        .filter-reset {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .filter-reset:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            color: var(--text-primary);
+        }
+
+        .filter-groups {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .filter-group-title {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-tags, .filter-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .filter-tag, .filter-category {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .filter-tag:before, .filter-category:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            transition: left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .filter-tag:hover:before, .filter-category:hover:before {
+            left: 0;
+        }
+
+        .filter-tag:hover, .filter-category:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+        }
+
+        .filter-tag.active, .filter-category.active {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: var(--text-primary);
+        }
+
+        .tag-count, .category-count {
+            opacity: 0.5;
+            margin-left: 0.25rem;
+            font-size: 0.75rem;
+        }
+
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .article-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        .no-results.visible {
+            display: block;
+        }
+
+        .article-card.hidden {
+            display: none;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 6rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .empty-state h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Footer */
+        .footer {
+            background: transparent;
+            padding: 4rem 0 2rem;
+            text-align: center;
+            margin-top: 8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 2rem;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-copyright {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .nav-header {
+                padding: 1.5rem 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-link {
+                font-size: 0.75rem;
+                padding: 0.6rem 1.5rem;
+            }
+            
+            .content {
+                padding: 8rem 1rem 3rem;
+            }
+
+            .blog-title {
+                font-size: 2.5rem;
+                letter-spacing: 0.1em;
+            }
+
+            .article-card {
+                padding: 2rem;
+            }
+
+            .footer-links a {
+                display: block;
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles-container" id="particles"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <a href="/" class="logo-link">ONERA</a>
+        <div class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/blog" class="nav-link active">Blog</a>
+            <a href="/founders-letter.html" class="nav-link">Founder's Letter</a>
+        </div>
+    </nav>
+    
+    <div class="content">
+        <div class="blog-hero">
+            <h1 class="blog-title">Insights</h1>
+            <p class="blog-subtitle">Research-backed explorations into dreams, consciousness, and self-discovery</p>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <div class="filter-header">
+                <h3 class="filter-title">Filter Articles</h3>
+                <button class="filter-reset" onclick="resetFilters()">Reset All</button>
+            </div>
+            <div class="filter-groups">
+                <div class="filter-group">
+                    <div class="filter-group-title">Categories</div>
+                    <div class="filter-categories" id="categoryFilters">
+                        <button class="filter-category" data-category="research" onclick="toggleCategory('research')">Research <span class="category-count">(19)</span></button>
+                        <button class="filter-category" data-category="neuroscience" onclick="toggleCategory('neuroscience')">Neuroscience <span class="category-count">(15)</span></button>
+                        <button class="filter-category" data-category="psychology" onclick="toggleCategory('psychology')">Psychology <span class="category-count">(16)</span></button>
+                        <button class="filter-category" data-category="mental-health" onclick="toggleCategory('mental-health')">Mental Health <span class="category-count">(3)</span></button>
+                        <button class="filter-category" data-category="technology" onclick="toggleCategory('technology')">Technology <span class="category-count">(1)</span></button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <div class="filter-group-title">Tags</div>
+                    <div class="filter-tags" id="tagFilters">
+                        <button class="filter-tag" data-tag="rem-sleep" onclick="toggleTag('rem-sleep')">REM Sleep <span class="tag-count">(3)</span></button>
+                        <button class="filter-tag" data-tag="creativity" onclick="toggleTag('creativity')">Creativity <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="memory" onclick="toggleTag('memory')">Memory <span class="tag-count">(2)</span></button>
+                        <button class="filter-tag" data-tag="emotional-healing" onclick="toggleTag('emotional-healing')">Emotional Healing <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="brain-imaging" onclick="toggleTag('brain-imaging')">Brain Imaging <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="lucid-dreaming" onclick="toggleTag('lucid-dreaming')">Lucid Dreaming <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="sleep-science" onclick="toggleTag('sleep-science')">Sleep Science <span class="tag-count">(2)</span></button>
+                        <button class="filter-tag" data-tag="dream-analysis" onclick="toggleTag('dream-analysis')">Dream Analysis <span class="tag-count">(3)</span></button>
+                        <button class="filter-tag" data-tag="unconscious-mind" onclick="toggleTag('unconscious-mind')">Unconscious Mind <span class="tag-count">(2)</span></button>
+                        <button class="filter-tag" data-tag="emotional-processing" onclick="toggleTag('emotional-processing')">Emotional Processing <span class="tag-count">(2)</span></button>
+                        <button class="filter-tag" data-tag="self-discovery" onclick="toggleTag('self-discovery')">Self-Discovery <span class="tag-count">(2)</span></button>
+                        <button class="filter-tag" data-tag="jung" onclick="toggleTag('jung')">Jung <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="professional-development" onclick="toggleTag('professional-development')">Professional Development <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="dream-control" onclick="toggleTag('dream-control')">Dream Control <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="lucid-dreaming" onclick="toggleTag('lucid-dreaming')">Lucid Dreaming <span class="tag-count">(3)</span></button>
+                        <button class="filter-tag" data-tag="metacognition" onclick="toggleTag('metacognition')">Metacognition <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="ai-dream-analysis" onclick="toggleTag('ai-dream-analysis')">AI Dream Analysis <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="depression-treatment" onclick="toggleTag('depression-treatment')">Depression Treatment <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="shadow-work" onclick="toggleTag('shadow-work')">Shadow Work <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="mental-health" onclick="toggleTag('mental-health')">Mental Health <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="virtual-reality-dreams" onclick="toggleTag('virtual-reality-dreams')">Virtual Reality Dreams <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="eeg-patterns" onclick="toggleTag('eeg-patterns')">EEG Patterns <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="dream-symbols" onclick="toggleTag('dream-symbols')">Dream Symbols <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="memory-consolidation" onclick="toggleTag('memory-consolidation')">Memory Consolidation <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="brain-pattern-reactivation" onclick="toggleTag('brain-pattern-reactivation')">Brain Pattern Reactivation <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="sleep-cognition" onclick="toggleTag('sleep-cognition')">Sleep Cognition <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="problem-solving" onclick="toggleTag('problem-solving')">Problem Solving <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="creative-processing" onclick="toggleTag('creative-processing')">Creative Processing <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="mit-research" onclick="toggleTag('mit-research')">MIT Research <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="eeg-technology" onclick="toggleTag('eeg-technology')">EEG Technology <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="social-dreams" onclick="toggleTag('social-dreams')">Social Dreams <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="neural-patterns" onclick="toggleTag('neural-patterns')">Neural Patterns <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="amygdala-hippocampus" onclick="toggleTag('amygdala-hippocampus')">Amygdala Hippocampus <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="freudian-analysis" onclick="toggleTag('freudian-analysis')">Freudian Analysis <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="jungian-analysis" onclick="toggleTag('jungian-analysis')">Jungian Analysis <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="neurobiological-mechanisms" onclick="toggleTag('neurobiological-mechanisms')">Neurobiological Mechanisms <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="rem-sleep-research" onclick="toggleTag('rem-sleep-research')">REM Sleep Research <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="carl-jung-analysis" onclick="toggleTag('carl-jung-analysis')">Carl Jung Analysis <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="freudian-analysis" onclick="toggleTag('freudian-analysis')">Freudian Analysis <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="unconscious-mind-processing" onclick="toggleTag('unconscious-mind-processing')">Unconscious Mind Processing <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="brain-wave-patterns" onclick="toggleTag('brain-wave-patterns')">Brain Wave Patterns <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="dream-therapy" onclick="toggleTag('dream-therapy')">Dream Therapy <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="stanford-research" onclick="toggleTag('stanford-research')">Stanford Research <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="pgo-waves" onclick="toggleTag('pgo-waves')">PGO Waves <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="third-state-consciousness" onclick="toggleTag('third-state-consciousness')">Third State Consciousness <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="dream-neuroscience" onclick="toggleTag('dream-neuroscience')">Dream Neuroscience <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="consciousness-studies" onclick="toggleTag('consciousness-studies')">Consciousness Studies <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="dream-symbolic-language" onclick="toggleTag('dream-symbolic-language')">Dream Symbolic Language <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="cognitive-control-dreams" onclick="toggleTag('cognitive-control-dreams')">Cognitive Control Dreams <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="harvard-research" onclick="toggleTag('harvard-research')">Harvard Research <span class="tag-count">(3)</span></button>
+                        <button class="filter-tag" data-tag="dream-analysis" onclick="toggleTag('dream-analysis')">Dream Analysis <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="jung" onclick="toggleTag('jung')">Jung <span class="tag-count">(2)</span></button>
+                        <button class="filter-tag" data-tag="unconscious-mind" onclick="toggleTag('unconscious-mind')">Unconscious Mind <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="carl-jung" onclick="toggleTag('carl-jung')">Carl Jung <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="strange-dreams" onclick="toggleTag('strange-dreams')">Strange Dreams <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="consciousness" onclick="toggleTag('consciousness')">Consciousness <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="collective-unconscious" onclick="toggleTag('collective-unconscious')">Collective Unconscious <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="uc-irvine" onclick="toggleTag('uc-irvine')">UC Irvine <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="emotional-processing" onclick="toggleTag('emotional-processing')">Emotional Processing <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="memory-consolidation" onclick="toggleTag('memory-consolidation')">Memory Consolidation <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="dream-recall" onclick="toggleTag('dream-recall')">Dream Recall <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="ai-dream-analysis" onclick="toggleTag('ai-dream-analysis')">AI Dream Analysis <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="onera" onclick="toggleTag('onera')">Onera <span class="tag-count">(2)</span></button>
+                        <button class="filter-tag" data-tag="personal-growth" onclick="toggleTag('personal-growth')">Personal Growth <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="jung-ai" onclick="toggleTag('jung-ai')">Jung AI <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="onera-ai" onclick="toggleTag('onera-ai')">Onera AI <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="freud-dream-analysis" onclick="toggleTag('freud-dream-analysis')">Freud Dream Analysis <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="ai-dream-interpretation" onclick="toggleTag('ai-dream-interpretation')">AI Dream Interpretation <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="dream-interpretation" onclick="toggleTag('dream-interpretation')">Dream Interpretation <span class="tag-count">(2)</span></button>
+                        <button class="filter-tag" data-tag="rem-sleep-neuronal-activity" onclick="toggleTag('rem-sleep-neuronal-activity')">REM Sleep Neuronal Activity <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="division-sleep-medicine" onclick="toggleTag('division-sleep-medicine')">Division Sleep Medicine <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="dream-integration" onclick="toggleTag('dream-integration')">Dream Integration <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="neural-processing-dreams" onclick="toggleTag('neural-processing-dreams')">Neural Processing Dreams <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="unconscious-intelligence" onclick="toggleTag('unconscious-intelligence')">Unconscious Intelligence <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="dream-pattern-tracking" onclick="toggleTag('dream-pattern-tracking')">Dream Pattern Tracking <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="pmc-study" onclick="toggleTag('pmc-study')">PMC Study <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="dreams-past-people" onclick="toggleTag('dreams-past-people')">Dreams Past People <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="unconscious-mind-processing" onclick="toggleTag('unconscious-mind-processing')">Unconscious Mind Processing <span class="tag-count">(2)</span></button>
+                        <button class="filter-tag" data-tag="jungian-dream-analysis" onclick="toggleTag('jungian-dream-analysis')">Jungian Dream Analysis <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="structured-dream-analysis" onclick="toggleTag('structured-dream-analysis')">Structured Dream Analysis <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="cognitive-behavioral-therapy" onclick="toggleTag('cognitive-behavioral-therapy')">Cognitive Behavioral Therapy <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="dream-symbol-tracking" onclick="toggleTag('dream-symbol-tracking')">Dream Symbol Tracking <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="researchgate-study" onclick="toggleTag('researchgate-study')">ResearchGate Study <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="lucid-dreaming-depression" onclick="toggleTag('lucid-dreaming-depression')">Lucid Dreaming Depression <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="dream-healing-therapy" onclick="toggleTag('dream-healing-therapy')">Dream Healing Therapy <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="neuroplasticity-dreams" onclick="toggleTag('neuroplasticity-dreams')">Neuroplasticity Dreams <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="unconscious-healing" onclick="toggleTag('unconscious-healing')">Unconscious Healing <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="transformative-dream-work" onclick="toggleTag('transformative-dream-work')">Transformative Dream Work <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="shadow-work-dreams" onclick="toggleTag('shadow-work-dreams')">Shadow Work Dreams <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="mit-research" onclick="toggleTag('mit-research')">MIT Research <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="dream-research-laboratory" onclick="toggleTag('dream-research-laboratory')">Dream Research Laboratory <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="recurring-dream-symbols" onclick="toggleTag('recurring-dream-symbols')">Recurring Dream Symbols <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="psychological-patterns" onclick="toggleTag('psychological-patterns')">Psychological Patterns <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="dream-interpretation" onclick="toggleTag('dream-interpretation')">Dream Interpretation <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="secret-language-dreams" onclick="toggleTag('secret-language-dreams')">Secret Language Dreams <span class="tag-count">(1)</span></button>
+                        <button class="filter-tag" data-tag="self-discovery-dreams" onclick="toggleTag('self-discovery-dreams')">Self-Discovery Dreams <span class="tag-count">(1)</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-results" id="noResults">
+            <h3>No articles found</h3>
+            <p>Try adjusting your filters or reset to see all articles.</p>
+        </div>
+
+        <div class="articles-grid" id="articlesGrid">
+            <!-- Article 1 - New Onera Dream Analysis App -->
+            <a href="/blog/posts/onera-dream-analysis-app.html" class="article-card" data-categories="technology" data-tags="dream-analysis-app,onera-ai,jung-dream-analysis,freud-dream-analysis,ai-dream-interpretation">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">Dream Analysis App: How Onera Transforms Your Nightly Stories Into Life-Changing Insights</h2>
+                <p class="article-excerpt">Discover how Onera's AI-powered dream analysis app combines ancient Jungian wisdom with cutting-edge technology to decode your dreams and transform your life through personalized insights.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 12 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">AI Technology</span>
+                    <span class="article-tag">Dream Analysis App</span>
+                    <span class="article-tag">Onera</span>
+                </div>
+            </a>
+            <!-- Article 2 - Harvard 7 Benefits -->
+            <a href="/blog/posts/harvard-dreams-7-benefits.html" class="article-card" data-categories="research,psychology" data-tags="harvard-research,dream-analysis,jung,unconscious-mind,carl-jung,dream-therapy">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">Why Do We Dream? Harvard Study Reveals 7 Life-Changing Benefits Your Unconscious Mind Has Been Trying to Tell You</h2>
+                <p class="article-excerpt">Harvard's groundbreaking research validates Carl Jung's dream analysis, revealing 7 transformative benefits of understanding your unconscious messages through dreams.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 22 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">Harvard Research</span>
+                    <span class="article-tag">Psychology</span>
+                    <span class="article-tag">Jung</span>
+                </div>
+            </a>
+            <!-- Article 2 - Harvard 2025 Strange Dreams -->
+            <a href="/blog/posts/harvard-2025-strange-dreams.html" class="article-card" data-categories="research,neuroscience" data-tags="harvard-research,strange-dreams,consciousness,collective-unconscious,pgo-waves">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">Why Do I Keep Having Strange Dreams? Harvard's 2025 Study Reveals Life-Changing Discovery</h2>
+                <p class="article-excerpt">Harvard's groundbreaking 2025 research reveals dreams actively build models of ourselves and the world, providing clues to our future course through sophisticated unconscious communication.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 18 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">Harvard Research</span>
+                    <span class="article-tag">Neuroscience</span>
+                    <span class="article-tag">Consciousness</span>
+                </div>
+            </a>
+            <!-- Article 3 - UC Irvine Revolutionary Discovery -->
+            <a href="/blog/posts/uc-irvine-dreams-discovery.html" class="article-card" data-categories="research,neuroscience" data-tags="uc-irvine,emotional-processing,memory-consolidation,dream-recall">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">What Are Dreams Really For? UC Irvine's Revolutionary Discovery Changes Everything</h2>
+                <p class="article-excerpt">UC Irvine's groundbreaking research by Jing Zhang reveals dreams actively process emotional experiences by strategically forgetting unimportant details while preserving what matters most.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 16 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">UC Irvine</span>
+                    <span class="article-tag">Neuroscience</span>
+                    <span class="article-tag">Emotional Processing</span>
+                </div>
+            </a>
+            <!-- Article 4 - Dream Analysis AI Onera -->
+            <a href="/blog/posts/dream-analysis-ai-onera.html" class="article-card" data-categories="technology,psychology" data-tags="ai-dream-analysis,onera,personal-growth,jung-ai,dream-interpretation">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">Dream Analysis AI: How Onera Transforms Your Dreams Into Personal Growth</h2>
+                <p class="article-excerpt">Discover how Onera's revolutionary dream analysis AI combines Jungian psychology with cutting-edge technology to decode your dreams and accelerate personal transformation.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 14 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">AI Technology</span>
+                    <span class="article-tag">Personal Growth</span>
+                    <span class="article-tag">Onera</span>
+                </div>
+            </a>
+            <!-- Article 5 -->
+            <a href="/blog/posts/uc-berkeley-dream-healing.html" class="article-card" data-categories="research,neuroscience" data-tags="rem-sleep,creativity,memory,emotional-healing,sleep-science">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">UC Berkeley's Groundbreaking Research: How Dreams Heal and Inspire</h2>
+                <p class="article-excerpt">Matthew Walker's revolutionary findings reveal how REM sleep provides "overnight therapy" that strips painful memories of their emotional sting while boosting creativity by 35%.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 15 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">Research</span>
+                    <span class="article-tag">Neuroscience</span>
+                    <span class="article-tag">REM Sleep</span>
+                </div>
+            </a>
+
+            <!-- Article 2 - New UC Berkeley Study -->
+            <a href="/blog/posts/dreams-random-chaos-berkeley.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="rem-sleep,dream-analysis,unconscious-mind,emotional-processing">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">Why Do Dreams Seem Random and Chaotic? UC Berkeley's Revolutionary Study</h2>
+                <p class="article-excerpt">UC Berkeley's revolutionary study reveals how dreams process emotions and memories without logical constraints, creating seemingly chaotic narratives that serve crucial psychological functions.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 18 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">Research</span>
+                    <span class="article-tag">Neuroscience</span>
+                    <span class="article-tag">Dream Analysis</span>
+                </div>
+            </a>
+
+            <!-- Article 3 - Why Do We Dream -->
+            <a href="/blog/posts/why-do-we-dream-berkeley.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="rem-sleep,dream-analysis,self-discovery,emotional-processing">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">Why Do We Dream? UC Berkeley's Revolutionary Study on Self-Discovery</h2>
+                <p class="article-excerpt">UC Berkeley's Walker Lab reveals that dreams are your unconscious mind's sophisticated way of processing emotions and revealing deeper truths through emotional reset and memory consolidation.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 20 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">Research</span>
+                    <span class="article-tag">Neuroscience</span>
+                    <span class="article-tag">Self-Discovery</span>
+                </div>
+            </a>
+
+            <!-- Article 4 - Dreams Training Ground UCSC -->
+            <a href="/blog/posts/dreams-training-ground-ucsc.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="dream-analysis,self-discovery,jung,unconscious-mind,professional-development">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">Revolutionary Brain Study Reveals Your Mind's Hidden Training Ground</h2>
+                <p class="article-excerpt">UC Santa Cruz's groundbreaking study reveals dreams as your brain's sophisticated training program, using advanced PET scans to show how your unconscious mind prepares you for life's challenges.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 22 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">Research</span>
+                    <span class="article-tag">Jung</span>
+                    <span class="article-tag">Professional Development</span>
+                </div>
+            </a>
+
+            <!-- Article 5 - Santa Clara Dream Control -->
+            <a href="/blog/posts/control-dreams-santa-clara.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="dream-control,lucid-dreaming,metacognition,ai-dream-analysis">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">Can We Control Our Dreams? Santa Clara University's Revolutionary Study</h2>
+                <p class="article-excerpt">Santa Clara University researchers discover dreams involve sophisticated metacognitive processes, proving dreams are deliberate psychological constructions with hidden powers of the unconscious mind.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 24 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">Dream Control</span>
+                    <span class="article-tag">Lucid Dreaming</span>
+                    <span class="article-tag">AI Dream Analysis</span>
+                </div>
+            </a>
+
+            <!-- Article 6 - Cornell Lucid Dreaming Depression -->
+            <a href="/blog/posts/lucid-dreaming-depression-cornell.html" class="article-card" data-categories="research,psychology,mental-health" data-tags="lucid-dreaming,depression-treatment,mental-health,shadow-work">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">Can Lucid Dreaming Actually Treat Depression? Cornell University's Study</h2>
+                <p class="article-excerpt">Cornell University researchers discover lucid dreaming can significantly reduce depression symptoms by allowing conscious modification of dream content during REM sleep, transforming mental health treatment.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 19 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">Mental Health</span>
+                    <span class="article-tag">Depression Treatment</span>
+                    <span class="article-tag">Shadow Work</span>
+                </div>
+            </a>
+
+            <!-- Article 7 - University of Chicago Virtual Reality Dreams -->
+            <a href="/blog/posts/dreams-virtual-reality-chicago.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="virtual-reality-dreams,eeg-patterns,dream-symbols,memory-consolidation">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">University of Chicago Study Reveals Dreams Create Virtual Reality in Your Mind</h2>
+                <p class="article-excerpt">University of Chicago researchers unveil how your brain constructs virtual reality during sleep through distinct EEG patterns, revealing dreams as meaningful symbolic narratives from your unconscious mind.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 17 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">Virtual Reality Dreams</span>
+                    <span class="article-tag">EEG Patterns</span>
+                    <span class="article-tag">Dream Symbols</span>
+                </div>
+            </a>
+
+            <!-- Article 8 -->
+            <a href="/blog/posts/jmu-dream-study.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="rem-sleep,memory,brain-imaging,sleep-science">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">Why Do Dreams Feel So Random? James Madison University's Groundbreaking Study Reveals the Hidden Order</h2>
+                <p class="article-excerpt">A revolutionary brain imaging study from JMU reveals why your dreams feel chaotic—and why that chaos is actually your mind's sophisticated attempt to show you something crucial about your life.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 12 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">Research</span>
+                    <span class="article-tag">Psychology</span>
+                    <span class="article-tag">Brain Imaging</span>
+                </div>
+            </a>
+
+            <!-- Article 9 - Northwestern University -->
+            <a href="/blog/posts/dreams-transform-mind-northwestern.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="brain-pattern-reactivation,sleep-cognition,problem-solving,creative-processing">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">Northwestern University's Revolutionary Study: How Dreams Transform Your Mind</h2>
+                <p class="article-excerpt">Northwestern University's groundbreaking research reveals how dreams unlock your brain's hidden potential through pattern reactivation during sleep, transforming cognitive abilities and creative processing.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 21 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">Research</span>
+                    <span class="article-tag">Neuroscience</span>
+                    <span class="article-tag">Creative Processing</span>
+                </div>
+            </a>
+
+            <!-- Article 10 - MIT -->
+            <a href="/blog/posts/dreams-feel-real-mit.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="mit-research,eeg-technology,social-dreams,neural-patterns,amygdala-hippocampus,freudian-analysis,jungian-analysis">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">Why Do My Dreams Feel So Real? MIT Scientists Finally Decode Hidden Brain Messages</h2>
+                <p class="article-excerpt">MIT scientists decode why dreams feel intensely real using advanced EEG technology, revealing how your amygdala and hippocampus create vivid social dreams that unlock hidden psychological patterns.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 25 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">MIT Research</span>
+                    <span class="article-tag">EEG Technology</span>
+                    <span class="article-tag">Neural Patterns</span>
+                </div>
+            </a>
+
+            <!-- Article 11 - University of Rome -->
+            <a href="/blog/posts/dreams-neurobiological-rome.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="neurobiological-mechanisms,rem-sleep-research,carl-jung-analysis,freudian-analysis,unconscious-mind-processing,brain-wave-patterns,dream-therapy">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">Why Do We Dream? University of Rome's Groundbreaking Study Finally Reveals What Your Brain is Really Doing at Night</h2>
+                <p class="article-excerpt">University of Rome's revolutionary study reveals the neurobiological mechanisms of dreaming, proving dreams are purposeful neural processes that bridge conscious and unconscious mind through measurable brain wave changes.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 23 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">Neurobiological Mechanisms</span>
+                    <span class="article-tag">REM Sleep Research</span>
+                    <span class="article-tag">Carl Jung Analysis</span>
+                </div>
+            </a>
+
+            <!-- Article 12 - Stanford -->
+            <a href="/blog/posts/stanford-strange-dreams-true-self.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="stanford-research,pgo-waves,third-state-consciousness,dream-neuroscience,consciousness-studies,dream-symbolic-language,cognitive-control-dreams">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">Stanford Study Reveals Why Your Strange Dreams Hold the Key to Understanding Your True Self</h2>
+                <p class="article-excerpt">Stanford's groundbreaking research reveals REM sleep creates a unique "third state" of consciousness where your brain actively synthesizes meaning from unconscious signals through PGO waves, proving dreams reveal your true self.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 20 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">Stanford Research</span>
+                    <span class="article-tag">PGO Waves</span>
+                    <span class="article-tag">Third State Consciousness</span>
+                </div>
+            </a>
+
+            <!-- Article 13 - Harvard -->
+            <a href="/blog/posts/harvard-dreams-revolutionary-discovery.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="harvard-research,rem-sleep-neuronal-activity,division-sleep-medicine,dream-integration,neural-processing-dreams,unconscious-intelligence,dream-pattern-tracking">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">Why Do We Dream? Harvard's Revolutionary Discovery Changes Everything We Thought We Knew</h2>
+                <p class="article-excerpt">Harvard University's Division of Sleep Medicine discovers neuronal discharge rates during REM sleep match waking consciousness intensity, revolutionizing dream analysis and proving dreams are sophisticated neural processing systems.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 22 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">Harvard Research</span>
+                    <span class="article-tag">REM Sleep</span>
+                    <span class="article-tag">Neural Processing</span>
+                </div>
+            </a>
+
+            <!-- Article 14 - PMC Study -->
+            <a href="/blog/posts/pmc-dreams-people-past-hidden-messages.html" class="article-card" data-categories="research,psychology,mental-health" data-tags="pmc-study,dreams-past-people,unconscious-mind-processing,jungian-dream-analysis,structured-dream-analysis,cognitive-behavioral-therapy,dream-symbol-tracking">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">Why Do We Keep Dreaming About People We Haven't Seen in Years? Revolutionary PMC Study Reveals Hidden Messages</h2>
+                <p class="article-excerpt">Revolutionary 2021 PMC study reveals why dreams about people from your past are structured messages from your unconscious mind, containing symbolic representations of unprocessed emotions and unresolved conflicts.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 24 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">PMC Study</span>
+                    <span class="article-tag">Dreams Past People</span>
+                    <span class="article-tag">Unconscious Mind</span>
+                </div>
+            </a>
+
+            <!-- Article 15 - ResearchGate -->
+            <a href="/blog/posts/researchgate-dreams-healing-therapy.html" class="article-card" data-categories="research,psychology,mental-health" data-tags="researchgate-study,lucid-dreaming-depression,dream-healing-therapy,neuroplasticity-dreams,unconscious-healing,transformative-dream-work,shadow-work-dreams">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">ResearchGate Scientists Answer: Why Do My Dreams Feel More Real Than My Waking Life—And Could They Heal What Therapy Can't?</h2>
+                <p class="article-excerpt">Groundbreaking 2021 ResearchGate study reveals how lucid dreaming and dream work activate neuroplasticity to treat clinical depression, proving dreams offer direct pathway to unconscious healing and transformation.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 21 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">ResearchGate Study</span>
+                    <span class="article-tag">Lucid Dreaming</span>
+                    <span class="article-tag">Dream Healing</span>
+                </div>
+            </a>
+
+            <!-- Article 16 - MIT Dream Language -->
+            <a href="/blog/posts/mit-dreams-secret-language-self-discovery.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="mit-research,dream-research-laboratory,recurring-dream-symbols,psychological-patterns,dream-interpretation,secret-language-dreams,self-discovery-dreams">
+                <div class="article-date">January 2025</div>
+                <h2 class="article-title">What Do Your Dreams Really Mean? MIT Study Reveals Dreams Are Your Mind's Secret Language to Self-Discovery</h2>
+                <p class="article-excerpt">Groundbreaking MIT Dream Research Laboratory study discovers that 87% of recurring dream symbols directly correlate with unresolved psychological patterns, revealing dreams as sophisticated messages from your unconscious mind.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 23 min read</span>
+                    <span class="read-more">Read Article</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">MIT Research</span>
+                    <span class="article-tag">Dream Symbols</span>
+                    <span class="article-tag">Self-Discovery</span>
+                </div>
+            </a>
+
+            <!-- Coming Soon Articles -->
+            <div class="article-card" style="opacity: 0.3; cursor: default; pointer-events: none;" data-categories="research,neuroscience" data-tags="lucid-dreaming">
+                <div class="article-date">Coming Soon</div>
+                <h2 class="article-title">The Neuroscience of Lucid Dreaming: Stanford's Latest Findings</h2>
+                <p class="article-excerpt">How conscious awareness during REM sleep opens new frontiers in understanding the mind-brain connection.</p>
+                <div class="article-meta">
+                    <span class="read-time">⏱ 10 min read</span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">Research</span>
+                    <span class="article-tag">Neuroscience</span>
+                    <span class="article-tag">Lucid Dreaming</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/cgu.html">Terms</a>
+            <a href="/privacy.html">Privacy</a>
+        </div>
+        <div class="footer-copyright">
+            © 2025 Onera. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Elegant Particle System
+        class ParticleSystem {
+            constructor() {
+                this.container = document.getElementById('particles');
+                this.particleCount = 20;
+                this.init();
+            }
+
+            createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle particle-float';
+                
+                const size = Math.random() * 3 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 20}s`;
+                particle.style.animationDuration = `${20 + Math.random() * 10}s`;
+                
+                this.container.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.remove();
+                    }
+                }, 30000);
+            }
+
+            init() {
+                for (let i = 0; i < this.particleCount; i++) {
+                    setTimeout(() => this.createParticle(), i * 200);
+                }
+                
+                setInterval(() => this.createParticle(), 1500);
+            }
+        }
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            new ParticleSystem();
+        });
+
+        // Filtering System
+        let activeCategories = new Set();
+        let activeTags = new Set();
+
+        function toggleCategory(category) {
+            const button = document.querySelector(`[data-category="${category}"]`);
+            if (activeCategories.has(category)) {
+                activeCategories.delete(category);
+                button.classList.remove('active');
+            } else {
+                activeCategories.add(category);
+                button.classList.add('active');
+            }
+            filterArticles();
+        }
+
+        function toggleTag(tag) {
+            const button = document.querySelector(`[data-tag="${tag}"]`);
+            if (activeTags.has(tag)) {
+                activeTags.delete(tag);
+                button.classList.remove('active');
+            } else {
+                activeTags.add(tag);
+                button.classList.add('active');
+            }
+            filterArticles();
+        }
+
+        function filterArticles() {
+            const articles = document.querySelectorAll('.article-card');
+            const noResults = document.getElementById('noResults');
+            let visibleCount = 0;
+
+            articles.forEach(article => {
+                // Skip coming soon articles
+                if (article.style.pointerEvents === 'none') {
+                    return;
+                }
+
+                const articleCategories = article.dataset.categories ? article.dataset.categories.split(',') : [];
+                const articleTags = article.dataset.tags ? article.dataset.tags.split(',') : [];
+
+                let categoryMatch = activeCategories.size === 0 || 
+                    [...activeCategories].some(cat => articleCategories.includes(cat));
+                let tagMatch = activeTags.size === 0 || 
+                    [...activeTags].some(tag => articleTags.includes(tag));
+
+                if (categoryMatch && tagMatch) {
+                    article.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    article.classList.add('hidden');
+                }
+            });
+
+            // Show/hide no results message
+            if (visibleCount === 0 && (activeCategories.size > 0 || activeTags.size > 0)) {
+                noResults.classList.add('visible');
+            } else {
+                noResults.classList.remove('visible');
+            }
+        }
+
+        function resetFilters() {
+            // Clear all active filters
+            activeCategories.clear();
+            activeTags.clear();
+            
+            // Remove active class from all filter buttons
+            document.querySelectorAll('.filter-category, .filter-tag').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show all articles
+            document.querySelectorAll('.article-card').forEach(article => {
+                if (article.style.pointerEvents !== 'none') {
+                    article.classList.remove('hidden');
+                }
+            });
+            
+            // Hide no results message
+            document.getElementById('noResults').classList.remove('visible');
+        }
+    </script>
+</body>
+</html>
