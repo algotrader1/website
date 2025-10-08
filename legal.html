@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Notice - Onera</title>
+    <style>
+        :root {
+            --primary-bg: #000000;
+            --text-primary: #FFFFFF;
+            --text-secondary: #999999;
+            --text-muted: #666666;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.8;
+            padding: 3rem 2rem;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            display: inline-block;
+            transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 200;
+            letter-spacing: 0.05em;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            background: linear-gradient(180deg, #FFFFFF 0%, #CCCCCC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            text-transform: uppercase;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .info-block {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .info-line {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .info-line:last-child {
+            border-bottom: none;
+        }
+
+        .footer {
+            margin-top: 6rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .footer a:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            .info-block {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Back to Home</a>
+
+        <h1>Legal Notice</h1>
+
+        <h2>Publisher Information</h2>
+        <div class="info-block">
+            <div class="info-line">
+                <strong>Legal Name:</strong> BERGER OSCAR
+            </div>
+            <div class="info-line">
+                <strong>Business Type:</strong> Individual Entrepreneur (Entrepreneur individuel)
+            </div>
+            <div class="info-line">
+                <strong>SIREN:</strong> 890 044 811
+            </div>
+            <div class="info-line">
+                <strong>Business Activity Code:</strong> 5920Z - Sound recording and music publishing
+            </div>
+            <div class="info-line">
+                <strong>Address:</strong> 44 Avenue des Gobelins, 75013 Paris, France
+            </div>
+            <div class="info-line">
+                <strong>Email:</strong> contact@dreaminsight.app
+            </div>
+        </div>
+
+        <h2>Hosting Provider</h2>
+        <div class="info-block">
+            <p>This website is hosted by GitHub Pages, a service provided by GitHub, Inc.</p>
+            <div class="info-line">
+                <strong>GitHub, Inc.</strong><br>
+                88 Colin P Kelly Jr St<br>
+                San Francisco, CA 94107<br>
+                United States
+            </div>
+        </div>
+
+        <h2>Publication Director</h2>
+        <p>Oscar Berger</p>
+
+        <h2>Intellectual Property</h2>
+        <p>
+            All content, design, graphics, and code on this website are protected by copyright and
+            intellectual property laws. The Onera brand, logo, and associated trademarks are the
+            property of Oscar Berger.
+        </p>
+
+        <h2>Data Protection</h2>
+        <p>
+            For information about how we collect and process your personal data, please refer to
+            our <a href="privacy.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: underline;">Privacy Policy</a>.
+        </p>
+
+        <div class="footer">
+            <a href="/">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
