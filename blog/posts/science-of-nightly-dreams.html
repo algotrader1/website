@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Science of Nightly Dreams: Why You Dream 4-5 Times Every Night | ONERA Blog</title>
+    <meta name="description" content="Groundbreaking research from Stanford University's Sleep Research Center reveals that humans experience 4 to 5 complete dream cycles every night, totaling approximately 2 hours of dreaming.">
+    <meta name="keywords" content="Stanford dreams study, REM sleep, dream cycles, sleep science, William Dement, dream research, sleep architecture, nightly dreams">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="The Science of Nightly Dreams: Why You Dream 4-5 Times Every Night">
+    <meta property="og:description" content="Groundbreaking research from Stanford University's Sleep Research Center reveals that humans experience 4 to 5 complete dream cycles every night, totaling approximately 2 hours of dreaming.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dreaminsight.app/blog/posts/science-of-nightly-dreams.html">
+    <meta property="og:image" content="https://dreaminsight.app/assets/science-nightly-dreams.jpg">
+    <meta property="og:site_name" content="ONERA">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2025-01-15T00:00:00Z">
+    <meta property="article:author" content="ONERA Research Team">
+    <meta property="article:section" content="Sleep Science">
+    <meta property="article:tag" content="Stanford Research">
+    <meta property="article:tag" content="Dream Cycles">
+    <meta property="article:tag" content="REM Sleep">
+    <meta property="article:tag" content="Sleep Architecture">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Science of Nightly Dreams: Why You Dream 4-5 Times Every Night">
+    <meta name="twitter:description" content="Groundbreaking research from Stanford University's Sleep Research Center reveals that humans experience 4 to 5 complete dream cycles every night, totaling approximately 2 hours of dreaming.">
+    <meta name="twitter:image" content="https://dreaminsight.app/assets/science-nightly-dreams-twitter.jpg">
+    <meta name="twitter:site" content="@onera_dreams">
+    <meta name="twitter:creator" content="@onera_dreams">
+
+    <style>
+        :root {
+            --primary-bg: #000000;
+            --text-primary: #FFFFFF;
+            --text-secondary: #999999;
+            --text-muted: #666666;
+            --accent: #FFFFFF;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Particles Container */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.2;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            pointer-events: none;
+            will-change: transform, opacity;
+        }
+
+        .particle-float {
+            animation: float-elegant 25s linear infinite;
+            filter: blur(1px);
+        }
+
+        @keyframes float-elegant {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-100px) translateX(30px);
+                opacity: 0;
+            }
+        }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 50%, transparent 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-link {
+            font-size: 1.25rem;
+            font-weight: 200;
+            letter-spacing: 0.2em;
+            color: var(--text-primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .logo-link:hover {
+            opacity: 0.7;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 0.75rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .nav-link:hover:before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .nav-link:hover {
+            color: rgba(255, 255, 255, 0.95);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Article Container */
+        .article-container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 6rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.75rem 0;
+            margin-bottom: 3rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-bottom: 1px solid transparent;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .back-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover .back-arrow {
+            transform: translateX(-4px);
+        }
+
+        /* Article Header */
+        .article-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .article-date {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 100;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(180deg, #FFFFFF 0%, #CCCCCC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-subtitle {
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+            font-weight: 300;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .meta-separator {
+            width: 4px;
+            height: 4px;
+            background: var(--text-muted);
+            border-radius: 50%;
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            animation: fadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .article-content h2 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 300;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+        }
+
+        .article-content h3 {
+            font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+            font-weight: 400;
+            margin: 2.5rem 0 1rem;
+            color: var(--text-primary);
+            letter-spacing: 0.01em;
+        }
+
+        .article-content p {
+            margin-bottom: 1.75rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .article-content p strong {
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .article-content em {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .article-content ul {
+            margin: 2rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .article-content a {
+            color: var(--text-primary);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.2em;
+            transition: all 0.3s ease;
+        }
+
+        .article-content a:hover {
+            text-decoration-thickness: 2px;
+        }
+
+        /* Highlight boxes */
+        .research-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            position: relative;
+        }
+
+        /* Sources section */
+        .sources-section {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sources-section h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .sources-section ol {
+            list-style: decimal;
+            padding-left: 2rem;
+        }
+
+        .sources-section li {
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: transparent;
+            padding: 3rem 0 2rem;
+            text-align: center;
+            margin-top: 6rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-copyright {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .nav-header {
+                padding: 1.5rem 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .article-container {
+                padding: 7rem 1rem 4rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .research-box {
+                padding: 1.5rem;
+                margin: 2rem 0;
+            }
+
+            .footer-links a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <a href="/" class="logo-link">ONERA</a>
+        <div class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/blog" class="nav-link">Blog</a>
+            <a href="/founders-letter.html" class="nav-link">Founder's Letter</a>
+        </div>
+    </nav>
+
+    <div class="article-container">
+        <a href="/blog/" class="back-link">
+            <span class="back-arrow">←</span>
+            Back to Blog
+        </a>
+
+        <header class="article-header">
+            <div class="article-date">January 15, 2025</div>
+            <h1 class="article-title">The Science of Nightly Dreams: Why You Dream 4-5 Times Every Night</h1>
+            <p class="article-subtitle">Groundbreaking research from Stanford reveals the hidden architecture of your nightly dreams</p>
+            <div class="article-meta">
+                <span>⏱ 8 min read</span>
+                <div class="meta-separator"></div>
+                <span>Sleep Science</span>
+                <div class="meta-separator"></div>
+                <span>Research</span>
+            </div>
+        </header>
+
+        <article class="article-content">
+            <p>Most people don't realize just how much dreaming happens during a single night of sleep. Groundbreaking research from Stanford University's Sleep Research Center has revealed that humans experience 4 to 5 complete dream cycles every night, totaling approximately 2 hours of dreaming.</p>
+
+            <h2>The Discovery That Changed Sleep Science</h2>
+
+            <p>In the 1950s, Dr. William Dement at the University of Chicago made a revolutionary discovery: the connection between Rapid Eye Movement (REM) sleep and dreaming. His early experiments revealed the structure of the sleep cycle and documented that the sleeping brain was far from inactive—it was actively creating rich, complex experiences.</p>
+
+            <p>Dr. Dement later founded the Stanford Sleep Disorders Clinic in 1970, the first of its kind in the world, and his research has shaped our understanding of sleep architecture for over 70 years.</p>
+
+            <h2>Your Nightly Dream Architecture</h2>
+
+            <p>According to research published by Stanford Medicine, each night follows a predictable pattern:</p>
+
+            <ul>
+                <li>The first REM period occurs about 90 minutes after falling asleep</li>
+                <li>REM periods lengthen as the night progresses</li>
+                <li>The final REM cycles in early morning contain the longest, most vivid dreams</li>
+                <li>Each complete cycle lasts approximately 90-120 minutes</li>
+            </ul>
+
+            <p>Dr. Rafael Pelayo, clinical professor at Stanford's Division of Sleep Medicine, explains that these dream cycles are not random—they serve crucial functions for emotional processing, memory consolidation, and creative problem-solving.</p>
+
+            <h2>The Power of Multiple Dreams</h2>
+
+            <p>Research from Harvard Medical School's Division of Sleep Medicine demonstrates that having multiple dream periods throughout the night allows the brain to:</p>
+
+            <ul>
+                <li>Process different emotional experiences from the day</li>
+                <li>Consolidate various types of memories</li>
+                <li>Generate creative solutions to problems</li>
+                <li>Integrate new information with existing knowledge</li>
+            </ul>
+
+            <p>Each of your 4-5 dreams per night may serve a different purpose, addressing different emotional needs and cognitive challenges.</p>
+
+            <h2>Why This Matters</h2>
+
+            <p>Understanding that you dream multiple times each night transforms how we think about dream work. Rather than hoping for one significant dream, you have 4-5 opportunities every night to gain insights, process emotions, and tap into your subconscious mind.</p>
+
+            <p>The Stanford Technology Analytics and Genomics of Sleep (STAGES) study, which collected data from 30,000 participants, continues to advance our understanding of individual differences in dream frequency and content.</p>
+
+            <h2>Conclusion</h2>
+
+            <p><em>Your brain doesn't dream once per night—it dreams repeatedly, creating a rich tapestry of experiences that collectively contribute to your mental health, creativity, and self-understanding. Each dream is an opportunity waiting to be captured and understood.</em></p>
+
+            <!-- Sources Section -->
+            <div class="sources-section">
+                <h3>Sources</h3>
+                <ol>
+                    <li>Stanford Medicine - Division of Sleep Medicine<br><a href="https://med.stanford.edu/sleepdivision/research.html" target="_blank">https://med.stanford.edu/sleepdivision/research.html</a></li>
+                    <li>Stanford Magazine - "A Bedtime Story" (William Dement profile)<br><a href="https://stanfordmag.org/contents/a-bedtime-story" target="_blank">https://stanfordmag.org/contents/a-bedtime-story</a></li>
+                    <li>Stanford Magazine - "While You Were Sleeping"<br><a href="https://stanfordmag.org/contents/while-you-were-sleeping" target="_blank">https://stanfordmag.org/contents/while-you-were-sleeping</a></li>
+                    <li>Stanford Medicine News - "Stalking the Netherworld of Sleep"<br><a href="https://med.stanford.edu/news/all-news/2008/07/stalking-the-netherworld-of-sleep.html" target="_blank">https://med.stanford.edu/news/all-news/2008/07/stalking-the-netherworld-of-sleep.html</a></li>
+                    <li>Stanford Magazine - "Sleep and Genes"<br><a href="https://stanfordmag.org/contents/sleep-and-genes" target="_blank">https://stanfordmag.org/contents/sleep-and-genes</a></li>
+                </ol>
+            </div>
+        </article>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+            <a href="/cgu.html">Terms</a>
+            <a href="/privacy.html">Privacy</a>
+        </div>
+        <div class="footer-copyright">
+            © 2025 Onera. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Minimal Particle System for Article Pages
+        class ParticleSystem {
+            constructor() {
+                this.container = document.getElementById('particles');
+                this.particleCount = 12;
+                this.init();
+            }
+
+            createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle particle-float';
+
+                const size = Math.random() * 2 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 25}s`;
+                particle.style.animationDuration = `${25 + Math.random() * 15}s`;
+
+                this.container.appendChild(particle);
+
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.remove();
+                    }
+                }, 40000);
+            }
+
+            init() {
+                for (let i = 0; i < this.particleCount; i++) {
+                    setTimeout(() => this.createParticle(), i * 300);
+                }
+
+                setInterval(() => this.createParticle(), 2000);
+            }
+        }
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            new ParticleSystem();
+        });
+    </script>
+</body>
+</html>
