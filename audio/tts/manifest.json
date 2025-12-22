@@ -1,0 +1,1589 @@
+{
+  "version": "1.0.0",
+  "baseURL": "https://dreaminsight.app/audio/tts",
+  "generatedAt": "2025-12-22T19:30:28.793Z",
+  "phrases": [
+    {
+      "id": "p1_fr_01",
+      "text": "Commence par te connecter à cette petite voix dans ta tête. Cette voix qui tourne en boucle, qui cherche des réponses.",
+      "language": "fr",
+      "phase": 1,
+      "filename": "p1_fr_01.mp3"
+    },
+    {
+      "id": "p1_fr_02",
+      "text": "Est-ce que je fais bien ? Et si je me trompe ?",
+      "language": "fr",
+      "phase": 1,
+      "filename": "p1_fr_02.mp3"
+    },
+    {
+      "id": "p1_fr_03",
+      "text": "Écoute cette voix qui bavarde à l'intérieur.",
+      "language": "fr",
+      "phase": 1,
+      "filename": "p1_fr_03.mp3"
+    },
+    {
+      "id": "p1_fr_04",
+      "text": "Et doucement, visualise-la qui descend le long de ta colonne vertébrale. Elle devient de plus en plus distante. De plus en plus silencieuse.",
+      "language": "fr",
+      "phase": 1,
+      "filename": "p1_fr_04.mp3"
+    },
+    {
+      "id": "p1_fr_05",
+      "text": "Elle descend jusqu'à atteindre la base de ta colonne.",
+      "language": "fr",
+      "phase": 1,
+      "filename": "p1_fr_05.mp3"
+    },
+    {
+      "id": "p1_fr_06",
+      "text": "Verrouille cette position. Imagine que tu peux respirer, inspirer et expirer depuis cet endroit.",
+      "language": "fr",
+      "phase": 1,
+      "filename": "p1_fr_06.mp3"
+    },
+    {
+      "id": "p1_fr_07",
+      "text": "On va faire trois cycles de respiration d'ancrage. Imagine que tu peux respirer directement depuis ce point, comme si ton souffle partait de là.",
+      "language": "fr",
+      "phase": 1,
+      "filename": "p1_fr_07.mp3"
+    },
+    {
+      "id": "p1_fr_08",
+      "text": "Depuis la base de ta colonne, inspire pendant six secondes.",
+      "language": "fr",
+      "phase": 1,
+      "filename": "p1_fr_08.mp3"
+    },
+    {
+      "id": "p1_fr_09",
+      "text": "Retiens.",
+      "language": "fr",
+      "phase": 1,
+      "filename": "p1_fr_09.mp3"
+    },
+    {
+      "id": "p1_fr_10",
+      "text": "Expire.",
+      "language": "fr",
+      "phase": 1,
+      "filename": "p1_fr_10.mp3"
+    },
+    {
+      "id": "p1_fr_11",
+      "text": "Respire normalement. Tu sors de ta tête, tu entres dans ton corps.",
+      "language": "fr",
+      "phase": 1,
+      "filename": "p1_fr_11.mp3"
+    },
+    {
+      "id": "p1_fr_12",
+      "text": "Deuxième cycle. Inspire depuis la base.",
+      "language": "fr",
+      "phase": 1,
+      "filename": "p1_fr_12.mp3"
+    },
+    {
+      "id": "p1_fr_13",
+      "text": "Tu prends plus d'espace à l'intérieur.",
+      "language": "fr",
+      "phase": 1,
+      "filename": "p1_fr_13.mp3"
+    },
+    {
+      "id": "p1_fr_14",
+      "text": "Troisième et dernier cycle. Inspire.",
+      "language": "fr",
+      "phase": 1,
+      "filename": "p1_fr_14.mp3"
+    },
+    {
+      "id": "p1_fr_15",
+      "text": "Tu es maintenant ancré à la base de ta colonne. Connecté à ton monde intérieur.",
+      "language": "fr",
+      "phase": 1,
+      "filename": "p1_fr_15.mp3"
+    },
+    {
+      "id": "p1_en_01",
+      "text": "Start by tuning into that little voice in your head. That voice going around in circles, trying to find answers.",
+      "language": "en",
+      "phase": 1,
+      "filename": "p1_en_01.mp3"
+    },
+    {
+      "id": "p1_en_02",
+      "text": "Am I doing it right? What if I'm wrong?",
+      "language": "en",
+      "phase": 1,
+      "filename": "p1_en_02.mp3"
+    },
+    {
+      "id": "p1_en_03",
+      "text": "Tune into that voice that's always chattering inside.",
+      "language": "en",
+      "phase": 1,
+      "filename": "p1_en_03.mp3"
+    },
+    {
+      "id": "p1_en_04",
+      "text": "And slowly visualize it moving down your spine. Getting more and more distant. Getting quieter and quieter.",
+      "language": "en",
+      "phase": 1,
+      "filename": "p1_en_04.mp3"
+    },
+    {
+      "id": "p1_en_05",
+      "text": "Moving all the way down to the base of your spine.",
+      "language": "en",
+      "phase": 1,
+      "filename": "p1_en_05.mp3"
+    },
+    {
+      "id": "p1_en_06",
+      "text": "Lock in that position. Imagine you can breathe, inspire and expire air from there.",
+      "language": "en",
+      "phase": 1,
+      "filename": "p1_en_06.mp3"
+    },
+    {
+      "id": "p1_en_07",
+      "text": "We're going to do three grounding breathing cycles. Imagine you can breathe directly from this point, as if your breath starts right there.",
+      "language": "en",
+      "phase": 1,
+      "filename": "p1_en_07.mp3"
+    },
+    {
+      "id": "p1_en_08",
+      "text": "From the base of your spine, inhale for six seconds.",
+      "language": "en",
+      "phase": 1,
+      "filename": "p1_en_08.mp3"
+    },
+    {
+      "id": "p1_en_09",
+      "text": "Hold.",
+      "language": "en",
+      "phase": 1,
+      "filename": "p1_en_09.mp3"
+    },
+    {
+      "id": "p1_en_10",
+      "text": "Exhale.",
+      "language": "en",
+      "phase": 1,
+      "filename": "p1_en_10.mp3"
+    },
+    {
+      "id": "p1_en_11",
+      "text": "Breathe normally. Getting out of your head, into your body.",
+      "language": "en",
+      "phase": 1,
+      "filename": "p1_en_11.mp3"
+    },
+    {
+      "id": "p1_en_12",
+      "text": "Second cycle. Inhale from the base.",
+      "language": "en",
+      "phase": 1,
+      "filename": "p1_en_12.mp3"
+    },
+    {
+      "id": "p1_en_13",
+      "text": "Taking up more space inside.",
+      "language": "en",
+      "phase": 1,
+      "filename": "p1_en_13.mp3"
+    },
+    {
+      "id": "p1_en_14",
+      "text": "Third and final cycle. Inhale.",
+      "language": "en",
+      "phase": 1,
+      "filename": "p1_en_14.mp3"
+    },
+    {
+      "id": "p1_en_15",
+      "text": "You're now grounded at the base of your spine. Connected to your inner world.",
+      "language": "en",
+      "phase": 1,
+      "filename": "p1_en_15.mp3"
+    },
+    {
+      "id": "p2_fr_01",
+      "text": "Porte maintenant ton attention sur les sensations qui émergent autour du fait d'être toi.",
+      "language": "fr",
+      "phase": 2,
+      "filename": "p2_fr_01.mp3"
+    },
+    {
+      "id": "p2_fr_02",
+      "text": "Accueille ces sensations. Comment ça fait d'être toi ?",
+      "language": "fr",
+      "phase": 2,
+      "filename": "p2_fr_02.mp3"
+    },
+    {
+      "id": "p2_fr_03",
+      "text": "Est-ce que tu t'aimes, toi, la personne que tu es, la vie que tu vis ?",
+      "language": "fr",
+      "phase": 2,
+      "filename": "p2_fr_03.mp3"
+    },
+    {
+      "id": "p2_fr_04",
+      "text": "Accueille toutes les sensations. Comment te sens-tu d'être toi ?",
+      "language": "fr",
+      "phase": 2,
+      "filename": "p2_fr_04.mp3"
+    },
+    {
+      "id": "p2_fr_05",
+      "text": "Quand tu te vois dans ce moment présent. Comment tu te sens ?",
+      "language": "fr",
+      "phase": 2,
+      "filename": "p2_fr_05.mp3"
+    },
+    {
+      "id": "p2_fr_06",
+      "text": "Est-ce que tu t'aimes ? Est-ce que tu t'acceptes ? Es-tu fier de toi ?",
+      "language": "fr",
+      "phase": 2,
+      "filename": "p2_fr_06.mp3"
+    },
+    {
+      "id": "p2_fr_07",
+      "text": "Y a-t-il une partie de toi qui résiste ?",
+      "language": "fr",
+      "phase": 2,
+      "filename": "p2_fr_07.mp3"
+    },
+    {
+      "id": "p2_fr_08",
+      "text": "Respire dans ces sensations.",
+      "language": "fr",
+      "phase": 2,
+      "filename": "p2_fr_08.mp3"
+    },
+    {
+      "id": "p2_en_01",
+      "text": "Shift your awareness now to the sensations that come up around being you.",
+      "language": "en",
+      "phase": 2,
+      "filename": "p2_en_01.mp3"
+    },
+    {
+      "id": "p2_en_02",
+      "text": "Welcome the sensations. How does it feel being you?",
+      "language": "en",
+      "phase": 2,
+      "filename": "p2_en_02.mp3"
+    },
+    {
+      "id": "p2_en_03",
+      "text": "Do you love being you, the person you are, the life you live?",
+      "language": "en",
+      "phase": 2,
+      "filename": "p2_en_03.mp3"
+    },
+    {
+      "id": "p2_en_04",
+      "text": "Welcome any and all sensations. How does it feel being you?",
+      "language": "en",
+      "phase": 2,
+      "filename": "p2_en_04.mp3"
+    },
+    {
+      "id": "p2_en_05",
+      "text": "What comes up when you see yourself in this present moment?",
+      "language": "en",
+      "phase": 2,
+      "filename": "p2_en_05.mp3"
+    },
+    {
+      "id": "p2_en_06",
+      "text": "Do you love yourself? Do you accept yourself? Are you proud of yourself?",
+      "language": "en",
+      "phase": 2,
+      "filename": "p2_en_06.mp3"
+    },
+    {
+      "id": "p2_en_07",
+      "text": "Is there a part of you resisting?",
+      "language": "en",
+      "phase": 2,
+      "filename": "p2_en_07.mp3"
+    },
+    {
+      "id": "p2_en_08",
+      "text": "Breathe into these sensations.",
+      "language": "en",
+      "phase": 2,
+      "filename": "p2_en_08.mp3"
+    },
+    {
+      "id": "p3_fr_01",
+      "text": "Allons plus profond. Comment tu te sens par rapport à toi maintenant, et dans le passé ?",
+      "language": "fr",
+      "phase": 3,
+      "filename": "p3_fr_01.mp3"
+    },
+    {
+      "id": "p3_fr_02",
+      "text": "Ces versions plus jeunes de toi.",
+      "language": "fr",
+      "phase": 3,
+      "filename": "p3_fr_02.mp3"
+    },
+    {
+      "id": "p3_fr_03",
+      "text": "Quelles versions de toi résistes-tu le plus ? Les versions plus jeunes que tu pourrais même détester.",
+      "language": "fr",
+      "phase": 3,
+      "filename": "p3_fr_03.mp3"
+    },
+    {
+      "id": "p3_fr_04",
+      "text": "Ces versions qui ont tout gâché. Si seulement je n'avais pas dit ça, si seulement j'avais fait ça, ma vie serait différente.",
+      "language": "fr",
+      "phase": 3,
+      "filename": "p3_fr_04.mp3"
+    },
+    {
+      "id": "p3_fr_05",
+      "text": "Pourquoi ? Pourquoi j'ai fait ça ? J'aurais dû savoir mieux.",
+      "language": "fr",
+      "phase": 3,
+      "filename": "p3_fr_05.mp3"
+    },
+    {
+      "id": "p3_fr_06",
+      "text": "Quelles versions de toi semblent impardonnables ?",
+      "language": "fr",
+      "phase": 3,
+      "filename": "p3_fr_06.mp3"
+    },
+    {
+      "id": "p3_fr_07",
+      "text": "Amène-les dans ta conscience. Ces versions qui ne savaient pas mieux. Qui ont fait des erreurs.",
+      "language": "fr",
+      "phase": 3,
+      "filename": "p3_fr_07.mp3"
+    },
+    {
+      "id": "p3_fr_08",
+      "text": "Visualise-les devant toi.",
+      "language": "fr",
+      "phase": 3,
+      "filename": "p3_fr_08.mp3"
+    },
+    {
+      "id": "p3_fr_09",
+      "text": "Comment tu te sens en les voyant ? Qu'est-ce que tu veux leur dire ?",
+      "language": "fr",
+      "phase": 3,
+      "filename": "p3_fr_09.mp3"
+    },
+    {
+      "id": "p3_fr_10",
+      "text": "Est-ce que tu peux leur pardonner ? Entièrement ?",
+      "language": "fr",
+      "phase": 3,
+      "filename": "p3_fr_10.mp3"
+    },
+    {
+      "id": "p3_fr_11",
+      "text": "Ne les as-tu pas détestées assez longtemps ? Peux-tu les accueillir à nouveau ?",
+      "language": "fr",
+      "phase": 3,
+      "filename": "p3_fr_11.mp3"
+    },
+    {
+      "id": "p3_fr_12",
+      "text": "Ces versions, c'est toi. Accueille les sensations. Préparons un cycle de respiration.",
+      "language": "fr",
+      "phase": 3,
+      "filename": "p3_fr_12.mp3"
+    },
+    {
+      "id": "p3_fr_13",
+      "text": "Y a-t-il une résistance à leur pardonner ? Connecte-toi aux sensations et inspire.",
+      "language": "fr",
+      "phase": 3,
+      "filename": "p3_fr_13.mp3"
+    },
+    {
+      "id": "p3_fr_14",
+      "text": "Laisse partir.",
+      "language": "fr",
+      "phase": 3,
+      "filename": "p3_fr_14.mp3"
+    },
+    {
+      "id": "p3_fr_15",
+      "text": "Respire normalement.",
+      "language": "fr",
+      "phase": 3,
+      "filename": "p3_fr_15.mp3"
+    },
+    {
+      "id": "p3_en_01",
+      "text": "Let's go deeper. How do you feel about yourself now, and in the past?",
+      "language": "en",
+      "phase": 3,
+      "filename": "p3_en_01.mp3"
+    },
+    {
+      "id": "p3_en_02",
+      "text": "Those younger versions of you.",
+      "language": "en",
+      "phase": 3,
+      "filename": "p3_en_02.mp3"
+    },
+    {
+      "id": "p3_en_03",
+      "text": "What versions of yourself do you resist the most? The younger versions you might even hate.",
+      "language": "en",
+      "phase": 3,
+      "filename": "p3_en_03.mp3"
+    },
+    {
+      "id": "p3_en_04",
+      "text": "Those versions that ruined everything. If only I didn't say that, if only I did that, my life would be different.",
+      "language": "en",
+      "phase": 3,
+      "filename": "p3_en_04.mp3"
+    },
+    {
+      "id": "p3_en_05",
+      "text": "Why? Why did I? I should have known better.",
+      "language": "en",
+      "phase": 3,
+      "filename": "p3_en_05.mp3"
+    },
+    {
+      "id": "p3_en_06",
+      "text": "What versions of you seem unforgivable?",
+      "language": "en",
+      "phase": 3,
+      "filename": "p3_en_06.mp3"
+    },
+    {
+      "id": "p3_en_07",
+      "text": "Bring them into your awareness. Those versions that didn't know better. That made mistakes.",
+      "language": "en",
+      "phase": 3,
+      "filename": "p3_en_07.mp3"
+    },
+    {
+      "id": "p3_en_08",
+      "text": "Visualize them in front of you.",
+      "language": "en",
+      "phase": 3,
+      "filename": "p3_en_08.mp3"
+    },
+    {
+      "id": "p3_en_09",
+      "text": "How do you feel seeing them? What do you want to tell them?",
+      "language": "en",
+      "phase": 3,
+      "filename": "p3_en_09.mp3"
+    },
+    {
+      "id": "p3_en_10",
+      "text": "Can you forgive them? Entirely?",
+      "language": "en",
+      "phase": 3,
+      "filename": "p3_en_10.mp3"
+    },
+    {
+      "id": "p3_en_11",
+      "text": "Haven't you resisted them long enough? Can you welcome them back?",
+      "language": "en",
+      "phase": 3,
+      "filename": "p3_en_11.mp3"
+    },
+    {
+      "id": "p3_en_12",
+      "text": "Those versions are you. Welcome the sensations. Let's do a breathing cycle.",
+      "language": "en",
+      "phase": 3,
+      "filename": "p3_en_12.mp3"
+    },
+    {
+      "id": "p3_en_13",
+      "text": "Any resistance to forgiving them? Tune into the sensations and inhale.",
+      "language": "en",
+      "phase": 3,
+      "filename": "p3_en_13.mp3"
+    },
+    {
+      "id": "p3_en_14",
+      "text": "Let it go.",
+      "language": "en",
+      "phase": 3,
+      "filename": "p3_en_14.mp3"
+    },
+    {
+      "id": "p3_en_15",
+      "text": "Breathe normally.",
+      "language": "en",
+      "phase": 3,
+      "filename": "p3_en_15.mp3"
+    },
+    {
+      "id": "p4_fr_01",
+      "text": "Quelles sont les peurs qui te contrôlent et te retiennent dans la vie ?",
+      "language": "fr",
+      "phase": 4,
+      "filename": "p4_fr_01.mp3"
+    },
+    {
+      "id": "p4_fr_02",
+      "text": "La peur de ne pas être assez bien. Qu'est-ce qui remonte ?",
+      "language": "fr",
+      "phase": 4,
+      "filename": "p4_fr_02.mp3"
+    },
+    {
+      "id": "p4_fr_03",
+      "text": "Et si je n'étais pas assez bien ? S'il y avait quelque chose qui ne va pas chez moi ?",
+      "language": "fr",
+      "phase": 4,
+      "filename": "p4_fr_03.mp3"
+    },
+    {
+      "id": "p4_fr_04",
+      "text": "Et si je n'avais pas ce qu'il faut ?",
+      "language": "fr",
+      "phase": 4,
+      "filename": "p4_fr_04.mp3"
+    },
+    {
+      "id": "p4_fr_05",
+      "text": "Permets-toi de ressentir ces sensations.",
+      "language": "fr",
+      "phase": 4,
+      "filename": "p4_fr_05.mp3"
+    },
+    {
+      "id": "p4_fr_06",
+      "text": "La peur d'être seul. Qu'est-ce qui remonte ?",
+      "language": "fr",
+      "phase": 4,
+      "filename": "p4_fr_06.mp3"
+    },
+    {
+      "id": "p4_fr_07",
+      "text": "Et si personne ne me voyait vraiment ? Si j'étais destiné à être seul, sans pouvoir me connecter sans mettre un masque ?",
+      "language": "fr",
+      "phase": 4,
+      "filename": "p4_fr_07.mp3"
+    },
+    {
+      "id": "p4_fr_08",
+      "text": "Et si personne ne comprenait jamais le vrai moi ?",
+      "language": "fr",
+      "phase": 4,
+      "filename": "p4_fr_08.mp3"
+    },
+    {
+      "id": "p4_fr_09",
+      "text": "La peur d'être bloqué. De ne jamais atteindre ton potentiel. De rester coincé.",
+      "language": "fr",
+      "phase": 4,
+      "filename": "p4_fr_09.mp3"
+    },
+    {
+      "id": "p4_fr_10",
+      "text": "Ou la peur d'être toxique. As-tu laissé un impact positif sur les gens que tu as croisés ?",
+      "language": "fr",
+      "phase": 4,
+      "filename": "p4_fr_10.mp3"
+    },
+    {
+      "id": "p4_fr_11",
+      "text": "Peux-tu lâcher ces peurs ? Y a-t-il une résistance ?",
+      "language": "fr",
+      "phase": 4,
+      "filename": "p4_fr_11.mp3"
+    },
+    {
+      "id": "p4_fr_12",
+      "text": "Connecte-toi aux sensations.",
+      "language": "fr",
+      "phase": 4,
+      "filename": "p4_fr_12.mp3"
+    },
+    {
+      "id": "p4_fr_13",
+      "text": "Préparons un cycle. Connecte-toi et inspire.",
+      "language": "fr",
+      "phase": 4,
+      "filename": "p4_fr_13.mp3"
+    },
+    {
+      "id": "p4_en_01",
+      "text": "What fears run you and hold you back in life?",
+      "language": "en",
+      "phase": 4,
+      "filename": "p4_en_01.mp3"
+    },
+    {
+      "id": "p4_en_02",
+      "text": "The fear of not being good enough. What comes up?",
+      "language": "en",
+      "phase": 4,
+      "filename": "p4_en_02.mp3"
+    },
+    {
+      "id": "p4_en_03",
+      "text": "What if I'm not good enough? What if there's something wrong with me?",
+      "language": "en",
+      "phase": 4,
+      "filename": "p4_en_03.mp3"
+    },
+    {
+      "id": "p4_en_04",
+      "text": "What if I don't have what it takes?",
+      "language": "en",
+      "phase": 4,
+      "filename": "p4_en_04.mp3"
+    },
+    {
+      "id": "p4_en_05",
+      "text": "Allow yourself to feel the sensations.",
+      "language": "en",
+      "phase": 4,
+      "filename": "p4_en_05.mp3"
+    },
+    {
+      "id": "p4_en_06",
+      "text": "The fear of being alone. What comes up?",
+      "language": "en",
+      "phase": 4,
+      "filename": "p4_en_06.mp3"
+    },
+    {
+      "id": "p4_en_07",
+      "text": "What if no one truly sees me? If I'm destined to be alone, never able to connect without putting up a mask?",
+      "language": "en",
+      "phase": 4,
+      "filename": "p4_en_07.mp3"
+    },
+    {
+      "id": "p4_en_08",
+      "text": "What if no one ever gets the real me?",
+      "language": "en",
+      "phase": 4,
+      "filename": "p4_en_08.mp3"
+    },
+    {
+      "id": "p4_en_09",
+      "text": "The fear of being stuck. Never living up to your potential. Staying stuck.",
+      "language": "en",
+      "phase": 4,
+      "filename": "p4_en_09.mp3"
+    },
+    {
+      "id": "p4_en_10",
+      "text": "Or the fear of being toxic. Did you leave a positive impact on the people you've met?",
+      "language": "en",
+      "phase": 4,
+      "filename": "p4_en_10.mp3"
+    },
+    {
+      "id": "p4_en_11",
+      "text": "Can you let go of these fears? Is there any resistance?",
+      "language": "en",
+      "phase": 4,
+      "filename": "p4_en_11.mp3"
+    },
+    {
+      "id": "p4_en_12",
+      "text": "Tune into the sensations.",
+      "language": "en",
+      "phase": 4,
+      "filename": "p4_en_12.mp3"
+    },
+    {
+      "id": "p4_en_13",
+      "text": "Let's do a cycle. Tune in and inhale.",
+      "language": "en",
+      "phase": 4,
+      "filename": "p4_en_13.mp3"
+    },
+    {
+      "id": "p5_fr_01",
+      "text": "Allons une dernière couche plus profond.",
+      "language": "fr",
+      "phase": 5,
+      "filename": "p5_fr_01.mp3"
+    },
+    {
+      "id": "p5_fr_02",
+      "text": "Peux-tu lâcher le passé ? Lâcher l'ancien toi ?",
+      "language": "fr",
+      "phase": 5,
+      "filename": "p5_fr_02.mp3"
+    },
+    {
+      "id": "p5_fr_03",
+      "text": "Peux-tu tourner la page et commencer un nouveau chapitre ?",
+      "language": "fr",
+      "phase": 5,
+      "filename": "p5_fr_03.mp3"
+    },
+    {
+      "id": "p5_fr_04",
+      "text": "Visualise l'ancien toi, cette version qui te garde coincé. Ce qui t'a amené ici ne t'amènera pas là où tu veux aller.",
+      "language": "fr",
+      "phase": 5,
+      "filename": "p5_fr_04.mp3"
+    },
+    {
+      "id": "p5_fr_05",
+      "text": "Peux-tu le remercier ? Merci de m'avoir amené jusqu'ici. Mais je n'ai plus besoin de toi.",
+      "language": "fr",
+      "phase": 5,
+      "filename": "p5_fr_05.mp3"
+    },
+    {
+      "id": "p5_fr_06",
+      "text": "Merci, mais il est temps de te dire au revoir.",
+      "language": "fr",
+      "phase": 5,
+      "filename": "p5_fr_06.mp3"
+    },
+    {
+      "id": "p5_fr_07",
+      "text": "Peux-tu le lâcher ? L'ancien toi. Les schémas. Les habitudes.",
+      "language": "fr",
+      "phase": 5,
+      "filename": "p5_fr_07.mp3"
+    },
+    {
+      "id": "p5_fr_08",
+      "text": "Peux-tu lâcher prise ?",
+      "language": "fr",
+      "phase": 5,
+      "filename": "p5_fr_08.mp3"
+    },
+    {
+      "id": "p5_fr_09",
+      "text": "Qu'est-ce qui fait peur dans le fait de tourner la page ?",
+      "language": "fr",
+      "phase": 5,
+      "filename": "p5_fr_09.mp3"
+    },
+    {
+      "id": "p5_fr_10",
+      "text": "Et à quoi ça ressemble ? Plonge là-dedans.",
+      "language": "fr",
+      "phase": 5,
+      "filename": "p5_fr_10.mp3"
+    },
+    {
+      "id": "p5_fr_11",
+      "text": "Et si les choses se passaient incroyablement bien ? Demain, l'année prochaine, les cinq prochaines années ?",
+      "language": "fr",
+      "phase": 5,
+      "filename": "p5_fr_11.mp3"
+    },
+    {
+      "id": "p5_fr_12",
+      "text": "À quoi ressemble ta vie ? Qui es-tu ? Comment tu te sens ?",
+      "language": "fr",
+      "phase": 5,
+      "filename": "p5_fr_12.mp3"
+    },
+    {
+      "id": "p5_fr_13",
+      "text": "Peux-tu incarner ça maintenant ? Y a-t-il une résistance ?",
+      "language": "fr",
+      "phase": 5,
+      "filename": "p5_fr_13.mp3"
+    },
+    {
+      "id": "p5_fr_14",
+      "text": "Accueille les sensations.",
+      "language": "fr",
+      "phase": 5,
+      "filename": "p5_fr_14.mp3"
+    },
+    {
+      "id": "p5_fr_15",
+      "text": "Faisons notre plus grande respiration. Inspire.",
+      "language": "fr",
+      "phase": 5,
+      "filename": "p5_fr_15.mp3"
+    },
+    {
+      "id": "p5_fr_16",
+      "text": "Laisse tout partir.",
+      "language": "fr",
+      "phase": 5,
+      "filename": "p5_fr_16.mp3"
+    },
+    {
+      "id": "p5_en_01",
+      "text": "Let's go one last layer deeper.",
+      "language": "en",
+      "phase": 5,
+      "filename": "p5_en_01.mp3"
+    },
+    {
+      "id": "p5_en_02",
+      "text": "Can you let go of the past? Let go of the old you?",
+      "language": "en",
+      "phase": 5,
+      "filename": "p5_en_02.mp3"
+    },
+    {
+      "id": "p5_en_03",
+      "text": "Can you turn the page and start a new chapter?",
+      "language": "en",
+      "phase": 5,
+      "filename": "p5_en_03.mp3"
+    },
+    {
+      "id": "p5_en_04",
+      "text": "Visualize the old you, that version keeping you stuck. What got you here won't get you there.",
+      "language": "en",
+      "phase": 5,
+      "filename": "p5_en_04.mp3"
+    },
+    {
+      "id": "p5_en_05",
+      "text": "Can you thank it? Thank you for getting me this far. But I don't need you anymore.",
+      "language": "en",
+      "phase": 5,
+      "filename": "p5_en_05.mp3"
+    },
+    {
+      "id": "p5_en_06",
+      "text": "Thank you, but it's time to say goodbye.",
+      "language": "en",
+      "phase": 5,
+      "filename": "p5_en_06.mp3"
+    },
+    {
+      "id": "p5_en_07",
+      "text": "Can you let go of it? The old you. The patterns. The habits.",
+      "language": "en",
+      "phase": 5,
+      "filename": "p5_en_07.mp3"
+    },
+    {
+      "id": "p5_en_08",
+      "text": "Can you let go?",
+      "language": "en",
+      "phase": 5,
+      "filename": "p5_en_08.mp3"
+    },
+    {
+      "id": "p5_en_09",
+      "text": "What's scary about turning the page?",
+      "language": "en",
+      "phase": 5,
+      "filename": "p5_en_09.mp3"
+    },
+    {
+      "id": "p5_en_10",
+      "text": "And what does that look like? Sink into this.",
+      "language": "en",
+      "phase": 5,
+      "filename": "p5_en_10.mp3"
+    },
+    {
+      "id": "p5_en_11",
+      "text": "What if things went amazingly well? Tomorrow, next year, the next five years?",
+      "language": "en",
+      "phase": 5,
+      "filename": "p5_en_11.mp3"
+    },
+    {
+      "id": "p5_en_12",
+      "text": "What does your life look like? Who are you? How do you feel?",
+      "language": "en",
+      "phase": 5,
+      "filename": "p5_en_12.mp3"
+    },
+    {
+      "id": "p5_en_13",
+      "text": "Can you embody this now? Is there any resistance?",
+      "language": "en",
+      "phase": 5,
+      "filename": "p5_en_13.mp3"
+    },
+    {
+      "id": "p5_en_14",
+      "text": "Welcome the sensations.",
+      "language": "en",
+      "phase": 5,
+      "filename": "p5_en_14.mp3"
+    },
+    {
+      "id": "p5_en_15",
+      "text": "Let's do our biggest breath. Inhale.",
+      "language": "en",
+      "phase": 5,
+      "filename": "p5_en_15.mp3"
+    },
+    {
+      "id": "p5_en_16",
+      "text": "Let it all go.",
+      "language": "en",
+      "phase": 5,
+      "filename": "p5_en_16.mp3"
+    },
+    {
+      "id": "p6_fr_01",
+      "text": "Prends un moment pour laisser les choses ralentir.",
+      "language": "fr",
+      "phase": 6,
+      "filename": "p6_fr_01.mp3"
+    },
+    {
+      "id": "p6_fr_02",
+      "text": "Laisse ton corps se relaxer. Tes épaules.",
+      "language": "fr",
+      "phase": 6,
+      "filename": "p6_fr_02.mp3"
+    },
+    {
+      "id": "p6_fr_03",
+      "text": "Décolle ta langue du palais. Laisse ta mâchoire se relaxer.",
+      "language": "fr",
+      "phase": 6,
+      "filename": "p6_fr_03.mp3"
+    },
+    {
+      "id": "p6_fr_04",
+      "text": "Vois à quel point tu peux devenir léger.",
+      "language": "fr",
+      "phase": 6,
+      "filename": "p6_fr_04.mp3"
+    },
+    {
+      "id": "p6_fr_05",
+      "text": "Laisse ton corps fondre.",
+      "language": "fr",
+      "phase": 6,
+      "filename": "p6_fr_05.mp3"
+    },
+    {
+      "id": "p6_fr_06",
+      "text": "Lâche toute tension. Tes épaules. Ton estomac. Laisse tout fondre.",
+      "language": "fr",
+      "phase": 6,
+      "filename": "p6_fr_06.mp3"
+    },
+    {
+      "id": "p6_fr_07",
+      "text": "Relaxe chaque partie de toi.",
+      "language": "fr",
+      "phase": 6,
+      "filename": "p6_fr_07.mp3"
+    },
+    {
+      "id": "p6_fr_08",
+      "text": "Peux-tu te relaxer encore plus ? Juste lâcher prise.",
+      "language": "fr",
+      "phase": 6,
+      "filename": "p6_fr_08.mp3"
+    },
+    {
+      "id": "p6_fr_09",
+      "text": "Te sentir de plus en plus léger. Si léger que tu flottes.",
+      "language": "fr",
+      "phase": 6,
+      "filename": "p6_fr_09.mp3"
+    },
+    {
+      "id": "p6_fr_10",
+      "text": "De plus en plus haut. Au-delà du mental. Au-delà du corps.",
+      "language": "fr",
+      "phase": 6,
+      "filename": "p6_fr_10.mp3"
+    },
+    {
+      "id": "p6_fr_11",
+      "text": "Lâchant complètement.",
+      "language": "fr",
+      "phase": 6,
+      "filename": "p6_fr_11.mp3"
+    },
+    {
+      "id": "p6_fr_12",
+      "text": "Peux-tu lâcher encore plus ?",
+      "language": "fr",
+      "phase": 6,
+      "filename": "p6_fr_12.mp3"
+    },
+    {
+      "id": "p6_fr_13",
+      "text": "Laisse-toi fondre. Arrête de contrôler.",
+      "language": "fr",
+      "phase": 6,
+      "filename": "p6_fr_13.mp3"
+    },
+    {
+      "id": "p6_fr_14",
+      "text": "Juste lâcher.",
+      "language": "fr",
+      "phase": 6,
+      "filename": "p6_fr_14.mp3"
+    },
+    {
+      "id": "p6_en_01",
+      "text": "Take a moment to let things slow down.",
+      "language": "en",
+      "phase": 6,
+      "filename": "p6_en_01.mp3"
+    },
+    {
+      "id": "p6_en_02",
+      "text": "Let your body relax. Your shoulders.",
+      "language": "en",
+      "phase": 6,
+      "filename": "p6_en_02.mp3"
+    },
+    {
+      "id": "p6_en_03",
+      "text": "Detach your tongue from the roof of your mouth. Let your jaw relax.",
+      "language": "en",
+      "phase": 6,
+      "filename": "p6_en_03.mp3"
+    },
+    {
+      "id": "p6_en_04",
+      "text": "See how light you can get.",
+      "language": "en",
+      "phase": 6,
+      "filename": "p6_en_04.mp3"
+    },
+    {
+      "id": "p6_en_05",
+      "text": "Let your body melt.",
+      "language": "en",
+      "phase": 6,
+      "filename": "p6_en_05.mp3"
+    },
+    {
+      "id": "p6_en_06",
+      "text": "Let go of all tension. Your shoulders. Your stomach. Let it melt.",
+      "language": "en",
+      "phase": 6,
+      "filename": "p6_en_06.mp3"
+    },
+    {
+      "id": "p6_en_07",
+      "text": "Relax every part of you.",
+      "language": "en",
+      "phase": 6,
+      "filename": "p6_en_07.mp3"
+    },
+    {
+      "id": "p6_en_08",
+      "text": "Can you relax even more? Just letting go.",
+      "language": "en",
+      "phase": 6,
+      "filename": "p6_en_08.mp3"
+    },
+    {
+      "id": "p6_en_09",
+      "text": "Feeling lighter and lighter. So light you're floating.",
+      "language": "en",
+      "phase": 6,
+      "filename": "p6_en_09.mp3"
+    },
+    {
+      "id": "p6_en_10",
+      "text": "Higher and higher. Beyond the mind. Beyond the body.",
+      "language": "en",
+      "phase": 6,
+      "filename": "p6_en_10.mp3"
+    },
+    {
+      "id": "p6_en_11",
+      "text": "Letting go completely.",
+      "language": "en",
+      "phase": 6,
+      "filename": "p6_en_11.mp3"
+    },
+    {
+      "id": "p6_en_12",
+      "text": "Can you let go even more?",
+      "language": "en",
+      "phase": 6,
+      "filename": "p6_en_12.mp3"
+    },
+    {
+      "id": "p6_en_13",
+      "text": "Let yourself melt. Stop controlling.",
+      "language": "en",
+      "phase": 6,
+      "filename": "p6_en_13.mp3"
+    },
+    {
+      "id": "p6_en_14",
+      "text": "Just let go.",
+      "language": "en",
+      "phase": 6,
+      "filename": "p6_en_14.mp3"
+    },
+    {
+      "id": "p7_fr_01",
+      "text": "Tu flottes si haut maintenant. Vers cet espace qui existe avant tout le reste.",
+      "language": "fr",
+      "phase": 7,
+      "filename": "p7_fr_01.mp3"
+    },
+    {
+      "id": "p7_fr_02",
+      "text": "Cet espace de paix. D'abondance. D'authenticité.",
+      "language": "fr",
+      "phase": 7,
+      "filename": "p7_fr_02.mp3"
+    },
+    {
+      "id": "p7_fr_03",
+      "text": "Où tout va bien. Où tout est bien.",
+      "language": "fr",
+      "phase": 7,
+      "filename": "p7_fr_03.mp3"
+    },
+    {
+      "id": "p7_fr_04",
+      "text": "Où tu es exactement là où tu dois être. Qui tu dois être.",
+      "language": "fr",
+      "phase": 7,
+      "filename": "p7_fr_04.mp3"
+    },
+    {
+      "id": "p7_fr_05",
+      "text": "Où tu n'as rien à prouver. Tu peux juste être.",
+      "language": "fr",
+      "phase": 7,
+      "filename": "p7_fr_05.mp3"
+    },
+    {
+      "id": "p7_fr_06",
+      "text": "Cet endroit d'appartenance ultime.",
+      "language": "fr",
+      "phase": 7,
+      "filename": "p7_fr_06.mp3"
+    },
+    {
+      "id": "p7_fr_07",
+      "text": "Fusionne avec cet espace. Ne fais qu'un avec lui.",
+      "language": "fr",
+      "phase": 7,
+      "filename": "p7_fr_07.mp3"
+    },
+    {
+      "id": "p7_fr_08",
+      "text": "À chaque inspiration, remplis ton corps de lumière. De chaleur. D'amour.",
+      "language": "fr",
+      "phase": 7,
+      "filename": "p7_fr_08.mp3"
+    },
+    {
+      "id": "p7_fr_09",
+      "text": "Deviens un avec cet espace. Reconnecte-toi.",
+      "language": "fr",
+      "phase": 7,
+      "filename": "p7_fr_09.mp3"
+    },
+    {
+      "id": "p7_fr_10",
+      "text": "Sens ton corps briller de lumière. Rempli de chaleur. Reconnecté à l'amour.",
+      "language": "fr",
+      "phase": 7,
+      "filename": "p7_fr_10.mp3"
+    },
+    {
+      "id": "p7_en_01",
+      "text": "Floating up so high now. Into this space that comes before everything.",
+      "language": "en",
+      "phase": 7,
+      "filename": "p7_en_01.mp3"
+    },
+    {
+      "id": "p7_en_02",
+      "text": "This space of peace. Of abundance. Of authenticity.",
+      "language": "en",
+      "phase": 7,
+      "filename": "p7_en_02.mp3"
+    },
+    {
+      "id": "p7_en_03",
+      "text": "Where all is good. All is well.",
+      "language": "en",
+      "phase": 7,
+      "filename": "p7_en_03.mp3"
+    },
+    {
+      "id": "p7_en_04",
+      "text": "Where you're exactly where you need to be. Who you need to be.",
+      "language": "en",
+      "phase": 7,
+      "filename": "p7_en_04.mp3"
+    },
+    {
+      "id": "p7_en_05",
+      "text": "Where you don't have to impress. You can just be.",
+      "language": "en",
+      "phase": 7,
+      "filename": "p7_en_05.mp3"
+    },
+    {
+      "id": "p7_en_06",
+      "text": "This place of ultimate belonging.",
+      "language": "en",
+      "phase": 7,
+      "filename": "p7_en_06.mp3"
+    },
+    {
+      "id": "p7_en_07",
+      "text": "Merge with this space. Become one with it.",
+      "language": "en",
+      "phase": 7,
+      "filename": "p7_en_07.mp3"
+    },
+    {
+      "id": "p7_en_08",
+      "text": "With every inhale, filling your body with light. Warmth. Love.",
+      "language": "en",
+      "phase": 7,
+      "filename": "p7_en_08.mp3"
+    },
+    {
+      "id": "p7_en_09",
+      "text": "Become one with this space. Reconnect.",
+      "language": "en",
+      "phase": 7,
+      "filename": "p7_en_09.mp3"
+    },
+    {
+      "id": "p7_en_10",
+      "text": "Feel your body glowing with light. Filled with warmth. Reconnected to love.",
+      "language": "en",
+      "phase": 7,
+      "filename": "p7_en_10.mp3"
+    },
+    {
+      "id": "p8_fr_01",
+      "text": "Maintenant, doucement, depuis cet espace de paix...",
+      "language": "fr",
+      "phase": 8,
+      "filename": "p8_fr_01.mp3"
+    },
+    {
+      "id": "p8_fr_02",
+      "text": "Ramène ton attention à la base de ta colonne vertébrale.",
+      "language": "fr",
+      "phase": 8,
+      "filename": "p8_fr_02.mp3"
+    },
+    {
+      "id": "p8_fr_03",
+      "text": "Sens cet ancrage. Cette connexion à la terre.",
+      "language": "fr",
+      "phase": 8,
+      "filename": "p8_fr_03.mp3"
+    },
+    {
+      "id": "p8_fr_04",
+      "text": "Commence à ramener la conscience dans ton corps.",
+      "language": "fr",
+      "phase": 8,
+      "filename": "p8_fr_04.mp3"
+    },
+    {
+      "id": "p8_fr_05",
+      "text": "Sens tes pieds. Leur poids. Leur chaleur.",
+      "language": "fr",
+      "phase": 8,
+      "filename": "p8_fr_05.mp3"
+    },
+    {
+      "id": "p8_fr_06",
+      "text": "Sens tes jambes. Lourdes. Détendues.",
+      "language": "fr",
+      "phase": 8,
+      "filename": "p8_fr_06.mp3"
+    },
+    {
+      "id": "p8_fr_07",
+      "text": "Ramène la conscience dans ton ventre. Ta poitrine. Sens ton cœur.",
+      "language": "fr",
+      "phase": 8,
+      "filename": "p8_fr_07.mp3"
+    },
+    {
+      "id": "p8_fr_08",
+      "text": "Sens tes bras. Tes mains. Le bout de tes doigts.",
+      "language": "fr",
+      "phase": 8,
+      "filename": "p8_fr_08.mp3"
+    },
+    {
+      "id": "p8_fr_09",
+      "text": "Ramène la conscience dans ta nuque. Ton visage.",
+      "language": "fr",
+      "phase": 8,
+      "filename": "p8_fr_09.mp3"
+    },
+    {
+      "id": "p8_fr_10",
+      "text": "Sens le sommet de ta tête.",
+      "language": "fr",
+      "phase": 8,
+      "filename": "p8_fr_10.mp3"
+    },
+    {
+      "id": "p8_fr_11",
+      "text": "Tout ton corps est maintenant présent. Unifié. Ancré.",
+      "language": "fr",
+      "phase": 8,
+      "filename": "p8_fr_11.mp3"
+    },
+    {
+      "id": "p8_en_01",
+      "text": "Now, gently, from this space of peace...",
+      "language": "en",
+      "phase": 8,
+      "filename": "p8_en_01.mp3"
+    },
+    {
+      "id": "p8_en_02",
+      "text": "Bring your attention back to the base of your spine.",
+      "language": "en",
+      "phase": 8,
+      "filename": "p8_en_02.mp3"
+    },
+    {
+      "id": "p8_en_03",
+      "text": "Feel this grounding. This connection to the earth.",
+      "language": "en",
+      "phase": 8,
+      "filename": "p8_en_03.mp3"
+    },
+    {
+      "id": "p8_en_04",
+      "text": "Start bringing awareness back into your body.",
+      "language": "en",
+      "phase": 8,
+      "filename": "p8_en_04.mp3"
+    },
+    {
+      "id": "p8_en_05",
+      "text": "Feel your feet. Their weight. Their warmth.",
+      "language": "en",
+      "phase": 8,
+      "filename": "p8_en_05.mp3"
+    },
+    {
+      "id": "p8_en_06",
+      "text": "Feel your legs. Heavy. Relaxed.",
+      "language": "en",
+      "phase": 8,
+      "filename": "p8_en_06.mp3"
+    },
+    {
+      "id": "p8_en_07",
+      "text": "Bring awareness into your belly. Your chest. Feel your heart.",
+      "language": "en",
+      "phase": 8,
+      "filename": "p8_en_07.mp3"
+    },
+    {
+      "id": "p8_en_08",
+      "text": "Feel your arms. Your hands. The tips of your fingers.",
+      "language": "en",
+      "phase": 8,
+      "filename": "p8_en_08.mp3"
+    },
+    {
+      "id": "p8_en_09",
+      "text": "Bring awareness into your neck. Your face.",
+      "language": "en",
+      "phase": 8,
+      "filename": "p8_en_09.mp3"
+    },
+    {
+      "id": "p8_en_10",
+      "text": "Feel the top of your head.",
+      "language": "en",
+      "phase": 8,
+      "filename": "p8_en_10.mp3"
+    },
+    {
+      "id": "p8_en_11",
+      "text": "Your whole body is now present. Unified. Grounded.",
+      "language": "en",
+      "phase": 8,
+      "filename": "p8_en_11.mp3"
+    },
+    {
+      "id": "p9_fr_01",
+      "text": "Avant de revenir, prenons une dernière respiration d'ancrage.",
+      "language": "fr",
+      "phase": 9,
+      "filename": "p9_fr_01.mp3"
+    },
+    {
+      "id": "p9_fr_02",
+      "text": "Inspire profondément.",
+      "language": "fr",
+      "phase": 9,
+      "filename": "p9_fr_02.mp3"
+    },
+    {
+      "id": "p9_fr_03",
+      "text": "Expire lentement.",
+      "language": "fr",
+      "phase": 9,
+      "filename": "p9_fr_03.mp3"
+    },
+    {
+      "id": "p9_fr_04",
+      "text": "Tu as fait un travail profond. Sois doux avec toi-même.",
+      "language": "fr",
+      "phase": 9,
+      "filename": "p9_fr_04.mp3"
+    },
+    {
+      "id": "p9_fr_05",
+      "text": "Je vais compter de un à cinq. À cinq, ouvre les yeux.",
+      "language": "fr",
+      "phase": 9,
+      "filename": "p9_fr_05.mp3"
+    },
+    {
+      "id": "p9_fr_06",
+      "text": "Un. Conscience qui remonte.",
+      "language": "fr",
+      "phase": 9,
+      "filename": "p9_fr_06.mp3"
+    },
+    {
+      "id": "p9_fr_07",
+      "text": "Deux. Sensation dans tes doigts et orteils.",
+      "language": "fr",
+      "phase": 9,
+      "filename": "p9_fr_07.mp3"
+    },
+    {
+      "id": "p9_fr_08",
+      "text": "Trois. L'énergie revient.",
+      "language": "fr",
+      "phase": 9,
+      "filename": "p9_fr_08.mp3"
+    },
+    {
+      "id": "p9_fr_09",
+      "text": "Quatre. Presque de retour.",
+      "language": "fr",
+      "phase": 9,
+      "filename": "p9_fr_09.mp3"
+    },
+    {
+      "id": "p9_fr_10",
+      "text": "Cinq. Ouvre les yeux. Bienvenue.",
+      "language": "fr",
+      "phase": 9,
+      "filename": "p9_fr_10.mp3"
+    },
+    {
+      "id": "p9_fr_11",
+      "text": "Prends ton temps. Bois un verre d'eau si tu le souhaites.",
+      "language": "fr",
+      "phase": 9,
+      "filename": "p9_fr_11.mp3"
+    },
+    {
+      "id": "p9_en_01",
+      "text": "Before coming back, let's take one final grounding breath.",
+      "language": "en",
+      "phase": 9,
+      "filename": "p9_en_01.mp3"
+    },
+    {
+      "id": "p9_en_02",
+      "text": "Breathe in deeply.",
+      "language": "en",
+      "phase": 9,
+      "filename": "p9_en_02.mp3"
+    },
+    {
+      "id": "p9_en_03",
+      "text": "Exhale slowly.",
+      "language": "en",
+      "phase": 9,
+      "filename": "p9_en_03.mp3"
+    },
+    {
+      "id": "p9_en_04",
+      "text": "You did deep work. Be gentle with yourself.",
+      "language": "en",
+      "phase": 9,
+      "filename": "p9_en_04.mp3"
+    },
+    {
+      "id": "p9_en_05",
+      "text": "I'm going to count from one to five. At five, open your eyes.",
+      "language": "en",
+      "phase": 9,
+      "filename": "p9_en_05.mp3"
+    },
+    {
+      "id": "p9_en_06",
+      "text": "One. Awareness rising.",
+      "language": "en",
+      "phase": 9,
+      "filename": "p9_en_06.mp3"
+    },
+    {
+      "id": "p9_en_07",
+      "text": "Two. Sensation in your fingers and toes.",
+      "language": "en",
+      "phase": 9,
+      "filename": "p9_en_07.mp3"
+    },
+    {
+      "id": "p9_en_08",
+      "text": "Three. Energy returning.",
+      "language": "en",
+      "phase": 9,
+      "filename": "p9_en_08.mp3"
+    },
+    {
+      "id": "p9_en_09",
+      "text": "Four. Almost back.",
+      "language": "en",
+      "phase": 9,
+      "filename": "p9_en_09.mp3"
+    },
+    {
+      "id": "p9_en_10",
+      "text": "Five. Open your eyes. Welcome back.",
+      "language": "en",
+      "phase": 9,
+      "filename": "p9_en_10.mp3"
+    },
+    {
+      "id": "p9_en_11",
+      "text": "Take your time. Have some water if you'd like.",
+      "language": "en",
+      "phase": 9,
+      "filename": "p9_en_11.mp3"
+    }
+  ]
+}
