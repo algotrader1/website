@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "type": "onboarding-meditation",
-  "baseURL": "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/audio/onboarding",
+  "baseURL": "https://raw.githubusercontent.com/algotrader1/website/main/audio/onboarding",
   "generatedAt": "2026-01-01T20:21:34.053Z",
   "totalPhrases": 82,
   "dynamicPhrases": [
