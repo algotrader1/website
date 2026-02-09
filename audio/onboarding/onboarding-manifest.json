@@ -2,8 +2,16 @@
   "version": "1.0.0",
   "type": "onboarding-meditation",
   "baseURL": "https://raw.githubusercontent.com/algotrader1/website/main/audio/onboarding",
-  "generatedAt": "2026-01-01T20:21:34.053Z",
-  "totalPhrases": 82,
+  "generatedAt": "2026-02-09T14:50:58.335Z",
+  "totalPhrases": 29,
+  "staticPhrases": 17,
+  "presetDreamPhrases": 12,
+  "presetDreams": [
+    "mall",
+    "molasses",
+    "teeth"
+  ],
+  "dynamicPhrasesNote": "Pour les rêves personnalisés, ces 4 phrases sont générées dynamiquement par Mistral et ElevenLabs",
   "dynamicPhrases": [
     "detectedEmotion (Phase 2)",
     "dreamConnection (Phase 3)",
@@ -11,69 +19,6 @@
     "closingAffirmation (Phase 4)"
   ],
   "phrases": [
-    {
-      "id": "ob_p1_fr_01",
-      "text": "Ferme les yeux.",
-      "language": "fr",
-      "phase": 1,
-      "filename": "ob_p1_fr_01.mp3"
-    },
-    {
-      "id": "ob_p1_fr_02",
-      "text": "Commence par écouter cette petite voix anxieuse dans ta tête. Celle qui cherche des réponses.",
-      "language": "fr",
-      "phase": 1,
-      "filename": "ob_p1_fr_02.mp3"
-    },
-    {
-      "id": "ob_p1_fr_03",
-      "text": "Visualise-la qui descend doucement le long de ta colonne vertébrale... jusqu'à la base.",
-      "language": "fr",
-      "phase": 1,
-      "filename": "ob_p1_fr_03.mp3"
-    },
-    {
-      "id": "ob_p1_fr_04",
-      "text": "Verrouille-la ici. Tu es en sécurité.",
-      "language": "fr",
-      "phase": 1,
-      "filename": "ob_p1_fr_04.mp3"
-    },
-    {
-      "id": "ob_p1_fr_05",
-      "text": "Imagine que tu respires depuis la base de ta colonne vertébrale.",
-      "language": "fr",
-      "phase": 1,
-      "filename": "ob_p1_fr_05.mp3"
-    },
-    {
-      "id": "ob_p1_fr_06",
-      "text": "Inspire profondément...",
-      "language": "fr",
-      "phase": 1,
-      "filename": "ob_p1_fr_06.mp3"
-    },
-    {
-      "id": "ob_p1_fr_07",
-      "text": "Retiens...",
-      "language": "fr",
-      "phase": 1,
-      "filename": "ob_p1_fr_07.mp3"
-    },
-    {
-      "id": "ob_p1_fr_08",
-      "text": "Et relâche...",
-      "language": "fr",
-      "phase": 1,
-      "filename": "ob_p1_fr_08.mp3"
-    },
-    {
-      "id": "ob_p1_fr_09",
-      "text": "Voilà. Tu es présent.",
-      "language": "fr",
-      "phase": 1,
-      "filename": "ob_p1_fr_09.mp3"
-    },
     {
       "id": "ob_p1_en_01",
       "text": "Close your eyes.",
@@ -83,507 +28,211 @@
     },
     {
       "id": "ob_p1_en_02",
-      "text": "Start by noticing that anxious voice in your head. The one looking for answers.",
+      "text": "One breath in...",
       "language": "en",
       "phase": 1,
       "filename": "ob_p1_en_02.mp3"
     },
     {
       "id": "ob_p1_en_03",
-      "text": "Visualize it sliding down your spine... all the way to the base.",
+      "text": "Let it drop.",
       "language": "en",
       "phase": 1,
       "filename": "ob_p1_en_03.mp3"
     },
     {
       "id": "ob_p1_en_04",
-      "text": "Lock it there. You are safe.",
+      "text": "Feel your weight against whatever's holding you. You're here.",
       "language": "en",
       "phase": 1,
       "filename": "ob_p1_en_04.mp3"
     },
     {
-      "id": "ob_p1_en_05",
-      "text": "Imagine you are breathing from the base of your spine.",
-      "language": "en",
-      "phase": 1,
-      "filename": "ob_p1_en_05.mp3"
-    },
-    {
-      "id": "ob_p1_en_06",
-      "text": "Inhale deeply...",
-      "language": "en",
-      "phase": 1,
-      "filename": "ob_p1_en_06.mp3"
-    },
-    {
-      "id": "ob_p1_en_07",
-      "text": "Hold...",
-      "language": "en",
-      "phase": 1,
-      "filename": "ob_p1_en_07.mp3"
-    },
-    {
-      "id": "ob_p1_en_08",
-      "text": "And release...",
-      "language": "en",
-      "phase": 1,
-      "filename": "ob_p1_en_08.mp3"
-    },
-    {
-      "id": "ob_p1_en_09",
-      "text": "There. You are present.",
-      "language": "en",
-      "phase": 1,
-      "filename": "ob_p1_en_09.mp3"
-    },
-    {
-      "id": "ob_p2_fr_01",
-      "text": "Ton rêve n'était pas un hasard.",
-      "language": "fr",
-      "phase": 2,
-      "filename": "ob_p2_fr_01.mp3"
-    },
-    {
-      "id": "ob_p2_fr_02",
-      "text": "Ne l'analyse pas. Ressens-la.",
-      "language": "fr",
-      "phase": 2,
-      "filename": "ob_p2_fr_02.mp3"
-    },
-    {
-      "id": "ob_p2_fr_03",
-      "text": "Où se cache cette émotion dans ton corps maintenant ?",
-      "language": "fr",
-      "phase": 2,
-      "filename": "ob_p2_fr_03.mp3"
-    },
-    {
-      "id": "ob_p2_fr_04",
-      "text": "Est-ce une boule dans le ventre ? Une tension dans la poitrine ? Une gorge serrée ?",
-      "language": "fr",
-      "phase": 2,
-      "filename": "ob_p2_fr_04.mp3"
-    },
-    {
-      "id": "ob_p2_fr_05",
-      "text": "Localise cette sensation physique. C'est juste de l'énergie bloquée.",
-      "language": "fr",
-      "phase": 2,
-      "filename": "ob_p2_fr_05.mp3"
-    },
-    {
       "id": "ob_p2_en_01",
-      "text": "Your dream wasn't random.",
+      "text": "Say it silently. Notice what your body does.",
       "language": "en",
       "phase": 2,
       "filename": "ob_p2_en_01.mp3"
     },
     {
       "id": "ob_p2_en_02",
-      "text": "Don't analyze it. Feel it.",
+      "text": "Scan. Jaw. Throat. Chest. Gut. Legs.",
       "language": "en",
       "phase": 2,
       "filename": "ob_p2_en_02.mp3"
     },
     {
       "id": "ob_p2_en_03",
-      "text": "Where is this emotion stuck in your body right now?",
+      "text": "You're looking for tension, heat, cold, a knot, an emptiness. Find it.",
       "language": "en",
       "phase": 2,
       "filename": "ob_p2_en_03.mp3"
     },
     {
       "id": "ob_p2_en_04",
-      "text": "Is it a knot in your stomach? Tightness in your chest? A lump in your throat?",
+      "text": "Stay there. Don't fix it. Just feel its texture — dense? Electric? Hollow? Heavy?",
       "language": "en",
       "phase": 2,
       "filename": "ob_p2_en_04.mp3"
     },
     {
-      "id": "ob_p2_en_05",
-      "text": "Locate that physical sensation. It's just blocked energy.",
-      "language": "en",
-      "phase": 2,
-      "filename": "ob_p2_en_05.mp3"
-    },
-    {
-      "id": "ob_p3_fr_01",
-      "text": "Arrête de résister un instant.",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_01.mp3"
-    },
-    {
-      "id": "ob_p3_fr_02",
-      "text": "Ton corps a fait ce qu'il savait faire. Il a verrouillé cette émotion pour te protéger.",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_02.mp3"
-    },
-    {
-      "id": "ob_p3_fr_03",
-      "text": "C'était intelligent. C'était de la survie. C'est tout à fait normal.",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_03.mp3"
-    },
-    {
-      "id": "ob_p3_fr_04",
-      "text": "Mais cette protection est devenue un poids que tu n'as plus besoin de porter.",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_04.mp3"
-    },
-    {
-      "id": "ob_p3_fr_05",
-      "text": "Tu n'as plus besoin de lutter contre cette émotion.",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_05.mp3"
-    },
-    {
-      "id": "ob_p3_fr_06",
-      "text": "Donne-lui simplement la permission d'exister. Laisse-la être là, pleinement.",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_06.mp3"
-    },
-    {
-      "id": "ob_p3_fr_07",
-      "text": "Dès que tu arrêtes de la retenir, elle peut enfin te traverser et se dissoudre.",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_07.mp3"
-    },
-    {
-      "id": "ob_p3_fr_08",
-      "text": "Visualise cette tension comme une fumée sombre ou un poids lourd.",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_08.mp3"
-    },
-    {
-      "id": "ob_p3_fr_09",
-      "text": "Nous allons l'expulser.",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_09.mp3"
-    },
-    {
-      "id": "ob_p3_fr_10",
-      "text": "À la prochaine inspiration, imagine que tu rassembles toute cette fumée au centre de ta poitrine.",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_10.mp3"
-    },
-    {
-      "id": "ob_p3_fr_11",
-      "text": "Inspire... Rassemble tout...",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_11.mp3"
-    },
-    {
-      "id": "ob_p3_fr_12",
-      "text": "Et maintenant, expire fort par la bouche...",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_12.mp3"
-    },
-    {
-      "id": "ob_p3_fr_13",
-      "text": "Imagine la fumée sortir de tes pores et se dissiper dans l'air.",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_13.mp3"
-    },
-    {
-      "id": "ob_p3_fr_14",
-      "text": "Laisse-la partir. Elle ne t'appartient plus.",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_14.mp3"
-    },
-    {
-      "id": "ob_p3_fr_15",
-      "text": "Encore une fois.",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_15.mp3"
-    },
-    {
-      "id": "ob_p3_fr_16",
-      "text": "Inspire, rassemble les restes...",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_16.mp3"
-    },
-    {
-      "id": "ob_p3_fr_17",
-      "text": "Expire... Lâche tout.",
-      "language": "fr",
-      "phase": 3,
-      "filename": "ob_p3_fr_17.mp3"
-    },
-    {
       "id": "ob_p3_en_01",
-      "text": "Stop resisting for a moment.",
+      "text": "Your body locked this away to protect you. That was survival. But the protection became the prison.",
       "language": "en",
       "phase": 3,
       "filename": "ob_p3_en_01.mp3"
     },
     {
       "id": "ob_p3_en_02",
-      "text": "Your body did what it knew best. It locked that feeling away to protect you.",
+      "text": "Now let the sensation spread. Don't contain it. Wherever it wants to go — let it.",
       "language": "en",
       "phase": 3,
       "filename": "ob_p3_en_02.mp3"
     },
     {
       "id": "ob_p3_en_03",
-      "text": "That was intelligent. That was survival. This is completely normal.",
+      "text": "If your body wants to twitch, tremble, sigh — let it. That's your nervous system processing what your mind understood years ago.",
       "language": "en",
       "phase": 3,
       "filename": "ob_p3_en_03.mp3"
     },
     {
       "id": "ob_p3_en_04",
-      "text": "But that protection has become a weight you no longer need to carry.",
+      "text": "Breathe into that space. In...",
       "language": "en",
       "phase": 3,
       "filename": "ob_p3_en_04.mp3"
     },
     {
       "id": "ob_p3_en_05",
-      "text": "You don't need to fight this emotion anymore.",
+      "text": "Out through your mouth. Not to force anything out. Just to give it room to leave.",
       "language": "en",
       "phase": 3,
       "filename": "ob_p3_en_05.mp3"
     },
     {
-      "id": "ob_p3_en_06",
-      "text": "Just give it permission to exist. Let it be here, fully.",
-      "language": "en",
-      "phase": 3,
-      "filename": "ob_p3_en_06.mp3"
-    },
-    {
-      "id": "ob_p3_en_07",
-      "text": "The moment you stop holding it in, it can finally move through you and dissolve.",
-      "language": "en",
-      "phase": 3,
-      "filename": "ob_p3_en_07.mp3"
-    },
-    {
-      "id": "ob_p3_en_08",
-      "text": "Visualize this tension as a dark smoke or a heavy weight.",
-      "language": "en",
-      "phase": 3,
-      "filename": "ob_p3_en_08.mp3"
-    },
-    {
-      "id": "ob_p3_en_09",
-      "text": "We are going to move it out.",
-      "language": "en",
-      "phase": 3,
-      "filename": "ob_p3_en_09.mp3"
-    },
-    {
-      "id": "ob_p3_en_10",
-      "text": "On the next inhale, imagine gathering all that smoke into the center of your chest.",
-      "language": "en",
-      "phase": 3,
-      "filename": "ob_p3_en_10.mp3"
-    },
-    {
-      "id": "ob_p3_en_11",
-      "text": "Inhale... Gather it all...",
-      "language": "en",
-      "phase": 3,
-      "filename": "ob_p3_en_11.mp3"
-    },
-    {
-      "id": "ob_p3_en_12",
-      "text": "And now, exhale strongly through your mouth...",
-      "language": "en",
-      "phase": 3,
-      "filename": "ob_p3_en_12.mp3"
-    },
-    {
-      "id": "ob_p3_en_13",
-      "text": "Watch the smoke leave through your pores and dissolve into the air.",
-      "language": "en",
-      "phase": 3,
-      "filename": "ob_p3_en_13.mp3"
-    },
-    {
-      "id": "ob_p3_en_14",
-      "text": "Let it go. It doesn't serve you anymore.",
-      "language": "en",
-      "phase": 3,
-      "filename": "ob_p3_en_14.mp3"
-    },
-    {
-      "id": "ob_p3_en_15",
-      "text": "One more time.",
-      "language": "en",
-      "phase": 3,
-      "filename": "ob_p3_en_15.mp3"
-    },
-    {
-      "id": "ob_p3_en_16",
-      "text": "Inhale, gather the remnants...",
-      "language": "en",
-      "phase": 3,
-      "filename": "ob_p3_en_16.mp3"
-    },
-    {
-      "id": "ob_p3_en_17",
-      "text": "Exhale... Release it all.",
-      "language": "en",
-      "phase": 3,
-      "filename": "ob_p3_en_17.mp3"
-    },
-    {
-      "id": "ob_p4_fr_01",
-      "text": "Sens l'espace que tu viens de libérer.",
-      "language": "fr",
-      "phase": 4,
-      "filename": "ob_p4_fr_01.mp3"
-    },
-    {
-      "id": "ob_p4_fr_02",
-      "text": "C'est plus léger, n'est-ce pas ?",
-      "language": "fr",
-      "phase": 4,
-      "filename": "ob_p4_fr_02.mp3"
-    },
-    {
-      "id": "ob_p4_fr_03",
-      "text": "Imagine maintenant une lumière dorée, chaude, qui vient remplir cet espace vide.",
-      "language": "fr",
-      "phase": 4,
-      "filename": "ob_p4_fr_03.mp3"
-    },
-    {
-      "id": "ob_p4_fr_04",
-      "text": "Une lumière de clarté et de calme.",
-      "language": "fr",
-      "phase": 4,
-      "filename": "ob_p4_fr_04.mp3"
-    },
-    {
-      "id": "ob_p4_fr_05",
-      "text": "Laisse-la envahir ta poitrine, tes épaules, ton visage.",
-      "language": "fr",
-      "phase": 4,
-      "filename": "ob_p4_fr_05.mp3"
-    },
-    {
       "id": "ob_p4_en_01",
-      "text": "Feel the space you just created.",
+      "text": "Notice what's different. Not fixed. Different. That's the shift.",
       "language": "en",
       "phase": 4,
       "filename": "ob_p4_en_01.mp3"
     },
     {
       "id": "ob_p4_en_02",
-      "text": "It feels lighter, doesn't it?",
+      "text": "Wiggle your fingers. Open your eyes.",
       "language": "en",
       "phase": 4,
       "filename": "ob_p4_en_02.mp3"
     },
     {
       "id": "ob_p4_en_03",
-      "text": "Now visualize a warm, golden light filling that empty space.",
+      "text": "You just answered what your dream was telling you.",
       "language": "en",
       "phase": 4,
       "filename": "ob_p4_en_03.mp3"
     },
     {
       "id": "ob_p4_en_04",
-      "text": "A light of clarity and calm.",
+      "text": "Welcome back.",
       "language": "en",
       "phase": 4,
       "filename": "ob_p4_en_04.mp3"
     },
     {
-      "id": "ob_p4_en_05",
-      "text": "Let it fill your chest, your shoulders, your face.",
+      "id": "preset_mall_en_emotion",
+      "text": "Your dream pointed at something specific: a deep need for control in the face of uncertainty.",
       "language": "en",
-      "phase": 4,
-      "filename": "ob_p4_en_05.mp3"
+      "phase": 110,
+      "filename": "preset_mall_en_emotion.mp3",
+      "presetDreamId": "mall"
     },
     {
-      "id": "ob_p5_fr_01",
-      "text": "Garde cette sensation de légèreté.",
-      "language": "fr",
-      "phase": 5,
-      "filename": "ob_p5_fr_01.mp3"
-    },
-    {
-      "id": "ob_p5_fr_02",
-      "text": "Doucement, reviens dans ton corps.",
-      "language": "fr",
-      "phase": 5,
-      "filename": "ob_p5_fr_02.mp3"
-    },
-    {
-      "id": "ob_p5_fr_03",
-      "text": "Prends conscience de l'espace autour de toi.",
-      "language": "fr",
-      "phase": 5,
-      "filename": "ob_p5_fr_03.mp3"
-    },
-    {
-      "id": "ob_p5_fr_04",
-      "text": "Et quand tu es prêt, ouvre les yeux.",
-      "language": "fr",
-      "phase": 5,
-      "filename": "ob_p5_fr_04.mp3"
-    },
-    {
-      "id": "ob_p5_fr_05",
-      "text": "Bienvenue chez toi.",
-      "language": "fr",
-      "phase": 5,
-      "filename": "ob_p5_fr_05.mp3"
-    },
-    {
-      "id": "ob_p5_en_01",
-      "text": "Hold onto this feeling of lightness.",
+      "id": "preset_mall_en_connection",
+      "text": "This infinite mall represents your search for direction in a world that feels chaotic. Being lost reflects your fear of never finding your path.",
       "language": "en",
-      "phase": 5,
-      "filename": "ob_p5_en_01.mp3"
+      "phase": 110,
+      "filename": "preset_mall_en_connection.mp3",
+      "presetDreamId": "mall"
     },
     {
-      "id": "ob_p5_en_02",
-      "text": "Gently, come back to your body.",
+      "id": "preset_mall_en_origin",
+      "text": "At some point in your past, you felt the ground crumbling beneath you. That you had no control over what was happening.",
       "language": "en",
-      "phase": 5,
-      "filename": "ob_p5_en_02.mp3"
+      "phase": 110,
+      "filename": "preset_mall_en_origin.mp3",
+      "presetDreamId": "mall"
     },
     {
-      "id": "ob_p5_en_03",
-      "text": "Become aware of the space around you.",
+      "id": "preset_mall_en_affirmation",
+      "text": "You don't need to find the exit. The peace you're looking for is already within you.",
       "language": "en",
-      "phase": 5,
-      "filename": "ob_p5_en_03.mp3"
+      "phase": 110,
+      "filename": "preset_mall_en_affirmation.mp3",
+      "presetDreamId": "mall"
     },
     {
-      "id": "ob_p5_en_04",
-      "text": "And when you're ready, open your eyes.",
+      "id": "preset_molasses_en_emotion",
+      "text": "Your dream pointed at something specific: a feeling of powerlessness in the face of danger.",
       "language": "en",
-      "phase": 5,
-      "filename": "ob_p5_en_04.mp3"
+      "phase": 111,
+      "filename": "preset_molasses_en_emotion.mp3",
+      "presetDreamId": "molasses"
     },
     {
-      "id": "ob_p5_en_05",
-      "text": "Welcome back.",
+      "id": "preset_molasses_en_connection",
+      "text": "Running through molasses represents those moments when you feel you cannot escape what frightens you. Your heavy legs carry the weight of your emotional burdens.",
       "language": "en",
-      "phase": 5,
-      "filename": "ob_p5_en_05.mp3"
+      "phase": 111,
+      "filename": "preset_molasses_en_connection.mp3",
+      "presetDreamId": "molasses"
+    },
+    {
+      "id": "preset_molasses_en_origin",
+      "text": "At some point in your past, you felt trapped. Unable to scream, unable to run, unable to protect yourself.",
+      "language": "en",
+      "phase": 111,
+      "filename": "preset_molasses_en_origin.mp3",
+      "presetDreamId": "molasses"
+    },
+    {
+      "id": "preset_molasses_en_affirmation",
+      "text": "Your voice was never gone. It's just waiting for you to give it permission to speak.",
+      "language": "en",
+      "phase": 111,
+      "filename": "preset_molasses_en_affirmation.mp3",
+      "presetDreamId": "molasses"
+    },
+    {
+      "id": "preset_teeth_en_emotion",
+      "text": "Your dream pointed at something specific: a deep fear of being exposed and judged.",
+      "language": "en",
+      "phase": 112,
+      "filename": "preset_teeth_en_emotion.mp3",
+      "presetDreamId": "teeth"
+    },
+    {
+      "id": "preset_teeth_en_connection",
+      "text": "Your crumbling teeth represent your fear of losing control of your image. The blood you taste is the price you pay for maintaining appearances.",
+      "language": "en",
+      "phase": 112,
+      "filename": "preset_teeth_en_connection.mp3",
+      "presetDreamId": "teeth"
+    },
+    {
+      "id": "preset_teeth_en_origin",
+      "text": "At some point in your past, you were taught that showing your flaws was dangerous. That you always had to appear perfect.",
+      "language": "en",
+      "phase": 112,
+      "filename": "preset_teeth_en_origin.mp3",
+      "presetDreamId": "teeth"
+    },
+    {
+      "id": "preset_teeth_en_affirmation",
+      "text": "Your worth was never in your teeth, your appearance, or your ability to hold it all together. It exists beyond any facade.",
+      "language": "en",
+      "phase": 112,
+      "filename": "preset_teeth_en_affirmation.mp3",
+      "presetDreamId": "teeth"
     }
   ]
 }
