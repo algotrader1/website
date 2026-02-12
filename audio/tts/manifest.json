@@ -1,7 +1,7 @@
 {
   "version": "3.0.0",
   "baseURL": "https://dreaminsight.app/audio/tts",
-  "generatedAt": "2026-02-12T00:11:34.751Z",
+  "generatedAt": "2026-02-12T01:05:03.991Z",
   "phrases": [
     {
       "id": "p1_en_01",
@@ -61,52 +61,59 @@
     },
     {
       "id": "p1_en_09",
-      "text": "Hold.",
+      "text": "Breathe normally. Getting out of your head, into your body.",
       "language": "en",
       "phase": 1,
       "filename": "p1_en_09.mp3"
     },
     {
       "id": "p1_en_10",
-      "text": "Exhale.",
+      "text": "Second cycle. Inhale from the base.",
       "language": "en",
       "phase": 1,
       "filename": "p1_en_10.mp3"
     },
     {
       "id": "p1_en_11",
-      "text": "Breathe normally. Getting out of your head, into your body.",
+      "text": "Taking up more space inside.",
       "language": "en",
       "phase": 1,
       "filename": "p1_en_11.mp3"
     },
     {
       "id": "p1_en_12",
-      "text": "Second cycle. Inhale from the base.",
+      "text": "Third and final cycle. Inhale.",
       "language": "en",
       "phase": 1,
       "filename": "p1_en_12.mp3"
     },
     {
       "id": "p1_en_13",
-      "text": "Taking up more space inside.",
+      "text": "You're now grounded at the base of your spine. Connected to your inner world.",
       "language": "en",
       "phase": 1,
       "filename": "p1_en_13.mp3"
     },
     {
       "id": "p1_en_14",
-      "text": "Third and final cycle. Inhale.",
+      "text": "Now. Before we go further, I want you to find the feeling that is the hardest place to go for you right now.",
       "language": "en",
       "phase": 1,
       "filename": "p1_en_14.mp3"
     },
     {
       "id": "p1_en_15",
-      "text": "You're now grounded at the base of your spine. Connected to your inner world.",
+      "text": "Not just an emotion. Something deeper. A state of being that feels unbearable. That thing your mind avoids.",
       "language": "en",
       "phase": 1,
       "filename": "p1_en_15.mp3"
+    },
+    {
+      "id": "p1_en_16",
+      "text": "Don't analyze it. Don't think about it intellectually. Just listen to the energy of it in your body. See what it activates.",
+      "language": "en",
+      "phase": 1,
+      "filename": "p1_en_16.mp3"
     },
     {
       "id": "p2_en_01",
@@ -740,1270 +747,1032 @@
     },
     {
       "id": "mod_b_en_04",
-      "text": "Bring your attention to where you feel this most right now.",
+      "text": "Now scan your body. Your spine. Is it wanting to curl into a ball? To protect itself with rigidity? Or wanting to stand tall and fight?",
       "language": "en",
       "phase": 11,
       "filename": "mod_b_en_04.mp3"
     },
     {
       "id": "mod_b_en_05",
-      "text": "Don't try to change it. Don't try to fix it. Just notice it. Be with it. Breathe into it.",
+      "text": "Notice your hands. Your fingers. Are they limp? Tingling? Clenched?",
       "language": "en",
       "phase": 11,
       "filename": "mod_b_en_05.mp3"
     },
     {
       "id": "mod_b_en_06",
-      "text": "This is where we're going today.",
+      "text": "Scan your chest. Is there a hot or a cold? A heavy, a light, or a tight feeling?",
       "language": "en",
       "phase": 11,
       "filename": "mod_b_en_06.mp3"
     },
     {
+      "id": "mod_b_en_07",
+      "text": "Your stomach. Your guts. Are they locking up? Is there pain? Hunger? Blankness?",
+      "language": "en",
+      "phase": 11,
+      "filename": "mod_b_en_07.mp3"
+    },
+    {
+      "id": "mod_b_en_08",
+      "text": "Your jaw. Move it gently, left and right. Is there tension? Sometimes it creeps from the hinge up into the inner ear.",
+      "language": "en",
+      "phase": 11,
+      "filename": "mod_b_en_08.mp3"
+    },
+    {
+      "id": "mod_b_en_09",
+      "text": "Wherever you've noticed these feelings the most, stay there. Don't judge them as good or bad. Even if they're overwhelming or upsetting. Just turn a curiosity towards them. A kind of wonder of what these things are and what they want.",
+      "language": "en",
+      "phase": 11,
+      "filename": "mod_b_en_09.mp3"
+    },
+    {
+      "id": "mod_b_en_10",
+      "text": "This is where we're going today.",
+      "language": "en",
+      "phase": 11,
+      "filename": "mod_b_en_10.mp3"
+    },
+    {
       "id": "c1_en_01",
-      "text": "Your dream showed you running. Fleeing. Trying to escape something that was closing in.",
+      "text": "Your dream showed you running. Something was closing in. Your body chose flight. The oldest program there is.",
       "language": "en",
       "phase": 21,
       "filename": "c1_en_01.mp3"
     },
     {
       "id": "c1_en_02",
-      "text": "Bring your attention to your legs right now. Your hips. Your lower back. These are the parts of you that have been bracing. Ready to sprint. Ready to flee.",
+      "text": "Don't try to understand why. Just feel what your legs are doing right now. Your hips. Your lower back.",
       "language": "en",
       "phase": 21,
       "filename": "c1_en_02.mp3"
     },
     {
       "id": "c1_en_03",
-      "text": "How long have they been on alert? How long has some part of you been ready to run?",
+      "text": "Is there tension? A readiness? Like some part of you is still bracing to sprint?",
       "language": "en",
       "phase": 21,
       "filename": "c1_en_03.mp3"
     },
     {
       "id": "c1_en_04",
-      "text": "Welcome the sensations. Don't push them away. This isn't anxiety — this is your body doing what it learned to do a long time ago. It's trying to protect you.",
+      "text": "Stay curious. Don't judge it. This is your body doing something it learned a long time ago.",
       "language": "en",
       "phase": 21,
       "filename": "c1_en_04.mp3"
     },
     {
       "id": "c1_en_05",
-      "text": "What if you didn't have to run? What comes up when you consider that?",
+      "text": "Now I want you to amplify it. Whatever you feel in your legs, make it bigger. Feel the urgency more. The need to run. The thing behind you getting closer.",
       "language": "en",
       "phase": 21,
       "filename": "c1_en_05.mp3"
     },
     {
       "id": "c1_en_06",
-      "text": "Is there resistance? A part of you that says: no, I need to stay alert. I need to keep watching.",
+      "text": "If there's fear, feel the fear. Don't be scared to feel it. It's not going to consume you. You're observing it.",
       "language": "en",
       "phase": 21,
       "filename": "c1_en_06.mp3"
     },
     {
       "id": "c1_en_07",
-      "text": "That part kept you alive. It did its job. But right now, in this moment, there is nothing chasing you.",
+      "text": "What does this fear look like? If you gave it a color, what would it be? A texture? Like static, or mud, or something electric?",
       "language": "en",
       "phase": 21,
       "filename": "c1_en_07.mp3"
     },
     {
       "id": "c1_en_08",
-      "text": "Feel the weight of your body. Your legs are heavy. Your hips are heavy. Let them be heavy.",
+      "text": "And if you listen closely, is there a sound? A hum? A rushing? Words? Just notice what comes. Don't filter it.",
       "language": "en",
       "phase": 21,
       "filename": "c1_en_08.mp3"
     },
     {
       "id": "c1_en_09",
-      "text": "With every exhale, give your legs permission to stop running. They've been carrying this for long enough.",
+      "text": "Now notice: there's a part of you that wants to protect you from this feeling. A part that says, this is too much, we need to get out of here.",
       "language": "en",
       "phase": 21,
       "filename": "c1_en_09.mp3"
     },
     {
       "id": "c1_en_10",
-      "text": "Let's do a breathing cycle. Tune into the tension in your legs and inhale.",
+      "text": "Thank that part. It's been keeping you alive. But right now, you're here to listen. And it's not going to overpower you.",
       "language": "en",
       "phase": 21,
       "filename": "c1_en_10.mp3"
     },
     {
       "id": "c1_en_11",
-      "text": "Let it go.",
+      "text": "Let that protective part relax. Just a little.",
       "language": "en",
       "phase": 21,
       "filename": "c1_en_11.mp3"
     },
     {
       "id": "c1_en_12",
-      "text": "Breathe normally.",
+      "text": "Let's breathe. Inhale into wherever the running lives.",
       "language": "en",
       "phase": 21,
       "filename": "c1_en_12.mp3"
     },
     {
       "id": "c1_en_13",
-      "text": "Now imagine the scene from your dream. But this time, you stop running. You turn around. And there's nothing there.",
+      "text": "Now let the sensation spread. If it wants to move somewhere else in your body, let it. If it wants to move your body, let it. Don't control this.",
       "language": "en",
       "phase": 21,
       "filename": "c1_en_13.mp3"
     },
     {
       "id": "c1_en_14",
-      "text": "What does that feel like in your body? Where does the space open up?",
+      "text": "Notice if the energy has shifted. A different character. A tiredness. A dull ache. Little involuntary twitches. Any of that is fine.",
       "language": "en",
       "phase": 21,
       "filename": "c1_en_14.mp3"
     },
     {
       "id": "c1_en_15",
-      "text": "You stopped. And you're still here. You're still safe.",
+      "text": "Something moved. Something is different. Don't try to name it. Just feel what's different from when we started.",
       "language": "en",
       "phase": 21,
       "filename": "c1_en_15.mp3"
     },
     {
       "id": "c1_en_16",
-      "text": "Feel your legs again. Are they lighter? Warmer? Is there less tension?",
+      "text": "One final breath. Inhale.",
       "language": "en",
       "phase": 21,
       "filename": "c1_en_16.mp3"
     },
     {
-      "id": "c1_en_17",
-      "text": "Whatever your body is doing right now is exactly right. Let it settle.",
-      "language": "en",
-      "phase": 21,
-      "filename": "c1_en_17.mp3"
-    },
-    {
-      "id": "c1_en_18",
-      "text": "Let's do one final cycle. Inhale into the space that opened.",
-      "language": "en",
-      "phase": 21,
-      "filename": "c1_en_18.mp3"
-    },
-    {
-      "id": "c1_en_19",
-      "text": "You don't have to run anymore.",
-      "language": "en",
-      "phase": 21,
-      "filename": "c1_en_19.mp3"
-    },
-    {
       "id": "c2_en_01",
-      "text": "Your dream showed you stuck. Unable to move. Unable to speak. Unable to act.",
+      "text": "Your dream showed you frozen. Unable to move. Unable to speak. The body shut down. Went silent. Played dead.",
       "language": "en",
       "phase": 22,
       "filename": "c2_en_01.mp3"
     },
     {
       "id": "c2_en_02",
-      "text": "That feeling of being frozen — your body knows it well. It's one of the oldest survival responses. When you can't fight and you can't run, the body shuts down. Goes silent. Plays dead.",
+      "text": "This is the freeze response. When you can't fight and you can't run, the body locks. It's one of the oldest survival programs.",
       "language": "en",
       "phase": 22,
       "filename": "c2_en_02.mp3"
     },
     {
       "id": "c2_en_03",
-      "text": "Bring your attention to your throat. Your jaw. Your shoulders. These are the places that lock first when the body freezes.",
+      "text": "Where do you feel that right now? Your throat? Your jaw? Your shoulders? Your whole body? Scan and find where it's the most intense.",
       "language": "en",
       "phase": 22,
       "filename": "c2_en_03.mp3"
     },
     {
       "id": "c2_en_04",
-      "text": "What does it feel like there right now? Tight? Sealed? Like something is being held back?",
+      "text": "Stay with it. I know your instinct is to pull away. To make it stop. But stay.",
       "language": "en",
       "phase": 22,
       "filename": "c2_en_04.mp3"
     },
     {
       "id": "c2_en_05",
-      "text": "Welcome the sensations. This freeze response isn't weakness. It was protection. It kept you safe when there was no other option.",
+      "text": "Now amplify it. Make the freeze bigger. Feel what it's like to be completely locked. Completely voiceless. Unable to act.",
       "language": "en",
       "phase": 22,
       "filename": "c2_en_05.mp3"
     },
     {
       "id": "c2_en_06",
-      "text": "But the danger that caused this — is it still here? Right now, in this room?",
+      "text": "If this frozen feeling had a temperature, what would it be? Ice cold? Or strangely hot? Is it dense like metal or numb like nothing?",
       "language": "en",
       "phase": 22,
       "filename": "c2_en_06.mp3"
     },
     {
       "id": "c2_en_07",
-      "text": "Notice your fingers. Can you feel them? Imagine them gently moving. Imagine tiny movements returning to your hands.",
+      "text": "If it had a visual, what would you see? A block of ice? An empty room? Darkness? Just let an image come.",
       "language": "en",
       "phase": 22,
       "filename": "c2_en_07.mp3"
     },
     {
       "id": "c2_en_08",
-      "text": "Now your jaw. Can you let it soften? Even slightly? Not forcing it. Just... allowing it to drop. A millimeter.",
+      "text": "And a sound. Is there silence? A ringing? A muffled voice that can't get out?",
       "language": "en",
       "phase": 22,
       "filename": "c2_en_08.mp3"
     },
     {
       "id": "c2_en_09",
-      "text": "Every part of you that softens sends a signal to your nervous system: the freeze is over. I can move again.",
+      "text": "This part of you that freezes — it thinks this is all you are and all you can do. It thinks the danger is still here.",
       "language": "en",
       "phase": 22,
       "filename": "c2_en_09.mp3"
     },
     {
       "id": "c2_en_10",
-      "text": "What would you have said if you could have spoken? In your dream, or in the moment your body learned to go silent?",
+      "text": "Don't argue with it. Have empathy for it. It thinks what it's doing is necessary. And for a long time, it was.",
       "language": "en",
       "phase": 22,
       "filename": "c2_en_10.mp3"
     },
     {
       "id": "c2_en_11",
-      "text": "You don't have to say it now. Just feel the impulse. Feel the words that were swallowed. Where do they sit?",
+      "text": "Now notice the other parts. The ones that say, it's not real anymore, you're safe. Thank them for their protection. And let them relax too. You're here to listen.",
       "language": "en",
       "phase": 22,
       "filename": "c2_en_11.mp3"
     },
     {
       "id": "c2_en_12",
-      "text": "Let's do a breathing cycle. Breathe into the place where the words live. Inhale.",
+      "text": "Let's breathe into the place that's the most frozen. Inhale.",
       "language": "en",
       "phase": 22,
       "filename": "c2_en_12.mp3"
     },
     {
       "id": "c2_en_13",
-      "text": "And let them dissolve on the exhale.",
+      "text": "Now let the sensation do what it wants. If it wants to spread, let it. If it wants to move your body, even slightly, let it.",
       "language": "en",
       "phase": 22,
       "filename": "c2_en_13.mp3"
     },
     {
       "id": "c2_en_14",
-      "text": "Breathe normally.",
+      "text": "Notice if the energy has changed. If the character is different. Warmer. Looser. Tingling. Or maybe just tired, the way chronic tension feels when it starts to resolve.",
       "language": "en",
       "phase": 22,
       "filename": "c2_en_14.mp3"
     },
     {
       "id": "c2_en_15",
-      "text": "Your voice doesn't have to come back all at once. But it's coming back. Your body is remembering that it can move. That it can speak. That it can take up space.",
+      "text": "Wiggle your fingers. Just tiny movements. Notice that you can.",
       "language": "en",
       "phase": 22,
       "filename": "c2_en_15.mp3"
     },
     {
       "id": "c2_en_16",
-      "text": "Feel what's shifted. Where is there more space? More warmth? More softness?",
+      "text": "Something shifted. You don't have to understand it. Just notice that it's different.",
       "language": "en",
       "phase": 22,
       "filename": "c2_en_16.mp3"
     },
     {
-      "id": "c2_en_17",
-      "text": "You are not frozen anymore. Even noticing that — that's movement.",
-      "language": "en",
-      "phase": 22,
-      "filename": "c2_en_17.mp3"
-    },
-    {
-      "id": "c2_en_18",
-      "text": "One final breath. Inhale fully.",
-      "language": "en",
-      "phase": 22,
-      "filename": "c2_en_18.mp3"
-    },
-    {
-      "id": "c2_en_19",
-      "text": "Let it all go.",
-      "language": "en",
-      "phase": 22,
-      "filename": "c2_en_19.mp3"
-    },
-    {
       "id": "c3_en_01",
-      "text": "Your dream showed you falling. Losing your footing. The ground giving way beneath you.",
+      "text": "Your dream showed you falling. The ground gone. Nothing underneath.",
       "language": "en",
       "phase": 23,
       "filename": "c3_en_01.mp3"
     },
     {
       "id": "c3_en_02",
-      "text": "Bring your attention to your center. Your belly. Your solar plexus. This is where your body holds its sense of stability. Of being anchored.",
+      "text": "Where do you feel that right now? Your belly? Your solar plexus? That dropping sensation? Find it.",
       "language": "en",
       "phase": 23,
       "filename": "c3_en_02.mp3"
     },
     {
       "id": "c3_en_03",
-      "text": "What does it feel like there right now? Empty? Uneasy? Like something is missing underneath?",
+      "text": "Stay there. Don't rush to ground yourself. I want you to feel the falling.",
       "language": "en",
       "phase": 23,
       "filename": "c3_en_03.mp3"
     },
     {
       "id": "c3_en_04",
-      "text": "This sensation isn't random. Something in your life — maybe something recent, maybe something old — shook your foundation.",
+      "text": "Now amplify it. Feel the emptiness beneath you getting bigger. The vertigo. The absence of anything solid. Make it more vivid.",
       "language": "en",
       "phase": 23,
       "filename": "c3_en_04.mp3"
     },
     {
       "id": "c3_en_05",
-      "text": "How long have you been looking for solid ground? How long has some part of you been bracing for the next collapse?",
+      "text": "If you're scared, feel the fear. Don't be scared of the fear. It's energy. It's information. It's your body telling you something.",
       "language": "en",
       "phase": 23,
       "filename": "c3_en_05.mp3"
     },
     {
       "id": "c3_en_06",
-      "text": "Welcome the sensations. Even the unsteadiness. It's your body telling you what it needs.",
+      "text": "What does this falling look like? Are you in darkness? In open space? In a void? Get curious about the space around you.",
       "language": "en",
       "phase": 23,
       "filename": "c3_en_06.mp3"
     },
     {
       "id": "c3_en_07",
-      "text": "Now, feel the surface beneath you. Whatever you're sitting or lying on — feel it. The hardness. The pressure. The fact that it is holding your full weight without effort.",
+      "text": "Is there a sound? Wind? Silence? Your own heartbeat?",
       "language": "en",
       "phase": 23,
       "filename": "c3_en_07.mp3"
     },
     {
       "id": "c3_en_08",
-      "text": "It's not going anywhere. Feel how it pushes back against you. Gravity is pulling you down. The ground is pushing you up. You are held between these two forces.",
+      "text": "And the sensation itself — is it in your stomach like a drop on a rollercoaster? Or is it more diffuse, like the ground under everything is unstable?",
       "language": "en",
       "phase": 23,
       "filename": "c3_en_08.mp3"
     },
     {
       "id": "c3_en_09",
-      "text": "You don't have to hold yourself up. You don't have to grip. You can surrender your weight and something will catch you.",
+      "text": "If you can, give it a texture. Empty like a dry well? Churning like water? Imploding?",
       "language": "en",
       "phase": 23,
       "filename": "c3_en_09.mp3"
     },
     {
       "id": "c3_en_10",
-      "text": "Let's breathe into your center. Hands on your belly if you can. Inhale slowly, feel your belly expand.",
+      "text": "Notice the parts of you that want to grab onto something. The parts that say: find the ground, find control, hold on. Thank them. They're trying to protect you. Let them know you're just listening.",
       "language": "en",
       "phase": 23,
       "filename": "c3_en_10.mp3"
     },
     {
       "id": "c3_en_11",
-      "text": "Long exhale. Twice as long. Let the exhale be the anchor.",
+      "text": "Let's breathe. Hands on your belly. Inhale slowly.",
       "language": "en",
       "phase": 23,
       "filename": "c3_en_11.mp3"
     },
     {
       "id": "c3_en_12",
-      "text": "Again. Inhale into your center.",
+      "text": "Long exhale. Twice as long.",
       "language": "en",
       "phase": 23,
       "filename": "c3_en_12.mp3"
     },
     {
       "id": "c3_en_13",
-      "text": "Long, slow exhale. Your nervous system is anchoring with every exhale.",
+      "text": "Again. Inhale.",
       "language": "en",
       "phase": 23,
       "filename": "c3_en_13.mp3"
     },
     {
       "id": "c3_en_14",
-      "text": "One more. Inhale.",
+      "text": "Now let the sensation settle wherever it wants to go. Has it moved? Changed? Connected to something else you hadn't noticed?",
       "language": "en",
       "phase": 23,
       "filename": "c3_en_14.mp3"
     },
     {
       "id": "c3_en_15",
-      "text": "Let this exhale carry the tension out. All the way out.",
+      "text": "Feel the surface beneath you now. The weight. The pressure. Notice what's different from when we started. That's enough.",
       "language": "en",
       "phase": 23,
       "filename": "c3_en_15.mp3"
     },
     {
-      "id": "c3_en_16",
-      "text": "Feel your belly now. Your center. Is it heavier? Warmer? More present?",
-      "language": "en",
-      "phase": 23,
-      "filename": "c3_en_16.mp3"
-    },
-    {
-      "id": "c3_en_17",
-      "text": "You are not falling. You are here. Dense. Solid. Held by something older and deeper than any person or situation that ever let you down.",
-      "language": "en",
-      "phase": 23,
-      "filename": "c3_en_17.mp3"
-    },
-    {
-      "id": "c3_en_18",
-      "text": "Let that settle in. Not with your mind. With your body.",
-      "language": "en",
-      "phase": 23,
-      "filename": "c3_en_18.mp3"
-    },
-    {
       "id": "c4_en_01",
-      "text": "Your dream showed you in conflict. Fighting. Arguing. Defending yourself against something or someone.",
+      "text": "Your dream showed you in conflict. Fighting. Arguing. Defending yourself. Raw energy with nowhere to go.",
       "language": "en",
       "phase": 24,
       "filename": "c4_en_01.mp3"
     },
     {
       "id": "c4_en_02",
-      "text": "Bring your attention to your jaw. Your hands. Your upper back. Your shoulders. These are the parts of your body that tighten when anger has nowhere to go.",
+      "text": "Where is the anger right now? Your jaw? Your fists? Your chest? The back of your neck? Find where it lives.",
       "language": "en",
       "phase": 24,
       "filename": "c4_en_02.mp3"
     },
     {
       "id": "c4_en_03",
-      "text": "Is your jaw clenched right now? Even slightly? Are your hands tense? Feel into it.",
+      "text": "Don't try to soften it. Don't try to make it reasonable. I want you to feel it fully.",
       "language": "en",
       "phase": 24,
       "filename": "c4_en_03.mp3"
     },
     {
       "id": "c4_en_04",
-      "text": "This anger — it's not a problem. It's not something to fix. It's energy. Vital, alive, raw energy that has been locked away because at some point, you learned it wasn't safe to express it.",
+      "text": "Now amplify it. Make the anger bigger. Feel the energy that wanted to explode. The words that wanted to be screamed. The fist that wanted to hit.",
       "language": "en",
       "phase": 24,
       "filename": "c4_en_04.mp3"
     },
     {
       "id": "c4_en_05",
-      "text": "What would you have said if you could have? What would you have done if it had been allowed?",
+      "text": "Don't be scared of this. Anger is not destruction. It's power. It's the energy of a boundary being crossed. Of something mattering.",
       "language": "en",
       "phase": 24,
       "filename": "c4_en_05.mp3"
     },
     {
       "id": "c4_en_06",
-      "text": "Don't censor it. Don't judge it. Just feel the impulse. The energy that wanted to move.",
+      "text": "What does this anger look like? Red? Electric? Like fire? Like a wall? Give it a form.",
       "language": "en",
       "phase": 24,
       "filename": "c4_en_06.mp3"
     },
     {
       "id": "c4_en_07",
-      "text": "Where does it live? In your fists? In your chest? In the back of your neck?",
+      "text": "Is there a sound? A roar? A growl? Words you never said? Let them exist without censorship.",
       "language": "en",
       "phase": 24,
       "filename": "c4_en_07.mp3"
     },
     {
       "id": "c4_en_08",
-      "text": "Breathe into that place. Give it space. This energy doesn't need to be rage. It can be presence. Power. Sovereignty. But first, it needs to be acknowledged.",
+      "text": "Your body wants to do something with this energy. Stand taller? Make yourself bigger? Clench harder? Let it do what it wants for a moment.",
       "language": "en",
       "phase": 24,
       "filename": "c4_en_08.mp3"
     },
     {
       "id": "c4_en_09",
-      "text": "Let's do a cycle. Tune into where the anger lives, and inhale.",
+      "text": "This anger was locked away because at some point you learned it wasn't safe. That it was bad. That you were bad for feeling it.",
       "language": "en",
       "phase": 24,
       "filename": "c4_en_09.mp3"
     },
     {
       "id": "c4_en_10",
-      "text": "Let it go. Not the anger itself — the grip around it.",
+      "text": "The part that locked it away was protecting you. Thank it. But you're here now, and you're strong enough to hold this energy without it possessing you.",
       "language": "en",
       "phase": 24,
       "filename": "c4_en_10.mp3"
     },
     {
       "id": "c4_en_11",
-      "text": "Breathe normally.",
+      "text": "Let's breathe. Inhale into where the anger burns the hottest.",
       "language": "en",
       "phase": 24,
       "filename": "c4_en_11.mp3"
     },
     {
       "id": "c4_en_12",
-      "text": "What does your anger actually want? Not destruction. What does it REALLY want?",
+      "text": "Now let the energy move. Where does it want to go? Does it spread? Does it transform? What's the character of it now?",
       "language": "en",
       "phase": 24,
       "filename": "c4_en_12.mp3"
     },
     {
       "id": "c4_en_13",
-      "text": "Respect? To be heard? To be taken seriously? To stop being dismissed?",
+      "text": "Is it still rage? Or has it shifted into something else? Tiredness? Grief? Sometimes anger is the shell around something softer.",
       "language": "en",
       "phase": 24,
       "filename": "c4_en_13.mp3"
     },
     {
       "id": "c4_en_14",
-      "text": "Those are not unreasonable things. You had every right to want them. You still do.",
+      "text": "Whatever you're feeling now, just notice it. Notice what's different. That's all we need.",
       "language": "en",
       "phase": 24,
       "filename": "c4_en_14.mp3"
     },
     {
-      "id": "c4_en_15",
-      "text": "But you don't have to fight for them anymore. Not like this. Not in your body. Not in your sleep.",
-      "language": "en",
-      "phase": 24,
-      "filename": "c4_en_15.mp3"
-    },
-    {
-      "id": "c4_en_16",
-      "text": "Feel your jaw again. Can you let it soften? Even just slightly?",
-      "language": "en",
-      "phase": 24,
-      "filename": "c4_en_16.mp3"
-    },
-    {
-      "id": "c4_en_17",
-      "text": "Your hands. Can you open your palms? Let the tension dissolve?",
-      "language": "en",
-      "phase": 24,
-      "filename": "c4_en_17.mp3"
-    },
-    {
-      "id": "c4_en_18",
-      "text": "This energy that was rage — what does it feel like when the grip releases? When it's not fighting anymore?",
-      "language": "en",
-      "phase": 24,
-      "filename": "c4_en_18.mp3"
-    },
-    {
-      "id": "c4_en_19",
-      "text": "One final breath. Inhale all the way in.",
-      "language": "en",
-      "phase": 24,
-      "filename": "c4_en_19.mp3"
-    },
-    {
-      "id": "c4_en_20",
-      "text": "Exhale. Let the fight end. Not because you lost. Because you chose peace.",
-      "language": "en",
-      "phase": 24,
-      "filename": "c4_en_20.mp3"
-    },
-    {
       "id": "c5_en_01",
-      "text": "Your dream carried the weight of loss. Someone gone. Something missing. An absence that your body still holds.",
+      "text": "Your dream carried the weight of loss. Someone gone. Something missing. An absence your body still holds.",
       "language": "en",
       "phase": 25,
       "filename": "c5_en_01.mp3"
     },
     {
       "id": "c5_en_02",
-      "text": "Bring your attention to your chest. Your heart. The space behind your sternum. This is where grief lives. This is where your body closes when the pain is too much.",
+      "text": "Where is the grief? Your chest? Behind your sternum? Your throat? Find where your body closes when this feeling comes.",
       "language": "en",
       "phase": 25,
       "filename": "c5_en_02.mp3"
     },
     {
       "id": "c5_en_03",
-      "text": "What does it feel like there right now? Heavy? Tight? Like a door that was sealed shut a long time ago?",
+      "text": "Stay there. I know it's heavy. I know there's a part of you that wants to wall it off. That's been walling it off for a long time.",
       "language": "en",
       "phase": 25,
       "filename": "c5_en_03.mp3"
     },
     {
       "id": "c5_en_04",
-      "text": "This closing — it was intelligent. When love leaves, when someone disappears, your body learns to protect the most vulnerable thing you have: your heart.",
+      "text": "Instead of pulling away, go deeper. Amplify the ache. Feel the weight of the absence. The space where something used to be.",
       "language": "en",
       "phase": 25,
       "filename": "c5_en_04.mp3"
     },
     {
       "id": "c5_en_05",
-      "text": "But the walls that kept the pain out also kept everything else out.",
+      "text": "What does this loss look like? Is it darkness? Emptiness? A room with someone missing? Let an image come.",
       "language": "en",
       "phase": 25,
       "filename": "c5_en_05.mp3"
     },
     {
       "id": "c5_en_06",
-      "text": "Do you love being you? Do you love the person you've become?",
+      "text": "Is there a sound? Silence? An echo? A voice you miss?",
       "language": "en",
       "phase": 25,
       "filename": "c5_en_06.mp3"
     },
     {
       "id": "c5_en_07",
-      "text": "Is there a part of you that believes you're meant to carry this alone? That love is temporary? That eventually, everyone leaves?",
+      "text": "And the sensation itself. Is it heavy like stone? Cold? Or just... hollow? Like a space that was carved out and never filled?",
       "language": "en",
       "phase": 25,
       "filename": "c5_en_07.mp3"
     },
     {
       "id": "c5_en_08",
-      "text": "Welcome the sensations. Whatever comes up. Heaviness. Tightness. Even emptiness. It's all valid.",
+      "text": "The walls you built around your heart were intelligent. They kept the worst of the pain out. But they also kept everything else out.",
       "language": "en",
       "phase": 25,
       "filename": "c5_en_08.mp3"
     },
     {
       "id": "c5_en_09",
-      "text": "Now, if you can, place your hand on your chest. Feel the warmth of your own palm on your heart.",
+      "text": "Notice the protective parts that say: don't go here, it's too much, you'll fall apart. Thank them. They kept you functioning. But you're strong enough to feel this now.",
       "language": "en",
       "phase": 25,
       "filename": "c5_en_09.mp3"
     },
     {
       "id": "c5_en_10",
-      "text": "This is you, holding you. Not waiting for someone else to do it. You.",
+      "text": "If emotion comes, let it. If tears come, let them. This is not breaking down. This is your body doing what it couldn't do before.",
       "language": "en",
       "phase": 25,
       "filename": "c5_en_10.mp3"
     },
     {
       "id": "c5_en_11",
-      "text": "If emotion comes, let it. If tears come, let them. This is not breaking down. This is breaking open.",
+      "text": "Let's breathe into the ache. Inhale.",
       "language": "en",
       "phase": 25,
       "filename": "c5_en_11.mp3"
     },
     {
       "id": "c5_en_12",
-      "text": "Let's breathe together. Inhale into the space around your heart.",
+      "text": "Now let the sensation do what it wants. Has it moved? Spread? Changed character? Connected to another feeling you hadn't noticed?",
       "language": "en",
       "phase": 25,
       "filename": "c5_en_12.mp3"
     },
     {
       "id": "c5_en_13",
-      "text": "Exhale. Let the walls soften. Even a millimeter.",
+      "text": "Something is different in your chest. Even slightly. The grief isn't fixed. It's still there. But you looked at it. You stayed. And that changes the relationship.",
       "language": "en",
       "phase": 25,
       "filename": "c5_en_13.mp3"
     },
     {
-      "id": "c5_en_14",
-      "text": "Breathe normally.",
-      "language": "en",
-      "phase": 25,
-      "filename": "c5_en_14.mp3"
-    },
-    {
-      "id": "c5_en_15",
-      "text": "A millimeter of opening is enough. You don't have to tear the doors off. Just... a crack. Just enough to let some warmth back in.",
-      "language": "en",
-      "phase": 25,
-      "filename": "c5_en_15.mp3"
-    },
-    {
-      "id": "c5_en_16",
-      "text": "Your heart didn't break. It armored. And today, you loosened the armor. Just a little. That's enough for now.",
-      "language": "en",
-      "phase": 25,
-      "filename": "c5_en_16.mp3"
-    },
-    {
-      "id": "c5_en_17",
-      "text": "Feel what's different in your chest. Even the smallest shift. That's the beginning.",
-      "language": "en",
-      "phase": 25,
-      "filename": "c5_en_17.mp3"
-    },
-    {
       "id": "c6_en_01",
-      "text": "Your dream showed you exposed. Seen in a way you didn't want to be seen. Judged. Stripped of your armor.",
+      "text": "Your dream showed you exposed. Seen in a way you didn't want to be seen. Stripped of your mask.",
       "language": "en",
       "phase": 26,
       "filename": "c6_en_01.mp3"
     },
     {
       "id": "c6_en_02",
-      "text": "Where do you feel that right now? Is it in your face? A flush of heat? In your belly? A sinking, sick feeling? Or everywhere — this pull to make yourself smaller, to disappear?",
+      "text": "Where do you feel that? A flush in your face? A sinking in your belly? A pull to disappear, to make yourself smaller? Find the place that's the most intense.",
       "language": "en",
       "phase": 26,
       "filename": "c6_en_02.mp3"
     },
     {
       "id": "c6_en_03",
-      "text": "This isn't new. This part of you has been carrying this for a long time. Long before this dream.",
+      "text": "I know every part of you wants to run from this. That's what shame does. It makes you want to vanish.",
       "language": "en",
       "phase": 26,
       "filename": "c6_en_03.mp3"
     },
     {
       "id": "c6_en_04",
-      "text": "Most people run from shame. They overachieve to compensate. They numb. They distract. They build a version of themselves that's acceptable enough to never be exposed.",
+      "text": "But instead of running, we're going to do the hardest thing. We're going to stay. And we're going to feel more.",
       "language": "en",
       "phase": 26,
       "filename": "c6_en_04.mp3"
     },
     {
       "id": "c6_en_05",
-      "text": "But right now, instead of running, we're going to do something different. We're going to stay.",
+      "text": "Amplify it. Feel the exposure getting bigger. The eyes on you. The judgment. The wrongness. Make it more vivid.",
       "language": "en",
       "phase": 26,
       "filename": "c6_en_05.mp3"
     },
     {
       "id": "c6_en_06",
-      "text": "Can you stay with this sensation? Not to fix it. Not to heal it. Just to be with it.",
+      "text": "If this shame had a color, what would it be? If it had a texture, like slime, or burning, or a weight? Don't think. Just let it come.",
       "language": "en",
       "phase": 26,
       "filename": "c6_en_06.mp3"
     },
     {
       "id": "c6_en_07",
-      "text": "If this feeling had an age... how old would it be? Don't think. Just let an age come.",
+      "text": "Is there a sound? A voice? What is it saying? Let the words come even if they're ugly.",
       "language": "en",
       "phase": 26,
       "filename": "c6_en_07.mp3"
     },
     {
       "id": "c6_en_08",
-      "text": "If it had a face, who would you see? A younger version of you?",
+      "text": "If this feeling had an age, how old would it be? Don't think. Just let a number come.",
       "language": "en",
       "phase": 26,
       "filename": "c6_en_08.mp3"
     },
     {
       "id": "c6_en_09",
-      "text": "That version of you — the one who felt this first — what did they need? What did they never get?",
+      "text": "This is old. This is the root. A moment when a younger version of you learned that something about them was wrong. Unacceptable. Shameful.",
       "language": "en",
       "phase": 26,
       "filename": "c6_en_09.mp3"
     },
     {
       "id": "c6_en_10",
-      "text": "A look that said: you're okay. You belong. There's nothing wrong with you.",
+      "text": "That younger you — they didn't have the resources to process this. They just locked it away. That was survival.",
       "language": "en",
       "phase": 26,
       "filename": "c6_en_10.mp3"
     },
     {
       "id": "c6_en_11",
-      "text": "Can you give that to them now? Not with words. With your attention. With the fact that you're here, breathing with them, not running.",
+      "text": "Notice the protective parts that built an entire personality around never being exposed again. Thank them. They did an incredible job. But you're here now.",
       "language": "en",
       "phase": 26,
       "filename": "c6_en_11.mp3"
     },
     {
       "id": "c6_en_12",
-      "text": "Silently, say to this part of you: I see you. You don't have to hide anymore.",
+      "text": "Let's breathe into the shame. Right into the center of it. Inhale.",
       "language": "en",
       "phase": 26,
       "filename": "c6_en_12.mp3"
     },
     {
       "id": "c6_en_13",
-      "text": "I'm not going to reject you. I'm not going to look away.",
+      "text": "Now let the sensation do what it wants. Has it moved? Changed? Is the character different? A tiredness? A softness? Even a strange relief?",
       "language": "en",
       "phase": 26,
       "filename": "c6_en_13.mp3"
     },
     {
       "id": "c6_en_14",
-      "text": "Let's breathe together. Inhale.",
+      "text": "You stayed. You looked at the thing you've been hiding from. You didn't disappear. Something shifted. Just notice what's different.",
       "language": "en",
       "phase": 26,
       "filename": "c6_en_14.mp3"
     },
     {
-      "id": "c6_en_15",
-      "text": "Exhale. Let the contraction soften. Just slightly.",
-      "language": "en",
-      "phase": 26,
-      "filename": "c6_en_15.mp3"
-    },
-    {
-      "id": "c6_en_16",
-      "text": "Shame dissolves in the presence of compassion. Not all at once. But enough. One breath at a time.",
-      "language": "en",
-      "phase": 26,
-      "filename": "c6_en_16.mp3"
-    },
-    {
-      "id": "c6_en_17",
-      "text": "You showed up for yourself today. You looked at the thing you've been hiding from. And you didn't flinch.",
-      "language": "en",
-      "phase": 26,
-      "filename": "c6_en_17.mp3"
-    },
-    {
-      "id": "c6_en_18",
-      "text": "That is the opposite of shame.",
-      "language": "en",
-      "phase": 26,
-      "filename": "c6_en_18.mp3"
-    },
-    {
       "id": "c7_en_01",
-      "text": "This dream keeps coming back. The same scenario. The same feeling. Your unconscious is stuck in a loop, playing this over and over, looking for a resolution it hasn't found yet.",
+      "text": "This dream keeps coming back. The same scenario. The same feeling. Your unconscious is stuck in a loop. It's trying to complete something that was never finished.",
       "language": "en",
       "phase": 27,
       "filename": "c7_en_01.mp3"
     },
     {
       "id": "c7_en_02",
-      "text": "Bring your attention to where this dream lives in your body. You know the place. It's always the same zone. The part that tightens every time this dream returns.",
+      "text": "Where does this dream live in your body? You know the place. It's always the same zone. Find it.",
       "language": "en",
       "phase": 27,
       "filename": "c7_en_02.mp3"
     },
     {
       "id": "c7_en_03",
-      "text": "How many times have you woken up from this dream and thought: why does this keep happening? What does it want from me?",
+      "text": "Stay there. Amplify it. Feel the loop tightening. The frustration of being stuck in the same place, again and again.",
       "language": "en",
       "phase": 27,
       "filename": "c7_en_03.mp3"
     },
     {
       "id": "c7_en_04",
-      "text": "Your nervous system isn't broken. It's trying to complete something. A cycle that was interrupted. An action that was never finished.",
+      "text": "What does the stuck feeling look like? A wall? A locked door? Quicksand? An image that doesn't make logical sense?",
       "language": "en",
       "phase": 27,
       "filename": "c7_en_04.mp3"
     },
     {
       "id": "c7_en_05",
-      "text": "Let's go into the dream. Not to relive it. To observe it. Like watching a movie you've seen too many times.",
+      "text": "Is there a sound? A repeating phrase? Static? Something that loops like the dream itself?",
       "language": "en",
       "phase": 27,
       "filename": "c7_en_05.mp3"
     },
     {
       "id": "c7_en_06",
-      "text": "See the scene. The setting. The characters. And notice: where does it get stuck? What's the moment where everything loops?",
+      "text": "Your nervous system isn't broken. It's a ball of yarn with tangled threads. Different types of memory, all knotted together, activating the same pattern over and over.",
       "language": "en",
       "phase": 27,
       "filename": "c7_en_06.mp3"
     },
     {
       "id": "c7_en_07",
-      "text": "Now. Here's where it changes.",
+      "text": "Let's go into the dream. Not to relive it. To observe it like a movie you've seen too many times. See the scene. The characters. Find the exact moment where it gets stuck.",
       "language": "en",
       "phase": 27,
       "filename": "c7_en_07.mp3"
     },
     {
       "id": "c7_en_08",
-      "text": "In the dream, there was something you couldn't do. You couldn't run. Couldn't speak. Couldn't open the door. Couldn't reach the person.",
+      "text": "Now. Here's where it changes.",
       "language": "en",
       "phase": 27,
       "filename": "c7_en_08.mp3"
     },
     {
       "id": "c7_en_09",
-      "text": "This time — in your mind — do it. Complete the action. Whatever your body wanted to do, let it happen in your imagination.",
+      "text": "In the dream, there was something you couldn't do. You couldn't run. Couldn't speak. Couldn't open the door. Couldn't reach the person.",
       "language": "en",
       "phase": 27,
       "filename": "c7_en_09.mp3"
     },
     {
       "id": "c7_en_10",
-      "text": "Let this new version settle in. Feel it in your body. What does it feel like to finally complete what was interrupted?",
+      "text": "This time, in your mind, do it. Complete the action. Whatever your body wanted to do, let it happen in your imagination. Don't hold back.",
       "language": "en",
       "phase": 27,
       "filename": "c7_en_10.mp3"
     },
     {
       "id": "c7_en_11",
-      "text": "Where does the space open? Where does the grip release?",
+      "text": "Feel that in your body. What does completion feel like? Where does the grip release?",
       "language": "en",
       "phase": 27,
       "filename": "c7_en_11.mp3"
     },
     {
       "id": "c7_en_12",
-      "text": "Now, briefly — go back to the original dream. The stuck version. Feel the tension it creates.",
+      "text": "Let's breathe. Inhale the old stuck version.",
       "language": "en",
       "phase": 27,
       "filename": "c7_en_12.mp3"
     },
     {
       "id": "c7_en_13",
-      "text": "And shift to the new version. The one where you could act. Feel the release.",
+      "text": "Exhale the new ending.",
       "language": "en",
       "phase": 27,
       "filename": "c7_en_13.mp3"
     },
     {
       "id": "c7_en_14",
-      "text": "Original. Tension.",
+      "text": "Your body just felt the exit from the loop. Not in your head. In your nervous system. That's different from understanding it. That's the untangling.",
       "language": "en",
       "phase": 27,
       "filename": "c7_en_14.mp3"
     },
     {
       "id": "c7_en_15",
-      "text": "New version. Release.",
+      "text": "The dream may come back. But it won't be the same. Because your body now knows there's a way through.",
       "language": "en",
       "phase": 27,
       "filename": "c7_en_15.mp3"
     },
     {
-      "id": "c7_en_16",
-      "text": "Your body is learning something right now. It's learning that there IS a way out of the loop. That tension is not permanent.",
-      "language": "en",
-      "phase": 27,
-      "filename": "c7_en_16.mp3"
-    },
-    {
-      "id": "c7_en_17",
-      "text": "Let's breathe. Inhale the tension.",
-      "language": "en",
-      "phase": 27,
-      "filename": "c7_en_17.mp3"
-    },
-    {
-      "id": "c7_en_18",
-      "text": "Exhale the new ending.",
-      "language": "en",
-      "phase": 27,
-      "filename": "c7_en_18.mp3"
-    },
-    {
-      "id": "c7_en_19",
-      "text": "This dream has a new ending now. Not in your head. In your body. Your nervous system felt the exit. And that changes everything.",
-      "language": "en",
-      "phase": 27,
-      "filename": "c7_en_19.mp3"
-    },
-    {
-      "id": "c7_en_20",
-      "text": "If this dream comes back, it will be different. Because you are different.",
-      "language": "en",
-      "phase": 27,
-      "filename": "c7_en_20.mp3"
-    },
-    {
       "id": "c8_en_01",
-      "text": "This dream is different. It doesn't carry pain. It carries a message.",
+      "text": "This dream is different. It doesn't carry pain. It carries a message. Something from the deepest part of you.",
       "language": "en",
       "phase": 28,
       "filename": "c8_en_01.mp3"
     },
     {
       "id": "c8_en_02",
-      "text": "Jung called these numinous dreams. Dreams that come from the Self — the deepest, truest part of you. The part that exists before the wounds. Before the patterns. Before the masks.",
+      "text": "Jung called these numinous dreams. Dreams from the Self. The part that exists before the wounds. Before the patterns. Before the masks.",
       "language": "en",
       "phase": 28,
       "filename": "c8_en_02.mp3"
     },
     {
       "id": "c8_en_03",
-      "text": "Most people let these dreams fade by lunchtime. The experience evaporates. They go back to their default state.",
+      "text": "Most people let these dreams fade by lunchtime. Not today. Today we anchor it in your body.",
       "language": "en",
       "phase": 28,
       "filename": "c8_en_03.mp3"
     },
     {
       "id": "c8_en_04",
-      "text": "Not today. Today, we're going to anchor this experience into your body. So it doesn't just visit. It stays.",
+      "text": "Re-enter the dream. Not as a memory. As an experience. See the images. The light. The space. Let it come back fully.",
       "language": "en",
       "phase": 28,
       "filename": "c8_en_04.mp3"
     },
     {
       "id": "c8_en_05",
-      "text": "Close your eyes. Re-enter the dream. Not as a memory. As an experience.",
+      "text": "Where do you feel it in your body? The expansion. The warmth. The openness. Find where it's the strongest.",
       "language": "en",
       "phase": 28,
       "filename": "c8_en_05.mp3"
     },
     {
       "id": "c8_en_06",
-      "text": "See the images. The light. The space. Whatever was there. Let it come back fully.",
+      "text": "Now amplify it. Make it bigger. Brighter. More vivid. Whatever you're feeling, feel more of it.",
       "language": "en",
       "phase": 28,
       "filename": "c8_en_06.mp3"
     },
     {
       "id": "c8_en_07",
-      "text": "Where do you feel it in your body? The expansion. The openness. The warmth.",
+      "text": "What does it look like? A light? A color? A vast space? An image that doesn't fit into words?",
       "language": "en",
       "phase": 28,
       "filename": "c8_en_07.mp3"
     },
     {
       "id": "c8_en_08",
-      "text": "Is it in your chest? Your spine? The top of your head? Find the place where this dream lives the strongest.",
+      "text": "Is there a sound? A tone? Music? A silence that feels full instead of empty?",
       "language": "en",
       "phase": 28,
       "filename": "c8_en_08.mp3"
     },
     {
       "id": "c8_en_09",
-      "text": "Stay there. Breathe into that spot. With each inhale, let the sensation expand. Let it take up more space inside you.",
+      "text": "This feeling is not something you're creating. It's something you're remembering. This is you before the armor.",
       "language": "en",
       "phase": 28,
       "filename": "c8_en_09.mp3"
     },
     {
       "id": "c8_en_10",
-      "text": "This feeling is not something you're creating. It's something you're remembering. This is you — before the armor. Before the fear. Before the world told you to be less.",
+      "text": "If there was a presence in this dream, a figure, a light, a feeling — what did it want you to know? Don't think. Listen with your body.",
       "language": "en",
       "phase": 28,
       "filename": "c8_en_10.mp3"
     },
     {
       "id": "c8_en_11",
-      "text": "What does it feel like to be this version of yourself? The version without the weight?",
+      "text": "Whatever you received, a feeling, a word, a knowing — place your hands where you feel it the strongest. Breathe it deeper. Into your chest. Your belly. Your limbs.",
       "language": "en",
       "phase": 28,
       "filename": "c8_en_11.mp3"
     },
     {
       "id": "c8_en_12",
-      "text": "Can you hold this feeling? Not with your mind. With your body. Let it settle into your cells. Into your bones.",
+      "text": "Let's anchor this. Inhale this feeling fully.",
       "language": "en",
       "phase": 28,
       "filename": "c8_en_12.mp3"
     },
     {
       "id": "c8_en_13",
-      "text": "If there was a presence in this dream — a figure, a light, a feeling — what did it want you to know?",
+      "text": "Exhale. Seal it in.",
       "language": "en",
       "phase": 28,
       "filename": "c8_en_13.mp3"
     },
     {
       "id": "c8_en_14",
-      "text": "Don't think. Listen. With your body.",
+      "text": "This experience is now a bodily memory. Not a thought. A sensation. When the noise of life pulls you away, come back here. It's always available. In the body.",
       "language": "en",
       "phase": 28,
       "filename": "c8_en_14.mp3"
     },
     {
-      "id": "c8_en_15",
-      "text": "Whatever you received — a feeling, a word, a knowing — hold it. Place your hands where you feel it the strongest.",
-      "language": "en",
-      "phase": 28,
-      "filename": "c8_en_15.mp3"
-    },
-    {
-      "id": "c8_en_16",
-      "text": "Breathe it deeper. Into your chest. Your belly. Your limbs.",
-      "language": "en",
-      "phase": 28,
-      "filename": "c8_en_16.mp3"
-    },
-    {
-      "id": "c8_en_17",
-      "text": "Let's anchor this with a breath. Inhale this feeling fully.",
-      "language": "en",
-      "phase": 28,
-      "filename": "c8_en_17.mp3"
-    },
-    {
-      "id": "c8_en_18",
-      "text": "Exhale. Seal it in.",
-      "language": "en",
-      "phase": 28,
-      "filename": "c8_en_18.mp3"
-    },
-    {
-      "id": "c8_en_19",
-      "text": "This dream wasn't an event. It was an invitation. A glimpse of who you're becoming.",
-      "language": "en",
-      "phase": 28,
-      "filename": "c8_en_19.mp3"
-    },
-    {
-      "id": "c8_en_20",
-      "text": "You carry this with you now. Not as a thought. As a sensation. As a bodily memory. When the noise of life pulls you away, come back here. It's always available. In the body.",
-      "language": "en",
-      "phase": 28,
-      "filename": "c8_en_20.mp3"
-    },
-    {
       "id": "mod_d_en_01",
-      "text": "Take a moment to let things slow down.",
+      "text": "Take a moment now. Let things slow down.",
       "language": "en",
       "phase": 31,
       "filename": "mod_d_en_01.mp3"
     },
     {
       "id": "mod_d_en_02",
-      "text": "Let your body relax. Your shoulders. Your jaw. Detach your tongue from the roof of your mouth.",
+      "text": "We've moved some things. Unlocked some things. The energy may have shifted. So let's bring it all back to center.",
       "language": "en",
       "phase": 31,
       "filename": "mod_d_en_02.mp3"
     },
     {
       "id": "mod_d_en_03",
-      "text": "See how light you can get. Let your body melt.",
+      "text": "Scan your body. What's different from when we started? Look for different. Not better or worse. Just different.",
       "language": "en",
       "phase": 31,
       "filename": "mod_d_en_03.mp3"
     },
     {
       "id": "mod_d_en_04",
-      "text": "Let go of all tension. Just letting go.",
+      "text": "Are there places that feel cold or hot? Tight or loose? Pain or release? Whatever it is, if it's different, that's what we want.",
       "language": "en",
       "phase": 31,
       "filename": "mod_d_en_04.mp3"
     },
     {
       "id": "mod_d_en_05",
-      "text": "Feeling lighter and lighter. Like you're floating. Beyond the mind. Beyond the story. Beyond the pattern.",
+      "text": "We don't have to understand everything that just happened. These things are like balls of yarn. Different types of memory tangled together. We started to untangle. We started to see what's connected to what.",
       "language": "en",
       "phase": 31,
       "filename": "mod_d_en_05.mp3"
     },
     {
       "id": "mod_d_en_06",
-      "text": "Into this space that comes before everything. This space of peace. Of wholeness. Of authenticity.",
+      "text": "It's still there. The pattern. The feeling. But we saw it. We mapped some of the terrain beneath language. And that changes the relationship.",
       "language": "en",
       "phase": 31,
       "filename": "mod_d_en_06.mp3"
     },
     {
       "id": "mod_d_en_07",
-      "text": "Where you're exactly where you need to be. Who you need to be. Where you don't have to impress. You can just be.",
+      "text": "Now cross your arms across your chest. Rub the texture of your clothing. Feel the contact.",
       "language": "en",
       "phase": 31,
       "filename": "mod_d_en_07.mp3"
     },
     {
       "id": "mod_d_en_08",
-      "text": "Merge with this space. With every inhale, filling your body with warmth. With presence.",
+      "text": "Open your arms wide. Then slowly up over your head like a snow angel.",
       "language": "en",
       "phase": 31,
       "filename": "mod_d_en_08.mp3"
     },
     {
       "id": "mod_d_en_09",
-      "text": "Feel your body glowing. Filled with something that was always there, underneath the noise.",
+      "text": "Point one foot down and reach. Then the other. Stretch.",
       "language": "en",
       "phase": 31,
       "filename": "mod_d_en_09.mp3"
     },
     {
+      "id": "mod_d_en_10",
+      "text": "Wiggle your spine gently, side to side. Then front to back. Let the movement ripple all the way through.",
+      "language": "en",
+      "phase": 31,
+      "filename": "mod_d_en_10.mp3"
+    },
+    {
+      "id": "mod_d_en_11",
+      "text": "Good. We've moved the somatic energy. Now let everything settle.",
+      "language": "en",
+      "phase": 31,
+      "filename": "mod_d_en_11.mp3"
+    },
+    {
       "id": "mod_e_en_01",
-      "text": "Now, gently, from this space...",
+      "text": "Now, gently.",
       "language": "en",
       "phase": 32,
       "filename": "mod_e_en_01.mp3"
     },
     {
       "id": "mod_e_en_02",
-      "text": "Bring your attention back to the base of your spine.",
+      "text": "Take a deep breath and feel your body and your sense of consciousness as a whole thing again. Not deconstructed. Back together.",
       "language": "en",
       "phase": 32,
       "filename": "mod_e_en_02.mp3"
     },
     {
       "id": "mod_e_en_03",
-      "text": "Feel this grounding. This connection.",
+      "text": "Feel your feet. Their weight. Their warmth.",
       "language": "en",
       "phase": 32,
       "filename": "mod_e_en_03.mp3"
     },
     {
       "id": "mod_e_en_04",
-      "text": "Start bringing awareness back into your body. Feel your feet. Their weight. Their warmth.",
+      "text": "Feel your legs. Your belly. Your chest. Feel your heart.",
       "language": "en",
       "phase": 32,
       "filename": "mod_e_en_04.mp3"
     },
     {
       "id": "mod_e_en_05",
-      "text": "Feel your legs. Heavy. Relaxed.",
+      "text": "Feel your arms. Your hands. The tips of your fingers.",
       "language": "en",
       "phase": 32,
       "filename": "mod_e_en_05.mp3"
     },
     {
       "id": "mod_e_en_06",
-      "text": "Bring awareness into your belly. Your chest. Feel your heart.",
+      "text": "Your neck. Your face. The top of your head.",
       "language": "en",
       "phase": 32,
       "filename": "mod_e_en_06.mp3"
     },
     {
       "id": "mod_e_en_07",
-      "text": "Feel your arms. Your hands. The tips of your fingers.",
+      "text": "Your whole body is present. Unified. One thing again.",
       "language": "en",
       "phase": 32,
       "filename": "mod_e_en_07.mp3"
     },
     {
       "id": "mod_e_en_08",
-      "text": "Bring awareness into your neck. Your face. The top of your head.",
+      "text": "One final breath.",
       "language": "en",
       "phase": 32,
       "filename": "mod_e_en_08.mp3"
     },
     {
       "id": "mod_e_en_09",
-      "text": "Your whole body is now present. Unified. Grounded.",
+      "text": "Now open your eyes slowly. Look at the world around you. Notice that it's different. That you feel different. And different is good.",
       "language": "en",
       "phase": 32,
       "filename": "mod_e_en_09.mp3"
     },
     {
       "id": "mod_e_en_10",
-      "text": "Before coming back, one final breath.",
+      "text": "You don't have to understand everything that happened right now. It's normal for realizations and memories to surface over the next hours and days. Just notice them.",
       "language": "en",
       "phase": 32,
       "filename": "mod_e_en_10.mp3"
     },
     {
       "id": "mod_e_en_11",
-      "text": "You did deep work. Be gentle with yourself today.",
+      "text": "Notice your relationship to this feeling being a different thing now. Notice the small changes. The shoulders that relax. The posture that shifts. Come back to this whenever it's helpful.",
       "language": "en",
       "phase": 32,
       "filename": "mod_e_en_11.mp3"
     },
     {
       "id": "mod_e_en_12",
-      "text": "I'm going to count from one to five. At five, open your eyes.",
-      "language": "en",
-      "phase": 32,
-      "filename": "mod_e_en_12.mp3"
-    },
-    {
-      "id": "mod_e_en_13",
-      "text": "One. Awareness rising.",
-      "language": "en",
-      "phase": 32,
-      "filename": "mod_e_en_13.mp3"
-    },
-    {
-      "id": "mod_e_en_14",
-      "text": "Two. Sensation in your fingers and toes.",
-      "language": "en",
-      "phase": 32,
-      "filename": "mod_e_en_14.mp3"
-    },
-    {
-      "id": "mod_e_en_15",
-      "text": "Three. Energy returning.",
-      "language": "en",
-      "phase": 32,
-      "filename": "mod_e_en_15.mp3"
-    },
-    {
-      "id": "mod_e_en_16",
-      "text": "Four. Almost back.",
-      "language": "en",
-      "phase": 32,
-      "filename": "mod_e_en_16.mp3"
-    },
-    {
-      "id": "mod_e_en_17",
-      "text": "Five. Open your eyes. Welcome back.",
-      "language": "en",
-      "phase": 32,
-      "filename": "mod_e_en_17.mp3"
-    },
-    {
-      "id": "mod_e_en_18",
       "text": "Take your time. Have some water if you'd like.",
       "language": "en",
       "phase": 32,
-      "filename": "mod_e_en_18.mp3"
+      "filename": "mod_e_en_12.mp3"
     },
     {
       "id": "p9_en_01",
