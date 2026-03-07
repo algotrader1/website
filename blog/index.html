@@ -3,673 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONERA Blog - Dream Science & Self-Discovery</title>
+    <title>Onera Blog - Dream Science & Self-Discovery</title>
     <meta name="description" content="Explore the science of dreams, consciousness, and self-discovery. Research-backed insights into unlocking your mind's hidden potential.">
-    
+
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="ONERA Blog - Dream Science & Self-Discovery">
+    <meta property="og:title" content="Onera Blog - Dream Science & Self-Discovery">
     <meta property="og:description" content="Explore the science of dreams, consciousness, and self-discovery. Research-backed insights into unlocking your mind's hidden potential.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dreaminsight.app/blog">
     <meta property="og:image" content="https://dreaminsight.app/assets/og-image.jpg">
-    <meta property="og:site_name" content="ONERA">
+    <meta property="og:site_name" content="Onera">
     <meta property="og:locale" content="en_US">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ONERA Blog - Dream Science & Self-Discovery">
+    <meta name="twitter:title" content="Onera Blog - Dream Science & Self-Discovery">
     <meta name="twitter:description" content="Explore the science of dreams, consciousness, and self-discovery. Research-backed insights into unlocking your mind's hidden potential.">
     <meta name="twitter:image" content="https://dreaminsight.app/assets/twitter-card.jpg">
     <meta name="twitter:site" content="@onera_dreams">
     <meta name="twitter:creator" content="@onera_dreams">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-bg: #000000;
-            --text-primary: #FFFFFF;
-            --text-secondary: #999999;
-            --text-muted: #666666;
-            --accent: #FFFFFF;
-            --border-color: rgba(255, 255, 255, 0.08);
+            --bg: #f8f6f3;
+            --bg-warm: #f3f0ec;
+            --bg-card: #ffffff;
+            --fg: #1a1917;
+            --fg-2: #5c5a56;
+            --fg-3: #8a8780;
+            --fg-muted: #b5b3ae;
+            --accent: #c4956a;
+            --accent-soft: #d4a87a;
+            --accent-bg: rgba(196, 149, 106, 0.08);
+            --line: rgba(0,0,0,0.06);
+            --line-strong: rgba(0,0,0,0.1);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.08);
+            --radius: 16px;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
-            background: var(--primary-bg);
-            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--fg);
             line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-            min-height: 100vh;
-            font-weight: 300;
-            letter-spacing: -0.01em;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
 
-        /* Elegant Particle Container */
-        .particles-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.3;
-        }
+        ::selection { background: var(--accent); color: white; }
 
-        .particle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            pointer-events: none;
-            will-change: transform, opacity;
+        /* Nav */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1.25rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(248, 246, 243, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--line);
         }
+        .nav-logo {
+            font-size: 1.125rem; font-weight: 600; letter-spacing: 0.08em;
+            color: var(--fg); text-decoration: none; text-transform: uppercase;
+        }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links a {
+            color: var(--fg-2); text-decoration: none; font-size: 0.875rem;
+            font-weight: 400; transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--fg); }
+        .nav-cta {
+            background: var(--fg) !important; color: var(--bg) !important;
+            padding: 0.5rem 1.25rem !important; border-radius: 50px;
+            font-weight: 500 !important; transition: opacity 0.3s !important;
+        }
+        .nav-cta:hover { opacity: 0.85; }
 
-        .particle-float {
-            animation: float-elegant 20s linear infinite;
-            filter: blur(1px);
-        }
+        /* Container */
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
 
-        @keyframes float-elegant {
-            0% {
-                transform: translateY(100vh) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.3;
-            }
-            90% {
-                opacity: 0.3;
-            }
-            100% {
-                transform: translateY(-100px) translateX(30px);
-                opacity: 0;
-            }
-        }
-
-        /* Navigation */
-        .nav-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 2rem 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 50%, transparent 100%);
-            backdrop-filter: blur(10px);
-        }
-
-        .logo-link {
-            font-size: 1.5rem;
-            font-weight: 200;
-            letter-spacing: 0.2em;
-            color: var(--text-primary);
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .logo-link:hover {
-            opacity: 0.7;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .nav-link {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 400;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            padding: 0.75rem 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            background: transparent;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .nav-link:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-        
-        .nav-link:hover:before {
-            width: 100%;
-            height: 100%;
-        }
-        
-        .nav-link:hover {
-            color: rgba(255, 255, 255, 0.95);
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-link.active {
-            color: rgba(255, 255, 255, 0.95);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Content */
-        .content {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 10rem 2rem 3rem;
-            min-height: 100vh;
-        }
-
-        /* Hero Section */
+        /* Blog Hero */
         .blog-hero {
-            text-align: center;
-            margin-bottom: 6rem;
-            animation: fadeInScale 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 10rem 0 4rem; text-align: center;
+            background: linear-gradient(180deg, var(--bg) 0%, var(--bg-warm) 100%);
         }
-
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .blog-title {
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 100;
-            letter-spacing: 0.15em;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-            text-transform: uppercase;
-            background: linear-gradient(180deg, #FFFFFF 0%, #CCCCCC 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .blog-subtitle {
-            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-            font-weight: 300;
-            color: var(--text-secondary);
-            letter-spacing: 0.02em;
-            line-height: 1.6;
-        }
-
-        /* Articles Grid */
-        .articles-grid {
-            display: grid;
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .article-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 3rem;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            opacity: 0;
-            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-        }
-
-        .article-card:nth-child(1) { animation-delay: 0.1s; }
-        .article-card:nth-child(2) { animation-delay: 0.2s; }
-        .article-card:nth-child(3) { animation-delay: 0.3s; }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .article-card:before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent);
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-
-        .article-card:hover:before {
-            opacity: 1;
-        }
-
-        .article-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .article-date {
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-        }
-
-        .article-title {
-            font-size: clamp(1.75rem, 3vw, 2.25rem);
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-            letter-spacing: 0.02em;
-            line-height: 1.3;
-        }
-
-        .article-excerpt {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.7);
+        .blog-hero-badge {
+            display: inline-block; padding: 0.4rem 1rem; border-radius: 50px;
+            background: var(--accent-bg); color: var(--accent);
+            font-size: 0.8rem; font-weight: 500; letter-spacing: 0.03em;
             margin-bottom: 2rem;
         }
-
-        .article-meta {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            font-size: 0.875rem;
-            color: var(--text-muted);
+        .blog-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 600;
+            line-height: 1.15; letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        .blog-hero h1 span { color: var(--accent); }
+        .blog-hero p {
+            font-size: clamp(1.05rem, 2vw, 1.15rem); color: var(--fg-2);
+            max-width: 560px; margin: 0 auto; line-height: 1.7; font-weight: 300;
         }
 
-        .read-time {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .read-more {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.875rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
-            padding-bottom: 2px;
-        }
-
-        .read-more:after {
-            content: '→';
-            margin-left: 0.5rem;
-            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            display: inline-block;
-        }
-
-        .article-card:hover .read-more {
-            color: var(--text-primary);
-        }
-
-        .article-card:hover .read-more:after {
-            transform: translateX(5px);
-        }
-
-        /* Tags and Categories */
+        /* Filter Section */
         .filter-section {
-            margin: 3rem 0;
+            margin: 0 auto 3rem;
             padding: 2rem;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
         }
-
         .filter-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-            gap: 1rem;
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;
         }
-
         .filter-title {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-secondary);
+            font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;
+            color: var(--fg-3); font-weight: 500;
         }
-
         .filter-reset {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-secondary);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: transparent; border: 1px solid var(--line-strong);
+            color: var(--fg-3); padding: 0.5rem 1rem; border-radius: 50px;
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
+            cursor: pointer; transition: all 0.3s; font-family: inherit;
         }
+        .filter-reset:hover { border-color: var(--accent); color: var(--accent); }
 
-        .filter-reset:hover {
-            border-color: rgba(255, 255, 255, 0.3);
-            color: var(--text-primary);
-        }
-
-        .filter-groups {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .filter-group {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
+        .filter-groups { display: flex; flex-direction: column; gap: 2rem; }
+        .filter-group { display: flex; flex-direction: column; gap: 1rem; }
         .filter-group-title {
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-size: 0.8rem; color: var(--fg-muted); text-transform: uppercase;
+            letter-spacing: 0.05em; font-weight: 500;
         }
 
-        .tags-container {
-            position: relative;
-        }
-
-        .filter-categories {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
+        .tags-container { position: relative; }
+        .filter-categories, .filter-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .filter-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            max-height: 8rem;
-            overflow: hidden;
-            transition: max-height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            max-height: 5.5rem; overflow: hidden;
+            transition: max-height 0.3s ease;
         }
-
-        .filter-tags.expanded {
-            max-height: none;
-        }
+        .filter-tags.expanded { max-height: none; }
 
         .tags-gradient {
-            position: absolute;
-            bottom: 3rem;
-            left: 0;
-            right: 0;
-            height: 3rem;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9) 70%);
-            pointer-events: none;
-            transition: opacity 0.3s ease;
+            position: absolute; bottom: 3rem; left: 0; right: 0; height: 3rem;
+            background: linear-gradient(transparent, var(--bg-card) 70%);
+            pointer-events: none; transition: opacity 0.3s ease;
         }
-
-        .tags-gradient.hidden {
-            opacity: 0;
-        }
+        .tags-gradient.hidden { opacity: 0; }
 
         .expand-tags-btn {
-            width: 100%;
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            margin-top: 1rem;
-            position: relative;
-            overflow: hidden;
+            width: 100%; background: transparent; border: 1px solid var(--line);
+            color: var(--fg-3); padding: 0.6rem 1rem; border-radius: 8px;
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;
+            cursor: pointer; transition: all 0.3s; margin-top: 0.75rem;
+            font-family: inherit;
         }
-
-        .expand-tags-btn:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            transition: left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .expand-tags-btn:hover:before {
-            left: 0;
-        }
-
-        .expand-tags-btn:hover {
-            border-color: rgba(255, 255, 255, 0.4);
-            color: rgba(255, 255, 255, 0.9);
-            transform: translateY(-2px);
-        }
+        .expand-tags-btn:hover { border-color: var(--accent); color: var(--accent); }
 
         .filter-tag, .filter-category {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
-            overflow: hidden;
+            background: transparent; border: 1px solid var(--line);
+            color: var(--fg-3); padding: 0.4rem 0.85rem; border-radius: 50px;
+            font-size: 0.75rem; cursor: pointer; transition: all 0.3s;
+            font-family: inherit;
         }
-
-        .filter-tag:before, .filter-category:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            transition: left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .filter-tag:hover:before, .filter-category:hover:before {
-            left: 0;
-        }
-
         .filter-tag:hover, .filter-category:hover {
-            border-color: rgba(255, 255, 255, 0.3);
-            color: rgba(255, 255, 255, 0.9);
-            transform: translateY(-2px);
+            border-color: var(--accent); color: var(--accent);
         }
-
         .filter-tag.active, .filter-category.active {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.3);
-            color: var(--text-primary);
+            background: var(--accent-bg); border-color: var(--accent);
+            color: var(--accent); font-weight: 500;
         }
-
         .tag-count, .category-count {
-            opacity: 0.5;
-            margin-left: 0.25rem;
-            font-size: 0.75rem;
-        }
-
-        .article-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .article-tag {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            opacity: 0.6; margin-left: 0.2rem; font-size: 0.7rem;
         }
 
         .no-results {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--text-secondary);
-            display: none;
+            text-align: center; padding: 4rem 2rem; color: var(--fg-3); display: none;
         }
+        .no-results.visible { display: block; }
+        .no-results h3 { font-size: 1.25rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--fg-2); }
+        .no-results p { font-size: 0.95rem; color: var(--fg-3); }
 
-        .no-results.visible {
-            display: block;
+        .article-card.hidden { display: none; }
+
+        /* Section Headers */
+        .section-heading {
+            font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600;
+            letter-spacing: -0.01em; color: var(--fg); margin-bottom: 0.5rem;
         }
-
-        .article-card.hidden {
-            display: none;
-        }
-
-        /* Empty State */
-        .empty-state {
-            text-align: center;
-            padding: 6rem 2rem;
-            color: var(--text-secondary);
-        }
-
-        .empty-state h3 {
-            font-size: 1.5rem;
+        .section-subheading {
+            color: var(--fg-3); font-size: 0.95rem; margin-bottom: 2rem;
             font-weight: 300;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
+        }
+
+        /* Dream Dictionary Grid */
+        .dictionary-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem; margin-bottom: 5rem;
+        }
+        .dictionary-card {
+            display: block; text-decoration: none; color: inherit;
+            padding: 1.5rem; border-radius: var(--radius);
+            background: var(--bg-card); border: 1px solid var(--line);
+            transition: all 0.3s;
+        }
+        .dictionary-card:hover {
+            border-color: var(--line-strong); box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        .dictionary-card h3 {
+            font-size: 1rem; font-weight: 500; margin-bottom: 0.4rem; color: var(--fg);
+        }
+        .dictionary-card p {
+            font-size: 0.85rem; color: var(--fg-3); line-height: 1.5;
+        }
+
+        /* Articles Grid */
+        .articles-grid { display: grid; gap: 1.5rem; margin-top: 2rem; }
+
+        .article-card {
+            display: block; text-decoration: none; color: inherit;
+            background: var(--bg-card); border: 1px solid var(--line);
+            border-radius: var(--radius); padding: 2.5rem;
+            transition: all 0.3s;
+        }
+        .article-card:hover {
+            border-color: var(--line-strong); box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .article-date {
+            font-size: 0.75rem; color: var(--accent); text-transform: uppercase;
+            letter-spacing: 0.08em; margin-bottom: 0.75rem; font-weight: 500;
+        }
+        .article-title {
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem); font-weight: 500;
+            margin-bottom: 1rem; color: var(--fg); line-height: 1.35;
+            letter-spacing: -0.01em;
+        }
+        .article-excerpt {
+            font-size: 0.95rem; line-height: 1.7; color: var(--fg-2);
+            margin-bottom: 1.5rem; font-weight: 300;
+        }
+        .article-meta {
+            display: flex; align-items: center; gap: 2rem;
+            font-size: 0.8rem; color: var(--fg-3);
+        }
+        .read-time { display: flex; align-items: center; gap: 0.4rem; }
+        .read-more {
+            color: var(--accent); text-decoration: none; font-size: 0.8rem;
+            font-weight: 500; letter-spacing: 0.03em; transition: color 0.3s;
+        }
+        .read-more:after {
+            content: ' \2192'; transition: transform 0.3s; display: inline-block;
+        }
+        .article-card:hover .read-more { color: var(--accent-soft); }
+        .article-card:hover .read-more:after { transform: translateX(4px); }
+
+        .article-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+        .article-tag {
+            background: var(--accent-bg); border: 1px solid rgba(196, 149, 106, 0.15);
+            color: var(--accent); padding: 0.2rem 0.65rem; border-radius: 50px;
+            font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.04em;
+            font-weight: 500;
+        }
+
+        /* Coming Soon */
+        .article-card.coming-soon {
+            opacity: 0.45; cursor: default; pointer-events: none;
         }
 
         /* Footer */
-        .footer {
-            background: transparent;
-            padding: 4rem 0 2rem;
-            text-align: center;
-            margin-top: 8rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        footer {
+            padding: 3rem 0 2rem; text-align: center;
+            border-top: 1px solid var(--line);
         }
-
-        .footer-links {
-            margin-bottom: 2rem;
-        }
-
+        .footer-links { margin-bottom: 1.5rem; }
         .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin: 0 2rem;
-            font-size: 0.875rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            color: var(--fg-3); text-decoration: none; margin: 0 1.25rem;
+            font-size: 0.85rem; transition: color 0.3s;
+        }
+        .footer-links a:hover { color: var(--fg); }
+        .footer-copy {
+            font-size: 0.8rem; color: var(--fg-muted); margin-bottom: 0.5rem;
         }
 
-        .footer-links a:hover {
-            color: var(--text-primary);
+        /* Fade in on scroll */
+        .fade-in {
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        .footer-copyright {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            letter-spacing: 0.02em;
-        }
-
-        /* Mobile responsiveness */
+        /* Responsive */
         @media (max-width: 768px) {
-            .nav-header {
-                padding: 1.5rem 1rem;
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .nav-link {
-                font-size: 0.75rem;
-                padding: 0.6rem 1.5rem;
-            }
-            
-            .content {
-                padding: 8rem 1rem 3rem;
-            }
-
-            .blog-title {
-                font-size: 2.5rem;
-                letter-spacing: 0.1em;
-            }
-
-            .article-card {
-                padding: 2rem;
-            }
-
-            .footer-links a {
-                display: block;
-                margin: 1rem 0;
-            }
+            nav { padding: 1rem 1.25rem; }
+            .nav-links a:not(.nav-cta) { display: none; }
+            .container { padding: 0 1.25rem; }
+            .blog-hero { padding: 7rem 0 3rem; }
+            .article-card { padding: 1.75rem; }
+            .dictionary-grid { grid-template-columns: 1fr; }
+            .footer-links a { margin: 0 0.75rem; }
         }
     </style>
 </head>
 <body>
-    <div class="particles-container" id="particles"></div>
-    
-    <!-- Navigation -->
-    <nav class="nav-header">
-        <a href="/" class="logo-link">ONERA</a>
+
+    <nav>
+        <a href="/" class="nav-logo">Onera</a>
         <div class="nav-links">
-            <a href="/" class="nav-link">Home</a>
-            <a href="/blog" class="nav-link active">Blog</a>
-            <a href="/founders-letter.html" class="nav-link">Founder's Letter</a>
+            <a href="/blog">Blog</a>
+            <a href="/founders-letter.html">Letter</a>
+            <a href="https://apps.apple.com/app/onera/id6751126653" target="_blank" class="nav-cta">Download</a>
         </div>
     </nav>
-    
-    <div class="content">
-        <div class="blog-hero">
-            <h1 class="blog-title">Insights</h1>
-            <p class="blog-subtitle">Research-backed explorations into dreams, consciousness, and self-discovery</p>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="blog-hero-badge">Dream Science & Research</div>
+            <h1>Insights</h1>
+            <p>Research-backed explorations into dreams, consciousness, and self-discovery</p>
         </div>
+    </section>
+
+    <div class="container">
 
         <!-- Filter Section -->
-        <div class="filter-section">
+        <div class="filter-section fade-in">
             <div class="filter-header">
                 <h3 class="filter-title">Filter Articles</h3>
                 <button class="filter-reset" onclick="resetFilters()">Reset All</button>
@@ -799,141 +466,143 @@
         </div>
 
         <!-- ==================== DREAM DICTIONARY ==================== -->
-        <div style="margin-bottom: 4rem;">
-            <h2 style="font-size: 2rem; font-weight: 200; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; background: linear-gradient(180deg, #FFFFFF 0%, #CCCCCC 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Dream Dictionary</h2>
-            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">What your dreams mean — and where they live in your body</p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
-                <a href="/blog/posts/teeth-falling-out-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Teeth Falling Out</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Control, expression, transition — stored in the jaw</p>
-                </a>
-                <a href="/blog/posts/snake-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Snake</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Transformation, kundalini, shadow — stored in the spine</p>
-                </a>
-                <a href="/blog/posts/death-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Death / Dying</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Ego transformation, endings — stored in chest & throat</p>
-                </a>
-                <a href="/blog/posts/being-chased-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Being Chased</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Avoidance, shadow pursuit — stored in the adrenals</p>
-                </a>
-                <a href="/blog/posts/dream-about-ex-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Ex Partner</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Anima/animus projection, attachment — stored in the heart</p>
-                </a>
-                <a href="/blog/posts/falling-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Falling</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Loss of ground, insecurity — stored in the stomach</p>
-                </a>
-                <a href="/blog/posts/water-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Water</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">The unconscious mind, emotions — stored in the belly</p>
-                </a>
-                <a href="/blog/posts/spider-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Spider</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Creative weaving, feminine power — stored in the hands</p>
-                </a>
-                <a href="/blog/posts/flying-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Flying</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Liberation, transcendence — stored in the chest</p>
-                </a>
-                <a href="/blog/posts/pregnancy-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Being Pregnant</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">New creation, potential — stored in the womb/pelvis</p>
-                </a>
-                <a href="/blog/posts/car-accident-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Car Accident</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Loss of control, collision of paths — stored in the neck</p>
-                </a>
-                <a href="/blog/posts/drowning-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Drowning</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Emotional overwhelm — stored in the lungs & throat</p>
-                </a>
-                <a href="/blog/posts/fire-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Fire</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Passion, destruction, rebirth — stored in the solar plexus</p>
-                </a>
-                <a href="/blog/posts/house-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">House</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">The psyche, self-structure — each room a different part</p>
-                </a>
-                <a href="/blog/posts/baby-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Baby</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">New beginnings, vulnerability — stored in the arms</p>
-                </a>
-                <a href="/blog/posts/wedding-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Wedding</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Union of opposites, commitment — stored in the heart</p>
-                </a>
-                <a href="/blog/posts/dog-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Dog</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Loyalty, instinct, companionship — stored in the chest</p>
-                </a>
-                <a href="/blog/posts/cat-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Cat</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Independence, feminine mystery — stored in the spine</p>
-                </a>
-                <a href="/blog/posts/cheating-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Partner Cheating</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Trust wounds, self-worth — stored in the gut</p>
-                </a>
-                <a href="/blog/posts/naked-in-public-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Naked in Public</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Vulnerability, exposure, shame — stored in the skin</p>
-                </a>
-                <a href="/blog/posts/hair-falling-out-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Hair Falling Out</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Identity loss, aging fear — stored in the scalp</p>
-                </a>
-                <a href="/blog/posts/lost-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Being Lost</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Direction, purpose, disorientation — stored in the feet</p>
-                </a>
-                <a href="/blog/posts/blood-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Blood</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Life force, sacrifice, vitality — stored in the veins</p>
-                </a>
-                <a href="/blog/posts/elevator-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Elevator</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Ascension, descent, transitions — stored in the stomach</p>
-                </a>
-                <a href="/blog/posts/ocean-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Ocean</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Collective unconscious, vastness — stored in the diaphragm</p>
-                </a>
-                <a href="/blog/posts/bear-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Bear</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Primal power, hibernation, protection — stored in the shoulders</p>
-                </a>
-                <a href="/blog/posts/rat-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Rat</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Survival, shadow instincts — stored in the gut</p>
-                </a>
-                <a href="/blog/posts/lion-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Lion</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Courage, authority, the Self — stored in the chest</p>
-                </a>
-                <a href="/blog/posts/alligator-dream-meaning.html" class="article-card" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem;">Alligator / Crocodile</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Primal fear, hidden danger — stored in the lower back</p>
-                </a>
-            </div>
+        <div style="margin-bottom: 1rem;" class="fade-in">
+            <h2 class="section-heading">Dream Dictionary</h2>
+            <p class="section-subheading">What your dreams mean &mdash; and where they live in your body</p>
+        </div>
+        <div class="dictionary-grid fade-in">
+            <a href="/blog/posts/teeth-falling-out-dream-meaning.html" class="dictionary-card">
+                <h3>Teeth Falling Out</h3>
+                <p>Control, expression, transition &mdash; stored in the jaw</p>
+            </a>
+            <a href="/blog/posts/snake-dream-meaning.html" class="dictionary-card">
+                <h3>Snake</h3>
+                <p>Transformation, kundalini, shadow &mdash; stored in the spine</p>
+            </a>
+            <a href="/blog/posts/death-dream-meaning.html" class="dictionary-card">
+                <h3>Death / Dying</h3>
+                <p>Ego transformation, endings &mdash; stored in chest & throat</p>
+            </a>
+            <a href="/blog/posts/being-chased-dream-meaning.html" class="dictionary-card">
+                <h3>Being Chased</h3>
+                <p>Avoidance, shadow pursuit &mdash; stored in the adrenals</p>
+            </a>
+            <a href="/blog/posts/dream-about-ex-meaning.html" class="dictionary-card">
+                <h3>Ex Partner</h3>
+                <p>Anima/animus projection, attachment &mdash; stored in the heart</p>
+            </a>
+            <a href="/blog/posts/falling-dream-meaning.html" class="dictionary-card">
+                <h3>Falling</h3>
+                <p>Loss of ground, insecurity &mdash; stored in the stomach</p>
+            </a>
+            <a href="/blog/posts/water-dream-meaning.html" class="dictionary-card">
+                <h3>Water</h3>
+                <p>The unconscious mind, emotions &mdash; stored in the belly</p>
+            </a>
+            <a href="/blog/posts/spider-dream-meaning.html" class="dictionary-card">
+                <h3>Spider</h3>
+                <p>Creative weaving, feminine power &mdash; stored in the hands</p>
+            </a>
+            <a href="/blog/posts/flying-dream-meaning.html" class="dictionary-card">
+                <h3>Flying</h3>
+                <p>Liberation, transcendence &mdash; stored in the chest</p>
+            </a>
+            <a href="/blog/posts/pregnancy-dream-meaning.html" class="dictionary-card">
+                <h3>Being Pregnant</h3>
+                <p>New creation, potential &mdash; stored in the womb/pelvis</p>
+            </a>
+            <a href="/blog/posts/car-accident-dream-meaning.html" class="dictionary-card">
+                <h3>Car Accident</h3>
+                <p>Loss of control, collision of paths &mdash; stored in the neck</p>
+            </a>
+            <a href="/blog/posts/drowning-dream-meaning.html" class="dictionary-card">
+                <h3>Drowning</h3>
+                <p>Emotional overwhelm &mdash; stored in the lungs & throat</p>
+            </a>
+            <a href="/blog/posts/fire-dream-meaning.html" class="dictionary-card">
+                <h3>Fire</h3>
+                <p>Passion, destruction, rebirth &mdash; stored in the solar plexus</p>
+            </a>
+            <a href="/blog/posts/house-dream-meaning.html" class="dictionary-card">
+                <h3>House</h3>
+                <p>The psyche, self-structure &mdash; each room a different part</p>
+            </a>
+            <a href="/blog/posts/baby-dream-meaning.html" class="dictionary-card">
+                <h3>Baby</h3>
+                <p>New beginnings, vulnerability &mdash; stored in the arms</p>
+            </a>
+            <a href="/blog/posts/wedding-dream-meaning.html" class="dictionary-card">
+                <h3>Wedding</h3>
+                <p>Union of opposites, commitment &mdash; stored in the heart</p>
+            </a>
+            <a href="/blog/posts/dog-dream-meaning.html" class="dictionary-card">
+                <h3>Dog</h3>
+                <p>Loyalty, instinct, companionship &mdash; stored in the chest</p>
+            </a>
+            <a href="/blog/posts/cat-dream-meaning.html" class="dictionary-card">
+                <h3>Cat</h3>
+                <p>Independence, feminine mystery &mdash; stored in the spine</p>
+            </a>
+            <a href="/blog/posts/cheating-dream-meaning.html" class="dictionary-card">
+                <h3>Partner Cheating</h3>
+                <p>Trust wounds, self-worth &mdash; stored in the gut</p>
+            </a>
+            <a href="/blog/posts/naked-in-public-dream-meaning.html" class="dictionary-card">
+                <h3>Naked in Public</h3>
+                <p>Vulnerability, exposure, shame &mdash; stored in the skin</p>
+            </a>
+            <a href="/blog/posts/hair-falling-out-dream-meaning.html" class="dictionary-card">
+                <h3>Hair Falling Out</h3>
+                <p>Identity loss, aging fear &mdash; stored in the scalp</p>
+            </a>
+            <a href="/blog/posts/lost-dream-meaning.html" class="dictionary-card">
+                <h3>Being Lost</h3>
+                <p>Direction, purpose, disorientation &mdash; stored in the feet</p>
+            </a>
+            <a href="/blog/posts/blood-dream-meaning.html" class="dictionary-card">
+                <h3>Blood</h3>
+                <p>Life force, sacrifice, vitality &mdash; stored in the veins</p>
+            </a>
+            <a href="/blog/posts/elevator-dream-meaning.html" class="dictionary-card">
+                <h3>Elevator</h3>
+                <p>Ascension, descent, transitions &mdash; stored in the stomach</p>
+            </a>
+            <a href="/blog/posts/ocean-dream-meaning.html" class="dictionary-card">
+                <h3>Ocean</h3>
+                <p>Collective unconscious, vastness &mdash; stored in the diaphragm</p>
+            </a>
+            <a href="/blog/posts/bear-dream-meaning.html" class="dictionary-card">
+                <h3>Bear</h3>
+                <p>Primal power, hibernation, protection &mdash; stored in the shoulders</p>
+            </a>
+            <a href="/blog/posts/rat-dream-meaning.html" class="dictionary-card">
+                <h3>Rat</h3>
+                <p>Survival, shadow instincts &mdash; stored in the gut</p>
+            </a>
+            <a href="/blog/posts/lion-dream-meaning.html" class="dictionary-card">
+                <h3>Lion</h3>
+                <p>Courage, authority, the Self &mdash; stored in the chest</p>
+            </a>
+            <a href="/blog/posts/alligator-dream-meaning.html" class="dictionary-card">
+                <h3>Alligator / Crocodile</h3>
+                <p>Primal fear, hidden danger &mdash; stored in the lower back</p>
+            </a>
         </div>
 
         <!-- ==================== RESEARCH & INSIGHTS ==================== -->
-        <h2 style="font-size: 2rem; font-weight: 200; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; background: linear-gradient(180deg, #FFFFFF 0%, #CCCCCC 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Research & Insights</h2>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">Science-backed explorations into dreams, consciousness, and self-discovery</p>
+        <div class="fade-in">
+            <h2 class="section-heading">Research & Insights</h2>
+            <p class="section-subheading">Science-backed explorations into dreams, consciousness, and self-discovery</p>
+        </div>
 
         <div class="articles-grid" id="articlesGrid">
             <!-- Article 1 - New Onera Dream Analysis App -->
-            <a href="/blog/posts/onera-dream-analysis-app.html" class="article-card" data-categories="technology" data-tags="dream-analysis-app,onera-ai,jung-dream-analysis,freud-dream-analysis,ai-dream-interpretation">
+            <a href="/blog/posts/onera-dream-analysis-app.html" class="article-card fade-in" data-categories="technology" data-tags="dream-analysis-app,onera-ai,jung-dream-analysis,freud-dream-analysis,ai-dream-interpretation">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">Dream Analysis App: How Onera Transforms Your Nightly Stories Into Life-Changing Insights</h2>
                 <p class="article-excerpt">Discover how Onera's AI-powered dream analysis app combines ancient Jungian wisdom with cutting-edge technology to decode your dreams and transform your life through personalized insights.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 12 min read</span>
+                    <span class="read-time">12 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -943,12 +612,12 @@
                 </div>
             </a>
             <!-- Article 2 - Harvard 7 Benefits -->
-            <a href="/blog/posts/harvard-dreams-7-benefits.html" class="article-card" data-categories="research,psychology" data-tags="harvard-research,dream-analysis,jung,unconscious-mind,carl-jung,dream-therapy">
+            <a href="/blog/posts/harvard-dreams-7-benefits.html" class="article-card fade-in" data-categories="research,psychology" data-tags="harvard-research,dream-analysis,jung,unconscious-mind,carl-jung,dream-therapy">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">Why Do We Dream? Harvard Study Reveals 7 Life-Changing Benefits Your Unconscious Mind Has Been Trying to Tell You</h2>
                 <p class="article-excerpt">Harvard's groundbreaking research validates Carl Jung's dream analysis, revealing 7 transformative benefits of understanding your unconscious messages through dreams.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 22 min read</span>
+                    <span class="read-time">22 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -957,13 +626,13 @@
                     <span class="article-tag">Jung</span>
                 </div>
             </a>
-            <!-- Article 2 - Harvard 2025 Strange Dreams -->
-            <a href="/blog/posts/harvard-2025-strange-dreams.html" class="article-card" data-categories="research,neuroscience" data-tags="harvard-research,strange-dreams,consciousness,collective-unconscious,pgo-waves">
+            <!-- Article 3 - Harvard 2025 Strange Dreams -->
+            <a href="/blog/posts/harvard-2025-strange-dreams.html" class="article-card fade-in" data-categories="research,neuroscience" data-tags="harvard-research,strange-dreams,consciousness,collective-unconscious,pgo-waves">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">Why Do I Keep Having Strange Dreams? Harvard's 2025 Study Reveals Life-Changing Discovery</h2>
                 <p class="article-excerpt">Harvard's groundbreaking 2025 research reveals dreams actively build models of ourselves and the world, providing clues to our future course through sophisticated unconscious communication.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 18 min read</span>
+                    <span class="read-time">18 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -972,13 +641,13 @@
                     <span class="article-tag">Consciousness</span>
                 </div>
             </a>
-            <!-- Article 3 - UC Irvine Revolutionary Discovery -->
-            <a href="/blog/posts/uc-irvine-dreams-discovery.html" class="article-card" data-categories="research,neuroscience" data-tags="uc-irvine,emotional-processing,memory-consolidation,dream-recall">
+            <!-- Article 4 - UC Irvine Revolutionary Discovery -->
+            <a href="/blog/posts/uc-irvine-dreams-discovery.html" class="article-card fade-in" data-categories="research,neuroscience" data-tags="uc-irvine,emotional-processing,memory-consolidation,dream-recall">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">What Are Dreams Really For? UC Irvine's Revolutionary Discovery Changes Everything</h2>
                 <p class="article-excerpt">UC Irvine's groundbreaking research by Jing Zhang reveals dreams actively process emotional experiences by strategically forgetting unimportant details while preserving what matters most.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 16 min read</span>
+                    <span class="read-time">16 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -987,13 +656,13 @@
                     <span class="article-tag">Emotional Processing</span>
                 </div>
             </a>
-            <!-- Article 4 - Dream Analysis AI Onera -->
-            <a href="/blog/posts/dream-analysis-ai-onera.html" class="article-card" data-categories="technology,psychology" data-tags="ai-dream-analysis,onera,personal-growth,jung-ai,dream-interpretation">
+            <!-- Article 5 - Dream Analysis AI Onera -->
+            <a href="/blog/posts/dream-analysis-ai-onera.html" class="article-card fade-in" data-categories="technology,psychology" data-tags="ai-dream-analysis,onera,personal-growth,jung-ai,dream-interpretation">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">Dream Analysis AI: How Onera Transforms Your Dreams Into Personal Growth</h2>
                 <p class="article-excerpt">Discover how Onera's revolutionary dream analysis AI combines Jungian psychology with cutting-edge technology to decode your dreams and accelerate personal transformation.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 14 min read</span>
+                    <span class="read-time">14 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1002,13 +671,13 @@
                     <span class="article-tag">Onera</span>
                 </div>
             </a>
-            <!-- Article 5 -->
-            <a href="/blog/posts/uc-berkeley-dream-healing.html" class="article-card" data-categories="research,neuroscience" data-tags="rem-sleep,creativity,memory,emotional-healing,sleep-science">
+            <!-- Article 6 - UC Berkeley Dream Healing -->
+            <a href="/blog/posts/uc-berkeley-dream-healing.html" class="article-card fade-in" data-categories="research,neuroscience" data-tags="rem-sleep,creativity,memory,emotional-healing,sleep-science">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">UC Berkeley's Groundbreaking Research: How Dreams Heal and Inspire</h2>
                 <p class="article-excerpt">Matthew Walker's revolutionary findings reveal how REM sleep provides "overnight therapy" that strips painful memories of their emotional sting while boosting creativity by 35%.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 15 min read</span>
+                    <span class="read-time">15 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1017,14 +686,13 @@
                     <span class="article-tag">REM Sleep</span>
                 </div>
             </a>
-
-            <!-- Article 2 - New UC Berkeley Study -->
-            <a href="/blog/posts/dreams-random-chaos-berkeley.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="rem-sleep,dream-analysis,unconscious-mind,emotional-processing">
+            <!-- Article 7 - UC Berkeley Random Chaos -->
+            <a href="/blog/posts/dreams-random-chaos-berkeley.html" class="article-card fade-in" data-categories="research,neuroscience,psychology" data-tags="rem-sleep,dream-analysis,unconscious-mind,emotional-processing">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">Why Do Dreams Seem Random and Chaotic? UC Berkeley's Revolutionary Study</h2>
                 <p class="article-excerpt">UC Berkeley's revolutionary study reveals how dreams process emotions and memories without logical constraints, creating seemingly chaotic narratives that serve crucial psychological functions.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 18 min read</span>
+                    <span class="read-time">18 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1033,14 +701,13 @@
                     <span class="article-tag">Dream Analysis</span>
                 </div>
             </a>
-
-            <!-- Article 3 - Why Do We Dream -->
-            <a href="/blog/posts/why-do-we-dream-berkeley.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="rem-sleep,dream-analysis,self-discovery,emotional-processing">
+            <!-- Article 8 - Why Do We Dream Berkeley -->
+            <a href="/blog/posts/why-do-we-dream-berkeley.html" class="article-card fade-in" data-categories="research,neuroscience,psychology" data-tags="rem-sleep,dream-analysis,self-discovery,emotional-processing">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">Why Do We Dream? UC Berkeley's Revolutionary Study on Self-Discovery</h2>
                 <p class="article-excerpt">UC Berkeley's Walker Lab reveals that dreams are your unconscious mind's sophisticated way of processing emotions and revealing deeper truths through emotional reset and memory consolidation.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 20 min read</span>
+                    <span class="read-time">20 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1049,14 +716,13 @@
                     <span class="article-tag">Self-Discovery</span>
                 </div>
             </a>
-
-            <!-- Article 4 - Dreams Training Ground UCSC -->
-            <a href="/blog/posts/dreams-training-ground-ucsc.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="dream-analysis,self-discovery,jung,unconscious-mind,professional-development">
+            <!-- Article 9 - Dreams Training Ground UCSC -->
+            <a href="/blog/posts/dreams-training-ground-ucsc.html" class="article-card fade-in" data-categories="research,neuroscience,psychology" data-tags="dream-analysis,self-discovery,jung,unconscious-mind,professional-development">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">Revolutionary Brain Study Reveals Your Mind's Hidden Training Ground</h2>
                 <p class="article-excerpt">UC Santa Cruz's groundbreaking study reveals dreams as your brain's sophisticated training program, using advanced PET scans to show how your unconscious mind prepares you for life's challenges.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 22 min read</span>
+                    <span class="read-time">22 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1065,14 +731,13 @@
                     <span class="article-tag">Professional Development</span>
                 </div>
             </a>
-
-            <!-- Article 5 - Santa Clara Dream Control -->
-            <a href="/blog/posts/control-dreams-santa-clara.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="dream-control,lucid-dreaming,metacognition,ai-dream-analysis">
+            <!-- Article 10 - Santa Clara Dream Control -->
+            <a href="/blog/posts/control-dreams-santa-clara.html" class="article-card fade-in" data-categories="research,neuroscience,psychology" data-tags="dream-control,lucid-dreaming,metacognition,ai-dream-analysis">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">Can We Control Our Dreams? Santa Clara University's Revolutionary Study</h2>
                 <p class="article-excerpt">Santa Clara University researchers discover dreams involve sophisticated metacognitive processes, proving dreams are deliberate psychological constructions with hidden powers of the unconscious mind.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 24 min read</span>
+                    <span class="read-time">24 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1081,14 +746,13 @@
                     <span class="article-tag">AI Dream Analysis</span>
                 </div>
             </a>
-
-            <!-- Article 6 - Cornell Lucid Dreaming Depression -->
-            <a href="/blog/posts/lucid-dreaming-depression-cornell.html" class="article-card" data-categories="research,psychology,mental-health" data-tags="lucid-dreaming,depression-treatment,mental-health,shadow-work">
+            <!-- Article 11 - Cornell Lucid Dreaming Depression -->
+            <a href="/blog/posts/lucid-dreaming-depression-cornell.html" class="article-card fade-in" data-categories="research,psychology,mental-health" data-tags="lucid-dreaming,depression-treatment,mental-health,shadow-work">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">Can Lucid Dreaming Actually Treat Depression? Cornell University's Study</h2>
                 <p class="article-excerpt">Cornell University researchers discover lucid dreaming can significantly reduce depression symptoms by allowing conscious modification of dream content during REM sleep, transforming mental health treatment.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 19 min read</span>
+                    <span class="read-time">19 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1097,14 +761,13 @@
                     <span class="article-tag">Shadow Work</span>
                 </div>
             </a>
-
-            <!-- Article 7 - University of Chicago Virtual Reality Dreams -->
-            <a href="/blog/posts/dreams-virtual-reality-chicago.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="virtual-reality-dreams,eeg-patterns,dream-symbols,memory-consolidation">
+            <!-- Article 12 - University of Chicago Virtual Reality Dreams -->
+            <a href="/blog/posts/dreams-virtual-reality-chicago.html" class="article-card fade-in" data-categories="research,neuroscience,psychology" data-tags="virtual-reality-dreams,eeg-patterns,dream-symbols,memory-consolidation">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">University of Chicago Study Reveals Dreams Create Virtual Reality in Your Mind</h2>
                 <p class="article-excerpt">University of Chicago researchers unveil how your brain constructs virtual reality during sleep through distinct EEG patterns, revealing dreams as meaningful symbolic narratives from your unconscious mind.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 17 min read</span>
+                    <span class="read-time">17 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1113,14 +776,13 @@
                     <span class="article-tag">Dream Symbols</span>
                 </div>
             </a>
-
-            <!-- Article 8 -->
-            <a href="/blog/posts/jmu-dream-study.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="rem-sleep,memory,brain-imaging,sleep-science">
+            <!-- Article 13 - JMU -->
+            <a href="/blog/posts/jmu-dream-study.html" class="article-card fade-in" data-categories="research,neuroscience,psychology" data-tags="rem-sleep,memory,brain-imaging,sleep-science">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">Why Do Dreams Feel So Random? James Madison University's Groundbreaking Study Reveals the Hidden Order</h2>
-                <p class="article-excerpt">A revolutionary brain imaging study from JMU reveals why your dreams feel chaotic—and why that chaos is actually your mind's sophisticated attempt to show you something crucial about your life.</p>
+                <p class="article-excerpt">A revolutionary brain imaging study from JMU reveals why your dreams feel chaotic&mdash;and why that chaos is actually your mind's sophisticated attempt to show you something crucial about your life.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 12 min read</span>
+                    <span class="read-time">12 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1129,14 +791,13 @@
                     <span class="article-tag">Brain Imaging</span>
                 </div>
             </a>
-
-            <!-- Article 9 - Northwestern University -->
-            <a href="/blog/posts/dreams-transform-mind-northwestern.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="brain-pattern-reactivation,sleep-cognition,problem-solving,creative-processing">
+            <!-- Article 14 - Northwestern University -->
+            <a href="/blog/posts/dreams-transform-mind-northwestern.html" class="article-card fade-in" data-categories="research,neuroscience,psychology" data-tags="brain-pattern-reactivation,sleep-cognition,problem-solving,creative-processing">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">Northwestern University's Revolutionary Study: How Dreams Transform Your Mind</h2>
                 <p class="article-excerpt">Northwestern University's groundbreaking research reveals how dreams unlock your brain's hidden potential through pattern reactivation during sleep, transforming cognitive abilities and creative processing.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 21 min read</span>
+                    <span class="read-time">21 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1145,14 +806,13 @@
                     <span class="article-tag">Creative Processing</span>
                 </div>
             </a>
-
-            <!-- Article 10 - MIT -->
-            <a href="/blog/posts/dreams-feel-real-mit.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="mit-research,eeg-technology,social-dreams,neural-patterns,amygdala-hippocampus,freudian-analysis,jungian-analysis">
+            <!-- Article 15 - MIT -->
+            <a href="/blog/posts/dreams-feel-real-mit.html" class="article-card fade-in" data-categories="research,neuroscience,psychology" data-tags="mit-research,eeg-technology,social-dreams,neural-patterns,amygdala-hippocampus,freudian-analysis,jungian-analysis">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">Why Do My Dreams Feel So Real? MIT Scientists Finally Decode Hidden Brain Messages</h2>
                 <p class="article-excerpt">MIT scientists decode why dreams feel intensely real using advanced EEG technology, revealing how your amygdala and hippocampus create vivid social dreams that unlock hidden psychological patterns.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 25 min read</span>
+                    <span class="read-time">25 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1161,14 +821,13 @@
                     <span class="article-tag">Neural Patterns</span>
                 </div>
             </a>
-
-            <!-- Article 11 - University of Rome -->
-            <a href="/blog/posts/dreams-neurobiological-rome.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="neurobiological-mechanisms,rem-sleep-research,carl-jung-analysis,freudian-analysis,unconscious-mind-processing,brain-wave-patterns,dream-therapy">
+            <!-- Article 16 - University of Rome -->
+            <a href="/blog/posts/dreams-neurobiological-rome.html" class="article-card fade-in" data-categories="research,neuroscience,psychology" data-tags="neurobiological-mechanisms,rem-sleep-research,carl-jung-analysis,freudian-analysis,unconscious-mind-processing,brain-wave-patterns,dream-therapy">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">Why Do We Dream? University of Rome's Groundbreaking Study Finally Reveals What Your Brain is Really Doing at Night</h2>
                 <p class="article-excerpt">University of Rome's revolutionary study reveals the neurobiological mechanisms of dreaming, proving dreams are purposeful neural processes that bridge conscious and unconscious mind through measurable brain wave changes.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 23 min read</span>
+                    <span class="read-time">23 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1177,14 +836,13 @@
                     <span class="article-tag">Carl Jung Analysis</span>
                 </div>
             </a>
-
-            <!-- Article 12 - Stanford -->
-            <a href="/blog/posts/stanford-strange-dreams-true-self.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="stanford-research,pgo-waves,third-state-consciousness,dream-neuroscience,consciousness-studies,dream-symbolic-language,cognitive-control-dreams">
+            <!-- Article 17 - Stanford -->
+            <a href="/blog/posts/stanford-strange-dreams-true-self.html" class="article-card fade-in" data-categories="research,neuroscience,psychology" data-tags="stanford-research,pgo-waves,third-state-consciousness,dream-neuroscience,consciousness-studies,dream-symbolic-language,cognitive-control-dreams">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">Stanford Study Reveals Why Your Strange Dreams Hold the Key to Understanding Your True Self</h2>
                 <p class="article-excerpt">Stanford's groundbreaking research reveals REM sleep creates a unique "third state" of consciousness where your brain actively synthesizes meaning from unconscious signals through PGO waves, proving dreams reveal your true self.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 20 min read</span>
+                    <span class="read-time">20 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1193,14 +851,13 @@
                     <span class="article-tag">Third State Consciousness</span>
                 </div>
             </a>
-
-            <!-- Article 13 - Harvard -->
-            <a href="/blog/posts/harvard-dreams-revolutionary-discovery.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="harvard-research,rem-sleep-neuronal-activity,division-sleep-medicine,dream-integration,neural-processing-dreams,unconscious-intelligence,dream-pattern-tracking">
+            <!-- Article 18 - Harvard -->
+            <a href="/blog/posts/harvard-dreams-revolutionary-discovery.html" class="article-card fade-in" data-categories="research,neuroscience,psychology" data-tags="harvard-research,rem-sleep-neuronal-activity,division-sleep-medicine,dream-integration,neural-processing-dreams,unconscious-intelligence,dream-pattern-tracking">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">Why Do We Dream? Harvard's Revolutionary Discovery Changes Everything We Thought We Knew</h2>
                 <p class="article-excerpt">Harvard University's Division of Sleep Medicine discovers neuronal discharge rates during REM sleep match waking consciousness intensity, revolutionizing dream analysis and proving dreams are sophisticated neural processing systems.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 22 min read</span>
+                    <span class="read-time">22 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1209,14 +866,13 @@
                     <span class="article-tag">Neural Processing</span>
                 </div>
             </a>
-
-            <!-- Article 14 - PMC Study -->
-            <a href="/blog/posts/pmc-dreams-people-past-hidden-messages.html" class="article-card" data-categories="research,psychology,mental-health" data-tags="pmc-study,dreams-past-people,unconscious-mind-processing,jungian-dream-analysis,structured-dream-analysis,cognitive-behavioral-therapy,dream-symbol-tracking">
+            <!-- Article 19 - PMC Study -->
+            <a href="/blog/posts/pmc-dreams-people-past-hidden-messages.html" class="article-card fade-in" data-categories="research,psychology,mental-health" data-tags="pmc-study,dreams-past-people,unconscious-mind-processing,jungian-dream-analysis,structured-dream-analysis,cognitive-behavioral-therapy,dream-symbol-tracking">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">Why Do We Keep Dreaming About People We Haven't Seen in Years? Revolutionary PMC Study Reveals Hidden Messages</h2>
                 <p class="article-excerpt">Revolutionary 2021 PMC study reveals why dreams about people from your past are structured messages from your unconscious mind, containing symbolic representations of unprocessed emotions and unresolved conflicts.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 24 min read</span>
+                    <span class="read-time">24 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1225,14 +881,13 @@
                     <span class="article-tag">Unconscious Mind</span>
                 </div>
             </a>
-
-            <!-- Article 15 - ResearchGate -->
-            <a href="/blog/posts/researchgate-dreams-healing-therapy.html" class="article-card" data-categories="research,psychology,mental-health" data-tags="researchgate-study,lucid-dreaming-depression,dream-healing-therapy,neuroplasticity-dreams,unconscious-healing,transformative-dream-work,shadow-work-dreams">
+            <!-- Article 20 - ResearchGate -->
+            <a href="/blog/posts/researchgate-dreams-healing-therapy.html" class="article-card fade-in" data-categories="research,psychology,mental-health" data-tags="researchgate-study,lucid-dreaming-depression,dream-healing-therapy,neuroplasticity-dreams,unconscious-healing,transformative-dream-work,shadow-work-dreams">
                 <div class="article-date">January 2025</div>
-                <h2 class="article-title">ResearchGate Scientists Answer: Why Do My Dreams Feel More Real Than My Waking Life—And Could They Heal What Therapy Can't?</h2>
+                <h2 class="article-title">ResearchGate Scientists Answer: Why Do My Dreams Feel More Real Than My Waking Life&mdash;And Could They Heal What Therapy Can't?</h2>
                 <p class="article-excerpt">Groundbreaking 2021 ResearchGate study reveals how lucid dreaming and dream work activate neuroplasticity to treat clinical depression, proving dreams offer direct pathway to unconscious healing and transformation.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 21 min read</span>
+                    <span class="read-time">21 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1241,14 +896,13 @@
                     <span class="article-tag">Dream Healing</span>
                 </div>
             </a>
-
-            <!-- Article 16 - MIT Dream Language -->
-            <a href="/blog/posts/mit-dreams-secret-language-self-discovery.html" class="article-card" data-categories="research,neuroscience,psychology" data-tags="mit-research,dream-research-laboratory,recurring-dream-symbols,psychological-patterns,dream-interpretation,secret-language-dreams,self-discovery-dreams">
+            <!-- Article 21 - MIT Dream Language -->
+            <a href="/blog/posts/mit-dreams-secret-language-self-discovery.html" class="article-card fade-in" data-categories="research,neuroscience,psychology" data-tags="mit-research,dream-research-laboratory,recurring-dream-symbols,psychological-patterns,dream-interpretation,secret-language-dreams,self-discovery-dreams">
                 <div class="article-date">January 2025</div>
                 <h2 class="article-title">What Do Your Dreams Really Mean? MIT Study Reveals Dreams Are Your Mind's Secret Language to Self-Discovery</h2>
                 <p class="article-excerpt">Groundbreaking MIT Dream Research Laboratory study discovers that 87% of recurring dream symbols directly correlate with unresolved psychological patterns, revealing dreams as sophisticated messages from your unconscious mind.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 23 min read</span>
+                    <span class="read-time">23 min read</span>
                     <span class="read-more">Read Article</span>
                 </div>
                 <div class="article-tags">
@@ -1257,14 +911,13 @@
                     <span class="article-tag">Self-Discovery</span>
                 </div>
             </a>
-
-            <!-- Coming Soon Articles -->
-            <div class="article-card" style="opacity: 0.3; cursor: default; pointer-events: none;" data-categories="research,neuroscience" data-tags="lucid-dreaming">
+            <!-- Coming Soon -->
+            <div class="article-card coming-soon fade-in" data-categories="research,neuroscience" data-tags="lucid-dreaming">
                 <div class="article-date">Coming Soon</div>
                 <h2 class="article-title">The Neuroscience of Lucid Dreaming: Stanford's Latest Findings</h2>
                 <p class="article-excerpt">How conscious awareness during REM sleep opens new frontiers in understanding the mind-brain connection.</p>
                 <div class="article-meta">
-                    <span class="read-time">⏱ 10 min read</span>
+                    <span class="read-time">10 min read</span>
                 </div>
                 <div class="article-tags">
                     <span class="article-tag">Research</span>
@@ -1275,58 +928,31 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="footer-links">
-            <a href="/cgu.html">Terms</a>
-            <a href="/privacy.html">Privacy</a>
-        </div>
-        <div class="footer-copyright">
-            © 2025 Onera. All rights reserved.
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/legal.html">Legal</a>
+                <a href="/cgu.html">Terms</a>
+                <a href="/privacy.html">Privacy</a>
+                <a href="/blog">Blog</a>
+                <a href="/founders-letter.html">Founder's Letter</a>
+            </div>
+            <div class="footer-copy">&copy; 2026 Onera. All rights reserved.</div>
         </div>
     </footer>
 
     <script>
-        // Elegant Particle System
-        class ParticleSystem {
-            constructor() {
-                this.container = document.getElementById('particles');
-                this.particleCount = 20;
-                this.init();
-            }
-
-            createParticle() {
-                const particle = document.createElement('div');
-                particle.className = 'particle particle-float';
-                
-                const size = Math.random() * 3 + 1;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.animationDelay = `${Math.random() * 20}s`;
-                particle.style.animationDuration = `${20 + Math.random() * 10}s`;
-                
-                this.container.appendChild(particle);
-                
-                setTimeout(() => {
-                    if (particle.parentNode) {
-                        particle.remove();
-                    }
-                }, 30000);
-            }
-
-            init() {
-                for (let i = 0; i < this.particleCount; i++) {
-                    setTimeout(() => this.createParticle(), i * 200);
+        // Fade in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
-                
-                setInterval(() => this.createParticle(), 1500);
-            }
-        }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-        // Initialize on DOM load
-        document.addEventListener('DOMContentLoaded', () => {
-            new ParticleSystem();
-        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
         // Filtering System
         let activeCategories = new Set();
@@ -1357,22 +983,19 @@
         }
 
         function filterArticles() {
-            const articles = document.querySelectorAll('.article-card');
+            const articles = document.querySelectorAll('#articlesGrid .article-card');
             const noResults = document.getElementById('noResults');
             let visibleCount = 0;
 
             articles.forEach(article => {
-                // Skip coming soon articles
-                if (article.style.pointerEvents === 'none') {
-                    return;
-                }
+                if (article.classList.contains('coming-soon')) return;
 
                 const articleCategories = article.dataset.categories ? article.dataset.categories.split(',') : [];
                 const articleTags = article.dataset.tags ? article.dataset.tags.split(',') : [];
 
-                let categoryMatch = activeCategories.size === 0 || 
+                let categoryMatch = activeCategories.size === 0 ||
                     [...activeCategories].some(cat => articleCategories.includes(cat));
-                let tagMatch = activeTags.size === 0 || 
+                let tagMatch = activeTags.size === 0 ||
                     [...activeTags].some(tag => articleTags.includes(tag));
 
                 if (categoryMatch && tagMatch) {
@@ -1383,7 +1006,6 @@
                 }
             });
 
-            // Show/hide no results message
             if (visibleCount === 0 && (activeCategories.size > 0 || activeTags.size > 0)) {
                 noResults.classList.add('visible');
             } else {
@@ -1395,7 +1017,7 @@
             const tagFilters = document.getElementById('tagFilters');
             const expandBtn = document.getElementById('expandTagsBtn');
             const gradient = document.querySelector('.tags-gradient');
-            
+
             if (tagFilters.classList.contains('expanded')) {
                 tagFilters.classList.remove('expanded');
                 expandBtn.textContent = 'See All Tags';
@@ -1408,23 +1030,19 @@
         }
 
         function resetFilters() {
-            // Clear all active filters
             activeCategories.clear();
             activeTags.clear();
-            
-            // Remove active class from all filter buttons
+
             document.querySelectorAll('.filter-category, .filter-tag').forEach(button => {
                 button.classList.remove('active');
             });
-            
-            // Show all articles
-            document.querySelectorAll('.article-card').forEach(article => {
-                if (article.style.pointerEvents !== 'none') {
+
+            document.querySelectorAll('#articlesGrid .article-card').forEach(article => {
+                if (!article.classList.contains('coming-soon')) {
                     article.classList.remove('hidden');
                 }
             });
-            
-            // Hide no results message
+
             document.getElementById('noResults').classList.remove('visible');
         }
     </script>
