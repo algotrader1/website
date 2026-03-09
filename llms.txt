@@ -1,0 +1,24 @@
+# ONERA — Dream Integration App
+> Onera decodes your dreams each morning, maps the hidden emotion to a body location, and guides you through a 15-minute somatic release exercise. Dream Symbol → Hidden Emotion → Body Location → Somatic Release.
+
+## About
+- App: iOS dream analysis + somatic release
+- Website: https://dreaminsight.app
+- App Store: https://apps.apple.com/us/app/onera-dream-integration/id6751126653
+
+## Key Content
+- Blog: https://dreaminsight.app/blog/
+- Dream Meanings: 265+ dream symbol articles at /blog/posts/{symbol}-dream-meaning.html
+- Pain-Point Articles: 35 deep psychology articles at /blog/posts/
+- Founder's Letter: https://dreaminsight.app/founders-letter.html
+
+## Topics We Cover
+- Dream interpretation and symbolism
+- Somatic psychology and body-based healing
+- Shadow work and Jungian analysis
+- Nervous system regulation
+- Generational trauma and inherited patterns
+- The knowing-doing gap (why understanding isn't enough)
+
+## Unique Framework
+The Dream-to-Body Bridge: Dreams reveal subconscious patterns, mapped to body locations, released through somatic exercises. Complementary to therapy, not a replacement.
