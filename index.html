@@ -6,7 +6,7 @@
     <meta name="facebook-domain-verification" content="12mhsb19sbd3npno7z8spcfdwfv66z" />
     <meta name="tiktok-developers-site-verification" content="iNCTuRxPYIvTgJtzYLFLAmrYMiiDTuHv" />
     <meta name="description" content="Onera decodes your dreams, finds where emotion is stored in your body, and guides you through a 15-minute somatic release. The Dream-to-Body Bridge.">
-    <meta name="keywords" content="dream analysis app, somatic release, dream interpretation, emotional release, body-stored trauma, recurring nightmares, dream decoder">
+    <meta name="keywords" content="dream analysis app, somatic release, dream interpretation, emotional release, body-stored trauma, recurring nightmares, dream decoder, nervous system regulation">
     <meta property="og:title" content="Onera — The Dream-to-Body Bridge">
     <meta property="og:description" content="Your dreams know what's stuck. Onera finds where it lives in your body — and releases it in 15 minutes.">
     <meta property="og:type" content="website">
@@ -31,7 +31,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #f8f6f3;
@@ -44,12 +44,15 @@
             --accent: #c4956a;
             --accent-soft: #d4a87a;
             --accent-bg: rgba(196, 149, 106, 0.08);
+            --accent-glow: rgba(196, 149, 106, 0.15);
             --line: rgba(0,0,0,0.06);
             --line-strong: rgba(0,0,0,0.1);
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
             --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
             --shadow-lg: 0 8px 40px rgba(0,0,0,0.08);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.1);
             --radius: 16px;
+            --radius-lg: 24px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -68,17 +71,17 @@
         /* Nav */
         nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            padding: 1.25rem 2rem;
+            padding: 1rem 2rem;
             display: flex; justify-content: space-between; align-items: center;
-            background: rgba(248, 246, 243, 0.85);
-            backdrop-filter: blur(20px);
+            background: rgba(248, 246, 243, 0.8);
+            backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
             border-bottom: 1px solid var(--line);
         }
         .nav-logo {
             font-size: 1.125rem; font-weight: 600; letter-spacing: 0.08em;
             color: var(--fg); text-decoration: none; text-transform: uppercase;
         }
-        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
         .nav-links a {
             color: var(--fg-2); text-decoration: none; font-size: 0.875rem;
             font-weight: 400; transition: color 0.3s;
@@ -86,298 +89,545 @@
         .nav-links a:hover { color: var(--fg); }
         .nav-cta {
             background: var(--fg) !important; color: var(--bg) !important;
-            padding: 0.5rem 1.25rem !important; border-radius: 50px;
-            font-weight: 500 !important; transition: opacity 0.3s !important;
+            padding: 0.5rem 1.5rem !important; border-radius: 50px;
+            font-weight: 500 !important; transition: all 0.3s !important;
         }
-        .nav-cta:hover { opacity: 0.85; }
+        .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
 
         /* Container */
-        .container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
 
-        /* Hero */
+        /* ===================== HERO ===================== */
         .hero {
-            padding: 10rem 0 6rem; text-align: center;
+            padding: 10rem 0 5rem;
+            text-align: center;
             background: linear-gradient(180deg, var(--bg) 0%, var(--bg-warm) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
         }
         .hero-badge {
-            display: inline-block; padding: 0.4rem 1rem; border-radius: 50px;
-            background: var(--accent-bg); color: var(--accent);
-            font-size: 0.8rem; font-weight: 500; letter-spacing: 0.03em;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.5rem 1.25rem; border-radius: 50px;
+            background: var(--bg-card);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow-sm);
+            color: var(--fg-2);
+            font-size: 0.8rem; font-weight: 500; letter-spacing: 0.02em;
             margin-bottom: 2rem;
         }
+        .hero-badge .badge-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--accent);
+        }
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 600;
-            line-height: 1.15; letter-spacing: -0.02em;
-            margin-bottom: 1.5rem; max-width: 700px; margin-left: auto; margin-right: auto;
+            font-size: clamp(2.75rem, 6.5vw, 4.25rem); font-weight: 700;
+            line-height: 1.1; letter-spacing: -0.03em;
+            margin-bottom: 1.5rem; max-width: 750px; margin-left: auto; margin-right: auto;
+            position: relative;
         }
         .hero h1 span { color: var(--accent); }
-        .hero p {
+        .hero-sub-text {
             font-size: clamp(1.05rem, 2vw, 1.2rem); color: var(--fg-2);
-            max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.7; font-weight: 300;
+            max-width: 580px; margin: 0 auto 2.5rem; line-height: 1.7; font-weight: 300;
         }
-        .hero-cta {
+        .hero-buttons {
+            display: flex; gap: 1rem; justify-content: center; align-items: center;
+            flex-wrap: wrap; margin-bottom: 2rem;
+        }
+        .btn-primary {
             display: inline-flex; align-items: center; gap: 0.5rem;
             background: var(--fg); color: var(--bg); padding: 1rem 2.5rem;
             border-radius: 50px; text-decoration: none; font-weight: 500;
             font-size: 1rem; transition: all 0.3s; border: none; cursor: pointer;
         }
-        .hero-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-        .hero-cta svg { width: 18px; height: 18px; }
-        .hero-sub {
-            margin-top: 1rem; font-size: 0.85rem; color: var(--fg-muted);
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-xl); }
+        .btn-primary svg { width: 18px; height: 18px; }
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: transparent; color: var(--fg); padding: 1rem 2rem;
+            border-radius: 50px; text-decoration: none; font-weight: 500;
+            font-size: 1rem; transition: all 0.3s; border: 1px solid var(--line-strong);
+            cursor: pointer;
+        }
+        .btn-secondary:hover { border-color: var(--fg); background: var(--bg-card); }
+        .hero-social-proof {
+            display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+        }
+        .hero-stars { display: flex; gap: 2px; color: var(--accent); font-size: 1rem; }
+        .hero-proof-text { font-size: 0.85rem; color: var(--fg-3); font-weight: 400; }
+        .hero-trial {
+            margin-top: 0.75rem; font-size: 0.85rem; color: var(--fg-muted);
         }
 
-        /* Mechanism strip */
-        .mechanism {
-            padding: 4rem 0; background: var(--bg-warm);
-            border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+        /* ===================== CREDIBILITY BAR ===================== */
+        .credibility {
+            padding: 3rem 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            background: var(--bg);
         }
-        .mechanism-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
-            text-align: center;
+        .credibility-label {
+            text-align: center; font-size: 0.75rem; color: var(--fg-muted);
+            text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem;
         }
-        .mechanism-step { position: relative; }
-        .mechanism-num {
-            width: 40px; height: 40px; border-radius: 50%;
-            background: var(--accent-bg); color: var(--accent);
-            display: inline-flex; align-items: center; justify-content: center;
-            font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;
+        .credibility-logos {
+            display: flex; justify-content: center; align-items: center;
+            gap: 3rem; flex-wrap: wrap;
         }
-        .mechanism-step h3 {
-            font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem;
+        .credibility-item {
+            font-size: 0.85rem; color: var(--fg-3); font-weight: 500;
+            display: flex; align-items: center; gap: 0.5rem;
+            white-space: nowrap;
         }
-        .mechanism-step p {
-            font-size: 0.875rem; color: var(--fg-3); line-height: 1.5;
-        }
-        .mechanism-arrow {
-            position: absolute; right: -1.25rem; top: 30px;
-            color: var(--fg-muted); font-size: 1rem;
+        .credibility-item .cred-icon {
+            width: 20px; height: 20px; opacity: 0.5;
         }
 
-        /* Section */
-        .section {
-            padding: 6rem 0;
-        }
+        /* ===================== SECTION BASE ===================== */
+        .section { padding: 6rem 0; }
         .section-label {
-            font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
-            text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
-            text-align: center;
+            display: inline-block; padding: 0.4rem 1rem; border-radius: 50px;
+            background: var(--bg-card); border: 1px solid var(--line);
+            font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em;
+            text-transform: uppercase; color: var(--fg-3); margin-bottom: 1.5rem;
         }
+        .section-label-center { text-align: center; display: block; }
+        .section-label-center .section-label { display: inline-block; }
         .section-title {
-            font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 600;
-            text-align: center; margin-bottom: 1rem; letter-spacing: -0.01em;
-            line-height: 1.2;
+            font-size: clamp(1.85rem, 4vw, 2.75rem); font-weight: 700;
+            text-align: center; margin-bottom: 1rem; letter-spacing: -0.02em;
+            line-height: 1.15;
         }
         .section-sub {
             font-size: 1.05rem; color: var(--fg-2); text-align: center;
-            max-width: 600px; margin: 0 auto 3rem; line-height: 1.7; font-weight: 300;
+            max-width: 620px; margin: 0 auto 3.5rem; line-height: 1.7; font-weight: 300;
         }
 
-        /* Problem section */
+        /* ===================== PROBLEM SECTION ===================== */
         .problem { background: var(--fg); color: var(--bg); }
-        .problem .section-label { color: var(--accent-soft); }
+        .problem .section-label {
+            background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.1);
+            color: var(--accent-soft);
+        }
         .problem .section-title { color: #f0ede8; }
-        .problem .section-sub { color: rgba(240, 237, 232, 0.65); }
+        .problem .section-sub { color: rgba(240, 237, 232, 0.6); }
         .problem-cards {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem; margin-top: 2rem;
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
         }
         .problem-card {
             padding: 2rem; border-radius: var(--radius);
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.3s;
+        }
+        .problem-card:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(255,255,255,0.12);
+            transform: translateY(-3px);
+        }
+        .problem-card-icon {
+            width: 44px; height: 44px; border-radius: 12px;
+            background: rgba(212, 168, 122, 0.15); color: var(--accent-soft);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.25rem; font-size: 1.2rem;
         }
         .problem-card h3 {
-            font-size: 1.05rem; font-weight: 500; margin-bottom: 0.75rem;
+            font-size: 1.05rem; font-weight: 600; margin-bottom: 0.75rem;
             color: #f0ede8;
         }
         .problem-card p {
-            font-size: 0.9rem; color: rgba(240,237,232,0.55); line-height: 1.6;
+            font-size: 0.9rem; color: rgba(240,237,232,0.5); line-height: 1.65;
+        }
+        .problem-card .quote {
+            margin-top: 1rem; padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-style: italic; font-size: 0.85rem;
+            color: rgba(240,237,232,0.4);
+        }
+        .problem-cta {
+            text-align: center; margin-top: 3rem;
+        }
+        .problem-cta-text {
+            font-size: 1.1rem; color: var(--accent-soft); font-weight: 400;
+            line-height: 1.7;
         }
 
-        /* Features */
-        .features-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+        /* ===================== BENEFITS BENTO ===================== */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            gap: 1.25rem;
         }
-        .feature-card {
-            padding: 2rem; border-radius: var(--radius);
+        .benefit-card {
+            padding: 2rem; border-radius: var(--radius-lg);
             background: var(--bg-card); border: 1px solid var(--line);
-            transition: all 0.3s;
+            transition: all 0.4s; position: relative; overflow: hidden;
         }
-        .feature-card:hover {
-            border-color: var(--line-strong); box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
+        .benefit-card:hover {
+            border-color: var(--line-strong); box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
         }
-        .feature-icon {
-            width: 40px; height: 40px; border-radius: 10px;
+        .benefit-card.large {
+            grid-column: span 2;
+            padding: 2.5rem;
+        }
+        .benefit-icon {
+            width: 44px; height: 44px; border-radius: 12px;
             background: var(--accent-bg); display: flex; align-items: center;
             justify-content: center; margin-bottom: 1.25rem;
-            font-size: 1.1rem;
+            font-size: 1.15rem; color: var(--accent);
         }
-        .feature-card h3 {
-            font-size: 1.05rem; font-weight: 500; margin-bottom: 0.5rem;
+        .benefit-card h3 {
+            font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;
         }
-        .feature-card p {
-            font-size: 0.9rem; color: var(--fg-2); line-height: 1.6;
+        .benefit-card p {
+            font-size: 0.9rem; color: var(--fg-2); line-height: 1.65;
         }
 
-        /* Comparison */
-        .comparison { background: var(--bg-warm); }
+        /* ===================== HOW IT WORKS ===================== */
+        .how-it-works { background: var(--bg-warm); }
+        .steps-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+            position: relative;
+        }
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: calc(16.66% + 20px);
+            right: calc(16.66% + 20px);
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-soft), var(--accent));
+            opacity: 0.3;
+        }
+        .step-card { text-align: center; position: relative; }
+        .step-num {
+            width: 52px; height: 52px; border-radius: 50%;
+            background: var(--bg-card); border: 2px solid var(--accent);
+            color: var(--accent);
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 1rem; font-weight: 700; margin-bottom: 1.5rem;
+            position: relative; z-index: 1;
+            box-shadow: 0 0 0 8px var(--bg-warm);
+        }
+        .step-card h3 {
+            font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem;
+        }
+        .step-card p {
+            font-size: 0.9rem; color: var(--fg-2); line-height: 1.6;
+            max-width: 280px; margin: 0 auto;
+        }
+
+        /* ===================== COMPARISON ===================== */
+        .comparison { background: var(--bg); }
         .comparison-table {
-            max-width: 700px; margin: 0 auto;
-            border-radius: var(--radius); overflow: hidden;
+            max-width: 720px; margin: 0 auto;
+            border-radius: var(--radius-lg); overflow: hidden;
             background: var(--bg-card); border: 1px solid var(--line);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-md);
         }
         .comparison-row {
-            display: grid; grid-template-columns: 1fr auto auto;
-            padding: 1rem 1.5rem; border-bottom: 1px solid var(--line);
-            align-items: center; gap: 1rem;
+            display: grid; grid-template-columns: 1fr 100px 100px;
+            padding: 1rem 1.75rem; border-bottom: 1px solid var(--line);
+            align-items: center;
         }
         .comparison-row:last-child { border-bottom: none; }
         .comparison-row.header {
-            background: var(--bg-warm); font-weight: 500; font-size: 0.85rem;
+            background: var(--bg-warm); font-weight: 600; font-size: 0.8rem;
             color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.05em;
+            padding: 0.85rem 1.75rem;
         }
-        .comparison-row .label { font-size: 0.95rem; }
+        .comparison-row .label { font-size: 0.95rem; font-weight: 400; }
         .comparison-row .check {
-            width: 28px; height: 28px; border-radius: 50%; display: flex;
-            align-items: center; justify-content: center; font-size: 0.75rem;
+            width: 30px; height: 30px; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; font-size: 0.8rem;
+            margin: 0 auto;
         }
         .check-yes { background: rgba(76, 175, 80, 0.1); color: #4caf50; }
         .check-no { background: rgba(0,0,0,0.04); color: var(--fg-muted); }
 
-        /* Science */
+        /* ===================== SCIENCE ===================== */
         .science-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
-            text-align: center;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
         }
         .science-card {
-            padding: 2rem; border-radius: var(--radius);
+            padding: 2rem; border-radius: var(--radius-lg);
             background: var(--bg-card); border: 1px solid var(--line);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .science-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+        .science-avatar {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: var(--accent-bg); display: flex; align-items: center;
+            justify-content: center; margin: 0 auto 1rem;
+            font-size: 1.5rem;
         }
         .science-name {
-            font-size: 0.8rem; font-weight: 500; color: var(--accent);
-            letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.75rem;
+            font-size: 0.75rem; font-weight: 600; color: var(--accent);
+            letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem;
         }
         .science-card h3 {
-            font-size: 1.1rem; font-weight: 500; margin-bottom: 0.5rem;
+            font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem;
         }
         .science-card p {
-            font-size: 0.875rem; color: var(--fg-2); line-height: 1.5;
+            font-size: 0.875rem; color: var(--fg-2); line-height: 1.6;
         }
 
-        /* Testimonials */
+        /* ===================== TESTIMONIALS ===================== */
         .testimonials { background: var(--bg-warm); }
         .testimonial-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: grid; grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
         }
         .testimonial-card {
-            padding: 2rem; border-radius: var(--radius);
+            padding: 2rem; border-radius: var(--radius-lg);
             background: var(--bg-card); border: 1px solid var(--line);
+            transition: all 0.3s;
+        }
+        .testimonial-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+        .testimonial-stars {
+            color: var(--accent); font-size: 0.85rem; margin-bottom: 1rem;
+            letter-spacing: 2px;
         }
         .testimonial-card p {
-            font-size: 1rem; line-height: 1.7; font-style: italic;
-            color: var(--fg); margin-bottom: 1rem;
+            font-size: 0.95rem; line-height: 1.7; font-style: italic;
+            color: var(--fg); margin-bottom: 1.25rem;
         }
-        .testimonial-card .author {
-            font-size: 0.85rem; color: var(--fg-3); font-style: normal;
+        .testimonial-author {
+            display: flex; align-items: center; gap: 0.75rem;
+        }
+        .testimonial-avatar {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: var(--accent-bg); display: flex; align-items: center;
+            justify-content: center; font-size: 0.75rem; color: var(--accent);
+            font-weight: 600;
+        }
+        .testimonial-info .name {
+            font-size: 0.85rem; font-weight: 500; color: var(--fg);
+        }
+        .testimonial-info .role {
+            font-size: 0.75rem; color: var(--fg-3);
         }
 
-        /* Pricing */
+        /* ===================== PRICING ===================== */
         .pricing-box {
-            max-width: 480px; margin: 0 auto; padding: 3rem;
-            border-radius: var(--radius); background: var(--bg-card);
-            border: 1px solid var(--line); box-shadow: var(--shadow-md);
-            text-align: center;
+            max-width: 500px; margin: 0 auto; padding: 3rem;
+            border-radius: var(--radius-lg); background: var(--bg-card);
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 0 4px var(--accent-bg), var(--shadow-lg);
+            text-align: center; position: relative;
+        }
+        .pricing-badge {
+            position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+            background: var(--accent); color: white; padding: 0.35rem 1.25rem;
+            border-radius: 50px; font-size: 0.75rem; font-weight: 600;
+            letter-spacing: 0.03em; white-space: nowrap;
         }
         .pricing-box .price {
-            font-size: 2.5rem; font-weight: 600; margin-bottom: 0.25rem;
+            font-size: 3rem; font-weight: 700; margin-bottom: 0.25rem;
+            letter-spacing: -0.02em;
+        }
+        .pricing-box .price-unit {
+            font-size: 1rem; font-weight: 300; color: var(--fg-3);
         }
         .pricing-box .price-sub {
-            font-size: 0.9rem; color: var(--fg-3); margin-bottom: 1.5rem;
+            font-size: 0.9rem; color: var(--fg-3); margin-bottom: 2rem;
         }
         .pricing-box ul {
             list-style: none; text-align: left; margin-bottom: 2rem;
         }
         .pricing-box ul li {
-            padding: 0.5rem 0; font-size: 0.95rem; color: var(--fg-2);
+            padding: 0.6rem 0; font-size: 0.95rem; color: var(--fg-2);
             display: flex; align-items: center; gap: 0.75rem;
         }
         .pricing-box ul li::before {
-            content: ""; width: 6px; height: 6px; border-radius: 50%;
-            background: var(--accent); flex-shrink: 0;
+            content: "\2713"; width: 22px; height: 22px; border-radius: 50%;
+            background: rgba(76, 175, 80, 0.1); color: #4caf50;
+            flex-shrink: 0; display: flex; align-items: center;
+            justify-content: center; font-size: 0.7rem;
         }
         .pricing-cta {
-            display: block; width: 100%; padding: 1rem;
+            display: block; width: 100%; padding: 1.1rem;
             background: var(--fg); color: var(--bg); border: none;
-            border-radius: 50px; font-size: 1rem; font-weight: 500;
+            border-radius: 50px; font-size: 1rem; font-weight: 600;
             cursor: pointer; text-decoration: none; text-align: center;
-            transition: opacity 0.3s;
+            transition: all 0.3s;
         }
-        .pricing-cta:hover { opacity: 0.85; }
+        .pricing-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .pricing-guarantee {
+            margin-top: 1rem; font-size: 0.8rem; color: var(--fg-muted);
+        }
 
-        /* Final CTA */
-        .final-cta {
+        /* ===================== FAQ ===================== */
+        .faq { background: var(--bg-warm); }
+        .faq-grid {
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem;
+            align-items: start;
+        }
+        .faq-left {}
+        .faq-left h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700;
+            line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1rem;
+        }
+        .faq-left p {
+            font-size: 1rem; color: var(--fg-2); line-height: 1.7;
+        }
+        .faq-items { display: flex; flex-direction: column; gap: 0.75rem; }
+        .faq-item {
+            background: var(--bg-card); border: 1px solid var(--line);
+            border-radius: var(--radius); overflow: hidden;
+            transition: all 0.3s;
+        }
+        .faq-item:hover { border-color: var(--line-strong); }
+        .faq-question {
+            padding: 1.25rem 1.5rem; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            font-weight: 500; font-size: 0.95rem;
+            user-select: none;
+        }
+        .faq-toggle {
+            width: 28px; height: 28px; border-radius: 50%;
+            background: var(--bg-warm); display: flex; align-items: center;
+            justify-content: center; font-size: 1.1rem; color: var(--fg-3);
+            transition: all 0.3s; flex-shrink: 0;
+        }
+        .faq-item.active .faq-toggle { transform: rotate(45deg); background: var(--accent-bg); color: var(--accent); }
+        .faq-answer {
+            max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+        .faq-item.active .faq-answer { max-height: 300px; }
+        .faq-answer-inner {
+            padding: 0 1.5rem 1.25rem;
+            font-size: 0.9rem; color: var(--fg-2); line-height: 1.7;
+        }
+
+        /* ===================== FINAL CTA ===================== */
+        .final-cta-section {
             padding: 6rem 0; text-align: center;
-            background: linear-gradient(180deg, var(--bg-warm) 0%, var(--bg) 100%);
         }
-        .final-cta h2 {
-            font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 600;
-            margin-bottom: 1rem; letter-spacing: -0.01em;
+        .final-cta-box {
+            max-width: 720px; margin: 0 auto;
+            padding: 4rem 3rem; border-radius: var(--radius-lg);
+            background: var(--fg); color: var(--bg);
+            position: relative; overflow: hidden;
         }
-        .final-cta p {
-            font-size: 1.1rem; color: var(--fg-2); max-width: 500px;
-            margin: 0 auto 2.5rem; line-height: 1.7; font-weight: 300;
+        .final-cta-box::before {
+            content: '';
+            position: absolute; top: -100px; right: -100px;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
         }
+        .final-cta-box h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700;
+            margin-bottom: 1rem; letter-spacing: -0.02em;
+            line-height: 1.2; position: relative;
+        }
+        .final-cta-box p {
+            font-size: 1.05rem; color: rgba(240,237,232,0.6);
+            max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7;
+            font-weight: 300; position: relative;
+        }
+        .final-cta-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--bg); color: var(--fg); padding: 1rem 2.5rem;
+            border-radius: 50px; text-decoration: none; font-weight: 600;
+            font-size: 1rem; transition: all 0.3s; position: relative;
+        }
+        .final-cta-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-xl); }
+        .final-cta-btn svg { width: 18px; height: 18px; }
 
         /* App Store badge */
         .app-store-badge { height: 52px; transition: transform 0.3s; }
         .app-store-badge:hover { transform: translateY(-2px); }
 
-        /* Footer */
+        /* ===================== FOOTER ===================== */
         footer {
-            padding: 3rem 0 2rem; text-align: center;
+            padding: 4rem 0 2rem;
             border-top: 1px solid var(--line);
         }
-        .footer-links { margin-bottom: 1.5rem; }
-        .footer-links a {
-            color: var(--fg-3); text-decoration: none; margin: 0 1.25rem;
-            font-size: 0.85rem; transition: color 0.3s;
+        .footer-grid {
+            display: grid; grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 3rem; margin-bottom: 3rem;
         }
-        .footer-links a:hover { color: var(--fg); }
+        .footer-brand .nav-logo { display: inline-block; margin-bottom: 0.75rem; }
+        .footer-brand p { font-size: 0.85rem; color: var(--fg-3); line-height: 1.6; max-width: 280px; }
+        .footer-col h4 {
+            font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.08em; color: var(--fg-3); margin-bottom: 1rem;
+        }
+        .footer-col a {
+            display: block; color: var(--fg-2); text-decoration: none;
+            font-size: 0.9rem; margin-bottom: 0.6rem; transition: color 0.3s;
+        }
+        .footer-col a:hover { color: var(--fg); }
+        .footer-bottom {
+            padding-top: 1.5rem; border-top: 1px solid var(--line);
+            display: flex; justify-content: space-between; align-items: center;
+        }
         .footer-copy {
-            font-size: 0.8rem; color: var(--fg-muted); margin-bottom: 0.5rem;
+            font-size: 0.8rem; color: var(--fg-muted);
+        }
+        .footer-legal {
+            font-size: 0.75rem; color: var(--fg-muted); opacity: 0.6;
         }
 
-        /* Responsive */
+        /* ===================== RESPONSIVE ===================== */
         @media (max-width: 768px) {
-            nav { padding: 1rem 1.25rem; }
+            nav { padding: 0.85rem 1.25rem; }
             .nav-links a:not(.nav-cta) { display: none; }
             .container { padding: 0 1.25rem; }
-            .hero { padding: 7rem 0 4rem; }
-            .mechanism-grid {
-                grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
-            }
-            .mechanism-arrow { display: none; }
+            .hero { padding: 7rem 0 3.5rem; }
+            .hero h1 { font-size: clamp(2rem, 8vw, 2.75rem); }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .credibility-logos { gap: 1.5rem; }
+            .problem-cards { grid-template-columns: 1fr; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .benefit-card.large { grid-column: span 1; }
+            .steps-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .steps-grid::before { display: none; }
             .science-grid { grid-template-columns: 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
             .comparison-row { grid-template-columns: 1fr auto auto; padding: 0.75rem 1rem; }
+            .faq-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .final-cta-box { padding: 3rem 2rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
             .section { padding: 4rem 0; }
-            .footer-links a { margin: 0 0.75rem; }
         }
 
         @media (max-width: 480px) {
-            .mechanism-grid { grid-template-columns: 1fr; }
+            .credibility-logos { flex-direction: column; gap: 1rem; }
         }
 
         /* Fade in on scroll */
         .fade-in {
-            opacity: 0; transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            opacity: 0; transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
         }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* CTA button pulse */
+        @keyframes subtlePulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(196, 149, 106, 0); }
+            50% { box-shadow: 0 0 0 12px rgba(196, 149, 106, 0.08); }
+        }
+        .btn-primary { animation: subtlePulse 3s ease-in-out infinite; }
+        .btn-primary:hover { animation: none; }
     </style>
 </head>
 <body>
@@ -385,132 +635,167 @@
     <nav>
         <a href="/" class="nav-logo">Onera</a>
         <div class="nav-links">
+            <a href="#how-it-works">How it works</a>
             <a href="/blog">Blog</a>
             <a href="/founders-letter.html">Letter</a>
-            <a href="https://apps.apple.com/app/onera/id6751126653" target="_blank" class="nav-cta">Download</a>
+            <a href="https://apps.apple.com/app/onera/id6751126653" target="_blank" class="nav-cta">Download Free</a>
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- ==================== HERO ==================== -->
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">The Dream-to-Body Bridge</div>
-            <h1>Your dreams know what's stuck. <span>Release it in 15 minutes.</span></h1>
-            <p>Onera decodes your dreams, finds where emotion is stored in your body, and guides you through a somatic release. Every morning. On your phone.</p>
-            <a href="https://apps.apple.com/app/onera/id6751126653" target="_blank" class="hero-cta">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                Download Free
-            </a>
-            <p class="hero-sub">7 days free. No credit card. Cancel anytime.</p>
+            <div class="hero-badge fade-in">
+                <span class="badge-dot"></span>
+                The Dream-to-Body Bridge
+            </div>
+            <h1 class="fade-in">Your dreams know what therapy <span>couldn't reach.</span></h1>
+            <p class="hero-sub-text fade-in">Onera decodes your dreams, maps the emotion to where it's stored in your body, and guides you through a somatic release. Every morning. 15 minutes.</p>
+            <div class="hero-buttons fade-in">
+                <a href="https://apps.apple.com/app/onera/id6751126653" target="_blank" class="btn-primary">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    Download Free
+                </a>
+                <a href="#how-it-works" class="btn-secondary">See how it works</a>
+            </div>
+            <div class="hero-social-proof fade-in">
+                <div class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <span class="hero-proof-text">Trusted by dreamers worldwide</span>
+            </div>
+            <p class="hero-trial fade-in">7 days free &middot; No credit card &middot; Cancel anytime</p>
         </div>
     </section>
 
-    <!-- Mechanism -->
-    <section class="mechanism">
+    <!-- ==================== CREDIBILITY BAR ==================== -->
+    <section class="credibility fade-in">
         <div class="container">
-            <div class="mechanism-grid">
-                <div class="mechanism-step">
-                    <div class="mechanism-num">1</div>
-                    <h3>Record your dream</h3>
-                    <p>Speak or type in 30 seconds when you wake up</p>
-                    <span class="mechanism-arrow">&#8594;</span>
+            <div class="credibility-label">Grounded in science, not guesswork</div>
+            <div class="credibility-logos">
+                <div class="credibility-item">
+                    <svg class="cred-icon" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    130 years of research
                 </div>
-                <div class="mechanism-step">
-                    <div class="mechanism-num">2</div>
-                    <h3>Decode the message</h3>
-                    <p>AI identifies hidden emotions and recurring patterns</p>
-                    <span class="mechanism-arrow">&#8594;</span>
+                <div class="credibility-item">
+                    <svg class="cred-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    Jungian dream analysis
                 </div>
-                <div class="mechanism-step">
-                    <div class="mechanism-num">3</div>
-                    <h3>Locate it in your body</h3>
-                    <p>Maps the emotion to where it's physically stored</p>
-                    <span class="mechanism-arrow">&#8594;</span>
+                <div class="credibility-item">
+                    <svg class="cred-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    Somatic experiencing
                 </div>
-                <div class="mechanism-step">
-                    <div class="mechanism-num">4</div>
-                    <h3>Release in 15 min</h3>
-                    <p>Guided somatic exercise to let it go &mdash; physically</p>
+                <div class="credibility-item">
+                    <svg class="cred-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    Body-mind integration
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Problem -->
+    <!-- ==================== PROBLEM ==================== -->
     <section class="section problem">
         <div class="container">
-            <div class="section-label fade-in">The Interpretation Trap</div>
-            <h2 class="section-title fade-in">Understanding a wound and releasing it are two different things.</h2>
-            <p class="section-sub fade-in">You can name the pattern. Trace it to childhood. Explain it to anyone. And still feel it sitting in your chest every morning.</p>
+            <div class="section-label-center fade-in"><span class="section-label">The knowing-doing gap</span></div>
+            <h2 class="section-title fade-in">You understand your patterns.<br>Your body hasn't gotten the memo.</h2>
+            <p class="section-sub fade-in">You've done therapy, read the books, journaled for years. You can name every pattern as it happens. But knowing why you react doesn't stop the reaction.</p>
             <div class="problem-cards">
                 <div class="problem-card fade-in">
-                    <h3>Therapy gave you the language</h3>
+                    <div class="problem-card-icon">&#9671;</div>
+                    <h3>Therapy gave you language, not release</h3>
                     <p>You understand why you react. But understanding doesn't stop the reaction. The emotion sank into your body years ago &mdash; and no conversation can reach it there.</p>
+                    <div class="quote">"Fluent in the language of therapy but unchanged."</div>
                 </div>
                 <div class="problem-card fade-in">
+                    <div class="problem-card-icon">&#9675;</div>
                     <h3>Meditation calms the surface</h3>
-                    <p>Headspace and Calm teach you to breathe. But breathing around the pain isn't releasing it. Surface relaxation doesn't touch root cause.</p>
+                    <p>Breathing apps teach you to relax around the pain. But breathing around it isn't releasing it. Surface relaxation doesn't touch root cause.</p>
+                    <div class="quote">"Good things happen, but you can't access the happiness you think you should feel."</div>
                 </div>
                 <div class="problem-card fade-in">
-                    <h3>Journaling describes the void</h3>
-                    <p>You write about what you feel. You circle the same themes. But describing the emptiness doesn't fill it. You need a physical release, not a mental description.</p>
+                    <div class="problem-card-icon">&#9634;</div>
+                    <h3>Journaling becomes rumination</h3>
+                    <p>You write about what you feel. Circle the same themes. Describing the emptiness doesn't fill it. You need a physical release, not a mental description.</p>
+                    <div class="quote">"It's like a circuit: I start out in one space, then end up right back where I started."</div>
                 </div>
+            </div>
+            <div class="problem-cta fade-in">
+                <p class="problem-cta-text">Your body remembers what your mind tries to forget.<br>Your dreams know the way out.</p>
             </div>
         </div>
     </section>
 
-    <!-- Features -->
+    <!-- ==================== BENEFITS ==================== -->
     <section class="section">
         <div class="container">
-            <div class="section-label fade-in">What Onera does</div>
+            <div class="section-label-center fade-in"><span class="section-label">What Onera does</span></div>
             <h2 class="section-title fade-in">The bridge between insight and freedom</h2>
-            <p class="section-sub fade-in">Built on the work of Jung, van der Kolk, and Levine. Your dreams are the map. Your body is the territory.</p>
-            <div class="features-grid">
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">&#9790;</div>
-                    <h3>Dream Analysis</h3>
-                    <p>AI-powered interpretation that goes beyond symbols. Identifies the hidden emotion, the recurring pattern, and what your subconscious is trying to process.</p>
+            <p class="section-sub fade-in">Not another dream dictionary. Not another meditation app. The first tool that takes you from subconscious signal to physical release.</p>
+            <div class="benefits-grid">
+                <div class="benefit-card large fade-in">
+                    <div class="benefit-icon">&#9790;</div>
+                    <h3>Deep Dream Analysis</h3>
+                    <p>AI-powered interpretation grounded in Jungian psychology. Goes beyond cookie-cutter symbols to identify the hidden emotion, the recurring pattern, and what your nervous system is trying to process. Your dreams decoded &mdash; not simplified.</p>
                 </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">&#9673;</div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">&#9673;</div>
                     <h3>Body Mapping</h3>
-                    <p>Locates exactly where the emotion lives in your body &mdash; jaw tension, chest tightness, stomach knots. The place your mind can't reach but your dreams always find.</p>
+                    <p>Locates exactly where the emotion lives &mdash; jaw tension, chest tightness, stomach knots. The place your mind can't reach but your dreams always find.</p>
                 </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">&#10047;</div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">&#10047;</div>
                     <h3>Somatic Release</h3>
                     <p>15-minute guided exercises designed for each specific body location. Feel the shift physically. Not another insight &mdash; an actual release.</p>
                 </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">&#9830;</div>
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">&#9830;</div>
                     <h3>Pattern Tracker</h3>
                     <p>Watch recurring dreams fade as their message gets received. See the cycle break in real time &mdash; fewer nightmares, less tension, more presence.</p>
                 </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">&#9827;</div>
+                <div class="benefit-card large fade-in">
+                    <div class="benefit-icon">&#9827;</div>
                     <h3>Shadow Profile</h3>
-                    <p>A living psychological portrait built from your dream patterns. Reveals the parts of you that operate beneath conscious awareness &mdash; updated every night.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon">&#9733;</div>
-                    <h3>Voice Recording</h3>
-                    <p>Speak your dream the moment you wake. 30 seconds, eyes barely open. The AI captures nuance, hesitation, and emotion that typing misses.</p>
+                    <p>A living psychological portrait built from your dream patterns. Reveals the parts of you operating beneath conscious awareness &mdash; updated every night. Like having a therapist that never sleeps, tracking your inner world with precision that takes years of sessions to achieve.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Comparison -->
+    <!-- ==================== HOW IT WORKS ==================== -->
+    <section class="section how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-label-center fade-in"><span class="section-label">How it works</span></div>
+            <h2 class="section-title fade-in">Dream &rarr; Decode &rarr; Release</h2>
+            <p class="section-sub fade-in">Three steps. Fifteen minutes. Every morning.</p>
+            <div class="steps-grid">
+                <div class="step-card fade-in">
+                    <div class="step-num">01</div>
+                    <h3>Record your dream</h3>
+                    <p>Speak or type the moment you wake. 30 seconds, eyes barely open. The AI captures nuance that typing misses.</p>
+                </div>
+                <div class="step-card fade-in">
+                    <div class="step-num">02</div>
+                    <h3>Decode the message</h3>
+                    <p>AI identifies the hidden emotion, the recurring pattern, and maps it to where it's stored in your body.</p>
+                </div>
+                <div class="step-card fade-in">
+                    <div class="step-num">03</div>
+                    <h3>Release it physically</h3>
+                    <p>15-minute guided somatic exercise. Feel the shift. Not another insight &mdash; an actual, physical release.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COMPARISON ==================== -->
     <section class="section comparison">
         <div class="container">
-            <div class="section-label fade-in">How Onera compares</div>
+            <div class="section-label-center fade-in"><span class="section-label">How Onera compares</span></div>
             <h2 class="section-title fade-in">Not instead of therapy. Beyond it.</h2>
-            <p class="section-sub fade-in">Onera is the missing body step that insight-based tools never provide.</p>
+            <p class="section-sub fade-in">Other tools give you insight OR relaxation. Onera gives you both &mdash; and the body step that actually changes things.</p>
             <div class="comparison-table fade-in">
                 <div class="comparison-row header">
                     <span></span>
-                    <span>Others</span>
-                    <span>Onera</span>
+                    <span style="text-align:center;">Others</span>
+                    <span style="text-align:center; color: var(--accent);">Onera</span>
                 </div>
                 <div class="comparison-row">
                     <span class="label">Decodes dream symbols</span>
@@ -546,24 +831,27 @@
         </div>
     </section>
 
-    <!-- Science -->
+    <!-- ==================== SCIENCE ==================== -->
     <section class="section">
         <div class="container">
-            <div class="section-label fade-in">The science behind it</div>
+            <div class="section-label-center fade-in"><span class="section-label">The science behind it</span></div>
             <h2 class="section-title fade-in">Built on 130 years of research</h2>
-            <p class="section-sub fade-in">Onera bridges three fields that have never been combined in a single tool.</p>
+            <p class="section-sub fade-in">Three fields that have never been combined in a single tool &mdash; until now.</p>
             <div class="science-grid">
                 <div class="science-card fade-in">
+                    <div class="science-avatar">&#9790;</div>
                     <div class="science-name">Carl Jung</div>
                     <h3>Dream Analysis</h3>
-                    <p>Shadow work, archetypes, and the unconscious messages your dreams carry every night.</p>
+                    <p>Shadow work, archetypes, and the unconscious messages your dreams carry every night. The map to what's hidden.</p>
                 </div>
                 <div class="science-card fade-in">
+                    <div class="science-avatar">&#9829;</div>
                     <div class="science-name">Bessel van der Kolk</div>
                     <h3>The Body Keeps the Score</h3>
                     <p>Emotion doesn't live in your mind. It's stored in your body. And it stays until you release it physically.</p>
                 </div>
                 <div class="science-card fade-in">
+                    <div class="science-avatar">&#10047;</div>
                     <div class="science-name">Peter Levine</div>
                     <h3>Somatic Experiencing</h3>
                     <p>Gentle, guided body-based release. 15 minutes to complete what years of insight couldn't.</p>
@@ -572,73 +860,186 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- ==================== EMAIL CAPTURE ==================== -->
+    <section class="section" id="onera-landing-email" style="padding: 4rem 0;">
+        <div class="container" style="max-width: 600px;">
+            <div class="section-label-center fade-in"><span class="section-label">Free guide</span></div>
+            <h2 class="section-title fade-in" style="font-size: clamp(1.5rem, 3.5vw, 2rem);">The guide dreamers keep coming back to</h2>
+            <p class="section-sub fade-in" style="margin-bottom: 1.5rem;">50 dream symbols decoded &mdash; what they actually mean, backed by Jungian psychology. Sent to your inbox in seconds.</p>
+            <div class="fade-in">
+                <div class="article-cta"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
     <section class="section testimonials">
         <div class="container">
-            <div class="section-label fade-in">What people say</div>
+            <div class="section-label-center fade-in"><span class="section-label">What people say</span></div>
             <h2 class="section-title fade-in">Real shifts, not just insights</h2>
+            <p class="section-sub fade-in">People who stopped analyzing and started releasing.</p>
             <div class="testimonial-grid">
                 <div class="testimonial-card fade-in">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     <p>"I had the same nightmare for 8 years. After 2 weeks with Onera, it stopped. Not managed &mdash; stopped."</p>
-                    <span class="author">&mdash; Sarah, 34</span>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div class="testimonial-info">
+                            <div class="name">Sarah</div>
+                            <div class="role">34, recurring nightmares</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="testimonial-card fade-in">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     <p>"Therapy helped me understand my patterns. Onera helped me actually release them. The jaw tension I carried for years &mdash; gone in the first session."</p>
-                    <span class="author">&mdash; Marcus, 29</span>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div class="testimonial-info">
+                            <div class="name">Marcus</div>
+                            <div class="role">29, post-therapy plateau</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="testimonial-card fade-in">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     <p>"I feel things again. Not numb, not overwhelmed &mdash; just present. That's all I wanted."</p>
-                    <span class="author">&mdash; Emma, 31</span>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">E</div>
+                        <div class="testimonial-info">
+                            <div class="name">Emma</div>
+                            <div class="role">31, emotional numbness</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing -->
+    <!-- ==================== PRICING ==================== -->
     <section class="section">
         <div class="container">
-            <div class="section-label fade-in">Start free</div>
+            <div class="section-label-center fade-in"><span class="section-label">Pricing</span></div>
             <h2 class="section-title fade-in">Less than one therapy co-pay per month</h2>
             <p class="section-sub fade-in">7 days free. If the first session doesn't make you feel something you haven't felt in years &mdash; delete it.</p>
             <div class="pricing-box fade-in">
-                <div class="price">$5.83<span style="font-size: 1rem; font-weight: 300; color: var(--fg-3);">/month</span></div>
+                <div class="pricing-badge">Most popular</div>
+                <div class="price">$5.83<span class="price-unit">/month</span></div>
                 <div class="price-sub">$69.99/year &middot; Billed annually</div>
                 <ul>
                     <li>Unlimited dream analysis</li>
                     <li>Daily somatic release sessions</li>
-                    <li>Shadow Profile &amp; Pattern Map</li>
-                    <li>Voice recording &amp; instant decode</li>
+                    <li>Shadow Profile & Pattern Map</li>
+                    <li>Voice recording & instant decode</li>
                     <li>Body emotion mapping</li>
-                    <li>Progress tracking &amp; streak</li>
+                    <li>Progress tracking & streak</li>
                 </ul>
                 <a href="https://apps.apple.com/app/onera/id6751126653" target="_blank" class="pricing-cta">Start 7-Day Free Trial</a>
+                <p class="pricing-guarantee">No credit card required &middot; Cancel anytime</p>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="final-cta">
+    <!-- ==================== FAQ ==================== -->
+    <section class="section faq">
         <div class="container">
-            <h2 class="fade-in">Your body already knows.</h2>
-            <p class="fade-in">Your dreams have been showing you the way. Onera is the bridge between what you dream and what you release.</p>
-            <a href="https://apps.apple.com/app/onera/id6751126653" target="_blank" style="display:inline-block;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
-                     alt="Download on the App Store" class="app-store-badge fade-in">
-            </a>
+            <div class="faq-grid">
+                <div class="faq-left fade-in">
+                    <span class="section-label">FAQ</span>
+                    <h2>Questions you might have</h2>
+                    <p>Everything you need to know before you start. If something's missing, reach out at contact@dreaminsight.app</p>
+                </div>
+                <div class="faq-items">
+                    <div class="faq-item active fade-in">
+                        <div class="faq-question">
+                            How is Onera different from other dream apps?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">Other dream apps stop at interpretation &mdash; giving you a symbolic meaning and nothing more. Onera is the only app that bridges dream insight into physical release. We decode the dream, map the emotion to your body, and guide you through a somatic exercise to actually release it. Dream work + body work in one.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            I'm already in therapy. Will this conflict?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">Not at all. Onera complements therapy by adding the body step that talk therapy often misses. Many users say it accelerates their therapeutic progress by giving them a daily embodied practice between sessions. Think of it as homework your nervous system actually benefits from.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            What if I don't remember my dreams?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">Dream recall improves dramatically when you have a consistent capture practice. Most users go from "I never dream" to recording 4-5 dreams per week within 10 days. Onera's voice recording makes it effortless &mdash; speak for 30 seconds the moment you wake up.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            Is the somatic release safe to do alone?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">Yes. Our exercises are grounded in Peter Levine's Somatic Experiencing framework &mdash; gentle, titrated, and designed for self-guided use. They're not intense cathartic releases. They're slow, controlled body-based exercises that help your nervous system complete what it started processing during sleep.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            Can I cancel my subscription anytime?
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">Absolutely. You get 7 days completely free. No credit card needed to start. If you decide to subscribe, you can cancel anytime through your Apple ID settings. No hidden fees, no guilt trips.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- ==================== FINAL CTA ==================== -->
+    <section class="final-cta-section">
+        <div class="container">
+            <div class="final-cta-box fade-in">
+                <h2>Your body already knows what needs to be released.</h2>
+                <p>Your dreams have been showing you the way. Every night, your subconscious sends the signal. Onera is the bridge between what you dream and what you finally let go of.</p>
+                <a href="https://apps.apple.com/app/onera/id6751126653" target="_blank" class="final-cta-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    Start Free &mdash; Download Onera
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="legal.html">Legal</a>
-                <a href="cgu.html">Terms</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="/blog">Blog</a>
-                <a href="/founders-letter.html">Founder's Letter</a>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="nav-logo">Onera</a>
+                    <p>The Dream-to-Body Bridge. Decode your dreams. Release what's stored in your body. Every morning.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <a href="#how-it-works">How it works</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/founders-letter.html">Founder's Letter</a>
+                    <a href="https://apps.apple.com/app/onera/id6751126653" target="_blank">Download</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="legal.html">Legal Notice</a>
+                    <a href="cgu.html">Terms of Use</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
             </div>
-            <div class="footer-copy">&copy; 2026 Onera. All rights reserved.</div>
-            <div class="footer-copy" style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.6;">Oscar Berger &middot; SIREN: 890 044 811</div>
+            <div class="footer-bottom">
+                <span class="footer-copy">&copy; 2026 Onera. All rights reserved.</span>
+                <span class="footer-legal">Oscar Berger &middot; SIREN: 890 044 811</span>
+            </div>
         </div>
     </footer>
 
@@ -654,6 +1055,30 @@
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const wasActive = item.classList.contains('active');
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                // Toggle clicked
+                if (!wasActive) item.classList.add('active');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
     </script>
+    <script src="/email-capture.js"></script>
 </body>
 </html>
