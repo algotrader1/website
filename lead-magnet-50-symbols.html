@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50 Dream Symbols Decoded — Your Quick Reference Guide | ONERA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm 18mm 25mm 18mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #100e14;
+            --bg-card: #1a1722;
+            --bg-card-alt: #15131b;
+            --text: #ede8e0;
+            --text-muted: #9e978b;
+            --text-dim: #6b6560;
+            --accent: #c4956a;
+            --accent-soft: rgba(196, 149, 106, 0.15);
+            --accent-glow: rgba(196, 149, 106, 0.08);
+            --line: rgba(196, 149, 106, 0.12);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 10.5pt;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* ── Cover Page ── */
+        .cover {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 40px;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 50% 40%, rgba(196, 149, 106, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cover-logo {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 18pt;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .cover-logo::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1px;
+            background: var(--accent);
+            margin: 16px auto 0;
+        }
+
+        .cover h1 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 38pt;
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--text);
+            max-width: 560px;
+            margin-bottom: 20px;
+        }
+
+        .cover h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .cover-subtitle {
+            font-size: 13pt;
+            color: var(--text-muted);
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            margin-bottom: 80px;
+        }
+
+        .cover-tagline {
+            font-size: 9pt;
+            color: var(--text-dim);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ── Intro Page ── */
+        .intro-page {
+            padding: 60px 40px;
+            page-break-after: always;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .intro-page h2 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 22pt;
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 30px;
+        }
+
+        .intro-page p {
+            color: var(--text-muted);
+            font-size: 11pt;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .intro-page p strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .intro-highlight {
+            border-left: 2px solid var(--accent);
+            padding: 16px 20px;
+            margin: 30px 0;
+            background: var(--accent-glow);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .intro-highlight p {
+            color: var(--text);
+            font-size: 10.5pt;
+            margin-bottom: 0;
+        }
+
+        /* ── Symbol Pages ── */
+        .symbols-section {
+            padding: 0 30px;
+        }
+
+        .category-header {
+            page-break-before: always;
+            padding-top: 50px;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        .category-header:first-of-type {
+            page-break-before: avoid;
+        }
+
+        .category-label {
+            font-size: 8pt;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .category-title {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 24pt;
+            font-weight: 400;
+            color: var(--text);
+        }
+
+        .category-line {
+            width: 40px;
+            height: 1px;
+            background: var(--accent);
+            margin: 16px auto 0;
+        }
+
+        /* ── Symbol Card ── */
+        .symbol-card {
+            background: var(--bg-card);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 22px 24px;
+            margin-bottom: 14px;
+            page-break-inside: avoid;
+        }
+
+        .symbol-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .symbol-number {
+            font-size: 8pt;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 1px;
+            min-width: 30px;
+        }
+
+        .symbol-name {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 16pt;
+            font-weight: 400;
+            color: var(--text);
+            flex: 1;
+        }
+
+        .symbol-category-tag {
+            font-size: 7.5pt;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            background: var(--accent-soft);
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+
+        .symbol-interpretation {
+            color: var(--text-muted);
+            font-size: 10pt;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .somatic-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 10px 14px;
+            background: var(--accent-glow);
+            border-radius: 6px;
+            border-left: 2px solid var(--accent);
+        }
+
+        .somatic-icon {
+            color: var(--accent);
+            font-size: 10pt;
+            margin-top: 1px;
+            flex-shrink: 0;
+        }
+
+        .somatic-text {
+            font-size: 9.5pt;
+            color: var(--accent);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* ── CTA Page ── */
+        .cta-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 40px;
+            page-break-before: always;
+            position: relative;
+        }
+
+        .cta-page::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 50% 50%, rgba(196, 149, 106, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta-page h2 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 30pt;
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 20px;
+            max-width: 500px;
+        }
+
+        .cta-page h2 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .cta-description {
+            color: var(--text-muted);
+            font-size: 12pt;
+            line-height: 1.7;
+            max-width: 440px;
+            margin-bottom: 40px;
+        }
+
+        .cta-features {
+            list-style: none;
+            text-align: left;
+            max-width: 360px;
+            margin-bottom: 40px;
+        }
+
+        .cta-features li {
+            color: var(--text-muted);
+            font-size: 10.5pt;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-features li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 11pt;
+            font-weight: 600;
+            padding: 14px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .cta-url {
+            font-size: 9pt;
+            color: var(--text-dim);
+            letter-spacing: 0.5px;
+        }
+
+        .cta-logo {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 14pt;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-top: 60px;
+            opacity: 0.6;
+        }
+
+        /* ── Footer / Page Numbers ── */
+        .page-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 10px;
+            font-size: 8pt;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+        }
+
+        @media print {
+            body {
+                background: var(--bg) !important;
+            }
+            .cover {
+                height: 100vh;
+            }
+            .symbol-card {
+                page-break-inside: avoid;
+            }
+            .category-header {
+                page-break-before: always;
+            }
+            .page-footer {
+                display: none;
+            }
+            /* Use CSS counter for page numbers in print */
+            @page {
+                @bottom-center {
+                    content: counter(page);
+                    font-size: 8pt;
+                    color: #6b6560;
+                }
+            }
+        }
+
+        /* ── Two-column layout for smaller symbols ── */
+        .symbols-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════ -->
+<!-- COVER PAGE -->
+<!-- ════════════════════════════════════════ -->
+<div class="cover">
+    <div class="cover-logo">ONERA</div>
+    <h1>50 Dream Symbols <em>Decoded</em></h1>
+    <p class="cover-subtitle">Your Quick Reference Guide to What Your Dreams Are Telling You</p>
+    <p class="cover-tagline">Dream Analysis &bull; Somatic Awareness &bull; Jungian Psychology</p>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- INTRO PAGE -->
+<!-- ════════════════════════════════════════ -->
+<div class="intro-page">
+    <h2>How to Use This Guide</h2>
+
+    <p>Every dream is a message from your subconscious. Not in riddles or random noise &mdash; but in a precise symbolic language your body already understands.</p>
+
+    <p>This guide covers the <strong>50 most common dream symbols</strong>, ranked by how frequently people search for them. For each one, you'll find a concise interpretation rooted in Jungian depth psychology and somatic awareness.</p>
+
+    <div class="intro-highlight">
+        <p><strong>The Somatic Check:</strong> After each interpretation, you'll see an italicized question. This is your body prompt. Dreams don't just live in your mind &mdash; they leave traces in your muscles, your chest, your gut. The somatic check helps you locate where the dream's message is stored physically, so you can begin to release it.</p>
+    </div>
+
+    <p>Read the symbol. Notice what resonates. Then close your eyes, take one breath, and ask yourself the somatic question. <strong>What your body tells you is the real interpretation.</strong></p>
+
+    <p>These 50 symbols are your starting point. For a full analysis of your specific dreams &mdash; including personalized somatic release exercises &mdash; the ONERA app goes much deeper.</p>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 1: BODY & SELF -->
+<!-- ════════════════════════════════════════ -->
+<div class="symbols-section">
+
+<div class="category-header">
+    <p class="category-label">Section One</p>
+    <h3 class="category-title">Body & Self</h3>
+    <div class="category-line"></div>
+</div>
+
+<div class="symbols-grid">
+
+<!-- 1. Teeth Falling Out — 81,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">01</span>
+        <span class="symbol-name">Teeth Falling Out</span>
+        <span class="symbol-category-tag">Body</span>
+    </div>
+    <p class="symbol-interpretation">The most searched dream symbol in the world. Teeth represent your sense of power, attractiveness, and ability to "bite into" life. When they fall out, your subconscious is processing a fear of losing control, aging, or being perceived as weak. It often surfaces during times of transition &mdash; new job, breakup, identity shift &mdash; when your old self-image is crumbling.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Clench your jaw gently. Where do you feel tension &mdash; temples, neck, shoulders? That's where you're holding the need to stay in control.</span>
+    </div>
+</div>
+
+<!-- 2. Being Pregnant — 12,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">02</span>
+        <span class="symbol-name">Being Pregnant</span>
+        <span class="symbol-category-tag">Body</span>
+    </div>
+    <p class="symbol-interpretation">Pregnancy in dreams rarely refers to literal pregnancy. It symbolizes something new growing inside you &mdash; an idea, a creative project, a version of yourself that hasn't been born yet. The dream tracks how you feel about this emergence: excitement, anxiety, or the weight of carrying something you're not yet ready to share with the world.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Place your hand on your lower belly. Does it feel full, tight, or warm? What's been growing inside you that you haven't expressed yet?</span>
+    </div>
+</div>
+
+<!-- 3. Hair Falling Out — 5,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">03</span>
+        <span class="symbol-name">Hair Falling Out</span>
+        <span class="symbol-category-tag">Body</span>
+    </div>
+    <p class="symbol-interpretation">Hair is tied to identity, vitality, and how the world sees you. Losing it in a dream signals a fear of diminishing attractiveness, aging, or loss of personal power. It often appears when you feel invisible or when a part of your identity is shifting against your will. The dream is processing what it means to be seen differently.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Touch the top of your head. Do you feel exposed, vulnerable? Where in your life do you feel like your "cover" is slipping?</span>
+    </div>
+</div>
+
+<!-- 4. Blood — 5,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">04</span>
+        <span class="symbol-name">Blood</span>
+        <span class="symbol-category-tag">Body</span>
+    </div>
+    <p class="symbol-interpretation">Blood is life force, passion, and emotional energy. Seeing blood in a dream often signals that something is draining you &mdash; an emotional wound that hasn't been addressed, energy given away without return. The amount and location matter: blood from a wound suggests a specific hurt; blood on your hands points to guilt or responsibility.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Where does your body feel drained right now? Your chest, your limbs, your head? Name one thing that's taking more energy than it's giving back.</span>
+    </div>
+</div>
+
+<!-- 5. Naked in Public — 6,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">05</span>
+        <span class="symbol-name">Naked in Public</span>
+        <span class="symbol-category-tag">Body</span>
+    </div>
+    <p class="symbol-interpretation">This dream is about vulnerability, not sexuality. Your subconscious is processing a fear of being exposed &mdash; someone seeing the "real you" that you carefully hide. It peaks before presentations, new relationships, or any moment where judgment feels imminent. The other people's reactions in the dream reveal your deepest expectations about being truly seen.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Notice your skin right now &mdash; do you feel a flush, a tightening? Where in life are you performing rather than being authentic?</span>
+    </div>
+</div>
+
+</div><!-- /symbols-grid -->
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 2: ANIMALS -->
+<!-- ════════════════════════════════════════ -->
+
+<div class="category-header">
+    <p class="category-label">Section Two</p>
+    <h3 class="category-title">Animals</h3>
+    <div class="category-line"></div>
+</div>
+
+<div class="symbols-grid">
+
+<!-- 6. Snake — 60,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">06</span>
+        <span class="symbol-name">Snake</span>
+        <span class="symbol-category-tag">Animals</span>
+    </div>
+    <p class="symbol-interpretation">The second most searched dream symbol. Snakes represent transformation, hidden instincts, and the shedding of old identities. In Jungian psychology, the snake is a primordial symbol of renewal &mdash; what frightens you in the dream is often the very thing trying to heal you. Fear of the snake is fear of change. The bite is a truth that can no longer be avoided.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Where did the snake appear or strike in your dream? Place your hand there. What truth have you been avoiding in that area of your life?</span>
+    </div>
+</div>
+
+<!-- 7. Spider — 12,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">07</span>
+        <span class="symbol-name">Spider</span>
+        <span class="symbol-category-tag">Animals</span>
+    </div>
+    <p class="symbol-interpretation">Spiders weave webs &mdash; they represent the intricate networks of your life: relationships, obligations, creative projects. A spider dream often signals feeling trapped in something you created yourself, or a feminine creative force (in Jungian terms, the "weaver" archetype). The size of the spider reflects the scale of what feels entangling.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Do you feel stuck, tangled, or caught in something right now? Where in your body do you feel the web &mdash; throat, chest, limbs?</span>
+    </div>
+</div>
+
+<!-- 8. Dog — 7,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">08</span>
+        <span class="symbol-name">Dog</span>
+        <span class="symbol-category-tag">Animals</span>
+    </div>
+    <p class="symbol-interpretation">Dogs represent loyalty, companionship, and your instinctual self. A friendly dog signals trust in your relationships or in yourself. An aggressive dog points to a betrayed loyalty &mdash; someone you trusted turned on you, or a part of yourself you've been suppressing is now snarling for attention. A lost dog is a lost sense of belonging.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Who comes to mind when you think of unconditional loyalty? Does your chest expand or contract? That's your answer about trust.</span>
+    </div>
+</div>
+
+<!-- 9. Cat — 6,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">09</span>
+        <span class="symbol-name">Cat</span>
+        <span class="symbol-category-tag">Animals</span>
+    </div>
+    <p class="symbol-interpretation">Cats symbolize independence, intuition, and the feminine shadow. A cat in your dream is often the part of you that doesn't need anyone's approval &mdash; sensual, self-sufficient, operating on instinct. If the cat is hostile, you may be rejecting your own intuition. If it's purring, you're in alignment with your deeper knowing.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Close your eyes and notice: are you living on someone else's schedule? Where does your body want more independence &mdash; more space?</span>
+    </div>
+</div>
+
+<!-- 10. Rat — 4,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">10</span>
+        <span class="symbol-name">Rat</span>
+        <span class="symbol-category-tag">Animals</span>
+    </div>
+    <p class="symbol-interpretation">Rats symbolize what lurks in the shadows of your psyche &mdash; guilt, shame, survival instincts, or something "dirty" you'd rather not acknowledge. They also represent resourcefulness and adaptability. A rat infestation suggests anxieties multiplying unchecked. A single rat may point to one specific situation you find morally uncomfortable.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">What situation in your life makes your skin crawl? Feel your gut &mdash; is there a low-level disgust or discomfort you've been ignoring?</span>
+    </div>
+</div>
+
+<!-- 11. Bear — 4,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">11</span>
+        <span class="symbol-name">Bear</span>
+        <span class="symbol-category-tag">Animals</span>
+    </div>
+    <p class="symbol-interpretation">Bears embody raw strength, maternal protection, and the need for solitude. A bear in your dream may signal that you need to retreat, rest, and hibernate before your next phase. An attacking bear suggests an overwhelming force you feel powerless against &mdash; often an authority figure or an emotion too large to process consciously.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Do you feel exhausted but pushing through? Place your hand on your chest &mdash; does your body want rest it's not being given?</span>
+    </div>
+</div>
+
+<!-- 12. Lion — 4,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">12</span>
+        <span class="symbol-name">Lion</span>
+        <span class="symbol-category-tag">Animals</span>
+    </div>
+    <p class="symbol-interpretation">The lion represents personal power, courage, and authority. Dreaming of a lion asks: are you stepping into your power, or shrinking from it? A roaring lion is your own suppressed assertiveness demanding expression. A caged lion is power you've locked away, often to keep the peace. The lion is always asking you to lead.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Take a deep breath and notice your posture. Are you sitting small? Expand your chest. Where are you dimming yourself to make others comfortable?</span>
+    </div>
+</div>
+
+<!-- 13. Alligator / Crocodile — 4,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">13</span>
+        <span class="symbol-name">Alligator / Crocodile</span>
+        <span class="symbol-category-tag">Animals</span>
+    </div>
+    <p class="symbol-interpretation">Ancient, patient, and hidden just beneath the surface &mdash; the crocodile represents primal emotions or threats you sense but can't fully see. It's the danger lurking in still waters: a betrayal, a suppressed rage, a situation that looks calm but isn't. This dream is a warning to trust your survival instincts.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Is there a situation in your life that looks safe on the surface but doesn't feel safe? Where does the unease sit &mdash; stomach, lower back?</span>
+    </div>
+</div>
+
+<!-- 14. Wolf — 3,800/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">14</span>
+        <span class="symbol-name">Wolf</span>
+        <span class="symbol-category-tag">Animals</span>
+    </div>
+    <p class="symbol-interpretation">The wolf is instinct, wildness, and the parts of yourself that civilization asks you to suppress. A wolf pack represents community and belonging; a lone wolf, isolation by choice or circumstance. Being hunted by a wolf means your own wild nature is catching up with you &mdash; and it's tired of being domesticated.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">What part of you feels caged by social expectations? Feel your throat &mdash; is there a howl trapped inside that needs release?</span>
+    </div>
+</div>
+
+<!-- 15. Bird — 3,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">15</span>
+        <span class="symbol-name">Bird</span>
+        <span class="symbol-category-tag">Animals</span>
+    </div>
+    <p class="symbol-interpretation">Birds symbolize freedom, perspective, and spiritual aspiration. A bird in flight represents a desire to rise above your current situation. A caged bird reflects feeling trapped despite having the ability to soar. A dead bird signals the end of a hope or the grounding of an aspiration. The type of bird adds nuance &mdash; eagles for power, doves for peace, crows for shadow wisdom.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Lift your shoulders, then drop them. Do they feel heavy? What's weighing you down that your spirit wants to fly above?</span>
+    </div>
+</div>
+
+</div><!-- /symbols-grid -->
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 3: ACTIONS & EXPERIENCES -->
+<!-- ════════════════════════════════════════ -->
+
+<div class="category-header">
+    <p class="category-label">Section Three</p>
+    <h3 class="category-title">Actions & Experiences</h3>
+    <div class="category-line"></div>
+</div>
+
+<div class="symbols-grid">
+
+<!-- 16. Being Chased — 33,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">16</span>
+        <span class="symbol-name">Being Chased</span>
+        <span class="symbol-category-tag">Actions</span>
+    </div>
+    <p class="symbol-interpretation">The third most common dream worldwide. Whatever is chasing you is a part of yourself you're running from &mdash; an emotion, a responsibility, a truth. The pursuer is never random: it's a projection of what you refuse to face while awake. The dream stops recurring when you stop running and turn around. What chases you wants to be integrated, not escaped.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Right now, what are you avoiding? Notice your legs and feet &mdash; do they feel restless, like they want to run? That's the charge the dream is holding.</span>
+    </div>
+</div>
+
+<!-- 17. Falling — 22,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">17</span>
+        <span class="symbol-name">Falling</span>
+        <span class="symbol-category-tag">Actions</span>
+    </div>
+    <p class="symbol-interpretation">Falling is your nervous system processing a loss of control. The ground is gone &mdash; a relationship, a job, a sense of certainty. The dream mirrors how anxiety feels in the body: the stomach drops, the breath catches. But falling is also surrender. Not all falling is failing &mdash; sometimes it's the prerequisite to flying.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Press your feet flat on the ground. Feel their weight. Where in your life have you lost your footing? What would it take to feel grounded again?</span>
+    </div>
+</div>
+
+<!-- 18. Flying — 14,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">18</span>
+        <span class="symbol-name">Flying</span>
+        <span class="symbol-category-tag">Actions</span>
+    </div>
+    <p class="symbol-interpretation">Flying dreams are among the most exhilarating. They represent liberation, transcendence, and a moment of rising above limitations. If you're flying effortlessly, you're aligned with your power. If you're struggling to stay airborne, you have the desire for freedom but something &mdash; doubt, obligation, fear &mdash; keeps pulling you down.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">What would you do tomorrow if nothing held you back? Notice where your body opens when you imagine it &mdash; that's where freedom lives.</span>
+    </div>
+</div>
+
+<!-- 19. Drowning — 9,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">19</span>
+        <span class="symbol-name">Drowning</span>
+        <span class="symbol-category-tag">Actions</span>
+    </div>
+    <p class="symbol-interpretation">Drowning is emotional overwhelm made physical. You're submerged in feelings &mdash; grief, stress, responsibilities &mdash; and can't find the surface. Water in dreams always represents emotion, so drowning means the emotions have exceeded your capacity to process them. The dream is a distress signal: you need to surface, to breathe, to ask for help.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Take one deep breath right now. Did it feel hard to get a full breath? Your chest knows when you're emotionally underwater.</span>
+    </div>
+</div>
+
+<!-- 20. Being Lost — 5,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">20</span>
+        <span class="symbol-name">Being Lost</span>
+        <span class="symbol-category-tag">Actions</span>
+    </div>
+    <p class="symbol-interpretation">Being lost reflects a loss of direction or purpose in waking life. You can't find your way back &mdash; to a relationship, a career, a sense of self you once had. The setting matters: lost in a city means overwhelmed by choices; lost in a forest means disconnected from your instincts; lost in a building means confused by a structure (job, institution) you're trapped in.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">If you had a compass in your chest, which direction would it point right now? Notice any pull. Trust it &mdash; it's your inner knowing.</span>
+    </div>
+</div>
+
+<!-- 21. Taking an Exam — 3,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">21</span>
+        <span class="symbol-name">Taking an Exam</span>
+        <span class="symbol-category-tag">Actions</span>
+    </div>
+    <p class="symbol-interpretation">Even decades after school, this dream persists. The exam represents a test of worthiness &mdash; am I good enough? Do I measure up? It appears when you face evaluation: a new relationship, a career move, a public moment. Being unprepared in the dream mirrors imposter syndrome. The exam is always about your own self-assessment, never about the actual test.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Where do you feel "not ready" in your life? Notice your stomach &mdash; does it knot when you think about being judged?</span>
+    </div>
+</div>
+
+<!-- 22. Running / Can't Run — 2,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">22</span>
+        <span class="symbol-name">Running / Can't Run</span>
+        <span class="symbol-category-tag">Actions</span>
+    </div>
+    <p class="symbol-interpretation">The heavy-legs dream &mdash; you need to run but your body won't cooperate. This reflects feeling powerless in waking life: you see the threat, you know you should act, but something is paralyzing your response. It's the body's memory of freeze mode. The dream processes the frustration of wanting to escape a situation you feel stuck in.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Shake your legs for 5 seconds. Feel the energy return? What situation in your life has been freezing you in place?</span>
+    </div>
+</div>
+
+<!-- 23. Being Late — 1,400/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">23</span>
+        <span class="symbol-name">Being Late / Missing an Event</span>
+        <span class="symbol-category-tag">Actions</span>
+    </div>
+    <p class="symbol-interpretation">This dream haunts overachievers and people-pleasers. Being late means you fear missing your window &mdash; in life, in love, in your career. Time is running out and you can't catch up. It's the internal pressure of "I should be further along by now." The dream is rarely about the event itself &mdash; it's about the fear of wasted potential.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Does your chest feel tight, like you're always rushing? What self-imposed deadline is creating pressure that doesn't actually exist?</span>
+    </div>
+</div>
+
+</div><!-- /symbols-grid -->
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 4: PEOPLE & RELATIONSHIPS -->
+<!-- ════════════════════════════════════════ -->
+
+<div class="category-header">
+    <p class="category-label">Section Four</p>
+    <h3 class="category-title">People & Relationships</h3>
+    <div class="category-line"></div>
+</div>
+
+<div class="symbols-grid">
+
+<!-- 24. Ex Partner — 27,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">24</span>
+        <span class="symbol-name">Ex Partner</span>
+        <span class="symbol-category-tag">People</span>
+    </div>
+    <p class="symbol-interpretation">Dreaming about an ex doesn't mean you want them back. Your subconscious uses their image to process what they represent: a pattern, a wound, an unresolved emotional charge. Each ex carries a specific emotional signature &mdash; the dream is asking you to examine what that person activated in you, because that same pattern is replaying in your current life.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">When you think of this person, where does your body react first &mdash; heart, stomach, throat? That's the wound that's still open.</span>
+    </div>
+</div>
+
+<!-- 25. Partner Cheating — 6,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">25</span>
+        <span class="symbol-name">Partner Cheating</span>
+        <span class="symbol-category-tag">People</span>
+    </div>
+    <p class="symbol-interpretation">This is rarely prophetic. Cheating dreams reflect a fear of abandonment, a sense that you're not enough, or anxiety that something important is being taken from you. It can also mean that your partner's emotional attention is going somewhere else &mdash; work, a friend, a hobby &mdash; and your subconscious is registering the withdrawal.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Place your hand over your heart. Does it feel guarded, braced? What are you afraid of losing &mdash; and is that fear based on evidence or on old wounds?</span>
+    </div>
+</div>
+
+<!-- 26. Baby — 8,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">26</span>
+        <span class="symbol-name">Baby</span>
+        <span class="symbol-category-tag">People</span>
+    </div>
+    <p class="symbol-interpretation">A baby represents something new and vulnerable &mdash; a project, a relationship, a part of yourself that's just emerging. Holding a baby means you've accepted responsibility for this new thing. A crying baby signals a need that's not being met. A forgotten baby is the project or dream you've neglected. Your subconscious is asking: what needs your nurturing attention?</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">What new beginning in your life feels fragile? Cup your hands in your lap &mdash; notice if they feel empty or full. That's your answer.</span>
+    </div>
+</div>
+
+<!-- 27. Dead Person Alive Again — 2,800/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">27</span>
+        <span class="symbol-name">Dead Person Alive Again</span>
+        <span class="symbol-category-tag">People</span>
+    </div>
+    <p class="symbol-interpretation">Seeing a deceased loved one alive in a dream is one of the most emotionally charged experiences. It can be a processing of grief, a longing for guidance, or a message from the deep psyche using this person's image to communicate something they embodied: strength, warmth, wisdom. The dream offers a space for connection that waking life no longer can.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">What quality did this person carry that you need right now? Place your hand where you feel their presence &mdash; that's where their gift lives in you.</span>
+    </div>
+</div>
+
+<!-- 28. Mother — 2,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">28</span>
+        <span class="symbol-name">Mother</span>
+        <span class="symbol-category-tag">People</span>
+    </div>
+    <p class="symbol-interpretation">Your mother in a dream represents the Mother archetype &mdash; nurturing, safety, origin, but also control, judgment, and emotional enmeshment. The dream is less about your actual mother and more about your relationship with comfort, dependency, and the feminine. Conflict with the mother in a dream often mirrors an inner conflict between independence and the need to be cared for.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Notice your breathing. Does it feel like your own, or like you're breathing to please someone? Where does your mother's voice still live in your body?</span>
+    </div>
+</div>
+
+<!-- 29. Father — 1,800/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">29</span>
+        <span class="symbol-name">Father</span>
+        <span class="symbol-category-tag">People</span>
+    </div>
+    <p class="symbol-interpretation">The Father archetype represents authority, protection, structure, and the rules of the world. Dreaming of your father &mdash; or a father figure &mdash; processes your relationship with power, discipline, and approval. A distant father reflects unmet needs for validation. A critical father is your own inner judge. The dream asks: whose rules are you still living by?</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Straighten your spine. Do you feel the weight of expectation on your shoulders? Whose approval are you still unconsciously seeking?</span>
+    </div>
+</div>
+
+<!-- 30. Stranger — 1,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">30</span>
+        <span class="symbol-name">Stranger</span>
+        <span class="symbol-category-tag">People</span>
+    </div>
+    <p class="symbol-interpretation">Every stranger in your dream is a part of you that you don't yet recognize. In Jungian terms, they represent the Shadow &mdash; qualities, desires, or abilities that you've disowned. A threatening stranger is a suppressed emotion. An attractive stranger is an unexplored potential. A helpful stranger is the inner wisdom you haven't learned to trust yet.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">What quality did the stranger have? Courage, danger, warmth? That quality lives in you. Where in your body do you feel its absence?</span>
+    </div>
+</div>
+
+</div><!-- /symbols-grid -->
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 5: EMOTIONS & STATES -->
+<!-- ════════════════════════════════════════ -->
+
+<div class="category-header">
+    <p class="category-label">Section Five</p>
+    <h3 class="category-title">Emotions & States</h3>
+    <div class="category-line"></div>
+</div>
+
+<div class="symbols-grid">
+
+<!-- 31. Death / Dying — 40,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">31</span>
+        <span class="symbol-name">Death / Dying</span>
+        <span class="symbol-category-tag">Emotions</span>
+    </div>
+    <p class="symbol-interpretation">Death in a dream is almost never literal. It's the most powerful symbol of transformation &mdash; something in your life is ending so something new can begin. The "death" is an old identity, a relationship phase, a belief system, or a chapter closing. Resisting the death in the dream mirrors resisting change in waking life. Accepting it is the breakthrough.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">What in your life is ending &mdash; or needs to? Notice if your body tenses or softens at the thought. The tension is resistance; the softening is readiness.</span>
+    </div>
+</div>
+
+<!-- 32. Crying — 2,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">32</span>
+        <span class="symbol-name">Crying</span>
+        <span class="symbol-category-tag">Emotions</span>
+    </div>
+    <p class="symbol-interpretation">Crying in a dream is emotional release that your waking mind won't permit. If you don't cry easily when awake, your subconscious creates the space for it while you sleep. The tears are real &mdash; many people wake up with wet eyes. This dream is healing: it's your psyche completing an emotional cycle that was interrupted or suppressed during the day.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Is there a sadness behind your eyes right now that you haven't given space to? Let your face soften. What wants to be felt?</span>
+    </div>
+</div>
+
+<!-- 33. Nightmares — 3,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">33</span>
+        <span class="symbol-name">Nightmares</span>
+        <span class="symbol-category-tag">Emotions</span>
+    </div>
+    <p class="symbol-interpretation">Nightmares are not your enemy &mdash; they're urgent messages. When your subconscious can't get your attention through subtle dreams, it escalates. The nightmare's intensity matches the urgency of the message. Recurring nightmares mean the same issue keeps being ignored. The nightmare stops when the message is received, acknowledged, and processed &mdash; especially through the body.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">After your last nightmare, where did the fear sit? Stomach, throat, chest? That location is the address of what needs your attention.</span>
+    </div>
+</div>
+
+</div><!-- /symbols-grid -->
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 6: NATURE & ELEMENTS -->
+<!-- ════════════════════════════════════════ -->
+
+<div class="category-header">
+    <p class="category-label">Section Six</p>
+    <h3 class="category-title">Nature & Elements</h3>
+    <div class="category-line"></div>
+</div>
+
+<div class="symbols-grid">
+
+<!-- 34. Water — 18,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">34</span>
+        <span class="symbol-name">Water</span>
+        <span class="symbol-category-tag">Nature</span>
+    </div>
+    <p class="symbol-interpretation">Water is the universal symbol for emotion and the unconscious mind. Calm water means emotional peace. Turbulent water means inner turmoil. Murky water signals confusion about your feelings. The depth of the water reflects the depth of the emotion. How you interact with the water &mdash; swimming, sinking, floating, watching &mdash; reveals your relationship with your own emotional world.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">How does your emotional "water" feel right now &mdash; calm, churning, frozen? Place your hand on your belly and feel the truth beneath the surface.</span>
+    </div>
+</div>
+
+<!-- 35. Fire — 9,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">35</span>
+        <span class="symbol-name">Fire</span>
+        <span class="symbol-category-tag">Nature</span>
+    </div>
+    <p class="symbol-interpretation">Fire is transformation through destruction &mdash; passion, anger, purification. A house on fire signals a life structure burning down (relationship, career, identity). A warming fire represents comfort and passion. Uncontrolled fire is rage or desire that's exceeded your ability to contain it. Fire demands respect: it creates and destroys with equal force.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Where does heat live in your body right now &mdash; face, chest, fists? Is it passion being channeled or anger being contained?</span>
+    </div>
+</div>
+
+<!-- 36. Tornado — 5,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">36</span>
+        <span class="symbol-name">Tornado</span>
+        <span class="symbol-category-tag">Nature</span>
+    </div>
+    <p class="symbol-interpretation">Tornadoes represent emotional chaos &mdash; a destructive force that appears suddenly and threatens everything you've built. This dream often arrives during periods of anxiety, conflict, or when you feel life is spinning out of control. Watching the tornado from a distance means you sense the chaos coming. Being caught in it means you're already in the middle of it.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">What in your life feels like it could spin out of control at any moment? Notice if your body braces or tenses &mdash; that's your storm warning.</span>
+    </div>
+</div>
+
+<!-- 37. Ocean — 4,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">37</span>
+        <span class="symbol-name">Ocean</span>
+        <span class="symbol-category-tag">Nature</span>
+    </div>
+    <p class="symbol-interpretation">The ocean is the collective unconscious &mdash; the vast emotional and psychic depths shared by all humans. Standing at its shore means you're at the edge of deep self-discovery. Swimming in it means you're actively exploring your unconscious. Being overwhelmed by it means the depth of your inner world feels too vast to navigate alone.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Close your eyes and imagine standing at the water's edge. Does your body lean forward with curiosity or pull back with fear? Both are valid. Both are information.</span>
+    </div>
+</div>
+
+<!-- 38. Earthquake — 3,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">38</span>
+        <span class="symbol-name">Earthquake</span>
+        <span class="symbol-category-tag">Nature</span>
+    </div>
+    <p class="symbol-interpretation">Earthquakes shatter the ground beneath your feet &mdash; your foundational beliefs, security, or relationships. This dream signals that something you built your life upon is shifting: a marriage, a career, a worldview, a sense of identity. The severity of the quake matches the magnitude of the internal shift. After the shaking, rebuilding becomes possible.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Stand up and feel your feet. Does the ground feel solid? What foundation in your life is trembling &mdash; and what would remain if it fell?</span>
+    </div>
+</div>
+
+<!-- 39. Flood — 2,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">39</span>
+        <span class="symbol-name">Flood</span>
+        <span class="symbol-category-tag">Nature</span>
+    </div>
+    <p class="symbol-interpretation">A flood is emotion that has broken its boundaries. You've held things in for too long &mdash; grief, anger, love, frustration &mdash; and the dam has burst. Unlike drowning (personal overwhelm), a flood represents emotions that affect everything around you: relationships, home life, work. The water destroys but also cleanses. After the flood, only what's essential remains.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">What emotion have you been damming up? Place your hand on your chest and breathe into it. What would happen if you let it flow?</span>
+    </div>
+</div>
+
+</div><!-- /symbols-grid -->
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 7: PLACES & SPACES -->
+<!-- ════════════════════════════════════════ -->
+
+<div class="category-header">
+    <p class="category-label">Section Seven</p>
+    <h3 class="category-title">Places & Spaces</h3>
+    <div class="category-line"></div>
+</div>
+
+<div class="symbols-grid">
+
+<!-- 40. House — 8,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">40</span>
+        <span class="symbol-name">House</span>
+        <span class="symbol-category-tag">Places</span>
+    </div>
+    <p class="symbol-interpretation">The house is you. Every room represents a different aspect of your psyche. The attic is your higher mind and stored memories. The basement is your unconscious &mdash; the things you've buried. The kitchen is where you nurture yourself. A crumbling house means your self-image is deteriorating. Discovering new rooms means finding undiscovered parts of yourself.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Which room did your dream take place in? Place your awareness there now. What part of your inner life does that room represent, and what condition is it in?</span>
+    </div>
+</div>
+
+<!-- 41. Elevator — 4,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">41</span>
+        <span class="symbol-name">Elevator</span>
+        <span class="symbol-category-tag">Places</span>
+    </div>
+    <p class="symbol-interpretation">Elevators represent transitions between levels of consciousness or life stages. Going up signals ambition, spiritual growth, or status rising. Going down means descending into the unconscious, facing buried material, or a fear of decline. A stuck elevator is a transition stalled &mdash; you know you need to move up or down, but something has you trapped between floors.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Which direction was the elevator moving? Feel your body &mdash; does it feel like you're rising in life or descending? Are you in motion or stuck?</span>
+    </div>
+</div>
+
+<!-- 42. Stairs — 2,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">42</span>
+        <span class="symbol-name">Stairs</span>
+        <span class="symbol-category-tag">Places</span>
+    </div>
+    <p class="symbol-interpretation">Unlike elevators, stairs require your effort. Climbing stairs represents working toward a goal step by step &mdash; progress that demands energy. Endless stairs signal exhaustion from a journey that feels like it has no end. Descending stairs means willingly going deeper into your own psyche. Broken stairs warn that the path you're on has gaps you haven't accounted for.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Do your legs feel heavy or energized? That's your body telling you whether the climb you're on is aligned with your purpose or draining it.</span>
+    </div>
+</div>
+
+<!-- 43. Bridge — 1,800/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">43</span>
+        <span class="symbol-name">Bridge</span>
+        <span class="symbol-category-tag">Places</span>
+    </div>
+    <p class="symbol-interpretation">A bridge connects two sides &mdash; who you were and who you're becoming. Crossing a bridge means you're in transition. A broken bridge means the transition feels impossible or the connection between two parts of your life has been severed. Standing in the middle means you're suspended between the old and the new, unable to commit to either shore.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">What are you between right now &mdash; two decisions, two identities, two chapters? Does your body lean toward one side? Follow that lean.</span>
+    </div>
+</div>
+
+</div><!-- /symbols-grid -->
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 8: VEHICLES & MOVEMENT -->
+<!-- ════════════════════════════════════════ -->
+
+<div class="category-header">
+    <p class="category-label">Section Eight</p>
+    <h3 class="category-title">Vehicles & Movement</h3>
+    <div class="category-line"></div>
+</div>
+
+<div class="symbols-grid">
+
+<!-- 44. Car Accident — 10,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">44</span>
+        <span class="symbol-name">Car Accident</span>
+        <span class="symbol-category-tag">Vehicles</span>
+    </div>
+    <p class="symbol-interpretation">Cars represent your drive through life &mdash; your ambition, direction, and autonomy. A car accident signals a collision course in your waking life: conflicting priorities, a relationship crash, or a path that's about to go wrong. Who's driving matters. If you're driving, you feel responsible. If someone else is driving, you've given up control of your own life direction.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Who is driving your life right now &mdash; you or someone else? Grip an imaginary steering wheel. Does it feel secure in your hands or slipping?</span>
+    </div>
+</div>
+
+<!-- 45. Driving / Losing Control — 2,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">45</span>
+        <span class="symbol-name">Driving / Losing Control of Car</span>
+        <span class="symbol-category-tag">Vehicles</span>
+    </div>
+    <p class="symbol-interpretation">Losing control of a vehicle is one of the clearest anxiety dreams. You can see the road, you know where you want to go, but the car won't respond. Brakes failing means you can't slow down a situation that's accelerating. Steering failing means your decisions aren't producing the results you expect. The dream mirrors the helplessness of watching things go wrong despite your best efforts.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Press your feet into the floor like you're hitting the brakes. What in your life needs to slow down but won't?</span>
+    </div>
+</div>
+
+<!-- 46. Airplane — 2,000/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">46</span>
+        <span class="symbol-name">Airplane</span>
+        <span class="symbol-category-tag">Vehicles</span>
+    </div>
+    <p class="symbol-interpretation">Airplanes represent big life transitions &mdash; major moves, career changes, spiritual journeys. Taking off signals the beginning of something ambitious. Crashing signals fear that the big leap will fail. Missing your flight means you feel you've missed a critical life opportunity. Turbulence means the transition is happening but it's not smooth &mdash; expect bumps.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">What big transition are you in or approaching? Does your stomach drop when you think about it? That's the takeoff moment your body recognizes.</span>
+    </div>
+</div>
+
+</div><!-- /symbols-grid -->
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 9: OBJECTS & SYMBOLS -->
+<!-- ════════════════════════════════════════ -->
+
+<div class="category-header">
+    <p class="category-label">Section Nine</p>
+    <h3 class="category-title">Objects & Symbols</h3>
+    <div class="category-line"></div>
+</div>
+
+<div class="symbols-grid">
+
+<!-- 47. Money — 3,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">47</span>
+        <span class="symbol-name">Money</span>
+        <span class="symbol-category-tag">Objects</span>
+    </div>
+    <p class="symbol-interpretation">Money in dreams symbolizes value, self-worth, and energy exchange. Finding money means discovering hidden talents or untapped potential. Losing money reflects a fear of losing status, security, or personal value. Giving money away signals generosity or self-sacrifice. Counting money means you're evaluating your own worth &mdash; and worrying it doesn't add up.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">What's your body's first reaction when you think about your finances? Constriction or expansion? Your body already knows your true relationship with abundance.</span>
+    </div>
+</div>
+
+<!-- 48. Gun / Being Shot — 3,500/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">48</span>
+        <span class="symbol-name">Gun / Being Shot</span>
+        <span class="symbol-category-tag">Objects</span>
+    </div>
+    <p class="symbol-interpretation">A gun represents a concentrated force directed at you &mdash; a hurtful word, a sudden betrayal, a targeted attack on your sense of self. Being shot means someone's actions (or your own self-criticism) have penetrated your defenses. Holding a gun means you have power you're unsure how to use. The dream asks: where are you under attack, and where are you being aggressive?</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Where did the shot land in the dream? Touch that area of your body. What emotional "bullet" have you taken recently that you haven't processed?</span>
+    </div>
+</div>
+
+<!-- 49. Door — 1,800/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">49</span>
+        <span class="symbol-name">Door</span>
+        <span class="symbol-category-tag">Objects</span>
+    </div>
+    <p class="symbol-interpretation">Doors represent opportunities, transitions, and access to new parts of yourself. An open door is an invitation. A locked door is an opportunity you feel blocked from. A door you're afraid to open is a truth you're not ready to face. Walking through a door means you've committed to a change. The door is always asking: are you ready to step into what's next?</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">What opportunity is waiting for you that you haven't walked through yet? Does your body feel curious or resistant when you imagine opening it?</span>
+    </div>
+</div>
+
+<!-- 50. Mirror — 1,800/mo -->
+<div class="symbol-card">
+    <div class="symbol-header">
+        <span class="symbol-number">50</span>
+        <span class="symbol-name">Mirror</span>
+        <span class="symbol-category-tag">Objects</span>
+    </div>
+    <p class="symbol-interpretation">Mirrors force you to see yourself &mdash; and what you see in a dream mirror is your subconscious self-image. A distorted reflection means your self-perception is skewed. Not seeing your reflection means a loss of identity. A cracked mirror signals a fractured sense of self. A clear reflection means alignment between who you are and who you present to the world.</p>
+    <div class="somatic-check">
+        <span class="somatic-icon">&#9675;</span>
+        <span class="somatic-text">Close your eyes and imagine looking at yourself. What do you see &mdash; what you look like, or who you really are? Where does the gap between the two live in your body?</span>
+    </div>
+</div>
+
+</div><!-- /symbols-grid -->
+</div><!-- /symbols-section -->
+
+<!-- ════════════════════════════════════════ -->
+<!-- WEDDING BONUS -->
+<!-- ════════════════════════════════════════ -->
+
+
+<!-- ════════════════════════════════════════ -->
+<!-- CTA PAGE -->
+<!-- ════════════════════════════════════════ -->
+<div class="cta-page">
+    <h2>Ready to Go <em>Deeper?</em></h2>
+    <p class="cta-description">These 50 symbols are just the beginning. ONERA analyzes your specific dreams using Jungian depth psychology and guides you through personalized somatic release exercises &mdash; so the patterns don't just make sense, they dissolve.</p>
+
+    <ul class="cta-features">
+        <li>AI-powered dream analysis in seconds</li>
+        <li>Personalized somatic release for every symbol</li>
+        <li>Encrypted dream journal &mdash; your dreams stay yours</li>
+        <li>Shadow profile that evolves as you grow</li>
+        <li>280+ symbols with deep Jungian interpretations</li>
+        <li>Weekly pattern reports &amp; recurring dream tracking</li>
+    </ul>
+
+    <a href="https://apps.apple.com/app/onera-dream-analysis/id6740043856" class="cta-button">Download ONERA &mdash; Free</a>
+    <p class="cta-url">dreaminsight.app</p>
+
+    <div class="cta-logo">ONERA</div>
+</div>
+
+</body>
+</html>

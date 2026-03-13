@@ -857,7 +857,7 @@
         body.innerHTML =
           '<div class="onera-popup-msg onera-success">' +
             'You\u2019re in! \uD83C\uDF19' +
-            '<span class="onera-success-sub">Your free Dream Symbol Guide is on its way to your inbox. Meanwhile, explore more dream meanings below.</span>' +
+            '<span class="onera-success-sub">Here\u2019s your guide \u2014 <a href="/lead-magnet-50-symbols.html" target="_blank" style="color:#c4956a; text-decoration:underline; font-weight:600;">Download 50 Dream Symbols Guide</a></span>' +
           '</div>';
         setTimeout(function() { closePopupEl(container); }, 4000);
       }).catch(function() {
@@ -951,7 +951,7 @@
     // If already subscribed, show success state
     if (isSubscribed()) {
       box.querySelector('.onera-inline-body').innerHTML =
-        '<div class="onera-inline-msg onera-success">You\u2019re signed up! Your guide is on the way.</div>';
+        '<div class="onera-inline-msg onera-success">You\u2019re signed up! <a href="/lead-magnet-50-symbols.html" target="_blank" style="color:#c4956a; text-decoration:underline;">Download your guide here</a></div>';
     } else {
       bindInlineFormHandlers(box, source);
     }
@@ -989,7 +989,7 @@
       submitEmail(email, source).then(function() {
         markSubscribed();
         trackEvent('submit_success', { source: source });
-        body.innerHTML = '<div class="onera-inline-msg onera-success">You\u2019re in! Your Dream Symbol Guide is on the way.</div>';
+        body.innerHTML = '<div class="onera-inline-msg onera-success">You\u2019re in! <a href="/lead-magnet-50-symbols.html" target="_blank" style="color:#c4956a; text-decoration:underline;">Download your guide here</a></div>';
         // Update all other inline boxes on the page to show success state
         updateAllInlineBoxes();
         // Also hide popup if present
@@ -1009,7 +1009,7 @@
     allBoxes.forEach(function(box) {
       var body = box.querySelector('.onera-inline-body');
       if (body && !body.querySelector('.onera-success')) {
-        body.innerHTML = '<div class="onera-inline-msg onera-success">You\u2019re signed up! Your guide is on the way.</div>';
+        body.innerHTML = '<div class="onera-inline-msg onera-success">You\u2019re signed up! <a href="/lead-magnet-50-symbols.html" target="_blank" style="color:#c4956a; text-decoration:underline;">Download your guide here</a></div>';
       }
     });
   }

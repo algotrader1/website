@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "T4DJBHBQ89.app.dreaminsight.DreamInsight",
+        "paths": [
+          "/go/*"
+        ]
+      }
+    ]
+  }
+}

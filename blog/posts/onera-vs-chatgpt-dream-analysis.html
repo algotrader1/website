@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONERA vs ChatGPT for Dream Analysis: Why Context Matters | ONERA</title>
+    <meta name="description" content="ChatGPT can interpret individual dreams, but it can't track patterns, remember your history, or guide you through somatic release. Here's a detailed comparison of ONERA vs ChatGPT for dream analysis.">
+    <meta name="keywords" content="chatgpt dream interpretation, chatgpt dream analysis, AI dream interpretation, use chatgpt for dreams, dream analysis AI, ONERA vs ChatGPT">
+    <meta property="og:title" content="ONERA vs ChatGPT for Dream Analysis: Why Context Matters">
+    <meta property="og:description" content="ChatGPT gives good one-off dream interpretations. But dreams aren't one-offs. Here's why context and continuity matter.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dreaminsight.app/blog/posts/onera-vs-chatgpt-dream-analysis.html">
+    <meta property="og:image" content="https://dreaminsight.app/og-default.png">
+    <meta property="og:site_name" content="ONERA">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:published_time" content="2026-03-12T00:00:00Z">
+    <meta property="og:author" content="ONERA Research Team">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ONERA vs ChatGPT for Dream Analysis: Why Context Matters">
+    <meta name="twitter:site" content="@onera_dreams">
+    <link rel="canonical" href="https://dreaminsight.app/blog/posts/onera-vs-chatgpt-dream-analysis.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "ONERA vs ChatGPT for Dream Analysis: Why Context Matters",
+        "author": {"@type": "Organization", "name": "ONERA Research Team"},
+        "publisher": {"@type": "Organization", "name": "ONERA"},
+        "datePublished": "2026-03-12"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is ChatGPT good at interpreting dreams?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ChatGPT is surprisingly capable at one-off dream interpretation. It draws on a broad knowledge base that includes Jungian psychology, Freudian analysis, and cultural symbolism. For a single dream, it can provide a thoughtful, nuanced interpretation — often better than static dream dictionaries. The limitation is structural, not quality: ChatGPT doesn't remember your previous dreams, can't track recurring patterns, and treats each conversation as isolated. For occasional dream curiosity, it's quite good. For sustained dream work, you need something designed for continuity."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I just paste all my dreams into one ChatGPT conversation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can try, but you'll hit several practical problems. ChatGPT conversations have context limits — after a certain length, the model starts 'forgetting' earlier parts of the conversation. There's no structured database, so it can't efficiently search across 50 or 100 dreams for patterns. There's no visualization of recurring symbols or emotional trends. And you'd need to manually manage the conversation, re-prompting the model to look for connections. It works for 5-10 dreams. It breaks down at scale. A dedicated dream app is built for exactly this use case."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What can ONERA do that ChatGPT can't for dream analysis?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ONERA offers four things ChatGPT structurally cannot: (1) Persistent memory — it remembers every dream you've logged and uses that history to enrich new interpretations. (2) Pattern detection — it automatically identifies recurring symbols, emotions, and themes across your dream life. (3) Somatic integration — each analysis includes a guided body exercise to physically process what the dream surfaced. (4) Privacy — your dreams are end-to-end encrypted. With ChatGPT, your dreams become training data unless you opt out. For a single interesting dream, ChatGPT is fine. For an ongoing practice of self-understanding, ONERA is purpose-built."
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --bg: #f8f6f3;
+    --bg-warm: #f3f0ec;
+    --bg-card: #ffffff;
+    --fg: #1a1917;
+    --fg-2: #5c5a56;
+    --fg-3: #8a8780;
+    --fg-muted: #b5b3ae;
+    --accent: #c4956a;
+    --accent-soft: #d4a87a;
+    --accent-bg: rgba(196, 149, 106, 0.08);
+    --line: rgba(0,0,0,0.06);
+    --line-strong: rgba(0,0,0,0.1);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
+    --radius: 16px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    background: var(--bg); color: var(--fg);
+    line-height: 1.7; overflow-x: hidden;
+    min-height: 100vh; font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--accent); color: white; }
+nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.25rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(248, 246, 243, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--line);
+}
+.nav-logo {
+    font-size: 1.125rem; font-weight: 600; letter-spacing: 0.08em;
+    color: var(--fg); text-decoration: none; text-transform: uppercase;
+}
+.nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.nav-links a {
+    color: var(--fg-2); text-decoration: none; font-size: 0.875rem;
+    font-weight: 400; transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--fg); }
+.nav-cta {
+    background: var(--fg) !important; color: var(--bg) !important;
+    padding: 0.5rem 1.25rem !important; border-radius: 50px;
+    font-weight: 500 !important; transition: opacity 0.3s !important;
+}
+.nav-cta:hover { opacity: 0.85; }
+.article-container { max-width: 760px; margin: 0 auto; padding: 7rem 2rem 4rem; }
+.back-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    color: var(--fg-3); text-decoration: none; font-size: 0.875rem;
+    font-weight: 400; letter-spacing: 0.02em;
+    padding: 0.5rem 0; margin-bottom: 2.5rem; transition: color 0.3s;
+}
+.back-link:hover { color: var(--fg); }
+.back-arrow { font-size: 1.1rem; transition: transform 0.3s; }
+.back-link:hover .back-arrow { transform: translateX(-4px); }
+.article-header { margin-bottom: 3rem; }
+.article-meta {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 1.5rem; font-size: 0.8rem; color: var(--fg-muted);
+    text-transform: uppercase; letter-spacing: 0.08em;
+}
+.article-title {
+    font-size: clamp(2rem, 5vw, 3rem); font-weight: 600;
+    line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem;
+    color: var(--fg);
+}
+.article-subtitle {
+    font-size: clamp(1.05rem, 2vw, 1.2rem); font-weight: 300;
+    color: var(--fg-2); line-height: 1.6;
+}
+.article-content { font-size: 1.05rem; line-height: 1.8; }
+.article-content h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600;
+    margin: 2.5rem 0 1rem; color: var(--fg);
+    letter-spacing: -0.01em; line-height: 1.3;
+}
+.article-content h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500;
+    margin: 2rem 0 0.75rem; color: var(--fg);
+}
+.article-content p { margin-bottom: 1.5rem; color: var(--fg-2); }
+.article-content p strong { color: var(--fg); font-weight: 500; }
+.article-content em { color: var(--fg-3); font-style: italic; }
+.article-content ul, .article-content ol { margin: 1.5rem 0; padding-left: 1.5rem; }
+.article-content li { margin-bottom: 0.6rem; color: var(--fg-2); }
+.research-box {
+    background: var(--bg-warm); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 1.75rem; margin: 2rem 0;
+}
+.research-box p { margin-bottom: 0.75rem; color: var(--fg-2); }
+.research-box p:last-child { margin-bottom: 0; }
+.article-cta {
+    background: var(--fg); border-radius: var(--radius);
+    padding: 2.5rem; margin: 3rem 0; text-align: center;
+}
+.article-cta h3 { font-size: 1.35rem; font-weight: 500; margin-bottom: 0.75rem; color: var(--bg); }
+.article-cta p { font-size: 0.95rem; color: rgba(248,246,243,0.7); margin-bottom: 1.25rem; line-height: 1.6; }
+.article-cta a {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 2rem; background: var(--bg); color: var(--fg);
+    border-radius: 50px; text-decoration: none; font-size: 0.9rem;
+    font-weight: 500; transition: all 0.3s;
+}
+.article-cta a:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.variation-table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+.variation-table th, .variation-table td {
+    text-align: left; padding: 0.875rem 1rem;
+    border-bottom: 1px solid var(--line); font-size: 0.95rem;
+}
+.variation-table th {
+    color: var(--fg-muted); font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.05em; font-size: 0.8rem; background: var(--bg-warm);
+}
+.variation-table td { color: var(--fg-2); }
+.related-dreams { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.5rem 0; }
+.related-dreams a {
+    padding: 0.4rem 1rem; border: 1px solid var(--line-strong);
+    border-radius: 50px; color: var(--fg-2); text-decoration: none;
+    font-size: 0.85rem; transition: all 0.3s;
+}
+.related-dreams a:hover { color: var(--fg); border-color: var(--accent); background: var(--accent-bg); }
+hr { border: none; border-top: 1px solid var(--line); margin: 2.5rem 0; }
+footer {
+    padding: 3rem 0 2rem; text-align: center;
+    border-top: 1px solid var(--line); margin-top: 4rem;
+}
+.footer-links { margin-bottom: 1.5rem; }
+.footer-links a {
+    color: var(--fg-3); text-decoration: none; margin: 0 1.25rem;
+    font-size: 0.85rem; transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--fg); }
+.footer-copyright { font-size: 0.8rem; color: var(--fg-muted); }
+@media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    .article-container { padding: 5.5rem 1.25rem 3rem; }
+    .article-content { font-size: 1rem; }
+    .research-box { padding: 1.25rem; }
+    .article-cta { padding: 2rem; }
+    .footer-links a { margin: 0 0.75rem; }
+}
+</style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dreaminsight.app/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://dreaminsight.app/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "ONERA vs ChatGPT for Dream Analysis: Why Context Matters"}
+        ]
+    }
+    </script>
+</head>
+<body>
+<nav>
+    <a href="/" class="nav-logo">Onera</a>
+    <div class="nav-links">
+        <a href="/blog">Blog</a>
+        <a href="/founders-letter.html">Letter</a>
+        <a href="https://apps.apple.com/app/onera/id6751126653" target="_blank" class="nav-cta">Download</a>
+    </div>
+</nav>
+
+    <div class="article-container">
+        <a href="/blog/" class="back-link">
+            <span class="back-arrow">&larr;</span>
+            Back to Blog
+        </a>
+
+        <header class="article-header">
+            <div class="article-meta">
+                <span>March 13, 2026</span>
+                <span>&#9201; 11 min read</span>
+            </div>
+            <h1 class="article-title">ONERA vs ChatGPT for Dream Analysis: Why Context Matters</h1>
+            <p class="article-subtitle">ChatGPT gives surprisingly good dream interpretations. But dreams aren't isolated events &mdash; they're chapters in an ongoing story. Here's why that distinction matters.</p>
+        </header>
+
+        <article class="article-content">
+
+            <p>If you've ever pasted a dream into ChatGPT and asked "what does this mean?", you probably got a pretty good answer. ChatGPT draws on a vast knowledge base that includes Jungian psychology, Freudian theory, cultural symbolism, and dream research. For a one-off interpretation, it's impressive.</p>
+
+            <p>So why would anyone use a dedicated dream app?</p>
+
+            <p>Because <strong>dreams don't work in isolation</strong>. Your dream about drowning last Tuesday is connected to your dream about your mother's house three weeks ago, which is connected to the anxiety dream you had on your birthday. The real insights emerge not from any single dream, but from the patterns across all of them. And that's something ChatGPT structurally cannot do.</p>
+
+            <h2>Where ChatGPT Excels</h2>
+
+            <p>Let's be fair about what ChatGPT does well:</p>
+
+            <ul>
+                <li><strong>Broad knowledge</strong> &mdash; it can draw on Jungian, Freudian, Gestalt, and cultural frameworks simultaneously</li>
+                <li><strong>Nuanced language</strong> &mdash; it can discuss complex psychological concepts clearly</li>
+                <li><strong>Follow-up questions</strong> &mdash; you can have a real conversation, adding context and getting refined interpretations</li>
+                <li><strong>Free (or cheap)</strong> &mdash; accessible to anyone</li>
+                <li><strong>No judgment</strong> &mdash; you can share the most disturbing dream without social anxiety</li>
+            </ul>
+
+            <p>For a single, interesting dream that you want to explore, ChatGPT is genuinely useful. We'd never claim otherwise.</p>
+
+            <h2>The Five Structural Limitations</h2>
+
+            <p>The problems with ChatGPT for dream work aren't about quality &mdash; they're about architecture. Here's what a general-purpose AI fundamentally can't do for sustained dream work:</p>
+
+            <h3>1. No Memory Across Sessions</h3>
+
+            <p>Every new ChatGPT conversation starts from zero. It doesn't remember that you dreamed about water last week, or that your father appears in 40% of your dreams, or that snakes started showing up after you changed jobs.</p>
+
+            <p><strong>Why this matters:</strong> In dream analysis, the tenth time you dream about being lost means something very different from the first time. A therapist would note the recurrence. ChatGPT can't.</p>
+
+            <p>ONERA maintains a persistent database of every dream you log. When you record a new dream, the AI analyzes it in the context of your entire dream history &mdash; surfacing connections and patterns automatically.</p>
+
+            <h3>2. No Pattern Detection</h3>
+
+            <p>Humans are bad at noticing gradual patterns in their own psychology. You might not realize that your anxiety dreams cluster around the same day of the week, or that water appears in your dreams whenever you're processing grief, or that your recurring chase dreams stopped after you quit your job.</p>
+
+            <div class="research-box">
+                <p><strong>Real example of pattern detection:</strong></p>
+                <p><em>A user logged dreams in ONERA for six weeks. The AI identified that "enclosed spaces" (elevators, basements, small rooms) appeared in 73% of their dreams during weeks when they reported high work stress, but never during relaxed periods. The user had no idea this correlation existed. It pointed them toward a specific claustrophobia-anxiety connection related to feeling "trapped" at work &mdash; something that became the focus of their therapy sessions.</em></p>
+            </div>
+
+            <p>ChatGPT can't detect this. Not because it lacks intelligence, but because it doesn't have the data. You'd need to paste 42 dreams into a single conversation and ask it to find patterns &mdash; and even then, it would lose earlier context as the conversation grew.</p>
+
+            <h3>3. No Somatic Component</h3>
+
+            <p>This is ONERA's core differentiator. Dreams don't just deliver information &mdash; they activate your nervous system. The fear you feel during a chase dream, the grief in a dream about a deceased loved one &mdash; these are real physiological events.</p>
+
+            <p>ChatGPT can explain what a dream means. It can't guide you through a body-based exercise to release the tension the dream activated. ONERA pairs every interpretation with a specific somatic release practice &mdash; a 60-second guided exercise targeted at the body region where that particular emotion typically stores.</p>
+
+            <p><strong>Understanding a dream intellectually is step one. Integrating it somatically is where the transformation happens.</strong></p>
+
+            <h3>4. No Privacy Guarantees</h3>
+
+            <p>Dreams are among the most intimate data a person produces. They contain fears, desires, traumas, and fantasies that you might not share with your closest friend. When you paste a dream into ChatGPT, that text becomes part of OpenAI's infrastructure &mdash; potentially used for model training unless you specifically opt out.</p>
+
+            <p>ONERA uses end-to-end encryption. Your dreams are encrypted on your device before they ever leave it. We can't read your dreams. Nobody can, except you.</p>
+
+            <h3>5. No Structured Tracking</h3>
+
+            <p>ChatGPT gives you text. ONERA gives you a structured database with:</p>
+
+            <ul>
+                <li>Automatically extracted symbols and themes</li>
+                <li>Emotion mapping over time</li>
+                <li>Recurring character identification</li>
+                <li>Dream frequency and recall quality trends</li>
+                <li>Connections between dreams and tagged life events</li>
+            </ul>
+
+            <p>After three months, you don't just have a collection of conversations &mdash; you have a map of your inner world.</p>
+
+            <h2>Side-by-Side Comparison</h2>
+
+            <table class="variation-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>ChatGPT</th>
+                        <th>ONERA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Single dream interpretation</td>
+                        <td>Excellent</td>
+                        <td>Excellent</td>
+                    </tr>
+                    <tr>
+                        <td>Dream history memory</td>
+                        <td>None</td>
+                        <td>Full persistent database</td>
+                    </tr>
+                    <tr>
+                        <td>Pattern detection</td>
+                        <td>Manual only</td>
+                        <td>Automatic (symbols, emotions, themes)</td>
+                    </tr>
+                    <tr>
+                        <td>Somatic release</td>
+                        <td>Can describe exercises</td>
+                        <td>Guided, dream-specific exercises</td>
+                    </tr>
+                    <tr>
+                        <td>Privacy</td>
+                        <td>Data used for training (default)</td>
+                        <td>End-to-end encrypted</td>
+                    </tr>
+                    <tr>
+                        <td>Voice recording</td>
+                        <td>Text only</td>
+                        <td>Voice-to-text built in</td>
+                    </tr>
+                    <tr>
+                        <td>Psychological framework</td>
+                        <td>Multi-framework (you choose)</td>
+                        <td>Jungian-somatic (consistent)</td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td>Free / $20/mo (Plus)</td>
+                        <td>Free / Premium</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>When to Use Each</h2>
+
+            <ul>
+                <li><strong>Use ChatGPT when:</strong> you had a single vivid dream and want a quick, thoughtful interpretation. You want to explore different psychological frameworks. You want to have a back-and-forth conversation about a specific dream.</li>
+                <li><strong>Use ONERA when:</strong> you want to build a consistent dream practice. You want to track patterns over weeks and months. You want somatic integration, not just intellectual understanding. You care about privacy. You want your 50th dream to be analyzed in the context of the 49 that came before it.</li>
+            </ul>
+
+            <div class="research-box">
+                <p><strong>The analogy:</strong> ChatGPT is like asking a brilliant friend about a dream over coffee. ONERA is like working with a therapist who has your complete file, remembers every session, and gives you homework. Both have value. They serve different purposes.</p>
+            </div>
+
+        <div class="pillar-link" style="margin: 2rem 0; padding: 1.5rem; background: rgba(196,149,106,0.08); border-left: 3px solid #c4956a; border-radius: 8px;">
+          <p style="margin: 0; color: var(--fg-2); font-size: 0.95rem;">&#128214; <strong>Go deeper:</strong> <a href="/blog/posts/complete-guide-dream-interpretation.html" style="color: #c4956a; text-decoration: underline;">The Complete Guide to Dream Interpretation</a></p>
+        </div>
+
+            <h2>Related Reading</h2>
+
+            <div class="related-dreams">
+                <a href="/blog/posts/best-dream-journal-app.html">Best Dream Journal Apps</a>
+                <a href="/blog/posts/best-dream-interpretation-app.html">Best Interpretation Apps</a>
+                <a href="/blog/posts/dream-analysis-app-comparison.html">Full App Comparison</a>
+                <a href="/blog/posts/complete-guide-dream-analysis.html">Dream Analysis Guide</a>
+                <a href="/blog/posts/recurring-dreams-complete-guide.html">Recurring Dreams Guide</a>
+            </div>
+
+            <hr>
+
+            <div class="article-cta">
+                <h3>Give your dreams the context they deserve</h3>
+                <p>ONERA remembers every dream, tracks your patterns, and guides you through somatic release. Your 50th dream gets analyzed in the context of all 49 before it. Free to start.</p>
+                <a href="https://apps.apple.com/app/onera/id6751126653" target="_blank">Download Free &rarr;</a>
+            </div>
+
+            <hr>
+
+            <h2>FAQ</h2>
+
+            <h3>Is ChatGPT good at interpreting dreams?</h3>
+            <p>ChatGPT is surprisingly capable at one-off dream interpretation. It draws on a broad knowledge base that includes Jungian psychology, Freudian analysis, and cultural symbolism. For a single dream, it can provide a thoughtful, nuanced interpretation &mdash; often better than static dream dictionaries. The limitation is structural: ChatGPT doesn't remember your previous dreams, can't track recurring patterns, and treats each conversation as isolated.</p>
+
+            <h3>Can I just paste all my dreams into one ChatGPT conversation?</h3>
+            <p>You can try, but you'll hit practical problems. Conversations have context limits &mdash; after a certain length, the model starts forgetting earlier parts. There's no structured database, so it can't efficiently search across 50 or 100 dreams for patterns. And you'd need to manually manage the conversation, re-prompting the model to look for connections. It works for 5-10 dreams. It breaks down at scale.</p>
+
+            <h3>What can ONERA do that ChatGPT can't for dream analysis?</h3>
+            <p>Four things ChatGPT structurally cannot offer: (1) Persistent memory &mdash; it remembers every dream and uses your history to enrich new interpretations. (2) Pattern detection &mdash; it automatically identifies recurring symbols, emotions, and themes. (3) Somatic integration &mdash; each analysis includes a guided body exercise to physically process the dream. (4) Privacy &mdash; your dreams are end-to-end encrypted, not used for training data.</p>
+
+            <hr>
+
+            <p style="font-size: 0.9rem; color: var(--fg-muted); font-style: italic;">This article is for educational purposes and does not substitute professional mental health care. If you're experiencing distress, please consult a licensed therapist or counselor.</p>
+
+        </article>
+    </div>
+
+    <footer>
+    <div class="footer-links">
+        <a href="/legal.html">Legal</a>
+        <a href="/cgu.html">Terms</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/blog">Blog</a>
+        <a href="/founders-letter.html">Founder's Letter</a>
+    </div>
+    <div class="footer-copyright">&copy; 2026 Onera. All rights reserved.</div>
+</footer>
+    <script src="/email-capture.js"></script>
+</body>
+</html>

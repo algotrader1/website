@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://dreaminsight.app/</loc>
@@ -2082,4 +2082,4 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>
+<url><loc>https://dreaminsight.app/blog/posts/best-dream-journal-app.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url><url><loc>https://dreaminsight.app/blog/posts/best-dream-interpretation-app.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url><url><loc>https://dreaminsight.app/blog/posts/onera-vs-headspace.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url><url><loc>https://dreaminsight.app/blog/posts/onera-vs-chatgpt-dream-analysis.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url><url><loc>https://dreaminsight.app/blog/posts/dream-analysis-app-comparison.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url></urlset>
