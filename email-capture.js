@@ -627,6 +627,7 @@
   }
 
   async function submitEmail(email, source) {
+    var cleanEmail = email.trim().toLowerCase();
     var res = await fetch(ENDPOINT, {
       method: 'POST',
       headers: {
@@ -636,16 +637,22 @@
         'Prefer': 'return=minimal'
       },
       body: JSON.stringify({
-        email: email.trim().toLowerCase(),
+        email: cleanEmail,
         source: source,
         page_url: window.location.pathname
       })
     });
     if (!res.ok) {
-      // 409 = duplicate, treat as success
+      // 409 = duplicate, treat as success but skip email (already sent)
       if (res.status === 409) return true;
       throw new Error('HTTP ' + res.status);
     }
+    // Fire-and-forget: send lead magnet email via Edge Function
+    fetch(SUPABASE_URL + '/functions/v1/send-lead-magnet', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: cleanEmail })
+    }).catch(function() {});
     return true;
   }
 
