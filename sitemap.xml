@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://dreaminsight.app/</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
@@ -36,2050 +36,2102 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <!-- Pillar Pages -->
   <url>
     <loc>https://dreaminsight.app/blog/posts/complete-guide-dream-interpretation.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/shadow-work-dreams-guide.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/somatic-dream-release-guide.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/lucid-dreaming-complete-guide.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/recurring-dreams-complete-guide.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/nightmare-healing-guide.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- App Comparison Articles -->
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/best-dream-journal-app.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/best-dream-interpretation-app.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/onera-vs-headspace.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/onera-vs-chatgpt-dream-analysis.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/dream-analysis-app-comparison.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Dream Symbol Articles (A) -->
   <url>
     <loc>https://dreaminsight.app/blog/posts/abandonment-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/airplane-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/airport-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/alien-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/alligator-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/angel-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/anger-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/ant-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/apple-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/arguing-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://dreaminsight.app/blog/posts/attic-dream-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Dream Symbol Articles (B) -->
+  <url>
     <loc>https://dreaminsight.app/blog/posts/baby-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/basement-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/bat-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/bathroom-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/beach-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/bear-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/bed-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/bedroom-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/bee-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/being-chased-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/betrayal-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/bicycle-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/bird-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/black-cat-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/black-dog-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/black-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/black-snake-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/bleeding-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/blood-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/blue-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/boat-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/bones-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/book-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/boss-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/brakes-not-working-dream-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/bread-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/breastfeeding-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/bridge-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/broken-glass-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/brother-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/bus-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/butterfly-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Dream Symbol Articles (C) -->
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/cage-dream-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dreaminsight.app/blog/posts/cage-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <loc>https://dreaminsight.app/blog/posts/cake-dream-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/candle-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/cant-scream-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/car-accident-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/car-crash-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/car-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/castle-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/cat-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/cave-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/celebrity-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/chain-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/cheating-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/chicken-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/child-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/childhood-home-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/church-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/climbing-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/clock-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/cobra-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/cockroach-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/coffin-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/compass-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/complete-guide-dream-analysis.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/confusion-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/control-dreams-santa-clara.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/cooking-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/cow-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/cross-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/crow-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/crown-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/crying-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Dream Symbol Articles (D) -->
   <url>
     <loc>https://dreaminsight.app/blog/posts/dancing-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/darkness-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/dead-bird-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/dead-cat-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/dead-dog-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/dead-person-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/death-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/deer-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/demon-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/desert-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/diamond-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/divorce-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/dog-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/dolphin-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/door-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/dream-about-ex-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/dream-analysis-ai-onera.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/dream-creativity-unlocked.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/dreams-feel-real-mit.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/dreams-modern-psychotherapy.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/dreams-neurobiological-rome.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/dreams-random-chaos-berkeley.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/dreams-training-ground-ucsc.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/dreams-transform-mind-northwestern.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/dreams-virtual-reality-chicago.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/driving-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/drowning-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/drowning-in-car-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Dream Symbol Articles (E) -->
   <url>
     <loc>https://dreaminsight.app/blog/posts/eagle-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/earthquake-crack-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/earthquake-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/eating-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/egg-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/elephant-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/elevator-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/exam-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/eyes-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Dream Symbol Articles (F) -->
   <url>
     <loc>https://dreaminsight.app/blog/posts/falling-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/father-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/fear-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/feet-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/fighting-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/fire-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/fish-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/flood-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/flower-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/flying-car-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/flying-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/fog-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/forest-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/fox-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/frog-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/fruit-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/funeral-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Dream Symbol Articles (G) -->
   <url>
     <loc>https://dreaminsight.app/blog/posts/garden-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/getting-married-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/ghost-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/giving-birth-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/goat-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/god-dream-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/gold-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/graduation-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/grandfather-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/grandmother-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/grass-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/grave-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/green-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/green-snake-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/guilt-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/gun-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Dream Symbol Articles (H) -->
   <url>
     <loc>https://dreaminsight.app/blog/posts/hair-falling-out-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/hands-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/harvard-2025-strange-dreams.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/harvard-dreams-7-benefits.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/harvard-dreams-revolutionary-discovery.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/harvest-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/heart-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/hiding-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/horse-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/hospital-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/hotel-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/house-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Dream Symbol Articles (I-J) -->
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/ice-dream-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/island-dream-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/jealousy-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/jmu-dream-study.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/joy-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/jumping-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/jung-addiction-recovery-adhd.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/jung-dreams-social-phobia-treatment.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/jungle-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Dream Symbol Articles (K-L) -->
   <url>
     <loc>https://dreaminsight.app/blog/posts/key-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/kidnapped-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/kitchen-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/kitten-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/knife-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/ladder-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/lake-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/lamp-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/late-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/letter-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/lightning-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/lion-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/lizard-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/losing-teeth-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/losing-wallet-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/lost-car-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/lost-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/lost-phone-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/lucid-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/lucid-dreaming-depression-cornell.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- Dream Symbol Articles (M) -->
   <url>
     <loc>https://dreaminsight.app/blog/posts/map-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/mask-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/meat-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/milk-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/mirror-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/mit-dreams-secret-language-self-discovery.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/money-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/monkey-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/moon-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/mother-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/motorcycle-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/mountain-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/mouse-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/moving-house-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/mud-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/multiple-snakes-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/murder-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Dream Symbol Articles (N-O) -->
   <url>
     <loc>https://dreaminsight.app/blog/posts/naked-in-public-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/nightmare-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/ocean-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/old-friend-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/onera-dream-analysis-app.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/owl-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Dream Symbol Articles (P) -->
   <url>
     <loc>https://dreaminsight.app/blog/posts/painting-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/paralyzed-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/peacock-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/phone-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dreaminsight.app/blog/posts/pmc-dreams-people-past-hidden-messages.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <loc>https://dreaminsight.app/blog/posts/pig-dream-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/pregnancy-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/prison-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/puppy-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/purple-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/python-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Dream Symbol Articles (R) -->
   <url>
     <loc>https://dreaminsight.app/blog/posts/rabbit-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/rain-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/rainbow-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/rat-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/rattlesnake-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/recurring-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/red-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/red-snake-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/researchgate-dreams-healing-therapy.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/ring-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/river-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/road-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/rope-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/rose-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/ruins-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/running-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Dream Symbol Articles (S) -->
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/sadness-dream-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dreaminsight.app/blog/posts/sadness-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <loc>https://dreaminsight.app/blog/posts/sand-dream-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/school-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/science-of-nightly-dreams.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/scorpion-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/seed-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/shame-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/shark-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/shoes-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/silver-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/singing-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/sister-dream-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/sleep-paralysis-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/snake-bite-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/snake-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/snow-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/spider-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/stairs-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/stanford-strange-dreams-true-self.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/star-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/stealing-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/stranger-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/sun-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/sunrise-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/swan-dream-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/swimming-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/sword-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Dream Symbol Articles (T) -->
   <url>
     <loc>https://dreaminsight.app/blog/posts/teeth-breaking-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/teeth-falling-out-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/tiger-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/tornado-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/train-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/trapped-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/treasure-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/tree-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/tsunami-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/turtle-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/twin-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/uc-berkeley-dream-healing.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/uc-irvine-dreams-discovery.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- Dream Symbol Articles (U-Z) -->
   <url>
     <loc>https://dreaminsight.app/blog/posts/umbrella-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/vampire-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/volcano-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/vomiting-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/wall-dream-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/war-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/water-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/waterfall-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/wedding-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/wedding-dress-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/whale-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/white-cat-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/white-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/white-snake-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/why-do-we-dream-berkeley.html</loc>
-    <lastmod>2026-03-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/why-dreams-fade-fast.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/wind-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/window-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/witch-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/wolf-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/worm-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/yellow-dream-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/yellow-snake-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/zombie-dream-meaning.html</loc>
-    <lastmod>2026-03-07</lastmod>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Research & Science Articles -->
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/control-dreams-santa-clara.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/dream-creativity-unlocked.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/dreams-feel-real-mit.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/dreams-neurobiological-rome.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/dreams-random-chaos-berkeley.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/dreams-training-ground-ucsc.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/dreams-transform-mind-northwestern.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/dreams-virtual-reality-chicago.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/harvard-2025-strange-dreams.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/harvard-dreams-7-benefits.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/harvard-dreams-revolutionary-discovery.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/jmu-dream-study.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/jung-addiction-recovery-adhd.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/jung-dreams-social-phobia-treatment.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/lucid-dreaming-depression-cornell.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/mit-dreams-secret-language-self-discovery.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/pmc-dreams-people-past-hidden-messages.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/researchgate-dreams-healing-therapy.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/science-of-nightly-dreams.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/stanford-strange-dreams-true-self.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/uc-berkeley-dream-healing.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/uc-irvine-dreams-discovery.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/why-do-we-dream-berkeley.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/why-dreams-fade-fast.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- ONERA App & Brand Articles -->
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/dream-analysis-ai-onera.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/onera-dream-analysis-app.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/dreams-modern-psychotherapy.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Somatic / Trauma / Healing Articles -->
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/body-disconnection-dissociation.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/body-keeps-the-score-exercises.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/chest-tightness-anxiety-emotions.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/dream-journal-benefits.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/dreams-about-dead-father.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/dreams-about-dead-mother.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/dreams-about-ex-wont-stop.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/dreams-reveal-what-therapy-cant.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/emotional-numbness.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/emotionally-unavailable-man-why.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/emotionally-unavailable-partner-pattern.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/father-wound-healing.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/freeze-response-trauma.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/generational-trauma-breaking-cycle.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/hip-tension-emotional-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/imposter-syndrome-shame.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/jaw-clenching-stress-emotions.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/mother-wound-healing.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/nervous-system-dysregulation.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/people-pleasing-trauma-response.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/recurring-nightmares-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/self-sabotage-why.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/shadow-work-beginners.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/signs-body-releasing-trauma.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/sleep-paralysis-trauma.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/somatic-exercises-anxiety.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/somatic-experiencing-at-home.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/stomach-knots-anxiety-meaning.html</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dreaminsight.app/blog/posts/therapy-alternatives-that-work.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/therapy-not-working.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/emotional-numbness.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/recurring-nightmares-meaning.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/where-trauma-stored-in-body.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/self-sabotage-why.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/mother-wound-healing.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/father-wound-healing.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/emotionally-unavailable-partner-pattern.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/body-disconnection-dissociation.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/somatic-exercises-anxiety.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/shadow-work-beginners.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/imposter-syndrome-shame.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/trauma-healing-without-therapy.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/body-keeps-the-score-exercises.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/dreams-about-dead-father.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/dreams-about-dead-mother.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/waking-up-at-3am.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/nervous-system-dysregulation.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/signs-body-releasing-trauma.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/why-do-i-feel-nothing.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/generational-trauma-breaking-cycle.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/chest-tightness-anxiety-emotions.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/jaw-clenching-stress-emotions.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/dream-journal-benefits.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/somatic-experiencing-at-home.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/hip-tension-emotional-meaning.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/emotionally-unavailable-man-why.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/dreams-about-ex-wont-stop.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/freeze-response-trauma.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/therapy-alternatives-that-work.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/stomach-knots-anxiety-meaning.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/sleep-paralysis-trauma.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/people-pleasing-trauma-response.html</loc>
-    <lastmod>2026-03-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://dreaminsight.app/blog/posts/understanding-but-cant-change.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dreaminsight.app/blog/posts/dreams-reveal-what-therapy-cant.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://dreaminsight.app/blog/posts/waking-up-at-3am.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dreaminsight.app/blog/posts/attic-dream-meaning.html</loc>
-    <lastmod>2026-03-10</lastmod>
+    <loc>https://dreaminsight.app/blog/posts/where-trauma-stored-in-body.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dreaminsight.app/blog/posts/brakes-not-working-dream-meaning.html</loc>
-    <lastmod>2026-03-10</lastmod>
+    <loc>https://dreaminsight.app/blog/posts/why-do-i-feel-nothing.html</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/cake-dream-meaning.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/god-dream-meaning.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/ice-dream-meaning.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/island-dream-meaning.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/pig-dream-meaning.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/sand-dream-meaning.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/sister-dream-meaning.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/swan-dream-meaning.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/wall-dream-meaning.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://dreaminsight.app/blog/posts/yellow-dream-meaning.html</loc>
-    <lastmod>2026-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-<url><loc>https://dreaminsight.app/blog/posts/best-dream-journal-app.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url><url><loc>https://dreaminsight.app/blog/posts/best-dream-interpretation-app.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url><url><loc>https://dreaminsight.app/blog/posts/onera-vs-headspace.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url><url><loc>https://dreaminsight.app/blog/posts/onera-vs-chatgpt-dream-analysis.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url><url><loc>https://dreaminsight.app/blog/posts/dream-analysis-app-comparison.html</loc><lastmod>2026-03-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url></urlset>
+</urlset>
