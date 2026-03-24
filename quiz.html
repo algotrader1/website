@@ -2,15 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2CQXWM0KPB"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2CQXWM0KPB');
-    </script>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>ONERA — Dream Assessment</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +38,14 @@ fbq('track', 'PageView');
   /* Progress */
   .progress-bar { position: fixed; top: 0; left: 0; width: 100%; height: 3px; background: rgba(255,255,255,0.05); z-index: 100; }
   .progress-fill { height: 100%; background: linear-gradient(90deg, var(--purple), var(--accent)); border-radius: 0 2px 2px 0; transition: width 0.6s cubic-bezier(0.4,0,0.2,1); }
-  .progress-text { position: fixed; top: 8px; right: 16px; font-size: 11px; color: var(--text-muted); z-index: 100; letter-spacing: 0.5px; }
+  .progress-text { position: fixed; top: 8px; right: 16px; font-size: 10px; color: var(--text-muted); z-index: 100; letter-spacing: 0.3px; }
+  .progress-sections { position: fixed; top: 8px; left: 50%; transform: translateX(-50%); z-index: 100; display: flex; align-items: center; gap: 4px; font-size: 9px; }
+  .progress-sections .ps-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.1); transition: background 0.4s; }
+  .progress-sections .ps-dot.active { background: var(--accent); }
+  .progress-sections .ps-dot.done { background: var(--purple); }
+  .progress-sections .ps-label { color: var(--text-dim); letter-spacing: 0.5px; transition: color 0.3s; }
+  .progress-sections .ps-label.active { color: var(--accent); }
+  .progress-sections .ps-line { width: 16px; height: 1px; background: rgba(255,255,255,0.06); }
 
   /* Back */
   .back-btn { position: fixed; top: 10px; left: 16px; z-index: 100; background: none; border: none; color: var(--text-muted); font-size: 18px; cursor: pointer; padding: 12px; min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; opacity: 0.6; transition: opacity 0.2s; }
@@ -64,8 +62,9 @@ fbq('track', 'PageView');
   .landing h1 { font-family: 'Instrument Serif', Georgia, serif; font-size: 28px; font-weight: 400; line-height: 1.35; letter-spacing: -0.3px; max-width: 340px; }
   .landing h1 em { font-style: italic; color: var(--accent); }
   .landing .sub { font-size: 14px; color: var(--text-muted); line-height: 1.6; max-width: 300px; }
-  .landing .cta-main { background: var(--accent); color: #0a0a14; border: none; padding: 16px 40px; border-radius: 12px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; letter-spacing: 0.3px; }
+  .landing .cta-main { background: var(--accent); color: #0a0a14; border: none; padding: 16px 40px; border-radius: 12px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s; letter-spacing: 0.3px; box-shadow: 0 0 20px rgba(212,165,116,0.25), 0 0 50px rgba(212,165,116,0.1); animation: ctaGlow 3s ease-in-out infinite; }
   .landing .cta-main:hover { background: var(--accent-bright); transform: translateY(-1px); box-shadow: 0 8px 30px var(--accent-glow); }
+  @keyframes ctaGlow { 0%,100% { box-shadow: 0 0 20px rgba(212,165,116,0.25), 0 0 50px rgba(212,165,116,0.1); } 50% { box-shadow: 0 0 30px rgba(212,165,116,0.4), 0 0 70px rgba(212,165,116,0.15); transform: scale(1.02); } }
   .landing .trust { display: flex; flex-direction: column; gap: 6px; align-items: center; }
   .landing .trust span { font-size: 11px; color: var(--text-dim); letter-spacing: 0.5px; }
   .landing .trust-badges { display: flex; gap: 16px; font-size: 11px; color: var(--text-muted); }
@@ -224,6 +223,10 @@ fbq('track', 'PageView');
   .dev-bar button:hover { border-color: var(--accent); color: var(--accent); }
   .dev-bar button.active { background: var(--accent); color: #0a0a14; border-color: var(--accent); }
 
+  /* Crisis footer */
+  .crisis-footer { position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; text-align: center; padding: 6px 12px; font-size: 9px; color: var(--text-dim); background: linear-gradient(to top, var(--bg) 80%, transparent); pointer-events: none; }
+  .crisis-footer a { color: var(--text-muted); pointer-events: auto; }
+
   /* Reduced motion */
   @media (prefers-reduced-motion: reduce) {
     .screen { animation: none; }
@@ -238,9 +241,23 @@ fbq('track', 'PageView');
 <body>
 
 <div class="ambient"></div>
+<div class="crisis-footer">In crisis? <a href="https://988lifeline.org" target="_blank">988 Lifeline</a> · <a href="sms:741741&body=HOME">Text HOME to 741741</a></div>
 
 <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 <div class="progress-text" id="progressText"></div>
+<div class="progress-sections" id="progressSections" style="display:none;">
+  <span class="ps-label" data-section="1">About You</span>
+  <span class="ps-dot" data-section="1"></span>
+  <span class="ps-line"></span>
+  <span class="ps-dot" data-section="2"></span>
+  <span class="ps-label" data-section="2">Your Story</span>
+  <span class="ps-line"></span>
+  <span class="ps-dot" data-section="3"></span>
+  <span class="ps-label" data-section="3">The Pattern</span>
+  <span class="ps-line"></span>
+  <span class="ps-dot" data-section="4"></span>
+  <span class="ps-label" data-section="4">Your Profile</span>
+</div>
 <button class="back-btn" id="backBtn" onclick="goBack()">&#8592;</button>
 
 <div class="quiz-container" id="quizContainer"></div>
@@ -346,7 +363,7 @@ const CPP_DATA = {
           { icon: '', label: 'My body — it doesn\'t feel like mine', sub: '' },
           { icon: '', label: 'Everywhere. I function. I feel nothing.', sub: '' }
         ]},
-      { id: 'hope1', type: 'interstitial', text: 'Disconnection is a protection — not a personality. Your nervous system learned to shut down to survive something. The shutdown worked. Now it\'s still running. <em>Your dreams know exactly where it started.</em>' },
+      { id: 'hope1', type: 'interstitial', text: 'Disconnection is a protection — not a personality. Your nervous system learned to shut down to survive something. Talk therapy helped you understand why. Meditation gave brief moments of relief. But understanding and feeling are two different things. The shutdown lives in your body — below where those tools reach. <em>Your dreams know exactly where it started.</em>' },
       { id: 'mirror', label: 'YOUR SELF', text: 'Which feels most true about you right now?',
         options: [
           { icon: '', label: 'I seem fine. Privately, I feel nothing.', sub: '' },
@@ -481,188 +498,192 @@ const CPP_DATA = {
     gender: 'F',
     landing: {
       icon: '',
-      headline: 'You\'ve understood it <em>for years.</em> Your body <em>still carries it.</em>',
-      sub: 'This 2-minute assessment reveals why understanding wasn\'t enough — and what your dreams have been trying to show you.',
+      headline: 'You can explain <em>exactly</em> why you react this way. <em>You still can\'t stop it.</em>',
+      sub: 'This 2-minute assessment reveals why understanding was never going to be enough — and what your body has been waiting for you to hear.',
       cta: 'Start My Assessment'
     },
     questions: [
+      // — PHASE 1: ENGAGEMENT + BELIEF #1 (patterns run your life beyond understanding) —
       { id: 'therapy', label: 'YOUR JOURNEY', text: 'How long have you been working on yourself?',
         options: [
           { icon: '', label: 'Less than a year', sub: '' },
           { icon: '', label: '1–3 years', sub: '' },
           { icon: '', label: '3–7 years', sub: '' },
-          { icon: '', label: '7+ years', sub: '' }
+          { icon: '', label: '7+ years and counting', sub: '' }
         ]},
-      { id: 'tried', label: 'WHAT YOU\'VE TRIED', text: 'What has taken the most of your time and energy?',
+      { id: 'tried', label: 'WHAT YOU\'VE TRIED', text: 'What have you invested your time and money into?', type: 'multi',
         options: [
-          { icon: '', label: 'Talk therapy', sub: '' },
-          { icon: '', label: 'Meditation, breathwork', sub: '' },
-          { icon: '', label: 'Books, journaling', sub: '' },
-          { icon: '', label: 'EMDR, somatic work', sub: '' }
+          { icon: '', label: 'Talk therapy (CBT, psychodynamic)', sub: '' },
+          { icon: '', label: 'Meditation or breathwork apps', sub: '' },
+          { icon: '', label: 'Self-help books, journaling', sub: '' },
+          { icon: '', label: 'EMDR, somatic work, IFS', sub: '' },
+          { icon: '', label: 'Medication', sub: '' },
+          { icon: '', label: 'Coaching, retreats, workshops', sub: '' }
         ]},
-      { id: 'label', label: 'THE PATTERN', text: 'I notice that I often...',
+      { id: 'label', label: 'THE PATTERN', text: 'Which sounds most like your inner voice?',
         options: [
-          { icon: '', label: 'Explain it, then repeat it', sub: '' },
-          { icon: '', label: 'Understand but can\'t change', sub: '' },
-          { icon: '', label: 'Know better, react anyway', sub: '' },
-          { icon: '', label: 'Analyze myself in circles', sub: '' }
+          { icon: '', label: 'I can name the pattern while I\'m repeating it', sub: '' },
+          { icon: '', label: 'I see the trigger coming and still can\'t dodge it', sub: '' },
+          { icon: '', label: 'I\'ve become a PhD student of my own psyche who still fails the same exam', sub: '' },
+          { icon: '', label: '"Where introspection turned into self-interrogation"', sub: '' }
         ]},
-      { id: 'moment', label: 'THE LAST TIME', text: 'In the past month, which felt most like you?',
+      // — PHASE 2: ACTIVATION — naming the wound (Belief #1 deepening) —
+      { id: 'moment', label: 'THE LAST TIME', text: 'Think about the last time it happened. Which was it?',
         options: [
-          { icon: '', label: 'I explained why I reacted — then did it again', sub: '' },
-          { icon: '', label: 'I saw it coming and couldn\'t stop it', sub: '' },
-          { icon: '', label: 'I cried because I know better by now', sub: '' },
-          { icon: '', label: 'I gave up trying to change this', sub: '' }
+          { icon: '', label: 'I explained why I reacted — then did it again the next day', sub: '' },
+          { icon: '', label: 'I watched myself blow up and had no idea where it came from', sub: '' },
+          { icon: '', label: 'I cried — not from the pain, but because I should know better by now', sub: '' },
+          { icon: '', label: 'I went quiet. I couldn\'t explain it to myself anymore.', sub: '' }
         ]},
-      { id: 'ceiling', label: 'THE CEILING', text: 'How long have you been stuck at this point?',
+      { id: 'ceiling', label: 'THE CEILING', text: 'How long have you felt stuck at this exact point?',
         options: [
           { icon: '', label: 'A few months', sub: '' },
           { icon: '', label: 'A year or two', sub: '' },
           { icon: '', label: 'Several years', sub: '' },
-          { icon: '', label: 'My whole healing journey', sub: '' }
+          { icon: '', label: 'As long as I\'ve been healing', sub: '' }
         ]},
-      { id: 'compound', label: 'WHERE IT BLEEDS', text: 'Where does being stuck show up most?',
+      { id: 'compound', label: 'WHERE IT SHOWS UP', text: 'Where does staying stuck bleed into your life?', type: 'multi',
         options: [
           { icon: '', label: 'Relationships — same patterns, different people', sub: '' },
           { icon: '', label: 'Self-image — I thought I\'d be further by now', sub: '' },
-          { icon: '', label: 'Body — I carry it physically', sub: '' },
+          { icon: '', label: 'Body — I carry it physically and I can\'t put it down', sub: '' },
+          { icon: '', label: 'Sleep — the dreams won\'t let me forget', sub: '' },
+          { icon: '', label: 'Work — I\'m running on fumes and performing fine', sub: '' },
           { icon: '', label: 'All of it. It bleeds into everything.', sub: '' }
         ]},
-      { id: 'impact', label: 'THE COST', text: 'How does "knowing but not changing" show up in your relationships?',
+      // — INTERSTITIAL: VALIDATION after first wave of pain (Breeze rupture-repair) —
+      { id: 'hope2', type: 'interstitial', text: 'The problem was never your effort. <em>It was the tool.</em> Talk therapy reaches the cortex. The pattern lives in the brainstem.' },
+      // — PHASE 3: DEEPER ACTIVATION — body + shame (Belief #2: talk tools failed structurally) —
+      { id: 'impact', label: 'IN YOUR RELATIONSHIPS', text: 'How does "knowing but not changing" show up with people you love?',
         options: [
-          { icon: '', label: 'I repeat the same arguments', sub: '' },
-          { icon: '', label: 'I hurt people I don\'t mean to', sub: '' },
-          { icon: '', label: 'I keep others at a distance', sub: '' },
-          { icon: '', label: 'I feel like I\'m failing them', sub: '' }
+          { icon: '', label: 'I repeat the same argument like a broken record', sub: '' },
+          { icon: '', label: 'I push people away before they can see me fail', sub: '' },
+          { icon: '', label: 'I perform closeness but something inside stays locked', sub: '' },
+          { icon: '', label: 'I feel like I\'m failing them — and they\'re running out of patience', sub: '' }
         ]},
-      { id: 'body', label: 'YOUR BODY', text: 'Right now — where do you notice tension?',
+      { id: 'body', label: 'YOUR BODY RIGHT NOW', text: 'As you read these questions — where does your body tense up?',
         options: [
-          { icon: '', label: 'Chest — pressure', sub: '' },
-          { icon: '', label: 'Jaw — clenched', sub: '' },
-          { icon: '', label: 'Stomach — knotted', sub: '' },
-          { icon: '', label: 'Can\'t feel anything', sub: '' }
+          { icon: '', label: 'Chest — pressure or tightness', sub: '' },
+          { icon: '', label: 'Jaw — clenched, grinding', sub: '' },
+          { icon: '', label: 'Stomach — knotted, heavy', sub: '' },
+          { icon: '', label: 'Shoulders — locked, carrying something', sub: '' },
+          { icon: '', label: 'I can\'t feel anything. That\'s the problem.', sub: '' }
         ]},
-      { id: 'hope2', type: 'interstitial', text: 'Talk therapy reaches the cortex. The pattern lives in the brainstem — in the part of you that responds before you can think. That\'s why understanding never changed the reaction. <em>The emotion is stored below language.</em>' },
-      { id: 'stuck', label: 'THE TRUTH', text: 'Which feels truest right now?',
+      { id: 'mask', label: 'THE MASK', text: '"I use humor, competence, or being \'fine\' to manage emotions I can\'t actually access."',
+        type: 'yesno',
         options: [
-          { icon: '', label: 'I explain it but repeat it', sub: '' },
-          { icon: '', label: 'Insight without change', sub: '' },
-          { icon: '', label: 'Knowing doesn\'t stop reacting', sub: '' },
-          { icon: '', label: 'Self-interrogation loop', sub: '' }
+          { icon: '', label: 'That\'s exactly what I do', sub: '' },
+          { icon: '', label: 'Sometimes — more than I\'d like to admit', sub: '' },
+          { icon: '', label: 'I didn\'t realize that was a mask', sub: '' },
+          { icon: '', label: 'No, that\'s not me', sub: '' }
         ]},
-      { id: 'cost', label: 'THE COST', text: 'What has staying stuck cost you?',
+      // — PHASE 4: COST + IDENTITY — peak emotional intensity (Belief #2 continued) —
+      { id: 'cost', label: 'THE COST', text: 'What has staying stuck actually cost you?', type: 'multi',
         options: [
-          { icon: '', label: 'Real intimacy in relationships', sub: '' },
-          { icon: '', label: 'Years of spinning my wheels', sub: '' },
-          { icon: '', label: 'Confidence that I can actually change', sub: '' },
-          { icon: '', label: 'Peace I\'ve never quite found', sub: '' }
+          { icon: '', label: 'A relationship I wasn\'t ready to lose', sub: '' },
+          { icon: '', label: 'Years I can\'t get back', sub: '' },
+          { icon: '', label: 'Trust — in myself, that I can actually change', sub: '' },
+          { icon: '', label: 'The feeling of being fully alive', sub: '' },
+          { icon: '', label: 'Peace I\'ve never quite found', sub: '' },
+          { icon: '', label: 'Thousands of dollars on things that only helped me cope', sub: '' }
         ]},
-      { id: 'energy', label: 'THE DRAIN', text: 'How much energy does carrying this take?',
-        options: [
-          { icon: '', label: 'Exhausted by it constantly', sub: '' },
-          { icon: '', label: 'It runs in the background, always', sub: '' },
-          { icon: '', label: 'Surfaces when I least expect it', sub: '' },
-          { icon: '', label: 'Numbed myself not to feel it', sub: '' }
-        ]},
-      { id: 'identity', label: 'THE TRUTH ABOUT YOU', text: 'Who have you become because of this?',
+      { id: 'identity', label: 'WHO YOU\'VE BECOME', text: 'Which of these feels like looking in a mirror?',
         options: [
           { icon: '', label: 'The most self-aware person in the room — and the most stuck', sub: '' },
-          { icon: '', label: 'Someone who knows everything and changes nothing', sub: '' },
-          { icon: '', label: 'A person I stopped being proud of', sub: '' },
-          { icon: '', label: 'Someone still waiting for a real breakthrough', sub: '' }
+          { icon: '', label: 'Someone who can describe her feelings like a therapist but can\'t feel them in her body', sub: '' },
+          { icon: '', label: 'A person who did everything right and is still broken', sub: '' },
+          { icon: '', label: 'Someone whose "baseline calm" is actually numbness she stopped questioning', sub: '' }
         ]},
+      // — INTERSTITIAL: EMPATHY after peak pain (Breeze rupture-repair #2) —
+      { id: 'hope2b', type: 'interstitial', text: 'The years weren\'t wasted. <em>They brought you to the edge.</em> What comes next works below language — where the pattern actually lives.' },
+      // — PHASE 5: ORIGIN + DREAMS (Belief #3: dreams as signal) —
       { id: 'origin', label: 'WHERE IT STARTED', text: 'When did this pattern first take root?',
         options: [
-          { icon: '', label: 'Childhood — I can trace it', sub: '' },
-          { icon: '', label: 'A specific trauma or loss', sub: '' },
-          { icon: '', label: 'It crept in gradually', sub: '' },
-          { icon: '', label: 'I genuinely don\'t know', sub: '' }
+          { icon: '', label: 'Childhood — I can trace it back', sub: '' },
+          { icon: '', label: 'A specific loss, betrayal, or trauma', sub: '' },
+          { icon: '', label: 'It crept in so gradually I thought it was just who I am', sub: '' },
+          { icon: '', label: 'I genuinely don\'t know — and that scares me', sub: '' }
         ]},
-      { id: 'closest', label: 'WHAT GOT CLOSEST', text: 'Which came closest to actually moving this?',
+      { id: 'closest', label: 'WHAT ALMOST WORKED', text: 'What came closest to actually moving this?',
         options: [
-          { icon: '', label: 'EMDR or somatic work — felt something shift', sub: '' },
-          { icon: '', label: 'One moment in therapy — then it closed again', sub: '' },
-          { icon: '', label: 'Nothing. Not one thing reached it.', sub: '' },
-          { icon: '', label: 'A book gave insight. Didn\'t stop the feeling.', sub: '' }
+          { icon: '', label: 'EMDR or somatic work — I felt something shift, then it closed', sub: '' },
+          { icon: '', label: 'One moment in therapy where I cried differently — then it was gone', sub: '' },
+          { icon: '', label: 'Nothing. Not one thing has reached it.', sub: '' },
+          { icon: '', label: 'A book cracked something open. But I had no way to finish what it started.', sub: '' }
         ]},
-      { id: 'hope2b', type: 'interstitial', text: 'Years of insight brought you here. <em>The next step is different</em> from everything you\'ve already tried.' },
-      { id: 'dream', label: 'YOUR DREAMS', text: 'Do any of these feel familiar?',
+      { id: 'dream', label: 'YOUR DREAMS', text: 'Do any of these show up in your sleep?',
         options: [
-          { icon: '', label: 'A door that won\'t open', sub: '' },
-          { icon: '', label: 'Screaming with no sound', sub: '' },
-          { icon: '', label: 'Carrying something heavy', sub: '' },
-          { icon: '', label: 'I don\'t remember them', sub: '' }
+          { icon: '', label: 'A door that won\'t open, no matter how hard I push', sub: '' },
+          { icon: '', label: 'Screaming with no sound coming out', sub: '' },
+          { icon: '', label: 'Carrying something I can\'t put down', sub: '' },
+          { icon: '', label: 'Being trapped somewhere I used to know', sub: '' },
+          { icon: '', label: 'I don\'t remember my dreams', sub: '' }
         ]},
-      { id: 'recurring', label: 'DREAM FREQUENCY', text: 'How often do these recurring themes appear?',
+      { id: 'recurring', label: 'DREAM FREQUENCY', text: 'How often do the same themes come back?',
         options: [
-          { icon: '', label: 'Almost every night', sub: '' },
+          { icon: '', label: 'Almost every night — like my body won\'t let me forget', sub: '' },
           { icon: '', label: 'Several times a week', sub: '' },
-          { icon: '', label: 'Now and then', sub: '' },
-          { icon: '', label: 'Rarely or never', sub: '' }
+          { icon: '', label: 'Now and then, but always the same feeling', sub: '' },
+          { icon: '', label: 'Rarely', sub: '' }
         ]},
-      { id: 'wall', label: 'THE STORY YOU TELL', text: 'What do you quietly believe about why you\'re still here?',
+      // — PHASE 6: CONFRONTATION + COMMITMENT (Beliefs #4-5: release mechanism + Onera) —
+      { id: 'wall', label: 'THE QUIET BELIEF', text: 'What do you secretly believe about why you\'re still stuck?',
         options: [
           { icon: '', label: 'Some things just can\'t be healed. Not in me.', sub: '' },
-          { icon: '', label: 'I\'m too tangled for what works for other people', sub: '' },
-          { icon: '', label: 'I haven\'t found what actually reaches this yet', sub: '' },
-          { icon: '', label: 'I\'m afraid of what I\'ll feel if I actually let go', sub: '' }
+          { icon: '', label: 'I\'m too complicated for what works for other people', sub: '' },
+          { icon: '', label: 'I haven\'t found the thing that actually reaches this', sub: '' },
+          { icon: '', label: 'I\'m terrified of what I\'ll feel if the wall finally comes down', sub: '' }
         ]},
-      { id: 'affirm', type: 'yesno', label: 'A TRUTH YOU KNOW', text: '"Understanding a wound and releasing it are two completely different things."',
+      { id: 'affirm', type: 'yesno', label: 'A TRUTH YOUR BODY KNOWS', text: '"Understanding a wound and releasing it are two completely different things."',
         options: [
-          { icon: '', label: 'Yes — I feel this deeply', sub: '' },
-          { icon: '', label: 'I\'ve started to believe this', sub: '' },
-          { icon: '', label: 'I never thought of it that way', sub: '' }
+          { icon: '', label: 'Yes. I\'ve lived this for years.', sub: '' },
+          { icon: '', label: 'I\'m starting to realize this', sub: '' },
+          { icon: '', label: 'I\'ve never thought of it that way', sub: '' }
         ]},
-      { id: 'connection', label: 'HEAD & BODY', text: 'How connected do you feel to your body right now?',
+      { id: 'connection', label: 'HEAD & BODY', text: 'Right now — how connected do you feel to your own body?',
         options: [
-          { icon: '', label: 'Completely disconnected', sub: '' },
-          { icon: '', label: 'Mostly in my head', sub: '' },
-          { icon: '', label: 'Sometimes I feel it', sub: '' },
-          { icon: '', label: 'Disconnected under stress', sub: '' }
+          { icon: '', label: 'Completely disconnected — like watching from outside', sub: '' },
+          { icon: '', label: 'Mostly in my head — I describe feelings, I don\'t feel them', sub: '' },
+          { icon: '', label: 'Flickers — then the wall comes back', sub: '' },
+          { icon: '', label: 'Only disconnected when it matters most', sub: '' }
         ]},
-      { id: 'next', label: 'YOUR NEXT STEP', text: 'What feels like the missing piece?',
+      // — PHASE 7: DESIRE + FINAL COMMITMENT (Belief #6: urgency / cost of inaction) —
+      { id: 'affirm2', type: 'yesno', label: 'ONE FINAL QUESTION', text: '"The work I\'ve done wasn\'t wrong. It just wasn\'t complete. What comes next has to reach the body."',
         options: [
-          { icon: '', label: 'Something to move it in my body', sub: '' },
-          { icon: '', label: 'A tool that works at a deeper level', sub: '' },
-          { icon: '', label: 'Understanding what my dreams show', sub: '' },
-          { icon: '', label: 'Proof that change is actually possible', sub: '' }
+          { icon: '', label: 'Yes — I\'m ready for something different', sub: '' },
+          { icon: '', label: 'I want to believe that', sub: '' },
+          { icon: '', label: 'I\'m skeptical. But I\'m still here.', sub: '' }
         ]},
-      { id: 'affirm2', type: 'yesno', label: 'ONE FINAL TRUTH', text: '"The work I\'ve done brought me here. The next step is different from everything I\'ve tried."',
+      { id: 'desire', label: 'IF ONE THING COULD SHIFT', text: 'What would it be?',
         options: [
-          { icon: '', label: 'Yes — I\'m ready for different', sub: '' },
-          { icon: '', label: 'I hope that\'s true', sub: '' },
-          { icon: '', label: 'I\'m skeptical but open', sub: '' }
-        ]},
-      { id: 'desire', label: 'ONE THING', text: 'If one thing could shift...',
-        options: [
-          { icon: '', label: 'Release what\'s stored', sub: '' },
-          { icon: '', label: 'Feel it, not just understand', sub: '' },
-          { icon: '', label: 'Bridge head and body', sub: '' },
-          { icon: '', label: 'Stop the automatic reaction', sub: '' }
+          { icon: '', label: 'Release what my body has been holding for years', sub: '' },
+          { icon: '', label: 'Actually feel — not just describe feeling', sub: '' },
+          { icon: '', label: 'Stop the reaction before it ruins another relationship', sub: '' },
+          { icon: '', label: 'Finally finish what all that work started', sub: '' }
         ]}
     ],
     result: {
       badge: 'Your Dream Profile',
       title: 'Beyond Understanding',
-      desc: 'You\'ve done the work. Years of it. The insight is real — but understanding a wound and releasing it are two different things. The emotion left your mind years ago. It sank into your body. No conversation can reach it there.',
-      mechanism: 'Your dreams show what your mind already knows — but your body hasn\'t processed. They point to the exact location where the emotion is stored. Onera decodes the symbol and guides the release.',
-      bodyText: 'The tension you feel right now? It\'s connected to the same emotion your dreams have been showing you.'
+      desc: 'You\'ve done more work than most people will do in a lifetime. The insight is real. But understanding a wound and releasing it are two completely different things — and your body knows the difference. The emotion left your mind years ago. It sank into your nervous system. No conversation can reach it there.',
+      mechanism: 'Your dreams have been showing you exactly where it lives — the same locked door, the same heavy weight, the same silence where your voice should be. Onera decodes that signal and guides your body to complete what years of insight started.',
+      bodyText: 'The tension you\'re feeling right now, reading this? It\'s the same thing your dreams have been pointing to. Your body has been waiting for you to listen.'
     },
     paywall: {
-      title: 'Release it from your body.',
-      subtitle: 'Your mind understood it years ago. Your body never processed it.',
+      title: 'Your mind got it years ago. Let your body finally catch up.',
+      subtitle: 'The insight was never the problem. The missing piece was always below language.',
       timeline: [
-        { day: 'Today', text: 'Feel your body unlock.' },
-        { day: 'Day 3', text: 'Let the first layer go.' },
-        { day: 'Day 7', text: 'Finally let go.' },
-        { day: 'Day 21', text: 'Feel free from your past.' }
+        { day: 'Tonight', text: 'Record your first dream. See what it\'s been trying to tell you.' },
+        { day: 'Day 3', text: 'Feel the first layer release from your body.' },
+        { day: 'Day 7', text: 'Notice something shift that years of talking never moved.' },
+        { day: 'Day 21', text: 'Wake up different. Not just aware — actually changed.' }
       ],
       testimonials: [
-        { text: 'I finally stopped thinking and started feeling. One guided release and I felt something shift in my chest that no amount of journaling ever touched.', author: '— A., 31' },
-        { text: 'I\'ve done therapy, shadow work, read all the books. This was the one thing that actually moved what was stuck.', author: '— R., 28' },
-        { text: 'My body finally caught up. After a week of releases, the tension in my shoulders just... left.', author: '— K., 34' }
+        { text: 'I\'ve been in therapy for 8 years. One guided release moved something in my chest that no amount of talking ever touched. I cried differently — not from pain, from relief.', author: '— A., 31' },
+        { text: 'I could describe my attachment style perfectly. I still couldn\'t stop pushing people away. After two weeks with Onera, my body stopped bracing when someone got close.', author: '— R., 28' },
+        { text: 'I spent thousands on therapists who helped me understand. This was the first thing that helped me actually feel. The difference is everything.', author: '— K., 34' }
       ],
-      socialProof: '12,000+ women woke up lighter today'
+      socialProof: '12,000+ women stopped understanding and started releasing'
     }
   },
   'F-3a': {
@@ -3283,26 +3304,49 @@ function renderStep() {
   // Count non-interstitial questions for display
   const realQCount = currentCPP.questions.filter(q => q.type !== 'interstitial').length;
 
+  const sectionsEl = document.getElementById('progressSections');
+  let currentSection = 0;
+
   if (currentStep === 0) {
     progressEl.style.width = '0%';
     progressTextEl.textContent = '';
     backBtn.style.display = 'none';
+    if (sectionsEl) sectionsEl.style.display = 'none';
   } else if (currentStep <= 3) {
-    progressEl.style.width = (currentStep * 2) + '%';
+    currentSection = 1;
+    progressEl.style.width = (15 + currentStep * 3) + '%';
     progressTextEl.textContent = '';
     backBtn.style.display = currentStep > 1 ? 'block' : 'none';
+    if (sectionsEl) sectionsEl.style.display = 'flex';
   } else if (currentStep <= 3 + questionSteps) {
     const qNum = currentStep - 3;
-    const pct = 8 + (qNum / questionSteps) * 72;
+    const qPct = qNum / questionSteps;
+    if (qPct <= 0.4) currentSection = 2;
+    else if (qPct <= 0.75) currentSection = 3;
+    else currentSection = 3;
+    const pct = 24 + (qPct * 56);
     progressEl.style.width = pct + '%';
-    // show real question number (skip interstitials)
-    const realQNum = currentCPP.questions.slice(0, qNum).filter(q => q.type !== 'interstitial').length;
-    progressTextEl.textContent = realQNum + ' / ' + realQCount;
+    progressTextEl.textContent = '';
     backBtn.style.display = 'block';
+    if (sectionsEl) sectionsEl.style.display = 'flex';
   } else {
+    currentSection = 4;
     progressEl.style.width = '100%';
     progressTextEl.textContent = '';
     backBtn.style.display = currentStep <= 4 + questionSteps ? 'block' : 'none';
+    if (sectionsEl) sectionsEl.style.display = currentStep <= 6 + questionSteps ? 'flex' : 'none';
+  }
+
+  if (sectionsEl && currentSection > 0) {
+    sectionsEl.querySelectorAll('.ps-dot').forEach(dot => {
+      const s = parseInt(dot.dataset.section);
+      dot.classList.toggle('active', s === currentSection);
+      dot.classList.toggle('done', s < currentSection);
+    });
+    sectionsEl.querySelectorAll('.ps-label').forEach(lbl => {
+      const s = parseInt(lbl.dataset.section);
+      lbl.classList.toggle('active', s === currentSection);
+    });
   }
 
   // Landing
@@ -3334,7 +3378,8 @@ function renderStep() {
         <p class="sub">${currentCPP.landing.sub}</p>
         <button class="cta-main" onclick="nextStep()">${currentCPP.landing.cta}</button>
         <div class="trust">
-          <span>Based on neuroscience research &bull; 12,000+ dream analyses</span>
+          <span>Based on <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6169455/" target="_blank" style="color:var(--accent);text-decoration:underline;">UC Berkeley dream research</a> &bull; 12,000+ dream analyses</span>
+          <div style="font-size:10px; color:var(--text-dim); text-align:center; margin-top:10px; max-width:280px; line-height:1.5;">This assessment explores dreams and patterns that may include emotional content. If you're in crisis: <a href="https://988lifeline.org" target="_blank" style="color:var(--accent);">988 Lifeline</a> · <a href="sms:741741&body=HOME" style="color:var(--accent);">Text HOME to 741741</a></div>
           <div class="trust-badges">
             <span>&#128274; 100% private</span>
             <span>&#9201; Takes 2 minutes</span>
@@ -3372,7 +3417,10 @@ function renderStep() {
             <div class="g-label">Male</div>
           </div>
         </div>
-        <p style="font-size:11px; color:var(--text-dim); text-align:center; margin-top:8px;">We use this only to personalize your results</p>
+        <div style="text-align:center; margin-top:12px;">
+          <button onclick="selectGender('F')" style="background:none;border:none;color:var(--text-dim);font-size:12px;cursor:pointer;font-family:inherit;">Other / Prefer not to say</button>
+        </div>
+        <p style="font-size:11px; color:var(--text-dim); text-align:center; margin-top:6px;">We use this only to personalize your results</p>
       </div>`;
     return;
   }
@@ -3393,7 +3441,7 @@ function renderStep() {
     </svg>`;
     c.innerHTML = `
       <div class="screen active interstitial" style="text-align:center;">
-        <img src="img/quiz/quiz-sleep.png" class="quiz-hero-img" alt="" loading="lazy" />
+        <img src="img/quiz-sleep.png" class="quiz-hero-img" alt="" loading="lazy" />
         ${avatarSVG}
         <div style="font-size:11px; color:var(--accent); letter-spacing:0.12em; margin-bottom:12px;">YOU\'RE NOT ALONE</div>
         <div style="font-size:32px; font-weight:700; color:var(--text); margin-bottom:4px;">12,000+</div>
@@ -3441,7 +3489,7 @@ function renderStep() {
         hope6: `<svg viewBox="0 0 120 110" fill="none" style="width:80px;height:73px;margin:0 auto 20px;display:block"><circle cx="40" cy="18" r="13" stroke="rgba(212,165,116,0.3)" stroke-width="1.5" fill="none"/><path d="M30 31 Q26 52 28 72 M50 31 Q54 52 52 72" stroke="rgba(212,165,116,0.25)" stroke-width="1.5"/><circle cx="82" cy="18" r="10" stroke="rgba(139,126,200,0.4)" stroke-width="1.5" fill="none"/><path d="M74 28 Q71 46 73 64 M90 28 Q93 46 91 64" stroke="rgba(139,126,200,0.35)" stroke-width="1.5"/><path d="M50 50 Q60 45 74 50" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="2 4"/><text x="28" y="90" font-size="7" fill="rgba(212,165,116,0.4)" font-family="serif">him</text><text x="72" y="84" font-size="7" fill="rgba(139,126,200,0.5)" font-family="serif">you</text></svg>`
       };
       const svgIcon = svgMap[q.id] || `<svg viewBox="0 0 60 60" fill="none" style="width:48px;height:48px;margin:0 auto 20px;display:block"><circle cx="30" cy="30" r="25" stroke="rgba(139,126,200,0.2)" stroke-width="1"/><circle cx="30" cy="30" r="4" fill="rgba(212,165,116,0.4)"/><circle cx="12" cy="15" r="1.5" fill="#d4a574" opacity="0.4"/><circle cx="48" cy="12" r="1" fill="#8b7ec8" opacity="0.5"/><circle cx="50" cy="46" r="1.5" fill="#d4a574" opacity="0.35"/></svg>`;
-      const interstitialImgs = { hope1: 'img/quiz/quiz-dream.png', hope2: 'img/quiz/quiz-body.png', hope3: 'img/quiz/quiz-disconnect.png', hope6: 'img/quiz/quiz-hope.png', hope1b: 'img/quiz/quiz-shadow-profile.png', hope2b: 'img/quiz/quiz-shadow-profile.png', hope3b: 'img/quiz/quiz-shadow-profile.png', hope6b: 'img/quiz/quiz-shadow-profile.png', hope_f3b: 'img/quiz/quiz-dream.png', hope_f4: 'img/quiz/quiz-sleep.png', hope_f5: 'img/quiz/quiz-disconnect.png' };
+      const interstitialImgs = { hope1: 'img/quiz-dream.png', hope2: 'img/quiz-body.png', hope3: 'img/quiz-disconnect.png', hope6: 'img/quiz-hope.png', hope1b: 'img/quiz-shadow-profile.png', hope2b: 'img/quiz-shadow-profile.png', hope3b: 'img/quiz-shadow-profile.png', hope6b: 'img/quiz-shadow-profile.png', hope_f3b: 'img/quiz-dream.png', hope_f4: 'img/quiz-sleep.png', hope_f5: 'img/quiz-disconnect.png' };
       const interstitialImg = interstitialImgs[q.id] ? `<img src="${interstitialImgs[q.id]}" class="quiz-mood-img" alt="" loading="lazy" />` : '';
 
       // Hormozi belief installation: each interstitial installs a specific belief
@@ -3475,9 +3523,11 @@ function renderStep() {
 
     // Likert scale type (1-5)
     if (q.type === 'likert') {
+      const moonPhases = ['&#127761;', '&#127762;', '&#127763;', '&#127764;', '&#127765;'];
       const likertHTML = [1,2,3,4,5].map(v => `
-        <div class="option" onclick="selectOption('${q.id}', ${v})" style="justify-content:center; font-size:18px; font-weight:600; padding:18px 0;">
-          ${v}
+        <div class="option" onclick="selectOption('${q.id}', ${v})" style="justify-content:center; font-size:24px; padding:14px 0; flex-direction:column; gap:4px; align-items:center;">
+          <span>${moonPhases[v-1]}</span>
+          <span style="font-size:9px;color:var(--text-dim);">${v}</span>
         </div>`).join('');
       c.innerHTML = `
         <div class="screen active question-screen">
@@ -3523,9 +3573,19 @@ function renderStep() {
     // Body map illustration for body-sensation questions
     const bodyQuestionIds = ['body'];
     const bodyMapHTML = bodyQuestionIds.includes(q.id) ? `
-      <div style="text-align:center;margin-bottom:8px;">
-        <img src="img/quiz/quiz-xray-body.png" alt="" loading="lazy" style="width:100%;max-width:240px;max-height:200px;object-fit:contain;border-radius:14px;opacity:0.8;margin:0 auto 8px;display:block;mask-image:linear-gradient(to bottom,black 70%,transparent);-webkit-mask-image:linear-gradient(to bottom,black 70%,transparent);" />
+      <div style="text-align:center;margin-bottom:12px;">
+        <div style="background:rgba(139,126,200,0.06);border:1px solid rgba(139,126,200,0.1);border-radius:12px;padding:12px 16px;margin-bottom:10px;max-width:280px;margin-left:auto;margin-right:auto;">
+          <div style="font-size:11px;color:var(--purple);letter-spacing:0.1em;margin-bottom:4px;">TAKE A MOMENT</div>
+          <div style="font-size:12px;color:var(--text-muted);line-height:1.5;">Take a slow breath in... and out. Feel your feet on the ground. You're safe here.</div>
+        </div>
+        <img src="img/quiz-xray-body.png" alt="" loading="lazy" style="width:100%;max-width:240px;max-height:200px;object-fit:contain;border-radius:14px;opacity:0.8;margin:0 auto 8px;display:block;mask-image:linear-gradient(to bottom,black 70%,transparent);-webkit-mask-image:linear-gradient(to bottom,black 70%,transparent);" />
         <div style="font-size:11px;color:var(--text-dim);line-height:1.7;max-width:260px;margin:0 auto;">Where tension lives in the body is where the emotion is stored.<br><span style="color:var(--accent);opacity:0.7;">Select what you feel right now.</span></div>
+      </div>` : '';
+
+    const vulnerableQuestionIds = ['body', 'body2', 'origin', 'cost', 'compound', 'shame', 'becoming', 'transmit', 'fear', 'tomorrow'];
+    const breakBtnHTML = vulnerableQuestionIds.includes(q.id) ? `
+      <div style="text-align:center;margin-top:12px;">
+        <button onclick="showBreakScreen()" style="background:none;border:none;color:var(--text-dim);font-size:11px;cursor:pointer;font-family:inherit;opacity:0.6;">Need a moment? Take a break</button>
       </div>` : '';
 
     // Question-specific decorative elements
@@ -3541,6 +3601,7 @@ function renderStep() {
         <div class="question-text serif">${q.text}</div>
         ${bodyMapHTML}
         <div class="options">${optionsHTML}</div>
+        ${breakBtnHTML}
       </div>`;
     return;
   }
@@ -3549,7 +3610,7 @@ function renderStep() {
   if (currentStep === 4 + questionSteps) {
     c.innerHTML = `
       <div class="screen active interstitial" style="padding:32px 20px;gap:16px;">
-        <img src="img/quiz/quiz-neural-signature.png" alt="" loading="lazy" style="width:100%;max-width:320px;max-height:260px;object-fit:contain;border-radius:16px;opacity:0.9;margin:0 auto;" />
+        <img src="img/quiz-neural-signature.png" alt="" loading="lazy" style="width:100%;max-width:320px;max-height:260px;object-fit:contain;border-radius:16px;opacity:0.9;margin:0 auto;" />
         <div style="font-size:10px; color:var(--accent); letter-spacing:0.15em; text-transform:uppercase;">What the science shows</div>
         <div class="big-text serif" style="font-size:22px;">Your recurring dream has a <em>neural signature.</em></div>
         <div class="detail" style="margin-top:4px;font-size:13px;max-width:300px;">The scene changes every night. The <em>emotional signature</em> underneath stays identical — until your body processes what your mind already understands.</div>
@@ -3557,7 +3618,13 @@ function renderStep() {
           <div class="quote">"I typed my nightmare into Onera at 3am. The interpretation made me cry."</div>
           <div class="author">— D., 25</div>
         </div>
-        <button class="continue-btn" onclick="nextStep()">See my Dream Profile &rarr;</button>
+        <div style="margin-top:20px;text-align:center;">
+          <div class="serif" style="font-size:16px;color:var(--text);line-height:1.5;margin-bottom:16px;max-width:280px;margin-left:auto;margin-right:auto;"><em>Are you ready to stop understanding — and start releasing?</em></div>
+          <button class="continue-btn" onclick="nextStep()" style="background:var(--accent);color:#0a0a14;border:none;padding:14px 32px;border-radius:12px;font-weight:600;font-size:14px;">Yes — show me my Dream Profile &rarr;</button>
+          <div style="margin-top:8px;">
+            <button onclick="nextStep()" style="background:none;border:none;color:var(--text-dim);font-size:11px;cursor:pointer;font-family:inherit;opacity:0.5;">I need more time</button>
+          </div>
+        </div>
       </div>`;
     return;
   }
@@ -3569,26 +3636,28 @@ function renderStep() {
         <div style="font-size:13px; color:var(--text-muted); margin-bottom:8px;">Analyzing your responses...</div>
         <div class="loader-bar"><div class="loader-bar-fill" id="loaderFill"></div></div>
         <div class="analysis-steps" id="analysisSteps">
-          <div class="analysis-step" data-delay="800"><div class="check"></div>Mapping your dream patterns...</div>
-          <div class="analysis-step" data-delay="2000"><div class="check"></div>Identifying body-emotion connection...</div>
-          <div class="analysis-step" data-delay="3200"><div class="check"></div>Locating stored tension...</div>
-          <div class="analysis-step" data-delay="4400"><div class="check"></div>Building your personalized protocol...</div>
+          <div class="analysis-step" data-delay="800"><div class="check"></div>Finding where the pattern lives in your body...</div>
+          <div class="analysis-step" data-delay="2000"><div class="check"></div>Understanding what your recurring dream has been trying to show you...</div>
+          <div class="analysis-step" data-delay="3200"><div class="check"></div>Connecting your dream symbols to stored emotions...</div>
+          <div class="analysis-step" data-delay="4400"><div class="check"></div>Preparing your release plan...</div>
         </div>
         <div id="microQ" style="opacity:0; transition:opacity 0.5s; margin-top:28px; text-align:center;">
-          <div style="font-size:13px; color:var(--text-muted); margin-bottom:14px;">One last thing:</div>
-          <div style="font-family:'Playfair Display',serif; font-size:17px; color:var(--text); margin-bottom:18px; line-height:1.5;">
-            "When I decide to change something —<br>I follow through."
-          </div>
+          <div style="font-size:13px; color:var(--text-muted); margin-bottom:10px;">Where should we send your Dream Profile?</div>
+          <div style="font-size:11px; color:var(--text-dim); margin-bottom:12px; max-width:260px; margin-left:auto; margin-right:auto; line-height:1.5;">Your analysis is ready. Enter your email so you don't lose it.</div>
+          <input type="email" id="saveEmail" placeholder="your@email.com"
+            style="width:100%; max-width:260px; padding:12px 16px; border-radius:10px; border:1px solid var(--border); background:var(--bg-card); color:var(--text); font-size:14px; font-family:inherit; outline:none; text-align:center; margin-bottom:10px;"
+          />
           <div style="display:flex; gap:10px; justify-content:center;">
-            <button onclick="document.getElementById('microQ').style.opacity='0'"
-              style="background:var(--bg-card); border:1px solid var(--border-active); color:var(--accent); padding:10px 24px; border-radius:10px; font-size:13px; cursor:pointer;">
-              That's me
+            <button onclick="captureEmail()"
+              style="background:var(--accent); color:#0a0a14; border:none; padding:10px 24px; border-radius:10px; font-size:13px; cursor:pointer; font-weight:600;">
+              Save & continue
             </button>
-            <button onclick="document.getElementById('microQ').style.opacity='0'"
-              style="background:var(--bg-card); border:1px solid var(--border); color:var(--text-muted); padding:10px 24px; border-radius:10px; font-size:13px; cursor:pointer;">
-              I'm working on it
+            <button onclick="document.getElementById('microQ').style.opacity='0'; setTimeout(()=>nextStep(),300)"
+              style="background:none; border:1px solid var(--border); color:var(--text-muted); padding:10px 20px; border-radius:10px; font-size:12px; cursor:pointer;">
+              Skip
             </button>
           </div>
+          <div style="font-size:9px; color:var(--text-dim); margin-top:6px;">&#128274; We never share your email. Unsubscribe anytime.</div>
         </div>
       </div>`;
 
@@ -3646,22 +3715,23 @@ function renderStep() {
 
         <!-- SECTION 2: Belief #1 — Dreams reveal what the mind hides -->
         <div style="position:relative;border-radius:16px;overflow:hidden;margin-bottom:20px;">
-          <img src="img/quiz/quiz-dream-body-bridge.png" alt="" loading="lazy" style="width:100%;height:200px;object-fit:cover;display:block;opacity:0.85;" />
+          <img src="img/quiz-dream-body-bridge.png" alt="" loading="lazy" style="width:100%;height:200px;object-fit:cover;display:block;opacity:0.85;" />
           <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,10,20,0.95),rgba(10,10,20,0.4));">
             <div style="font-size:10px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px;">What your dreams are showing you</div>
             <div style="font-size:14px;color:var(--text);line-height:1.5;">${r.mechanism}</div>
+            <div style="font-size:10px;color:var(--text-dim);margin-top:6px;">Based on research from <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6169455/" target="_blank" style="color:var(--text-muted);">UC Berkeley</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6082553/" target="_blank" style="color:var(--text-muted);">Rush University</a> & 2,500 years of dream healing</div>
           </div>
         </div>
 
         <!-- SECTION 3: Belief #2 — The emotion is in the body -->
         <div style="display:flex;align-items:center;gap:14px;background:rgba(139,126,200,0.08);border:1px solid rgba(139,126,200,0.15);border-radius:14px;padding:14px 16px;margin-bottom:20px;">
-          <img src="img/quiz/quiz-xray-body.png" alt="" loading="lazy" style="width:64px;height:64px;object-fit:cover;border-radius:10px;flex-shrink:0;" />
+          <img src="img/quiz-xray-body.png" alt="" loading="lazy" style="width:64px;height:64px;object-fit:cover;border-radius:10px;flex-shrink:0;" />
           <div style="font-size:13px;color:var(--text);line-height:1.5;"><strong>${r.bodyText}</strong></div>
         </div>
 
         <!-- HORMOZI: Mechanism — Schema Disruption visual (the bridge) -->
         <div style="position:relative;border-radius:16px;overflow:hidden;margin-bottom:20px;">
-          <img src="img/quiz/quiz-somatic-release.png" alt="" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;opacity:0.8;" />
+          <img src="img/quiz-somatic-release.png" alt="" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;opacity:0.8;" />
           <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(to top,rgba(10,10,20,0.95),rgba(10,10,20,0.3));">
             <div style="font-size:10px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px;">The Dream-to-Body Bridge&trade;</div>
             <div style="font-size:14px;color:var(--text);line-height:1.5;"><strong>Decode the dream &rarr; Locate the emotion &rarr; Release it.</strong><br><span style="font-size:12px;color:var(--text-dim);">15 minutes. No therapist needed.</span></div>
@@ -3681,7 +3751,7 @@ function renderStep() {
         <canvas id="particleCanvas" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
         <div style="position:relative;z-index:1;">
           <div style="font-size:11px; color:var(--accent); letter-spacing:0.15em; margin-bottom:16px;">YOUR RESULTS ARE READY</div>
-          <img src="img/quiz/quiz-transformation.png" alt="" loading="lazy" style="width:100%;max-width:280px;height:160px;object-fit:cover;border-radius:14px;opacity:0.85;margin:0 auto 16px;display:block;" />
+          <img src="img/quiz-transformation.png" alt="" loading="lazy" style="width:100%;max-width:280px;height:160px;object-fit:cover;border-radius:14px;opacity:0.85;margin:0 auto 16px;display:block;" />
           <h2 class="serif" style="font-size:26px; line-height:1.4; margin-bottom:8px;">${currentCPP.paywall.title}</h2>
           <p style="font-size:14px; color:var(--text-muted); margin-bottom:24px;">${currentCPP.paywall.subtitle}</p>
           <div style="background:rgba(212,165,116,0.08); border:1px solid rgba(212,165,116,0.2); border-radius:12px; padding:14px; margin-bottom:20px;">
@@ -3849,19 +3919,19 @@ function renderPaywall() {
       <!-- 3. SOCIAL PROOF (motivation-specific testimonial) -->
       <div class="pw-testimonials" style="margin-bottom:20px;">${testHTML}</div>
 
-      <!-- 4. PRICE ANCHOR (matches app paywall) -->
-      <div style="text-align:center; margin-bottom:16px;">
-        <div class="serif" style="font-size:15px; color:var(--text-muted); line-height:1.6; font-style:italic;">
-          A full year, for the price of one hour on a couch.
-        </div>
+      <!-- 4. PRICE ANCHOR — therapy $150/session → Onera $35/year -->
+      <div style="text-align:center; margin-bottom:12px; font-size:13px; color:var(--text-muted); line-height:1.5;">
+        One somatic therapy session: <span style="color:var(--text); font-weight:600;">$150&ndash;$200</span><br>
+        One year of daily Jungian + somatic with ONERA:
       </div>
 
-      <!-- 5. PRICING — single plan, free trial (matches app) -->
+      <!-- 5. PRICING — $35/year, 50% off launch -->
       <div style="background:var(--bg-card);border:2px solid var(--accent);border-radius:16px;padding:24px 20px;text-align:center;margin-bottom:16px;position:relative;">
-        <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent);color:#0a0a14;font-size:9px;font-weight:700;padding:3px 12px;border-radius:10px;letter-spacing:0.5px;white-space:nowrap;">7 DAYS FREE</div>
-        <div style="font-size:28px;font-weight:700;color:var(--text);margin-bottom:2px;">$0 <span style="font-size:14px;font-weight:400;color:var(--text-muted);">today</span></div>
-        <div style="font-size:13px;color:var(--text-muted);">then $1.35/week billed annually</div>
-        <div style="display:inline-block;background:rgba(110,207,142,0.1);color:var(--green);font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;margin-top:8px;">Cancel anytime in one tap</div>
+        <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent);color:#0a0a14;font-size:9px;font-weight:700;padding:3px 12px;border-radius:10px;letter-spacing:0.5px;white-space:nowrap;">LAUNCH PRICE &mdash; 50% OFF</div>
+        <div style="font-size:14px;color:var(--text-dim);text-decoration:line-through;margin-bottom:4px;">$70/year</div>
+        <div style="font-size:28px;font-weight:700;color:var(--text);margin-bottom:2px;">$35<span style="font-size:14px;font-weight:400;color:var(--text-muted);">/year</span></div>
+        <div style="font-size:13px;color:var(--text-muted);">$2.92/month &bull; Less than one coffee</div>
+        <div style="display:inline-block;background:rgba(110,207,142,0.1);color:var(--green);font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;margin-top:8px;">You save $35 today</div>
       </div>
 
       <div class="timer-bar" style="margin-bottom:16px;">
@@ -3870,28 +3940,30 @@ function renderPaywall() {
         <span class="timer-countdown" id="timerDisplay">${formatTime(timerSeconds)}</span>
       </div>
 
-      <!-- Email input -->
+      <!-- Email input (pre-filled if captured during quiz) -->
       <div style="margin-bottom:12px;">
-        <input type="email" id="checkoutEmail" placeholder="Enter your email to continue"
+        <input type="email" id="checkoutEmail" placeholder="Enter your email to continue" value="${sessionStorage.getItem('onera_quiz_email') || ''}"
           style="width:100%; padding:16px 18px; border-radius:12px; border:1px solid var(--border-active); background:var(--bg-card); color:var(--text); font-size:15px; font-family:inherit; outline:none; text-align:center;"
         />
         <div id="emailError" style="color:var(--red); font-size:12px; margin-top:6px; display:none; text-align:center;">Please enter a valid email</div>
       </div>
 
-      <!-- 6. CTA — matches app paywall -->
+      <!-- 6. CTA -->
       <button class="pay-btn" onclick="handlePayment()" id="payBtn" style="animation:ctaPulse 2s ease-in-out infinite;">
-        Start my 7-day free trial &rsaquo;
+        Unlock ONERA &mdash; $35/year
       </button>
-
-      <!-- 7. RISK REVERSAL -->
-      <div style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:8px;line-height:1.5;">
-        $0 today &middot; then $1.35/week billed annually<br>If you don't feel the difference, you pay nothing.
-      </div>
+      <div style="text-align:center;font-size:11px;color:var(--text-muted);margin-top:6px;">One-time payment &bull; 30-day money-back guarantee &bull; Instant access</div>
 
       <!-- 8. TIMELINE / Hero Journey (shown AFTER pricing as reinforcement) -->
       <div style="margin-top:20px;">
         <div style="font-size:10px;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase;text-align:center;margin-bottom:12px;">Your first 21 days</div>
         <div class="timeline">${tlHTML}</div>
+      </div>
+
+      <!-- Hormozi: Guarantee — Risk Reversal -->
+      <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:14px 16px; margin-top:16px; text-align:center;">
+        <div style="font-size:13px; font-weight:600; color:var(--text); margin-bottom:6px;">&#128170; The 30-Day ONERA Guarantee</div>
+        <div style="font-size:12px; color:var(--text-muted); line-height:1.5;">Try the annual plan. If after 30 days, you don't feel the difference in your body &mdash; we refund you completely. No questions asked.</div>
       </div>
 
       <!-- Hormozi: Urgency — Loss Aversion -->
@@ -3901,9 +3973,9 @@ function renderPaywall() {
 
       <!-- Second CTA (sticky reinforcement) -->
       <button class="pay-btn" onclick="handlePayment()" style="margin-top:16px;animation:ctaPulse 2s ease-in-out infinite;">
-        Start my 7-day free trial &rsaquo;
+        Unlock ONERA &mdash; $35/year
       </button>
-      <div style="text-align:center;font-size:11px;color:var(--text-dim);margin-top:6px;">$0 today &middot; Cancel anytime in one tap.</div>
+      <div style="text-align:center;font-size:11px;color:var(--text-dim);margin-top:6px;">30-day money-back guarantee &bull; Instant access</div>
 
       <!-- Skip / Dismiss (Loss Aversion framing) -->
       <div style="text-align:center;margin-top:16px;">
@@ -4024,6 +4096,46 @@ window.addEventListener('beforeunload', (e) => {
   }
 });
 
+function captureEmail() {
+  const emailInput = document.getElementById('saveEmail');
+  const email = emailInput ? emailInput.value.trim().toLowerCase() : '';
+  if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    answers._email = email;
+    fbq('trackCustom', 'QuizEmailCapture', { email_captured: true });
+    // Store for paywall pre-fill
+    sessionStorage.setItem('onera_quiz_email', email);
+    document.getElementById('microQ').style.opacity = '0';
+    setTimeout(() => nextStep(), 300);
+  } else {
+    if (emailInput) { emailInput.style.borderColor = 'var(--red)'; emailInput.focus(); }
+  }
+}
+
+function showBreakScreen() {
+  const c = document.getElementById('quizContainer');
+  c.innerHTML = `
+    <div class="screen active interstitial" style="text-align:center;padding:60px 24px;">
+      <div style="font-size:48px;margin-bottom:20px;">&#127807;</div>
+      <div class="serif" style="font-size:22px;line-height:1.45;margin-bottom:16px;">Take all the time you need.</div>
+      <div style="font-size:13px;color:var(--text-muted);line-height:1.6;max-width:280px;margin:0 auto 24px;">
+        What you're feeling right now is valid. This assessment will be here when you're ready.
+      </div>
+      <div style="background:rgba(139,126,200,0.06);border:1px solid rgba(139,126,200,0.1);border-radius:12px;padding:16px;max-width:260px;margin:0 auto 24px;">
+        <div style="font-size:12px;color:var(--text-muted);line-height:1.6;">
+          <strong style="color:var(--purple);">Ground yourself:</strong><br>
+          Breathe in for 4 counts...<br>
+          Hold for 4...<br>
+          Out for 6...<br>
+          Repeat 3 times.
+        </div>
+      </div>
+      <button class="continue-btn" onclick="renderStep()" style="margin-bottom:12px;">I'm ready to continue &rarr;</button>
+      <div style="font-size:11px;color:var(--text-dim);line-height:1.5;">
+        Need support? <a href="https://988lifeline.org" target="_blank" style="color:var(--accent);">988 Lifeline</a> · <a href="sms:741741&body=HOME" style="color:var(--accent);">Text HOME to 741741</a>
+      </div>
+    </div>`;
+}
+
 function goBack() {
   if (currentStep > 0) {
     currentStep--;
@@ -4057,9 +4169,9 @@ const MICRO_VALIDATIONS = {
   compound: "When it spreads this far, it's not a mood. It's a stored pattern.",
   identity: "The fact that you see this clearly? That's already rare.",
   mirror: "That split between outside and inside has a name — and a release.",
-  cost: "Years of carrying this. The body adds it up.",
-  energy: "Chronic patterns take a hidden toll most people never name.",
-  tomorrow: "That fear is one of the most honest things you've felt today.",
+  cost: "Years of carrying this. The body adds it up. But it can be put down.",
+  energy: "Chronic patterns take a hidden toll. You're further along than you think.",
+  tomorrow: "That fear is one of the most honest things you've felt today. It means you're ready.",
   origin: "Patterns this deep always have roots older than you.",
   failed_before: "Most tools only reach the mind. Not the body.",
   closest: "The gap between mind and body is where people stay stuck longest.",
@@ -4095,6 +4207,18 @@ const MICRO_VALIDATIONS = {
 };
 
 function getValidation(qId) {
+  // Micro-insights: personalized based on answer patterns
+  const answerCount = Object.keys(answers).filter(k => !k.startsWith('_')).length;
+  if (answerCount === 6 && !answers._insight1) {
+    answers._insight1 = true;
+    return selectedGender === 'F'
+      ? "Based on your answers so far — your body has been keeping score longer than you realize."
+      : "Based on your answers so far — this pattern runs deeper than most people let themselves see.";
+  }
+  if (answerCount === 12 && !answers._insight2) {
+    answers._insight2 = true;
+    return "You're in the top 15% of people who answer these questions with this level of honesty. That matters.";
+  }
   return MICRO_VALIDATIONS[qId] || (selectedGender === 'F'
     ? "You're not alone in this."
     : "More men carry this than will ever say it.");
