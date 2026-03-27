@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ONERA — Meet Your True Self Through Dreams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://js.stripe.com/v3/"></script>
+<!-- Meta Pixel -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4249663832027332');
+fbq('track', 'PageView');
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#faf8f4;--bg2:#ffffff;--bg3:#f2efea;
+  --text:#1a1714;--text2:#5c554d;--text3:#9a928a;
+  --green:#2eaa60;--green-dark:#259950;--green-light:rgba(46,170,96,0.08);
+  --red:#dc4a4a;--orange:#d4a030;--blue:#5b6abf;
+  --border:#e4dfd8;--border2:rgba(46,170,96,0.3);
+  --accent:#2eaa60;--purple:#5b6abf;--purple-glow:rgba(91,106,191,0.08);
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md:0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg:0 8px 24px rgba(0,0,0,0.1);
+  --radius-sm:12px;--radius-md:16px;--radius-lg:20px;--radius-xl:24px;
+}
+body{font-family:'Plus Jakarta Sans',-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100dvh;overflow-x:hidden;line-height:1.6;font-weight:450;letter-spacing:-0.01em}
+.serif{font-family:'Instrument Serif',Georgia,serif}
+
+/* Progress bar */
+.progress-wrap{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);padding:10px 16px 8px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border)}
+.progress-bar-bg{flex:1;height:5px;background:rgba(0,0,0,0.06);border-radius:3px;overflow:hidden}
+.progress-bar-fill{height:100%;background:var(--green);border-radius:3px;transition:width 0.4s ease}
+.progress-count{font-size:13px;color:var(--text3);font-weight:600;white-space:nowrap}
+.back-btn{position:fixed;top:8px;left:4px;z-index:101;background:none;border:none;color:var(--text);font-size:22px;cursor:pointer;padding:10px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
+
+/* Container */
+.container{max-width:440px;margin:0 auto;min-height:100dvh;padding:56px 20px 40px;display:flex;flex-direction:column}
+
+/* Screens */
+.screen{display:none;flex-direction:column;flex:1;animation:fadeIn 0.35s ease}
+.screen.active{display:flex}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes optionSelect{0%{border-color:var(--green);background:rgba(46,170,96,0.06);transform:scale(1)}50%{transform:scale(0.97)}100%{border-color:var(--green);background:rgba(46,170,96,0.06);transform:scale(1)}}
+.freq3-opt.just-selected,.option-card.just-selected{animation:optionSelect 0.3s ease;border-color:var(--green)!important;background:rgba(46,170,96,0.06)!important}
+
+/* Landing */
+.landing{justify-content:center;align-items:center;text-align:center;gap:24px;padding-top:40px}
+.landing-badge{background:var(--green-light);color:var(--green);font-size:11px;font-weight:700;padding:6px 16px;border-radius:20px;letter-spacing:0.5px;text-transform:uppercase}
+.landing h1{font-size:28px;font-weight:800;line-height:1.3;max-width:340px;letter-spacing:-0.3px;color:var(--text)}
+.landing .sub{font-size:15px;color:var(--text2);line-height:1.6;max-width:320px}
+.gender-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;max-width:340px}
+.gender-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:0;text-align:center;cursor:pointer;transition:all 0.25s;display:flex;flex-direction:column;align-items:center;gap:0;overflow:hidden;box-shadow:var(--shadow-md)}
+.gender-card:hover{border-color:var(--border2);box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.gender-card:active{transform:scale(0.97)}
+.gender-card .photo{width:100%;height:240px;overflow:hidden;position:relative;background:var(--bg3)}
+.gender-card .photo img{width:100%;height:100%;object-fit:cover;object-position:top}
+.gender-card .g-label{padding:14px 16px;display:flex;align-items:center;justify-content:space-between;width:100%;background:var(--green);color:#fff;font-size:15px;font-weight:700}
+.gender-card .g-label::after{content:none}
+.landing-legal{font-size:10px;color:var(--text3);text-align:center;line-height:1.5;max-width:300px}
+.landing-legal a{color:var(--text2)}
+
+/* Question screens */
+.q-screen{padding-top:16px;gap:24px}
+.q-title{font-size:22px;font-weight:700;line-height:1.4;color:var(--text)}
+.q-title .green{color:var(--green)}
+.q-sub{font-size:14px;color:var(--text2);margin-top:-10px}
+
+/* Option cards */
+.options{display:flex;flex-direction:column;gap:12px}
+.option-card{background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--radius-md);padding:20px 22px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:14px;min-height:62px;box-shadow:var(--shadow-sm)}
+.option-card:hover{background:var(--bg3);border-color:var(--border2)}
+.option-card:active{transform:scale(0.98)}
+.option-card .opt-icon{flex-shrink:0;width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:rgba(46,170,96,0.08)}
+.option-card .opt-icon svg{width:20px;height:20px}
+.option-card .opt-label{font-size:15px;font-weight:500;line-height:1.45}
+.option-card.selected{border-color:var(--green);background:rgba(46,170,96,0.06)}
+.option-card.selected .opt-icon{background:rgba(46,170,96,0.15)}
+
+/* freq3 */
+.freq3-opts{display:flex;flex-direction:column;gap:12px}
+.freq3-opt{background:var(--bg2);border:1.5px solid var(--border);border-radius:14px;padding:22px 24px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-sm)}
+.freq3-opt:hover{background:var(--bg3);border-color:var(--border2)}
+.freq3-opt:active{transform:scale(0.98)}
+.freq3-opt .f3-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.freq3-opt .f3-label{font-size:17px;font-weight:500}
+
+/* likert5 */
+.likert-row{display:flex;justify-content:space-between;gap:8px;margin-top:16px}
+.likert-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 4px 12px;border-radius:14px;border:1.5px solid var(--border);background:var(--bg2);cursor:pointer;transition:all 0.2s;box-shadow:var(--shadow-sm)}
+.likert-btn:hover{background:var(--bg3);border-color:var(--border2)}
+.likert-btn:active{transform:scale(0.93)}
+.likert-btn svg{width:44px;height:44px}
+.likert-btn img{width:44px;height:44px;object-fit:contain;border-radius:6px}
+.likert-btn .lk-label{font-size:10px;color:var(--text2);text-align:center;line-height:1.25;font-weight:500}
+
+/* multi select */
+.multi-opt{position:relative}
+.multi-opt .checkbox{width:24px;height:24px;border-radius:7px;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all 0.2s;flex-shrink:0}
+.multi-opt.selected .checkbox{background:var(--green);border-color:var(--green)}
+.multi-opt.selected .checkbox svg{opacity:1}
+.multi-opt .checkbox svg{opacity:0;transition:opacity 0.2s}
+
+/* Continue button */
+.btn-continue{background:var(--green);color:#fff;border:none;padding:18px;border-radius:var(--radius-lg);font-size:16px;font-weight:700;cursor:pointer;transition:all 0.25s;text-align:center;width:100%;letter-spacing:0.3px;margin-top:12px;box-shadow:0 4px 16px rgba(46,170,96,0.2)}
+.btn-continue:hover{background:var(--green-dark);transform:translateY(-1px)}
+.btn-continue:disabled{opacity:0.4;cursor:not-allowed;transform:none}
+
+/* Social proof constellation */
+.constellation{position:relative;width:240px;height:240px;margin:0 auto}
+.constellation .orbit{position:absolute;border-radius:50%;border:1px dashed rgba(0,0,0,0.08)}
+.constellation .orbit-1{width:100%;height:100%;top:0;left:0}
+.constellation .orbit-2{width:70%;height:70%;top:15%;left:15%}
+.constellation .avatar-dot{position:absolute;width:36px;height:36px;border-radius:50%;border:2px solid;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;background:var(--bg2);box-shadow:var(--shadow-sm);overflow:hidden}
+.constellation .avatar-dot img{width:100%;height:100%;object-fit:cover}
+
+/* Science cards */
+.science-cards{display:flex;gap:10px;margin-top:12px}
+.science-card{flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px 8px;text-align:center;box-shadow:var(--shadow-sm)}
+.science-card .sc-icon{font-size:24px;margin-bottom:6px}
+.science-card .sc-name{font-size:10px;color:var(--text2);line-height:1.3}
+
+/* Quote box */
+.quote-box{background:var(--bg2);border-left:3px solid var(--green);border-radius:0 12px 12px 0;padding:16px 18px;margin-top:16px;box-shadow:var(--shadow-sm)}
+.quote-box .qb-text{font-size:13px;line-height:1.6;color:var(--text);font-style:italic}
+.quote-box .qb-author{font-size:11px;color:var(--text2);margin-top:8px}
+
+/* Expert card */
+.expert-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px;display:flex;align-items:center;gap:14px;margin-top:16px;box-shadow:var(--shadow-sm)}
+.expert-card .exp-photo{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--green-light),rgba(91,106,191,0.08));display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.expert-card .exp-info{font-size:12px;line-height:1.5}
+.expert-card .exp-name{font-weight:700;color:var(--text)}
+.expert-card .exp-title{color:var(--text2)}
+
+/* World map */
+.world-map{position:relative;width:100%;max-width:340px;height:180px;margin:0 auto;background:var(--bg2);border-radius:16px;overflow:hidden;border:1px solid var(--border)}
+.world-map .map-dot{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px rgba(46,170,96,0.4);animation:mapPulse 2s infinite}
+@keyframes mapPulse{0%,100%{opacity:0.6;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
+
+/* Goal options */
+.goal-opts{display:flex;flex-direction:column;gap:12px}
+.goal-opt{background:var(--bg2);border:1.5px solid var(--border);border-radius:14px;padding:18px 22px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:14px;box-shadow:var(--shadow-sm)}
+.goal-opt:hover{background:var(--bg3);border-color:var(--green)}
+.goal-opt:active{transform:scale(0.98)}
+.goal-opt .go-icon{font-size:20px}
+.goal-opt .go-text{font-size:15px;font-weight:500}
+.goal-opt .go-sub{font-size:11px;color:var(--text3)}
+
+/* Input fields */
+.input-field{width:100%;padding:18px 20px;border-radius:14px;border:1.5px solid var(--border);background:var(--bg2);color:var(--text);font-size:16px;font-family:inherit;outline:none;transition:border-color 0.2s;box-shadow:var(--shadow-sm)}
+.input-field:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(46,170,96,0.1)}
+.input-field::placeholder{color:var(--text3)}
+
+/* Popup overlay */
+.popup-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);z-index:200;display:flex;align-items:center;justify-content:center;animation:fadeIn 0.3s}
+.popup-box{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:32px 24px;max-width:340px;width:calc(100% - 40px);text-align:center;box-shadow:var(--shadow-lg)}
+.popup-box .popup-title{font-size:16px;font-weight:700;margin-bottom:8px}
+.popup-box .popup-q{font-size:14px;color:var(--text2);margin-bottom:20px;line-height:1.5}
+.popup-btns{display:flex;gap:12px;justify-content:center}
+.popup-btns button{padding:12px 32px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;border:none;transition:all 0.2s}
+.popup-btn-yes{background:var(--green);color:#fff}
+.popup-btn-no{background:var(--bg3);color:var(--text2);border:1px solid var(--border) !important}
+
+/* Loading screen */
+.loading-section{margin-bottom:20px}
+.loading-label{font-size:14px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:8px;width:100%}
+.loading-bar{height:6px;background:rgba(0,0,0,0.06);border-radius:3px;overflow:hidden}
+.loading-bar-fill{height:100%;background:var(--green);border-radius:3px;transition:width 0.4s ease}
+
+/* Testimonial card */
+.testi-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px;margin-top:16px;box-shadow:var(--shadow-sm)}
+.testi-card .tc-stars{color:#f5c518;font-size:14px;margin-bottom:6px}
+.testi-card .tc-text{font-size:13px;line-height:1.6;color:var(--text);font-style:italic}
+.testi-card .tc-author{font-size:11px;color:var(--text2);margin-top:8px}
+
+/* Profile summary */
+.badge-high{display:inline-block;background:rgba(220,74,74,0.1);color:var(--red);font-size:12px;font-weight:700;padding:4px 12px;border-radius:8px}
+.gauge-wrap{position:relative;height:14px;background:rgba(0,0,0,0.06);border-radius:7px;overflow:hidden;margin:12px 0}
+.gauge-fill{height:100%;border-radius:7px;width:0}
+@keyframes gaugeGrow{from{width:0%}to{width:82%}}
+.gauge-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--text3)}
+.metric-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.metric-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px;box-shadow:var(--shadow-sm)}
+.metric-card .mc-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+.metric-card .mc-value{font-size:14px;font-weight:700;color:var(--text)}
+
+/* Chart bars */
+.chart-bars{display:flex;align-items:flex-end;gap:8px;height:180px;padding:0 8px;margin-top:16px}
+.chart-bar{flex:1;border-radius:8px 8px 0 0;transition:height 1s ease;position:relative;min-width:0}
+.chart-bar .cb-label{position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);font-size:9px;color:var(--text3);white-space:nowrap}
+.chart-bar .cb-badge{position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-size:9px;color:var(--green);font-weight:700;white-space:nowrap}
+
+/* Scratch card */
+.scratch-wrap{position:relative;width:290px;height:175px;margin:20px auto;border-radius:18px;overflow:hidden;border:2px solid var(--green);box-shadow:0 0 30px rgba(46,170,96,0.15),0 0 60px rgba(46,170,96,0.05);background:linear-gradient(135deg,#1a8a4a 0%,#2eaa60 25%,#4ecb7a 50%,#2eaa60 75%,#1a8a4a 100%);background-size:200% 200%;animation:goldShimmer 3s ease infinite}
+@keyframes goldShimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.scratch-reveal{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg2)}
+.scratch-reveal .sr-pct{font-size:42px;font-weight:800;color:var(--green)}
+.scratch-reveal .sr-text{font-size:14px;color:var(--text2)}
+.scratch-canvas{position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;z-index:5}
+
+/* Confetti */
+@keyframes confettiBurst{0%{transform:translateY(0) rotate(0deg) scale(0);opacity:0}10%{opacity:1;transform:translateY(-10vh) rotate(90deg) scale(1.2)}30%{opacity:1}100%{transform:translateY(100vh) rotate(1080deg) scale(0.5);opacity:0}}
+.confetti-piece{position:fixed;z-index:300;animation:confettiBurst 2.5s cubic-bezier(0.15,0.8,0.3,1) forwards;pointer-events:none}
+.confetti-piece:nth-child(3n){width:10px;height:10px;border-radius:50%}
+.confetti-piece:nth-child(3n+1){width:8px;height:14px;border-radius:2px}
+.confetti-piece:nth-child(3n+2){width:12px;height:6px;border-radius:1px}
+
+/* Paywall sticky */
+.pw-sticky{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:8px 16px;display:flex;align-items:center;justify-content:space-between}
+.pw-timer{color:var(--green);font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
+.pw-sticky-btn{background:var(--green);color:#fff;border:none;padding:10px 20px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer}
+
+/* Before/After */
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.ba-col{text-align:center}
+.ba-photo{width:100%;height:120px;border-radius:12px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:40px;margin-bottom:8px}
+.ba-label{font-size:12px;font-weight:700;margin-bottom:8px}
+.ba-metric{display:flex;align-items:center;gap:6px;margin-bottom:8px;font-size:11px}
+.ba-metric span:first-child{width:75px;flex-shrink:0;font-weight:600}
+.ba-metric .bar{flex:1;height:8px;background:rgba(0,0,0,0.06);border-radius:4px;overflow:hidden}
+.ba-metric .bar-fill{height:100%;border-radius:4px;transition:width 1s ease}
+.ba-metric span:last-child{font-weight:700;flex-shrink:0;min-width:45px;text-align:right}
+
+/* Plan cards */
+.plan-card{background:var(--bg2);border:2px solid var(--border);border-radius:var(--radius-md);padding:18px 20px;cursor:pointer;transition:all 0.25s;position:relative;margin-bottom:12px;box-shadow:var(--shadow-sm)}
+.plan-card.selected{border-color:var(--green);background:rgba(46,170,96,0.04)}
+.plan-card.popular{border-color:var(--green)}
+.plan-popular-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-size:10px;font-weight:700;padding:3px 12px;border-radius:10px;white-space:nowrap}
+.plan-row{display:flex;align-items:center;justify-content:space-between}
+.plan-name{font-size:14px;font-weight:700}
+.plan-price{text-align:right}
+.plan-price .original{font-size:12px;color:var(--text3);text-decoration:line-through}
+.plan-price .current{font-size:18px;font-weight:800;color:var(--text)}
+.plan-price .per-day{font-size:11px;color:var(--text2)}
+.plan-radio{width:20px;height:20px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-right:12px}
+.plan-card.selected .plan-radio{border-color:var(--green);background:var(--green)}
+.plan-card.selected .plan-radio::after{content:'';width:8px;height:8px;border-radius:50%;background:#fff}
+
+/* Promo badge */
+.promo-badge{background:var(--green-light);border:1px solid rgba(46,170,96,0.15);border-radius:12px;padding:12px 16px;text-align:center;margin-bottom:16px}
+.promo-badge .pb-text{font-size:12px;color:var(--green);font-weight:600}
+.promo-badge .pb-code{font-size:14px;font-weight:800;color:var(--text);margin-top:4px}
+
+/* Goals list */
+.goal-list{display:flex;flex-direction:column;gap:10px}
+.goal-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.5}
+.goal-item .gi-check{color:var(--green);font-size:16px;flex-shrink:0;margin-top:1px}
+
+/* Future pacing grid */
+.fp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
+.fp-col h4{font-size:13px;font-weight:700;margin-bottom:10px;text-align:center}
+.fp-item{font-size:12px;line-height:1.5;color:var(--text2);padding:6px 0;border-bottom:1px solid rgba(0,0,0,0.04)}
+.fp-item .fp-x{color:var(--red);margin-right:6px}
+.fp-item .fp-ok{color:var(--green);margin-right:6px}
+
+/* FAQ */
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-md);margin-bottom:10px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.faq-q{padding:14px 18px;cursor:pointer;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:space-between}
+.faq-q .faq-arrow{transition:transform 0.3s;font-size:16px;color:var(--text3)}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease;padding:0 18px}
+.faq-item.open .faq-a{max-height:300px;padding:0 18px 14px}
+.faq-a p{font-size:13px;color:var(--text2);line-height:1.6}
+
+/* Checkout */
+.checkout-timer{background:rgba(220,74,74,0.08);color:var(--red);text-align:center;padding:10px;font-size:13px;font-weight:600;border-radius:12px;margin-bottom:16px}
+.pay-methods{display:flex;flex-direction:column;gap:10px;margin:16px 0}
+.pay-method{padding:14px;border-radius:12px;text-align:center;font-size:14px;font-weight:700;cursor:pointer;border:none;width:100%;transition:all 0.2s}
+.pay-paypal{background:#ffc439;color:#003087}
+.pay-apple{background:#000;color:#fff}
+.card-form{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.card-row{display:flex;gap:10px}
+.card-row .input-field{flex:1}
+.pay-btn-main{background:var(--green);color:#fff;border:none;padding:18px;border-radius:14px;font-size:16px;font-weight:700;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px;box-shadow:0 4px 16px rgba(46,170,96,0.2)}
+.pay-btn-main:hover{background:var(--green-dark)}
+.secure-badge{display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;color:var(--text3);margin-top:10px}
+
+/* Warning box */
+.warning-box{background:rgba(220,74,74,0.06);border:1px solid rgba(220,74,74,0.15);border-radius:12px;padding:14px 16px;margin-top:12px}
+.warning-box .wb-title{font-size:13px;font-weight:700;color:var(--red);margin-bottom:4px}
+.warning-box .wb-text{font-size:12px;color:var(--text2);line-height:1.5}
+
+/* Success */
+.success-screen{justify-content:center;align-items:center;text-align:center;gap:20px;padding:40px 20px}
+.success-icon{font-size:64px;animation:successPop 0.5s cubic-bezier(0.68,-0.55,0.27,1.55)}
+@keyframes successPop{from{transform:scale(0)}to{transform:scale(1)}}
+
+/* Legal */
+.legal{font-size:10px;color:var(--text3);text-align:center;line-height:1.5;padding:16px 0}
+.legal a{color:var(--text2)}
+
+@media(prefers-reduced-motion:reduce){.screen{animation:none}.confetti-piece{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="progress-wrap" id="progressWrap" style="display:none">
+  <div style="font-family:'Instrument Serif',Georgia,serif;font-size:20px;font-weight:400;font-style:italic;color:var(--text);letter-spacing:0.5px;flex-shrink:0;">ONERA</div>
+  <div class="progress-bar-bg" style="flex:1;"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+  <div class="progress-count" id="progressCount"></div>
+</div>
+<button class="back-btn" id="backBtn" onclick="goBack()" style="display:none">&#8592;</button>
+
+<div class="container" id="app"></div>
+
+<script>
+// ==================== CPP PPIDS ====================
+const CPP_PPIDS = {
+  'F-1':'e6154fed-5b4d-4179-b1f8-7c940128f139','F-2':'3dc222a7-2989-42e7-8be2-ab72d5dd7325',
+  'F-3a':'1cced7b2-ff40-4d55-a133-f4a80cfe4424','F-3b':'1cced7b2-ff40-4d55-a133-f4a80cfe4424',
+  'F-4':'750aa250-6fc5-4e89-bbb4-24df243f8561','F-5':'022c67b0-c455-43cd-af17-b9d711ddad74',
+  'M-1':'685f1e25-593a-450c-8758-d1544143430f','M-2':'c9c0065f-a336-4f9a-acdc-44f1f6c13a9d',
+  'M-3':'0a920009-d339-4d49-b57e-605043ac4987','M-4':'8541e472-1195-486b-b0f5-1364e08a907e',
+  'M-5':'91c9e2f5-9945-4180-9574-c8c381ba07b5','M-6':'91c9e2f5-9945-4180-9574-c8c381ba07b5'
+};
+function getAppStoreURL(id){const p=CPP_PPIDS[id]||'';return p?`https://apps.apple.com/us/app/onera/id6751126653?ppid=${p}`:'https://apps.apple.com/us/app/onera/id6751126653';}
+
+const CPP_LANDING = {
+  'F-1': {headline:'RECONNECT WITH<br>YOUR BODY', sub:'Get your personalized body reconnection plan'},
+  'F-2': {headline:'RELEASE WHAT<br>TALK THERAPY CAN\'T', sub:'Get your personalized somatic release plan'},
+  'F-3a': {headline:'HEAL YOUR<br>MOTHER WOUND', sub:'Get your personalized generational healing plan'},
+  'F-3b': {headline:'HEAL YOUR<br>ATTACHMENT PATTERN', sub:'Get your personalized relationship healing plan'},
+  'F-4': {headline:'DECODE YOUR<br>RECURRING DREAM', sub:'Get your personalized dream resolution plan'},
+  'F-5': {headline:'FEEL ALIVE<br>IN YOUR OWN LIFE', sub:'Get your personalized emotional recovery plan'},
+  'M-1': {headline:'UNLOCK YOUR<br>FULL POTENTIAL', sub:'Get your personalized breakthrough plan'},
+  'M-2': {headline:'RELEASE WHAT<br>INSIGHT ALONE CAN\'T', sub:'Get your personalized somatic release plan'},
+  'M-3': {headline:'MASTER YOUR<br>OWN PATTERNS', sub:'Get your personalized self-mastery plan'},
+  'M-4': {headline:'DECODE THE DREAM<br>THAT KEEPS COMING BACK', sub:'Get your personalized dream resolution plan'},
+  'M-5': {headline:'BE FULLY PRESENT<br>FOR YOUR LIFE', sub:'Get your personalized reconnection plan'},
+  'M-6': {headline:'BECOME THE FATHER<br>YOU NEEDED', sub:'Get your personalized generational healing plan'},
+};
+
+// CPP-SPECIFIC PAYWALL DATA (from ONBOARDING_COPY_SHEET)
+const CPP_PAYWALL = {
+  'F-1': {
+    title:'Finally live in your body.',
+    sub:'You left your body a long time ago. Tonight, you find your way back.',
+    emotion:'Disconnection detected',
+    timeline:[{d:'Today',t:'Release your first block.'},{d:'Day 3',t:'Feel your body respond.'},{d:'Day 7',t:'Stop living in your head.'},{d:'Day 21',t:'Come home to yourself.'}],
+    testimonials:[{t:'I\'ve been disconnected from myself for years. After one session I cried for the first time in months. Not sad crying — relief crying.',a:'S., 29'},{t:'My therapist helped me understand. Onera helped me actually feel it.',a:'L., 32'},{t:'I used to wake up feeling like I was floating outside myself. After two weeks, I wake up and I\'m just... here.',a:'M., 27'}],
+    social:'12,000+ women came home to their body today',
+    without:['Watching life behind glass','Performing emotions you don\'t feel','Waking up already gone','Carrying a body that doesn\'t feel yours','Relationships at arm\'s length','Numbness mistaken for strength','Forgetting what feeling alive is like'],
+    withPlan:['Present in your own body','Feeling emotions as they happen','Waking up connected','Trusting your physical sensations','Genuine closeness with loved ones','Strength from feeling, not hiding','Aliveness you forgot existed']
+  },
+  'F-2': {
+    title:'Release it from your body.',
+    sub:'Your mind understood it years ago. Your body never processed it.',
+    emotion:'Therapy ceiling detected',
+    timeline:[{d:'Today',t:'Feel your body unlock.'},{d:'Day 3',t:'Let the first layer go.'},{d:'Day 7',t:'Finally let go.'},{d:'Day 21',t:'Feel free from your past.'}],
+    testimonials:[{t:'I understood my trauma intellectually for years. One guided release and I felt something shift that no amount of journaling ever touched.',a:'A., 31'},{t:'I\'ve done therapy, shadow work, read all the books. This was the one thing that actually moved what was stuck.',a:'R., 28'},{t:'My body was still holding it. After a week of releases, the tension in my shoulders just... left.',a:'K., 34'}],
+    social:'12,000+ women woke up lighter today',
+    without:['Understanding everything, changing nothing','Years of insight with no release','The same reaction despite all the work','Body holding what mind let go','Frustration with therapy ceiling','Money spent, pattern unchanged','Knowing better but doing the same'],
+    withPlan:['Understanding AND releasing','Insight that becomes embodied change','New reactions from the body up','Tension finally leaving your muscles','Breaking through the ceiling','Investment that pays in felt change','Knowing AND being different']
+  },
+  'F-3a': {
+    title:'Break the cycle. Choose free.',
+    sub:'You can see it. You just can\'t stop it. Until now.',
+    emotion:'Inherited pattern detected',
+    timeline:[{d:'Today',t:'Expose the root.'},{d:'Day 3',t:'See the pattern clearly.'},{d:'Day 7',t:'Choose differently.'},{d:'Day 21',t:'Reclaim your life.'}],
+    testimonials:[{t:'Same relationship, same fights, same ending. After Onera showed me what my dreams were pointing to, I finally saw the pattern — and it loosened.',a:'J., 30'},{t:'I kept attracting the same type of person. The dream analysis pinpointed exactly what I was repeating and why.',a:'T., 26'},{t:'I was about to repeat the same mistake again. But something had shifted. I made a different choice without forcing it.',a:'N., 33'}],
+    social:'12,000+ women broke a cycle today',
+    without:['Becoming your mother','Reacting with her words','Guilt for having needs','Daughter watching the cycle','Same dynamic, different person','Not knowing where she ends and you begin','Carrying her weight on top of yours'],
+    withPlan:['Responding in your own voice','Reacting from choice not reflex','Needs expressed without guilt','Daughter seeing a new pattern','Relationships that feel different','Clear boundary between her and you','Carrying only what\'s yours']
+  },
+  'F-3b': {
+    title:'Break the pattern. Choose free.',
+    sub:'Same man, different face. Until now.',
+    emotion:'Attachment pattern detected',
+    timeline:[{d:'Today',t:'See the pull clearly.'},{d:'Day 3',t:'Understand why it pulls.'},{d:'Day 7',t:'Choose from wholeness.'},{d:'Day 21',t:'Love without losing yourself.'}],
+    testimonials:[{t:'Same man, different face — three times. After Onera showed me what my recurring dream was pointing to, the pull broke.',a:'C., 33'},{t:'I did attachment theory. I know I\'m anxious. I still repeated it — until something in me released.',a:'M., 29'},{t:'I thought I was broken. Onera helped me see I was following a map given before I could read.',a:'A., 31'}],
+    social:'12,000+ women broke the pattern they were born into',
+    without:['Choosing the same person again','Losing interest when it\'s safe','Obsessing when they pull away','Not trusting your instincts','Years wasted on the wrong people','Intensity mistaken for love','Loneliness despite relationships'],
+    withPlan:['Attracted to safety and happy about it','Present in love without disappearing','Trusting your gut again','Choosing from wholeness not fear','Time invested in the right person','Real connection, not just chemistry','Feeling chosen without chasing']
+  },
+  'F-4': {
+    title:'Sleep in peace tonight.',
+    sub:'It keeps coming back because your body hasn\'t answered yet.',
+    emotion:'Recurring nightmare detected',
+    timeline:[{d:'Today',t:'Decode the nightmare.'},{d:'Day 3',t:'Understand its message.'},{d:'Day 7',t:'Reclaim your nights.'},{d:'Day 21',t:'Wake up in peace.'}],
+    testimonials:[{t:'I had the same dream for 4 years. Being chased through dark hallways. After 10 days, it just stopped.',a:'C., 28'},{t:'I used to dread going to bed. Waking up shaking at 3am, alone. Onera gave me something to do with it.',a:'E., 31'},{t:'I never told anyone about my nightmare. I typed it into Onera and the interpretation made me cry.',a:'D., 25'}],
+    social:'12,000+ women slept without fear last night',
+    without:['Same nightmare on repeat','Dreading bedtime','Waking up shaking at 3am','No one to call','Dream feeling lasting all day','Sleep deprivation destroying everything','Afraid of your own mind'],
+    withPlan:['Dreams decoded every morning','Falling asleep without dread','Sleeping through the night','A tool that understands','Mornings that feel fresh','Restful energy all day','Trust in your own sleep']
+  },
+  'F-5': {
+    title:'Feel freely again.',
+    sub:'You\'re not empty. You\'re frozen.',
+    emotion:'Emotional numbness detected',
+    timeline:[{d:'Today',t:'Feel your first release.'},{d:'Day 3',t:'Notice what\'s waking up.'},{d:'Day 7',t:'Feel deeply again.'},{d:'Day 21',t:'Come fully alive.'}],
+    testimonials:[{t:'I was numb for so long I forgot what emotions felt like. The first release cracked something open. I sobbed. It felt like coming alive.',a:'V., 27'},{t:'I was watching my life instead of living it. After a week, colors looked brighter. Food tasted again.',a:'P., 30'},{t:'I froze to survive and couldn\'t unfreeze. Onera thawed me gently. One dream at a time.',a:'H., 33'}],
+    social:'12,000+ women felt something move today',
+    without:['Feeling nothing — not sad, not happy','Performing emotions for others','Watching life from behind glass','Unable to cry','Relationships at arm\'s length','Forgetting what joy feels like','Existing instead of living'],
+    withPlan:['Feeling emotions as they come','Genuine reactions, not performed','Present in your own life','Crying when you need to','Real intimacy with people you love','Joy that catches you off guard','Living, not just existing']
+  },
+  'M-1': {
+    title:'Run at full power.',
+    sub:'Your body is holding the brake. Tonight, it lets go.',
+    emotion:'Performance block detected',
+    timeline:[{d:'Today',t:'Release your first block.'},{d:'Day 3',t:'Feel the brake loosen.'},{d:'Day 7',t:'Operate without the brake.'},{d:'Day 21',t:'Go beyond your limits.'}],
+    testimonials:[{t:'I knew I was capable of more but something was holding me back. Onera showed me what it was. The release cleared something I\'d been carrying for years.',a:'D., 27'},{t:'Every time I got close to a breakthrough, I\'d blow it up. After two weeks of releases, I stopped getting in my own way.',a:'M., 31'},{t:'I was running on 30%. Not from work — from whatever was running underneath. After a week, something unlocked.',a:'T., 24'}],
+    social:'12,000+ people woke up sharper today',
+    without:['Watching potential waste away','Procrastinating on what matters','Starting strong then collapsing','The gap between capability and output','Guilt and avoidance cycle','Running on 30%','Knowing but not doing'],
+    withPlan:['Executing consistently','Acting on what matters','Sustaining momentum','Capability matching output','Energy replacing guilt','Running at full power','Doing what you know you can']
+  },
+  'M-2': {
+    title:'Breathe without the weight.',
+    sub:'Your mind understood it years ago. Your body never processed it.',
+    emotion:'Therapy ceiling detected',
+    timeline:[{d:'Today',t:'Feel your body unlock.'},{d:'Day 3',t:'Let the first layer go.'},{d:'Day 7',t:'Move lighter.'},{d:'Day 21',t:'Trust your body again.'}],
+    testimonials:[{t:'I could map my own patterns. I read Jung, did shadow work, journaled for years. None of it released what was stuck. This did.',a:'A., 29'},{t:'I\'m tired of understanding things. I wanted to get rid of it. First session, tension left my jaw that had been there for years.',a:'J., 33'},{t:'I knew exactly what was wrong. Knowing didn\'t change anything. Onera bridged the gap between my head and my body.',a:'R., 26'}],
+    social:'12,000+ people woke up lighter today',
+    without:['Understanding everything, changing nothing','Body holding what mind released','Same reaction despite the work','Years of insight, no physical shift','Therapy ceiling frustration','Patterns that outlast awareness','The gap between knowing and being'],
+    withPlan:['Understanding becoming release','Body finally catching up','New reactions from the ground up','Insight that leads to change','Breaking past the ceiling','Patterns dissolving at the root','Knowing AND feeling different']
+  },
+  'M-3': {
+    title:'Write a new ending.',
+    sub:'You can see it. You just can\'t stop it. Until now.',
+    emotion:'Self-sabotage pattern detected',
+    timeline:[{d:'Today',t:'See the loop.'},{d:'Day 3',t:'Catch it in real time.'},{d:'Day 7',t:'Choose different.'},{d:'Day 21',t:'Choose who you become.'}],
+    testimonials:[{t:'My dreams kept showing me the same scene. Onera decoded it and I saw exactly what was driving my decisions. The release broke the loop.',a:'K., 28'},{t:'I was repeating the same destructive cycle — relationships, career, everything. After three weeks, I started responding instead of reacting.',a:'S., 32'},{t:'Same anger, same shutdown, same regret. For years. The dream analysis showed me the root. The release pulled it out.',a:'N., 25'}],
+    social:'12,000+ people woke up freer today',
+    without:['Destroying what you build','Watching yourself sabotage','Remorse-repair-repeat cycle','Pushing people away','Not trusting yourself with good things','Comfortable in misery','Awareness without control'],
+    withPlan:['Keeping what you build','Catching the impulse before it fires','Breaking the cycle','Letting people stay close','Trusting yourself with good things','Comfortable with happiness','Awareness becoming choice']
+  },
+  'M-4': {
+    title:'Love the dark again.',
+    sub:'It keeps coming back because your body hasn\'t answered yet.',
+    emotion:'Recurring nightmare detected',
+    timeline:[{d:'Today',t:'Decode the dream.'},{d:'Day 3',t:'Understand its message.'},{d:'Day 7',t:'Dream without fear.'},{d:'Day 21',t:'Close your eyes in peace.'}],
+    testimonials:[{t:'Same nightmare for 6 years. My father, angry, in a dark room. After two weeks of decode + release, it shifted. Then it stopped.',a:'D., 27'},{t:'I used to wake up shaking at 4am with no one to talk to. Onera gave me a way to process it right there.',a:'L., 30'},{t:'I knew the nightmare meant something. I just didn\'t want to look. Onera laid it out clearly, no judgment.',a:'B., 34'}],
+    social:'12,000+ people woke up calmer today',
+    without:['Same nightmare every night','Staying awake to avoid it','Shaking at 3am, alone','The dream feeling all day','Sleep deprivation destroying health','Afraid to close your eyes','No one who understands'],
+    withPlan:['Dreams that shift and change','Falling asleep without fear','Sleeping through the night','Mornings that feel clean','Energy from real rest','Trust in your own sleep','Understanding what it meant']
+  },
+  'M-5': {
+    title:'Come back to her.',
+    sub:'She\'s still there. You just can\'t feel her yet.',
+    emotion:'Emotional numbness detected',
+    timeline:[{d:'Today',t:'Feel your first spark.'},{d:'Day 3',t:'Notice what\'s coming back.'},{d:'Day 7',t:'Feel without flinching.'},{d:'Day 21',t:'Feel everything at once.'}],
+    testimonials:[{t:'I shut down emotionally at 15. I\'m 28 now. First release, something cracked. Just a warmth in my chest I hadn\'t felt in a decade.',a:'C., 28'},{t:'I built a wall so nothing could hurt me. Nothing could reach me either. Onera showed me the door.',a:'P., 31'},{t:'I was going through the motions. Feeling nothing. After a week, I got angry for the first time in years. Real anger. It felt like being alive.',a:'E., 26'}],
+    social:'12,000+ people woke up clearer today',
+    without:['Feeling nothing at all','Going through the motions','She says you\'re cold','Performing closeness','Can\'t remember the last time you felt','Volume turned all the way down','Existing on autopilot'],
+    withPlan:['Feeling things as they happen','Present in your own life','She notices the difference','Real connection, not performed','Emotions returning naturally','Volume turning back up','Living, not just existing']
+  },
+  'M-6': {
+    title:'End what he started.',
+    sub:'You can see it. You just can\'t stop it. Until now.',
+    emotion:'Inherited pattern detected',
+    timeline:[{d:'Today',t:'Feel where his pattern lives.'},{d:'Day 3',t:'Separate his story from yours.'},{d:'Day 7',t:'Respond instead of react.'},{d:'Day 21',t:'Write your own story.'}],
+    testimonials:[{t:'My father\'s anger ran my life for 20 years. Onera showed me exactly where it lived. The release let me put it down.',a:'J., 29'},{t:'I kept repeating his mistakes — the withdrawal, the coldness. My dreams were showing me. Onera helped me release what was never mine.',a:'A., 32'},{t:'My son is 3. I saw myself becoming my father. After a month with Onera, I respond differently. He\'ll grow up with a different man.',a:'F., 30'}],
+    social:'12,000+ men stopped carrying what isn\'t theirs',
+    without:['His anger coming out of your mouth','Becoming who you swore you wouldn\'t','Your son watching and learning','Shutting down like he did','Relationships damaged by his patterns','Carrying rage that isn\'t yours','The cycle continuing'],
+    withPlan:['Speaking in your own voice','Becoming who you chose to be','Your son seeing a different man','Responding with presence','Relationships built on your terms','Carrying only what\'s yours','The cycle ending with you']
+  },
+};
+
+const SUPABASE_URL='https://cxtoofvckqllsasriczb.supabase.co/functions/v1';
+
+// ==================== 26 QUIZ QUESTIONS ====================
+// FIX 6: Reordered for emotional escalation
+// FIX 2: Only 2 multi-selects kept (Q13 "areas affected", Q22 "what matters most"); other 4 converted to freq3/yesno3
+// FIX 1: Email = Q24, Name = Q25 inside the quiz
+// FIX 5: No ONERA mentions in question text
+// FIX 9: All questions shortened to ~7 words max, options 1-3 words
+// CPP-specific likert statements (VoC-aligned, escalate pain per ICP)
+const CPP_LIKERTS = {
+  'F-1': [
+    {text:'I feel like a stranger in my own body',sub:'Do you agree?'},
+    {text:'I go through the motions but nothing really lands',sub:'Do you agree?'},
+    {text:'I watch my life like a movie I\'m not in',sub:'Do you agree?'},
+    {text:'I want to cry but nothing comes out',sub:'Do you agree?'},
+  ],
+  'F-2': [
+    {text:'I understand my patterns but I still repeat them',sub:'Do you agree?'},
+    {text:'I can explain my triggers but I can\'t stop reacting',sub:'Do you agree?'},
+    {text:'I\'ve spent years in therapy and I\'m still stuck',sub:'Do you agree?'},
+    {text:'Understanding hasn\'t led to change',sub:'Do you agree?'},
+  ],
+  'F-3a': [
+    {text:'I catch myself reacting exactly like my mother',sub:'Do you agree?'},
+    {text:'I feel guilty when I put myself first',sub:'Do you agree?'},
+    {text:'I\'m terrified of passing this pattern to my daughter',sub:'Do you agree?'},
+    {text:'I can\'t tell where she ends and I begin',sub:'Do you agree?'},
+  ],
+  'F-3b': [
+    {text:'I push away the good ones and keep the ones who hurt',sub:'Do you agree?'},
+    {text:'I see the red flags. I stay anyway.',sub:'Do you agree?'},
+    {text:'Same person. Different face. Every time.',sub:'Do you agree?'},
+    {text:'I don\'t trust myself to choose right',sub:'Do you agree?'},
+  ],
+  'F-4': [
+    {text:'The same nightmare keeps coming back',sub:'Do you agree?'},
+    {text:'I dread falling asleep',sub:'Do you agree?'},
+    {text:'I wake up in panic and can\'t go back to sleep',sub:'Do you agree?'},
+    {text:'The dream feeling follows me all day',sub:'Do you agree?'},
+  ],
+  'F-5': [
+    {text:'I feel nothing — not sad, not happy, just flat',sub:'Do you agree?'},
+    {text:'I perform emotions I don\'t actually feel',sub:'Do you agree?'},
+    {text:'People think I\'m fine. I\'m not.',sub:'Do you agree?'},
+    {text:'I can\'t remember the last time I genuinely cried',sub:'Do you agree?'},
+  ],
+  'M-1': [
+    {text:'I watch myself not do it. Every day.',sub:'Do you agree?'},
+    {text:'The worst part is knowing I could do better.',sub:'Do you agree?'},
+    {text:'I start strong. Then something invisible stops me.',sub:'Do you agree?'},
+    {text:'I\'m wasting time I can\'t get back.',sub:'Do you agree?'},
+  ],
+  'M-2': [
+    {text:'I understand exactly what\'s wrong but can\'t change it',sub:'Do you agree?'},
+    {text:'I name my patterns and still repeat them',sub:'Do you agree?'},
+    {text:'Insight alone hasn\'t been enough',sub:'Do you agree?'},
+    {text:'I\'ve done the work. Nothing has actually shifted.',sub:'Do you agree?'},
+  ],
+  'M-3': [
+    {text:'I ruin things when they get good',sub:'Do you agree?'},
+    {text:'I watch myself sabotage and can\'t stop',sub:'Do you agree?'},
+    {text:'I destroyed something good and I still don\'t know why',sub:'Do you agree?'},
+    {text:'I don\'t trust myself with good things',sub:'Do you agree?'},
+  ],
+  'M-4': [
+    {text:'The same nightmare has followed me for years',sub:'Do you agree?'},
+    {text:'I stay awake as long as possible to avoid it',sub:'Do you agree?'},
+    {text:'I\'ve never told anyone the full dream',sub:'Do you agree?'},
+    {text:'I wake up and need a minute to remember I\'m safe',sub:'Do you agree?'},
+  ],
+  'M-5': [
+    {text:'She says I\'m emotionally unavailable. She\'s right.',sub:'Do you agree?'},
+    {text:'I know I love her but I can\'t feel it',sub:'Do you agree?'},
+    {text:'The volume on my life is off',sub:'Do you agree?'},
+    {text:'I go through the motions. Nothing registers.',sub:'Do you agree?'},
+  ],
+  'M-6': [
+    {text:'I hear my father\'s voice coming out of my mouth',sub:'Do you agree?'},
+    {text:'I react with his anger before I can stop myself',sub:'Do you agree?'},
+    {text:'I swore I\'d be different. I\'m becoming him.',sub:'Do you agree?'},
+    {text:'I\'m terrified my son will carry this after me',sub:'Do you agree?'},
+  ],
+};
+
+// CPP-specific deep behavioral questions (Q11-Q15) — VoC-powered
+const CPP_DEEP = {
+  'F-1': [
+    {type:'freq3',text:'Do you feel like you\'re watching your life from outside?'},
+    {type:'freq3',text:'Do celebrations and good news land flat?'},
+    {type:'yesno3',text:'Do people call you "strong" when you feel nothing?'},
+    {type:'yesno3',text:'Have you forgotten what your own body feels like?'},
+    {type:'freq3',text:'Do you say "I\'m fine" because you can\'t access anything else?'},
+  ],
+  'F-2': [
+    {type:'yesno3',text:'Can you explain your patterns but not stop them?'},
+    {type:'freq3',text:'Does your body still react despite therapy?'},
+    {type:'freq3',text:'Do you clench your jaw under stress?'},
+    {type:'yesno3',text:'Has introspection ever turned into self-interrogation?'},
+    {type:'freq3',text:'Do you leave therapy clear then relapse?'},
+  ],
+  'F-3a': [
+    {type:'freq3',text:'Do you spend your energy caring for everyone but yourself?'},
+    {type:'freq3',text:'Do you hear your mother\'s words coming out of your mouth?'},
+    {type:'freq3',text:'Do you feel guilty for having needs?'},
+    {type:'yesno3',text:'Do you apologize for existing in someone else\'s space?'},
+    {type:'yesno3',text:'Are you afraid your children will inherit this?'},
+  ],
+  'F-3b': [
+    {type:'freq3',text:'Do you keep attracting the same type of partner?'},
+    {type:'freq3',text:'Do you shrink yourself to fit a relationship?'},
+    {type:'freq3',text:'Do you see red flags and step in anyway?'},
+    {type:'yesno3',text:'Do you apologize for having needs in relationships?'},
+    {type:'yesno3',text:'Does love feel like earning something that should be free?'},
+  ],
+  'F-4': [
+    {type:'freq3',text:'Do you have the same nightmare repeatedly?'},
+    {type:'freq3',text:'Do you dread going to sleep?'},
+    {type:'freq3',text:'Do you wake up shaking with no one to call?'},
+    {type:'yesno3',text:'Has your nightmare lasted months or years?'},
+    {type:'yesno3',text:'Have you tried everything to stop it?'},
+  ],
+  'F-5': [
+    {type:'freq3',text:'Do you say "I\'m fine" because you can\'t feel anything?'},
+    {type:'freq3',text:'Do good things happen without you feeling them?'},
+    {type:'yesno3',text:'Have you forgotten what it feels like to cry?'},
+    {type:'yesno3',text:'Do people call you strong when you feel hollow?'},
+    {type:'yesno3',text:'Did you stop feeling to survive — and can\'t start again?'},
+  ],
+  'M-1': [
+    {type:'yesno3',text:'Do you know you\'re capable of more but can\'t execute?'},
+    {type:'freq3',text:'Do you sabotage breakthroughs right when they start?'},
+    {type:'freq3',text:'Do you procrastinate not from laziness but an invisible brake?'},
+    {type:'yesno3',text:'Do you feel like you\'re running at 30% capacity?'},
+    {type:'freq3',text:'Do you watch yourself underperform and can\'t explain why?'},
+  ],
+  'M-2': [
+    {type:'yesno3',text:'Is your jaw clenched right now?'},
+    {type:'freq3',text:'Do you grind your teeth in your sleep?'},
+    {type:'yesno3',text:'Can you explain it but still feel it?'},
+    {type:'yesno3',text:'Have you spent years in therapy without your body changing?'},
+    {type:'freq3',text:'Does your body hold tension no one can explain?'},
+  ],
+  'M-3': [
+    {type:'freq3',text:'Do you destroy good things right when they start working?'},
+    {type:'freq3',text:'Do you push away people who care about you?'},
+    {type:'yesno3',text:'Can you see the cycle happening but can\'t stop it?'},
+    {type:'yesno3',text:'Do you beg yourself to stop and still do it?'},
+    {type:'yesno3',text:'Do you watch yourself blow it up?'},
+  ],
+  'M-4': [
+    {type:'freq3',text:'Do you have the same dream over and over?'},
+    {type:'freq3',text:'Do you wake up shaking and pretend it didn\'t happen?'},
+    {type:'yesno3',text:'Has the nightmare lasted years?'},
+    {type:'yesno3',text:'Is there a dream you\'ve never told anyone about?'},
+    {type:'yesno3',text:'Do you dread closing your eyes because you know it\'s coming?'},
+  ],
+  'M-5': [
+    {type:'yesno3',text:'Has someone called you "emotionally unavailable"?'},
+    {type:'freq3',text:'Do you feel a wall between you and everything?'},
+    {type:'yesno3',text:'Have you forgotten what it feels like to cry?'},
+    {type:'yesno3',text:'Does feeling anything feel impossible?'},
+    {type:'yesno3',text:'Did your chest turn to concrete and you can\'t soften it?'},
+  ],
+  'M-6': [
+    {type:'freq3',text:'Do you hear your father\'s voice in your own reactions?'},
+    {type:'freq3',text:'Do you repeat his words inside your head?'},
+    {type:'freq3',text:'Do you snap at loved ones with his coldness?'},
+    {type:'yesno3',text:'Are you afraid your kids see him in you?'},
+    {type:'yesno3',text:'Did you swear you\'d be different — and catch yourself becoming him?'},
+  ],
+};
+
+// CPP-specific aspirational questions (Q16-Q20) — desires from VoC
+const CPP_ASPIRE = {
+  'F-1': [
+    {type:'multi',text:'What do you want most right now?',sub:'Choose all that apply',opts:['Feel at home in my body','Be present with people I love','Stop performing emotions','Feel something real again','Understand what shut me down','Wake up and actually be here']},
+    {type:'freq3',text:'How do you feel when you wake up?',customOpts:['Heavy and numb','Flat — nothing','Already gone','Depends on the dream']},
+    {type:'multi',text:'What would change everything?',sub:'Choose all that apply',opts:['Coming back to my body','Feeling connected again','Crying — actually crying','Understanding my dreams','Releasing what froze me']},
+    {type:'freq3',text:'How much do you know about dream analysis?',customOpts:['Nothing at all','Not much','A lot']},
+    {type:'yesno3',text:'Did someone recommend this to you?'},
+  ],
+  'F-2': [
+    {type:'multi',text:'What do you want most right now?',sub:'Choose all that apply',opts:['Release what insight can\'t reach','Stop repeating despite understanding','Feel change in my body not just my head','Break the therapy ceiling','Move what years of talking couldn\'t']},
+    {type:'freq3',text:'How do you feel when you wake up?',customOpts:['Tight — jaw, shoulders, chest','Unrested despite sleep','Like the work isn\'t done','Depends on the dream']},
+    {type:'multi',text:'What would change everything?',sub:'Choose all that apply',opts:['My body finally releasing it','Insight becoming embodied change','Stopping the automatic reaction','Understanding my recurring dream','Feeling different, not just knowing better']},
+    {type:'freq3',text:'How much do you know about dream analysis?',customOpts:['Nothing at all','Not much','A lot']},
+    {type:'yesno3',text:'Did someone recommend this to you?'},
+  ],
+  'F-3a': [
+    {type:'multi',text:'What do you want most right now?',sub:'Choose all that apply',opts:['Stop reacting like my mother','Break the cycle for my daughter','Know where she ends and I begin','Stop the guilt','Find my own voice']},
+    {type:'freq3',text:'How do you feel when you wake up?',customOpts:['Guilt before my feet hit the floor','Bracing for the day','Already giving','Depends on the dream']},
+    {type:'multi',text:'What would change everything?',sub:'Choose all that apply',opts:['Responding in my own voice','My daughter seeing a different pattern','Putting myself first without guilt','Releasing what she left in me','Understanding my recurring dream']},
+    {type:'freq3',text:'How much do you know about dream analysis?',customOpts:['Nothing at all','Not much','A lot']},
+    {type:'yesno3',text:'Did someone recommend this to you?'},
+  ],
+  'F-3b': [
+    {type:'multi',text:'What do you want most right now?',sub:'Choose all that apply',opts:['Stop choosing the same person','Feel safe with someone stable','Trust my instincts again','Break the attachment pattern','Stop losing myself in love']},
+    {type:'freq3',text:'How do you feel when you wake up?',customOpts:['Checking my phone for his text','Anxious about the relationship','Replaying what went wrong','Depends on the dream']},
+    {type:'multi',text:'What would change everything?',sub:'Choose all that apply',opts:['Feeling attracted to safety','Choosing from wholeness not fear','Trusting what I feel','Understanding why I repeat','Receiving love without chasing']},
+    {type:'freq3',text:'How much do you know about dream analysis?',customOpts:['Nothing at all','Not much','A lot']},
+    {type:'yesno3',text:'Did someone recommend this to you?'},
+  ],
+  'F-4': [
+    {type:'multi',text:'What do you want most right now?',sub:'Choose all that apply',opts:['The nightmare to stop','Sleep without dread','Understand what it means','Wake up rested for once','Feel safe in my own sleep']},
+    {type:'freq3',text:'How do you feel when you wake up?',customOpts:['Shaking — heart pounding','The dream follows me all day','Afraid to go back to sleep','Exhausted from broken sleep']},
+    {type:'multi',text:'What would change everything?',sub:'Choose all that apply',opts:['One night without the dream','Understanding its message','Releasing what keeps it alive','Sleeping through the night','Feeling safe at bedtime']},
+    {type:'freq3',text:'How much do you know about dream analysis?',customOpts:['Nothing at all','Not much','A lot']},
+    {type:'yesno3',text:'Did someone recommend this to you?'},
+  ],
+  'F-5': [
+    {type:'multi',text:'What do you want most right now?',sub:'Choose all that apply',opts:['Feel something real','Cry — actually genuinely cry','Be present in my own life','Stop performing okay','Come back to myself']},
+    {type:'freq3',text:'How do you feel when you wake up?',customOpts:['Nothing — just flat','Already on autopilot','Present but empty','Depends on the dream']},
+    {type:'multi',text:'What would change everything?',sub:'Choose all that apply',opts:['Feeling real joy again','Being moved by something','Being present with loved ones','Thawing what froze me','Understanding my dreams']},
+    {type:'freq3',text:'How much do you know about dream analysis?',customOpts:['Nothing at all','Not much','A lot']},
+    {type:'yesno3',text:'Did someone recommend this to you?'},
+  ],
+  'M-1': [
+    {type:'multi',text:'What do you want most right now?',sub:'Choose all that apply',opts:['Execute on what I know I can do','Remove the invisible brake','Stop wasting my potential','Build something I\'m proud of','Match my output to my capability']},
+    {type:'freq3',text:'How do you feel when you wake up?',customOpts:['Today is the day (it never is)','Already behind','Dread before I begin','Depends on the dream']},
+    {type:'multi',text:'What would change everything?',sub:'Choose all that apply',opts:['Running at full power','Consistent execution','Breaking through the ceiling','Understanding what blocks me','Releasing the brake']},
+    {type:'freq3',text:'How much do you know about dream analysis?',customOpts:['Nothing at all','Not much','A lot']},
+    {type:'yesno3',text:'Did someone recommend this to you?'},
+  ],
+  'M-2': [
+    {type:'multi',text:'What do you want most right now?',sub:'Choose all that apply',opts:['Release what my body holds','Feel change not just understand it','My jaw to finally unclench','Stop the automatic reactions','Bridge the gap between head and body']},
+    {type:'freq3',text:'How do you feel when you wake up?',customOpts:['Jaw clenched, shoulders locked','Body tense for no reason','Exhausted despite sleep','Depends on the dream']},
+    {type:'multi',text:'What would change everything?',sub:'Choose all that apply',opts:['Tension leaving my body','Insight becoming release','Stopping the hijack reaction','My body catching up to my mind','Understanding my recurring dream']},
+    {type:'freq3',text:'How much do you know about dream analysis?',customOpts:['Nothing at all','Not much','A lot']},
+    {type:'yesno3',text:'Did someone recommend this to you?'},
+  ],
+  'M-3': [
+    {type:'multi',text:'What do you want most right now?',sub:'Choose all that apply',opts:['Stop destroying what I build','Keep something good for once','Break the sabotage cycle','Trust myself with good things','Be the man she believed I was']},
+    {type:'freq3',text:'How do you feel when you wake up?',customOpts:['Remorse from yesterday','Bracing for the next episode','Promising today is different','Depends on the dream']},
+    {type:'multi',text:'What would change everything?',sub:'Choose all that apply',opts:['Catching the impulse before it fires','Keeping what I build','Being safe with happiness','Understanding what drives it','Releasing the pattern']},
+    {type:'freq3',text:'How much do you know about dream analysis?',customOpts:['Nothing at all','Not much','A lot']},
+    {type:'yesno3',text:'Did someone recommend this to you?'},
+  ],
+  'M-4': [
+    {type:'multi',text:'What do you want most right now?',sub:'Choose all that apply',opts:['The nightmare to stop','One full night of sleep','Understand what it means','Stop dreading bedtime','Reclaim my nights']},
+    {type:'freq3',text:'How do you feel when you wake up?',customOpts:['Heart pounding, shaking','Need a minute to feel safe','The feeling stays all day','Pretend it didn\'t happen']},
+    {type:'multi',text:'What would change everything?',sub:'Choose all that apply',opts:['Sleeping without the dream','Decoding what it carries','Releasing the stored emotion','Telling someone what I dream','Closing my eyes without fear']},
+    {type:'freq3',text:'How much do you know about dream analysis?',customOpts:['Nothing at all','Not much','A lot']},
+    {type:'yesno3',text:'Did someone recommend this to you?'},
+  ],
+  'M-5': [
+    {type:'multi',text:'What do you want most right now?',sub:'Choose all that apply',opts:['Feel love not just know it','Be present with her','Stop running on autopilot','Turn the volume back up','Come back to life']},
+    {type:'freq3',text:'How do you feel when you wake up?',customOpts:['Nothing — already on autopilot','Flat, going through motions','Disconnected from everything','Depends on the dream']},
+    {type:'multi',text:'What would change everything?',sub:'Choose all that apply',opts:['Feeling what I know I love','Being emotionally available','Crying for the first time in years','My chest softening','Understanding my dreams']},
+    {type:'freq3',text:'How much do you know about dream analysis?',customOpts:['Nothing at all','Not much','A lot']},
+    {type:'yesno3',text:'Did someone recommend this to you?'},
+  ],
+  'M-6': [
+    {type:'multi',text:'What do you want most right now?',sub:'Choose all that apply',opts:['Stop becoming my father','Speak in my own voice','Be the dad he never was','Release his anger from my body','Break the chain for my son']},
+    {type:'freq3',text:'How do you feel when you wake up?',customOpts:['His tension in my body','Bracing like he taught me','Angry before the day starts','Depends on the dream']},
+    {type:'multi',text:'What would change everything?',sub:'Choose all that apply',opts:['Responding instead of reacting','My son seeing a different man','Speaking without his voice','Releasing what he left in me','Writing my own story']},
+    {type:'freq3',text:'How much do you know about dream analysis?',customOpts:['Nothing at all','Not much','A lot']},
+    {type:'yesno3',text:'Did someone recommend this to you?'},
+  ],
+};
+
+function getQuestions(){
+  const L = CPP_LIKERTS[S.cppId] || CPP_LIKERTS['F-2'];
+  const D = CPP_DEEP[S.cppId] || CPP_DEEP['F-2'];
+  const A = CPP_ASPIRE[S.cppId] || CPP_ASPIRE['F-2'];
+  return [
+    // === BLOCK 1: Surface symptoms (Q1-Q6) — low threat, anyone can answer ===
+    {type:'freq3',text:'How often do you feel drained?'},
+    {type:'freq3',text:'How often do you wake up feeling unrested?'},
+    {type:'freq3',text:'How often do you remember your dreams?',customOpts:['Often','Sometimes','Rarely','Never']},
+    {type:'freq3',text:'How often do you feel worried or overwhelmed?'},
+    {type:'freq3',text:'How often do you replay the same thoughts?'},
+    {type:'yesno3',text:'Have you felt at peace with yourself in recent months?'},
+
+    // === BLOCK 2: Likert — "I often..." statements (Q7-Q10) — force self-identification ===
+    {type:'likert5',...L[0]},
+    {type:'likert5',...L[1]},
+    {type:'likert5',...L[2]},
+    {type:'likert5',...L[3]},
+
+    // === BLOCK 3: Deeper behavioral patterns (Q11-Q15) — CPP-specific ===
+    ...D,
+
+    // === BLOCK 4: Aspirational (Q16-Q20) — CPP-specific desires ===
+    ...A,
+
+    // === BLOCK 5: Capture + commitment (Q21-Q26) ===
+    // Email
+    {type:'email',text:'Where should we send your results?'},
+    // Opt-in
+    {type:'freq3',text:'Would you like wellness tips and updates?',customOpts:['Sure, I\'m in!','No thanks']},
+    // Name
+    {type:'name',text:'What\'s your first name?'},
+    // Struggle triggers (Liven-style)
+    {type:'multi',text:'Have any of the following caused you to struggle more than before?',sub:'Choose all that apply',opts:['Family or relationship','External circumstances','My appearance','Sleep issues','Job-related stress','Other']},
+    // Aspirational improvement (Liven-style)
+    {type:'multi',text:'In order to live a happier life, what do you think you need to improve?',sub:'Choose all that apply',opts:['My state of calm','My focus levels','My willpower','My energy levels','My inner strength','Other']},
+    // Daily goal
+    {type:'freq3',text:'How much time can you give daily?',customOpts:['5 min/day','10 min/day','15 min/day','20 min/day']},
+    // Final commitment
+    {type:'yesno3',text:'Are you ready to start?'},
+    // Knowledge
+    {type:'freq3',text:'How familiar are you with body-based healing?',customOpts:['Not at all','A little','Very familiar']},
+  ];
+}
+// ==================== STATE ====================
+let S = {
+  step:0, gender:null, age:null, answers:{}, email:'', optIn:null, name:'',
+  scratchDone:false, selectedPlan:1, selectedMulti:{}, cppId:null,
+  timerSec:10*60, timerInterval:null, discountExpired:false, deeplink:null, _ts:0
+};
+(function(){const p=new URLSearchParams(location.search);S.cppId=p.get('cpp')||null;})();
+let QUIZ_QUESTIONS = getQuestions();
+
+function save(){try{S._ts=Date.now();sessionStorage.setItem('onera_v3',JSON.stringify(S))}catch(e){}}
+function restore(){try{const d=JSON.parse(sessionStorage.getItem('onera_v3'));if(d&&Date.now()-(d._ts||0)<1800000){Object.assign(S,d);return true}}catch(e){}return false}
+
+const TOTAL_Q=26, Q_START=3, Q_END=Q_START+TOTAL_Q-1;
+
+// ==================== STEP MAP (FIX 7: condensed post-quiz) ====================
+// Steps 0-2: Landing, Age, Social proof
+// Steps 3-28: 26 quiz questions (email Q24 + name Q25 inside)
+// Step 29: Loading (with progress bars + engagement questions + testimonial + science authority)
+// Step 30: Profile summary + projection graph (combined)
+// Step 31: Scratch card
+// Step 32: Paywall (single long page)
+// Step 33: Checkout
+// Step 34: Success
+
+// ==================== RENDER ====================
+function render(){
+  const app=document.getElementById('app');
+  const pw=document.getElementById('progressWrap');
+  const bb=document.getElementById('backBtn');
+  const pf=document.getElementById('progressFill');
+  const pc=document.getElementById('progressCount');
+
+  if(S.step>=Q_START&&S.step<=Q_END){
+    pw.style.display='flex';
+    const qNum=S.step-Q_START+1;
+    pf.style.width=(qNum/TOTAL_Q*100)+'%';
+    pc.textContent=qNum+'/'+TOTAL_Q;
+    bb.style.display='flex';
+  } else if(S.step===29){
+    pw.style.display='flex';pf.style.width='100%';pc.textContent='26/26';bb.style.display='none';
+  } else {
+    pw.style.display=S.step>0&&S.step<34?'flex':'none';
+    if(S.step>0&&S.step<Q_START){pf.style.width='5%';pc.textContent='';}
+    else if(S.step>Q_END&&S.step<34){pf.style.width='100%';pc.textContent='';}
+    bb.style.display=S.step>0&&S.step<34?'flex':'none';
+  }
+
+  window.scrollTo({top:0,behavior:'smooth'});
+  save();
+
+  // STEP 0: LANDING
+  if(S.step===0){
+    pw.style.display='none';bb.style.display='none';
+    app.innerHTML=`
+    <div class="screen active landing" style="padding-top:20px;">
+      <div style="font-family:'Instrument Serif',Georgia,serif;font-size:28px;font-style:italic;color:var(--text);letter-spacing:0.5px;margin-bottom:4px;">ONERA</div>
+      <h1>${(CPP_LANDING[S.cppId]||{headline:'MEET YOUR<br>TRUE SELF<br>THROUGH DREAMS'}).headline}</h1>
+      <p class="sub">${(CPP_LANDING[S.cppId]||{sub:'Get your personalized dream analysis plan'}).sub}</p>
+      <div class="landing-badge">3-MINUTE QUIZ</div>
+      <div class="gender-cards">
+        <div class="gender-card" onclick="pickGender('M')">
+          <div class="photo" style="height:240px;"><img src="img/gender-male.png" alt="Male" style="object-position:center 20%;"></div>
+          <div class="g-label">Male <span style="font-size:18px;opacity:0.7;">›</span></div>
+        </div>
+        <div class="gender-card" onclick="pickGender('F')">
+          <div class="photo" style="height:240px;"><img src="img/gender-female.png" alt="Female" style="object-position:center 20%;"></div>
+          <div class="g-label">Female <span style="font-size:18px;opacity:0.7;">›</span></div>
+        </div>
+      </div>
+      <p class="landing-legal">By clicking Male or Female you agree with <a href="#">Terms</a>, <a href="#">Privacy Policy</a>, <a href="#">Subscription Policy</a></p>
+    </div>`;
+    fbq('track','ViewContent',{content_name:'quiz_landing'});
+    return;
+  }
+
+  // STEP 1: AGE
+  if(S.step===1){
+    app.innerHTML=`
+    <div class="screen active q-screen" style="align-items:center;text-align:center;padding-top:40px;">
+      <h2 class="q-title" style="font-size:24px;">What's your age?</h2>
+      <p class="q-sub" style="margin-top:4px;font-size:14px;color:var(--text2);">We only use your age to personalize your plan</p>
+      <div class="freq3-opts" style="width:100%;max-width:360px;margin-top:20px;">
+        ${['18-24','25-34','35-44','45-54','55-64','65+'].map(a=>`
+        <div class="freq3-opt" onclick="pickAge('${a}')" style="justify-content:center;padding:22px;">
+          <div class="f3-label" style="font-size:17px;font-weight:600;">${a}</div>
+        </div>`).join('')}
+      </div>
+    </div>`;
+    return;
+  }
+
+  // STEP 2: SOCIAL PROOF
+  if(S.step===2){
+    const centerImg = S.gender==='F' ? 'img/gender-female.png' : 'img/gender-male.png';
+    // 10 diverse avatars via pravatar (seeded IDs for consistency)
+    const ids = [11,12,32,44,48,51,56,60,65,68];
+    // Positions: outer ring (8) + inner ring (2), Liven-style large layout
+    const positions = [
+      // Outer ring — 8 avatars, spread wide
+      {x:50,y:1,s:68},    // top center
+      {x:84,y:8,s:64},    // top right
+      {x:97,y:38,s:60},   // right
+      {x:88,y:70,s:64},   // bottom right
+      {x:58,y:90,s:60},   // bottom center-right
+      {x:20,y:82,s:64},   // bottom left
+      {x:3,y:48,s:60},    // left
+      {x:12,y:14,s:68},   // top left
+      // Inner ring — 2 avatars
+      {x:75,y:54,s:56},   // inner right
+      {x:22,y:44,s:56},   // inner left
+    ];
+    const dotsHTML = positions.map((p,i)=>`<div style="position:absolute;width:${p.s}px;height:${p.s}px;left:${p.x}%;top:${p.y}%;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden;border:2.5px solid rgba(150,140,170,0.3);box-shadow:0 2px 10px rgba(0,0,0,0.08);background:var(--bg2);"><img src="https://i.pravatar.cc/150?img=${ids[i]}" style="width:100%;height:100%;object-fit:cover;" alt=""></div>`).join('');
+
+    app.innerHTML=`
+    <div class="screen active q-screen" style="align-items:center;text-align:center;padding-top:10px;">
+      <h2 style="font-size:26px;font-weight:800;line-height:1.2;letter-spacing:-0.3px;color:var(--green);">Over 12,000 people</h2>
+      <p style="font-size:16px;color:var(--text);margin-top:4px;font-weight:700;">have chosen ONERA</p>
+      <div style="position:relative;width:360px;height:400px;margin:16px auto 0;">
+        <!-- Orbit circles -->
+        <div style="position:absolute;width:94%;height:94%;top:3%;left:3%;border-radius:50%;border:1.5px dashed rgba(0,0,0,0.06);"></div>
+        <div style="position:absolute;width:58%;height:58%;top:21%;left:21%;border-radius:50%;border:1.5px dashed rgba(0,0,0,0.06);"></div>
+        <!-- Satellite avatars -->
+        ${dotsHTML}
+        <!-- Center photo -->
+        <div style="position:absolute;width:150px;height:150px;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden;border:3px solid rgba(150,140,170,0.25);box-shadow:0 0 0 8px rgba(150,140,170,0.08),0 8px 32px rgba(0,0,0,0.12);z-index:2;background:var(--bg2);">
+          <img src="${centerImg}" style="width:100%;height:100%;object-fit:cover;object-position:center top;" alt="">
+        </div>
+      </div>
+      <button class="btn-continue" onclick="go()" style="max-width:300px;margin-top:12px;">Continue</button>
+    </div>`;
+    return;
+  }
+
+  // STEPS 3-28: QUIZ (26 questions including email Q24 + name Q25)
+  if(S.step>=Q_START&&S.step<=Q_END){
+    renderQuestion(QUIZ_QUESTIONS[S.step-Q_START],S.step-Q_START);
+    return;
+  }
+
+  // STEP 29: PROCESS (how ONERA works — Hormozi mechanism)
+  if(S.step===29){renderProcess();return;}
+  // STEP 30: AUTHORITY (expert + universities)
+  if(S.step===30){renderAuthority();return;}
+  // STEP 31: LOADING
+  if(S.step===31){renderLoading();return;}
+  // STEP 32: PROFILE SUMMARY
+  if(S.step===32){renderProfile();return;}
+  // STEP 33: CURVE CHART
+  if(S.step===33){renderCurveChart();return;}
+  // STEP 34: PROJECTION BARS
+  if(S.step===34){renderProjection();return;}
+  // STEP 35: SCRATCH
+  if(S.step===35){renderScratch();return;}
+  // STEP 36: PAYWALL
+  if(S.step===36){renderPaywall();return;}
+  // STEP 37: CHECKOUT
+  if(S.step===37){renderCheckout();return;}
+  // STEP 38: SUCCESS
+  if(S.step===38){renderSuccess();return;}
+}
+
+// ==================== QUESTION RENDERER ====================
+function renderQuestion(q,qIdx){
+  const app=document.getElementById('app');
+  let h='';
+
+  // FIX 1: Email question type
+  if(q.type==='email'){
+    h=`<div class="screen active q-screen" style="padding-top:40px;gap:16px;align-items:center;text-align:center;">
+      <svg viewBox="0 0 80 80" width="64" height="64" style="margin-bottom:8px;"><rect x="8" y="20" width="64" height="44" rx="8" fill="#e8f5ee" stroke="#2eaa60" stroke-width="2"/><path d="M8 28l32 20 32-20" stroke="#2eaa60" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="60" cy="22" r="10" fill="#f5c518"/><path d="M57 22l3 3 5-6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h2 class="q-title">${q.text}</h2>
+      <p style="font-size:13px;color:var(--text2);max-width:300px;">Enter your email to receive your personalized plan</p>
+      <input type="email" id="emailInput" class="input-field" placeholder="your@email.com" value="${S.email}" style="max-width:340px;text-align:center;" />
+      <button class="btn-continue" onclick="submitEmailQ(${qIdx})" style="max-width:340px;">Explore my results</button>
+      <p style="font-size:10px;color:var(--text3);max-width:280px;display:flex;align-items:center;gap:4px;justify-content:center;"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="var(--text3)" stroke-width="1.5"><rect x="3" y="7" width="10" height="6" rx="2"/><path d="M5 7V5a3 3 0 016 0v2"/></svg> We never share your email. Unsubscribe anytime.</p>
+    </div>`;
+    app.innerHTML=h;
+    return;
+  }
+
+  // FIX 1: Name question type
+  if(q.type==='name'){
+    h=`<div class="screen active q-screen" style="padding-top:40px;gap:16px;align-items:center;text-align:center;">
+      <svg viewBox="0 0 80 80" width="56" height="56" style="margin-bottom:4px;"><circle cx="40" cy="30" r="16" fill="#e8f5ee" stroke="#2eaa60" stroke-width="2"/><path d="M16 68c0-14 11-24 24-24s24 10 24 24" fill="#e8f5ee" stroke="#2eaa60" stroke-width="2"/><circle cx="35" cy="28" r="2" fill="#2eaa60"/><circle cx="45" cy="28" r="2" fill="#2eaa60"/><path d="M35 35c2 3 7 3 10 0" stroke="#2eaa60" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+      <h2 class="q-title">${q.text}</h2>
+      <p style="font-size:13px;color:var(--text2);">So we can personalize your experience</p>
+      <input type="text" id="nameInput" class="input-field" placeholder="Your first name" value="${S.name}" style="max-width:340px;text-align:center;" />
+      <button class="btn-continue" onclick="submitNameQ(${qIdx})" style="max-width:340px;">Continue</button>
+    </div>`;
+    app.innerHTML=h;
+    return;
+  }
+
+  if(q.type==='freq3'){
+    const opts = q.customOpts || ['Often','Sometimes','Rarely'];
+    const fIcons = [
+      `<svg viewBox="0 0 36 36" width="36" height="36"><circle cx="18" cy="18" r="17" fill="#e8f5ee" stroke="#2eaa60" stroke-width="1"/><path d="M11 18l5 5 9-9" stroke="#2eaa60" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>`,
+      `<svg viewBox="0 0 36 36" width="36" height="36"><circle cx="18" cy="18" r="17" fill="#fef3e2" stroke="#d4a030" stroke-width="1"/><text x="18" y="24" text-anchor="middle" font-size="22" font-weight="800" fill="#d4a030" font-family="serif">?</text></svg>`,
+      `<svg viewBox="0 0 36 36" width="36" height="36"><circle cx="18" cy="18" r="17" fill="#e8f5ee" stroke="#2eaa60" stroke-width="1"/><circle cx="18" cy="18" r="10" fill="none" stroke="#2eaa60" stroke-width="2.5"/><line x1="11" y1="25" x2="25" y2="11" stroke="#2eaa60" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+    ];
+    const showIcons = !q.customOpts;
+    h=`<div class="screen active q-screen"><h2 class="q-title">${q.text}</h2><div class="freq3-opts">
+      ${opts.map((o,i)=>`<div class="freq3-opt" onclick="answerQ(${qIdx},${i})" style="justify-content:flex-start;padding:20px 22px;">${showIcons?`<div class="f3-icon" style="flex-shrink:0;width:36px;margin-right:16px;">${fIcons[i]||fIcons[0]}</div>`:''}<div class="f3-label" style="font-size:17px;font-weight:600;">${o}</div></div>`).join('')}
+    </div></div>`;
+  }
+  else if(q.type==='likert5'){
+    h=`<div class="screen active q-screen" style="justify-content:space-between;min-height:calc(100dvh - 70px);">
+      <div>
+        <h2 class="q-title" style="font-weight:700;font-size:22px;font-style:italic;">${q.text}</h2>
+        <p class="q-sub" style="margin-top:8px;">${q.sub||'Do you agree with the following statement?'}</p>
+      </div>
+      <div class="likert-row" style="padding-bottom:20px;">
+        <div class="likert-btn" onclick="answerQ(${qIdx},1)">
+          <svg viewBox="0 0 48 48" width="44" height="44"><circle cx="24" cy="24" r="22" fill="#fde8e8"/><circle cx="17" cy="20" r="2.5" fill="#dc4a4a"/><circle cx="31" cy="20" r="2.5" fill="#dc4a4a"/><path d="M16 33c2-3 5-5 8-5s6 2 8 5" stroke="#dc4a4a" stroke-width="2.5" stroke-linecap="round" fill="none"/><line x1="14" y1="15" x2="20" y2="17" stroke="#dc4a4a" stroke-width="2" stroke-linecap="round"/><line x1="34" y1="15" x2="28" y2="17" stroke="#dc4a4a" stroke-width="2" stroke-linecap="round"/></svg>
+          <div class="lk-label">Strongly<br>disagree</div>
+        </div>
+        <div class="likert-btn" onclick="answerQ(${qIdx},2)">
+          <svg viewBox="0 0 48 48" width="44" height="44"><circle cx="24" cy="24" r="22" fill="#fef3e2"/><circle cx="17" cy="21" r="2.5" fill="#e8a030"/><circle cx="31" cy="21" r="2.5" fill="#e8a030"/><path d="M16 32c2-2 5-3 8-3s6 1 8 3" stroke="#e8a030" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+          <div class="lk-label">Disagree</div>
+        </div>
+        <div class="likert-btn" onclick="answerQ(${qIdx},3)">
+          <svg viewBox="0 0 48 48" width="44" height="44"><circle cx="24" cy="24" r="22" fill="#f0f0ea"/><circle cx="17" cy="21" r="2.5" fill="#9a928a"/><circle cx="31" cy="21" r="2.5" fill="#9a928a"/><line x1="17" y1="30" x2="31" y2="30" stroke="#9a928a" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <div class="lk-label">Neutral</div>
+        </div>
+        <div class="likert-btn" onclick="answerQ(${qIdx},4)">
+          <svg viewBox="0 0 48 48" width="44" height="44"><circle cx="24" cy="24" r="22" fill="#e8f5ee"/><circle cx="17" cy="21" r="2.5" fill="#2eaa60"/><circle cx="31" cy="21" r="2.5" fill="#2eaa60"/><path d="M16 28c2 2 5 4 8 4s6-2 8-4" stroke="#2eaa60" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+          <div class="lk-label">Agree</div>
+        </div>
+        <div class="likert-btn" onclick="answerQ(${qIdx},5)">
+          <svg viewBox="0 0 48 48" width="44" height="44"><circle cx="24" cy="24" r="22" fill="#e8f5ee"/><circle cx="17" cy="20" r="2.5" fill="#2eaa60"/><circle cx="31" cy="20" r="2.5" fill="#2eaa60"/><path d="M14 27c2 4 6 6 10 6s8-2 10-6" stroke="#2eaa60" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+          <div class="lk-label">Strongly<br>agree</div>
+        </div>
+      </div>
+    </div>`;
+  }
+  else if(q.type==='yesno3'){
+    h=`<div class="screen active q-screen"><h2 class="q-title">${q.text}</h2><div class="freq3-opts">
+      <div class="freq3-opt" onclick="answerQ(${qIdx},'yes')" style="justify-content:flex-start;padding:20px 22px;"><div style="flex-shrink:0;width:36px;margin-right:16px;"><svg viewBox="0 0 36 36" width="36" height="36"><circle cx="18" cy="18" r="17" fill="#e8f5ee" stroke="#2eaa60" stroke-width="1"/><path d="M11 18l5 5 9-9" stroke="#2eaa60" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><div class="f3-label" style="font-size:17px;font-weight:600;">Yes</div></div>
+      <div class="freq3-opt" onclick="answerQ(${qIdx},'no')" style="justify-content:flex-start;padding:20px 22px;"><div style="flex-shrink:0;width:36px;margin-right:16px;"><svg viewBox="0 0 36 36" width="36" height="36"><circle cx="18" cy="18" r="17" fill="#fde8e8" stroke="#dc4a4a" stroke-width="1"/><path d="M12 12l12 12M24 12l-12 12" stroke="#dc4a4a" stroke-width="3" stroke-linecap="round"/></svg></div><div class="f3-label" style="font-size:17px;font-weight:600;">No</div></div>
+      <div class="freq3-opt" onclick="answerQ(${qIdx},'unsure')" style="justify-content:flex-start;padding:20px 22px;"><div style="flex-shrink:0;width:36px;margin-right:16px;"><svg viewBox="0 0 36 36" width="36" height="36"><circle cx="18" cy="18" r="17" fill="#fef3e2" stroke="#d4a030" stroke-width="1"/><text x="18" y="24" text-anchor="middle" font-size="22" font-weight="800" fill="#d4a030" font-family="serif">?</text></svg></div><div class="f3-label" style="font-size:17px;font-weight:600;">Not sure</div></div>
+    </div></div>`;
+  }
+  else if(q.type==='multi'){
+    const sk='m_'+qIdx;if(!S.selectedMulti[sk])S.selectedMulti[sk]=[];const sel=S.selectedMulti[sk];
+    // Image icons for multi-select (matched by keywords in option text)
+    function multiIcon(txt){
+      const t=txt.toLowerCase();
+      if(t.includes('energy')||t.includes('exhaust')||t.includes('power')||t.includes('execution'))return 'img/mi-energy.png';
+      if(t.includes('worry')||t.includes('overthink')||t.includes('thought')||t.includes('head')||t.includes('mind')||t.includes('understand')||t.includes('insight')||t.includes('know'))return 'img/mi-brain.png';
+      if(t.includes('emotion')||t.includes('feel')||t.includes('cry')||t.includes('numb')||t.includes('flat')||t.includes('moved'))return 'img/mi-heart.png';
+      if(t.includes('sleep')||t.includes('night')||t.includes('dream')||t.includes('nightmare')||t.includes('bedtime')||t.includes('rest'))return 'img/mi-moon.png';
+      if(t.includes('body')||t.includes('jaw')||t.includes('tension')||t.includes('somatic')||t.includes('chest')||t.includes('releas'))return 'img/mi-body.png';
+      if(t.includes('relat')||t.includes('love')||t.includes('partner')||t.includes('attach')||t.includes('safe')||t.includes('trust'))return 'img/mi-love.png';
+      if(t.includes('mother')||t.includes('father')||t.includes('daughter')||t.includes('son')||t.includes('family')||t.includes('cycle')||t.includes('pattern')||t.includes('inherit')||t.includes('chain'))return 'img/mi-family.png';
+      if(t.includes('sabotage')||t.includes('destroy')||t.includes('irritab')||t.includes('anger')||t.includes('impulse')||t.includes('react'))return 'img/mi-star.png';
+      if(t.includes('fine')||t.includes('okay')||t.includes('present')||t.includes('alive')||t.includes('back')||t.includes('home')||t.includes('keep'))return 'img/mi-check.png';
+      if(t.includes('voice')||t.includes('speak')||t.includes('tell')||t.includes('story')||t.includes('writ'))return 'img/mi-speech.png';
+      if(t.includes('calm')||t.includes('peace'))return 'img/mi-calm.png';
+      if(t.includes('focus')||t.includes('target'))return 'img/mi-focus.png';
+      if(t.includes('willpower')||t.includes('strength')||t.includes('strong'))return 'img/mi-fist.png';
+      if(t.includes('shield')||t.includes('protect'))return 'img/mi-shield.png';
+      if(t.includes('job')||t.includes('work')||t.includes('career')||t.includes('build'))return 'img/mi-briefcase.png';
+      if(t.includes('appear')||t.includes('mirror')||t.includes('self-esteem'))return 'img/mi-mirror.png';
+      if(t.includes('external')||t.includes('circumstance'))return 'img/mi-arrows.png';
+      if(t.includes('other'))return 'img/mi-grid.png';
+      return 'img/mi-sparkle.png';
+    }
+    h=`<div class="screen active q-screen"><h2 class="q-title">${q.text}</h2><p class="q-sub">${q.sub||''}</p><div class="options" id="multiOpts">
+      ${q.opts.map((o,i)=>`<div class="option-card multi-opt ${sel.includes(i)?'selected':''}" onclick="toggleMulti(${qIdx},${i})" data-idx="${i}">
+        <div style="width:40px;height:40px;border-radius:10px;overflow:hidden;flex-shrink:0;"><img src="${multiIcon(o)}" style="width:100%;height:100%;object-fit:cover;" alt=""></div>
+        <div class="opt-label" style="flex:1;">${o}</div>
+        <div class="checkbox"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" style="width:12px;height:12px;"><path d="M3 8l3.5 3.5L13 5"/></svg></div>
+      </div>`).join('')}
+    </div><button class="btn-continue" id="multiBtn" onclick="submitMulti(${qIdx})" ${sel.length===0?'disabled':''}>Continue</button></div>`;
+  }
+  app.innerHTML=h;
+}
+
+function toggleMulti(qIdx,optIdx){
+  const sk='m_'+qIdx;if(!S.selectedMulti[sk])S.selectedMulti[sk]=[];
+  const sel=S.selectedMulti[sk];const idx=sel.indexOf(optIdx);
+  if(idx>-1)sel.splice(idx,1);else sel.push(optIdx);
+  document.querySelectorAll('.multi-opt').forEach(c=>{c.classList.toggle('selected',sel.includes(parseInt(c.dataset.idx)));});
+  const btn=document.getElementById('multiBtn');if(btn)btn.disabled=sel.length===0;
+}
+function submitMulti(qIdx){S.answers['q'+(qIdx+1)]=S.selectedMulti['m_'+qIdx];fbq('trackCustom','QuizAnswer',{question:'q'+(qIdx+1)});go();}
+
+// FIX 1: Email/Name submit functions for in-quiz questions
+function submitEmailQ(qIdx){const i=document.getElementById('emailInput');const e=i?i.value.trim().toLowerCase():'';if(e&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){S.email=e;S.answers['q'+(qIdx+1)]=e;sessionStorage.setItem('onera_quiz_email',e);fbq('trackCustom','QuizEmailCapture',{});go();}else{if(i){i.style.borderColor='var(--red)';i.focus();}const err=document.getElementById('emailError');if(!err){const p=document.createElement('p');p.id='emailError';p.style.cssText='color:var(--red);font-size:12px;margin-top:4px;';p.textContent='Please enter a valid email address';i.parentNode.insertBefore(p,i.nextSibling);}}}
+function submitNameQ(qIdx){const i=document.getElementById('nameInput');const n=i?i.value.trim():'';if(n){S.name=n;S.answers['q'+(qIdx+1)]=n;go();}else{if(i){i.style.borderColor='var(--red)';i.focus();}}}
+
+// ==================== PROCESS (Hormozi mechanism: how ONERA works) ====================
+function renderProcess(){
+  const app=document.getElementById('app');
+  const steps=[
+    {icon:'img/icon-carry.png',label:'You carry something',sub:'Unresolved emotions stored in your body',color:'#dc4a4a'},
+    {icon:'img/icon-dreams.png',label:'Your dreams show it',sub:'Every night, your subconscious replays it',color:'#e8a040'},
+    {icon:'img/icon-decode.png',label:'ONERA decodes it',sub:'AI reads the pattern your mind can\'t see',color:'#2eaa60'},
+    {icon:'img/icon-release.png',label:'Your body releases it',sub:'Guided exercises unlock what\'s stuck',color:'#2eaa60'},
+    {icon:'img/icon-free.png',label:'You\'re free',sub:'The pattern is broken',color:'#2eaa60'},
+  ];
+  app.innerHTML=`
+  <div class="screen active q-screen" style="padding-top:20px;gap:24px;align-items:center;text-align:center;">
+    <h2 style="font-size:22px;font-weight:800;line-height:1.3;">How <span style="color:var(--green);">ONERA</span> works</h2>
+    <p style="font-size:14px;color:var(--text2);max-width:280px;">3 steps. 5 minutes a day. Real change.</p>
+
+    <div style="width:100%;max-width:340px;display:flex;flex-direction:column;gap:0;">
+      ${steps.map((s,i)=>`
+        <div style="display:flex;align-items:center;gap:16px;padding:16px 18px;background:var(--bg2);border:1px solid var(--border);${i===0?'border-radius:16px 16px 0 0;':''}${i===steps.length-1?'border-radius:0 0 16px 16px;':''}${i>0?'border-top:none;':''}">
+          <div style="position:relative;flex-shrink:0;">
+            <div style="width:48px;height:48px;border-radius:50%;overflow:hidden;border:2px solid ${s.color}20;"><img src="${s.icon}" style="width:100%;height:100%;object-fit:cover;" alt=""></div>
+            ${i<steps.length-1?`<div style="position:absolute;top:48px;left:50%;transform:translateX(-50%);width:2px;height:16px;background:${s.color};opacity:0.2;"></div>`:''}
+          </div>
+          <div style="text-align:left;flex:1;">
+            <div style="font-size:15px;font-weight:700;color:${i>=2?'var(--green)':'var(--text)'};">${s.label}</div>
+            <div style="font-size:12px;color:var(--text3);margin-top:2px;">${s.sub}</div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+
+    <button class="btn-continue" onclick="go()" style="max-width:340px;">Continue</button>
+  </div>`;
+}
+
+// ==================== AUTHORITY (expert + universities) ====================
+function renderAuthority(){
+  const app=document.getElementById('app');
+  app.innerHTML=`
+  <div class="screen active q-screen" style="padding-top:20px;gap:20px;align-items:center;text-align:center;">
+    <h2 style="font-size:22px;font-weight:800;line-height:1.3;">ONERA is based on<br><span style="color:var(--green);">scientific research</span></h2>
+    <p style="font-size:14px;color:var(--text2);max-width:300px;">Dream analysis and somatic release backed by decades of research</p>
+
+    <!-- University names — clean cards -->
+    <div style="display:flex;flex-direction:column;gap:10px;width:100%;max-width:340px;">
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-sm);">
+        <div><div style="font-size:11px;color:var(--text3);letter-spacing:0.05em;">HARVARD</div><div style="font-size:16px;font-weight:800;">University</div></div>
+        <div style="font-size:11px;color:var(--text3);max-width:140px;text-align:right;">Dream research & emotional processing</div>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-sm);">
+        <div><div style="font-size:11px;color:var(--text3);letter-spacing:0.05em;">UNIVERSITY OF</div><div style="font-size:16px;font-weight:800;">Oxford</div></div>
+        <div style="font-size:11px;color:var(--text3);max-width:140px;text-align:right;">Somatic therapy & body-based healing</div>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-sm);">
+        <div><div style="font-size:11px;color:var(--text3);letter-spacing:0.05em;">UC BERKELEY</div><div style="font-size:16px;font-weight:800;">Sleep Lab</div></div>
+        <div style="font-size:11px;color:var(--text3);max-width:140px;text-align:right;">Sleep cycles & dream recall studies</div>
+      </div>
+    </div>
+
+    <!-- Trust row -->
+    <div style="display:flex;gap:10px;width:100%;max-width:340px;">
+      <div style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px 8px;text-align:center;box-shadow:var(--shadow-sm);">
+        <div style="font-size:24px;font-weight:800;color:var(--green);">4.8★</div>
+        <div style="font-size:10px;color:var(--text3);margin-top:4px;">App Store rating</div>
+      </div>
+      <div style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px 8px;text-align:center;box-shadow:var(--shadow-sm);">
+        <div style="font-size:24px;font-weight:800;">🔒</div>
+        <div style="font-size:10px;color:var(--text3);margin-top:4px;">End-to-end encrypted</div>
+      </div>
+      <div style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px 8px;text-align:center;box-shadow:var(--shadow-sm);">
+        <div style="font-size:24px;font-weight:800;">5min</div>
+        <div style="font-size:10px;color:var(--text3);margin-top:4px;">Per day</div>
+      </div>
+    </div>
+
+    <button class="btn-continue" onclick="go()" style="max-width:340px;">Continue</button>
+  </div>`;
+}
+
+// ==================== LOADING ====================
+function renderLoading(){
+  const app=document.getElementById('app');
+  app.innerHTML=`
+  <div class="screen active q-screen" style="padding-top:20px;gap:16px;">
+    <h2 class="q-title" style="font-size:18px;">Creating your <span class="green">Personalized Dream Analysis Plan</span></h2>
+
+    <div style="display:flex;gap:8px;margin-bottom:8px;">
+      <div style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;">
+        <div style="font-size:9px;color:var(--text3);letter-spacing:0.05em;">UC BERKELEY</div>
+        <div style="font-size:13px;font-weight:700;margin-top:2px;">Sleep Lab</div>
+      </div>
+      <div style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;">
+        <div style="font-size:9px;color:var(--text3);letter-spacing:0.05em;">RUSH UNIVERSITY</div>
+        <div style="font-size:13px;font-weight:700;margin-top:2px;">Medical Center</div>
+      </div>
+      <div style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;">
+        <div style="font-size:9px;color:var(--text3);letter-spacing:0.05em;">JOURNAL OF</div>
+        <div style="font-size:13px;font-weight:700;margin-top:2px;">Neuroscience</div>
+      </div>
+    </div>
+
+    <div id="loadSections">
+      <div class="loading-section"><div class="loading-label"><span id="lc0" style="opacity:0.3">&#9679;</span> Analyzing dream patterns <span id="lp0" style="margin-left:auto;font-size:12px;color:var(--green);font-weight:700;">0%</span></div><div class="loading-bar"><div class="loading-bar-fill" id="lb0" style="width:0%"></div></div></div>
+      <div class="loading-section"><div class="loading-label"><span id="lc1" style="opacity:0.3">&#9679;</span> Mapping emotional triggers <span id="lp1" style="margin-left:auto;font-size:12px;color:var(--green);font-weight:700;">0%</span></div><div class="loading-bar"><div class="loading-bar-fill" id="lb1" style="width:0%"></div></div></div>
+      <div class="loading-section"><div class="loading-label"><span id="lc2" style="opacity:0.3">&#9679;</span> Building your plan <span id="lp2" style="margin-left:auto;font-size:12px;color:var(--green);font-weight:700;">0%</span></div><div class="loading-bar"><div class="loading-bar-fill" id="lb2" style="width:0%"></div></div></div>
+    </div>
+    <div id="loadPopup" style="display:none;"></div>
+    <div class="testi-card"><div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tc-text">"After one week my recurring nightmare stopped for the first time in 5 years."</div><div class="tc-author">-- Sarah M., verified user</div></div>
+  </div>`;
+
+  const popupQs=['Do you finish what you start?','Are you familiar with journaling?','Do you want to build solid habits?'];
+
+  function done(i){const b=document.getElementById('lb'+i);const c=document.getElementById('lc'+i);if(b)b.style.width='100%';if(c){c.textContent='\u2713';c.style.opacity='1';c.style.color='var(--green)';}}
+  function popup(txt,cb){const el=document.getElementById('loadPopup');if(!el)return;el.style.display='block';el.innerHTML=`<div class="popup-overlay" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.4);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:200;display:flex;align-items:center;justify-content:center;"><div style="background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:28px 24px;max-width:320px;width:calc(100% - 40px);text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.12);"><div style="font-size:11px;color:var(--text3);margin-bottom:8px;">To move forward, specify</div><div style="font-size:16px;font-weight:700;margin-bottom:18px;line-height:1.4;">${txt}</div><div class="popup-btns"><button class="popup-btn-no" id="lpNo" style="padding:12px 36px;border-radius:20px;font-size:14px;font-weight:600;cursor:pointer;border:none;background:var(--bg3);color:var(--text2);">No</button><button class="popup-btn-yes" id="lpYes" style="padding:12px 36px;border-radius:20px;font-size:14px;font-weight:600;cursor:pointer;border:none;background:var(--green);color:#fff;">Yes</button></div></div></div>`;document.getElementById('lpNo').onclick=document.getElementById('lpYes').onclick=function(){el.style.display='none';cb();};}
+  function anim(i,to,dur,cb){const b=document.getElementById('lb'+i);const p=document.getElementById('lp'+i);if(!b)return;let v=0;const st=(to-v)/(dur/50);const iv=setInterval(()=>{v+=st;if(v>=to){v=to;clearInterval(iv);if(cb)cb();}b.style.width=v+'%';if(p)p.textContent=Math.round(v)+'%';},50);}
+
+  anim(0,100,1500,()=>{done(0);setTimeout(()=>{popup(popupQs[0],()=>{anim(1,100,1500,()=>{done(1);setTimeout(()=>{popup(popupQs[1],()=>{anim(2,45,1000,()=>{setTimeout(()=>{popup(popupQs[2],()=>{anim(2,100,1000,()=>{done(2);setTimeout(go,800);});});},500);});});},500);});});},500);});
+}
+
+// ==================== PROFILE (separate page) ====================
+function renderProfile(){
+  const app=document.getElementById('app');const n=S.name||'Friend';
+
+  // FIX 4: Derive profile from real answers
+  // Q9 (idx 8) = disconnected from body, Q10 (idx 9) = overthink, Q11 (idx 10) = carry others' emotions, Q12 (idx 11) = body tension
+  const q9=S.answers.q9||0, q10=S.answers.q10||0, q11=S.answers.q11||0, q12=S.answers.q12||0;
+  let difficulty = 'Sleep disruption';
+  if(q9>=4) difficulty='Recurring dreams';
+  else if(q10>=4) difficulty='Emotional patterns';
+  else if(q11>=4) difficulty='Inherited emotions';
+  else if(q12>=4) difficulty='Stored body tension';
+
+  // Q14 (idx 13) = how long (0=few weeks, 1=less than a year, 2=over a year)
+  const periodVal=S.answers.q14;
+  const period=['A few weeks','Less than a year','Over a year'][periodVal]||'Over a year';
+
+  // Q13 (idx 12) = areas affected (multi-select array of indices)
+  const areasOpts=['Relationships','Family','Career','Self-esteem','Health & energy','Social life'];
+  const areasArr=S.answers.q13||[];
+  const trigger=areasArr.length>0?areasOpts[areasArr[0]]||'Internal patterns':'Internal patterns';
+
+  // Q1 (idx 0) = energy level (0=often/high, 1=sometimes/medium, 2=rarely/low)
+  const energyVal=S.answers.q1;
+  const energy=energyVal===0?'Low':energyVal===1?'Medium':'Normal';
+
+  const gm=new Date(new Date().getFullYear(),new Date().getMonth()+2,1).toLocaleString('en',{month:'long'});
+
+  app.innerHTML=`
+  <div class="screen active q-screen" style="padding-top:10px;gap:14px;">
+    <h2 class="q-title" style="font-size:18px;">Summary of your <span class="green">Dream Analysis Profile</span></h2>
+
+    <!-- Photo + badge card (like Liven) -->
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:16px;box-shadow:var(--shadow-md);width:100%;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <span style="font-size:14px;font-weight:600;">Negative effects level</span>
+        <span class="badge-high">High</span>
+      </div>
+      <div style="width:100%;height:180px;border-radius:14px;overflow:hidden;background:var(--bg3);margin-bottom:14px;"><img src="${S.gender==='F'?'img/before-female.png':'img/before-male.png'}" style="width:100%;height:100%;object-fit:cover;object-position:center top;" alt=""></div>
+      <!-- Gauge with slider badge -->
+      <div style="position:relative;">
+        <div class="gauge-wrap" style="height:10px;margin:0;"><div class="gauge-fill" id="gaugeBar" style="width:0%;background:linear-gradient(90deg,#5bb8f0,var(--green),#d4c030,var(--red));transition:width 2s cubic-bezier(0.25,0.1,0.25,1);border-radius:5px;"></div></div>
+        <div id="gaugeBadge" style="position:absolute;top:-32px;left:82%;transform:translateX(-50%);background:var(--text);color:#fff;font-size:11px;font-weight:600;padding:4px 12px;border-radius:8px;opacity:0;transition:opacity 0.5s 2s,left 2s cubic-bezier(0.25,0.1,0.25,1);">Your level</div>
+        <div id="gaugeDot" style="position:absolute;top:-4px;left:0%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--text);box-shadow:0 2px 6px rgba(0,0,0,0.15);opacity:0;transition:opacity 0.3s,left 2s cubic-bezier(0.25,0.1,0.25,1);"></div>
+      </div>
+      <div class="gauge-labels" style="margin-top:8px;"><span>Low</span><span>Normal</span><span>Medium</span><span>High</span></div>
+    </div>
+    <div class="warning-box"><div class="wb-title">HIGH LEVEL</div><div class="wb-text">This means you could experience increased worry, emotional dysregulation, and disrupted sleep if left unaddressed.</div></div>
+    <div class="metric-cards">
+      <div class="metric-card"><div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><svg viewBox="0 0 20 20" style="width:18px;height:18px;"><circle cx="10" cy="10" r="8" fill="rgba(139,126,200,0.2)"/><path d="M7 8 Q10 5 13 8 Q14 10 13 12 Q10 15 7 12 Q6 10 7 8Z" fill="var(--purple)" opacity="0.7"/></svg><div class="mc-label">Main difficulty</div></div><div class="mc-value">${difficulty}</div></div>
+      <div class="metric-card"><div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><svg viewBox="0 0 20 20" style="width:18px;height:18px;"><circle cx="10" cy="10" r="8" fill="rgba(46,170,96,0.15)"/><circle cx="10" cy="10" r="5" fill="none" stroke="var(--accent)" stroke-width="1.5"/><path d="M10 7 L10 10 L12 12" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg><div class="mc-label">Challenging period</div></div><div class="mc-value">${period}</div></div>
+      <div class="metric-card"><div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><svg viewBox="0 0 20 20" style="width:18px;height:18px;"><circle cx="10" cy="10" r="8" fill="rgba(220,74,74,0.15)"/><circle cx="10" cy="10" r="4" fill="none" stroke="var(--red)" stroke-width="1.5"/><circle cx="10" cy="10" r="1.5" fill="var(--red)"/></svg><div class="mc-label">Trigger</div></div><div class="mc-value">${trigger}</div></div>
+      <div class="metric-card"><div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><svg viewBox="0 0 20 20" style="width:18px;height:18px;"><circle cx="10" cy="10" r="8" fill="rgba(46,170,96,0.15)"/><rect x="7" y="8" width="6" height="8" rx="1" fill="none" stroke="var(--accent)" stroke-width="1.5"/><rect x="8" y="11" width="4" height="4" rx="0.5" fill="var(--accent)" opacity="0.5"/><path d="M10 6 L10 8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/></svg><div class="mc-label">Energy level</div></div><div class="mc-value">${energy}</div></div>
+    </div>
+
+    <button class="btn-continue" onclick="go()">Continue</button>
+  </div>`;
+  // Animate gauge bar from 0 to 82% after render + show badge/dot
+  setTimeout(()=>{
+    const bar=document.getElementById('gaugeBar');if(bar)bar.style.width='82%';
+    const dot=document.getElementById('gaugeDot');if(dot){dot.style.opacity='1';dot.style.left='82%';}
+    const badge=document.getElementById('gaugeBadge');if(badge){setTimeout(()=>{badge.style.opacity='1';},2000);}
+  },300);
+}
+
+// ==================== CURVE CHART ("Plan is ready" + S-curve like Liven) ====================
+function renderCurveChart(){
+  const app=document.getElementById('app');const n=S.name||'Friend';
+  app.innerHTML=`
+  <div class="screen active q-screen" style="padding-top:16px;gap:14px;align-items:center;text-align:center;">
+    <h2 style="font-size:22px;line-height:1.35;text-align:left;width:100%;"><span style="color:var(--green);">${n},</span><br>Your personal<br><span style="color:var(--green);">Dream Analysis Plan</span><br>is ready!</h2>
+    <p style="font-size:15px;font-weight:600;">Your Well-being level</p>
+
+    <div style="position:relative;width:100%;max-width:380px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:24px 20px 16px;box-shadow:var(--shadow-md);">
+      <svg viewBox="0 0 320 200" style="width:100%;">
+        <defs>
+          <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc4a4a"/><stop offset="40%" stop-color="#e8a040"/><stop offset="70%" stop-color="#8cc050"/><stop offset="100%" stop-color="#2eaa60"/></linearGradient>
+          <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2eaa60" stop-opacity="0.15"/><stop offset="100%" stop-color="#2eaa60" stop-opacity="0.01"/></linearGradient>
+        </defs>
+        <!-- Horizontal grid lines -->
+        <line x1="40" y1="40" x2="290" y2="40" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
+        <line x1="40" y1="80" x2="290" y2="80" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
+        <line x1="40" y1="120" x2="290" y2="120" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
+        <line x1="40" y1="155" x2="290" y2="155" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
+        <!-- Fill area under curve -->
+        <path d="M50 140 C 80 135 100 125 120 110 C 145 92 170 65 195 48 C 215 36 240 28 270 22 L270 155 L50 155 Z" fill="url(#fillGrad)" opacity="0">
+          <animate attributeName="opacity" from="0" to="1" begin="0.5s" dur="1s" fill="freeze"/>
+        </path>
+        <!-- S-curve line -->
+        <path d="M50 140 C 80 135 100 125 120 110 C 145 92 170 65 195 48 C 215 36 240 28 270 22" stroke="url(#lineGrad)" stroke-width="4" fill="none" stroke-linecap="round" style="stroke-dasharray:400;stroke-dashoffset:400;">
+          <animate attributeName="stroke-dashoffset" from="400" to="0" dur="2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+        </path>
+        <!-- Dots -->
+        <circle cx="50" cy="140" r="7" fill="#dc4a4a" stroke="#fff" stroke-width="2" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.2s" dur="0.3s" fill="freeze"/></circle>
+        <circle cx="120" cy="110" r="6" fill="#e8a040" stroke="#fff" stroke-width="2" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.8s" dur="0.3s" fill="freeze"/></circle>
+        <circle cx="195" cy="48" r="6" fill="#8cc050" stroke="#fff" stroke-width="2" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.4s" dur="0.3s" fill="freeze"/></circle>
+        <circle cx="270" cy="22" r="8" fill="#2eaa60" stroke="#fff" stroke-width="2.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.8s" dur="0.3s" fill="freeze"/></circle>
+        <!-- Today badge -->
+        <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.4s" dur="0.3s" fill="freeze"/>
+          <rect x="28" y="148" width="44" height="18" rx="5" fill="var(--text)"/>
+          <text x="50" y="161" text-anchor="middle" font-size="9" fill="#fff" font-weight="600" font-family="Plus Jakarta Sans,sans-serif">Today</text>
+        </g>
+        <!-- After ONERA badge -->
+        <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2s" dur="0.4s" fill="freeze"/>
+          <rect x="228" y="2" width="84" height="20" rx="6" fill="#2eaa60"/>
+          <text x="270" y="16" text-anchor="middle" font-size="9" fill="#fff" font-weight="700" font-family="Plus Jakarta Sans,sans-serif">After ONERA</text>
+        </g>
+        <!-- Week labels -->
+        <text x="50" y="178" text-anchor="middle" font-size="10" fill="#9a928a" font-weight="500">Week 1</text>
+        <text x="120" y="178" text-anchor="middle" font-size="10" fill="#9a928a" font-weight="500">Week 2</text>
+        <text x="195" y="178" text-anchor="middle" font-size="10" fill="#9a928a" font-weight="500">Week 3</text>
+        <text x="270" y="178" text-anchor="middle" font-size="10" fill="#9a928a" font-weight="500">Week 4</text>
+      </svg>
+    </div>
+
+    <p style="font-size:10px;color:var(--text3);">The chart is a non-customized illustration and results may vary</p>
+    <button class="btn-continue" onclick="go()" style="max-width:340px;">Continue</button>
+  </div>`;
+}
+
+// ==================== PROJECTION BARS ====================
+function renderProjection(){
+  const app=document.getElementById('app');const n=S.name||'Friend';
+  const now=new Date();
+  const m1=now.toLocaleString('en',{month:'short'});
+  const m2=new Date(now.getFullYear(),now.getMonth()+1,1).toLocaleString('en',{month:'short'});
+  const goalMonth=new Date(now.getFullYear(),now.getMonth()+2,1).toLocaleString('en',{month:'long',year:'numeric'});
+
+  // 6 bars — one solid color each, progressing red→orange→yellow→lime→green→blue
+  const bars=[
+    {h:25,color:'#e88080'},
+    {h:38,color:'#e8a870'},
+    {h:52,color:'#c8b860'},
+    {h:68,color:'#90c460'},
+    {h:82,color:'#48b858',goal:true},
+    {h:92,color:'#78bcd4'},
+  ];
+
+  app.innerHTML=`
+  <div class="screen active q-screen" style="padding-top:16px;gap:14px;align-items:center;text-align:center;">
+    <h2 style="font-size:22px;font-weight:800;line-height:1.3;">Your well-being will<br>improve by <span style="color:var(--green);">${goalMonth}</span></h2>
+    <p style="font-size:14px;color:var(--text2);">Based on your answers</p>
+
+    <!-- Stacked bar chart -->
+    <div style="width:100%;max-width:340px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:24px 20px 16px;box-shadow:var(--shadow-md);">
+      <div style="display:flex;align-items:flex-end;gap:10px;height:260px;position:relative;">
+        ${bars.map((b,i)=>{
+          const goalTag=b.goal?`<div class="proj-goal" style="position:absolute;top:-30px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-size:10px;font-weight:700;padding:4px 12px;border-radius:8px;white-space:nowrap;opacity:0;transition:opacity 0.5s;">Goal</div>`:'';
+          return `<div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%;position:relative;overflow:visible;">
+            ${goalTag}
+            <div class="proj-bar" data-h="${b.h}" style="width:100%;height:0px;border-radius:10px;background:${b.color};transition:height 0.8s cubic-bezier(0.34,1.2,0.64,1);transition-delay:${i*0.15}s;"></div>
+          </div>`;
+        }).join('')}
+      </div>
+      <div style="display:flex;gap:12px;margin-top:10px;">
+        ${bars.map((b,i)=>`<div style="flex:1;text-align:center;font-size:11px;color:${i===0?'var(--text2)':'var(--text3)'};font-weight:${i===0||i===4?'700':'400'};">${i===0?now.toLocaleString('en',{month:'long'}):i===4?goalMonth.split(' ')[0]:''}</div>`).join('')}
+      </div>
+    </div>
+
+    <p style="font-size:10px;color:var(--text3);">The chart is a non-customized illustration and results may vary</p>
+    <button class="btn-continue" onclick="go()" style="max-width:340px;">Continue</button>
+  </div>`;
+
+  // Animate bars
+  requestAnimationFrame(()=>{requestAnimationFrame(()=>{
+    document.querySelectorAll('.proj-bar').forEach(bar=>{
+      bar.style.height=(bar.dataset.h/100*260)+'px';
+    });
+    setTimeout(()=>{document.querySelectorAll('.proj-goal').forEach(g=>g.style.opacity='1');},1200);
+  });});
+}
+
+// ==================== SCRATCH ====================
+function renderScratch(){
+  const app=document.getElementById('app');const n=S.name||'Friend';
+  app.innerHTML=`
+  <div class="screen active q-screen" style="padding-top:20px;gap:14px;align-items:center;text-align:center;">
+    <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:20px;border:1.5px solid var(--border);background:var(--bg2);box-shadow:var(--shadow-sm);"><span style="font-size:18px;">⭐</span><span style="font-size:13px;font-weight:700;letter-spacing:0.5px;">CLAIM YOUR GIFT</span></div>
+    <h2 style="font-size:22px;line-height:1.35;"><span style="color:var(--green);">${n},</span><br>Scratch & save on your<br><span style="color:var(--green);">Dream Analysis Plan</span></h2>
+    <p style="font-size:14px;color:var(--text2);">A little boost, right when you need it 🌿</p>
+    <!-- Ticket-shaped scratch card -->
+    <div style="position:relative;width:320px;max-width:100%;">
+      <div class="scratch-wrap" id="scratchWrap" style="width:100%;height:200px;border-radius:20px;border:1.5px solid #d4c8a0;box-shadow:0 4px 20px rgba(200,180,120,0.15);background:#e8d8a8;">
+        <div class="scratch-reveal" style="background:var(--bg2);"><div class="sr-text">Your discount is</div><div class="sr-pct" style="color:var(--green);">61%</div></div>
+        <canvas class="scratch-canvas" id="scratchCanvas"></canvas>
+      </div>
+      <!-- Ticket notches -->
+      <div style="position:absolute;top:50%;left:-8px;transform:translateY(-50%);width:16px;height:24px;border-radius:0 12px 12px 0;background:var(--bg);"></div>
+      <div style="position:absolute;top:50%;right:-8px;transform:translateY(-50%);width:16px;height:24px;border-radius:12px 0 0 12px;background:var(--bg);"></div>
+    </div>
+    <div id="scratchResult" style="display:none;"></div>
+    <div id="woohooPopup" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.4);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:300;display:none;align-items:flex-end;justify-content:center;">
+      <div style="background:var(--bg2);border-radius:24px 24px 0 0;padding:32px 24px 40px;width:100%;max-width:440px;text-align:center;box-shadow:0 -4px 24px rgba(0,0,0,0.1);">
+        <div style="font-size:36px;margin-bottom:8px;">&#129395;</div>
+        <div style="font-size:24px;font-weight:800;">Woohoo!</div>
+        <div style="font-size:14px;color:var(--text2);margin-top:6px;">Your discount is</div>
+        <div style="font-size:42px;font-weight:800;color:var(--green);margin:4px 0;">61% OFF</div>
+        <button class="btn-continue" onclick="document.getElementById('woohooPopup').style.display='none';go();" style="margin-top:16px;max-width:300px;">Continue</button>
+        <p style="font-size:11px;color:var(--text3);margin-top:8px;">Your promo code will be applied automatically</p>
+      </div>
+    </div>
+  </div>`;
+  setTimeout(initScratch,100);
+}
+
+function initScratch(){
+  const c=document.getElementById('scratchCanvas');if(!c)return;
+  const w=document.getElementById('scratchWrap');const r=w.getBoundingClientRect();
+  c.width=r.width*2;c.height=r.height*2;c.style.width=r.width+'px';c.style.height=r.height+'px';
+  const ctx=c.getContext('2d');ctx.scale(2,2);
+  // Golden gradient scratch layer
+  const grd=ctx.createLinearGradient(0,0,r.width,r.height);
+  grd.addColorStop(0,'#d4c088');grd.addColorStop(0.5,'#e8d8a8');grd.addColorStop(1,'#c8b878');
+  ctx.fillStyle=grd;ctx.fillRect(0,0,r.width,r.height);
+  // Subtle sparkle pattern
+  for(let i=0;i<40;i++){ctx.fillStyle=`rgba(255,255,255,${0.05+Math.random()*0.1})`;ctx.beginPath();ctx.arc(Math.random()*r.width,Math.random()*r.height,1+Math.random()*2,0,Math.PI*2);ctx.fill();}
+  ctx.font='500 15px "Plus Jakarta Sans",sans-serif';ctx.fillStyle='rgba(255,255,255,0.6)';ctx.textAlign='center';
+  ctx.fillText('Scratch here to reveal',r.width/2,r.height/2-4);
+  ctx.fillText('your discount',r.width/2,r.height/2+16);
+  let down=false,sc=0;const tot=r.width*r.height;ctx.globalCompositeOperation='destination-out';
+  // Smaller brush (15px) + need 60% scratched
+  function s(x,y){ctx.beginPath();ctx.arc(x,y,15,0,Math.PI*2);ctx.fill();sc+=Math.PI*225;if(sc/tot>0.60&&!S.scratchDone){S.scratchDone=true;revealScratch();}}
+  c.onmousedown=e=>{down=true;const b=c.getBoundingClientRect();s(e.clientX-b.left,e.clientY-b.top);};
+  c.onmousemove=e=>{if(!down)return;const b=c.getBoundingClientRect();s(e.clientX-b.left,e.clientY-b.top);};
+  c.onmouseup=c.onmouseleave=()=>down=false;
+  c.ontouchstart=e=>{e.preventDefault();const t=e.touches[0];const b=c.getBoundingClientRect();s(t.clientX-b.left,t.clientY-b.top);};
+  c.ontouchmove=e=>{e.preventDefault();const t=e.touches[0];const b=c.getBoundingClientRect();s(t.clientX-b.left,t.clientY-b.top);};
+}
+
+function revealScratch(){
+  const c=document.getElementById('scratchCanvas');if(c)c.style.display='none';
+  document.getElementById('scratchResult').style.display='block';
+  confetti();
+  // Show woohoo popup after confetti
+  setTimeout(()=>{const p=document.getElementById('woohooPopup');if(p)p.style.display='flex';},800);
+}
+
+function confetti(){
+  const cols=['#2eaa60','#f1c40f','#e74c3c','#5b6abf','#ff6b6b','#e67e22','#45d97a','#ff9ff3','#54a0ff','#feca57'];
+  // Wave 1: burst from top across full width
+  for(let i=0;i<120;i++){
+    const e=document.createElement('div');e.className='confetti-piece';
+    e.style.left=Math.random()*100+'%';
+    e.style.top=(-10-Math.random()*20)+'%';
+    e.style.background=cols[Math.floor(Math.random()*cols.length)];
+    e.style.animationDuration=(2+Math.random()*3)+'s';
+    e.style.animationDelay=(Math.random()*0.8)+'s';
+    e.style.setProperty('--spread',(Math.random()-0.5)*30+'vw');
+    document.body.appendChild(e);
+    setTimeout(()=>e.remove(),5000);
+  }
+  // Wave 2: delayed side bursts
+  setTimeout(()=>{
+    for(let i=0;i<40;i++){
+      const e=document.createElement('div');e.className='confetti-piece';
+      e.style.left=(Math.random()>0.5?-5:105)+'%';
+      e.style.top=(20+Math.random()*40)+'%';
+      e.style.background=cols[Math.floor(Math.random()*cols.length)];
+      e.style.animationDuration=(2+Math.random()*2)+'s';
+      e.style.setProperty('--spread',(Math.random()-0.5)*50+'vw');
+      document.body.appendChild(e);
+      setTimeout(()=>e.remove(),4000);
+    }
+  },400);
+}
+
+// ==================== PAYWALL (FIX 8: dream-specific goals, FIX 10: new pricing) ====================
+// Derive dynamic insights from quiz answers for paywall personalization
+function getAnswerInsights(){
+  const a=S.answers;
+  // Q1=drained, Q2=sleep, Q3=dreams, Q4=overwhelmed, Q5=thoughts, Q6=peace
+  // Q7-Q10=likert (0-4 scale), Q11-Q15=deep CPP-specific
+  const drained=a.q1===0; // "Often"
+  const sleepBad=a.q2===0;
+  const dreamRecall=a.q3===0; // "Often"
+  const overwhelmed=a.q4===0;
+  const ruminate=a.q5===0;
+  const noPeace=a.q6===2; // "No"
+
+  // Find strongest likert pain (Q7-Q10, value 4-5 = strongly agree)
+  const likerts=[a.q7||0,a.q8||0,a.q9||0,a.q10||0];
+  const maxLikert=Math.max(...likerts);
+
+  // Severity score (0-10)
+  let severity=0;
+  if(drained)severity+=1.5;
+  if(sleepBad)severity+=1.5;
+  if(overwhelmed)severity+=1;
+  if(ruminate)severity+=1;
+  if(noPeace)severity+=2;
+  if(maxLikert>=4)severity+=3;
+  severity=Math.min(10,severity);
+
+  // Dynamic energy/wellbeing levels based on answers
+  const energyPct=drained?15:sleepBad?25:40;
+  const wellbeingPct=noPeace?10:overwhelmed?20:35;
+  const esteemPct=maxLikert>=4?15:maxLikert>=3?25:40;
+
+  // Dynamic "without" items based on what they answered
+  const withoutItems=[];
+  if(drained)withoutItems.push('Waking up exhausted every day');
+  if(sleepBad)withoutItems.push('Restless nights on repeat');
+  if(dreamRecall)withoutItems.push('Dreams you can\'t decode');
+  if(overwhelmed)withoutItems.push('Overwhelm with no relief');
+  if(ruminate)withoutItems.push('Same thoughts on loop');
+  if(noPeace)withoutItems.push('No peace inside');
+  // Fill to 7 from CPP defaults
+  const PW=CPP_PAYWALL[S.cppId]||CPP_PAYWALL['F-2'];
+  while(withoutItems.length<7)withoutItems.push(PW.without[withoutItems.length]||'Patterns repeating');
+
+  return{severity,energyPct,wellbeingPct,esteemPct,withoutItems:withoutItems.slice(0,7),maxLikert};
+}
+
+function renderPaywall(){
+  const app=document.getElementById('app');const n=S.name||'Friend';const now=new Date();
+  const PW=CPP_PAYWALL[S.cppId]||CPP_PAYWALL['F-2'];
+  const INS=getAnswerInsights();
+  const pc=`${(S.name||'DREAM').replace(/[^a-zA-Z]/g,'')}_${now.toLocaleString('en',{month:'short'})}${now.getFullYear()}`;
+  if(!S.timerInterval){S.timerInterval=setInterval(()=>{S.timerSec--;if(S.timerSec<=0){clearInterval(S.timerInterval);S.timerSec=0;S.discountExpired=true;render();return;}document.querySelectorAll('.pw-t').forEach(e=>e.textContent=fmt(S.timerSec));},1000);}
+
+  const g=S.gender==='F'?'female':'male';
+  const planHTML=renderPlans();
+  const goalsHTML=PW.withPlan.slice(0,6).map(t=>`<div style="display:flex;align-items:center;gap:10px;padding:8px 0;"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="9" fill="var(--green)"/><path d="M6 10 L9 13 L14 7" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span style="font-size:14px;">${t}</span></div>`).join('');
+  const testiHTML=PW.testimonials.map(t=>`<div style="background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:18px;margin-bottom:12px;box-shadow:var(--shadow-sm);"><div style="color:#f5c518;font-size:14px;margin-bottom:8px;">★★★★★</div><div style="font-size:13px;line-height:1.6;font-style:italic;color:var(--text);opacity:0.9;">"${t.t}"</div><div style="font-size:11px;color:var(--text3);margin-top:8px;">— ${t.a}</div></div>`).join('');
+  const faqHTML=[{q:'What if I don\'t remember my dreams?',a:'Most users remember within 3 days. The app trains your brain naturally.'},{q:'Will this work if I\'ve tried therapy?',a:'ONERA works at the body level, where talk therapy can\'t reach.'},{q:'Is my data safe?',a:'End-to-end encrypted. We can\'t read your dreams.'},{q:'How much time does it take?',a:'5 minutes. Record, read, release.'}].map(f=>`<div class="faq-item" style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;margin-bottom:8px;overflow:hidden;box-shadow:var(--shadow-sm);" onclick="this.classList.toggle('open')"><div class="faq-q" style="padding:16px 18px;cursor:pointer;font-size:14px;font-weight:600;display:flex;justify-content:space-between;align-items:center;"><span>${f.q}</span><span class="faq-arrow" style="color:var(--text3);font-size:14px;">▾</span></div><div class="faq-a"><p style="font-size:13px;color:var(--text2);line-height:1.6;">${f.a}</p></div></div>`).join('');
+
+  app.innerHTML=`
+  <div style="min-height:100vh;">
+
+    <!-- STICKY -->
+    <div style="position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:11px;color:var(--text3);">Discount reserved:</span><span class="pw-t" style="font-size:16px;font-weight:800;color:var(--green);">${fmt(S.timerSec)}</span></div>
+      <button onclick="goCheckout()" style="background:var(--green);color:#fff;border:none;padding:10px 24px;border-radius:12px;font-size:13px;font-weight:700;cursor:pointer;">GET MY PLAN</button>
+    </div>
+
+    <div style="max-width:440px;margin:0 auto;padding:60px 20px 40px;">
+
+      <!-- DISCOUNT BANNER (like Liven) -->
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:16px 18px;margin-bottom:20px;display:flex;align-items:center;gap:14px;">
+        <div style="width:52px;height:52px;border-radius:14px;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="9" r="2"/><circle cx="15" cy="15" r="2"/><line x1="7" y1="17" x2="17" y2="7"/></svg>
+        </div>
+        <div>
+          <div style="font-size:13px;color:var(--text3);"><span style="text-decoration:line-through;">Regular price</span></div>
+          <div style="font-size:15px;font-weight:700;margin-top:2px;">Get your personal plan with up to <span style="color:var(--green);">61%</span> discount</div>
+        </div>
+      </div>
+
+      <!-- SECTION 1: BEFORE / AFTER (Liven-style) -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;position:relative;margin-bottom:24px;">
+        <!-- Now column -->
+        <div style="text-align:center;padding-right:8px;">
+          <div style="display:inline-block;padding:6px 20px;border-radius:20px;border:1.5px solid var(--border);font-size:13px;font-weight:600;color:var(--text2);margin-bottom:12px;">Now</div>
+          <div style="border-radius:16px;overflow:hidden;height:220px;margin-bottom:16px;background:var(--bg3);"><img src="${g==='female'?'img/before-female.png':'img/before-male.png'}" style="width:100%;height:100%;object-fit:cover;object-position:center top;" alt=""></div>
+          <!-- Metrics -->
+          <div style="text-align:left;padding:0 4px;">
+            <div style="margin-bottom:14px;">
+              <div style="font-size:14px;font-weight:700;">Energy level</div>
+              <div style="font-size:13px;color:var(--red);margin-bottom:6px;">Low</div>
+              <div style="position:relative;height:8px;background:rgba(0,0,0,0.06);border-radius:4px;"><div style="height:100%;width:${INS.energyPct}%;background:var(--red);border-radius:4px;"></div><div style="position:absolute;top:-3px;left:${INS.energyPct}%;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--red);transform:translateX(-50%);box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div></div>
+            </div>
+            <div style="border-top:1px solid var(--border);padding-top:12px;margin-bottom:14px;">
+              <div style="font-size:14px;font-weight:700;">Well-being level</div>
+              <div style="font-size:13px;color:var(--red);margin-bottom:6px;">Weak</div>
+              <div style="display:flex;gap:4px;">${[1,2,3].map(i=>`<div style="flex:1;height:8px;border-radius:4px;background:${i===1?'var(--red)':'rgba(0,0,0,0.06)'};"></div>`).join('')}</div>
+            </div>
+            <div style="border-top:1px solid var(--border);padding-top:12px;">
+              <div style="font-size:14px;font-weight:700;">Self-esteem level</div>
+              <div style="font-size:13px;color:var(--orange);margin-bottom:6px;">Low</div>
+              <div style="position:relative;height:8px;background:rgba(0,0,0,0.06);border-radius:4px;"><div style="height:100%;width:${INS.esteemPct}%;background:var(--orange);border-radius:4px;"></div><div style="position:absolute;top:-3px;left:${INS.esteemPct}%;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--orange);transform:translateX(-50%);box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div></div>
+            </div>
+          </div>
+        </div>
+        <!-- Divider + arrow -->
+        <div style="position:absolute;top:45%;left:50%;transform:translate(-50%,-50%);z-index:2;color:var(--green);font-size:20px;opacity:0.4;">❯❯</div>
+        <!-- Your Goal column -->
+        <div style="text-align:center;padding-left:8px;">
+          <div style="display:inline-block;padding:6px 20px;border-radius:20px;background:var(--green);font-size:13px;font-weight:600;color:#fff;margin-bottom:12px;">Your Goal</div>
+          <div style="border-radius:16px;overflow:hidden;height:220px;margin-bottom:16px;background:var(--bg3);"><img src="${g==='female'?'img/after-female.png':'img/after-male.png'}" style="width:100%;height:100%;object-fit:cover;object-position:center top;" alt=""></div>
+          <!-- Metrics -->
+          <div style="text-align:left;padding:0 4px;">
+            <div style="margin-bottom:14px;">
+              <div style="font-size:14px;font-weight:700;">Energy level</div>
+              <div style="font-size:13px;color:var(--green);margin-bottom:6px;">High</div>
+              <div style="position:relative;height:8px;background:rgba(0,0,0,0.06);border-radius:4px;"><div style="height:100%;width:90%;background:var(--green);border-radius:4px;"></div><div style="position:absolute;top:-3px;left:90%;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--green);transform:translateX(-50%);box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div></div>
+            </div>
+            <div style="border-top:1px solid var(--border);padding-top:12px;margin-bottom:14px;">
+              <div style="font-size:14px;font-weight:700;">Well-being level</div>
+              <div style="font-size:13px;color:var(--green);margin-bottom:6px;">Strong</div>
+              <div style="display:flex;gap:4px;">${[1,2,3].map(()=>`<div style="flex:1;height:8px;border-radius:4px;background:var(--green);"></div>`).join('')}</div>
+            </div>
+            <div style="border-top:1px solid var(--border);padding-top:12px;">
+              <div style="font-size:14px;font-weight:700;">Self-esteem level</div>
+              <div style="font-size:13px;color:var(--green);margin-bottom:6px;">High</div>
+              <div style="position:relative;height:8px;background:rgba(0,0,0,0.06);border-radius:4px;"><div style="height:100%;width:88%;background:var(--green);border-radius:4px;"></div><div style="position:absolute;top:-3px;left:88%;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--green);transform:translateX(-50%);box-shadow:0 1px 3px rgba(0,0,0,0.15);"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: TITLE + PROMO + PLANS -->
+      <h2 style="font-size:22px;font-weight:800;text-align:center;line-height:1.3;margin-bottom:16px;">${PW.title}</h2>
+      <p style="font-size:13px;color:var(--text2);text-align:center;margin-bottom:16px;">${PW.sub}</p>
+
+      <div style="background:var(--green-light);border-radius:12px;padding:10px 16px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;">
+        <div style="display:flex;align-items:center;gap:6px;"><span style="color:var(--green);font-size:14px;">✓</span><span style="font-size:13px;font-weight:700;">${pc}</span></div>
+        <span class="pw-t" style="font-size:16px;font-weight:800;color:var(--green);">${fmt(S.timerSec)}</span>
+      </div>
+
+      <div style="display:flex;gap:16px;justify-content:center;margin-bottom:16px;font-size:11px;color:var(--text3);">
+        <span>Difficulty: <strong style="color:var(--text);">${PW.emotion.split(' ')[0]}</strong></span>
+        <span>Goal: <strong style="color:var(--text);">${PW.title.split('.')[0].split(' ').slice(0,3).join(' ')}</strong></span>
+      </div>
+
+      ${planHTML}
+
+      <button onclick="goCheckout()" style="background:var(--green);color:#fff;border:none;padding:18px;border-radius:16px;font-size:16px;font-weight:700;cursor:pointer;width:100%;margin-top:14px;box-shadow:0 4px 20px rgba(46,170,96,0.2);">GET MY PLAN</button>
+
+      <!-- GUARANTEE — right after first CTA -->
+      <div style="margin-top:14px;display:flex;align-items:center;justify-content:center;gap:16px;background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow-sm);">
+        <svg viewBox="0 0 36 36" width="32" height="32" style="flex-shrink:0;"><circle cx="18" cy="18" r="16" fill="none" stroke="var(--green)" stroke-width="2"/><path d="M11 18 L16 23 L25 13" stroke="var(--green)" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+        <div><div style="font-size:13px;font-weight:700;">30-day money-back guarantee</div><div style="font-size:11px;color:var(--text2);">Cancel anytime. Full refund. No questions asked.</div></div>
+      </div>
+
+      <!-- APP STORE BADGE -->
+      <div style="margin-top:12px;display:flex;align-items:center;justify-content:center;gap:8px;">
+        <svg viewBox="0 0 20 20" width="16" height="16"><path d="M10 1l2.5 5.1 5.6.8-4.1 3.9 1 5.6L10 13.8l-5 2.6 1-5.6L2 6.9l5.6-.8z" fill="#f5c518"/></svg>
+        <span style="font-size:12px;color:var(--text2);font-weight:600;">4.8 on the App Store</span>
+        <span style="font-size:12px;color:var(--text3);">·</span>
+        <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="var(--text3)" stroke-width="1.5"><rect x="3" y="7" width="10" height="6" rx="2"/><path d="M5 7V5a3 3 0 016 0v2"/></svg>
+        <span style="font-size:12px;color:var(--text2);">Your data is encrypted</span>
+      </div>
+
+      <!-- GOALS -->
+      <div style="margin-top:28px;">
+        <h3 style="font-size:16px;font-weight:700;margin-bottom:14px;">Your goals</h3>
+        ${goalsHTML}
+      </div>
+
+      <!-- WITHOUT / WITH -->
+      <div style="margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div style="background:rgba(220,74,74,0.04);border:1px solid rgba(220,74,74,0.1);border-radius:14px;padding:14px;">
+          <h4 style="font-size:13px;color:var(--red);margin-bottom:10px;">Without a plan</h4>
+          ${INS.withoutItems.slice(0,6).map(t=>'<div style="font-size:12px;color:var(--text2);padding:5px 0;border-bottom:1px solid rgba(0,0,0,0.04);display:flex;gap:6px;"><span style="color:var(--red);flex-shrink:0;">✕</span>'+t+'</div>').join('')}
+        </div>
+        <div style="background:rgba(46,170,96,0.04);border:1px solid rgba(46,170,96,0.1);border-radius:14px;padding:14px;">
+          <h4 style="font-size:13px;color:var(--green);margin-bottom:10px;">With your plan</h4>
+          ${PW.withPlan.slice(0,6).map(t=>'<div style="font-size:12px;color:var(--text2);padding:5px 0;border-bottom:1px solid rgba(0,0,0,0.04);display:flex;gap:6px;"><span style="color:var(--green);flex-shrink:0;">✓</span>'+t+'</div>').join('')}
+        </div>
+      </div>
+
+      <!-- TESTIMONIALS -->
+      <div style="margin-top:28px;">
+        <h3 style="font-size:15px;font-weight:700;margin-bottom:12px;">Users love their plans</h3>
+        ${testiHTML}
+      </div>
+
+      <!-- FAQ -->
+      <div style="margin-top:28px;">
+        <h3 style="font-size:15px;font-weight:700;margin-bottom:12px;">People often ask</h3>
+        ${faqHTML}
+      </div>
+
+      <!-- PLANS REPEAT + FINAL CTA -->
+      <div style="margin-top:28px;">
+        ${planHTML}
+        <button onclick="goCheckout()" style="background:var(--green);color:#fff;border:none;padding:18px;border-radius:16px;font-size:16px;font-weight:700;cursor:pointer;width:100%;margin-top:14px;box-shadow:0 4px 20px rgba(46,170,96,0.2);">GET MY PLAN</button>
+        <p style="text-align:center;font-size:10px;color:var(--text3);margin-top:8px;">Cancel anytime · 30-day money-back guarantee</p>
+      </div>
+
+      <p style="text-align:center;font-size:9px;color:var(--text3);padding:24px 0;">ONERA · contact@dreaminsight.app</p>
+    </div>
+  </div>`;
+
+  // Upsell popup on scroll to bottom
+  let upsellShown=false;
+  setTimeout(()=>{
+    window.addEventListener('scroll',function upsellCheck(){
+      if(upsellShown)return;
+      if((window.innerHeight+window.scrollY)>=document.body.offsetHeight-200){
+        upsellShown=true;
+        window.removeEventListener('scroll',upsellCheck);
+        showUpsell();
+      }
+    });
+  },3000);
+}
+
+function showUpsell(){
+  const overlay=document.createElement('div');
+  overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:300;display:flex;align-items:flex-end;justify-content:center;animation:fadeIn 0.3s;';
+  overlay.innerHTML=`<div style="background:var(--bg2);border-radius:20px 20px 0 0;padding:28px 24px 32px;width:100%;max-width:440px;text-align:center;">
+    <div style="font-size:12px;color:var(--text3);margin-bottom:6px;">Special offer</div>
+    <div style="font-size:18px;font-weight:700;margin-bottom:16px;">Upgrade to <strong>4-WEEK PLAN</strong> and save</div>
+    <div style="background:var(--green-light);border-radius:12px;padding:16px;margin-bottom:12px;">
+      <div style="font-size:36px;font-weight:800;color:var(--green);">71<span style="font-size:18px;">%</span></div>
+      <div style="font-size:14px;color:var(--green);font-weight:600;">OFF</div>
+    </div>
+    <div style="font-size:13px;color:var(--text2);margin-bottom:16px;"><span style="text-decoration:line-through;color:var(--text3);">$19.99</span> <strong>$5.80</strong></div>
+    <button onclick="S.selectedPlan=1;this.closest('div[style]').parentElement.remove();goCheckout();" style="background:var(--green);color:#fff;border:none;padding:16px;border-radius:14px;font-size:15px;font-weight:700;cursor:pointer;width:100%;margin-bottom:10px;">Claim special offer</button>
+    <button onclick="this.closest('div[style]').parentElement.remove();" style="background:none;border:none;color:var(--text3);font-size:13px;cursor:pointer;">No, thanks</button>
+    <p style="font-size:9px;color:var(--text3);margin-top:12px;line-height:1.4;">By clicking "Claim Special Offer", you agree to automatic subscription renewal.</p>
+  </div>`;
+  document.body.appendChild(overlay);
+}
+
+// Pricing — discounted vs full price
+function renderPlans(){
+  const expired=S.discountExpired;
+  const plans=[
+    {name:'7-DAY TRIAL',orig:'$17.77',price:'$6.93',origDay:'$2.54',d:'0',c:'99',fullD:'2',fullC:'54',sel:0},
+    {name:'4-WEEK PLAN',orig:'$38.95',price:'$15.19',origDay:'$1.30',d:'0',c:'50',fullD:'1',fullC:'30',sel:1,popular:true},
+    {name:'12-WEEK PLAN',orig:'$66.65',price:'$25.99',origDay:'$0.74',d:'0',c:'28',fullD:'0',fullC:'74',sel:2},
+  ];
+  return plans.map(p=>{
+    const showD=expired?p.fullD:p.d;
+    const showC=expired?p.fullC:p.c;
+    const showPrice=expired?p.orig:p.price;
+    return `
+    ${p.popular?'<div class="plan-popular-badge">&#11088; MOST POPULAR</div>':''}
+    <div class="plan-card ${p.popular?'popular ':''} ${S.selectedPlan===p.sel?'selected':''}" onclick="selPlan(${p.sel})">
+      <div class="plan-row">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="plan-radio"></div>
+          <div>
+            <div class="plan-name">${p.name}</div>
+            ${expired?`<div style="font-size:11px;color:var(--red);margin-top:2px;">Discount expired</div>`:`<div style="font-size:11px;color:var(--text3);margin-top:2px;"><span style="text-decoration:line-through;">${p.orig}</span> <span style="color:var(--green);font-weight:600;">${showPrice}</span></div>`}
+          </div>
+        </div>
+        <div style="text-align:right;">
+          ${!expired?`<div style="font-size:11px;color:var(--text3);text-decoration:line-through;">${p.origDay}</div>`:''}
+          <div style="display:flex;align-items:baseline;justify-content:flex-end;">
+            <span style="font-size:14px;font-weight:600;color:var(--text2);">$</span><span style="font-size:38px;font-weight:800;color:var(--text);line-height:1;letter-spacing:-1px;">${showD}</span><span style="font-size:20px;font-weight:800;color:var(--text);vertical-align:super;margin-left:1px;">${showC}</span>
+          </div>
+          <div style="font-size:10px;color:var(--text3);">per day</div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function selPlan(i){S.selectedPlan=i;render();}
+
+// ==================== CHECKOUT (FIX 10: updated prices) ====================
+async function renderCheckout(){
+  const app=document.getElementById('app');
+  const discounted=[3.99,7.99,14.99],full=[9.99,19.99,39.99],pn=['7-Day Trial','4-Week Plan','12-Week Plan'];
+  const expired=S.discountExpired;
+  const price=expired?full[S.selectedPlan]:discounted[S.selectedPlan];
+  const base=full[S.selectedPlan];
+  const disc=expired?0:(base-price).toFixed(2);
+  const pc=`${(S.name||'DREAM').replace(/[^a-zA-Z]/g,'')}_${new Date().toLocaleString('en',{month:'short'})}${new Date().getFullYear()}`;
+
+  app.innerHTML=`
+  <div class="screen active q-screen" style="padding-top:10px;gap:14px;">
+    ${expired?`<div class="checkout-timer" style="background:rgba(220,74,74,0.08);color:var(--red);">Discount expired — full price applies</div>`:`<div class="checkout-timer">&#9200; Your discount is reserved for <span id="ckT">${fmt(S.timerSec)}</span> min</div>`}
+    <div style="text-align:center;margin-bottom:4px;"><h3 style="font-size:16px;">Join over <span style="color:var(--green);">12,000</span> users to achieve your goals</h3></div>
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px;">
+      <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;"><span style="color:var(--text2);">Personalized Plan</span><span style="color:var(--text3);">$${base.toFixed(2)}</span></div>
+      ${expired?'':`<div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;"><span style="color:var(--green);font-weight:600;">61% Introductory discount</span><span style="color:var(--green);font-weight:600;">-$${disc}</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px;color:var(--text3);"><span>Applied promo code:</span><span style="color:var(--green);">&#10003; ${pc}</span></div>`}
+      <div style="border-top:1px solid var(--border);padding-top:8px;display:flex;justify-content:space-between;font-size:16px;font-weight:800;"><span>Total</span><span>$${price.toFixed(2)}</span></div>
+      <div style="text-align:center;font-size:11px;color:var(--green);margin-top:4px;">You just saved $${disc} (61% off)</div>
+    </div>
+    <div id="stripePaymentElement" style="margin-top:8px;"></div>
+    <div id="payError" style="display:none;color:var(--red);font-size:12px;text-align:center;margin-top:4px;"></div>
+    <button class="pay-btn-main" onclick="doStripePay()" id="payBtn" style="margin-top:8px;"><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px;"><rect x="3" y="11" width="14" height="6" rx="2"/><path d="M7 11V7a3 3 0 016 0v4"/></svg> PAY $${price.toFixed(2)}</button>
+    <div class="secure-badge"><svg viewBox="0 0 16 16" fill="none" stroke="var(--text3)" stroke-width="1.5" stroke-linecap="round" style="width:14px;height:14px;"><rect x="3" y="7" width="10" height="6" rx="2"/><path d="M5 7V5a3 3 0 016 0v2"/></svg> Secure payment</div>
+  </div>`;
+
+  // Timer
+  const iv=setInterval(()=>{const e=document.getElementById('ckT');if(e)e.textContent=fmt(S.timerSec);else clearInterval(iv);},1000);
+
+  // Initialize Stripe Elements
+  try{
+    const stripeKey='pk_test_51RDn38CczqUYIP4UCMkJNnykzE8sO94RRCzhmOiWgigY6AqRzd88l7PVdJpcCjG9aXxkpfInth36HomENwWHZu6n00wLNPwSGp'; // TODO: move to env
+    window._stripe=Stripe(stripeKey);
+
+    const planKey=S.discountExpired?['trial_full','4week_full','12week_full'][S.selectedPlan]:['trial','4week','12week'][S.selectedPlan];
+    const r=await fetch(SUPABASE_URL+'/create-payment-intent',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:S.email,cpp:S.cppId||'F-1',gender:S.gender||'F',plan:planKey,promoCode:S.discountExpired?'':pc,quizAnswers:S.answers})});
+    const d=await r.json();
+    if(!d.clientSecret)throw new Error(d.error||'Failed to create payment');
+    // Extract PI id from clientSecret (format: pi_xxx_secret_yyy)
+    window._lastPiId=d.clientSecret.split('_secret_')[0];
+
+    window._stripeElements=window._stripe.elements({clientSecret:d.clientSecret,appearance:{theme:'stripe',variables:{colorPrimary:'#2eaa60',colorBackground:'#ffffff',colorText:'#1a1714',colorDanger:'#dc4a4a',borderRadius:'12px',fontFamily:'Plus Jakarta Sans, sans-serif'}}});
+    const pe=window._stripeElements.create('payment',{layout:'tabs'});
+    pe.mount('#stripePaymentElement');
+  }catch(e){
+    console.error('Stripe init error:',e);
+    document.getElementById('payError').style.display='block';
+    document.getElementById('payError').textContent='Payment loading error. Please try again.';
+  }
+}
+
+// ==================== SUCCESS ====================
+function renderSuccess(){
+  const app=document.getElementById('app');
+  document.getElementById('progressWrap').style.display='none';
+  document.getElementById('backBtn').style.display='none';
+  const cid=S.cppId||(S.gender==='F'?'F-1':'M-1');
+  const n=S.name||'Friend';
+  const email=S.email||'your email';
+  app.innerHTML=`
+  <div class="screen active" style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:40px 20px;gap:20px;min-height:100dvh;justify-content:center;">
+
+    <!-- Success checkmark animation -->
+    <div style="width:80px;height:80px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(46,170,96,0.3);animation:fadeIn 0.5s;">
+      <svg viewBox="0 0 40 40" width="40" height="40"><path d="M12 20l6 6 10-12" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <h2 style="font-size:28px;font-weight:800;line-height:1.3;">${n}, you're in!</h2>
+    <p style="color:var(--text2);font-size:15px;line-height:1.6;max-width:320px;">Your personalized Dream Analysis Plan has been created.</p>
+
+    <!-- Auto-login card -->
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:20px;width:100%;max-width:340px;box-shadow:var(--shadow-md);">
+      <div style="font-size:13px;font-weight:700;color:var(--green);margin-bottom:12px;">Your account is ready</div>
+      <div style="display:flex;align-items:center;gap:10px;padding:12px;background:var(--bg3);border-radius:10px;margin-bottom:12px;">
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="var(--text2)" stroke-width="1.5"><rect x="3" y="5" width="14" height="10" rx="2"/><path d="M3 8l7 4 7-4"/></svg>
+        <span style="font-size:14px;color:var(--text);font-weight:500;">${email}</span>
+      </div>
+      <div style="font-size:12px;color:var(--text3);line-height:1.5;">We sent your login details to this email.<br>Open the app and <strong>sign in automatically</strong>.</div>
+    </div>
+
+    <!-- Steps -->
+    <div style="width:100%;max-width:340px;text-align:left;">
+      <div style="font-size:14px;font-weight:700;margin-bottom:12px;">Next steps:</div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">1</div>
+        <span style="font-size:14px;">Download ONERA from the App Store</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">2</div>
+        <span style="font-size:14px;">Open the app — your plan loads automatically</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 0;">
+        <div style="width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">3</div>
+        <span style="font-size:14px;">Record your first dream tomorrow morning</span>
+      </div>
+    </div>
+
+    <!-- 2-step CTA -->
+    <div style="width:100%;max-width:340px;">
+      ${S.deeplink?`
+      <!-- Step 1: Download -->
+      <a href="${getAppStoreURL(cid)}" target="_blank" style="background:var(--text);color:#fff;padding:16px;border-radius:14px;font-size:15px;font-weight:700;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:var(--shadow-md);">
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="#fff"><path d="M15.5 10.2c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.6-1.3-.1-2.5.8-3.1.8-.7 0-1.7-.7-2.8-.7-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.5 2.2 2.7 2.1 1.1 0 1.5-.7 2.8-.7 1.3 0 1.6.7 2.8.7 1.1 0 1.9-1 2.6-2.1.8-1.2 1.2-2.3 1.2-2.4-.1-.1-2.6-1.1-2.6-3.5zM13.1 3.8c.6-.7 1-1.7.9-2.8-1 0-2.1.7-2.8 1.5-.6.7-1.1 1.8-1 2.8 1 .1 2.2-.5 2.9-1.5z"/></svg>
+        Step 1 — Download ONERA
+      </a>
+
+      <!-- Step 2: Auto-login -->
+      <a href="${S.deeplink}" id="autoLoginBtn" style="background:var(--green);color:#fff;padding:18px;border-radius:14px;font-size:16px;font-weight:700;text-decoration:none;display:block;text-align:center;margin-top:10px;box-shadow:0 4px 20px rgba(46,170,96,0.25);">
+        Step 2 — Open & Auto Login
+      </a>
+
+      <p style="font-size:12px;color:var(--text2);text-align:center;margin-top:12px;line-height:1.5;">Download the app first, then come back here<br>and tap <strong>"Open & Auto Login"</strong></p>
+      `:`
+      <a href="${getAppStoreURL(cid)}" target="_blank" style="background:var(--green);color:#fff;padding:18px;border-radius:16px;font-size:16px;font-weight:700;text-decoration:none;display:block;text-align:center;box-shadow:0 4px 20px rgba(46,170,96,0.25);">Download ONERA</a>
+      <p style="font-size:12px;color:var(--text2);text-align:center;margin-top:8px;">Open the app and sign in with <strong>${email}</strong></p>
+      `}
+    </div>
+
+    <!-- Guarantee reminder -->
+    <p style="font-size:11px;color:var(--text3);max-width:300px;">30-day money-back guarantee. Cancel anytime in the app.</p>
+  </div>`;
+  // Purchase pixel already fired in doStripePay() with exact amount
+  confetti();
+}
+
+// ==================== ACTIONS ====================
+function go(){S.step++;render();}
+function goBack(){if(S.step>0){S.step--;render();}}
+function pickGender(g){S.gender=g;if(!S.cppId)S.cppId=g==='F'?'F-2':'M-6';QUIZ_QUESTIONS=getQuestions();fbq('trackCustom','QuizGender',{gender:g});go();}
+function pickAge(a){S.age=a;setTimeout(go,150);}
+function answerQ(qi,v){S.answers['q'+(qi+1)]=v;fbq('trackCustom','QuizAnswer',{question:'q'+(qi+1),answer:v});
+  // Visual selection feedback before advancing
+  if(event&&event.currentTarget){const el=event.currentTarget;el.classList.add('just-selected');}
+  setTimeout(go,350);}
+function goCheckout(){S.step=37;render();} // Go to inline checkout with timer + promo code
+function fmt(s){const m=Math.floor(s/60);const sc=s%60;return m+':'+(sc<10?'0':'')+sc;}
+
+async function doStripePay(){
+  const b=document.getElementById('payBtn');
+  if(b){b.disabled=true;b.innerHTML='Processing...';}
+  const errEl=document.getElementById('payError');
+
+  try{
+    fbq('track','InitiateCheckout',{value:7.99,currency:'USD',content_name:S.cppId});
+
+    // Confirm payment with the already-mounted Stripe Elements
+    if(!window._stripe||!window._stripeElements){throw new Error('Payment not loaded. Please refresh.');}
+
+    const {error}=await window._stripe.confirmPayment({
+      elements:window._stripeElements,
+      confirmParams:{
+        return_url:window.location.origin+window.location.pathname+'?success=1&cpp='+(S.cppId||'F-1'),
+        receipt_email:S.email||undefined,
+      },
+      redirect:'if_required',
+    });
+
+    if(error){
+      if(errEl){errEl.style.display='block';errEl.textContent=error.message;}
+      if(b){b.disabled=false;b.innerHTML='&#128274; PAY $'+[3.99,7.99,14.99][S.selectedPlan].toFixed(2);}
+    }else{
+      // Payment succeeded — call quiz-success to create account + get deeplink
+      if(b)b.innerHTML='Setting up your account...';
+      try{
+        const planKey=S.discountExpired?['trial_full','4week_full','12week_full'][S.selectedPlan]:['trial','4week','12week'][S.selectedPlan];
+        const sr=await fetch(SUPABASE_URL+'/quiz-success',{
+          method:'POST',
+          headers:{'Content-Type':'application/json','Accept':'application/json'},
+          body:JSON.stringify({payment_intent_id:window._lastPiId||'',email:S.email,name:S.name,cpp:S.cppId||'F-1',gender:S.gender||'F',plan:planKey})
+        });
+        const sd=await sr.json();
+        if(sd.deeplink)S.deeplink=sd.deeplink;
+        console.log('quiz-success response:',sd);
+      }catch(e){console.error('quiz-success call failed:',e);}
+      const paidAmount=S.discountExpired?[9.99,19.99,39.99][S.selectedPlan]:[3.99,7.99,14.99][S.selectedPlan];
+      fbq('track','Purchase',{value:paidAmount,currency:'USD',content_name:S.cppId});
+      S.step=38;render();
+    }
+  }catch(e){
+    console.error(e);
+    if(errEl){errEl.style.display='block';errEl.textContent=e.message||'Something went wrong. Please try again.';}
+    if(b){b.disabled=false;b.innerHTML='&#128274; PAY';}
+  }
+}
+
+// ==================== BOOT ====================
+// URL param ALWAYS overrides session storage for cppId
+const _urlCpp=new URLSearchParams(location.search).get('cpp');
+if(restore()){if(_urlCpp){S.cppId=_urlCpp;S.step=0;QUIZ_QUESTIONS=getQuestions();}render();}else{render();}
+</script>
+</body>
+</html>
