@@ -1114,25 +1114,25 @@ function renderProcess(){
   </div>`;
 }
 
-// ==================== AUTHORITY (Liven-style: stacked serif university cards) ====================
+// ==================== AUTHORITY (Liven-style: stacked cards with real university seals) ====================
 function renderAuthority(){
   const app=document.getElementById('app');
   app.innerHTML=`
   <div class="screen active q-screen" style="padding-top:40px;gap:32px;align-items:center;text-align:center;justify-content:flex-start;">
 
-    <!-- 3 stacked university cards (Liven step-039 aesthetic) -->
+    <!-- 3 stacked university cards with real seals (Liven step-039 aesthetic) -->
     <div style="position:relative;width:100%;max-width:260px;display:flex;flex-direction:column;align-items:center;">
-      <div style="background:#ffffff;border-radius:16px;padding:20px 28px;width:90%;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,0.08);margin-bottom:-6px;position:relative;z-index:3;font-family:Georgia,'Times New Roman',serif;">
-        <div style="font-size:20px;font-weight:700;letter-spacing:0.02em;color:#1a1714;line-height:1.1;">HARVARD</div>
-        <div style="font-size:10px;letter-spacing:0.18em;color:#6b6b6b;margin-top:4px;">UNIVERSITY</div>
+      <div style="background:#ffffff;border-radius:16px;padding:16px 24px;width:90%;display:flex;align-items:center;justify-content:center;gap:14px;box-shadow:0 4px 16px rgba(0,0,0,0.08);margin-bottom:-6px;position:relative;z-index:3;">
+        <img src="img/logo-harvard.png" alt="Harvard" style="width:44px;height:44px;object-fit:contain;flex-shrink:0;">
+        <div style="text-align:left;font-family:Georgia,'Times New Roman',serif;"><div style="font-size:10px;letter-spacing:0.18em;color:#6b6b6b;">UNIVERSITY</div><div style="font-size:18px;font-weight:700;color:#1a1714;line-height:1.1;">HARVARD</div></div>
       </div>
-      <div style="background:#ffffff;border-radius:16px;padding:20px 28px;width:96%;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,0.09);margin-bottom:-6px;position:relative;z-index:2;font-family:Georgia,'Times New Roman',serif;">
-        <div style="font-size:10px;letter-spacing:0.18em;color:#6b6b6b;margin-bottom:4px;">UNIVERSITY OF</div>
-        <div style="font-size:20px;font-weight:700;letter-spacing:0.02em;color:#1a1714;line-height:1.1;">OXFORD</div>
+      <div style="background:#ffffff;border-radius:16px;padding:16px 24px;width:96%;display:flex;align-items:center;justify-content:center;gap:14px;box-shadow:0 6px 18px rgba(0,0,0,0.09);margin-bottom:-6px;position:relative;z-index:2;">
+        <img src="img/logo-oxford.png" alt="Oxford" style="width:44px;height:44px;object-fit:contain;flex-shrink:0;">
+        <div style="text-align:left;font-family:Georgia,'Times New Roman',serif;"><div style="font-size:10px;letter-spacing:0.18em;color:#6b6b6b;">UNIVERSITY OF</div><div style="font-size:18px;font-weight:700;color:#1a1714;line-height:1.1;">OXFORD</div></div>
       </div>
-      <div style="background:#ffffff;border-radius:16px;padding:20px 28px;width:100%;text-align:center;box-shadow:0 8px 22px rgba(0,0,0,0.1);position:relative;z-index:1;font-family:Georgia,'Times New Roman',serif;">
-        <div style="font-size:10px;letter-spacing:0.18em;color:#6b6b6b;margin-bottom:4px;">UC</div>
-        <div style="font-size:20px;font-weight:700;letter-spacing:0.02em;color:#1a1714;line-height:1.1;">BERKELEY</div>
+      <div style="background:#ffffff;border-radius:16px;padding:16px 24px;width:100%;display:flex;align-items:center;justify-content:center;gap:14px;box-shadow:0 8px 22px rgba(0,0,0,0.1);position:relative;z-index:1;">
+        <img src="img/logo-berkeley.png" alt="UC Berkeley" style="width:44px;height:44px;object-fit:contain;flex-shrink:0;">
+        <div style="text-align:left;font-family:Georgia,'Times New Roman',serif;"><div style="font-size:10px;letter-spacing:0.18em;color:#6b6b6b;">UNIVERSITY OF</div><div style="font-size:18px;font-weight:700;color:#1a1714;line-height:1.1;">BERKELEY</div></div>
       </div>
     </div>
 
