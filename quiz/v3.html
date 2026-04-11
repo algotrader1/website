@@ -1009,32 +1009,53 @@ function renderQuestion(q,qIdx){
   }
   else if(q.type==='multi'){
     const sk='m_'+qIdx;if(!S.selectedMulti[sk])S.selectedMulti[sk]=[];const sel=S.selectedMulti[sk];
-    // Image icons for multi-select (matched by keywords in option text)
-    function multiIcon(txt){
+    function rankIcons(txt){
       const t=txt.toLowerCase();
-      if(t.includes('energy')||t.includes('exhaust')||t.includes('power')||t.includes('execution'))return 'img/mi-energy.png';
-      if(t.includes('worry')||t.includes('overthink')||t.includes('thought')||t.includes('head')||t.includes('mind')||t.includes('understand')||t.includes('insight')||t.includes('know'))return 'img/mi-brain.png';
-      if(t.includes('emotion')||t.includes('feel')||t.includes('cry')||t.includes('numb')||t.includes('flat')||t.includes('moved'))return 'img/mi-heart.png';
-      if(t.includes('sleep')||t.includes('night')||t.includes('dream')||t.includes('nightmare')||t.includes('bedtime')||t.includes('rest'))return 'img/mi-moon.png';
-      if(t.includes('body')||t.includes('jaw')||t.includes('tension')||t.includes('somatic')||t.includes('chest')||t.includes('releas'))return 'img/mi-body.png';
-      if(t.includes('relat')||t.includes('love')||t.includes('partner')||t.includes('attach')||t.includes('safe')||t.includes('trust'))return 'img/mi-love.png';
-      if(t.includes('mother')||t.includes('father')||t.includes('daughter')||t.includes('son')||t.includes('family')||t.includes('cycle')||t.includes('pattern')||t.includes('inherit')||t.includes('chain'))return 'img/mi-family.png';
-      if(t.includes('sabotage')||t.includes('destroy')||t.includes('irritab')||t.includes('anger')||t.includes('impulse')||t.includes('react'))return 'img/mi-star.png';
-      if(t.includes('fine')||t.includes('okay')||t.includes('present')||t.includes('alive')||t.includes('back')||t.includes('home')||t.includes('keep'))return 'img/mi-check.png';
-      if(t.includes('voice')||t.includes('speak')||t.includes('tell')||t.includes('story')||t.includes('writ'))return 'img/mi-speech.png';
-      if(t.includes('calm')||t.includes('peace'))return 'img/mi-calm.png';
-      if(t.includes('focus')||t.includes('target'))return 'img/mi-focus.png';
-      if(t.includes('willpower')||t.includes('strength')||t.includes('strong'))return 'img/mi-fist.png';
-      if(t.includes('shield')||t.includes('protect'))return 'img/mi-shield.png';
-      if(t.includes('job')||t.includes('work')||t.includes('career')||t.includes('build'))return 'img/mi-briefcase.png';
-      if(t.includes('appear')||t.includes('mirror')||t.includes('self-esteem'))return 'img/mi-mirror.png';
-      if(t.includes('external')||t.includes('circumstance'))return 'img/mi-arrows.png';
-      if(t.includes('other'))return 'img/mi-grid.png';
-      return 'img/mi-sparkle.png';
+      const c=[];
+      if(/jaw|clench|grind|tension|somatic|muscle|shoulder|physical|posture|stiff/.test(t))c.push('mi-body');
+      if(/cry|tears|weep|emotion|feeling|numb|flat|joy|grief|hurt|heart|love myself|ache|hollow/.test(t))c.push('mi-heart');
+      if(/overthink|rumina|insight|understand|know|brain|mind|thought|analyze|figure out|mental/.test(t))c.push('mi-brain');
+      if(/sleep|night|dream|nightmare|bedtime|rest|wake|pillow|insomnia/.test(t))c.push('mi-moon');
+      if(/energy|exhaust|drained|power|execute|executing|momentum|drive|spark|fuel|charge|battery|electric/.test(t))c.push('mi-energy');
+      if(/partner|relationship|attach|intima|close|bond|love\b|safe with|safety|receive|dating/.test(t))c.push('mi-love');
+      if(/mother|father|mom|dad|daughter|son|family|parent|cycle|chain|pattern|inherit|generational|child|kids/.test(t))c.push('mi-family');
+      if(/sabotage|destroy|anger|rage|impulse|explod|react|lash|hijack|angry|rage/.test(t))c.push('mi-star');
+      if(/back to|home|present|alive|keep|real|myself|whole|landing|arrived|grounded/.test(t))c.push('mi-check');
+      if(/voice|speak|tell|story|writ|express|say|share|word/.test(t))c.push('mi-speech');
+      if(/calm|peace|serenit|still|quiet|soothe|relax|breathe/.test(t))c.push('mi-calm');
+      if(/focus|target|aim|direction|goal|achieve|accomplish/.test(t))c.push('mi-focus');
+      if(/willpower|strong|strength|endure|push through|tough|resilien|fight back/.test(t))c.push('mi-fist');
+      if(/shield|protect|boundary|defend|safe from|guard|wall/.test(t))c.push('mi-shield');
+      if(/job|work|career|professional|office|build\b|money|income|boss|project/.test(t))c.push('mi-briefcase');
+      if(/mirror|appearance|self-esteem|face|reflect|image|look older|younger|photo/.test(t))c.push('mi-mirror');
+      if(/external|circumstance|change|repeat|again|loop|shift|break the/.test(t))c.push('mi-arrows');
+      if(/other|more|everything|complex|mix/.test(t))c.push('mi-grid');
+      if(/tired|fatigue|worn out|can\'t function|depleted/.test(t))c.push('mi-sleep');
+      if(/wish|magic|transform|finally|feel something|alive again|shift|breakthrough/.test(t))c.push('mi-sparkle');
+      return c;
     }
+    const iconPool=['mi-body','mi-heart','mi-brain','mi-moon','mi-energy','mi-love','mi-family','mi-star','mi-check','mi-speech','mi-calm','mi-focus','mi-fist','mi-shield','mi-briefcase','mi-mirror','mi-arrows','mi-sleep','mi-sparkle','mi-grid'];
+    const used=new Set();
+    const opts=q.opts;
+    const iconPerOpt=new Array(opts.length);
+    function hashStr(s){let h=0;for(let i=0;i<s.length;i++){h=((h<<5)-h+s.charCodeAt(i))|0;}return Math.abs(h);}
+    opts.forEach((o,i)=>{
+      const ranked=rankIcons(o);
+      for(const ic of ranked){ if(!used.has(ic)){ iconPerOpt[i]=ic; used.add(ic); break; } }
+    });
+    opts.forEach((o,i)=>{
+      if(iconPerOpt[i])return;
+      const h=hashStr(o+qIdx);
+      for(let k=0;k<iconPool.length;k++){
+        const cand=iconPool[(h+k)%iconPool.length];
+        if(!used.has(cand)){ iconPerOpt[i]=cand; used.add(cand); return; }
+      }
+      iconPerOpt[i]='mi-sparkle';
+    });
+    function multiIcon(txt,i){return 'img/'+(iconPerOpt[i]||'mi-sparkle')+'.png';}
     h=`<div class="screen active q-screen"><h2 class="q-title">${q.text}</h2><p class="q-sub">${q.sub||''}</p><div class="options" id="multiOpts">
       ${q.opts.map((o,i)=>`<div class="option-card multi-opt ${sel.includes(i)?'selected':''}" onclick="toggleMulti(${qIdx},${i})" data-idx="${i}">
-        <div style="width:40px;height:40px;border-radius:10px;overflow:hidden;flex-shrink:0;"><img src="${multiIcon(o)}" style="width:100%;height:100%;object-fit:cover;" alt=""></div>
+        <div style="width:44px;height:44px;flex-shrink:0;display:flex;align-items:center;justify-content:center;"><img src="${multiIcon(o,i)}" style="width:100%;height:100%;object-fit:contain;" alt=""></div>
         <div class="opt-label" style="flex:1;">${o}</div>
         <div class="checkbox"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" style="width:12px;height:12px;"><path d="M3 8l3.5 3.5L13 5"/></svg></div>
       </div>`).join('')}
@@ -1728,7 +1749,7 @@ function showUpsell(){
       <div style="font-size:14px;color:var(--green);font-weight:600;">OFF</div>
     </div>
     <div style="font-size:13px;color:var(--text2);margin-bottom:16px;"><span style="text-decoration:line-through;color:var(--text3);">$19.99</span> <strong>$5.80</strong></div>
-    <button onclick="S.selectedPlan=1;this.closest('div[style]').parentElement.remove();goCheckout();" style="background:var(--green);color:#fff;border:none;padding:16px;border-radius:14px;font-size:15px;font-weight:700;cursor:pointer;width:100%;margin-bottom:10px;">Claim special offer</button>
+    <button onclick="selPlan(1);this.closest('div[style]').parentElement.remove();goCheckout();" style="background:var(--green);color:#fff;border:none;padding:16px;border-radius:14px;font-size:15px;font-weight:700;cursor:pointer;width:100%;margin-bottom:10px;">Claim special offer</button>
     <button onclick="this.closest('div[style]').parentElement.remove();" style="background:none;border:none;color:var(--text3);font-size:13px;cursor:pointer;">No, thanks</button>
     <p style="font-size:9px;color:var(--text3);margin-top:12px;line-height:1.4;">By clicking "Claim Special Offer", you agree to automatic subscription renewal.</p>
   </div>`;
@@ -1748,8 +1769,8 @@ function renderPlans(){
     const showC=expired?p.fullC:p.c;
     const showPrice=expired?p.orig:p.price;
     return `
-    ${p.popular?'<div class="plan-popular-badge">&#11088; MOST POPULAR</div>':''}
-    <div class="plan-card ${p.popular?'popular ':''} ${S.selectedPlan===p.sel?'selected':''}" onclick="selPlan(${p.sel})">
+    <div class="plan-card ${p.popular?'popular ':''} ${S.selectedPlan===p.sel?'selected':''}" data-sel="${p.sel}" onclick="selPlan(${p.sel})" style="position:relative;">
+      ${p.popular?'<div class="plan-popular-badge">&#11088; MOST POPULAR</div>':''}
       <div class="plan-row">
         <div style="display:flex;align-items:center;gap:12px;">
           <div class="plan-radio"></div>
@@ -1770,7 +1791,14 @@ function renderPlans(){
   }).join('');
 }
 
-function selPlan(i){S.selectedPlan=i;render();}
+function selPlan(i){
+  S.selectedPlan=parseInt(i);
+  document.querySelectorAll('.plan-card').forEach(el=>{
+    const s=parseInt(el.getAttribute('data-sel'));
+    el.classList.toggle('selected',s===S.selectedPlan);
+  });
+  console.log('[selPlan] set to',S.selectedPlan);
+}
 
 // ==================== CHECKOUT (FIX 10: updated prices) ====================
 async function renderCheckout(){
@@ -1918,7 +1946,16 @@ function answerQ(qi,v){S.answers['q'+(qi+1)]=v;fbq('trackCustom','QuizAnswer',{q
   // Visual selection feedback before advancing
   if(event&&event.currentTarget){const el=event.currentTarget;el.classList.add('just-selected');}
   setTimeout(go,350);}
-function goCheckout(){S.step=37;render();} // Go to inline checkout with timer + promo code
+function goCheckout(){
+  const sel=document.querySelector('.plan-card.selected');
+  if(sel){
+    const v=parseInt(sel.getAttribute('data-sel'));
+    if(!isNaN(v))S.selectedPlan=v;
+  }
+  console.log('[goCheckout] S.selectedPlan =',S.selectedPlan);
+  S.step=37;
+  render();
+}
 function fmt(s){const m=Math.floor(s/60);const sc=s%60;return m+':'+(sc<10?'0':'')+sc;}
 
 async function doStripePay(){
