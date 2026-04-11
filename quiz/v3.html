@@ -504,10 +504,10 @@ const CPP_LIKERTS = {
     {text:'I can\'t remember the last time I genuinely cried',sub:'Do you agree?'},
   ],
   'M-1': [
-    {text:'I watch myself not do it. Every day.',sub:'Do you agree?'},
-    {text:'The worst part is knowing I could do better.',sub:'Do you agree?'},
-    {text:'I start strong. Then something invisible stops me.',sub:'Do you agree?'},
-    {text:'I\'m wasting time I can\'t get back.',sub:'Do you agree?'},
+    {text:'I can see exactly what I\'m capable of. I just can\'t get myself to do it.',sub:'Do you agree?'},
+    {text:'I watch myself not do it. Every day. And I can\'t explain why.',sub:'Do you agree?'},
+    {text:'The worst part isn\'t failing — it\'s knowing better and doing less.',sub:'Do you agree?'},
+    {text:'I\'m running at 30%. The brake is on and I can\'t find it.',sub:'Do you agree?'},
   ],
   'M-2': [
     {text:'I understand exactly what\'s wrong but can\'t change it',sub:'Do you agree?'},
@@ -516,16 +516,16 @@ const CPP_LIKERTS = {
     {text:'I\'ve done the work. Nothing has actually shifted.',sub:'Do you agree?'},
   ],
   'M-3': [
-    {text:'I ruin things when they get good',sub:'Do you agree?'},
-    {text:'I watch myself sabotage and can\'t stop',sub:'Do you agree?'},
-    {text:'I destroyed something good and I still don\'t know why',sub:'Do you agree?'},
-    {text:'I don\'t trust myself with good things',sub:'Do you agree?'},
+    {text:'I build something good, then I blow it up. I watch myself doing it. Powerless to stop.',sub:'Do you agree?'},
+    {text:'Every time it gets really good, I find a way to wreck it',sub:'Do you agree?'},
+    {text:'I can see the cycle happening. I can\'t interrupt the impulse.',sub:'Do you agree?'},
+    {text:'I beg myself to stop. Then I do it anyway.',sub:'Do you agree?'},
   ],
   'M-4': [
-    {text:'The same nightmare has followed me for years',sub:'Do you agree?'},
-    {text:'I stay awake as long as possible to avoid it',sub:'Do you agree?'},
-    {text:'I\'ve never told anyone the full dream',sub:'Do you agree?'},
-    {text:'I wake up and need a minute to remember I\'m safe',sub:'Do you agree?'},
+    {text:'The same nightmare wakes me up in panic. I\'m too afraid to go back to sleep.',sub:'Do you agree?'},
+    {text:'I stay awake on purpose because I know it\'s coming',sub:'Do you agree?'},
+    {text:'I\'ve never told anyone the full dream — not my partner, no one',sub:'Do you agree?'},
+    {text:'I wake up shaking and need a minute to remember I\'m safe',sub:'Do you agree?'},
   ],
   'M-5': [
     {text:'She says I\'m emotionally unavailable. She\'s right.',sub:'Do you agree?'},
@@ -830,7 +830,11 @@ function render(){
           <div class="g-label">Female <span style="font-size:18px;opacity:0.7;">›</span></div>
         </div>
       </div>
-      <p class="landing-legal">By clicking Male or Female you agree with <a href="#">Terms</a>, <a href="#">Privacy Policy</a>, <a href="#">Subscription Policy</a></p>
+      <p class="landing-legal">By clicking Male or Female you agree with <a href="#">Terms of Use</a>, <a href="#">Privacy Policy</a>, <a href="#">Subscription Policy</a> and <a href="#">Cookie Policy</a></p>
+      <div style="margin:24px auto 0;max-width:340px;padding:14px 16px;background:rgba(180,170,150,0.08);border:1px solid rgba(180,170,150,0.18);border-radius:12px;text-align:left;">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--text2);margin-bottom:6px;">Content notice</div>
+        <p style="font-size:12px;line-height:1.55;color:var(--text2);margin:0;">This assessment touches on dreams, family patterns and trauma. Take it when you feel safe. If you're in crisis, text <strong>HOME</strong> to <strong>741741</strong> or call <strong>988</strong> (US). International: <a href="https://findahelpline.com" target="_blank" rel="noopener" style="color:var(--text2);text-decoration:underline;">findahelpline.com</a>.</p>
+      </div>
     </div>`;
     fbq('track','ViewContent',{content_name:'quiz_landing'});
     return;
@@ -1052,122 +1056,177 @@ function submitMulti(qIdx){S.answers['q'+(qIdx+1)]=S.selectedMulti['m_'+qIdx];fb
 function submitEmailQ(qIdx){const i=document.getElementById('emailInput');const e=i?i.value.trim().toLowerCase():'';if(e&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){S.email=e;S.answers['q'+(qIdx+1)]=e;sessionStorage.setItem('onera_quiz_email',e);fbq('trackCustom','QuizEmailCapture',{});go();}else{if(i){i.style.borderColor='var(--red)';i.focus();}const err=document.getElementById('emailError');if(!err){const p=document.createElement('p');p.id='emailError';p.style.cssText='color:var(--red);font-size:12px;margin-top:4px;';p.textContent='Please enter a valid email address';i.parentNode.insertBefore(p,i.nextSibling);}}}
 function submitNameQ(qIdx){const i=document.getElementById('nameInput');const n=i?i.value.trim():'';if(n){S.name=n;S.answers['q'+(qIdx+1)]=n;go();}else{if(i){i.style.borderColor='var(--red)';i.focus();}}}
 
-// ==================== PROCESS (Hormozi mechanism: how ONERA works) ====================
+// ==================== PROCESS (Mechanism: why dreams + how ONERA works) ====================
 function renderProcess(){
   const app=document.getElementById('app');
-  const steps=[
-    {icon:'img/icon-carry.png',label:'You carry something',sub:'Unresolved emotions stored in your body',color:'#dc4a4a'},
-    {icon:'img/icon-dreams.png',label:'Your dreams show it',sub:'Every night, your subconscious replays it',color:'#e8a040'},
-    {icon:'img/icon-decode.png',label:'ONERA decodes it',sub:'AI reads the pattern your mind can\'t see',color:'#2eaa60'},
-    {icon:'img/icon-release.png',label:'Your body releases it',sub:'Guided exercises unlock what\'s stuck',color:'#2eaa60'},
-    {icon:'img/icon-free.png',label:'You\'re free',sub:'The pattern is broken',color:'#2eaa60'},
-  ];
+  // CPP-specific pain intro — 1 line, Liven-style: names the exact stuck loop in user's language
+  const PROCESS_INTRO={
+    'F-1':"Your head gets it. Your body doesn't feel it.",
+    'F-2':"You understand it. You still can't move it.",
+    'F-3a':"You talked about it. It didn't move.",
+    'F-3b':"Same man. Different face. Every time.",
+    'F-4':"The same dream. Again. You can't make it stop.",
+    'F-5':"Your body is in the room. You're not.",
+    'M-1':"You know what to do. You still can't do it.",
+    'M-2':"You mapped the whole thing. It still runs you.",
+    'M-3':"You saw yourself do it. Again.",
+    'M-4':"Same nightmare. You stay awake to avoid it.",
+    'M-5':"Another day. Another week. Nothing touches you anymore.",
+    'M-6':"You swore you wouldn't become him.",
+  };
+  const intro=PROCESS_INTRO[S.cppId]||"Understanding isn't the same as feeling it leave.";
   app.innerHTML=`
-  <div class="screen active q-screen" style="padding-top:20px;gap:24px;align-items:center;text-align:center;">
-    <h2 style="font-size:22px;font-weight:800;line-height:1.3;">How <span style="color:var(--green);">ONERA</span> works</h2>
-    <p style="font-size:14px;color:var(--text2);max-width:280px;">3 steps. 5 minutes a day. Real change.</p>
+  <div class="screen active q-screen" style="padding-top:12px;gap:16px;align-items:center;text-align:center;">
+    <p style="font-size:14px;color:var(--text2);max-width:320px;font-style:italic;line-height:1.5;margin:0;">"${intro}"</p>
+    <h2 style="font-size:22px;font-weight:800;line-height:1.3;">Why it <span style="color:var(--green);">finally moves</span></h2>
 
-    <div style="width:100%;max-width:340px;display:flex;flex-direction:column;gap:0;">
-      ${steps.map((s,i)=>`
-        <div style="display:flex;align-items:center;gap:16px;padding:16px 18px;background:var(--bg2);border:1px solid var(--border);${i===0?'border-radius:16px 16px 0 0;':''}${i===steps.length-1?'border-radius:0 0 16px 16px;':''}${i>0?'border-top:none;':''}">
-          <div style="position:relative;flex-shrink:0;">
-            <div style="width:48px;height:48px;border-radius:50%;overflow:hidden;border:2px solid ${s.color}20;"><img src="${s.icon}" style="width:100%;height:100%;object-fit:cover;" alt=""></div>
-            ${i<steps.length-1?`<div style="position:absolute;top:48px;left:50%;transform:translateX(-50%);width:2px;height:16px;background:${s.color};opacity:0.2;"></div>`:''}
-          </div>
-          <div style="text-align:left;flex:1;">
-            <div style="font-size:15px;font-weight:700;color:${i>=2?'var(--green)':'var(--text)'};">${s.label}</div>
-            <div style="font-size:12px;color:var(--text3);margin-top:2px;">${s.sub}</div>
-          </div>
+    <!-- SINGLE CARD: Mechanism + Steps unified -->
+    <div style="width:100%;max-width:360px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:32px 24px;box-shadow:var(--shadow-md);text-align:center;">
+
+      <!-- Brain illustration — large, centered -->
+      <div style="position:relative;width:140px;height:140px;margin:0 auto 20px;">
+        <div style="width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(91,106,191,0.08) 0%,rgba(46,170,96,0.06) 50%,transparent 70%);display:flex;align-items:center;justify-content:center;">
+          <div style="font-size:72px;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.08));">🧠</div>
         </div>
-      `).join('')}
+      </div>
+
+      <div style="font-size:20px;font-weight:800;color:var(--text);line-height:1.3;margin-bottom:24px;">Your dreams are<br>your body talking.</div>
+
+      <!-- Vertical flow: 3 steps -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
+        <div style="display:flex;align-items:center;gap:14px;width:100%;padding:14px 0;border-top:1px solid var(--border);">
+          <div style="font-size:32px;width:48px;text-align:center;">🌙</div>
+          <div style="font-size:16px;font-weight:700;color:var(--text);text-align:left;">Tell me the dream</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;width:100%;padding:14px 0;border-top:1px solid var(--border);">
+          <div style="font-size:32px;width:48px;text-align:center;">🧭</div>
+          <div style="font-size:16px;font-weight:700;color:var(--green);text-align:left;">I show you what it's pointing at</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;width:100%;padding:14px 0;border-top:1px solid var(--border);">
+          <div style="font-size:32px;width:48px;text-align:center;">💨</div>
+          <div style="font-size:16px;font-weight:700;color:var(--green);text-align:left;">We release it from the body</div>
+        </div>
+      </div>
     </div>
 
+    <p style="font-size:13px;color:var(--text2);margin:0;">5 minutes. Before bed. That's it.</p>
     <button class="btn-continue" onclick="go()" style="max-width:340px;">Continue</button>
   </div>`;
 }
 
-// ==================== AUTHORITY (expert + universities) ====================
+// ==================== AUTHORITY (Liven-style: stacked serif university cards) ====================
 function renderAuthority(){
   const app=document.getElementById('app');
   app.innerHTML=`
-  <div class="screen active q-screen" style="padding-top:20px;gap:20px;align-items:center;text-align:center;">
-    <h2 style="font-size:22px;font-weight:800;line-height:1.3;">ONERA is based on<br><span style="color:var(--green);">scientific research</span></h2>
-    <p style="font-size:14px;color:var(--text2);max-width:300px;">Dream analysis and somatic release backed by decades of research</p>
+  <div class="screen active q-screen" style="padding-top:40px;gap:32px;align-items:center;text-align:center;justify-content:flex-start;">
 
-    <!-- University names — clean cards -->
-    <div style="display:flex;flex-direction:column;gap:10px;width:100%;max-width:340px;">
-      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-sm);">
-        <div><div style="font-size:11px;color:var(--text3);letter-spacing:0.05em;">HARVARD</div><div style="font-size:16px;font-weight:800;">University</div></div>
-        <div style="font-size:11px;color:var(--text3);max-width:140px;text-align:right;">Dream research & emotional processing</div>
+    <!-- 3 stacked university cards (Liven step-039 aesthetic) -->
+    <div style="position:relative;width:100%;max-width:260px;display:flex;flex-direction:column;align-items:center;">
+      <div style="background:#ffffff;border-radius:16px;padding:20px 28px;width:90%;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,0.08);margin-bottom:-6px;position:relative;z-index:3;font-family:Georgia,'Times New Roman',serif;">
+        <div style="font-size:20px;font-weight:700;letter-spacing:0.02em;color:#1a1714;line-height:1.1;">HARVARD</div>
+        <div style="font-size:10px;letter-spacing:0.18em;color:#6b6b6b;margin-top:4px;">UNIVERSITY</div>
       </div>
-      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-sm);">
-        <div><div style="font-size:11px;color:var(--text3);letter-spacing:0.05em;">UNIVERSITY OF</div><div style="font-size:16px;font-weight:800;">Oxford</div></div>
-        <div style="font-size:11px;color:var(--text3);max-width:140px;text-align:right;">Somatic therapy & body-based healing</div>
+      <div style="background:#ffffff;border-radius:16px;padding:20px 28px;width:96%;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,0.09);margin-bottom:-6px;position:relative;z-index:2;font-family:Georgia,'Times New Roman',serif;">
+        <div style="font-size:10px;letter-spacing:0.18em;color:#6b6b6b;margin-bottom:4px;">UNIVERSITY OF</div>
+        <div style="font-size:20px;font-weight:700;letter-spacing:0.02em;color:#1a1714;line-height:1.1;">OXFORD</div>
       </div>
-      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-sm);">
-        <div><div style="font-size:11px;color:var(--text3);letter-spacing:0.05em;">UC BERKELEY</div><div style="font-size:16px;font-weight:800;">Sleep Lab</div></div>
-        <div style="font-size:11px;color:var(--text3);max-width:140px;text-align:right;">Sleep cycles & dream recall studies</div>
+      <div style="background:#ffffff;border-radius:16px;padding:20px 28px;width:100%;text-align:center;box-shadow:0 8px 22px rgba(0,0,0,0.1);position:relative;z-index:1;font-family:Georgia,'Times New Roman',serif;">
+        <div style="font-size:10px;letter-spacing:0.18em;color:#6b6b6b;margin-bottom:4px;">UC</div>
+        <div style="font-size:20px;font-weight:700;letter-spacing:0.02em;color:#1a1714;line-height:1.1;">BERKELEY</div>
       </div>
     </div>
 
-    <!-- Trust row -->
-    <div style="display:flex;gap:10px;width:100%;max-width:340px;">
-      <div style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px 8px;text-align:center;box-shadow:var(--shadow-sm);">
-        <div style="font-size:24px;font-weight:800;color:var(--green);">4.8★</div>
-        <div style="font-size:10px;color:var(--text3);margin-top:4px;">App Store rating</div>
-      </div>
-      <div style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px 8px;text-align:center;box-shadow:var(--shadow-sm);">
-        <div style="font-size:24px;font-weight:800;">🔒</div>
-        <div style="font-size:10px;color:var(--text3);margin-top:4px;">End-to-end encrypted</div>
-      </div>
-      <div style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px 8px;text-align:center;box-shadow:var(--shadow-sm);">
-        <div style="font-size:24px;font-weight:800;">5min</div>
-        <div style="font-size:10px;color:var(--text3);margin-top:4px;">Per day</div>
-      </div>
+    <!-- Headline below the stack -->
+    <div style="max-width:320px;">
+      <h2 style="font-size:24px;font-weight:800;line-height:1.3;color:var(--text);">ONERA was built on<br><span style="color:var(--green);">evidence-based</span> dream<br>and somatic research.</h2>
+      <p style="font-size:14px;color:var(--text2);line-height:1.55;margin-top:14px;">Your journey includes dream-decoding and somatic release protocols backed by top universities.</p>
     </div>
 
-    <button class="btn-continue" onclick="go()" style="max-width:340px;">Continue</button>
+    <button class="btn-continue" onclick="go()" style="max-width:340px;margin-top:auto;">Continue</button>
   </div>`;
 }
 
 // ==================== LOADING ====================
+// ==================== LOADING (Liven-style: personalized headline + green pill progress + rotating testimonials) ====================
 function renderLoading(){
   const app=document.getElementById('app');
+  const n=S.name||'';
+  const g=S.gender==='F'?'women':'men';
+  const ageLabel=S.answers.q2!==undefined?['18-24','25-34','35-44','45-54','55-64','65+'][S.answers.q2]||'':'';
+  const ageSuffix=ageLabel?` ${ageLabel}`:'';
+
+  const testis=[
+    {title:'Finally understood my recurring dream',author:'Sarah J.',body:'I thought I was just anxious, but ONERA showed me what the dream was pointing at. Three nights later, it stopped.'},
+    {title:'My jaw unclenched for the first time',author:'Nick H.',body:'I\'ve used meditation apps for years. Nothing touched the tension. The somatic exercises here worked the first week.'},
+    {title:'The app was a support for me',author:'J. Enderson',body:'I was feeling disconnected and even a little frozen. In three months I learned to hear my body again, and my sleep improved significantly.'},
+  ];
+
   app.innerHTML=`
-  <div class="screen active q-screen" style="padding-top:20px;gap:16px;">
-    <h2 class="q-title" style="font-size:18px;">Creating your <span class="green">Personalized Dream Analysis Plan</span></h2>
-
-    <div style="display:flex;gap:8px;margin-bottom:8px;">
-      <div style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;">
-        <div style="font-size:9px;color:var(--text3);letter-spacing:0.05em;">UC BERKELEY</div>
-        <div style="font-size:13px;font-weight:700;margin-top:2px;">Sleep Lab</div>
-      </div>
-      <div style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;">
-        <div style="font-size:9px;color:var(--text3);letter-spacing:0.05em;">RUSH UNIVERSITY</div>
-        <div style="font-size:13px;font-weight:700;margin-top:2px;">Medical Center</div>
-      </div>
-      <div style="flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;">
-        <div style="font-size:9px;color:var(--text3);letter-spacing:0.05em;">JOURNAL OF</div>
-        <div style="font-size:13px;font-weight:700;margin-top:2px;">Neuroscience</div>
-      </div>
+  <div class="screen active q-screen" style="padding-top:16px;gap:24px;align-items:center;text-align:center;">
+    <h2 style="font-size:26px;font-weight:800;line-height:1.25;color:var(--text);max-width:320px;margin:0;">
+      Creating your<br>
+      <span style="color:var(--green);">Dream & Somatic Plan</span><br>
+      for ${g}${ageSuffix}
+    </h2>
+    <div id="loadSections" style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:10px;">
+      <div class="liven-pill" id="stage0"><div class="liven-pill-fill" id="pf0"></div><span class="liven-pill-label">Analyzing dream patterns</span><span class="liven-pill-pct" id="pp0">0%</span></div>
+      <div class="liven-pill" id="stage1"><div class="liven-pill-fill" id="pf1"></div><span class="liven-pill-label">Mapping emotional triggers</span><span class="liven-pill-pct" id="pp1">0%</span></div>
+      <div class="liven-pill" id="stage2"><div class="liven-pill-fill" id="pf2"></div><span class="liven-pill-label">Building your plan</span><span class="liven-pill-pct" id="pp2">0%</span></div>
     </div>
-
-    <div id="loadSections">
-      <div class="loading-section"><div class="loading-label"><span id="lc0" style="opacity:0.3">&#9679;</span> Analyzing dream patterns <span id="lp0" style="margin-left:auto;font-size:12px;color:var(--green);font-weight:700;">0%</span></div><div class="loading-bar"><div class="loading-bar-fill" id="lb0" style="width:0%"></div></div></div>
-      <div class="loading-section"><div class="loading-label"><span id="lc1" style="opacity:0.3">&#9679;</span> Mapping emotional triggers <span id="lp1" style="margin-left:auto;font-size:12px;color:var(--green);font-weight:700;">0%</span></div><div class="loading-bar"><div class="loading-bar-fill" id="lb1" style="width:0%"></div></div></div>
-      <div class="loading-section"><div class="loading-label"><span id="lc2" style="opacity:0.3">&#9679;</span> Building your plan <span id="lp2" style="margin-left:auto;font-size:12px;color:var(--green);font-weight:700;">0%</span></div><div class="loading-bar"><div class="loading-bar-fill" id="lb2" style="width:0%"></div></div></div>
+    <div id="loadTesti" style="width:100%;max-width:360px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:18px 20px;box-shadow:0 4px 16px rgba(0,0,0,0.06);text-align:left;transition:opacity 0.4s;">
+      <div style="color:#2eaa60;font-size:14px;letter-spacing:2px;margin-bottom:10px;">★★★★★</div>
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px;">
+        <div id="ltTitle" style="font-size:14px;font-weight:800;color:var(--text);line-height:1.3;flex:1;">${testis[0].title}</div>
+        <div id="ltAuthor" style="font-size:11px;color:var(--text3);flex-shrink:0;white-space:nowrap;margin-top:2px;">${testis[0].author}</div>
+      </div>
+      <div id="ltBody" style="font-size:13px;color:var(--text2);line-height:1.5;">${testis[0].body}</div>
     </div>
     <div id="loadPopup" style="display:none;"></div>
-    <div class="testi-card"><div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="tc-text">"After one week my recurring nightmare stopped for the first time in 5 years."</div><div class="tc-author">-- Sarah M., verified user</div></div>
   </div>`;
+
+  if(!document.getElementById('livenPillStyles')){
+    const s=document.createElement('style');s.id='livenPillStyles';
+    s.textContent=`
+      .liven-pill{position:relative;background:#e8ede5;border-radius:999px;height:34px;overflow:hidden;display:flex;align-items:center;padding:0 16px;}
+      .liven-pill-fill{position:absolute;top:0;left:0;bottom:0;width:0%;background:linear-gradient(90deg,#2a7e48 0%,#4eb36b 50%,#8fd27b 100%);transition:width 0.2s linear;border-radius:999px;}
+      .liven-pill-label{position:relative;z-index:2;font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.15);}
+      .liven-pill.inactive .liven-pill-label{color:#5a6156;text-shadow:none;}
+      .liven-pill-pct{position:relative;z-index:2;margin-left:auto;font-size:12px;font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.15);}
+      .liven-pill.inactive .liven-pill-pct{color:#8a8a8a;text-shadow:none;}
+      .liven-pill.done .liven-pill-pct{display:none;}
+      .liven-pill-check{position:absolute;right:14px;top:50%;transform:translateY(-50%);z-index:3;opacity:0;transition:opacity 0.3s;}
+      .liven-pill.done .liven-pill-check{opacity:1;}
+    `;
+    document.head.appendChild(s);
+  }
+  for(let i=0;i<3;i++){
+    const el=document.getElementById('stage'+i);
+    if(el && !el.querySelector('.liven-pill-check')){
+      const chk=document.createElement('span');chk.className='liven-pill-check';
+      chk.innerHTML='<svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="9" fill="#fff"/><path d="M5 9 L8 12 L13 6" stroke="#2a7e48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>';
+      el.appendChild(chk);
+      el.classList.add('inactive');
+    }
+  }
 
   const popupQs=['Do you finish what you start?','Are you familiar with journaling?','Do you want to build solid habits?'];
 
-  function done(i){const b=document.getElementById('lb'+i);const c=document.getElementById('lc'+i);if(b)b.style.width='100%';if(c){c.textContent='\u2713';c.style.opacity='1';c.style.color='var(--green)';}}
+  function swapTesti(idx){
+    const card=document.getElementById('loadTesti');if(!card)return;
+    card.style.opacity='0';
+    setTimeout(()=>{
+      const t=testis[idx]||testis[0];
+      document.getElementById('ltTitle').textContent=t.title;
+      document.getElementById('ltAuthor').textContent=t.author;
+      document.getElementById('ltBody').textContent=t.body;
+      card.style.opacity='1';
+    },400);
+  }
+  function done(i){const el=document.getElementById('stage'+i);const f=document.getElementById('pf'+i);const p=document.getElementById('pp'+i);if(f)f.style.width='100%';if(p)p.textContent='';if(el){el.classList.remove('inactive');el.classList.add('done');}}
   function popup(txt,cb){const el=document.getElementById('loadPopup');if(!el)return;el.style.display='block';el.innerHTML=`<div class="popup-overlay" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.4);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:200;display:flex;align-items:center;justify-content:center;"><div style="background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:28px 24px;max-width:320px;width:calc(100% - 40px);text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.12);"><div style="font-size:11px;color:var(--text3);margin-bottom:8px;">To move forward, specify</div><div style="font-size:16px;font-weight:700;margin-bottom:18px;line-height:1.4;">${txt}</div><div class="popup-btns"><button class="popup-btn-no" id="lpNo" style="padding:12px 36px;border-radius:20px;font-size:14px;font-weight:600;cursor:pointer;border:none;background:var(--bg3);color:var(--text2);">No</button><button class="popup-btn-yes" id="lpYes" style="padding:12px 36px;border-radius:20px;font-size:14px;font-weight:600;cursor:pointer;border:none;background:var(--green);color:#fff;">Yes</button></div></div></div>`;document.getElementById('lpNo').onclick=document.getElementById('lpYes').onclick=function(){el.style.display='none';cb();};}
-  function anim(i,to,dur,cb){const b=document.getElementById('lb'+i);const p=document.getElementById('lp'+i);if(!b)return;let v=0;const st=(to-v)/(dur/50);const iv=setInterval(()=>{v+=st;if(v>=to){v=to;clearInterval(iv);if(cb)cb();}b.style.width=v+'%';if(p)p.textContent=Math.round(v)+'%';},50);}
+  function anim(i,to,dur,cb){const f=document.getElementById('pf'+i);const p=document.getElementById('pp'+i);const el=document.getElementById('stage'+i);if(!f)return;if(el)el.classList.remove('inactive');let v=parseFloat(f.style.width)||0;const st=(to-v)/(dur/50);const iv=setInterval(()=>{v+=st;if(v>=to){v=to;clearInterval(iv);if(cb)cb();}f.style.width=v+'%';if(p)p.textContent=Math.round(v)+'%';},50);}
 
-  anim(0,100,1500,()=>{done(0);setTimeout(()=>{popup(popupQs[0],()=>{anim(1,100,1500,()=>{done(1);setTimeout(()=>{popup(popupQs[1],()=>{anim(2,45,1000,()=>{setTimeout(()=>{popup(popupQs[2],()=>{anim(2,100,1000,()=>{done(2);setTimeout(go,800);});});},500);});});},500);});});},500);});
+  anim(0,100,1600,()=>{done(0);setTimeout(()=>{popup(popupQs[0],()=>{swapTesti(1);anim(1,100,1600,()=>{done(1);setTimeout(()=>{popup(popupQs[1],()=>{swapTesti(2);anim(2,45,1000,()=>{setTimeout(()=>{popup(popupQs[2],()=>{anim(2,100,1000,()=>{done(2);setTimeout(go,900);});});},500);});});},500);});});},500);});
 }
 
 // ==================== PROFILE (separate page) ====================
@@ -1240,8 +1299,8 @@ function renderCurveChart(){
   const app=document.getElementById('app');const n=S.name||'Friend';
   app.innerHTML=`
   <div class="screen active q-screen" style="padding-top:16px;gap:14px;align-items:center;text-align:center;">
-    <h2 style="font-size:22px;line-height:1.35;text-align:left;width:100%;"><span style="color:var(--green);">${n},</span><br>Your personal<br><span style="color:var(--green);">Dream Analysis Plan</span><br>is ready!</h2>
-    <p style="font-size:15px;font-weight:600;">Your Well-being level</p>
+    <h2 style="font-size:22px;line-height:1.35;text-align:left;width:100%;"><span style="color:var(--green);">${n},</span><br>your plan is <span style="color:var(--green);">ready.</span></h2>
+    <p style="font-size:15px;font-weight:600;">Here's how you'll feel, week by week.</p>
 
     <div style="position:relative;width:100%;max-width:380px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:24px 20px 16px;box-shadow:var(--shadow-md);">
       <svg viewBox="0 0 320 200" style="width:100%;">
@@ -1310,8 +1369,8 @@ function renderProjection(){
 
   app.innerHTML=`
   <div class="screen active q-screen" style="padding-top:16px;gap:14px;align-items:center;text-align:center;">
-    <h2 style="font-size:22px;font-weight:800;line-height:1.3;">Your well-being will<br>improve by <span style="color:var(--green);">${goalMonth}</span></h2>
-    <p style="font-size:14px;color:var(--text2);">Based on your answers</p>
+    <h2 style="font-size:22px;font-weight:800;line-height:1.3;">By <span style="color:var(--green);">${goalMonth}</span><br>you'll be different.</h2>
+    <p style="font-size:14px;color:var(--text2);">Based on what you just told me.</p>
 
     <!-- Stacked bar chart -->
     <div style="width:100%;max-width:340px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:24px 20px 16px;box-shadow:var(--shadow-md);">
@@ -1348,8 +1407,8 @@ function renderScratch(){
   app.innerHTML=`
   <div class="screen active q-screen" style="padding-top:20px;gap:14px;align-items:center;text-align:center;">
     <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:20px;border:1.5px solid var(--border);background:var(--bg2);box-shadow:var(--shadow-sm);"><span style="font-size:18px;">⭐</span><span style="font-size:13px;font-weight:700;letter-spacing:0.5px;">CLAIM YOUR GIFT</span></div>
-    <h2 style="font-size:22px;line-height:1.35;"><span style="color:var(--green);">${n},</span><br>Scratch & save on your<br><span style="color:var(--green);">Dream Analysis Plan</span></h2>
-    <p style="font-size:14px;color:var(--text2);">A little boost, right when you need it 🌿</p>
+    <h2 style="font-size:22px;line-height:1.35;"><span style="color:var(--green);">${n},</span><br>scratch to see<br>your <span style="color:var(--green);">discount.</span></h2>
+    <p style="font-size:14px;color:var(--text2);">For showing up this far.</p>
     <!-- Ticket-shaped scratch card -->
     <div style="position:relative;width:320px;max-width:100%;">
       <div class="scratch-wrap" id="scratchWrap" style="width:100%;height:200px;border-radius:20px;border:1.5px solid #d4c8a0;box-shadow:0 4px 20px rgba(200,180,120,0.15);background:#e8d8a8;">
@@ -1514,7 +1573,7 @@ function renderPaywall(){
         </div>
         <div>
           <div style="font-size:13px;color:var(--text3);"><span style="text-decoration:line-through;">Regular price</span></div>
-          <div style="font-size:15px;font-weight:700;margin-top:2px;">Get your personal plan with up to <span style="color:var(--green);">61%</span> discount</div>
+          <div style="font-size:15px;font-weight:700;margin-top:2px;">Your plan. <span style="color:var(--green);">61% off.</span> Only for this plan.</div>
         </div>
       </div>
 
@@ -1591,7 +1650,7 @@ function renderPaywall(){
       <!-- GUARANTEE — right after first CTA -->
       <div style="margin-top:14px;display:flex;align-items:center;justify-content:center;gap:16px;background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow-sm);">
         <svg viewBox="0 0 36 36" width="32" height="32" style="flex-shrink:0;"><circle cx="18" cy="18" r="16" fill="none" stroke="var(--green)" stroke-width="2"/><path d="M11 18 L16 23 L25 13" stroke="var(--green)" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
-        <div><div style="font-size:13px;font-weight:700;">30-day money-back guarantee</div><div style="font-size:11px;color:var(--text2);">Cancel anytime. Full refund. No questions asked.</div></div>
+        <div><div style="font-size:13px;font-weight:700;">30-day money-back guarantee</div><div style="font-size:11px;color:var(--text2);">If your body doesn't feel the shift, you don't pay.</div></div>
       </div>
 
       <!-- APP STORE BADGE -->
@@ -1623,7 +1682,7 @@ function renderPaywall(){
 
       <!-- TESTIMONIALS -->
       <div style="margin-top:28px;">
-        <h3 style="font-size:15px;font-weight:700;margin-bottom:12px;">Users love their plans</h3>
+        <h3 style="font-size:15px;font-weight:700;margin-bottom:12px;">What changed for them</h3>
         ${testiHTML}
       </div>
 
@@ -1662,8 +1721,8 @@ function showUpsell(){
   const overlay=document.createElement('div');
   overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:300;display:flex;align-items:flex-end;justify-content:center;animation:fadeIn 0.3s;';
   overlay.innerHTML=`<div style="background:var(--bg2);border-radius:20px 20px 0 0;padding:28px 24px 32px;width:100%;max-width:440px;text-align:center;">
-    <div style="font-size:12px;color:var(--text3);margin-bottom:6px;">Special offer</div>
-    <div style="font-size:18px;font-weight:700;margin-bottom:16px;">Upgrade to <strong>4-WEEK PLAN</strong> and save</div>
+    <div style="font-size:12px;color:var(--text3);margin-bottom:6px;">One last offer</div>
+    <div style="font-size:18px;font-weight:700;margin-bottom:16px;">Go <strong>4-WEEK</strong>. Pay less.</div>
     <div style="background:var(--green-light);border-radius:12px;padding:16px;margin-bottom:12px;">
       <div style="font-size:36px;font-weight:800;color:var(--green);">71<span style="font-size:18px;">%</span></div>
       <div style="font-size:14px;color:var(--green);font-weight:600;">OFF</div>
@@ -1716,7 +1775,7 @@ function selPlan(i){S.selectedPlan=i;render();}
 // ==================== CHECKOUT (FIX 10: updated prices) ====================
 async function renderCheckout(){
   const app=document.getElementById('app');
-  const discounted=[3.99,7.99,14.99],full=[9.99,19.99,39.99],pn=['7-Day Trial','4-Week Plan','12-Week Plan'];
+  const discounted=[6.93,15.19,25.99],full=[17.77,38.95,66.65],pn=['7-Day Trial','4-Week Plan','12-Week Plan'];
   const expired=S.discountExpired;
   const price=expired?full[S.selectedPlan]:discounted[S.selectedPlan];
   const base=full[S.selectedPlan];
@@ -1726,7 +1785,7 @@ async function renderCheckout(){
   app.innerHTML=`
   <div class="screen active q-screen" style="padding-top:10px;gap:14px;">
     ${expired?`<div class="checkout-timer" style="background:rgba(220,74,74,0.08);color:var(--red);">Discount expired — full price applies</div>`:`<div class="checkout-timer">&#9200; Your discount is reserved for <span id="ckT">${fmt(S.timerSec)}</span> min</div>`}
-    <div style="text-align:center;margin-bottom:4px;"><h3 style="font-size:16px;">Join over <span style="color:var(--green);">12,000</span> users to achieve your goals</h3></div>
+    <div style="text-align:center;margin-bottom:4px;"><h3 style="font-size:16px;"><span style="color:var(--green);">12,000+</span> people decoded their dreams.<br>One decision away.</h3></div>
     <div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px;">
       <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;"><span style="color:var(--text2);">Personalized Plan</span><span style="color:var(--text3);">$${base.toFixed(2)}</span></div>
       ${expired?'':`<div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;"><span style="color:var(--green);font-weight:600;">61% Introductory discount</span><span style="color:var(--green);font-weight:600;">-$${disc}</span></div>
@@ -1734,6 +1793,7 @@ async function renderCheckout(){
       <div style="border-top:1px solid var(--border);padding-top:8px;display:flex;justify-content:space-between;font-size:16px;font-weight:800;"><span>Total</span><span>$${price.toFixed(2)}</span></div>
       <div style="text-align:center;font-size:11px;color:var(--green);margin-top:4px;">You just saved $${disc} (61% off)</div>
     </div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:10px;font-size:11px;color:var(--text3);margin-top:4px;padding:8px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;"><svg viewBox="0 0 16 16" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" style="width:13px;height:13px;flex-shrink:0;"><rect x="3" y="7" width="10" height="6" rx="2"/><path d="M5 7V5a3 3 0 016 0v2"/></svg><span>Secured by Stripe · Cancel anytime · 30-day refund</span></div>
     <div id="stripePaymentElement" style="margin-top:8px;"></div>
     <div id="payError" style="display:none;color:var(--red);font-size:12px;text-align:center;margin-top:4px;"></div>
     <button class="pay-btn-main" onclick="doStripePay()" id="payBtn" style="margin-top:8px;"><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px;"><rect x="3" y="11" width="14" height="6" rx="2"/><path d="M7 11V7a3 3 0 016 0v4"/></svg> PAY $${price.toFixed(2)}</button>
@@ -1745,7 +1805,17 @@ async function renderCheckout(){
 
   // Initialize Stripe Elements
   try{
-    const stripeKey='pk_test_51RDn38CczqUYIP4UCMkJNnykzE8sO94RRCzhmOiWgigY6AqRzd88l7PVdJpcCjG9aXxkpfInth36HomENwWHZu6n00wLNPwSGp'; // TODO: move to env
+    // STRIPE KEY SWITCH — Auto-detects env from hostname.
+    // localhost/127.0.0.1/file:// → TEST  |  everything else → LIVE
+    // Live key is only loaded in production context. Test key never reaches prod buyers.
+    const STRIPE_KEYS={
+      test:'pk_test_51RDn38CczqUYIP4UCMkJNnykzE8sO94RRCzhmOiWgigY6AqRzd88l7PVdJpcCjG9aXxkpfInth36HomENwWHZu6n00wLNPwSGp',
+      live:'pk_live_REPLACE_ME_WITH_REAL_LIVE_KEY'  // ← paste pk_live_... from Stripe dashboard
+    };
+    const _isLocal=/^(localhost|127\.0\.0\.1|0\.0\.0\.0)$/i.test(location.hostname)||location.protocol==='file:';
+    const stripeKey=_isLocal?STRIPE_KEYS.test:STRIPE_KEYS.live;
+    window._stripeMode=_isLocal?'TEST':'LIVE';
+    console.log('[Stripe] mode:',window._stripeMode);
     window._stripe=Stripe(stripeKey);
 
     const planKey=S.discountExpired?['trial_full','4week_full','12week_full'][S.selectedPlan]:['trial','4week','12week'][S.selectedPlan];
@@ -1857,7 +1927,10 @@ async function doStripePay(){
   const errEl=document.getElementById('payError');
 
   try{
-    fbq('track','InitiateCheckout',{value:7.99,currency:'USD',content_name:S.cppId});
+    // Event ID for Meta CAPI deduplication (client pixel + server CAPI share same ID)
+    const ic_eid='ic_'+Date.now()+'_'+Math.random().toString(36).slice(2,8);
+    window._lastInitiateCheckoutId=ic_eid;
+    fbq('track','InitiateCheckout',{value:7.99,currency:'USD',content_name:S.cppId,eventID:ic_eid});
 
     // Confirm payment with the already-mounted Stripe Elements
     if(!window._stripe||!window._stripeElements){throw new Error('Payment not loaded. Please refresh.');}
@@ -1889,7 +1962,9 @@ async function doStripePay(){
         console.log('quiz-success response:',sd);
       }catch(e){console.error('quiz-success call failed:',e);}
       const paidAmount=S.discountExpired?[9.99,19.99,39.99][S.selectedPlan]:[3.99,7.99,14.99][S.selectedPlan];
-      fbq('track','Purchase',{value:paidAmount,currency:'USD',content_name:S.cppId});
+      // Event ID = Stripe PI id (same ID will be sent server-side via CAPI for dedup)
+      const p_eid=(window._lastPiId||('pur_'+Date.now()+'_'+Math.random().toString(36).slice(2,8)));
+      fbq('track','Purchase',{value:paidAmount,currency:'USD',content_name:S.cppId,eventID:p_eid});
       S.step=38;render();
     }
   }catch(e){
