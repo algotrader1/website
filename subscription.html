@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Policy - Onera</title>
+    <style>
+        :root {
+            --primary-bg: #000000;
+            --text-primary: #FFFFFF;
+            --text-secondary: #999999;
+            --text-muted: #666666;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.8;
+            padding: 3rem 2rem;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            display: inline-block;
+            transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .back-link:hover { color: var(--text-primary); }
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 200;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            background: linear-gradient(180deg, #FFFFFF 0%, #CCCCCC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            margin: 3rem 0 1.5rem;
+            color: var(--text-primary);
+            text-transform: uppercase;
+        }
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--text-primary);
+        }
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        strong { color: var(--text-primary); font-weight: 400; }
+        a { color: rgba(255, 255, 255, 0.7); text-decoration: underline; }
+        a:hover { color: var(--text-primary); }
+        ul, ol {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 1rem 0 1rem 1.5rem;
+            line-height: 1.8;
+        }
+        ul li, ol li { margin-bottom: 0.5rem; }
+        .info-block {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .plan-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .plan-card .name {
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
+        }
+        .plan-card .price {
+            color: var(--text-primary);
+            font-size: 1.75rem;
+            font-weight: 300;
+            margin-bottom: 0.25rem;
+        }
+        .plan-card .original {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            text-decoration: line-through;
+        }
+        .plan-card .duration {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        .footer {
+            margin-top: 6rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+        .footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin: 0 1rem;
+        }
+        .footer a:hover { color: var(--text-primary); }
+        @media (max-width: 768px) {
+            body { padding: 2rem 1rem; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.25rem; }
+            .info-block { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Back to Home</a>
+
+        <h1>Subscription Policy</h1>
+        <div class="last-updated">Last updated: April 12, 2026</div>
+
+        <p>
+            This Subscription Policy describes the terms applicable to paid plans offered by Onera
+            through our dream assessment quiz at <strong>dreaminsight.app</strong>. By completing a
+            purchase, you acknowledge that you have read, understood, and agreed to this policy, as
+            well as our <a href="/cgu.html">Terms of Use</a> and <a href="/privacy.html">Privacy Policy</a>.
+        </p>
+
+        <h2>1. Available Plans</h2>
+        <p>
+            After completing the quiz, you may purchase one of the following one-time access plans.
+            Prices shown include any introductory discount applied at checkout and are billed in
+            US dollars (USD).
+        </p>
+
+        <div class="plan-grid">
+            <div class="plan-card">
+                <div class="name">7-Day Trial</div>
+                <div class="price">$6.93</div>
+                <div class="original">$17.77</div>
+                <div class="duration">7 days of access</div>
+            </div>
+            <div class="plan-card">
+                <div class="name">4-Week Plan</div>
+                <div class="price">$15.19</div>
+                <div class="original">$38.95</div>
+                <div class="duration">28 days of access</div>
+            </div>
+            <div class="plan-card">
+                <div class="name">12-Week Plan</div>
+                <div class="price">$25.99</div>
+                <div class="original">$66.65</div>
+                <div class="duration">84 days of access</div>
+            </div>
+        </div>
+
+        <h2>2. Type of Purchase — One-Time, Non-Recurring</h2>
+        <p>
+            All plans offered through our quiz are <strong>one-time purchases</strong>. This means:
+        </p>
+        <ul>
+            <li>You are charged <strong>once</strong> at the time of purchase.</li>
+            <li>Your plan provides access for the exact duration of the plan you selected.</li>
+            <li>You will <strong>not</strong> be automatically re-billed at the end of the access period.</li>
+            <li>You will <strong>not</strong> be enrolled in any recurring subscription as part of your quiz purchase.</li>
+        </ul>
+        <p>
+            If you wish to continue using Onera beyond the end of your plan, you may choose to purchase
+            a new plan or subscribe through the Onera iOS app, which is billed separately by Apple.
+        </p>
+
+        <h2>3. Processing &amp; Access</h2>
+        <p>
+            Payments are processed securely by <strong>Stripe, Inc.</strong>, our payment service
+            provider. We never store your full card details on our servers. Once payment is confirmed,
+            you will receive:
+        </p>
+        <ul>
+            <li>An email confirmation with your receipt and order number.</li>
+            <li>A secure magic-link to activate your Onera account and open the iOS app.</li>
+            <li>Access to your personalized dream plan and all included features for the duration of your plan.</li>
+        </ul>
+
+        <h2>4. iOS In-App Subscription (Separate From Quiz Purchase)</h2>
+        <p>
+            The Onera iOS app also offers its own auto-renewing subscriptions managed entirely by Apple
+            through the App Store. These subscriptions are <strong>separate</strong> from the one-time
+            quiz purchase and follow Apple's standard subscription rules:
+        </p>
+        <ul>
+            <li>Payment is charged to your Apple ID account upon confirmation.</li>
+            <li>The subscription automatically renews unless auto-renew is turned off at least 24 hours before the end of the current period.</li>
+            <li>Your Apple ID account will be charged for renewal within 24 hours before the end of the current period.</li>
+            <li>You may manage and cancel your iOS subscriptions in your Apple ID account settings at any time.</li>
+            <li>Any unused portion of a free trial, if offered, will be forfeited when you purchase an auto-renewing subscription.</li>
+        </ul>
+        <p>
+            For more details, please refer to
+            <a href="https://support.apple.com/en-us/HT202039" target="_blank" rel="noopener">Apple's subscription management documentation</a>.
+        </p>
+
+        <h2>5. Refund Policy</h2>
+        <div class="info-block">
+            <p>
+                <strong>30-day money-back guarantee.</strong> If for any reason you are not satisfied
+                with your one-time quiz purchase, you may request a full refund within 30 days of the
+                original purchase date by emailing
+                <a href="mailto:contact@dreaminsight.app">contact@dreaminsight.app</a> with your order
+                number or the email address used at checkout.
+            </p>
+            <p style="margin-bottom:0;">
+                We typically process refund requests within 5 business days. Once approved, refunds
+                are returned to your original payment method and may take an additional 5–10 business
+                days to appear depending on your bank.
+            </p>
+        </div>
+        <p>
+            Refunds for iOS in-app subscriptions are handled by Apple and cannot be processed directly
+            by Onera. Please visit
+            <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>
+            to request an App Store refund.
+        </p>
+
+        <h2>6. Cancellation</h2>
+        <p>
+            Because quiz plans are one-time purchases with no recurring billing, there is nothing to
+            "cancel" after you have paid — your access simply ends at the conclusion of the plan
+            duration.
+        </p>
+        <p>
+            To cancel an iOS auto-renewing subscription, open Settings on your iPhone, tap your Apple
+            ID, then Subscriptions, and turn off auto-renew for Onera.
+        </p>
+
+        <h2>7. Changes to Plans or Prices</h2>
+        <p>
+            We may update our plans, pricing, or promotional discounts at any time. Any changes will
+            apply only to purchases made after the change; purchases already completed will retain the
+            price and plan you agreed to at checkout.
+        </p>
+
+        <h2>8. Contact</h2>
+        <p>
+            For any question about this Subscription Policy, billing, refunds, or account access,
+            please contact <a href="mailto:contact@dreaminsight.app">contact@dreaminsight.app</a>. We
+            aim to reply within 1–2 business days.
+        </p>
+
+        <div class="footer">
+            <a href="/">Home</a>
+            <a href="/privacy.html">Privacy</a>
+            <a href="/cgu.html">Terms</a>
+            <a href="/cookie.html">Cookies</a>
+            <a href="/legal.html">Legal</a>
+        </div>
+    </div>
+</body>
+</html>
