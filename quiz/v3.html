@@ -977,11 +977,11 @@ function renderQuestion(q,qIdx){
         <p class="q-sub" style="margin-top:8px;">${q.sub||'Do you agree with the following statement?'}</p>
       </div>
       <div class="likert-row" style="padding-bottom:20px;">
-        <div class="likert-btn" onclick="answerQ(${qIdx},1)"><img src="img/likert-1.png" alt="Strongly disagree" style="width:48px;height:48px;object-fit:contain;"><div class="lk-label">Strongly<br>disagree</div></div>
-        <div class="likert-btn" onclick="answerQ(${qIdx},2)"><img src="img/likert-2.png" alt="Disagree" style="width:48px;height:48px;object-fit:contain;"><div class="lk-label">Disagree</div></div>
-        <div class="likert-btn" onclick="answerQ(${qIdx},3)"><img src="img/likert-3.png" alt="Neutral" style="width:48px;height:48px;object-fit:contain;"><div class="lk-label">Neutral</div></div>
-        <div class="likert-btn" onclick="answerQ(${qIdx},4)"><img src="img/likert-4.png" alt="Agree" style="width:48px;height:48px;object-fit:contain;"><div class="lk-label">Agree</div></div>
-        <div class="likert-btn" onclick="answerQ(${qIdx},5)"><img src="img/likert-5.png" alt="Strongly agree" style="width:48px;height:48px;object-fit:contain;"><div class="lk-label">Strongly<br>agree</div></div>
+        <div class="likert-btn" onclick="answerQ(${qIdx},1)"><div style="position:relative;width:48px;height:48px;"><img src="img/likert-1.png" alt="" style="width:48px;height:48px;object-fit:contain;"><img src="img/mi-sparkle.png" alt="" style="position:absolute;top:-6px;right:-10px;width:22px;height:22px;filter:hue-rotate(160deg) brightness(1.5);transform:rotate(15deg);"></div><div class="lk-label">Strongly<br>disagree</div></div>
+        <div class="likert-btn" onclick="answerQ(${qIdx},2)"><img src="img/likert-2.png" alt="" style="width:48px;height:48px;object-fit:contain;"><div class="lk-label"></div></div>
+        <div class="likert-btn" onclick="answerQ(${qIdx},3)"><img src="img/likert-3.png" alt="" style="width:48px;height:48px;object-fit:contain;"><div class="lk-label"></div></div>
+        <div class="likert-btn" onclick="answerQ(${qIdx},4)"><img src="img/likert-4.png" alt="" style="width:48px;height:48px;object-fit:contain;"><div class="lk-label"></div></div>
+        <div class="likert-btn" onclick="answerQ(${qIdx},5)"><div style="position:relative;width:48px;height:48px;"><img src="img/likert-5.png" alt="" style="width:48px;height:48px;object-fit:contain;"><img src="img/mi-sparkle.png" alt="" style="position:absolute;top:-6px;right:-10px;width:22px;height:22px;"></div><div class="lk-label">Strongly<br>agree</div></div>
       </div>
     </div>`;
   }
@@ -989,45 +989,71 @@ function renderQuestion(q,qIdx){
     h=`<div class="screen active q-screen"><h2 class="q-title">${q.text}</h2><div class="freq3-opts">
       <div class="freq3-opt" onclick="answerQ(${qIdx},'yes')" style="justify-content:flex-start;padding:20px 22px;"><div style="flex-shrink:0;width:44px;margin-right:16px;"><img src="img/check-button.png" alt="" style="width:44px;height:44px;object-fit:contain;"></div><div class="f3-label" style="font-size:17px;font-weight:600;">Yes</div></div>
       <div class="freq3-opt" onclick="answerQ(${qIdx},'no')" style="justify-content:flex-start;padding:20px 22px;"><div style="flex-shrink:0;width:44px;margin-right:16px;"><img src="img/cross-button.png" alt="" style="width:44px;height:44px;object-fit:contain;"></div><div class="f3-label" style="font-size:17px;font-weight:600;">No</div></div>
-      <div class="freq3-opt" onclick="answerQ(${qIdx},'unsure')" style="justify-content:flex-start;padding:20px 22px;"><div style="flex-shrink:0;width:44px;margin-right:16px;"><img src="img/thinking-face.png" alt="" style="width:44px;height:44px;object-fit:contain;"></div><div class="f3-label" style="font-size:17px;font-weight:600;">Not sure</div></div>
+      <div class="freq3-opt" onclick="answerQ(${qIdx},'unsure')" style="justify-content:flex-start;padding:20px 22px;"><div style="flex-shrink:0;width:44px;margin-right:16px;"><img src="img/thinking-face.png" alt="" style="width:44px;height:44px;object-fit:contain;"></div><div class="f3-label" style="font-size:17px;font-weight:600;">Hard to say</div></div>
     </div></div>`;
   }
   else if(q.type==='multi'){
     const sk='m_'+qIdx;if(!S.selectedMulti[sk])S.selectedMulti[sk]=[];const sel=S.selectedMulti[sk];
+    // Icon bank — returns ranked candidates per option. Then a de-dupe pass picks unique icons per question.
+    // Each option gets a DIFFERENT icon on the same screen (like Liven).
     function rankIcons(txt){
       const t=txt.toLowerCase();
       const c=[];
+      // Body/somatic: tension, jaw, muscles, physical release
       if(/jaw|clench|grind|tension|somatic|muscle|shoulder|physical|posture|stiff/.test(t))c.push('mi-body');
+      // Heart/emotion: cry, feel, numb, joy, love, hurt
       if(/cry|tears|weep|emotion|feeling|numb|flat|joy|grief|hurt|heart|love myself|ache|hollow/.test(t))c.push('mi-heart');
+      // Brain/cognitive: overthink, understand, insight, mind, know, rumination
       if(/overthink|rumina|insight|understand|know|brain|mind|thought|analyze|figure out|mental/.test(t))c.push('mi-brain');
+      // Sleep/dream: nightmare, sleep, rest, bedtime, dreams
       if(/sleep|night|dream|nightmare|bedtime|rest|wake|pillow|insomnia/.test(t))c.push('mi-moon');
+      // Energy/power: exhaust, drained, execute, drive, momentum, action
       if(/energy|exhaust|drained|power|execute|executing|momentum|drive|spark|fuel|charge|battery|electric/.test(t))c.push('mi-energy');
+      // Love/relationship: partner, love, attraction, safe love, intimacy
       if(/partner|relationship|attach|intima|close|bond|love\b|safe with|safety|receive|dating/.test(t))c.push('mi-love');
+      // Family/inheritance: mother, father, daughter, son, cycle, pattern, inherit, chain, child
       if(/mother|father|mom|dad|daughter|son|family|parent|cycle|chain|pattern|inherit|generational|child|kids/.test(t))c.push('mi-family');
+      // Star/sabotage/anger: destroy, sabotage, impulse, react, anger, react, explosion
       if(/sabotage|destroy|anger|rage|impulse|explod|react|lash|hijack|angry|rage/.test(t))c.push('mi-star');
+      // Check/present/home: back, home, present, alive, keep, here, real
       if(/back to|home|present|alive|keep|real|myself|whole|landing|arrived|grounded/.test(t))c.push('mi-check');
+      // Speech/voice: speak, voice, tell, story, write, express
       if(/voice|speak|tell|story|writ|express|say|share|word/.test(t))c.push('mi-speech');
+      // Calm/peace: calm, peace, serenity, lotus
       if(/calm|peace|serenit|still|quiet|soothe|relax|breathe/.test(t))c.push('mi-calm');
+      // Focus/target: focus, target, aim, direction, goal
       if(/focus|target|aim|direction|goal|achieve|accomplish/.test(t))c.push('mi-focus');
+      // Fist/strength: willpower, strength, push through, endurance
       if(/willpower|strong|strength|endure|push through|tough|resilien|fight back/.test(t))c.push('mi-fist');
+      // Shield/protect: protect, boundary, safe from, defense
       if(/shield|protect|boundary|defend|safe from|guard|wall/.test(t))c.push('mi-shield');
+      // Briefcase/work: job, work, career, build, professional, money, performance
       if(/job|work|career|professional|office|build\b|money|income|boss|project/.test(t))c.push('mi-briefcase');
+      // Mirror/self-image: appear, mirror, self-esteem, face, look, reflect
       if(/mirror|appearance|self-esteem|face|reflect|image|look older|younger|photo/.test(t))c.push('mi-mirror');
+      // Arrows/change/pattern: external, circumstance, change, cycle again, repeat, loop
       if(/external|circumstance|change|repeat|again|loop|shift|break the/.test(t))c.push('mi-arrows');
+      // Grid/other/complexity
       if(/other|more|everything|complex|mix/.test(t))c.push('mi-grid');
+      // Sleep face — specific tired/exhausted state
       if(/tired|fatigue|worn out|can\'t function|depleted/.test(t))c.push('mi-sleep');
+      // Sparkle — goal/transformation/wish
       if(/wish|magic|transform|finally|feel something|alive again|shift|breakthrough/.test(t))c.push('mi-sparkle');
       return c;
     }
+    // De-duplication: each option must get a unique icon on this screen
     const iconPool=['mi-body','mi-heart','mi-brain','mi-moon','mi-energy','mi-love','mi-family','mi-star','mi-check','mi-speech','mi-calm','mi-focus','mi-fist','mi-shield','mi-briefcase','mi-mirror','mi-arrows','mi-sleep','mi-sparkle','mi-grid'];
     const used=new Set();
     const opts=q.opts;
     const iconPerOpt=new Array(opts.length);
+    // Hash function for stable but varied assignment
     function hashStr(s){let h=0;for(let i=0;i<s.length;i++){h=((h<<5)-h+s.charCodeAt(i))|0;}return Math.abs(h);}
+    // First pass — assign each option its top-ranked UNUSED icon
     opts.forEach((o,i)=>{
       const ranked=rankIcons(o);
       for(const ic of ranked){ if(!used.has(ic)){ iconPerOpt[i]=ic; used.add(ic); break; } }
     });
+    // Second pass — options that didn't match anything or collided get a stable hashed fallback from the pool
     opts.forEach((o,i)=>{
       if(iconPerOpt[i])return;
       const h=hashStr(o+qIdx);
@@ -1152,7 +1178,6 @@ function renderAuthority(){
   </div>`;
 }
 
-// ==================== LOADING ====================
 // ==================== LOADING (Liven-style: personalized headline + green pill progress + rotating testimonials) ====================
 function renderLoading(){
   const app=document.getElementById('app');
@@ -1161,6 +1186,7 @@ function renderLoading(){
   const ageLabel=S.answers.q2!==undefined?['18-24','25-34','35-44','45-54','55-64','65+'][S.answers.q2]||'':'';
   const ageSuffix=ageLabel?` ${ageLabel}`:'';
 
+  // 3 rotating testimonials — one per stage
   const testis=[
     {title:'Finally understood my recurring dream',author:'Sarah J.',body:'I thought I was just anxious, but ONERA showed me what the dream was pointing at. Three nights later, it stopped.'},
     {title:'My jaw unclenched for the first time',author:'Nick H.',body:'I\'ve used meditation apps for years. Nothing touched the tension. The somatic exercises here worked the first week.'},
@@ -1169,16 +1195,22 @@ function renderLoading(){
 
   app.innerHTML=`
   <div class="screen active q-screen" style="padding-top:16px;gap:24px;align-items:center;text-align:center;">
+
+    <!-- Big personalized headline (Liven-style) -->
     <h2 style="font-size:26px;font-weight:800;line-height:1.25;color:var(--text);max-width:320px;margin:0;">
       Creating your<br>
       <span style="color:var(--green);">Dream & Somatic Plan</span><br>
       for ${g}${ageSuffix}
     </h2>
+
+    <!-- 3 stage pills — full-width, green gradient, ✓ on complete -->
     <div id="loadSections" style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:10px;">
       <div class="liven-pill" id="stage0"><div class="liven-pill-fill" id="pf0"></div><span class="liven-pill-label">Analyzing dream patterns</span><span class="liven-pill-pct" id="pp0">0%</span></div>
       <div class="liven-pill" id="stage1"><div class="liven-pill-fill" id="pf1"></div><span class="liven-pill-label">Mapping emotional triggers</span><span class="liven-pill-pct" id="pp1">0%</span></div>
       <div class="liven-pill" id="stage2"><div class="liven-pill-fill" id="pf2"></div><span class="liven-pill-label">Building your plan</span><span class="liven-pill-pct" id="pp2">0%</span></div>
     </div>
+
+    <!-- Rotating testimonial card (Liven-style: title + author + body, 5 stars on top) -->
     <div id="loadTesti" style="width:100%;max-width:360px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:18px 20px;box-shadow:0 4px 16px rgba(0,0,0,0.06);text-align:left;transition:opacity 0.4s;">
       <div style="color:#2eaa60;font-size:14px;letter-spacing:2px;margin-bottom:10px;">★★★★★</div>
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px;">
@@ -1187,9 +1219,11 @@ function renderLoading(){
       </div>
       <div id="ltBody" style="font-size:13px;color:var(--text2);line-height:1.5;">${testis[0].body}</div>
     </div>
+
     <div id="loadPopup" style="display:none;"></div>
   </div>`;
 
+  // Inject pill styles once
   if(!document.getElementById('livenPillStyles')){
     const s=document.createElement('style');s.id='livenPillStyles';
     s.textContent=`
@@ -1205,6 +1239,7 @@ function renderLoading(){
     `;
     document.head.appendChild(s);
   }
+  // Add inactive class + checkmark elements
   for(let i=0;i<3;i++){
     const el=document.getElementById('stage'+i);
     if(el && !el.querySelector('.liven-pill-check')){
@@ -1778,6 +1813,7 @@ function renderPlans(){
 
 function selPlan(i){
   S.selectedPlan=parseInt(i);
+  // Sync the selected state across ALL plan cards (paywall renders renderPlans twice)
   document.querySelectorAll('.plan-card').forEach(el=>{
     const s=parseInt(el.getAttribute('data-sel'));
     el.classList.toggle('selected',s===S.selectedPlan);
@@ -1832,6 +1868,7 @@ async function renderCheckout(){
     window._stripe=Stripe(stripeKey);
 
     const planKey=S.discountExpired?['trial_full','4week_full','12week_full'][S.selectedPlan]:['trial','4week','12week'][S.selectedPlan];
+    console.log('[renderCheckout] S.selectedPlan=',S.selectedPlan,'planKey=',planKey,'price=',price);
     const r=await fetch(SUPABASE_URL+'/create-payment-intent',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:S.email,cpp:S.cppId||'F-1',gender:S.gender||'F',plan:planKey,promoCode:S.discountExpired?'':pc,quizAnswers:S.answers})});
     const d=await r.json();
     if(!d.clientSecret)throw new Error(d.error||'Failed to create payment');
@@ -1932,12 +1969,15 @@ function answerQ(qi,v){S.answers['q'+(qi+1)]=v;fbq('trackCustom','QuizAnswer',{q
   if(event&&event.currentTarget){const el=event.currentTarget;el.classList.add('just-selected');}
   setTimeout(go,350);}
 function goCheckout(){
+  // Defensive: read the currently-selected plan from the DOM at click time.
+  // This survives any race/reset of S.selectedPlan and guarantees the checkout
+  // matches the user's last visible selection.
   const sel=document.querySelector('.plan-card.selected');
   if(sel){
     const v=parseInt(sel.getAttribute('data-sel'));
     if(!isNaN(v))S.selectedPlan=v;
   }
-  console.log('[goCheckout] S.selectedPlan =',S.selectedPlan);
+  console.log('[goCheckout] S.selectedPlan =',S.selectedPlan,'planKey will be:',S.discountExpired?['trial_full','4week_full','12week_full'][S.selectedPlan]:['trial','4week','12week'][S.selectedPlan]);
   S.step=37;
   render();
 }
@@ -1952,7 +1992,8 @@ async function doStripePay(){
     // Event ID for Meta CAPI deduplication (client pixel + server CAPI share same ID)
     const ic_eid='ic_'+Date.now()+'_'+Math.random().toString(36).slice(2,8);
     window._lastInitiateCheckoutId=ic_eid;
-    fbq('track','InitiateCheckout',{value:7.99,currency:'USD',content_name:S.cppId,eventID:ic_eid});
+    const _icAmount=S.discountExpired?[17.77,38.95,66.65][S.selectedPlan]:[6.93,15.19,25.99][S.selectedPlan];
+    fbq('track','InitiateCheckout',{value:_icAmount,currency:'USD',content_name:S.cppId,eventID:ic_eid});
 
     // Confirm payment with the already-mounted Stripe Elements
     if(!window._stripe||!window._stripeElements){throw new Error('Payment not loaded. Please refresh.');}
@@ -1968,7 +2009,7 @@ async function doStripePay(){
 
     if(error){
       if(errEl){errEl.style.display='block';errEl.textContent=error.message;}
-      if(b){b.disabled=false;b.innerHTML='&#128274; PAY $'+[3.99,7.99,14.99][S.selectedPlan].toFixed(2);}
+      if(b){b.disabled=false;b.innerHTML='&#128274; PAY $'+(S.discountExpired?[17.77,38.95,66.65][S.selectedPlan]:[6.93,15.19,25.99][S.selectedPlan]).toFixed(2);}
     }else{
       // Payment succeeded — call quiz-success to create account + get deeplink
       if(b)b.innerHTML='Setting up your account...';
@@ -1983,7 +2024,7 @@ async function doStripePay(){
         if(sd.deeplink)S.deeplink=sd.deeplink;
         console.log('quiz-success response:',sd);
       }catch(e){console.error('quiz-success call failed:',e);}
-      const paidAmount=S.discountExpired?[9.99,19.99,39.99][S.selectedPlan]:[3.99,7.99,14.99][S.selectedPlan];
+      const paidAmount=S.discountExpired?[17.77,38.95,66.65][S.selectedPlan]:[6.93,15.19,25.99][S.selectedPlan];
       // Event ID = Stripe PI id (same ID will be sent server-side via CAPI for dedup)
       const p_eid=(window._lastPiId||('pur_'+Date.now()+'_'+Math.random().toString(36).slice(2,8)));
       fbq('track','Purchase',{value:paidAmount,currency:'USD',content_name:S.cppId,eventID:p_eid});
