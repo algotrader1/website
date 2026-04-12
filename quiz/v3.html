@@ -1098,7 +1098,24 @@ function submitMulti(qIdx){S.answers['q'+(qIdx+1)]=S.selectedMulti['m_'+qIdx];fb
 
 // FIX 1: Email/Name submit functions for in-quiz questions
 function submitEmailQ(qIdx){const i=document.getElementById('emailInput');const e=i?i.value.trim().toLowerCase():'';if(e&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){S.email=e;S.answers['q'+(qIdx+1)]=e;sessionStorage.setItem('onera_quiz_email',e);fbq('trackCustom','QuizEmailCapture',{});go();}else{if(i){i.style.borderColor='var(--red)';i.focus();}const err=document.getElementById('emailError');if(!err){const p=document.createElement('p');p.id='emailError';p.style.cssText='color:var(--red);font-size:12px;margin-top:4px;';p.textContent='Please enter a valid email address';i.parentNode.insertBefore(p,i.nextSibling);}}}
-function submitNameQ(qIdx){const i=document.getElementById('nameInput');const n=i?i.value.trim():'';if(n){S.name=n;S.answers['q'+(qIdx+1)]=n;go();}else{if(i){i.style.borderColor='var(--red)';i.focus();}}}
+function submitNameQ(qIdx){
+  const i=document.getElementById('nameInput');
+  const n=i?i.value.trim():'';
+  if(!n){if(i){i.style.borderColor='var(--red)';i.focus();}return;}
+  S.name=n;S.answers['q'+(qIdx+1)]=n;
+  // Fire-and-forget: capture email + firstName to enqueue abandon sequence.
+  // If user pays, stripe-webhook cancels the queue. If not, 20 emails go out over 19 days.
+  if(S.email){
+    try{
+      fetch(SUPABASE_URL+'/capture-email',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({email:S.email,firstName:n,cpp:S.cppId||'F-2',gender:S.gender||'F'})
+      }).catch(()=>{});
+    }catch(e){}
+  }
+  go();
+}
 
 // ==================== PROCESS (Mechanism: why dreams + how ONERA works) ====================
 function renderProcess(){
