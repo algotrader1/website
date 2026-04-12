@@ -767,7 +767,19 @@ let S = {
   scratchDone:false, selectedPlan:1, selectedMulti:{}, cppId:null,
   timerSec:10*60, timerInterval:null, discountExpired:false, deeplink:null, _ts:0
 };
-(function(){const p=new URLSearchParams(location.search);S.cppId=p.get('cpp')||null;})();
+// Opaque code → CPP mapping (used in ads URLs — never expose cpp=F-1 style in public)
+const CODE_TO_CPP={vyn:'F-1',kra:'F-2',luz:'F-3a',syr:'F-3b',nox:'F-4',aev:'F-5',rho:'M-1',tav:'M-2',zel:'M-3',pyr:'M-4',eos:'M-5',orm:'M-6'};
+(function(){
+  const p=new URLSearchParams(location.search);
+  const code=p.get('c');
+  const rawCpp=p.get('cpp');
+  S.cppId=(code&&CODE_TO_CPP[code])||rawCpp||null;
+  // Clean URL: if ?cpp= was used, strip it (keep only ?c=)
+  if(rawCpp&&!code){
+    const newUrl=location.pathname+(location.hash||'');
+    try{history.replaceState(null,'',newUrl);}catch(e){}
+  }
+})();
 let QUIZ_QUESTIONS = getQuestions();
 
 function save(){try{S._ts=Date.now();sessionStorage.setItem('onera_v3',JSON.stringify(S))}catch(e){}}
