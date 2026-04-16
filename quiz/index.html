@@ -1814,6 +1814,7 @@ function getAnswerInsights(){
 }
 
 function renderPaywall(){
+  S.selectedPlan=0; // Always default to 7-day trial on paywall load
   const app=document.getElementById('app');const n=S.name||'Friend';const now=new Date();
   const PW=CPP_PAYWALL[S.cppId]||CPP_PAYWALL['F-2'];
   const INS=getAnswerInsights();
