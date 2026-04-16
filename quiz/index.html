@@ -1026,14 +1026,15 @@ function renderQuestion(q,qIdx){
 
   if(q.type==='freq3'){
     const opts = q.customOpts || ['Often','Sometimes','Rarely'];
-    const fIcons = [
-      '<img src="img/thumbs-up.png" alt="" style="width:44px;height:44px;object-fit:contain;">',
-      '<img src="img/thinking-face.png" alt="" style="width:44px;height:44px;object-fit:contain;">',
-      '<img src="img/thumbs-down.png" alt="" style="width:44px;height:44px;object-fit:contain;">',
+    // Liven-style: small inline SVG icons — green check, grey neutral, soft red X
+    const fSVGs = [
+      '<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#e8f5e9"/><path d="M8 14.5l4 4 8-9" stroke="#2eaa60" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+      '<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#f5f5f5"/><circle cx="14" cy="14" r="7" stroke="#999" stroke-width="1.8" fill="none"/><path d="M12 12.5c0-1 .8-1.5 1.8-1.5 1.2 0 2 .7 2 1.6 0 .8-.5 1.2-1.3 1.5-.5.2-.7.5-.7.9" stroke="#999" stroke-width="1.5" stroke-linecap="round"/><circle cx="14" cy="18" r="0.8" fill="#999"/></svg>',
+      '<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#fef2f2"/><path d="M10 10l8 8M18 10l-8 8" stroke="#dc4a4a" stroke-width="2.2" stroke-linecap="round"/></svg>',
     ];
     const showIcons = !q.customOpts;
     h=`<div class="screen active q-screen"><h2 class="q-title">${q.text}</h2><div class="freq3-opts">
-      ${opts.map((o,i)=>`<div class="freq3-opt" onclick="answerQ(${qIdx},${i})" style="justify-content:flex-start;padding:20px 22px;">${showIcons?`<div class="f3-icon" style="flex-shrink:0;width:44px;margin-right:16px;">${fIcons[i]||fIcons[0]}</div>`:''}<div class="f3-label" style="font-size:17px;font-weight:600;">${o}</div></div>`).join('')}
+      ${opts.map((o,i)=>`<div class="freq3-opt" onclick="answerQ(${qIdx},${i})" style="justify-content:flex-start;padding:18px 20px;gap:14px;">${showIcons?`<div style="flex-shrink:0;">${fSVGs[i]||fSVGs[0]}</div>`:''}<div class="f3-label" style="font-size:16px;font-weight:600;">${o}</div></div>`).join('')}
     </div></div>`;
   }
   else if(q.type==='likert5'){
@@ -1053,9 +1054,9 @@ function renderQuestion(q,qIdx){
   }
   else if(q.type==='yesno3'){
     h=`<div class="screen active q-screen"><h2 class="q-title">${q.text}</h2><div class="freq3-opts">
-      <div class="freq3-opt" onclick="answerQ(${qIdx},'yes')" style="justify-content:flex-start;padding:20px 22px;"><div style="flex-shrink:0;width:44px;margin-right:16px;"><img src="img/check-button.png" alt="" style="width:44px;height:44px;object-fit:contain;"></div><div class="f3-label" style="font-size:17px;font-weight:600;">Yes</div></div>
-      <div class="freq3-opt" onclick="answerQ(${qIdx},'no')" style="justify-content:flex-start;padding:20px 22px;"><div style="flex-shrink:0;width:44px;margin-right:16px;"><img src="img/cross-button.png" alt="" style="width:44px;height:44px;object-fit:contain;"></div><div class="f3-label" style="font-size:17px;font-weight:600;">No</div></div>
-      <div class="freq3-opt" onclick="answerQ(${qIdx},'unsure')" style="justify-content:flex-start;padding:20px 22px;"><div style="flex-shrink:0;width:44px;margin-right:16px;"><img src="img/thinking-face.png" alt="" style="width:44px;height:44px;object-fit:contain;"></div><div class="f3-label" style="font-size:17px;font-weight:600;">Hard to say</div></div>
+      <div class="freq3-opt" onclick="answerQ(${qIdx},'yes')" style="justify-content:flex-start;padding:18px 20px;gap:14px;"><div style="flex-shrink:0;"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#e8f5e9"/><path d="M8 14.5l4 4 8-9" stroke="#2eaa60" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="f3-label" style="font-size:16px;font-weight:600;">Yes</div></div>
+      <div class="freq3-opt" onclick="answerQ(${qIdx},'no')" style="justify-content:flex-start;padding:18px 20px;gap:14px;"><div style="flex-shrink:0;"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#fef2f2"/><path d="M10 10l8 8M18 10l-8 8" stroke="#dc4a4a" stroke-width="2.2" stroke-linecap="round"/></svg></div><div class="f3-label" style="font-size:16px;font-weight:600;">No</div></div>
+      <div class="freq3-opt" onclick="answerQ(${qIdx},'unsure')" style="justify-content:flex-start;padding:18px 20px;gap:14px;"><div style="flex-shrink:0;"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#f5f5f5"/><circle cx="14" cy="14" r="7" stroke="#999" stroke-width="1.8" fill="none"/><path d="M12 12.5c0-1 .8-1.5 1.8-1.5 1.2 0 2 .7 2 1.6 0 .8-.5 1.2-1.3 1.5-.5.2-.7.5-.7.9" stroke="#999" stroke-width="1.5" stroke-linecap="round"/><circle cx="14" cy="18" r="0.8" fill="#999"/></svg></div><div class="f3-label" style="font-size:16px;font-weight:600;">Hard to say</div></div>
     </div></div>`;
   }
   else if(q.type==='multi'){
@@ -1150,136 +1151,75 @@ function renderInterstitial(q,qIdx){
   const n=S.name||'';
   let h='';
 
-  // FIX 5 — Grounding prompt before Q8 (somatic primer)
+  // FIX 5 — Grounding prompt before Q8 — Liven-minimal: breathing circle + 1 line
   if(q.subtype==='grounding'){
-    h=`<div class="screen active q-screen" style="padding-top:28px;gap:22px;align-items:center;text-align:center;">
-      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--green);">PAUSE</div>
-      <h2 class="q-title" style="font-size:22px;font-weight:700;line-height:1.35;max-width:340px;">The next questions may touch deeper patterns.</h2>
-      <p style="font-size:14px;color:var(--text2);line-height:1.65;max-width:320px;">Before we continue: place one hand on your chest, one on your belly. Take three slow breaths.</p>
-
-      <!-- Breathing circle animation -->
-      <div style="position:relative;width:140px;height:140px;margin:8px auto 4px;display:flex;align-items:center;justify-content:center;">
-        <div id="breathRing" style="position:absolute;width:100%;height:100%;border-radius:50%;background:radial-gradient(circle,rgba(46,170,96,0.18) 0%,rgba(46,170,96,0.04) 70%,transparent 100%);animation:breathPulse 6s ease-in-out infinite;"></div>
-        <div style="position:absolute;width:78px;height:78px;border-radius:50%;background:var(--green);opacity:0.22;animation:breathPulse 6s ease-in-out infinite;"></div>
-        <div style="position:relative;font-size:13px;font-weight:700;color:var(--green);letter-spacing:0.8px;text-transform:uppercase;z-index:2;" id="breathLabel">Inhale</div>
+    h=`<div class="screen active q-screen" style="padding-top:40px;gap:24px;align-items:center;text-align:center;">
+      <div style="position:relative;width:120px;height:120px;margin:0 auto;display:flex;align-items:center;justify-content:center;">
+        <div style="position:absolute;width:100%;height:100%;border-radius:50%;background:radial-gradient(circle,rgba(46,170,96,0.18) 0%,rgba(46,170,96,0.04) 70%,transparent 100%);animation:breathPulse 6s ease-in-out infinite;"></div>
+        <div style="position:absolute;width:64px;height:64px;border-radius:50%;background:var(--green);opacity:0.22;animation:breathPulse 6s ease-in-out infinite;"></div>
+        <div style="position:relative;font-size:12px;font-weight:700;color:var(--green);letter-spacing:0.8px;text-transform:uppercase;z-index:2;" id="breathLabel">Inhale</div>
       </div>
-      <style>
-        @keyframes breathPulse{0%,100%{transform:scale(0.72);opacity:0.7}50%{transform:scale(1);opacity:1}}
-      </style>
-
-      <p style="font-size:12px;color:var(--text3);line-height:1.6;max-width:300px;font-style:italic;">Your body already knows. We're just helping it be heard.</p>
-      <button class="btn-continue" onclick="advanceInterstitial(${qIdx})" style="max-width:340px;">I'm ready — Continue</button>
+      <style>@keyframes breathPulse{0%,100%{transform:scale(0.72);opacity:0.7}50%{transform:scale(1);opacity:1}}</style>
+      <h2 style="font-size:20px;font-weight:700;line-height:1.35;max-width:300px;">Take a breath before we continue.</h2>
+      <button class="btn-continue" onclick="advanceInterstitial(${qIdx})" style="max-width:340px;">Continue</button>
     </div>`;
     app.innerHTML=h;
-    // Simple 6s inhale/exhale label swap (4s inhale, 4s exhale) — aligned with breathPulse
-    try{
-      const lbl=document.getElementById('breathLabel');
-      if(lbl){
-        let inhale=true;
-        const iv=setInterval(()=>{
-          if(!document.getElementById('breathLabel')){clearInterval(iv);return;}
-          inhale=!inhale;
-          lbl.textContent=inhale?'Inhale':'Exhale';
-        },3000);
-      }
-    }catch(e){}
+    try{const lbl=document.getElementById('breathLabel');if(lbl){let inhale=true;const iv=setInterval(()=>{if(!document.getElementById('breathLabel')){clearInterval(iv);return;}inhale=!inhale;lbl.textContent=inhale?'Inhale':'Exhale';},3000);}}catch(e){}
     return;
   }
 
-  // FIX 3 — B3 therapy ceiling callout (after likert block)
+  // FIX 3 — Therapy ceiling — Liven-minimal: headline + 1 line + source
   if(q.subtype==='therapy_ceiling'){
-    h=`<div class="screen active q-screen" style="padding-top:32px;gap:20px;align-items:center;text-align:center;">
-      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--text2);">Quick note</div>
-      <div style="width:100%;max-width:360px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:28px 24px;box-shadow:var(--shadow-md);">
-        <div style="font-size:32px;margin-bottom:14px;" aria-hidden="true">🧠&nbsp;→&nbsp;🫀</div>
-        <h2 style="font-size:20px;font-weight:800;line-height:1.35;margin-bottom:12px;color:var(--text);">Traditional talk therapy has a ceiling.</h2>
-        <p style="font-size:14px;color:var(--text2);line-height:1.65;margin-bottom:14px;">It helps you <strong>understand</strong> your trauma — but rarely helps you <strong>release it</strong> from your body.</p>
-        <p style="font-size:14px;color:var(--text);line-height:1.6;font-weight:600;">That's not your fault. You just need a different approach.</p>
-        <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border);font-size:11px;color:var(--text3);line-height:1.5;font-style:italic;">Bessel van der Kolk, <span style="white-space:nowrap;">The Body Keeps the Score</span> · Peter Levine, Somatic Experiencing</div>
-      </div>
+    h=`<div class="screen active q-screen" style="padding-top:40px;gap:20px;align-items:center;text-align:center;">
+      <h2 style="font-size:22px;font-weight:800;line-height:1.35;max-width:320px;">Talk therapy helps you understand.<br>It rarely helps you <span style="color:var(--green);">release</span>.</h2>
+      <p style="font-size:13px;color:var(--text2);max-width:300px;">That's not your fault. You just need a different approach.</p>
+      <p style="font-size:10px;color:var(--text3);font-style:italic;">van der Kolk · Levine</p>
       <button class="btn-continue" onclick="advanceInterstitial(${qIdx})" style="max-width:340px;">Continue</button>
     </div>`;
     app.innerHTML=h;
     return;
   }
 
-  // FIX 2 — Hope injection before Q13 (extended, data-backed)
+  // FIX 2 — Hope injection — Liven-style social proof (no unvalidated stats)
   if(q.subtype==='hope'){
-    h=`<div class="screen active q-screen" style="padding-top:24px;gap:18px;align-items:center;text-align:center;">
-      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--green);">Before we go deeper</div>
-      <h2 style="font-size:22px;font-weight:800;line-height:1.35;max-width:340px;color:var(--text);">Here's what we've learned from<br>over <span style="color:var(--green);">47,000 people</span> who took this assessment.</h2>
-
-      <!-- TODO Oscar: valider les chiffres -->
-      <div style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:12px;margin-top:6px;">
-        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:16px 18px;display:flex;align-items:center;gap:14px;box-shadow:var(--shadow-sm);">
-          <div style="font-size:26px;font-weight:800;color:var(--green);min-width:60px;text-align:center;">89%</div>
-          <div style="font-size:13px;color:var(--text);line-height:1.45;text-align:left;">had their first <strong>somatic release</strong> within 7 days</div>
-        </div>
-        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:16px 18px;display:flex;align-items:center;gap:14px;box-shadow:var(--shadow-sm);">
-          <div style="font-size:26px;font-weight:800;color:var(--green);min-width:60px;text-align:center;">73%</div>
-          <div style="font-size:13px;color:var(--text);line-height:1.45;text-align:left;">reported <strong>better sleep</strong> within 14 days</div>
-        </div>
-        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:16px 18px;display:flex;align-items:center;gap:14px;box-shadow:var(--shadow-sm);">
-          <div style="font-size:26px;font-weight:800;color:var(--green);min-width:60px;text-align:center;">61%</div>
-          <div style="font-size:13px;color:var(--text);line-height:1.45;text-align:left;">felt a shift in their <strong>attachment patterns</strong> within 30 days</div>
-        </div>
-      </div>
-
-      <p style="font-size:14px;color:var(--text2);line-height:1.6;max-width:320px;margin-top:8px;font-style:italic;">Your body already knows. We just need to listen.</p>
+    h=`<div class="screen active q-screen" style="padding-top:40px;gap:20px;align-items:center;text-align:center;">
+      <h2 style="font-size:22px;font-weight:800;line-height:1.35;max-width:320px;">You're not alone in this.</h2>
+      <p style="font-size:14px;color:var(--text2);max-width:300px;">Thousands of people have started their healing journey with this assessment.</p>
       <button class="btn-continue" onclick="advanceInterstitial(${qIdx})" style="max-width:340px;">Continue</button>
-      <p style="font-size:10px;color:var(--text3);max-width:300px;line-height:1.5;">Based on internal self-reported data from ONERA assessment participants. Individual results may vary.</p>
     </div>`;
     app.innerHTML=h;
     return;
   }
 
-  // FIX 4 — Mid-quiz validation interstitial after Q15
+  // FIX 4 — Mid-quiz validation — Liven-minimal: 1 headline + continue
   if(q.subtype==='validation'){
-    const nameLine=n?`${n}, you've been so honest with yourself.`:'You\'ve been so honest with yourself.';
-    h=`<div class="screen active q-screen" style="padding-top:36px;gap:22px;align-items:center;text-align:center;">
-      <!-- Halfway mark badge -->
-      <div style="position:relative;width:100%;max-width:300px;margin-bottom:4px;">
-        <div style="height:4px;background:rgba(0,0,0,0.06);border-radius:2px;overflow:hidden;">
-          <div style="height:100%;width:60%;background:linear-gradient(90deg,var(--green) 0%,#4eb36b 100%);border-radius:2px;"></div>
-        </div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:0.8px;color:var(--green);margin-top:10px;text-transform:uppercase;">You're over halfway</div>
+    h=`<div class="screen active q-screen" style="padding-top:40px;gap:20px;align-items:center;text-align:center;">
+      <div style="width:100%;max-width:260px;height:4px;background:rgba(0,0,0,0.06);border-radius:2px;overflow:hidden;">
+        <div style="height:100%;width:60%;background:var(--green);border-radius:2px;"></div>
       </div>
-
-      <div style="width:100%;max-width:360px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:28px 24px;box-shadow:var(--shadow-md);">
-        <div style="font-size:36px;margin-bottom:12px;" aria-hidden="true">🌿</div>
-        <h2 style="font-size:22px;font-weight:800;line-height:1.35;color:var(--text);margin-bottom:14px;">${nameLine}</h2>
-        <p style="font-size:15px;color:var(--text2);line-height:1.6;margin-bottom:12px;">That takes courage.</p>
-        <p style="font-size:14px;color:var(--text2);line-height:1.65;">Take a deep breath. What you've shared is already giving us the map we need to help you.</p>
-      </div>
-
+      <h2 style="font-size:20px;font-weight:700;line-height:1.35;max-width:300px;">You're over halfway. Keep going.</h2>
       <button class="btn-continue" onclick="advanceInterstitial(${qIdx})" style="max-width:340px;">Continue</button>
     </div>`;
     app.innerHTML=h;
     return;
   }
 
-  // FIX 1 — Consistency lock Q20b (micro-commitment)
+  // FIX 1 — Consistency lock Q20b — clean SVG icons, no 3D emojis
   if(q.subtype==='consistency_lock'){
-    h=`<div class="screen active q-screen" style="padding-top:24px;gap:22px;align-items:center;text-align:center;">
-      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--green);">One honest question</div>
-      <h2 class="q-title" style="font-size:23px;font-weight:800;line-height:1.35;max-width:360px;text-align:center;">
-        Are you ready to stop <span style="color:var(--text2);font-weight:500;">understanding</span> your pain<br>and start actually <span style="color:var(--green);">releasing it</span> from your body?
+    h=`<div class="screen active q-screen" style="padding-top:32px;gap:20px;align-items:center;text-align:center;">
+      <h2 class="q-title" style="font-size:21px;font-weight:800;line-height:1.35;max-width:340px;">
+        Are you ready to stop <span style="color:var(--text2);font-weight:500;">understanding</span> your pain and start <span style="color:var(--green);">releasing it</span>?
       </h2>
-      <div class="freq3-opts" style="width:100%;max-width:360px;margin-top:6px;">
-        <div class="freq3-opt" onclick="lockChoice(${qIdx},'ready')" style="justify-content:flex-start;padding:20px 22px;">
-          <div style="flex-shrink:0;width:44px;margin-right:16px;"><img src="img/check-button.png" alt="" style="width:44px;height:44px;object-fit:contain;"></div>
+      <div class="freq3-opts" style="width:100%;max-width:360px;">
+        <div class="freq3-opt" onclick="lockChoice(${qIdx},'ready')" style="justify-content:flex-start;padding:18px 20px;gap:14px;">
+          <div style="flex-shrink:0;"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#e8f5e9"/><path d="M8 14.5l4 4 8-9" stroke="#2eaa60" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <div class="f3-label" style="font-size:16px;font-weight:700;">Yes, I'm ready</div>
         </div>
-        <div class="freq3-opt" onclick="lockChoice(${qIdx},'need_more')" style="justify-content:flex-start;padding:20px 22px;">
-          <div style="flex-shrink:0;width:44px;margin-right:16px;"><img src="img/thinking-face.png" alt="" style="width:44px;height:44px;object-fit:contain;"></div>
-          <div class="f3-label" style="font-size:16px;font-weight:600;">I need to understand more first</div>
-        </div>
-        <div class="freq3-opt" onclick="lockChoice(${qIdx},'unsure')" style="justify-content:flex-start;padding:20px 22px;">
-          <div style="flex-shrink:0;width:44px;margin-right:16px;"><img src="img/thinking-face.png" alt="" style="width:44px;height:44px;object-fit:contain;"></div>
-          <div class="f3-label" style="font-size:16px;font-weight:600;">I'm not sure yet</div>
+        <div class="freq3-opt" onclick="lockChoice(${qIdx},'need_more')" style="justify-content:flex-start;padding:18px 20px;gap:14px;">
+          <div style="flex-shrink:0;"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#f5f5f5"/><circle cx="14" cy="14" r="7" stroke="#999" stroke-width="1.8" fill="none"/><path d="M12 12.5c0-1 .8-1.5 1.8-1.5 1.2 0 2 .7 2 1.6 0 .8-.5 1.2-1.3 1.5-.5.2-.7.5-.7.9" stroke="#999" stroke-width="1.5" stroke-linecap="round"/><circle cx="14" cy="18" r="0.8" fill="#999"/></svg></div>
+          <div class="f3-label" style="font-size:16px;font-weight:600;">Not yet</div>
         </div>
       </div>
-      <p style="font-size:11px;color:var(--text3);max-width:300px;line-height:1.5;font-style:italic;">There's no wrong answer. We'll meet you where you are.</p>
     </div>`;
     app.innerHTML=h;
     return;
@@ -1555,9 +1495,9 @@ function renderProfile(){
       </div>
       <div style="width:100%;height:180px;border-radius:14px;overflow:hidden;background:var(--bg3);margin-bottom:14px;"><img src="${S.gender==='F'?'img/before-female.png':'img/before-male.png'}" style="width:100%;height:100%;object-fit:cover;object-position:center top;" alt=""></div>
       <!-- Gauge with slider badge -->
-      <div style="position:relative;">
+      <div style="position:relative;margin-top:36px;">
         <div class="gauge-wrap" style="height:10px;margin:0;"><div class="gauge-fill" id="gaugeBar" style="width:0%;background:linear-gradient(90deg,#5bb8f0,var(--green),#d4c030,var(--red));transition:width 2s cubic-bezier(0.25,0.1,0.25,1);border-radius:5px;"></div></div>
-        <div id="gaugeBadge" style="position:absolute;top:-32px;left:82%;transform:translateX(-50%);background:var(--text);color:#fff;font-size:11px;font-weight:600;padding:4px 12px;border-radius:8px;opacity:0;transition:opacity 0.5s 2s,left 2s cubic-bezier(0.25,0.1,0.25,1);">Your level</div>
+        <div id="gaugeBadge" style="position:absolute;top:-34px;left:82%;transform:translateX(-50%);background:var(--text);color:#fff;font-size:11px;font-weight:600;padding:5px 14px;border-radius:8px;white-space:nowrap;opacity:0;transition:opacity 0.5s 2s,left 2s cubic-bezier(0.25,0.1,0.25,1);z-index:2;">Your level<div style="position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:5px solid var(--text);"></div></div>
         <div id="gaugeDot" style="position:absolute;top:-4px;left:0%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--text);box-shadow:0 2px 6px rgba(0,0,0,0.15);opacity:0;transition:opacity 0.3s,left 2s cubic-bezier(0.25,0.1,0.25,1);"></div>
       </div>
       <div class="gauge-labels" style="margin-top:8px;"><span>Low</span><span>Normal</span><span>Medium</span><span>High</span></div>
@@ -1584,6 +1524,15 @@ function renderProfile(){
 function renderCurveChart(){
   const app=document.getElementById('app');const n=S.name||'Friend';
   app.innerHTML=`
+  <style>
+    @keyframes dotPop{0%{transform:scale(0);opacity:0}60%{transform:scale(1.3);opacity:1}100%{transform:scale(1);opacity:1}}
+    @keyframes badgeSlide{0%{transform:translateX(30px);opacity:0}100%{transform:translateX(0);opacity:1}}
+    @keyframes glowPulse{0%,100%{filter:drop-shadow(0 0 4px rgba(46,170,96,0.3))}50%{filter:drop-shadow(0 0 12px rgba(46,170,96,0.6))}}
+    .cc-dot{transform-origin:center;transform:scale(0);opacity:0;}
+    .cc-dot.pop{animation:dotPop 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards;}
+    .cc-badge-slide{opacity:0;animation:badgeSlide 0.5s ease-out forwards;}
+    .cc-glow{animation:glowPulse 2s ease-in-out infinite;}
+  </style>
   <div class="screen active q-screen" style="padding-top:16px;gap:14px;align-items:center;text-align:center;">
     <h2 style="font-size:22px;line-height:1.35;text-align:left;width:100%;"><span style="color:var(--green);">${n},</span><br>your plan is <span style="color:var(--green);">ready.</span></h2>
     <p style="font-size:15px;font-weight:600;">Here's how you'll feel, week by week.</p>
@@ -1592,35 +1541,31 @@ function renderCurveChart(){
       <svg viewBox="0 0 320 200" style="width:100%;">
         <defs>
           <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc4a4a"/><stop offset="40%" stop-color="#e8a040"/><stop offset="70%" stop-color="#8cc050"/><stop offset="100%" stop-color="#2eaa60"/></linearGradient>
-          <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2eaa60" stop-opacity="0.15"/><stop offset="100%" stop-color="#2eaa60" stop-opacity="0.01"/></linearGradient>
+          <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2eaa60" stop-opacity="0.12"/><stop offset="100%" stop-color="#2eaa60" stop-opacity="0"/></linearGradient>
         </defs>
-        <!-- Horizontal grid lines -->
+        <!-- Grid lines -->
         <line x1="40" y1="40" x2="290" y2="40" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
         <line x1="40" y1="80" x2="290" y2="80" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
         <line x1="40" y1="120" x2="290" y2="120" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
         <line x1="40" y1="155" x2="290" y2="155" stroke="rgba(0,0,0,0.06)" stroke-width="1"/>
-        <!-- Fill area under curve -->
-        <path d="M50 140 C 80 135 100 125 120 110 C 145 92 170 65 195 48 C 215 36 240 28 270 22 L270 155 L50 155 Z" fill="url(#fillGrad)" opacity="0">
-          <animate attributeName="opacity" from="0" to="1" begin="0.5s" dur="1s" fill="freeze"/>
-        </path>
-        <!-- S-curve line -->
-        <path d="M50 140 C 80 135 100 125 120 110 C 145 92 170 65 195 48 C 215 36 240 28 270 22" stroke="url(#lineGrad)" stroke-width="4" fill="none" stroke-linecap="round" style="stroke-dasharray:400;stroke-dashoffset:400;">
-          <animate attributeName="stroke-dashoffset" from="400" to="0" dur="2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
-        </path>
-        <!-- Dots -->
-        <circle cx="50" cy="140" r="7" fill="#dc4a4a" stroke="#fff" stroke-width="2" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.2s" dur="0.3s" fill="freeze"/></circle>
-        <circle cx="120" cy="110" r="6" fill="#e8a040" stroke="#fff" stroke-width="2" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.8s" dur="0.3s" fill="freeze"/></circle>
-        <circle cx="195" cy="48" r="6" fill="#8cc050" stroke="#fff" stroke-width="2" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.4s" dur="0.3s" fill="freeze"/></circle>
-        <circle cx="270" cy="22" r="8" fill="#2eaa60" stroke="#fff" stroke-width="2.5" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.8s" dur="0.3s" fill="freeze"/></circle>
+        <!-- Fill area (fades in with curve) -->
+        <path id="ccFill" d="M50 140 C 80 135 100 125 120 110 C 145 92 170 65 195 48 C 215 36 240 28 270 22 L270 155 L50 155 Z" fill="url(#fillGrad)" opacity="0"/>
+        <!-- S-curve line (dash animation) -->
+        <path id="ccLine" d="M50 140 C 80 135 100 125 120 110 C 145 92 170 65 195 48 C 215 36 240 28 270 22" stroke="url(#lineGrad)" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="400" stroke-dashoffset="400"/>
+        <!-- Dots (animated via JS with staggered pop) -->
+        <circle class="cc-dot" id="ccD1" cx="50" cy="140" r="7" fill="#dc4a4a" stroke="#fff" stroke-width="2"/>
+        <circle class="cc-dot" id="ccD2" cx="120" cy="110" r="6" fill="#e8a040" stroke="#fff" stroke-width="2"/>
+        <circle class="cc-dot" id="ccD3" cx="195" cy="48" r="6" fill="#8cc050" stroke="#fff" stroke-width="2"/>
+        <circle class="cc-dot" id="ccD4" cx="270" cy="22" r="8" fill="#2eaa60" stroke="#fff" stroke-width="2.5"/>
         <!-- Today badge -->
-        <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.4s" dur="0.3s" fill="freeze"/>
+        <g id="ccToday" opacity="0">
           <rect x="28" y="148" width="44" height="18" rx="5" fill="var(--text)"/>
           <text x="50" y="161" text-anchor="middle" font-size="9" fill="#fff" font-weight="600" font-family="Plus Jakarta Sans,sans-serif">Today</text>
         </g>
         <!-- After ONERA badge -->
-        <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="2s" dur="0.4s" fill="freeze"/>
-          <rect x="228" y="2" width="84" height="20" rx="6" fill="#2eaa60"/>
-          <text x="270" y="16" text-anchor="middle" font-size="9" fill="#fff" font-weight="700" font-family="Plus Jakarta Sans,sans-serif">After ONERA</text>
+        <g id="ccAfter" style="opacity:0;">
+          <rect x="218" y="2" width="104" height="22" rx="7" fill="#2eaa60"/>
+          <text x="270" y="17" text-anchor="middle" font-size="10" fill="#fff" font-weight="700" font-family="Plus Jakarta Sans,sans-serif">After ONERA</text>
         </g>
         <!-- Week labels -->
         <text x="50" y="178" text-anchor="middle" font-size="10" fill="#9a928a" font-weight="500">Week 1</text>
@@ -1633,6 +1578,38 @@ function renderCurveChart(){
     <p style="font-size:10px;color:var(--text3);">The chart is a non-customized illustration and results may vary</p>
     <button class="btn-continue" onclick="go()" style="max-width:340px;">Continue</button>
   </div>`;
+
+  // Orchestrated animation sequence
+  const line=document.getElementById('ccLine');
+  const fill=document.getElementById('ccFill');
+  const dots=['ccD1','ccD2','ccD3','ccD4'];
+  const dotDelays=[300,900,1500,2100];
+
+  // 1. Draw curve (2.5s smooth ease-out)
+  requestAnimationFrame(()=>{
+    line.style.transition='stroke-dashoffset 2.5s cubic-bezier(0.25,0.1,0.25,1)';
+    line.style.strokeDashoffset='0';
+    // 2. Fade in fill area
+    fill.style.transition='opacity 1.5s ease-out 0.4s';
+    fill.style.opacity='1';
+  });
+
+  // 3. Pop dots sequentially (synced with line progress)
+  dots.forEach((id,i)=>{
+    setTimeout(()=>{
+      const d=document.getElementById(id);
+      if(d) d.classList.add('pop');
+    },dotDelays[i]);
+  });
+
+  // 4. "Today" badge (fade in early)
+  setTimeout(()=>{const t=document.getElementById('ccToday');if(t){t.style.transition='opacity 0.3s';t.style.opacity='1';}},400);
+
+  // 5. "After ONERA" badge (slide in after last dot)
+  setTimeout(()=>{const a=document.getElementById('ccAfter');if(a){a.classList.add('cc-badge-slide');}},2300);
+
+  // 6. Final green dot glow pulse
+  setTimeout(()=>{const d=document.getElementById('ccD4');if(d)d.classList.add('cc-glow');},2600);
 }
 
 // ==================== PROJECTION BARS ====================
@@ -1697,8 +1674,8 @@ function renderScratch(){
     <p style="font-size:14px;color:var(--text2);">For showing up this far.</p>
     <!-- Ticket-shaped scratch card -->
     <div style="position:relative;width:320px;max-width:100%;">
-      <div class="scratch-wrap" id="scratchWrap" style="width:100%;height:200px;border-radius:20px;border:1.5px solid #d4c8a0;box-shadow:0 4px 20px rgba(200,180,120,0.15);background:#e8d8a8;">
-        <div class="scratch-reveal" style="background:var(--bg2);"><div class="sr-text">Your discount is</div><div class="sr-pct" style="color:var(--green);">61%</div></div>
+      <div class="scratch-wrap" id="scratchWrap" style="width:100%;height:200px;border-radius:20px;border:1.5px solid #d4c8a0;box-shadow:0 4px 20px rgba(200,180,120,0.15);background:linear-gradient(135deg,#d4c088,#e8d8a8,#c8b878);overflow:hidden;">
+        <div class="scratch-reveal" id="scratchReveal" style="background:var(--bg2);visibility:hidden;"><div class="sr-text">Your discount is</div><div class="sr-pct" style="color:var(--green);">61%</div></div>
         <canvas class="scratch-canvas" id="scratchCanvas"></canvas>
       </div>
       <!-- Ticket notches -->
@@ -1734,6 +1711,8 @@ function initScratch(){
   ctx.font='500 15px "Plus Jakarta Sans",sans-serif';ctx.fillStyle='rgba(255,255,255,0.6)';ctx.textAlign='center';
   ctx.fillText('Scratch here to reveal',r.width/2,r.height/2-4);
   ctx.fillText('your discount',r.width/2,r.height/2+16);
+  // Canvas is painted → safe to reveal the hidden content underneath
+  const rev=document.getElementById('scratchReveal');if(rev)rev.style.visibility='visible';
   let down=false,sc=0;const tot=r.width*r.height;ctx.globalCompositeOperation='destination-out';
   // Smaller brush (15px) + need 60% scratched
   function s(x,y){ctx.beginPath();ctx.arc(x,y,15,0,Math.PI*2);ctx.fill();sc+=Math.PI*225;if(sc/tot>0.60&&!S.scratchDone){S.scratchDone=true;revealScratch();}}
