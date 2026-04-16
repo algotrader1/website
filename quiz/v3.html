@@ -778,7 +778,7 @@ function getQuestions(){
 // ==================== STATE ====================
 let S = {
   step:0, gender:null, age:null, answers:{}, email:'', optIn:null, name:'',
-  scratchDone:false, selectedPlan:1, selectedMulti:{}, cppId:null,
+  scratchDone:false, selectedPlan:0, selectedMulti:{}, cppId:null,
   timerSec:10*60, timerInterval:null, discountExpired:false, deeplink:null, _ts:0,
   fbp:null, fbc:null, firstName:null
 };
@@ -2010,8 +2010,8 @@ function showUpsell(){
 function renderPlans(){
   const expired=S.discountExpired;
   const plans=[
-    {name:'7-DAY TRIAL',orig:'$17.77',price:'$6.93',origDay:'$2.54',d:'0',c:'99',fullD:'2',fullC:'54',sel:0},
-    {name:'4-WEEK PLAN',orig:'$38.95',price:'$15.19',origDay:'$1.30',d:'0',c:'50',fullD:'1',fullC:'30',sel:1,popular:true},
+    {name:'7-DAY TRIAL',orig:'$17.77',price:'$6.93',origDay:'$2.54',d:'0',c:'99',fullD:'2',fullC:'54',sel:0,popular:true},
+    {name:'4-WEEK PLAN',orig:'$38.95',price:'$15.19',origDay:'$1.30',d:'0',c:'50',fullD:'1',fullC:'30',sel:1},
     {name:'12-WEEK PLAN',orig:'$66.65',price:'$25.99',origDay:'$0.74',d:'0',c:'28',fullD:'0',fullC:'74',sel:2},
   ];
   return plans.map(p=>{
