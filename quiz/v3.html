@@ -2185,7 +2185,7 @@ function renderSuccess(){
     </p>
 
     <!-- Guarantee + legal -->
-    <p style="font-size:11px;color:var(--text3);max-width:300px;margin-top:8px;">30-day money-back guarantee. Cancel anytime.<br><a href="/quiz/terms.html" style="color:var(--text3);text-decoration:underline;">Terms</a> · <a href="/quiz/privacy.html" style="color:var(--text3);text-decoration:underline;">Privacy</a></p>
+    <p style="font-size:11px;color:var(--text3);max-width:300px;margin-top:8px;">30-day money-back guarantee. Cancel anytime.<br><a href="/quiz/terms.html" style="color:var(--text3);text-decoration:underline;">Terms</a> · <a href="/quiz/privacy.html" style="color:var(--text3);text-decoration:underline;">Privacy</a> · <a href="#" onclick="openManageSubscription(event)" style="color:var(--text3);text-decoration:underline;">Manage subscription</a></p>
   </div>`;
 
   // Auto-reveal step 2 after 5 seconds (user may have already installed)
@@ -2198,6 +2198,28 @@ function renderSuccess(){
 
   // Purchase pixel already fired in doStripePay() with exact amount
   confetti();
+}
+
+// ==================== MANAGE SUBSCRIPTION ====================
+async function openManageSubscription(e){
+  e.preventDefault();
+  const email=S.email;
+  if(!email){alert('No email found. Please contact support.');return;}
+  const btn=e.target;
+  btn.textContent='Loading...';btn.style.pointerEvents='none';
+  try{
+    const r=await fetch(SUPABASE_URL+'/create-portal-session',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email})
+    });
+    const d=await r.json();
+    if(d.url){window.location.href=d.url;}
+    else{alert(d.error||'Could not open subscription manager. Please contact support@onera.app');btn.textContent='Manage subscription';btn.style.pointerEvents='auto';}
+  }catch(err){
+    console.error('Portal session error:',err);
+    alert('Could not connect. Please contact support@onera.app');
+    btn.textContent='Manage subscription';btn.style.pointerEvents='auto';
+  }
 }
 
 // ==================== ACTIONS ====================
@@ -2285,9 +2307,21 @@ async function doStripePay(){
 }
 
 // ==================== BOOT ====================
+// Handle ?manage=1&email=... — redirect straight to Stripe portal
+const _bootParams=new URLSearchParams(location.search);
+if(_bootParams.get('manage')==='1'){
+  const mEmail=_bootParams.get('email')||'';
+  if(mEmail){
+    document.getElementById('app').innerHTML='<div style="display:flex;align-items:center;justify-content:center;min-height:100dvh;text-align:center;padding:20px;"><p style="color:var(--text2);">Redirecting to subscription manager...</p></div>';
+    fetch(SUPABASE_URL+'/create-portal-session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:mEmail})})
+      .then(r=>r.json()).then(d=>{if(d.url)window.location.href=d.url;else{document.getElementById('app').innerHTML='<div style="display:flex;align-items:center;justify-content:center;min-height:100dvh;text-align:center;padding:20px;"><p>Could not load subscription manager.<br>Contact <a href="mailto:support@onera.app">support@onera.app</a></p></div>';}})
+      .catch(()=>{document.getElementById('app').innerHTML='<div style="display:flex;align-items:center;justify-content:center;min-height:100dvh;text-align:center;padding:20px;"><p>Connection error.<br>Contact <a href="mailto:support@onera.app">support@onera.app</a></p></div>';});
+  }
+}else{
 // URL param ALWAYS overrides session storage for cppId
-const _urlCpp=new URLSearchParams(location.search).get('cpp');
+const _urlCpp=_bootParams.get('cpp');
 if(restore()){if(_urlCpp){S.cppId=_urlCpp;S.step=0;QUIZ_QUESTIONS=getQuestions();}render();}else{render();}
+}
 </script>
 </body>
 </html>
