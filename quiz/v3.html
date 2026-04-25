@@ -2349,23 +2349,15 @@ function renderProfile(){
   const trigger = pl.trigger;
   const warningText = pl.warning;
 
-  // Q14 (idx 13) = how long (0=few weeks, 1=less than a year, 2=over a year)
-  const periodVal=S.answers.q14;
-  const period=['A few weeks','Less than a year','Over a year'][periodVal]||'Over a year';
-
-  // Q1 (idx 0) = energy level (0=often/high, 1=sometimes/medium, 2=rarely/low)
-  const energyVal=S.answers.q1;
-  const energy=energyVal===0?'Low':energyVal===1?'Medium':'Normal';
-
   const gm=new Date(new Date().getFullYear(),new Date().getMonth()+2,1).toLocaleString('en',{month:'long'});
 
   // Liven-style level mapping — Low/Normal/Medium/High gauge
   const lvlPct = sev.gaugePct; // 68-94
   const lvlLabel = sev.score>=88?'High':sev.score>=78?'Medium':sev.score>=70?'Normal':'Low';
-  // 4 stat-card values mapped from ONERA severity/energy
+  // 4 stat-card values derived from severity score (type-aware, works for all 12 CCPs)
   const survivalResp = trigger;
-  const stressResist = energy==='Low'?'Low':energy==='Medium'?'Moderate':'High';
-  const exhaustion   = energy==='Low'?'High':energy==='Medium'?'Moderate':'Low';
+  const stressResist = sev.score>=88?'Low':sev.score>=78?'Moderate':'High';
+  const exhaustion   = sev.score>=88?'High':sev.score>=78?'Moderate':'Low';
   const physicalCost = sev.score>=88?'Somatic distress':sev.score>=78?'Body armoring':'Held tension';
   const ageLbl = S.age||'35-44';
   const heroImg = `img/mirror-${S.gender==='F'?'female':'male'}-${ageLbl}.png`;
