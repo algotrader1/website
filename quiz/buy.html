@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>ONERA · Complete your plan</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1215459266956070');fbq('track','PageView');
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#faf8f4;--bg2:#fff;--bg3:#f2ece2;--text:#1a1714;--text2:#5a5349;--text3:#8a7d6f;
+  --green:#2eaa60;--green-light:#e8f5ee;--red:#dc4a4a;--orange:#d4a030;
+  --border:rgba(180,170,150,0.35);--shadow-sm:0 1px 3px rgba(90,70,40,0.06);
+  --shadow-md:0 4px 14px rgba(90,70,40,0.08);
+}
+html,body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',-apple-system,sans-serif;min-height:100vh;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{max-width:440px;margin:0 auto;padding:24px 20px 40px}
+h1{font-size:24px;font-weight:800;line-height:1.25;margin-bottom:8px}
+h2{font-size:18px;font-weight:700;margin-bottom:8px}
+.logo{font-family:'Instrument Serif',Georgia,serif;font-size:24px;font-style:italic;letter-spacing:0.5px;text-align:center;margin-bottom:16px}
+.badge-back{display:inline-block;background:var(--green-light);color:var(--green);padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:12px}
+.pain-echo{background:var(--bg2);border-left:3px solid var(--green);border-radius:8px;padding:14px 16px;margin:14px 0;font-size:13px;line-height:1.5;color:var(--text2)}
+.pain-echo strong{color:var(--text);font-weight:700}
+.plan-card{background:var(--bg2);border:1.5px solid var(--border);border-radius:16px;padding:14px 16px;margin-bottom:10px;cursor:pointer;transition:all 0.15s;position:relative;box-shadow:var(--shadow-sm)}
+.plan-card.selected{border-color:var(--green);background:var(--green-light)}
+.plan-card.popular{border-color:var(--green)}
+.plan-card.popular .plan-popular-badge{position:absolute;top:-10px;left:16px;background:var(--green);color:#fff;font-size:10px;font-weight:800;padding:3px 10px;border-radius:10px;letter-spacing:0.4px}
+.plan-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.plan-radio{width:22px;height:22px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;transition:all 0.2s;position:relative}
+.plan-card.selected .plan-radio{border-color:var(--green);background:var(--green)}
+.plan-card.selected .plan-radio::after{content:'';position:absolute;top:4px;left:4px;width:10px;height:10px;border-radius:50%;background:#fff}
+.plan-name{font-size:14px;font-weight:700}
+.btn-pay{background:var(--green);color:#fff;border:none;padding:16px;border-radius:14px;font-size:15px;font-weight:700;cursor:pointer;width:100%;margin-top:14px;box-shadow:0 4px 16px rgba(46,170,96,0.25)}
+.btn-pay:disabled{opacity:0.6;cursor:not-allowed}
+.guarantee{margin-top:14px;display:flex;align-items:center;gap:12px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
+.guarantee-text{font-size:12px;color:var(--text2);line-height:1.4}
+.guarantee-text strong{color:var(--text);font-weight:700}
+.fine{text-align:center;font-size:10px;color:var(--text3);line-height:1.5;margin-top:10px}
+.fine a{color:var(--text2)}
+#stripeBox{margin-top:16px;min-height:150px}
+.hide{display:none}
+.err{color:var(--red);font-size:12px;margin-top:6px;text-align:center}
+</style>
+</head>
+<body>
+
+<div class="logo">ONERA</div>
+
+<div style="text-align:center">
+  <span class="badge-back">Welcome back</span>
+  <h1 id="headline">Your plan is still reserved.</h1>
+  <p style="font-size:14px;color:var(--text2);margin-top:6px">Picking up where you left off — with your discount locked in.</p>
+</div>
+
+<div class="pain-echo" id="painEcho"></div>
+
+<!-- STEP 1: Plan selector -->
+<div id="planBox">
+  <h2 style="margin-top:20px;margin-bottom:10px">Choose your plan</h2>
+  <div id="plans"></div>
+  <button class="btn-pay" onclick="goPay()">Complete my plan · <span id="btnPrice">$6.93</span></button>
+  <p class="fine">After your trial, subscription auto-renews at the selected plan's price. Cancel anytime in Settings · 30-day money-back guarantee</p>
+  <div class="guarantee">
+    <svg width="28" height="28" viewBox="0 0 36 36"><circle cx="18" cy="18" r="16" fill="none" stroke="#2eaa60" stroke-width="2"/><path d="M11 18 L16 23 L25 13" stroke="#2eaa60" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+    <div class="guarantee-text"><strong>30-day money-back guarantee</strong><br>If your body doesn't feel the shift, you don't pay.</div>
+  </div>
+  <p class="fine" style="margin-top:16px"><a href="#" onclick="restore(event)">Already subscribed? Restore purchase</a></p>
+  <p class="fine"><a href="/quiz/terms.html" target="_blank">Terms</a> · <a href="/quiz/privacy.html" target="_blank">Privacy</a> · ONERA · contact@dreaminsight.app</p>
+</div>
+
+<!-- STEP 2: Stripe Payment Element -->
+<div id="payBox" class="hide">
+  <h2 style="margin-top:20px">Complete your payment</h2>
+  <div id="stripeBox"></div>
+  <button class="btn-pay" id="payBtn" onclick="doPay()">🔒 PAY NOW</button>
+  <p class="err hide" id="payErr"></p>
+  <p class="fine">Stripe secure checkout · SSL encrypted · PCI DSS Level 1</p>
+</div>
+
+<script>
+// ============================================================================
+// ONERA BUY PAGE — standalone post-quiz checkout (email link lands here)
+// URL params: ?e=email  ?c=cpp_code  ?n=name  ?t=token (for tracking)
+// ============================================================================
+
+const CPP_CODE_TO_ID={vyn:'F-1',kra:'F-2',luz:'F-3a',syr:'F-3b',nox:'F-4',aev:'F-5',rho:'M-1',tav:'M-2',zel:'M-3',pyr:'M-4',eos:'M-5',orm:'M-6'};
+
+const CPP_HEADLINES={
+  'F-1':'You\'re not broken. Your body is just frozen.',
+  'F-2':'Understanding the pattern isn\'t releasing it.',
+  'F-3a':'Your plan to break her pattern is waiting.',
+  'F-3b':'The pattern can end with you. Starting tonight.',
+  'F-4':'The dream has a message. We\'ll help you hear it.',
+  'F-5':'You\'re not empty. You\'re frozen. That can shift.',
+  'M-1':'Your invisible brake has a name. We can unblock it.',
+  'M-2':'What insight alone couldn\'t move — your body can.',
+  'M-3':'The sabotage loop ends when the emotion is released.',
+  'M-4':'The nightmare stops when the message is received.',
+  'M-5':'Feel her love again. You never stopped loving her.',
+  'M-6':'You\'re not him. The line ends with you.',
+};
+
+const CPP_PAIN={
+  'F-1':'You told us your body still can\'t feel through the numbness, even though you can name it.',
+  'F-2':'You told us you understand the pattern. You still repeat it.',
+  'F-3a':'You told us her voice still comes out of your mouth — even when you swore it wouldn\'t.',
+  'F-3b':'You told us you see the red flags and still stay.',
+  'F-4':'You told us the dream keeps coming back. Your body still doesn\'t know it\'s just a dream.',
+  'F-5':'You told us you go through the motions. Nothing registers.',
+  'M-1':'You told us you see exactly what to do. Your body still won\'t move.',
+  'M-2':'You told us you\'ve named every pattern. None of them have shifted.',
+  'M-3':'You told us you watch yourself destroy it. You can\'t stop the hand.',
+  'M-4':'You told us you\'ve woken up shaking — and pretended it didn\'t happen.',
+  'M-5':'You told us you know you love her. You still can\'t feel it.',
+  'M-6':'You told us his voice still comes out of your mouth.',
+};
+
+const SUPABASE_URL='https://cxtoofvckqllsasriczb.supabase.co/functions/v1';
+const STRIPE_PK='pk_live_51S6djfAJemVzvXE5GghjhDVe7MyxGiF9e5w1jFrydG73xdLYZe2SnoXYjgYwXaITTi5E3tTqbwlHgZYlR17X1ALw00EmILb3lM';
+
+// Parse URL params
+const p=new URLSearchParams(location.search);
+const urlCode=p.get('c')||'kra'; // default F-2 (Therapy Ceiling)
+const cppId=CPP_CODE_TO_ID[urlCode]||'F-2';
+const email=p.get('e')||'';
+const firstName=p.get('n')||'';
+
+// Facebook click attribution
+(function(){
+  const ck=document.cookie.split(';').reduce((a,c)=>{const[k,v]=c.trim().split('=');a[k]=v;return a;},{});
+  window._fbp=ck._fbp||'';
+  window._fbc=ck._fbc||(p.get('fbclid')?'fb.1.'+Date.now()+'.'+p.get('fbclid'):'');
+})();
+
+// Personalize UI
+document.getElementById('headline').innerHTML=CPP_HEADLINES[cppId]||CPP_HEADLINES['F-2'];
+document.getElementById('painEcho').innerHTML=`<strong>Your plan is held for this email.</strong><br>${CPP_PAIN[cppId]||CPP_PAIN['F-2']}`;
+
+// Plans (same pricing as quiz paywall)
+const PLANS=[
+  {name:'7-DAY TRIAL',orig:'$17.77',price:'$6.93',sel:0,popular:true,priceNum:6.93,key:'trial'},
+  {name:'4-WEEK PLAN',orig:'$38.95',price:'$15.19',sel:1,priceNum:15.19,key:'4week'},
+  {name:'12-WEEK PLAN',orig:'$66.65',price:'$25.99',sel:2,priceNum:25.99,key:'12week'},
+];
+let selectedPlan=0;
+function renderPlans(){
+  document.getElementById('plans').innerHTML=PLANS.map(p=>`
+    <div class="plan-card ${p.popular?'popular':''} ${selectedPlan===p.sel?'selected':''}" onclick="selPlan(${p.sel})">
+      ${p.popular?'<div class="plan-popular-badge">★ MOST POPULAR</div>':''}
+      <div class="plan-row">
+        <div style="display:flex;align-items:center;gap:12px">
+          <div class="plan-radio"></div>
+          <div>
+            <div class="plan-name">${p.name}</div>
+            <div style="font-size:11px;color:var(--text3);margin-top:2px"><span style="text-decoration:line-through">${p.orig}</span> <span style="color:var(--green);font-weight:600">${p.price}</span></div>
+          </div>
+        </div>
+        <div style="font-size:22px;font-weight:800">${p.price}</div>
+      </div>
+    </div>`).join('');
+  document.getElementById('btnPrice').textContent=PLANS[selectedPlan].price;
+}
+function selPlan(i){selectedPlan=i;renderPlans();}
+renderPlans();
+fbq('track','ViewContent',{content_name:'buy_page',cpp:cppId});
+
+// Stripe init
+window._stripe=Stripe(STRIPE_PK);
+
+async function goPay(){
+  if(!email){alert('Missing email in URL. Please use the link from your email.');return;}
+  document.getElementById('planBox').classList.add('hide');
+  document.getElementById('payBox').classList.remove('hide');
+  window.scrollTo({top:0,behavior:'smooth'});
+  fbq('track','InitiateCheckout',{value:PLANS[selectedPlan].priceNum,currency:'USD'});
+  try{
+    const r=await fetch(SUPABASE_URL+'/create-payment-intent',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        email, cpp:cppId, gender:cppId.startsWith('F')?'F':'M',
+        plan:PLANS[selectedPlan].key,
+        first_name:firstName,
+        fbp:window._fbp||'', fbc:window._fbc||'',
+        source:'buy_page_email'
+      })
+    });
+    const d=await r.json();
+    if(!d.clientSecret)throw new Error(d.error||'Failed to create payment');
+    window._lastPiId=d.clientSecret.split('_secret_')[0];
+    window._stripeElements=window._stripe.elements({clientSecret:d.clientSecret,appearance:{theme:'stripe',variables:{colorPrimary:'#2eaa60',colorBackground:'#ffffff',colorText:'#1a1714',colorDanger:'#dc4a4a',borderRadius:'12px',fontFamily:'Plus Jakarta Sans,sans-serif'}}});
+    const pe=window._stripeElements.create('payment',{layout:'tabs',paymentMethodOrder:['apple_pay','link','card']});
+    pe.mount('#stripeBox');
+  }catch(e){
+    console.error(e);
+    showErr(e.message||'Payment failed to load. Please try again.');
+  }
+}
+
+async function doPay(){
+  const btn=document.getElementById('payBtn'); btn.disabled=true; btn.textContent='Processing…';
+  try{
+    const {error}=await window._stripe.confirmPayment({
+      elements:window._stripeElements,
+      confirmParams:{return_url:location.origin+'/quiz/thank-you.html?e='+encodeURIComponent(email)+'&c='+urlCode},
+    });
+    if(error){showErr(error.message);btn.disabled=false;btn.textContent='🔒 PAY NOW';return;}
+    // success handled on return_url; also fire purchase event here for safety
+    fbq('track','Purchase',{value:PLANS[selectedPlan].priceNum,currency:'USD',content_name:cppId,eventID:window._lastPiId});
+  }catch(e){showErr(e.message||'Payment error.');btn.disabled=false;btn.textContent='🔒 PAY NOW';}
+}
+function showErr(m){const el=document.getElementById('payErr');el.classList.remove('hide');el.textContent=m;}
+
+async function restore(e){
+  e.preventDefault();
+  const em=prompt('Enter the email of your subscription:',email||'');
+  if(!em)return;
+  try{
+    const r=await fetch(SUPABASE_URL+'/create-portal-session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em})});
+    const d=await r.json();
+    if(d.url)location.href=d.url;
+    else alert(d.error||'Could not open subscription manager. Please contact support@onera.app');
+  }catch(err){alert('Network error.');}
+}
+</script>
+</body>
+</html>
