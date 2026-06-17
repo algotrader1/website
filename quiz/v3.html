@@ -1531,6 +1531,8 @@ let S = {
 const CODE_TO_CPP={vyn:'F-1',kra:'F-2',luz:'F-3a',syr:'F-3b',nox:'F-4',aev:'F-5',rho:'M-1',tav:'M-2',zel:'M-3',pyr:'M-4',eos:'M-5',orm:'M-6'};
 (function(){
   const p=new URLSearchParams(location.search);
+  // Capture payment-return params BEFORE the URL gets cleaned below (Apple Pay redirect)
+  window._payReturn={status:(p.get('redirect_status')||(p.get('success')==='1'?'succeeded':'')),pi:p.get('payment_intent')||''};
   const code=p.get('c');
   const rawCpp=p.get('cpp');
   S.cppId=(code&&CODE_TO_CPP[code])||rawCpp||null;
@@ -3476,6 +3478,21 @@ function dismissDownsell(){
   S.step=getQEnd()+13;
   render();
 }
+function completePaymentReturn(piId){
+  try{QUIZ_QUESTIONS=getQuestions();recomputeTotalQ();}catch(e){}
+  const _sp=S.selectedPlan||0;
+  const paidAmount=S.discountExpired?[17.77,38.95,66.65][_sp]:[6.93,15.19,25.99][_sp];
+  try{fbq('track','Purchase',{value:paidAmount,currency:'USD',content_name:S.cppId,eventID:piId||('pur_'+Date.now())});}catch(e){}
+  try{logMABEvent('purchase',{amount:paidAmount,plan:_sp});}catch(e){}
+  try{trackFlush(false,{purchased:true,purchase_amount:paidAmount});}catch(e){}
+  // Show the success screen IMMEDIATELY — never block the user on the backend
+  S.step=getQEnd()+14;render();
+  // Create the account + fetch deeplink in the background; update the screen when it lands
+  try{
+    const planKey=S.discountExpired?['trial_full','4week_full','12week_full'][_sp]:['trial','4week','12week'][_sp];
+    fetch(SUPABASE_URL+'/quiz-success',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({payment_intent_id:piId,email:S.email,name:S.name,cpp:S.cppId||'F-1',gender:S.gender||'F',plan:planKey})}).then(r=>r.json()).then(sd=>{if(sd&&sd.deeplink){S.deeplink=sd.deeplink;try{render();}catch(e){}}}).catch(e=>console.error('quiz-success bg failed:',e));
+  }catch(e){}
+}
 function fmt(s){const m=Math.floor(s/60);const sc=s%60;return m+':'+(sc<10?'0':'')+sc;}
 
 async function doStripePay(){
@@ -3493,6 +3510,8 @@ async function doStripePay(){
     // Confirm payment with the already-mounted Stripe Elements
     if(!window._stripe||!window._stripeElements){throw new Error('Payment not loaded. Please refresh.');}
 
+    // Persist state so it survives an Apple Pay redirect round-trip
+    try{S._pendingPi=window._lastPiId;save();}catch(e){}
     const {error}=await window._stripe.confirmPayment({
       elements:window._stripeElements,
       confirmParams:{
@@ -3525,7 +3544,7 @@ async function doStripePay(){
       fbq('track','Purchase',{value:paidAmount,currency:'USD',content_name:S.cppId,eventID:p_eid});
       logMABEvent('purchase',{amount:paidAmount,plan:S.selectedPlan});
       try{trackFlush(false,{purchased:true,purchase_amount:paidAmount});}catch(e){}
-      S.step=getQEnd()+13;render();
+      S.step=getQEnd()+14;render();
     }
   }catch(e){
     console.error(e);
@@ -3550,7 +3569,9 @@ if(_bootParams.get('manage')==='1'){
 const _urlCpp=_bootParams.get('cpp');
 const _urlCode=_bootParams.get('c');
 const _resolvedCpp=(_urlCode&&CODE_TO_CPP[_urlCode])||_urlCpp||null;
-if(restore()){if(_resolvedCpp){S.cppId=_resolvedCpp;S.step=0;QUIZ_QUESTIONS=getQuestions();recomputeTotalQ();}render();}else{render();}
+const _payRet=(window._payReturn&&window._payReturn.status)||_bootParams.get('redirect_status')||(_bootParams.get('success')==='1'?'succeeded':'');
+if(_payRet==='succeeded'){restore();if(_resolvedCpp)S.cppId=_resolvedCpp;completePaymentReturn((window._payReturn&&window._payReturn.pi)||_bootParams.get('payment_intent')||S._pendingPi||'');}
+else if(restore()){if(_resolvedCpp){S.cppId=_resolvedCpp;S.step=0;QUIZ_QUESTIONS=getQuestions();recomputeTotalQ();}render();}else{render();}
 }
 </script>
 </body>
