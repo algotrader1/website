@@ -1370,7 +1370,7 @@ const CPP_QUIZ = {
     {type:'yesno3',text:'Do you freeze when the stakes get real?'},
     {type:'yesno3',text:'Have you disappointed yourself more than you\'ve disappointed others?'},
     {type:'yesno3',text:'Do you know exactly what\'s blocking you but can\'t name why?'},
-    {type:'multi',text:'Which of these do you reach for to avoid starting?',sub:'Choose all that apply',opts:['Phone / social media','News / YouTube / podcasts','Snacks / vape / caffeine','Other people\'s emergencies','Cleaning / organizing something that doesn\'t matter','Gym / exercise (as procrastination)','Porn / gaming','None of these'],optEmojis:['📱','📺','🍫','🚨','🧹','💪','🎮','🚫']},
+    {type:'multi',text:'Which of these do you reach for to avoid starting?',sub:'Choose all that apply',opts:['Phone / social media','News / YouTube / podcasts','Snacks / vape / caffeine','Other people\'s emergencies','Cleaning / organizing something that doesn\'t matter','Gym / exercise (as procrastination)','Porn / gaming','None of these'],optEmojis:['📱','📺','🍫','🚨','🧹','💪','🎮','🚫'],recallKey:'coping'},
     {type:'yesno3',text:'Has someone told you "you have so much potential"?'},
     {type:'yesno3',text:'Does the gap between what you know and what you do feel painful?'},
     {type:'yesno3',text:'Do you feel behind in your own life?'},
@@ -2069,7 +2069,7 @@ function toggleMulti(qIdx,optIdx){
   document.querySelectorAll('.multi-opt').forEach(c=>{c.classList.toggle('selected',sel.includes(parseInt(c.dataset.idx)));});
   const btn=document.getElementById('multiBtn');if(btn)btn.disabled=sel.length===0;
 }
-function submitMulti(qIdx){const qKey='q'+getVisibleQNum(qIdx);const sel=S.selectedMulti['m_'+qIdx]||[];S.answers[qKey]=sel;fbq('trackCustom','QuizAnswer',{question:qKey});try{trackAnswer(qKey,getVisibleQNum(qIdx),'multi',JSON.stringify(sel),sel.join('|'));}catch(e){}go();}
+function submitMulti(qIdx){const qKey='q'+getVisibleQNum(qIdx);const sel=S.selectedMulti['m_'+qIdx]||[];S.answers[qKey]=sel;const _q=(typeof QUIZ_QUESTIONS!=='undefined')?QUIZ_QUESTIONS[qIdx]:null;if(_q&&_q.recallKey){S.recall=S.recall||{};S.recall[_q.recallKey]=sel.map(i=>({label:(_q.opts||[])[i],emoji:(_q.optEmojis||[])[i]||''})).filter(x=>x.label&&x.label!=='None of these');}fbq('trackCustom','QuizAnswer',{question:qKey});try{trackAnswer(qKey,getVisibleQNum(qIdx),'multi',JSON.stringify(sel),sel.join('|'));}catch(e){}go();}
 
 // FIX 1: Email/Name submit functions for in-quiz questions
 function submitEmailQ(qIdx){const i=document.getElementById('emailInput');const e=i?i.value.trim().toLowerCase():'';if(e&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){S.email=e;S.answers['q'+getVisibleQNum(qIdx)]=e;sessionStorage.setItem('onera_quiz_email',e);fbq('trackCustom','QuizEmailCapture',{});logMABEvent('quiz_complete',{email_hash:e.length});try{trackAnswer('email',getVisibleQNum(qIdx),'email',null,'[captured]');trackFlush(false,{});}catch(err){}go();}else{if(i){i.style.borderColor='var(--red)';i.focus();}const err=document.getElementById('emailError');if(!err){const p=document.createElement('p');p.id='emailError';p.style.cssText='color:var(--red);font-size:12px;margin-top:4px;';p.textContent='Please enter a valid email address';i.parentNode.insertBefore(p,i.nextSibling);}}}
@@ -2346,6 +2346,15 @@ function renderProfile(){
   const ageLbl = S.age||'35-44';
   const heroImg = `img/mirror-${S.gender==='F'?'female':'male'}-${ageLbl}.png`;
 
+  // Recall the user's own coping mechanisms — prominent, in their own words
+  const _coping = (S.recall&&S.recall.coping)||[];
+  const copingBlock = _coping.length ? `
+    <div style="background:#fff4ed;border:1px solid #f3d3c0;border-radius:18px;padding:18px 18px 16px;">
+      <div style="font-size:12px;color:#c0653f;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:14px;">What you reach for to cope</div>
+      <div style="display:flex;flex-wrap:wrap;gap:9px;">${_coping.map(c=>`<div style="display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #f0ddd0;border-radius:999px;padding:11px 16px;"><span style="font-size:24px;line-height:1;">${c.emoji}</span><span style="font-size:16px;font-weight:800;color:var(--text);">${c.label}</span></div>`).join('')}</div>
+      <div style="font-size:13px;color:var(--text2);margin-top:14px;line-height:1.55;">These aren't the problem — they're how you avoid <strong>${trigger.toLowerCase()}</strong>. ONERA targets the cause, not the coping.</div>
+    </div>` : '';
+
   app.innerHTML=`
   <div class="screen active q-screen" style="padding-top:8px;gap:14px;">
     <!-- HERO IMAGE with TITLE OVERLAY + GAUGE AT BOTTOM (Liven-style) -->
@@ -2369,6 +2378,7 @@ function renderProfile(){
       <div style="background:#fff;border-radius:10px;width:36px;height:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px;">⚠️</div>
       <div style="font-size:13px;color:var(--text);line-height:1.55;"><strong>${lvlLabel.toUpperCase()} · ${sev.score}%</strong> — ${warningText} Your body may be carrying what your mind can't release, locking you into a cycle that is extremely difficult to break free from through willpower alone.</div>
     </div>
+    ${copingBlock}
     <!-- 2x2 stat cards (Fluent 3D emoji icons) -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
       <div style="background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:12px 14px;display:flex;align-items:center;gap:10px;"><div style="font-size:28px;line-height:1;">🧩</div><div style="flex:1;min-width:0;"><div style="font-size:11px;color:var(--text3);font-weight:600;">Survival response</div><div style="font-size:14px;font-weight:800;color:var(--text);line-height:1.2;margin-top:2px;">${survivalResp}</div></div></div>
@@ -3410,7 +3420,7 @@ function goCheckout(){
 function showDownsellPopup(){
   // Remove any previous popup
   const existing=document.getElementById('downsellPopup'); if(existing) existing.remove();
-  const discountedYear=19.29; // 71% off $66.65
+  const discountedYear=25.99; // 61% off $66.65 — matches paywall + checkout 12-week price
   const popup=document.createElement('div');
   popup.id='downsellPopup';
   popup.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,0.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:500;display:flex;align-items:center;justify-content:center;padding:20px;animation:dsFadeIn 0.25s ease;';
@@ -3420,10 +3430,10 @@ function showDownsellPopup(){
       <div style="font-size:15px;color:var(--text2);font-weight:500;margin-bottom:8px;">Special offer</div>
       <h3 style="font-size:22px;font-weight:800;line-height:1.25;margin-bottom:20px;color:var(--text);">Upgrade to 12-WEEK PLAN and save</h3>
 
-      <!-- Ticket with 71% off -->
+      <!-- Ticket with 61% off -->
       <div style="position:relative;margin-bottom:20px;">
         <div style="background:#e8f5ea;border-radius:16px;padding:22px;display:flex;align-items:center;justify-content:center;gap:4px;">
-          <span style="font-size:64px;font-weight:800;color:var(--green);line-height:1;letter-spacing:-2px;">71</span>
+          <span style="font-size:64px;font-weight:800;color:var(--green);line-height:1;letter-spacing:-2px;">61</span>
           <div style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.1;margin-left:2px;"><span style="font-size:22px;font-weight:800;color:var(--green);">%</span><span style="font-size:18px;font-weight:700;color:var(--green);">off</span></div>
         </div>
         <!-- notches -->
