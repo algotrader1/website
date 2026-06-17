@@ -3403,7 +3403,7 @@ function goCheckout(){
     return;
   }
   console.log('[goCheckout] S.selectedPlan =',S.selectedPlan,'planKey will be:',S.discountExpired?['trial_full','4week_full','12week_full'][S.selectedPlan]:['trial','4week','12week'][S.selectedPlan]);
-  S.step=getQEnd()+12; // Checkout step
+  S.step=getQEnd()+13; // Checkout step
   render();
 }
 
@@ -3455,7 +3455,7 @@ function claimDownsell(){
   });
   const p=document.getElementById('downsellPopup'); if(p) p.remove();
   try{fbq('trackCustom','Downsell_Claimed',{to_plan:'12week'});}catch(e){}
-  S.step=getQEnd()+12;
+  S.step=getQEnd()+13;
   render();
 }
 
@@ -3463,7 +3463,7 @@ function dismissDownsell(){
   const p=document.getElementById('downsellPopup'); if(p) p.remove();
   try{fbq('trackCustom','Downsell_Dismissed',{kept_plan:'7day'});}catch(e){}
   // Proceed with original 7-day trial
-  S.step=getQEnd()+12;
+  S.step=getQEnd()+13;
   render();
 }
 function fmt(s){const m=Math.floor(s/60);const sc=s%60;return m+':'+(sc<10?'0':'')+sc;}
