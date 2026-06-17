@@ -1914,10 +1914,10 @@ function renderInterstitial(q,qIdx){
   if(q.subtype==='glad_welcome'){
     h=`<div class="screen active q-screen" style="padding-top:8px;gap:20px;align-items:center;text-align:center;">
       <div style="width:100%;aspect-ratio:1/1;max-width:420px;border-radius:24px;overflow:hidden;background:linear-gradient(180deg,#7fb3d9 0%,#a9cde4 55%,#c8dcec 100%);display:flex;align-items:center;justify-content:center;position:relative;">
-        <img src="img/glad-welcome.png" style="width:78%;height:auto;filter:drop-shadow(0 14px 30px rgba(0,0,0,0.18));" alt="">
+        <img src="img/glad-welcome.png" style="width:100%;height:100%;object-fit:cover;" alt="">
       </div>
       <h2 style="font-size:24px;font-weight:800;line-height:1.25;max-width:340px;">We're glad you are here</h2>
-      <p style="font-size:15px;color:var(--text2);max-width:340px;line-height:1.5;">This journey is intended to help you better understand your patterns and structure your experiences.<br><br>We recommend to treat this quiz as a moment of <strong>honest reflection</strong>.</p>
+      <p style="font-size:16px;color:var(--text2);max-width:340px;line-height:1.5;">The more <strong>honest</strong> you are, the more powerful your results.</p>
       <p style="font-size:11px;color:var(--text3);max-width:340px;line-height:1.55;margin-top:12px;font-style:normal;">ONERA is not intended to replace professional diagnosis, treatment, or therapy. Everyone's experience is unique, and results may vary. If you're experiencing medical or mental health concerns, please reach out to a licensed healthcare professional.</p>
       <button class="btn-continue" onclick="advanceInterstitial(${qIdx})" style="max-width:340px;width:100%;margin-top:8px;">Continue</button>
     </div>`;
