@@ -2816,10 +2816,10 @@ function renderPaywall(){
   const withoutHTML=(INS.withoutItems||PW.without||[]).slice(0,6).map(t=>`<div style="display:flex;align-items:center;gap:12px;padding:8px 0;"><svg viewBox="0 0 22 22" width="22" height="22"><circle cx="11" cy="11" r="10" fill="#eb6e4a"/><path d="M7.5 7.5 L14.5 14.5 M14.5 7.5 L7.5 14.5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg><span style="font-size:15px;color:var(--text);">${t}</span></div>`).join('');
   const withHTML=PW.withPlan.slice(0,6).map(t=>`<div style="display:flex;align-items:center;gap:12px;padding:8px 0;"><svg viewBox="0 0 22 22" width="22" height="22"><circle cx="11" cy="11" r="10" fill="var(--green)"/><path d="M6.5 11 L9.5 14 L15 8" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:15px;color:var(--text);">${t}</span></div>`).join('');
 
-  // Testimonials with photos (reuse mirror portraits)
+  // Testimonials with photos (dedicated AI user faces — distinct from persona mirror portraits)
   const TESTI_PHOTOS = g==='female'
-    ? ['img/mirror-female-55-64.png','img/mirror-female-45-54.png','img/mirror-female-25-34.png']
-    : ['img/mirror-male-55-64.png','img/mirror-male-45-54.png','img/mirror-male-25-34.png'];
+    ? ['img/testi-female-1-older.jpg','img/testi-female-2-mid.jpg','img/testi-female-3-young.jpg']
+    : ['img/testi-male-1-older.jpg','img/testi-male-2-mid.jpg','img/testi-male-3-young.jpg'];
   const TESTI_NAMES = g==='female' ? ['Sarah J.','Emma R.','Lily M.'] : ['Mark T.','Nick H.','David C.'];
   const testiHTML=PW.testimonials.slice(0,3).map((t,i)=>{
     const firstSentence = t.t.split('.')[0]+'.';
