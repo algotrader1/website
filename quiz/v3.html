@@ -3502,7 +3502,9 @@ function completePaymentReturn(piId){
   try{QUIZ_QUESTIONS=getQuestions();recomputeTotalQ();}catch(e){}
   const _sp=S.selectedPlan||0;
   const paidAmount=S.discountExpired?[17.77,38.95,66.65][_sp]:[6.93,15.19,25.99][_sp];
-  try{fbq('track','Purchase',{value:paidAmount,currency:'USD',content_name:S.cppId,eventID:piId||('pur_'+Date.now())});}catch(e){}
+  const p_eid=piId||('pur_'+Date.now());
+  try{fbq('track','Purchase',{value:paidAmount,currency:'USD',content_name:S.cppId,eventID:p_eid});}catch(e){}
+  try{sendCAPI('Purchase',p_eid,{value:paidAmount,currency:'USD',content_name:S.cppId});}catch(e){}
   try{logMABEvent('purchase',{amount:paidAmount,plan:_sp});}catch(e){}
   try{trackFlush(false,{purchased:true,purchase_amount:paidAmount});}catch(e){}
   // Show the success screen IMMEDIATELY — never block the user on the backend
