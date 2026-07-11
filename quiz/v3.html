@@ -1527,6 +1527,26 @@ let S = {
   if(!S.fbc&&fbclid)S.fbc='fb.1.'+Date.now()+'.'+fbclid;
   console.log('[Meta cookies] fbp=',S.fbp,'fbc=',S.fbc);
 })();
+// Server-side Conversions API — mirrors the client pixel with the SAME event_id (dedup).
+// Fires alongside fbq so events survive ad-blockers / Brave / iOS ITP.
+async function sendCAPI(eventName,eventId,customData){
+  try{
+    await fetch(SUPABASE_URL+'/meta-capi',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      keepalive:true,
+      body:JSON.stringify({
+        event_name:eventName,
+        event_id:eventId,
+        event_time:Math.floor(Date.now()/1000),
+        event_source_url:location.href,
+        action_source:'website',
+        user_data:{email:S.email||undefined,first_name:S.firstName||S.name||undefined,fbp:S.fbp||undefined,fbc:S.fbc||undefined},
+        custom_data:customData||{}
+      })
+    });
+  }catch(e){console.warn('[CAPI] send failed',e);}
+}
 // Opaque code → CPP mapping (used in ads URLs — never expose cpp=F-1 style in public)
 const CODE_TO_CPP={vyn:'F-1',kra:'F-2',luz:'F-3a',syr:'F-3b',nox:'F-4',aev:'F-5',rho:'M-1',tav:'M-2',zel:'M-3',pyr:'M-4',eos:'M-5',orm:'M-6'};
 (function(){
@@ -3506,6 +3526,7 @@ async function doStripePay(){
     window._lastInitiateCheckoutId=ic_eid;
     const _icAmount=S.discountExpired?[17.77,38.95,66.65][S.selectedPlan]:[6.93,15.19,25.99][S.selectedPlan];
     fbq('track','InitiateCheckout',{value:_icAmount,currency:'USD',content_name:S.cppId,eventID:ic_eid});
+    sendCAPI('InitiateCheckout',ic_eid,{value:_icAmount,currency:'USD',content_name:S.cppId});
 
     // Confirm payment with the already-mounted Stripe Elements
     if(!window._stripe||!window._stripeElements){throw new Error('Payment not loaded. Please refresh.');}
@@ -3542,6 +3563,7 @@ async function doStripePay(){
       // Event ID = Stripe PI id (same ID will be sent server-side via CAPI for dedup)
       const p_eid=(window._lastPiId||('pur_'+Date.now()+'_'+Math.random().toString(36).slice(2,8)));
       fbq('track','Purchase',{value:paidAmount,currency:'USD',content_name:S.cppId,eventID:p_eid});
+      sendCAPI('Purchase',p_eid,{value:paidAmount,currency:'USD',content_name:S.cppId});
       logMABEvent('purchase',{amount:paidAmount,plan:S.selectedPlan});
       try{trackFlush(false,{purchased:true,purchase_amount:paidAmount});}catch(e){}
       S.step=getQEnd()+14;render();
