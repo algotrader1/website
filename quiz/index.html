@@ -1612,6 +1612,8 @@ function render(){
   const pc=document.getElementById('progressCount');
 
   const Q_END=getQEnd();
+  // Step-view tracking — logs each step render once per step (drop-off analysis)
+  try{if(window._lastStepLogged!==S.step){window._lastStepLogged=S.step;const _qv=(S.step>=Q_START&&S.step<=Q_END)?('q'+getVisibleQNum(S.step-Q_START)):null;logMABEvent('step_view',{step:S.step,q:_qv,post:S.step>Q_END?(S.step-Q_END):null});}}catch(e){}
   // Progress bar structural elements (bar bg + counter) — toggled per-step
   const pbg=pw?pw.querySelector('.progress-bar-bg'):null;
   if(S.step>=Q_START&&S.step<=Q_END){
