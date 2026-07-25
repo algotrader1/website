@@ -13,6 +13,12 @@
 fbq('init', '998795362922900');
 fbq('track', 'PageView');
 </script>
+<script>
+// TikTok Pixel — DORMANT tant que TT_PIXEL_ID est vide. Renseigner l'ID (TikTok Ads Manager > Events > Web Pixel) pour activer.
+var TT_PIXEL_ID='';
+window.ttk=function(ev,params){try{if(TT_PIXEL_ID&&window.ttq){window.ttq.track(ev,params||{});}}catch(e){}};
+if(TT_PIXEL_ID){!function (w, d, t) {w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)}}(window, document, 'ttq');ttq.load(TT_PIXEL_ID);ttq.page();}
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{
@@ -1674,7 +1680,7 @@ function render(){
       <p class="landing-legal">By clicking Male or Female you agree with our <a href="/quiz/terms.html" target="_blank" rel="noopener">Terms of Service</a> and <a href="/quiz/privacy.html" target="_blank" rel="noopener">Privacy Policy</a></p>
       <p style="margin:32px auto 12px;max-width:340px;font-size:10px;line-height:1.5;color:var(--text3);text-align:center;">In crisis? Text <strong>HOME</strong> to <strong>741741</strong> or call <strong>988</strong> (US) · <a href="https://findahelpline.com" target="_blank" rel="noopener" style="color:var(--text3);text-decoration:underline;">findahelpline.com</a></p>
     </div>`;
-    fbq('track','ViewContent',{content_name:'quiz_landing',cpp:S.cppId||'fallback_'+(window._FALLBACK?.id||'C')});
+    fbq('track','ViewContent',{content_name:'quiz_landing',cpp:S.cppId||'fallback_'+(window._FALLBACK?.id||'C')});try{ttk('ViewContent')}catch(e){}
     logMABEvent('impression');
     return;
   }
@@ -2097,7 +2103,7 @@ function toggleMulti(qIdx,optIdx){
 function submitMulti(qIdx){const qKey='q'+getVisibleQNum(qIdx);const sel=S.selectedMulti['m_'+qIdx]||[];S.answers[qKey]=sel;const _q=(typeof QUIZ_QUESTIONS!=='undefined')?QUIZ_QUESTIONS[qIdx]:null;if(_q&&_q.recallKey){S.recall=S.recall||{};S.recall[_q.recallKey]=sel.map(i=>({label:(_q.opts||[])[i],emoji:(_q.optEmojis||[])[i]||''})).filter(x=>x.label&&x.label!=='None of these');}fbq('trackCustom','QuizAnswer',{question:qKey});try{trackAnswer(qKey,getVisibleQNum(qIdx),'multi',JSON.stringify(sel),sel.join('|'));}catch(e){}go();}
 
 // FIX 1: Email/Name submit functions for in-quiz questions
-function submitEmailQ(qIdx){const i=document.getElementById('emailInput');const e=i?i.value.trim().toLowerCase():'';if(e&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){S.email=e;S.answers['q'+getVisibleQNum(qIdx)]=e;sessionStorage.setItem('onera_quiz_email',e);fbq('trackCustom','QuizEmailCapture',{});logMABEvent('quiz_complete',{email_hash:e.length});try{trackAnswer('email',getVisibleQNum(qIdx),'email',null,'[captured]');trackFlush(false,{});}catch(err){}go();}else{if(i){i.style.borderColor='var(--red)';i.focus();}const err=document.getElementById('emailError');if(!err){const p=document.createElement('p');p.id='emailError';p.style.cssText='color:var(--red);font-size:12px;margin-top:4px;';p.textContent='Please enter a valid email address';i.parentNode.insertBefore(p,i.nextSibling);}}}
+function submitEmailQ(qIdx){const i=document.getElementById('emailInput');const e=i?i.value.trim().toLowerCase():'';if(e&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){S.email=e;S.answers['q'+getVisibleQNum(qIdx)]=e;sessionStorage.setItem('onera_quiz_email',e);fbq('trackCustom','QuizEmailCapture',{});try{ttk('CompleteRegistration')}catch(e){}logMABEvent('quiz_complete',{email_hash:e.length});try{trackAnswer('email',getVisibleQNum(qIdx),'email',null,'[captured]');trackFlush(false,{});}catch(err){}go();}else{if(i){i.style.borderColor='var(--red)';i.focus();}const err=document.getElementById('emailError');if(!err){const p=document.createElement('p');p.id='emailError';p.style.cssText='color:var(--red);font-size:12px;margin-top:4px;';p.textContent='Please enter a valid email address';i.parentNode.insertBefore(p,i.nextSibling);}}}
 function submitNameQ(qIdx){
   const i=document.getElementById('nameInput');
   const n=i?i.value.trim():'';
@@ -3511,7 +3517,7 @@ function completePaymentReturn(piId){
   const _sp=S.selectedPlan||0;
   const paidAmount=S.discountExpired?[17.77,38.95,66.65][_sp]:[6.93,15.19,25.99][_sp];
   const p_eid=piId||('pur_'+Date.now());
-  try{fbq('track','Purchase',{value:paidAmount,currency:'USD',content_name:S.cppId,eventID:p_eid});}catch(e){}
+  try{fbq('track','Purchase',{value:paidAmount,currency:'USD',content_name:S.cppId,eventID:p_eid});}catch(e){}try{ttk('CompletePayment',{value:paidAmount,currency:'USD'})}catch(e){}
   try{sendCAPI('Purchase',p_eid,{value:paidAmount,currency:'USD',content_name:S.cppId});}catch(e){}
   try{logMABEvent('purchase',{amount:paidAmount,plan:_sp});}catch(e){}
   try{trackFlush(false,{purchased:true,purchase_amount:paidAmount});}catch(e){}
@@ -3535,7 +3541,7 @@ async function doStripePay(){
     const ic_eid='ic_'+Date.now()+'_'+Math.random().toString(36).slice(2,8);
     window._lastInitiateCheckoutId=ic_eid;
     const _icAmount=S.discountExpired?[17.77,38.95,66.65][S.selectedPlan]:[6.93,15.19,25.99][S.selectedPlan];
-    fbq('track','InitiateCheckout',{value:_icAmount,currency:'USD',content_name:S.cppId,eventID:ic_eid});
+    fbq('track','InitiateCheckout',{value:_icAmount,currency:'USD',content_name:S.cppId,eventID:ic_eid});try{ttk('InitiateCheckout',{value:_icAmount,currency:'USD'})}catch(e){}
     sendCAPI('InitiateCheckout',ic_eid,{value:_icAmount,currency:'USD',content_name:S.cppId});
 
     // Confirm payment with the already-mounted Stripe Elements
@@ -3572,7 +3578,7 @@ async function doStripePay(){
       const paidAmount=S.discountExpired?[17.77,38.95,66.65][S.selectedPlan]:[6.93,15.19,25.99][S.selectedPlan];
       // Event ID = Stripe PI id (same ID will be sent server-side via CAPI for dedup)
       const p_eid=(window._lastPiId||('pur_'+Date.now()+'_'+Math.random().toString(36).slice(2,8)));
-      fbq('track','Purchase',{value:paidAmount,currency:'USD',content_name:S.cppId,eventID:p_eid});
+      fbq('track','Purchase',{value:paidAmount,currency:'USD',content_name:S.cppId,eventID:p_eid});try{ttk('CompletePayment',{value:paidAmount,currency:'USD'})}catch(e){}
       sendCAPI('Purchase',p_eid,{value:paidAmount,currency:'USD',content_name:S.cppId});
       logMABEvent('purchase',{amount:paidAmount,plan:S.selectedPlan});
       try{trackFlush(false,{purchased:true,purchase_amount:paidAmount});}catch(e){}
