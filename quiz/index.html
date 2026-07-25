@@ -486,7 +486,7 @@ window.addEventListener('pagehide',()=>trackFlush(true));
 window.addEventListener('beforeunload',()=>trackFlush(true));
 
 const CPP_LANDING = {
-  'F-1': {headline:'RECONNECT WITH<br>YOUR BODY', sub:'Get your personalized body reconnection plan'},
+  'F-1': {headline:'YOU DIDN\'T BREAK.<br>YOU LEFT YOURSELF', sub:'That dream you keep having knows where you went. Decode it — and find your way back.'},
   'F-2': {headline:'RELEASE WHAT<br>TALK THERAPY CAN\'T', sub:'Get your personalized somatic release plan'},
   'F-3a': {headline:'HEAL YOUR<br>MOTHER WOUND', sub:'Get your personalized generational healing plan'},
   'F-3b': {headline:'HEAL YOUR<br>ATTACHMENT PATTERN', sub:'Get your personalized relationship healing plan'},
@@ -1670,6 +1670,7 @@ function render(){
           <div class="g-label">Female <span style="font-size:18px;opacity:0.7;">›</span></div>
         </div>
       </div>
+      <p style="text-align:center;font-size:12px;color:var(--text3);margin:2px 0 8px;">We ask because women’s and men’s bodies hold emotion differently.</p>
       <p class="landing-legal">By clicking Male or Female you agree with our <a href="/quiz/terms.html" target="_blank" rel="noopener">Terms of Service</a> and <a href="/quiz/privacy.html" target="_blank" rel="noopener">Privacy Policy</a></p>
       <p style="margin:32px auto 12px;max-width:340px;font-size:10px;line-height:1.5;color:var(--text3);text-align:center;">In crisis? Text <strong>HOME</strong> to <strong>741741</strong> or call <strong>988</strong> (US) · <a href="https://findahelpline.com" target="_blank" rel="noopener" style="color:var(--text3);text-decoration:underline;">findahelpline.com</a></p>
     </div>`;
@@ -2957,6 +2958,7 @@ function renderPaywall(){
         </div>
       </div>
 
+      ${(CPP_PAYWALL[S.cppId]&&CPP_PAYWALL[S.cppId].title)?('<div style="text-align:center;margin:22px 0 4px;"><h1 style="font-size:30px;font-weight:800;line-height:1.2;color:var(--text);">'+CPP_PAYWALL[S.cppId].title+'</h1><p style="font-size:15px;color:var(--text2);margin-top:8px;line-height:1.5;">'+(CPP_PAYWALL[S.cppId].sub||'')+'</p></div>'):''}
       <!-- === SECTION A: HEADLINE === -->
       <h1 style="font-size:26px;font-weight:800;text-align:center;line-height:1.25;margin:18px 0 20px;color:var(--text);">Your <span style="color:var(--green);">${PM.plan}</span> for ${segmentLabel} is ready!</h1>
 
@@ -2982,6 +2984,7 @@ function renderPaywall(){
         </div>
       </div>
 
+      <p style="text-align:center;font-size:12.5px;color:var(--text3);margin:-6px 0 12px;">61% off is our introductory price for new members — it ends when the timer does.</p>
       <!-- === SECTION C: SURVIVAL RESPONSE + GOAL (2 pills) === -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px;">
         <div style="background:#fff;border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:10px;">
@@ -3000,10 +3003,13 @@ function renderPaywall(){
         </div>
       </div>
 
+      ${S.cppId==='F-1'?'<p style="text-align:center;font-size:14px;color:var(--text2);margin:4px 0 10px;font-style:italic;">The disconnect was never a flaw. It was protection. Now it can lift.</p>':''}
       <!-- === SECTION D: 3 PLANS === -->
       ${planHTML}
 
       <button onclick="goCheckout()" style="background:linear-gradient(180deg,#7ed38c 0%,var(--green) 100%);color:#fff;border:none;padding:18px;border-radius:999px;font-size:16px;font-weight:800;cursor:pointer;width:100%;margin-top:16px;letter-spacing:1px;box-shadow:0 4px 14px rgba(104,196,126,0.35);">GET MY PLAN</button>
+      <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap;"><span style="color:var(--green);font-weight:800;">✓</span><span style="font-size:13px;font-weight:700;color:var(--text);">30-day money-back guarantee</span><span style="font-size:12.5px;color:var(--text3);">— if it doesn’t move what’s stuck, full refund.</span></div>
+      ${S.cppId==='F-1'?'<p style="text-align:center;font-size:13px;color:var(--text2);margin-top:8px;">Less than a coffee a week — to finally feel at home in your body.</p>':''}
       <p style="text-align:center;font-size:11px;color:var(--text3);margin-top:10px;line-height:1.5;padding:0 8px;">By clicking "GET MY PLAN", you agree to automatic subscription renewal. First period price shown above. Cancel anytime in Settings. See <a href="#" style="color:var(--text2);text-decoration:underline;">Subscription Policy</a> for details.</p>
 
       <!-- === SECTION E: PAY SAFE & SECURE === -->
