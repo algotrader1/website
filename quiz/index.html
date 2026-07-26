@@ -435,6 +435,7 @@ function _trkGetMeta(){
   const utm={};['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k=>{const v=p.get(k);if(v)utm[k]=v;});
   _trkMeta={
     cpp_variant:S.cppId||null,
+    gender:S.gender||null,
     fallback_headline:(!S.cppId&&window._FALLBACK)?window._FALLBACK.id:null,
     utm:Object.keys(utm).length?utm:null,
     fbp:S.fbp||null, fbc:S.fbc||null,
