@@ -2885,6 +2885,7 @@ function renderPaywall(){
     {q:'Will this work if I\'ve tried therapy already?',a:'ONERA works at the body level, where talk therapy can\'t reach. You\'ll hit releases that years of insight couldn\'t move.'},
     {q:'Is my data safe?',a:'End-to-end encrypted. We can\'t read your dreams.'},
     {q:'How much time does it take?',a:'5 minutes a day. Record, read, release — that\'s it.'},
+    {q:'What if I forget to cancel?',a:'Cancelling takes two taps in Settings, any time. And every purchase is covered by the 30-day money-back guarantee — reach out and we refund you in full.'},
   ];
   const faqHTML=FAQS.map((f,i)=>`<div class="faq-item ${i===0?'open':''}" style="background:#fff;border-radius:14px;margin-bottom:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.04);" onclick="this.classList.toggle('open')"><div class="faq-q" style="padding:18px 20px;cursor:pointer;font-size:15px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:12px;"><span>${f.q}</span><span class="faq-arrow" style="color:var(--text3);font-size:14px;flex-shrink:0;">▾</span></div><div class="faq-a"><p style="font-size:14px;color:var(--text2);line-height:1.6;">${f.a}</p></div></div>`).join('');
 
@@ -2995,7 +2996,7 @@ function renderPaywall(){
         </div>
       </div>
 
-      <p style="text-align:center;font-size:12.5px;color:var(--text3);margin:-6px 0 12px;">61% off is our introductory price for new members — it ends when the timer does.</p>
+      <p style="text-align:center;font-size:12.5px;color:var(--text3);margin:-6px 0 12px;">Your code ${pc} locks in 61% off — created from your ${TOTAL_Q} answers, valid only while the timer runs.</p>
       <!-- === SECTION C: SURVIVAL RESPONSE + GOAL (2 pills) === -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px;">
         <div style="background:#fff;border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:10px;">
@@ -3016,10 +3017,23 @@ function renderPaywall(){
 
       ${S.cppId==='F-1'?'<p style="text-align:center;font-size:14px;color:var(--text2);margin:4px 0 10px;font-style:italic;">The disconnect was never a flaw. It was protection. Now it can lift.</p>':''}
       <!-- === SECTION D: 3 PLANS === -->
+      <div style="background:#fff;border:1.5px solid rgba(104,196,126,0.4);border-radius:16px;padding:16px 18px;margin:0 0 14px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+        <div style="font-size:15px;font-weight:800;color:var(--text);margin-bottom:10px;">Your ${PM.plan} includes:</div>
+        <div style="font-size:13.5px;color:var(--text);line-height:1.55;">
+          <div style="margin-bottom:6px;">✓ <b>Morning dream decoding</b> — record or type any dream, get what it's pointing to in plain language</div>
+          <div style="margin-bottom:6px;">✓ <b>Guided somatic release sessions</b> matched to your survival response (${PM.survival})</div>
+          <div style="margin-bottom:6px;">✓ <b>Your personal release roadmap</b> — ${(PW.timeline||[]).map(t=>t.d+': <em>'+t.t+'</em>').join(' → ')}</div>
+          <div style="margin-bottom:6px;">✓ <b>Private encrypted dream journal</b> — end-to-end encrypted, we can't read your dreams</div>
+          <div>✓ <b>5 minutes a day</b> — record, read, release. That's it.</div>
+        </div>
+      </div>
       ${planHTML}
 
+      <p style="text-align:center;font-size:13px;color:var(--text2);margin:4px 0 10px;line-height:1.5;"><b>Here's what happens next:</b> tap GET MY PLAN → 15-second secure checkout (Apple Pay or card) → download ONERA — your plan is already loaded and waiting.</p>
       <button onclick="goCheckout()" style="background:linear-gradient(180deg,#7ed38c 0%,var(--green) 100%);color:#fff;border:none;padding:18px;border-radius:999px;font-size:16px;font-weight:800;cursor:pointer;width:100%;margin-top:16px;letter-spacing:1px;box-shadow:0 4px 14px rgba(104,196,126,0.35);">GET MY PLAN</button>
       <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap;"><span style="color:var(--green);font-weight:800;">✓</span><span style="font-size:13px;font-weight:700;color:var(--text);">30-day money-back guarantee</span><span style="font-size:12.5px;color:var(--text3);">— if it doesn’t move what’s stuck, full refund.</span></div>
+      <p style="text-align:center;font-size:12.5px;color:var(--text2);margin-top:6px;">Cancel anytime in 2 taps — no calls, no questions.</p>
+      <p style="text-align:center;font-size:12.5px;color:var(--text3);margin-top:4px;">Start now and your first release session is tonight. When the timer ends, this page reverts to full price.</p>
       ${S.cppId==='F-1'?'<p style="text-align:center;font-size:13px;color:var(--text2);margin-top:8px;">Less than a coffee a week — to finally feel at home in your body.</p>':''}
       <p style="text-align:center;font-size:11px;color:var(--text3);margin-top:10px;line-height:1.5;padding:0 8px;">By clicking "GET MY PLAN", you agree to automatic subscription renewal. First period price shown above. Cancel anytime in Settings. See <a href="#" style="color:var(--text2);text-decoration:underline;">Subscription Policy</a> for details.</p>
 
@@ -3049,7 +3063,7 @@ function renderPaywall(){
       <div style="background:transparent;">${goalsHTML}</div>
 
       <!-- === SECTION G: METHODOLOGY PRESS LOGOS === -->
-      <h2 style="font-size:22px;font-weight:800;text-align:center;margin:36px 0 18px;line-height:1.3;">Our program is based on<br>methodology</h2>
+      <h2 style="font-size:22px;font-weight:800;text-align:center;margin:36px 0 18px;line-height:1.3;">Grounded in Jungian dream analysis<br>& somatic release</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
         ${[
           {name:'Forbes',    style:'font-family:Georgia,serif;font-weight:900;font-size:22px;color:#000;letter-spacing:-0.5px;'},
@@ -3123,6 +3137,7 @@ function renderPaywall(){
       </div>
       <div style="background:transparent;">${testiHTML}</div>
       <p style="text-align:center;font-size:11px;color:var(--text3);margin-top:14px;font-style:italic;">Images are generated for privacy purposes.</p>
+      <p style="text-align:center;font-size:14px;color:var(--text2);margin:26px 0 0;font-style:italic;line-height:1.55;">ONERA isn't for everyone. If you're not ready to meet what your body has been holding — don't start.<br>If you are, your plan is below.</p>
 
       <!-- === SECTION O: REPEAT (headline + promo + pills + plans + CTA) === -->
       <h1 style="font-size:26px;font-weight:800;text-align:center;line-height:1.25;margin:36px 0 20px;color:var(--text);">Your <span style="color:var(--green);">${PM.plan}</span> for ${segmentLabel} is ready!</h1>
@@ -3159,9 +3174,23 @@ function renderPaywall(){
         </div>
       </div>
 
+      <div style="background:#fff;border:1.5px solid rgba(104,196,126,0.4);border-radius:16px;padding:16px 18px;margin:0 0 14px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+        <div style="font-size:15px;font-weight:800;color:var(--text);margin-bottom:10px;">Your ${PM.plan} includes:</div>
+        <div style="font-size:13.5px;color:var(--text);line-height:1.55;">
+          <div style="margin-bottom:6px;">✓ <b>Morning dream decoding</b> — record or type any dream, get what it's pointing to in plain language</div>
+          <div style="margin-bottom:6px;">✓ <b>Guided somatic release sessions</b> matched to your survival response (${PM.survival})</div>
+          <div style="margin-bottom:6px;">✓ <b>Your personal release roadmap</b> — ${(PW.timeline||[]).map(t=>t.d+': <em>'+t.t+'</em>').join(' → ')}</div>
+          <div style="margin-bottom:6px;">✓ <b>Private encrypted dream journal</b> — end-to-end encrypted, we can't read your dreams</div>
+          <div>✓ <b>5 minutes a day</b> — record, read, release. That's it.</div>
+        </div>
+      </div>
       ${planHTML}
 
+      <p style="text-align:center;font-size:13px;color:var(--text2);margin:4px 0 10px;line-height:1.5;"><b>Here's what happens next:</b> tap GET MY PLAN → 15-second secure checkout (Apple Pay or card) → download ONERA — your plan is already loaded and waiting.</p>
       <button onclick="goCheckout()" style="background:linear-gradient(180deg,#7ed38c 0%,var(--green) 100%);color:#fff;border:none;padding:18px;border-radius:999px;font-size:16px;font-weight:800;cursor:pointer;width:100%;margin-top:16px;letter-spacing:1px;box-shadow:0 4px 14px rgba(104,196,126,0.35);">GET MY PLAN</button>
+      <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap;"><span style="color:var(--green);font-weight:800;">✓</span><span style="font-size:13px;font-weight:700;color:var(--text);">30-day money-back guarantee</span><span style="font-size:12.5px;color:var(--text3);">— if it doesn’t move what’s stuck, full refund.</span></div>
+      <p style="text-align:center;font-size:12.5px;color:var(--text2);margin-top:6px;">Cancel anytime in 2 taps — no calls, no questions.</p>
+      <p style="text-align:center;font-size:12.5px;color:var(--text3);margin-top:4px;">Start now and your first release session is tonight. When the timer ends, this page reverts to full price.</p>
       <p style="text-align:center;font-size:11px;color:var(--text3);margin-top:10px;line-height:1.5;padding:0 8px;">By clicking "GET MY PLAN", you agree to automatic subscription renewal. First period price shown above. Cancel anytime in Settings. See <a href="#" style="color:var(--text2);text-decoration:underline;">Subscription Policy</a> for details.</p>
 
       <div style="text-align:center;margin-top:16px;">
@@ -3440,6 +3469,7 @@ function answerQ(qi,v){
   setTimeout(go,350);
 }
 function goCheckout(){
+  try{fbq('trackCustom','PaywallCTAClick',{cpp:S.cppId||''});logMABEvent('paywall_cta_click',{});}catch(e){}
   // Defensive: read the currently-selected plan from the DOM at click time.
   const sel=document.querySelector('.plan-card.selected');
   if(sel){
