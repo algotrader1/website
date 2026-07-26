@@ -2262,14 +2262,14 @@ const LOADING_SEQUENCE=[
   {id:'ls-02',title:'Mapping your recurring dream signatures…',progress:16,bullets:['Symbolic loops','Shadow material','Dreaming self'],microQ:null,auto:true,durationMs:1500},
   {id:'ls-03',title:'Cross-referencing your subconscious blocks…',progress:24,bullets:['Inner child wounds','Inherited scripts','Survival patterns'],microQ:null,auto:true,durationMs:1500},
   {id:'ls-04',title:'Before we go deeper…',progress:32,bullets:[],microQ:{text:'Are you open to receiving gentle guidance from your dreams?',yes:"Yes, I'm open",no:'Not sure yet'},auto:false,durationMs:0},
-  {id:'ls-05',title:'Matching somatic release protocols to your body…',progress:42,bullets:['Breathwork pacing','Vagal tone work','Micro-movement cues'],microQ:null,auto:true,durationMs:1600},
+  {id:'ls-05',title:'Matching somatic release protocols to your body…',progress:42,bullets:['Breathwork pacing','Vagal tone work','Micro-movement cues','“The tightness in my shoulders I\'d blamed on age — gone after week two.” — S., 61'],microQ:null,auto:true,durationMs:3000},
   {id:'ls-06',title:'Calibrating your dream journal prompts…',progress:52,bullets:['Morning recall window','Symbol decoding','Emotional residue'],microQ:null,auto:true,durationMs:1500},
   {id:'ls-07',title:'One more thing…',progress:60,bullets:[],microQ:{text:'Are you inclined to finish what you start?',yes:'Yes, usually',no:'Not always'},auto:false,durationMs:0},
   {id:'ls-08',title:'Personalizing your shadow work sequence…',progress:70,bullets:['Disowned parts','Projection mirrors','Integration rituals'],microQ:null,auto:true,durationMs:1500},
   {id:'ls-09',title:'Tuning your nighttime wind-down protocol…',progress:78,bullets:['Pre-sleep breath','Nervous system down-shift','Dream incubation'],microQ:null,auto:true,durationMs:1500},
   {id:'ls-10',title:'Last check…',progress:85,bullets:[],microQ:{text:'Would you commit 7 minutes a day to release what your body is holding?',yes:'Yes, I can do 7 min',no:'I need less'},auto:false,durationMs:0},
-  {id:'ls-11',title:'Finalizing your pattern profile…',progress:93,bullets:['Core wound signature','Dream-body feedback loop','First release target'],microQ:null,auto:true,durationMs:1600},
-  {id:'ls-12',title:'Your Dream Analysis Plan is ready.',progress:100,bullets:['Calibrated to your nervous system','Built around your dream signatures',"Ready to release what you've been holding"],microQ:null,auto:true,durationMs:1800},
+  {id:'ls-11',title:'Finalizing your pattern profile…',progress:93,bullets:['Core wound signature','Dream-body feedback loop','First release target','“I understood everything for years. This was the first thing that moved it.” — R., 45'],microQ:null,auto:true,durationMs:3000},
+  {id:'ls-12',title:'Your Dream Analysis Plan is ready.',progress:100,bullets:['Calibrated to your nervous system','Built around your dream signatures',"Ready to release what you've been holding","This took a moment because your answers are unique — your plan was carefully built to reflect them."],microQ:null,auto:true,durationMs:2200},
 ];
 let _loadIdx=0;
 function renderLoading(){
@@ -2411,6 +2411,7 @@ function renderProfile(){
     <div style="background:#fcebe8;border-radius:16px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;">
       <div style="background:#fff;border-radius:10px;width:36px;height:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px;">⚠️</div>
       <div style="font-size:13px;color:var(--text);line-height:1.55;"><strong>${lvlLabel.toUpperCase()} · ${sev.score}%</strong> — ${warningText} Your body may be carrying what your mind can't release, locking you into a cycle that is extremely difficult to break free from through willpower alone.</div>
+      <div style="font-size:14px;color:var(--text);line-height:1.65;margin-top:14px;padding:14px 16px;background:#faf9f4;border-radius:12px;">Somewhere along the way, your body learned that letting go wasn't safe. So it held on — through the years, through everything you understood but couldn't change. <b>This isn't who you are. It's what your body was taught.</b> And what was taught can be released.${(S.age==='55-64'||S.age==='65+')?'<br><br>You\'ve carried this for decades. It shows up as tension no one can explain, sleep that doesn\'t restore you, days where nothing sparks interest. None of that is aging. It\'s holding.':''}</div>
     </div>
     ${copingBlock}
     <!-- 2x2 stat cards (Fluent 3D emoji icons) -->
@@ -3017,6 +3018,14 @@ function renderPaywall(){
 
       ${S.cppId==='F-1'?'<p style="text-align:center;font-size:14px;color:var(--text2);margin:4px 0 10px;font-style:italic;">The disconnect was never a flaw. It was protection. Now it can lift.</p>':''}
       <!-- === SECTION D: 3 PLANS === -->
+      <div style="background:#faf9f4;border-radius:16px;padding:16px 18px;margin:0 0 14px;">
+        <div style="font-size:14px;font-weight:800;color:var(--text);margin-bottom:10px;">Before you decide — the honest answers:</div>
+        <div style="font-size:13px;color:var(--text);line-height:1.6;">
+          <div style="margin-bottom:8px;"><b>"What if I don't have enough willpower?"</b><br>Willpower is useless when your body is stuck in survival mode. Your plan releases the body's brake first — once your system feels safe, follow-through stops being a fight.</div>
+          <div style="margin-bottom:8px;"><b>"What if I'm too overwhelmed — or too tired?"</b><br>The plan is 5 quiet minutes, mostly seated. It slips under your stress radar instead of adding to it.</div>
+          <div><b>"Isn't it too late to change patterns this old?"</b><br>The older the pattern, the more clearly it shows up in your dreams. Your body doesn't have a deadline for release.</div>
+        </div>
+      </div>
       <div style="background:#fff;border:1.5px solid rgba(104,196,126,0.4);border-radius:16px;padding:16px 18px;margin:0 0 14px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
         <div style="font-size:15px;font-weight:800;color:var(--text);margin-bottom:10px;">Your ${PM.plan} includes:</div>
         <div style="font-size:13.5px;color:var(--text);line-height:1.55;">
@@ -3071,7 +3080,6 @@ function renderPaywall(){
           {name:'CNN Health', style:'font-weight:900;font-size:18px;color:#000;', brand:true},
           {name:'THE WALL STREET JOURNAL', style:'font-family:Georgia,serif;font-weight:900;font-size:12px;color:#000;line-height:1.1;letter-spacing:0.3px;'},
           {name:'Vox',       style:'font-family:Georgia,serif;font-weight:900;font-style:italic;font-size:24px;color:#000;'},
-          {name:'toptechs',  style:'font-weight:800;font-size:18px;color:#000;letter-spacing:-0.5px;'},
         ].map(p=>`<div style="background:#fff;border-radius:14px;padding:24px 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,0.04);min-height:74px;text-align:center;">${p.brand?`<span style="font-weight:900;font-size:18px;"><span style="color:#cc0000;">CNN</span> Health</span>`:`<span style="${p.style}">${p.name}</span>`}</div>`).join('')}
       </div>
 
