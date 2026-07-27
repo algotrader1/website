@@ -123,7 +123,7 @@ const CPP_PAIN={
 };
 
 const SUPABASE_URL='https://cxtoofvckqllsasriczb.supabase.co/functions/v1';
-const STRIPE_PK='pk_live_51S6djfAJemVzvXE5GghjhDVe7MyxGiF9e5w1jFrydG73xdLYZe2SnoXYjgYwXaITTi5E3tTqbwlHgZYlR17X1ALw00EmILb3lM';
+const STRIPE_PK='pk_live_51RDn38CczqUYIP4UCoUZPw1CdX2dTGD7eovNMIvTjlY2ZIFKwDMwCjlbRc6GL1EOViJLcrImgaXNXyqF6GJIQblb001Wl5J7Nf';
 
 // Parse URL params
 const p=new URLSearchParams(location.search);
@@ -208,7 +208,7 @@ async function doPay(){
   try{
     const {error}=await window._stripe.confirmPayment({
       elements:window._stripeElements,
-      confirmParams:{return_url:location.origin+'/quiz/thank-you.html?e='+encodeURIComponent(email)+'&c='+urlCode},
+      confirmParams:{return_url:location.origin+'/quiz/?c='+urlCode+'&success=1',receipt_email:email||undefined},
     });
     if(error){showErr(error.message);btn.disabled=false;btn.textContent='🔒 PAY NOW';return;}
     // success handled on return_url; also fire purchase event here for safety
