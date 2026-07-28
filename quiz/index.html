@@ -2816,7 +2816,10 @@ function getAnswerInsights(){
 
 function renderPaywall(){
   S.selectedPlan=(S.answers.post_commit===2)?2:1; // Pré-sélection = durée choisie par l'utilisateur (Breeze), sinon 4-week
-  logMABEvent('paywall_view');
+  // A/B test Hormozi (M-1 uniquement) : B = garantie-héros + outcome language + value stack
+  if(S.cppId==='M-1'&&!S.pwVariant){S.pwVariant=Math.random()<0.5?'A':'B';try{save();}catch(e){}}
+  const isB=S.pwVariant==='B'&&S.cppId==='M-1';
+  logMABEvent('paywall_view',{pw_variant:S.pwVariant||''});
   try{fbq('trackCustom','PaywallView',{cpp:S.cppId||''});}catch(e){}
   try{ttk('AddToWishlist')}catch(e){}
   try{trackFlush(false,{paywall_viewed:true});}catch(e){}
@@ -2861,7 +2864,8 @@ function renderPaywall(){
     'M-5': [['Emotional access','Frozen','Flowing'],['Emotional stability','Numb','Alive'],['Energy level','Flat','Vibrant']],
     'M-6': [['Inherited patterns','His anger','Your voice'],['Emotional stability','Reactive','Grounded'],['Energy level','Drained','Restored']],
   };
-  const NG = NOW_GOAL[S.cppId]||NOW_GOAL['F-2'];
+  let NG = NOW_GOAL[S.cppId]||NOW_GOAL['F-2'];
+  if(isB)NG=[['Follow-through','Starts, never finishes','Finishes what he starts'],['Drive','Held by the brake','Full power'],['Energy level','Drained','Restored']];
 
   const planHTML=renderPlans();
   const goalsHTML=PW.withPlan.slice(0,6).map(t=>`<div style="display:flex;align-items:center;gap:12px;padding:8px 0;"><svg viewBox="0 0 22 22" width="22" height="22"><circle cx="11" cy="11" r="10" fill="var(--green)"/><path d="M6.5 11 L9.5 14 L15 8" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:15px;color:var(--text);">${t}</span></div>`).join('');
@@ -2978,8 +2982,12 @@ function renderPaywall(){
 
       ${(CPP_PAYWALL[S.cppId]&&CPP_PAYWALL[S.cppId].title)?('<div style="text-align:center;margin:22px 0 4px;"><h1 style="font-size:30px;font-weight:800;line-height:1.2;color:var(--text);">'+CPP_PAYWALL[S.cppId].title+'</h1><p style="font-size:15px;color:var(--text2);margin-top:8px;line-height:1.5;">'+(CPP_PAYWALL[S.cppId].sub||'')+'</p></div>'):''}
       <!-- === SECTION A: HEADLINE === -->
-      <h1 style="font-size:26px;font-weight:800;text-align:center;line-height:1.25;margin:18px 0 20px;color:var(--text);">Your <span style="color:var(--green);">${PM.plan}</span> for ${segmentLabel} is ready!</h1>
+      ${isB?`<h1 style="font-size:26px;font-weight:800;text-align:center;line-height:1.25;margin:18px 0 20px;color:var(--text);">Finish what you start — <span style="color:var(--green);">starting with tonight's dream.</span></h1>`:`<h1 style="font-size:26px;font-weight:800;text-align:center;line-height:1.25;margin:18px 0 20px;color:var(--text);">Your <span style="color:var(--green);">${PM.plan}</span> for ${segmentLabel} is ready!</h1>`}
 
+      ${isB?`<div style="background:#eaf5ec;border:2px solid var(--green);border-radius:16px;padding:18px;margin:0 0 16px;text-align:center;">
+        <div style="font-size:15px;font-weight:800;color:var(--text);margin-bottom:6px;">🛡️ Our guarantee — the risk is on us</div>
+        <div style="font-size:13.5px;color:var(--text);line-height:1.6;">Decode your dreams for 30 full days. If your body doesn't feel the brake release, one email — <b>100% refund, no questions, no forms</b>. You can't lose money on this. Either it works, or it's free.</div>
+      </div>`:''}
       <!-- === SECTION B: PROMO CODE TICKET === -->
       <div style="position:relative;background:#eaf5ec;border-radius:16px;padding:14px 14px 12px;margin-bottom:14px;">
         <div style="display:flex;align-items:center;justify-content:center;gap:10px;padding-bottom:10px;border-bottom:1.5px dashed rgba(104,196,126,0.35);">
@@ -3039,6 +3047,7 @@ function renderPaywall(){
           <div style="margin-bottom:6px;">✓ <b>Guided somatic release sessions</b> matched to your survival response (${PM.survival})</div>
           <div style="margin-bottom:6px;">✓ <b>Your personal release roadmap</b> — ${(PW.timeline||[]).map(t=>t.d+': <em>'+t.t+'</em>').join(' → ')}</div>
           <div style="margin-bottom:6px;">✓ <b>Private encrypted dream journal</b> — end-to-end encrypted, we can't read your dreams</div>
+          ${isB?`<div style="margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);"><b style="color:var(--green);">BONUS — Weekly Pattern Report:</b> every week, your blocks mapped in writing from your dreams — so you can watch the brake lose its grip, in black and white. Included with every plan.</div>`:''}
           <div>✓ <b>5 minutes a day</b> — record, read, release. That's it.</div>${(S.age==='55-64'||S.age==='65+')?'<div style="margin-top:6px;">✓ <b>Gentle, seated release</b> — no floor work, no strain, adapted to how your body feels today</div>':''}
         </div>
       </div>
@@ -3195,6 +3204,7 @@ function renderPaywall(){
           <div style="margin-bottom:6px;">✓ <b>Guided somatic release sessions</b> matched to your survival response (${PM.survival})</div>
           <div style="margin-bottom:6px;">✓ <b>Your personal release roadmap</b> — ${(PW.timeline||[]).map(t=>t.d+': <em>'+t.t+'</em>').join(' → ')}</div>
           <div style="margin-bottom:6px;">✓ <b>Private encrypted dream journal</b> — end-to-end encrypted, we can't read your dreams</div>
+          ${isB?`<div style="margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);"><b style="color:var(--green);">BONUS — Weekly Pattern Report:</b> every week, your blocks mapped in writing from your dreams — so you can watch the brake lose its grip, in black and white. Included with every plan.</div>`:''}
           <div>✓ <b>5 minutes a day</b> — record, read, release. That's it.</div>${(S.age==='55-64'||S.age==='65+')?'<div style="margin-top:6px;">✓ <b>Gentle, seated release</b> — no floor work, no strain, adapted to how your body feels today</div>':''}
         </div>
       </div>
@@ -3483,7 +3493,7 @@ function answerQ(qi,v){
   setTimeout(go,350);
 }
 function goCheckout(){
-  try{fbq('trackCustom','PaywallCTAClick',{cpp:S.cppId||''});logMABEvent('paywall_cta_click',{});}catch(e){}
+  try{fbq('trackCustom','PaywallCTAClick',{cpp:S.cppId||''});logMABEvent('paywall_cta_click',{pw_variant:S.pwVariant||''});}catch(e){}
   // Defensive: read the currently-selected plan from the DOM at click time.
   const sel=document.querySelector('.plan-card.selected');
   if(sel){
