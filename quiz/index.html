@@ -2439,11 +2439,12 @@ function renderPostName(){
   <div class="screen active q-screen" style="padding-top:36px;gap:18px;align-items:center;text-align:center;">
     <div style="max-width:320px;padding:12px 16px;background:var(--bg2);border-left:3px solid var(--green);border-radius:8px;text-align:left;">
       <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--text3);margin-bottom:4px;">Your profile is ready</div>
-      <p style="font-size:13px;color:var(--text);line-height:1.4;margin:0;">Before we build your plan — who should we address this to?</p>
+      <p style="font-size:13px;color:var(--text);line-height:1.4;margin:0;">Your plan will be issued in your name — it's yours, not a template.</p>
     </div>
     <h2 class="q-title" style="font-size:22px;max-width:320px;">What's your first name?</h2>
     <input type="text" id="postNameInput" class="input-field" placeholder="Your name" value="${S.name||''}" style="max-width:340px;text-align:center;" autofocus />
     <button class="btn-continue" onclick="submitPostName()" style="max-width:340px;">Continue</button>
+    <a href="#" onclick="event.preventDefault();S.answers.post_name='';try{trackAnswer('post_name',100,'name',null,'[skipped]');}catch(e){}go();" style="font-size:12px;color:var(--text3);text-decoration:underline;">Continue without name</a>
   </div>`;
   const inp=document.getElementById('postNameInput');
   if(inp){inp.focus();inp.addEventListener('keydown',e=>{if(e.key==='Enter')submitPostName();});}
@@ -2468,7 +2469,7 @@ function renderPostKnowledge(){
   const app=document.getElementById('app');
   app.innerHTML=`
   <div class="screen active q-screen" style="padding-top:36px;gap:18px;align-items:center;text-align:center;">
-    <h2 class="q-title" style="font-size:22px;max-width:340px;">${S.name}, how familiar are you with body-based healing?</h2>
+    <h2 class="q-title" style="font-size:22px;max-width:340px;">${S.name||'Friend'}, how familiar are you with ${(S.cppId||'').startsWith('M')?'how the subconscious blocks performance':'body-based healing'}?</h2>
     <div class="freq3-opts" style="width:100%;max-width:360px;">
       <div class="freq3-opt" onclick="submitPostKnowledge(0)" style="justify-content:flex-start;padding:18px 20px;"><div class="f3-label" style="font-size:16px;font-weight:600;">Not at all</div></div>
       <div class="freq3-opt" onclick="submitPostKnowledge(1)" style="justify-content:flex-start;padding:18px 20px;"><div class="f3-label" style="font-size:16px;font-weight:600;">A little</div></div>
@@ -2483,15 +2484,16 @@ function renderPostReady(){
   const app=document.getElementById('app');
   app.innerHTML=`
   <div class="screen active q-screen" style="padding-top:36px;gap:18px;align-items:center;text-align:center;">
-    <h2 class="q-title" style="font-size:22px;max-width:340px;">${S.name}, are you ready to start?</h2>
-    <p style="font-size:13px;color:var(--text2);max-width:300px;">Your personalized plan is 30 seconds away.</p>
+    <h2 class="q-title" style="font-size:22px;max-width:340px;">${S.name||'Friend'}, how much time are you giving yourself to release this?</h2>
+    <p style="font-size:13px;color:var(--text2);max-width:300px;">Your plan adapts to your pace.</p>
     <div class="freq3-opts" style="width:100%;max-width:360px;">
-      <div class="freq3-opt" onclick="submitPostReady('yes')" style="justify-content:flex-start;padding:18px 20px;gap:14px;"><div style="flex-shrink:0;"><span style="font-size:26px;line-height:1;">✅</span></div><div class="f3-label" style="font-size:16px;font-weight:600;">Yes, I'm ready</div></div>
-      <div class="freq3-opt" onclick="submitPostReady('no')" style="justify-content:flex-start;padding:18px 20px;gap:14px;"><div style="flex-shrink:0;"><span style="font-size:26px;line-height:1;">❌</span></div><div class="f3-label" style="font-size:16px;font-weight:600;">Not yet</div></div>
+      <div class="freq3-opt" onclick="submitPostReady(0)" style="justify-content:flex-start;padding:18px 20px;"><div class="f3-label" style="font-size:16px;font-weight:600;">2 weeks</div></div>
+      <div class="freq3-opt" onclick="submitPostReady(1)" style="justify-content:flex-start;padding:18px 20px;"><div class="f3-label" style="font-size:16px;font-weight:600;">1 month</div></div>
+      <div class="freq3-opt" onclick="submitPostReady(2)" style="justify-content:flex-start;padding:18px 20px;"><div class="f3-label" style="font-size:16px;font-weight:600;">2-3 months</div></div>
     </div>
   </div>`;
 }
-function submitPostReady(v){S.answers.post_ready=v;try{trackAnswer('post_ready',102,'yesno2',v,v);}catch(e){}fbq('trackCustom','QuizAnswer',{question:'post_ready'});go();}
+function submitPostReady(v){S.answers.post_commit=v;try{trackAnswer('post_commit',102,'freq3',v,['2 weeks','1 month','2-3 months'][v]);}catch(e){}fbq('trackCustom','QuizAnswer',{question:'post_commit'});go();}
 
 // ==================== CURVE CHART ("Plan is ready" + S-curve like Liven) ====================
 function renderCurveChart(){
@@ -2723,6 +2725,8 @@ function initScratch(){
   c.onmouseup=c.onmouseleave=()=>down=false;
   c.ontouchstart=e=>{e.preventDefault();const t=e.touches[0];const b=c.getBoundingClientRect();s(t.clientX-b.left,t.clientY-b.top);};
   c.ontouchmove=e=>{e.preventDefault();const t=e.touches[0];const b=c.getBoundingClientRect();s(t.clientX-b.left,t.clientY-b.top);};
+  // Auto-reveal : le cadeau ne doit jamais bloquer le chemin vers le paywall
+  setTimeout(()=>{if(!S.scratchDone){S.scratchDone=true;revealScratch();}},4000);
 }
 
 function revealScratch(){
@@ -2810,7 +2814,7 @@ function getAnswerInsights(){
 }
 
 function renderPaywall(){
-  S.selectedPlan=1; // Default to 4-WEEK PLAN (Most Popular) — Liven-style
+  S.selectedPlan=(S.answers.post_commit!==undefined)?S.answers.post_commit:1; // Pré-sélection = durée choisie par l'utilisateur (Breeze), sinon 4-week
   logMABEvent('paywall_view');
   try{fbq('trackCustom','PaywallView',{cpp:S.cppId||''});}catch(e){}
   try{ttk('AddToWishlist')}catch(e){}
