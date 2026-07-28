@@ -396,7 +396,6 @@ function burstConfetti(){
 // Events: 'impression' (landing viewed), 'quiz_start' (gender clicked), 'quiz_complete' (email captured),
 //         'checkout_view' (paywall viewed), 'purchase' (payment success)
 function logMABEvent(event, extra){
-  if(window._noTrack)return;
   try{
     const body={
       event, session_id:window._SESS_ID||'unknown',
@@ -451,7 +450,6 @@ window._trkTimes=window._trkTimes||{};
 function trackQuestionShown(qKey){window._trkTimes[qKey]=Date.now();}
 // Buffer an answer + flush if threshold reached
 function trackAnswer(qKey, qIdx, qType, value, label){
-  if(window._noTrack)return;
   try{
     const t0=window._trkTimes[qKey]; const tmsp=t0?(Date.now()-t0):null;
     const buf=_trkLoadBuf();
@@ -469,7 +467,6 @@ function trackAnswer(qKey, qIdx, qType, value, label){
 }
 // Flush buffer — sendBeacon if unloading, else fetch keepalive
 function trackFlush(isUnload, extraStatus){
-  if(window._noTrack)return;
   try{
     const buf=_trkLoadBuf();
     const meta=_trkGetMeta();
@@ -3668,16 +3665,6 @@ if(_bootParams.get('manage')==='1'){
       .then(r=>r.json()).then(d=>{if(d.url)window.location.href=d.url;else{document.getElementById('app').innerHTML='<div style="display:flex;align-items:center;justify-content:center;min-height:100dvh;text-align:center;padding:20px;"><p>Could not load subscription manager.<br>Contact <a href="mailto:support@onera.app">support@onera.app</a></p></div>';}})
       .catch(()=>{document.getElementById('app').innerHTML='<div style="display:flex;align-items:center;justify-content:center;min-height:100dvh;text-align:center;padding:20px;"><p>Connection error.<br>Contact <a href="mailto:support@onera.app">support@onera.app</a></p></div>';});
   }
-}else if(_bootParams.get('preview')==='pwA'||_bootParams.get('preview')==='pwB'){
-  // PREVIEW paywall (usage interne) — aucun event: pixel neutralisé + trackers gated
-  window._noTrack=true;
-  window.fbq=function(){};
-  S.cppId='M-1';S.gender='M';S.age='25-34';S.name='Oscar';
-  S.pwVariant=_bootParams.get('preview')==='pwB'?'B':'A';
-  S.answers=S.answers||{};S.answers.post_commit=1;
-  QUIZ_QUESTIONS=getQuestions();recomputeTotalQ();
-  S.step=getQEnd()+12;
-  render();
 }else{
 // URL param ALWAYS overrides session storage for cppId (supports both opaque ?c= and raw ?cpp=)
 const _urlCpp=_bootParams.get('cpp');
