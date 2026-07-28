@@ -2986,7 +2986,7 @@ function renderPaywall(){
 
       ${isB?`<div style="background:#eaf5ec;border:2px solid var(--green);border-radius:16px;padding:18px;margin:0 0 16px;text-align:center;">
         <div style="font-size:15px;font-weight:800;color:var(--text);margin-bottom:6px;">🛡️ Our guarantee — the risk is on us</div>
-        <div style="font-size:13.5px;color:var(--text);line-height:1.6;">Decode your dreams for 30 full days. If your body doesn't feel the brake release, one email — <b>100% refund, no questions, no forms</b>. You can't lose money on this. Either it works, or it's free.</div>
+        <div style="font-size:13.5px;color:var(--text);line-height:1.6;">30 days. If you're not starting — and finishing — the things you've been putting off, one email: <b>100% refund, no questions asked</b>. And if it doesn't work, that's on our method — not one more proof against you. You've blamed yourself enough.</div>
       </div>`:''}
       <!-- === SECTION B: PROMO CODE TICKET === -->
       <div style="position:relative;background:#eaf5ec;border-radius:16px;padding:14px 14px 12px;margin-bottom:14px;">
@@ -3032,6 +3032,10 @@ function renderPaywall(){
       ${S.cppId==='F-1'?'<p style="text-align:center;font-size:14px;color:var(--text2);margin:4px 0 10px;font-style:italic;">The disconnect was never a flaw. It was protection. Now it can lift.</p>':''}
       <!-- === SECTION D: 3 PLANS === -->
       ${(S.recall&&S.recall.wish&&S.recall.wish.length)?('<div style="background:#fff;border:1.5px solid rgba(139,135,199,0.4);border-radius:16px;padding:16px 18px;margin:0 0 14px;box-shadow:0 2px 8px rgba(0,0,0,0.04);"><div style="font-size:14px;font-weight:800;color:var(--text);margin-bottom:8px;">You told us what would change everything:</div>'+S.recall.wish.map(function(w){return '<div style="font-size:13.5px;color:var(--text);padding:3px 0;">— '+w.label+'</div>';}).join('')+'<div style="font-size:13px;color:var(--text2);margin-top:8px;font-style:italic;">Your dreams already know the way there. Your plan starts with tonight\'s.</div></div>'):''}
+      ${isB?`<div style="background:#fff;border-radius:16px;padding:16px 18px;margin:0 0 14px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+        <div style="font-size:14px;font-weight:800;color:var(--text);margin-bottom:8px;">Why this works when discipline didn't:</div>
+        <div style="font-size:13.5px;color:var(--text);line-height:1.7;">Your dreams don't need to be decoded for their own sake — they're the <b>diagnosis</b>: every night, they show exactly where the brake is. Then a <b>15-minute psycho-somatic exercise</b> releases that block from your body. <b>Execution is what's left when the brake is gone.</b> No willpower involved — that's why it works where discipline failed.</div>
+      </div>`:''}
       <div style="background:#faf9f4;border-radius:16px;padding:16px 18px;margin:0 0 14px;">
         <div style="font-size:14px;font-weight:800;color:var(--text);margin-bottom:10px;">Before you decide — the honest answers:</div>
         <div style="font-size:13px;color:var(--text);line-height:1.6;">
@@ -3047,7 +3051,7 @@ function renderPaywall(){
           <div style="margin-bottom:6px;">✓ <b>Guided somatic release sessions</b> matched to your survival response (${PM.survival})</div>
           <div style="margin-bottom:6px;">✓ <b>Your personal release roadmap</b> — ${(PW.timeline||[]).map(t=>t.d+': <em>'+t.t+'</em>').join(' → ')}</div>
           <div style="margin-bottom:6px;">✓ <b>Private encrypted dream journal</b> — end-to-end encrypted, we can't read your dreams</div>
-          ${isB?`<div style="margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);"><b style="color:var(--green);">BONUS — Weekly Pattern Report:</b> every week, your blocks mapped in writing from your dreams — so you can watch the brake lose its grip, in black and white. Included with every plan.</div>`:''}
+          ${isB?`<div style="margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);"><b style="color:var(--green);">BONUS — Weekly Pattern Report:</b> written proof, week by week, that the brake is losing its grip — your blocks named, your progress in black and white. Included with every plan.</div>`:''}
           <div>✓ <b>5 minutes a day</b> — record, read, release. That's it.</div>${(S.age==='55-64'||S.age==='65+')?'<div style="margin-top:6px;">✓ <b>Gentle, seated release</b> — no floor work, no strain, adapted to how your body feels today</div>':''}
         </div>
       </div>
@@ -3204,7 +3208,7 @@ function renderPaywall(){
           <div style="margin-bottom:6px;">✓ <b>Guided somatic release sessions</b> matched to your survival response (${PM.survival})</div>
           <div style="margin-bottom:6px;">✓ <b>Your personal release roadmap</b> — ${(PW.timeline||[]).map(t=>t.d+': <em>'+t.t+'</em>').join(' → ')}</div>
           <div style="margin-bottom:6px;">✓ <b>Private encrypted dream journal</b> — end-to-end encrypted, we can't read your dreams</div>
-          ${isB?`<div style="margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);"><b style="color:var(--green);">BONUS — Weekly Pattern Report:</b> every week, your blocks mapped in writing from your dreams — so you can watch the brake lose its grip, in black and white. Included with every plan.</div>`:''}
+          ${isB?`<div style="margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);"><b style="color:var(--green);">BONUS — Weekly Pattern Report:</b> written proof, week by week, that the brake is losing its grip — your blocks named, your progress in black and white. Included with every plan.</div>`:''}
           <div>✓ <b>5 minutes a day</b> — record, read, release. That's it.</div>${(S.age==='55-64'||S.age==='65+')?'<div style="margin-top:6px;">✓ <b>Gentle, seated release</b> — no floor work, no strain, adapted to how your body feels today</div>':''}
         </div>
       </div>
