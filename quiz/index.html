@@ -1951,6 +1951,8 @@ function renderQuestion(q,qIdx){
 // Sub-types: grounding (FIX 5), therapy_ceiling (FIX 3), hope (FIX 2),
 //            validation (FIX 4), consistency_lock (FIX 1)
 function renderInterstitial(q,qIdx){
+  // animations d'aplomb (emphase visuelle, CSS pur)
+  if(!document.getElementById('aplombKF')){const st=document.createElement('style');st.id='aplombKF';st.textContent='@keyframes gentleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes popIn{0%{transform:scale(0.4);opacity:0}70%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}@keyframes riseIn{0%{transform:translateY(14px);opacity:0}100%{transform:translateY(0);opacity:1}}';document.head.appendChild(st);}
   const app=document.getElementById('app');
   const n=S.name||'';
   let h='';
@@ -1973,8 +1975,8 @@ function renderInterstitial(q,qIdx){
   // SEED RÊVES — le mécanisme imaginé pendant le quiz (pattern Copymind écran 11)
   if(q.subtype==='dream_seed'){
     h=`<div class="screen active q-screen" style="padding-top:60px;gap:20px;align-items:center;text-align:center;">
-      <div style="font-size:52px;">🌙</div>
-      <h2 style="font-size:24px;font-weight:800;line-height:1.3;max-width:340px;">Your mind hides the block.<br>Your dreams don't.</h2>
+      <div style="font-size:56px;animation:gentleFloat 3.5s ease-in-out infinite;filter:drop-shadow(0 6px 18px rgba(139,126,200,0.35));">🌙</div>
+      <h2 style="font-size:24px;font-weight:800;line-height:1.3;max-width:340px;animation:riseIn 0.6s ease-out;">Your mind hides the block.<br>Your dreams don't.</h2>
       <p style="font-size:15px;color:var(--text2);max-width:330px;line-height:1.6;">Every night, your dreams replay what's blocking you — in images. Your answers are mapping exactly where it hides.</p>
       <button class="btn-continue" onclick="advanceInterstitial(${qIdx})" style="max-width:340px;">Continue</button>
     </div>`;
@@ -1984,12 +1986,14 @@ function renderInterstitial(q,qIdx){
   // BELONGING — l'appartenance APRÈS les aveux, juste avant l'email (loi tronc commun #4)
   if(q.subtype==='belonging'){
     h=`<div class="screen active q-screen" style="padding-top:60px;gap:20px;align-items:center;text-align:center;">
-      <div style="font-size:52px;">🤝</div>
-      <h2 style="font-size:24px;font-weight:800;line-height:1.3;max-width:340px;"><span style="color:var(--green);">12,000 people</span> answered exactly like you.</h2>
+      <div style="font-size:56px;animation:popIn 0.5s cubic-bezier(0.34,1.56,0.64,1);">🤝</div>
+      <h2 style="font-size:24px;font-weight:800;line-height:1.3;max-width:340px;animation:riseIn 0.6s ease-out;"><span style="color:var(--green);"><span id="belongCount">12,000</span> people</span> answered exactly like you.</h2>
       <p style="font-size:15px;color:var(--text2);max-width:330px;line-height:1.6;">And stopped carrying it alone. Your results are one step away.</p>
       <button class="btn-continue" onclick="advanceInterstitial(${qIdx})" style="max-width:340px;">Continue</button>
     </div>`;
-    app.innerHTML=h;return;
+    app.innerHTML=h;
+    try{const el=document.getElementById('belongCount');if(el){const t0=performance.now();const D=1100;const step=(t)=>{const p=Math.min(1,(t-t0)/D);el.textContent=Math.round(12000*(1-Math.pow(1-p,3))).toLocaleString('en');if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);}}catch(e){}
+    return;
   }
 
   // FIX 5 — Grounding prompt before Q8 — Liven-minimal: breathing circle + 1 line
@@ -2212,7 +2216,7 @@ function renderProcess(){
     <p style="font-size:14px;color:var(--text2);max-width:320px;font-style:italic;line-height:1.5;margin:0;">"${intro}"</p>
 
     <!-- Headline -->
-    <h2 style="font-size:26px;font-weight:800;line-height:1.25;max-width:320px;">Your dreams show the block.<br>Your body lets it go.</h2>
+    <h2 style="font-size:26px;font-weight:800;line-height:1.25;max-width:320px;;animation:riseIn 0.6s ease-out;">Your dreams show the block.<br>Your body lets it go.</h2>
 
     <!-- 3 illustrated cards stacked (Liven-style) -->
     <div style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:12px;">
@@ -2283,7 +2287,7 @@ function renderAuthority(){
 
     <!-- Headline below the stack -->
     <div style="max-width:320px;">
-      <h2 style="font-size:24px;font-weight:800;text-align:center;line-height:1.3;">Not guesswork.<br><span style="color:var(--green);">Science.</span></h2>
+      <h2 style="font-size:24px;font-weight:800;text-align:center;line-height:1.3;;animation:riseIn 0.6s ease-out;">Not guesswork.<br><span style="color:var(--green);">Science.</span></h2>
       <p style="font-size:14px;color:var(--text2);line-height:1.55;margin-top:14px;">Your journey includes dream-decoding and somatic release protocols backed by top universities.</p>
     </div>
 
