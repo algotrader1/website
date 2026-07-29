@@ -1359,6 +1359,9 @@ const CPP_QUIZ = {
   // === M-1 Potential Paralysis Man — Liven ADHD clone (25 visible Q) ===
   'M-1': [
     {type:'interstitial',subtype:'glad_welcome',skipCount:true},
+    // Flatterie d'ouverture (Liven — chaque "agree" est un compliment, la médaille se retourne au Block A)
+    {type:'likert5',text:'I understand things faster than most people',sub:'Do you agree with the following statement?'},
+    {type:'likert5',text:'People have always seen potential in me',sub:'Do you agree with the following statement?'},
     // Block A — Execution/time patterns (7 freq3)
     {type:'freq3',text:'How often do you start something and abandon it before finishing?'},
     {type:'freq3',text:'How often do you procrastinate on things that matter most to you?'},
@@ -1377,12 +1380,16 @@ const CPP_QUIZ = {
     {type:'yesno3',text:'Do you freeze when the stakes get real?'},
     {type:'yesno3',text:'Have you disappointed yourself more than you\'ve disappointed others?'},
     {type:'yesno3',text:'Do you know exactly what\'s blocking you but can\'t name why?'},
+    {type:'freq3',text:'Do you remember your dreams when you wake up?'},
+    {type:'interstitial',subtype:'dream_seed',skipCount:true},
     {type:'multi',text:'Which of these do you reach for to avoid starting?',sub:'Choose all that apply',opts:['Phone / social media','News / YouTube / podcasts','Snacks / vape / caffeine','Other people\'s emergencies','Cleaning / organizing something that doesn\'t matter','Gym / exercise (as procrastination)','Porn / gaming','None of these'],optEmojis:['📱','📺','🍫','🚨','🧹','💪','🎮','🚫'],recallKey:'coping'},
     {type:'yesno3',text:'Has someone told you "you have so much potential"?'},
     {type:'yesno3',text:'Does the gap between what you know and what you do feel painful?'},
     {type:'yesno3',text:'Do you feel behind in your own life?'},
+    {type:'yesno3',text:'Growing up, did praise depend on your performance?'},
     {type:'multi',text:'What do you want to get out of this journey?',sub:'Choose all that apply',opts:['Stop procrastinating on what matters','Release the invisible brake','Reach my real capacity','Stop self-sabotaging','Feel proud of my output','Build follow-through','Quiet the inner critic']},
     {type:'yesno3',text:'Have you worked with a therapist on any of this?',customOpts:['Yes','Not yet','Prefer not to say']},
+    {type:'interstitial',subtype:'belonging',skipCount:true},
     {type:'email',text:'Where should we send your results?'},
     {type:'freq3',text:'Would you like wellness tips and updates?',customOpts:['Sure, I\'m in!','No thanks'],isOptIn:true},
   ],
@@ -1709,6 +1716,7 @@ function render(){
 
   // STEP 2: SOCIAL PROOF — chip testimonial bubbles (Liven-style) with mirror portraits
   if(S.step===2){
+    S.step++;render();return; // social proof déplacé: interstitiel 'belonging' avant l'email (loi tronc commun #4)
     const SP_QUOTES=['Eye opening','Finally makes sense','I feel seen','So healing','Already changed me','This is it','Worth every minute','Life-shifting'];
     const SP_GENDER=(S.gender==='M')?'male':'female';
     const SP_TESTIMONIALS=SP_QUOTES.map((q,i)=>({avatar:`img/social-${SP_GENDER}-${i+1}.jpg`,quote:q}));
@@ -1962,6 +1970,28 @@ function renderInterstitial(q,qIdx){
     return;
   }
 
+  // SEED RÊVES — le mécanisme imaginé pendant le quiz (pattern Copymind écran 11)
+  if(q.subtype==='dream_seed'){
+    h=`<div class="screen active q-screen" style="padding-top:60px;gap:20px;align-items:center;text-align:center;">
+      <div style="font-size:52px;">🌙</div>
+      <h2 style="font-size:24px;font-weight:800;line-height:1.3;max-width:340px;">Your mind hides the block.<br>Your dreams don't.</h2>
+      <p style="font-size:15px;color:var(--text2);max-width:330px;line-height:1.6;">Every night, your dreams replay what's blocking you — in images. Your answers are mapping exactly where it hides.</p>
+      <button class="btn-continue" onclick="advanceInterstitial(${qIdx})" style="max-width:340px;">Continue</button>
+    </div>`;
+    app.innerHTML=h;return;
+  }
+
+  // BELONGING — l'appartenance APRÈS les aveux, juste avant l'email (loi tronc commun #4)
+  if(q.subtype==='belonging'){
+    h=`<div class="screen active q-screen" style="padding-top:60px;gap:20px;align-items:center;text-align:center;">
+      <div style="font-size:52px;">🤝</div>
+      <h2 style="font-size:24px;font-weight:800;line-height:1.3;max-width:340px;"><span style="color:var(--green);">12,000 people</span> answered exactly like you.</h2>
+      <p style="font-size:15px;color:var(--text2);max-width:330px;line-height:1.6;">And stopped carrying it alone. Your results are one step away.</p>
+      <button class="btn-continue" onclick="advanceInterstitial(${qIdx})" style="max-width:340px;">Continue</button>
+    </div>`;
+    app.innerHTML=h;return;
+  }
+
   // FIX 5 — Grounding prompt before Q8 — Liven-minimal: breathing circle + 1 line
   if(q.subtype==='grounding'){
     h=`<div class="screen active q-screen" style="padding-top:40px;gap:24px;align-items:center;text-align:center;">
@@ -2148,7 +2178,7 @@ function renderExpertReview(){
         </div>
       </div>
     </div>
-    <h2 style="font-size:24px;font-weight:800;line-height:1.3;text-align:center;max-width:340px;margin:26px 0 14px;color:var(--text);letter-spacing:-0.3px;">Our plans are designed in collaboration with licensed somatic therapists</h2>
+    <h2 style="font-size:24px;font-weight:800;line-height:1.3;text-align:center;max-width:340px;margin:26px 0 14px;color:var(--text);letter-spacing:-0.3px;">The hardest part took honesty.<br>You just did it.</h2>
     <button class="btn-continue" onclick="go()" style="max-width:340px;">Continue</button>
     <p style="font-size:14px;color:var(--text2);line-height:1.6;text-align:center;max-width:340px;margin:16px 0 0;">"ONERA meticulously incorporates Jungian dream analysis and evidence-based somatic release research to deliver personalized, body-first healing protocols."</p>
     <p style="font-size:12.5px;color:var(--text3);text-align:center;margin:10px 0 0;">Your answers are being reviewed — your profile is 2 screens away.</p>
@@ -2182,7 +2212,7 @@ function renderProcess(){
     <p style="font-size:14px;color:var(--text2);max-width:320px;font-style:italic;line-height:1.5;margin:0;">"${intro}"</p>
 
     <!-- Headline -->
-    <h2 style="font-size:26px;font-weight:800;line-height:1.25;max-width:320px;">How ONERA works</h2>
+    <h2 style="font-size:26px;font-weight:800;line-height:1.25;max-width:320px;">Your dreams show the block.<br>Your body lets it go.</h2>
 
     <!-- 3 illustrated cards stacked (Liven-style) -->
     <div style="width:100%;max-width:360px;display:flex;flex-direction:column;gap:12px;">
@@ -2253,7 +2283,7 @@ function renderAuthority(){
 
     <!-- Headline below the stack -->
     <div style="max-width:320px;">
-      <h2 style="font-size:24px;font-weight:800;line-height:1.3;color:var(--text);">ONERA was built on<br><span style="color:var(--green);">evidence-based</span> dream<br>and somatic research.</h2>
+      <h2 style="font-size:24px;font-weight:800;text-align:center;line-height:1.3;">Not guesswork.<br><span style="color:var(--green);">Science.</span></h2>
       <p style="font-size:14px;color:var(--text2);line-height:1.55;margin-top:14px;">Your journey includes dream-decoding and somatic release protocols backed by top universities.</p>
     </div>
 
@@ -2631,7 +2661,7 @@ function renderProjection(){
 
   app.innerHTML=`
   <div class="screen active q-screen" style="padding-top:16px;gap:14px;align-items:center;text-align:center;">
-    <h2 style="font-size:22px;font-weight:800;line-height:1.3;">By <span style="color:var(--green);">${goalMonth}</span><br>you'll be different.</h2>
+    <h2 style="font-size:22px;font-weight:800;line-height:1.3;">By <span style="color:var(--green);">${goalMonth}</span>,<br>this pattern won't run your life.</h2>
     <p style="font-size:14px;color:var(--text2);">Based on what you just told me.</p>
 
     <!-- Stacked bar chart -->
