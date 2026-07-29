@@ -2449,7 +2449,7 @@ function renderPostName(){
     <h2 class="q-title" style="font-size:22px;max-width:320px;">What's your first name?</h2>
     <input type="text" id="postNameInput" class="input-field" placeholder="Your name" value="${S.name||''}" style="max-width:340px;text-align:center;" autofocus />
     <button class="btn-continue" onclick="submitPostName()" style="max-width:340px;">Continue</button>
-    <a href="#" onclick="event.preventDefault();S.answers.post_name='';try{trackAnswer('post_name',100,'name',null,'[skipped]');}catch(e){}go();" style="font-size:12px;color:var(--text3);text-decoration:underline;">Continue without name</a>
+    <a href="#" onclick="event.preventDefault();S.answers.post_name='';try{trackAnswer('post_name',100,'name',null,'[skipped]');}catch(e){}S.step+=2;render();" style="font-size:12px;color:var(--text3);text-decoration:underline;">Continue without name</a>
   </div>`;
   const inp=document.getElementById('postNameInput');
   if(inp){inp.focus();inp.addEventListener('keydown',e=>{if(e.key==='Enter')submitPostName();});}
@@ -2466,7 +2466,7 @@ function submitPostName(){
   }
   try{trackAnswer('post_name', 100, 'name', null, '[captured]');}catch(e){}
   fbq('trackCustom','QuizAnswer',{question:'post_name'});
-  go();
+  S.step+=2;render(); // saute l'écran Knowledge (−13% mesuré) — toboggan post-climax
 }
 
 // Knowledge — neutral data, low friction after name established
@@ -2739,8 +2739,9 @@ function revealScratch(){
   const c=document.getElementById('scratchCanvas');if(c)c.style.display='none';
   document.getElementById('scratchResult').style.display='block';
   confetti();
-  // Show woohoo popup after confetti
-  setTimeout(()=>{const p=document.getElementById('woohooPopup');if(p)p.style.display='flex';},800);
+  // Le cadeau coule directement dans le paywall (pattern Liven) — aucune décision au pic de dopamine.
+  // Le paywall s'ouvre sur "Your promo code applied!" : continuité parfaite du gain.
+  setTimeout(()=>{go();},1600);
 }
 
 function confetti(){
