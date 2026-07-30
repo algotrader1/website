@@ -3349,11 +3349,14 @@ function selPlan(i){
 }
 
 // ==================== CHECKOUT (FIX 10: updated prices) ====================
+function selPwyw(k,a){S.pwywKey=k;S.pwywAmount=a;try{logMABEvent('pwyw_choice',{key:k,amount:a});}catch(e){}renderCheckout();}
 async function renderCheckout(){
   const app=document.getElementById('app');
   const discounted=[6.93,15.19,25.99],full=[17.77,38.95,66.65],pn=['7-Day Trial','4-Week Plan','12-Week Plan'];
   const expired=S.discountExpired;
-  const price=expired?full[S.selectedPlan]:discounted[S.selectedPlan];
+  const isPwyw=(S.selectedPlan===0&&!expired);
+  if(isPwyw&&!S.pwywAmount){S.pwywAmount=6.93;S.pwywKey='trial';}
+  const price=isPwyw?S.pwywAmount:(expired?full[S.selectedPlan]:discounted[S.selectedPlan]);
   const base=full[S.selectedPlan];
   const disc=expired?0:(base-price).toFixed(2);
   const pc=`${(S.name||'DREAM').replace(/[^a-zA-Z]/g,'')}_${new Date().toLocaleString('en',{month:'short'})}${new Date().getFullYear()}`;
@@ -3365,7 +3368,17 @@ async function renderCheckout(){
   <div class="screen active q-screen" style="padding-top:10px;gap:14px;">
     ${expired?`<div class="checkout-timer" style="background:rgba(220,74,74,0.08);color:var(--red);">Discount expired — full price applies</div>`:`<div class="checkout-timer">&#9200; Your discount is reserved for <span id="ckT">${fmt(S.timerSec)}</span> min</div>`}
     <div style="text-align:center;margin-bottom:4px;"><h3 style="font-size:17px;">${S.name?S.name+', from':'From'} running at <span style="color:#eb7a4a;">30%</span> — to <span style="color:var(--green);">full power</span>.<br>Your first session is tonight.</h3></div>
-    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px;">
+    ${isPwyw?`<div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px;">
+      <div style="font-size:14px;font-weight:800;margin-bottom:6px;">Choose what feels right for your 7-day trial</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.55;margin-bottom:10px;">It costs us <b>$13.90</b> to run your first week (dream decoding is real compute ❤️) — but we want the trial to be accessible. Pick your amount:</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
+        ${[['trial_pwyw_1',1],['trial_pwyw_3',3],['trial',6.93],['trial_pwyw_14',13.90]].map(([k,a])=>`<div onclick="selPwyw('${k}',${a})" style="cursor:pointer;text-align:center;padding:12px 4px;border-radius:12px;border:2px solid ${S.pwywKey===k?'var(--green)':'var(--border)'};background:${S.pwywKey===k?'rgba(46,170,96,0.06)':'var(--bg2)'};font-weight:800;font-size:15px;">$${a===6.93?'6.93':a===13.9?'13.90':a}</div>`).join('')}
+      </div>
+      <div style="border-top:1px solid var(--border);margin-top:12px;padding-top:8px;display:flex;justify-content:space-between;font-size:16px;font-weight:800;"><span>Total today</span><span>$${price.toFixed(2)}</span></div>
+      <div style="border-top:1px solid var(--border);margin-top:10px;padding-top:10px;font-size:11px;color:var(--text2);line-height:1.5;text-align:left;">
+        <strong>You're in control:</strong> cancel anytime in 2 taps from the app — it takes 10 seconds. If you keep your plan, it continues at $${renewalPrice.toFixed(2)}/month from ${renewalDate} (also on your receipt — no surprises). 30-day money-back guarantee.
+      </div>
+    </div>`:`<div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px;">
       <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;"><span style="color:var(--text2);">Your release protocol (${['7-day','4-week','12-week'][S.selectedPlan]})</span><span style="color:var(--text3);">$${base.toFixed(2)}</span></div>
       ${expired?'':`<div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;"><span style="color:var(--green);font-weight:600;">61% Introductory discount</span><span style="color:var(--green);font-weight:600;">-$${disc}</span></div>
       <div style="font-size:12px;margin-bottom:8px;color:var(--text3);">Your 61% is reserved <b>in your name</b> for completing the full assessment:<br><span style="color:var(--green);">&#10003; ${pc}</span></div>`}
@@ -3374,7 +3387,7 @@ async function renderCheckout(){
       <div style="border-top:1px solid var(--border);margin-top:10px;padding-top:10px;font-size:11px;color:var(--text2);line-height:1.5;text-align:left;">
         <strong>You're in control:</strong> cancel anytime in 2 taps from the app — it takes 10 seconds. If you keep your plan, it continues at $${renewalPrice.toFixed(2)}/month from ${renewalDate} (also on your receipt — no surprises). 30-day money-back guarantee.
       </div>
-    </div>
+    </div>`}
     <div style="display:flex;align-items:center;justify-content:center;gap:10px;font-size:11px;color:var(--text3);margin-top:4px;padding:8px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;"><svg viewBox="0 0 16 16" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" style="width:13px;height:13px;flex-shrink:0;"><rect x="3" y="7" width="10" height="6" rx="2"/><path d="M5 7V5a3 3 0 016 0v2"/></svg><span>Secured by Stripe · Cancel anytime · 30-day refund</span></div>
     <div style="background:#eaf5ec;border:1.5px solid var(--green);border-radius:14px;padding:12px 16px;text-align:center;font-size:13px;line-height:1.55;color:var(--text);">Try the full plan for 30 days. If the brake doesn't lift, one email — <b>100% refund</b>.<br><b>If it fails, that's on our method. Not you.</b></div>
     <div id="stripePaymentElement" style="margin-top:8px;"><div id="peLoading" style="text-align:center;padding:22px;color:var(--text3);font-size:13px;">Loading secure payment&hellip;</div></div>
@@ -3403,7 +3416,8 @@ async function renderCheckout(){
     console.log('[Stripe] mode:',window._stripeMode);
     window._stripe=Stripe(stripeKey);
 
-    const planKey=S.discountExpired?['trial_full','4week_full','12week_full'][S.selectedPlan]:['trial','4week','12week'][S.selectedPlan];
+    let planKey=S.discountExpired?['trial_full','4week_full','12week_full'][S.selectedPlan]:['trial','4week','12week'][S.selectedPlan];
+    if(isPwyw&&S.pwywKey)planKey=S.pwywKey;
     console.log('[renderCheckout] S.selectedPlan=',S.selectedPlan,'planKey=',planKey,'price=',price);
     const r=await fetch(SUPABASE_URL+'/create-payment-intent',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:S.email,cpp:S.cppId||'F-1',gender:S.gender||'F',plan:planKey,promoCode:S.discountExpired?'':pc,quizAnswers:S.answers,fbp:S.fbp||'',fbc:S.fbc||'',first_name:S.name||''})});
     const d=await r.json();
@@ -3669,7 +3683,7 @@ async function doStripePay(){
     // Event ID for Meta CAPI deduplication (client pixel + server CAPI share same ID)
     const ic_eid='ic_'+Date.now()+'_'+Math.random().toString(36).slice(2,8);
     window._lastInitiateCheckoutId=ic_eid;
-    const _icAmount=S.discountExpired?[17.77,38.95,66.65][S.selectedPlan]:[6.93,15.19,25.99][S.selectedPlan];
+    const _icAmount=(S.selectedPlan===0&&!S.discountExpired&&S.pwywAmount)?S.pwywAmount:(S.discountExpired?[17.77,38.95,66.65][S.selectedPlan]:[6.93,15.19,25.99][S.selectedPlan]);
     fbq('track','InitiateCheckout',{value:_icAmount,currency:'USD',content_name:S.cppId,eventID:ic_eid});try{ttk('InitiateCheckout',{value:_icAmount,currency:'USD'})}catch(e){}
     sendCAPI('InitiateCheckout',ic_eid,{value:_icAmount,currency:'USD',content_name:S.cppId});
 
@@ -3704,7 +3718,7 @@ async function doStripePay(){
         if(sd.deeplink)S.deeplink=sd.deeplink;
         console.log('quiz-success response:',sd);
       }catch(e){console.error('quiz-success call failed:',e);}
-      const paidAmount=S.discountExpired?[17.77,38.95,66.65][S.selectedPlan]:[6.93,15.19,25.99][S.selectedPlan];
+      const paidAmount=(S.selectedPlan===0&&!S.discountExpired&&S.pwywAmount)?S.pwywAmount:(S.discountExpired?[17.77,38.95,66.65][S.selectedPlan]:[6.93,15.19,25.99][S.selectedPlan]);
       // Event ID = Stripe PI id (same ID will be sent server-side via CAPI for dedup)
       const p_eid=(window._lastPiId||('pur_'+Date.now()+'_'+Math.random().toString(36).slice(2,8)));
       fbq('track','Purchase',{value:paidAmount,currency:'USD',content_name:S.cppId,eventID:p_eid});try{ttk('CompletePayment',{value:paidAmount,currency:'USD'})}catch(e){}
