@@ -3364,22 +3364,24 @@ async function renderCheckout(){
   app.innerHTML=`
   <div class="screen active q-screen" style="padding-top:10px;gap:14px;">
     ${expired?`<div class="checkout-timer" style="background:rgba(220,74,74,0.08);color:var(--red);">Discount expired — full price applies</div>`:`<div class="checkout-timer">&#9200; Your discount is reserved for <span id="ckT">${fmt(S.timerSec)}</span> min</div>`}
-    <div style="text-align:center;margin-bottom:4px;"><h3 style="font-size:16px;"><span style="color:var(--green);">12,000+</span> people decoded their dreams.<br>One decision away.</h3></div>
+    <div style="text-align:center;margin-bottom:4px;"><h3 style="font-size:17px;">${S.name?S.name+', from':'From'} running at <span style="color:#eb7a4a;">30%</span> — to <span style="color:var(--green);">full power</span>.<br>Your first session is tonight.</h3></div>
     <div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px;">
-      <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;"><span style="color:var(--text2);">Personalized Plan</span><span style="color:var(--text3);">$${base.toFixed(2)}</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;"><span style="color:var(--text2);">Your release protocol (${['7-day','4-week','12-week'][S.selectedPlan]})</span><span style="color:var(--text3);">$${base.toFixed(2)}</span></div>
       ${expired?'':`<div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;"><span style="color:var(--green);font-weight:600;">61% Introductory discount</span><span style="color:var(--green);font-weight:600;">-$${disc}</span></div>
-      <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px;color:var(--text3);"><span>Applied promo code:</span><span style="color:var(--green);">&#10003; ${pc}</span></div>`}
+      <div style="font-size:12px;margin-bottom:8px;color:var(--text3);">Your 61% is reserved <b>in your name</b> for completing the full assessment:<br><span style="color:var(--green);">&#10003; ${pc}</span></div>`}
       <div style="border-top:1px solid var(--border);padding-top:8px;display:flex;justify-content:space-between;font-size:16px;font-weight:800;"><span>Total</span><span>$${price.toFixed(2)}</span></div>
       <div style="text-align:center;font-size:11px;color:var(--green);margin-top:4px;">You just saved $${disc} (61% off)</div>
       <div style="border-top:1px solid var(--border);margin-top:10px;padding-top:10px;font-size:11px;color:var(--text2);line-height:1.5;text-align:left;">
-        <strong>Auto-renewal notice:</strong> After your ${trialDays}-day trial, your subscription will automatically renew at <strong>$${renewalPrice.toFixed(2)}/month</strong> starting <strong>${renewalDate}</strong>. Cancel anytime. 30-day money-back guarantee.
+        <strong>You're in control:</strong> cancel anytime in 2 taps from the app — it takes 10 seconds. If you keep your plan, it continues at $${renewalPrice.toFixed(2)}/month from ${renewalDate} (also on your receipt — no surprises). 30-day money-back guarantee.
       </div>
     </div>
     <div style="display:flex;align-items:center;justify-content:center;gap:10px;font-size:11px;color:var(--text3);margin-top:4px;padding:8px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;"><svg viewBox="0 0 16 16" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" style="width:13px;height:13px;flex-shrink:0;"><rect x="3" y="7" width="10" height="6" rx="2"/><path d="M5 7V5a3 3 0 016 0v2"/></svg><span>Secured by Stripe · Cancel anytime · 30-day refund</span></div>
-    <div id="stripePaymentElement" style="margin-top:8px;"></div>
+    <div style="background:#eaf5ec;border:1.5px solid var(--green);border-radius:14px;padding:12px 16px;text-align:center;font-size:13px;line-height:1.55;color:var(--text);">Try the full plan for 30 days. If the brake doesn't lift, one email — <b>100% refund</b>.<br><b>If it fails, that's on our method. Not you.</b></div>
+    <div id="stripePaymentElement" style="margin-top:8px;"><div id="peLoading" style="text-align:center;padding:22px;color:var(--text3);font-size:13px;">Loading secure payment&hellip;</div></div>
+    <div id="safariHint" style="display:none;text-align:center;font-size:12.5px;color:var(--text2);padding:10px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;">Prefer Face ID? <a id="safariLink" href="#" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;">Open in Safari to pay with Apple Pay &rarr;</a></div>
     <div id="payError" style="display:none;color:var(--red);font-size:12px;text-align:center;margin-top:4px;"></div>
-    <div style="font-size:11px;color:var(--text3);text-align:center;line-height:1.5;margin-top:-2px;">By clicking PAY, you agree to the auto-renewal terms above, our <a href="/quiz/terms.html" target="_blank" rel="noopener" style="color:var(--text2);">Terms of Service</a> and <a href="/quiz/privacy.html" target="_blank" rel="noopener" style="color:var(--text2);">Privacy Policy</a>.</div>
-    <button class="pay-btn-main" onclick="doStripePay()" id="payBtn" style="margin-top:8px;"><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px;"><rect x="3" y="11" width="14" height="6" rx="2"/><path d="M7 11V7a3 3 0 016 0v4"/></svg> PAY $${price.toFixed(2)}</button>
+    <div style="font-size:11px;color:var(--text3);text-align:center;line-height:1.5;margin-top:-2px;">By starting your plan, you agree to the renewal terms above, our <a href="/quiz/terms.html" target="_blank" rel="noopener" style="color:var(--text2);">Terms of Service</a> and <a href="/quiz/privacy.html" target="_blank" rel="noopener" style="color:var(--text2);">Privacy Policy</a>.</div>
+    <button class="pay-btn-main" onclick="doStripePay()" id="payBtn" style="margin-top:8px;"><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px;"><rect x="3" y="11" width="14" height="6" rx="2"/><path d="M7 11V7a3 3 0 016 0v4"/></svg> START TONIGHT &mdash; $${price.toFixed(2)}</button>
     <div class="secure-badge"><svg viewBox="0 0 16 16" fill="none" stroke="var(--text3)" stroke-width="1.5" stroke-linecap="round" style="width:14px;height:14px;"><rect x="3" y="7" width="10" height="6" rx="2"/><path d="M5 7V5a3 3 0 016 0v2"/></svg> Secure payment</div>
   </div>`;
 
@@ -3413,6 +3415,17 @@ async function renderCheckout(){
     // Prioritize Apple Pay + Link for mobile conversion (85% of Meta traffic is mobile)
     const pe=window._stripeElements.create('payment',{layout:'tabs',paymentMethodOrder:['apple_pay','link','card']});
     pe.mount('#stripePaymentElement');
+    pe.on('ready',()=>{const l=document.getElementById('peLoading');if(l)l.remove();});
+    let _touched=false;
+    pe.on('change',()=>{if(!_touched){_touched=true;try{logMABEvent('checkout_touch',{});fbq('trackCustom','CheckoutTouch',{cpp:S.cppId||''});}catch(e){}}});
+    // In-app browser FB/IG: Apple Pay indisponible → proposer Safari via buy.html (état préservé par URL)
+    try{
+      if(/FBAN|FBAV|Instagram/i.test(navigator.userAgent)){
+        const _code=(typeof CODE_TO_CPP!=='undefined')?(Object.keys(CODE_TO_CPP).find(k=>CODE_TO_CPP[k]===S.cppId)||'rho'):'rho';
+        const h=document.getElementById('safariHint');const a=document.getElementById('safariLink');
+        if(h&&a){a.href='https://dreaminsight.app/quiz/buy.html?c='+_code+'&e='+encodeURIComponent(S.email||'')+'&n='+encodeURIComponent(S.name||'')+'&src=webview';h.style.display='block';}
+      }
+    }catch(e){}
   }catch(e){
     console.error('Stripe init error:',e);
     document.getElementById('payError').style.display='block';
@@ -3563,11 +3576,7 @@ function goCheckout(){
   }
   // DOWNSELL POPUP: if user picks 7-day trial ($6.93) → offer 12-week (best value) at promo-capped -71%
   // Skip if already shown once OR plan is already 12-week OR discount has expired
-  if(S.selectedPlan===0 && !S.downsellShown && !S.discountExpired){
-    S.downsellShown=true;
-    showDownsellPopup();
-    return;
-  }
+  // Downsell popup supprimé (audits 30/07: brise le momentum du close, 4/6 frameworks)
   console.log('[goCheckout] S.selectedPlan =',S.selectedPlan,'planKey will be:',S.discountExpired?['trial_full','4week_full','12week_full'][S.selectedPlan]:['trial','4week','12week'][S.selectedPlan]);
   S.step=getQEnd()+13; // Checkout step
   render();
