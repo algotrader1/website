@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <script src="https://js.stripe.com/v3/"></script>
+<!-- Internal test guard: ?notrack=1 → neutralise pixels + CAPI + MAB (aucune pollution data) -->
+<script>try{if(new URLSearchParams(location.search).get('notrack')==='1'){window._NOTRACK=true;window.fbq=function(){};window._fbq=window.fbq;}}catch(e){}</script>
 <!-- Meta Pixel -->
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '998795362922900');
@@ -396,6 +398,7 @@ function burstConfetti(){
 // Events: 'impression' (landing viewed), 'quiz_start' (gender clicked), 'quiz_complete' (email captured),
 //         'checkout_view' (paywall viewed), 'purchase' (payment success)
 function logMABEvent(event, extra){
+  if(window._NOTRACK)return;
   try{
     const body={
       event, session_id:window._SESS_ID||'unknown',
@@ -1544,6 +1547,7 @@ let S = {
 // Server-side Conversions API — mirrors the client pixel with the SAME event_id (dedup).
 // Fires alongside fbq so events survive ad-blockers / Brave / iOS ITP.
 async function sendCAPI(eventName,eventId,customData){
+  if(window._NOTRACK)return;
   try{
     await fetch(SUPABASE_URL+'/meta-capi',{
       method:'POST',
@@ -2859,7 +2863,7 @@ function renderPaywall(){
   // A/B test Hormozi (M-1 uniquement) : B = garantie-héros + outcome language + value stack
   if(S.cppId==='M-1'&&!S.pwVariant){S.pwVariant=Math.random()<0.5?'A':'B';try{save();}catch(e){}}
   const isB=S.pwVariant==='B'&&S.cppId==='M-1';
-  logMABEvent('paywall_view',{pw_variant:S.pwVariant||''});
+  logMABEvent('paywall_view',{pw_variant:S.pwVariant||'',ua:navigator.userAgent});
   try{fbq('trackCustom','PaywallView',{cpp:S.cppId||''});}catch(e){}
   try{ttk('AddToWishlist')}catch(e){}
   try{trackFlush(false,{paywall_viewed:true});}catch(e){}
